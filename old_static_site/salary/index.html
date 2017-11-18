@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Зарплата | Ohar</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/_img/adeptus-mechanicus.png">
+    <link rel="stylesheet" href="/_css/css.css">
+    <meta class="meta_description" name="description" content="Оценка изменения покупательской способности зарплаты">
+    <link rel="stylesheet" type="text/css" href="/quotes/css.css">
+</head>
+<body>
+
+<h1>Рублёвая зарплата в&nbsp;валюте</h1>
+
+<canvas id="canvas" width="1000" height="500"></canvas>
+
+<hr>
+
+<section class="options">
+    <h1>Настройка</h1>
+    <label class="options_currency">
+        Валюта
+        <select name="currencyCode"
+                id="j-currencyCode">
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="EUR">EUR</option>
+        </select>
+    </label>
+    <div class="options_profitList"
+         id="j-options_profitList">
+        <h2>Доходы</h2>
+    </div>
+
+    <button class="options_addProfit"
+            id="j-options_addProfit">
+        + Добавить период дохода
+    </button>
+</section>
+
+
+<script type="text/javascript" src="/_js/lib/underscore-min.js"></script>
+<script type="text/javascript" src="/_js/lib/jQuery/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="/_js/lib/jQuery/jquery-ui.js"></script>
+<script type="text/javascript" src="/salary/js/functions.js"></script>
+<script type="text/javascript" src="/salary/js/constants.js"></script>
+<script type="text/javascript" src="/salary/js/init.js"></script>
+<script type="text/javascript" src="/salary/js/handlers.js"></script>
+
+<footer class="footer">
+
+</footer>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function (d, w, c) {
+    (w[c] = w[c] || []).push(function () {
+      try {
+        w.yaCounter21398491 = new Ya.Metrika({
+          id                 : 21398491,
+          webvisor           : true,
+          clickmap           : true,
+          trackLinks         : true,
+          accurateTrackBounce: true,
+          trackHash          : true,
+        })
+      } catch (e) { }
+    })
+
+    var n   = d.getElementsByTagName('script')[0],
+        s   = d.createElement('script'),
+        f   = function () { n.parentNode.insertBefore(s, n) }
+    s.type  = 'text/javascript'
+    s.async = true
+    s.src   = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//mc.yandex.ru/metrika/watch.js'
+
+    if (w.opera == '[object Opera]') {
+      d.addEventListener('DOMContentLoaded', f, false)
+    } else { f() }
+  })(document, window, 'yandex_metrika_callbacks')
+</script>
+<noscript>
+    <div><img src="//mc.yandex.ru/watch/21398491" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

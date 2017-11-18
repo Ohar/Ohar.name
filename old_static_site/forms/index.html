@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Активные элементы в разных состояниях | Ohar</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/_img/adeptus-mechanicus.png">
+    <link rel="stylesheet" href="/_css/css.css">
+    <link rel="stylesheet" type="text/css" href="/forms/css.css">
+</head>
+<body>
+<header class="header">
+    <nav class="menu">
+        <ul class="menu_list">
+            <li class="menu_list_item"><a class="menu_list_item_link menu_list_item_link-img" href="/"
+                                          title="На главную"> <img class="menu_list_item_link_img" src="/_img/logo.png"
+                                                                   alt="Adeptus Mechanicus" width="48" height="48"> </a>
+            </li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="https://github.com/Ohar/" target="_blank"
+                                          title="Профиль на GitHub" rel="nofollow"> GitHub </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/life" title="Поиграть в «Жизнь»"> Игра
+                «Жизнь» </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/rules"
+                                          title="Правила оформления текстов на русском языке"> Оформлениe текстов </a>
+            </li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/quotes/#0" title="Всякие цитаты"> <span
+                    class="icon-quote-left"></span> Цитаты </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/names/"
+                                          title="Славянские, советские и греческие имена из Википедии"> Генератор
+                имён </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/about/" title="Связаться со мной"> <span
+                    class="icon-torso"></span> Обо мне </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/funny_js/"> Минутка занимательного
+                яваскрипта </a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main">
+    <table>
+        <caption>Активные элементы в разных состояниях</caption>
+        <thead>
+        <tr>
+            <th colspan="2" rowspan="2"></th>
+            <th colspan="6">Элемент</th>
+        </tr>
+        <tr>
+            <th>Текст</th>
+            <th>Текстовая область</th>
+            <th>Чекбокс</th>
+            <th>Радио</th>
+            <th>Кнопка</th>
+            <th>Ссылка</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="7">
+                Состояние
+            </td>
+            <th>
+                Обычное
+            </th>
+            <td>
+                <input type="text" placeholder="Подсказка">
+            </td>
+            <td>
+                <textarea cols="10" rows="5" placeholder="Подсказка"></textarea>
+            </td>
+            <td>
+                <input type="checkbox">
+                <input type="checkbox" checked>
+            </td>
+            <td>
+                <input name="radio1" type="radio">
+                <input name="radio1" type="radio" checked>
+            </td>
+            <td>
+                <button type="button">Кнопка</button>
+            </td>
+            <td>
+                <a href="#">Ссылка</a>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Наведение указателя
+            </th>
+            <td>
+                <input type="text" placeholder="Подсказка" class="hover">
+            </td>
+            <td>
+                <textarea cols="10" rows="5" placeholder="Подсказка" class="hover"></textarea>
+            </td>
+            <td>
+                <input type="checkbox" class="hover">
+                <input type="checkbox" checked class="hover">
+            </td>
+            <td>
+                <input name="radio4" type="radio" class="hover">
+                <input name="radio4" type="radio" checked class="hover">
+            </td>
+            <td>
+                <button type="button" class="hover">Кнопка</button>
+            </td>
+            <td>
+                <a href="#" class="hover">Ссылка</a>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Активное
+            </th>
+            <td>
+                <input type="text" placeholder="Подсказка" class="active">
+            </td>
+            <td>
+                <textarea cols="10" rows="5" placeholder="Подсказка" class="active"></textarea>
+            </td>
+            <td>
+                <input type="checkbox" class="active">
+                <input type="checkbox" checked class="active">
+            </td>
+            <td>
+                <input name="radio2" type="radio" class="active">
+                <input name="radio2" type="radio" checked class="active">
+            </td>
+            <td>
+                <button type="button" class="active">Кнопка</button>
+            </td>
+            <td>
+                <a href="#" class="active">Ссылка</a>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Выбрано с клавиатуры
+            </th>
+            <td>
+                <input type="text" placeholder="Подсказка" class="focus">
+            </td>
+            <td>
+                <textarea cols="10" rows="5" placeholder="Подсказка" class="focus"></textarea>
+            </td>
+            <td>
+                <input type="checkbox" class="focus">
+                <input type="checkbox" checked class="focus">
+            </td>
+            <td>
+                <input name="radio3" type="radio" class="focus">
+                <input name="radio3" type="radio" checked class="focus">
+            </td>
+            <td>
+                <button type="button" class="focus">Кнопка</button>
+            </td>
+            <td>
+                <a href="#" class="focus">Ссылка</a>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Ошибка
+            </th>
+            <td>
+                <input type="text" placeholder="Подсказка" class="error">
+            </td>
+            <td>
+                <textarea cols="10" rows="5" placeholder="Подсказка" class="error"></textarea>
+            </td>
+            <td>
+                <input type="checkbox" class="error">
+                <input type="checkbox" checked class="error">
+            </td>
+            <td>
+                <input name="radio5" type="radio" class="error">
+                <input name="radio5" type="radio" checked class="error">
+            </td>
+            <td>
+                —
+            </td>
+            <td>
+                —
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Обязательно для заполнения
+            </th>
+            <td>
+                <input type="text" placeholder="Подсказка" class="required">
+            </td>
+            <td>
+                <textarea cols="10" rows="5" placeholder="Подсказка" class="required"></textarea>
+            </td>
+            <td>
+                <input type="checkbox" class="required">
+                <input type="checkbox" checked class="required">
+            </td>
+            <td>
+                <input name="radio6" type="radio" class="required">
+                <input name="radio6" type="radio" checked class="required">
+            </td>
+            <td>
+                —
+            </td>
+            <td>
+                —
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Посещённая ссылка
+            </th>
+            <td>
+                —
+            </td>
+            <td>
+                —
+            </td>
+            <td>
+                —
+            </td>
+            <td>
+                —
+            <td>
+                —
+            </td>
+            <td>
+                <a href="/forms/" class="visited">Ссылка</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<footer class="footer"></footer><!-- Yandex.Metrika counter -->
+<script type="text/javascript">  (function (d, w, c) {
+  (w[c] = w[c] || []).push(function () {
+    try {
+      w.yaCounter21398491 = new Ya.Metrika({
+        id                 : 21398491,
+        webvisor           : true,
+        clickmap           : true,
+        trackLinks         : true,
+        accurateTrackBounce: true,
+        trackHash          : true,
+      })
+    } catch (e) { }
+  })
+  var n = d.getElementsByTagName('script')[0], s = d.createElement('script'),
+      f = function () { n.parentNode.insertBefore(s, n) }
+  s.type = 'text/javascript'
+  s.async = true
+  s.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//mc.yandex.ru/metrika/watch.js'
+  if (w.opera == '[object Opera]') { d.addEventListener('DOMContentLoaded', f, false) } else { f() }
+})(document, window, 'yandex_metrika_callbacks')</script>
+<noscript>
+    <div><img src="//mc.yandex.ru/watch/21398491" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript><!-- /Yandex.Metrika counter -->
+</body>
+</html>

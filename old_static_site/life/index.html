@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Жизнь | Ohar</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/_img/adeptus-mechanicus.png">
+    <link rel="stylesheet" href="/_css/css.css">
+
+    <script type="text/javascript" src="/_js/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="/_js/lib/jQuery/jquery-2.1.0.min.js"></script>
+
+    <script type="text/javascript" src="/life/js/functions.js"></script>
+    <script type="text/javascript" src="/life/js/figures.js"></script>
+    <script type="text/javascript" src="/life/js/handlers.js"></script>
+    <script type="text/javascript" src="/life/js/init.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/life/css.css">
+</head>
+<body>
+<header class="header">
+    <nav class="menu">
+        <ul class="menu_list">
+            <li class="menu_list_item"><a class="menu_list_item_link menu_list_item_link-img" href="/"
+                                          title="На главную"> <img class="menu_list_item_link_img" src="/_img/logo.png"
+                                                                   alt="Adeptus Mechanicus" width="48" height="48"> </a>
+            </li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="https://github.com/Ohar/" target="_blank"
+                                          title="Профиль на GitHub" rel="nofollow"> GitHub </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/life" title="Поиграть в «Жизнь»"> Игра
+                «Жизнь» </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/rules"
+                                          title="Правила оформления текстов на русском языке"> Оформлениe текстов </a>
+            </li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/quotes/#0" title="Всякие цитаты"> <span
+                    class="icon-quote-left"></span> Цитаты </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/names/"
+                                          title="Славянские, советские и греческие имена из Википедии"> Генератор
+                имён </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/about/" title="Связаться со мной"> <span
+                    class="icon-torso"></span> Обо мне </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/funny_js/"> Минутка занимательного
+                яваскрипта </a></li>
+        </ul>
+    </nav>
+</header>
+<h1>
+    Игра
+    <a href="https://ru.wikipedia.org/wiki/%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_%28%D0%B8%D0%B3%D1%80%D0%B0%29"
+       target="_blank"
+       rel="nofollow">
+        «Жизнь»
+    </a>
+</h1>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="random"
+       id="random">
+<label for="random">
+    Случайно
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="glider"
+       id="glider">
+<label for="glider">
+    Глайдер
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="blinker"
+       id="blinker">
+<label for="blinker">
+    Мигалка
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="star"
+       id="star">
+<label for="star">
+    Звезда
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="cross"
+       id="cross">
+<label for="cross">
+    Крест
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="french_kiss"
+       id="french_kiss">
+<label for="french_kiss">
+    Французский поцелуй
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="clock_2"
+       id="clock_2">
+<label for="clock_2">
+    Часы 2
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="pinwheel"
+       id="pinwheel">
+<label for="pinwheel">
+    Вертушка
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="octagon"
+       id="octagon">
+<label for="octagon">
+    Восьмиугольник
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="fumarole"
+       id="fumarole">
+<label for="fumarole">
+    Фумарола
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="pentoad"
+       id="pentoad">
+<label for="pentoad">
+    Пятигушка
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="kok_s_galaxy"
+       id="kok_s_galaxy">
+<label for="kok_s_galaxy">
+    Галактика Кока
+</label>
+
+<input type="radio"
+       name="game_mode"
+       class="js-restart_game"
+       value="pentadecathlon"
+       id="pentadecathlon">
+<label for="pentadecathlon">
+    Пентадекатлон
+</label>
+
+<footer class="footer"></footer><!-- Yandex.Metrika counter -->
+<script type="text/javascript">  (function (d, w, c) {
+  (w[c] = w[c] || []).push(function () {
+    try {
+      w.yaCounter21398491 = new Ya.Metrika({
+        id                 : 21398491,
+        webvisor           : true,
+        clickmap           : true,
+        trackLinks         : true,
+        accurateTrackBounce: true,
+        trackHash          : true,
+      })
+    } catch (e) { }
+  })
+  var n = d.getElementsByTagName('script')[0], s = d.createElement('script'),
+      f = function () { n.parentNode.insertBefore(s, n) }
+  s.type = 'text/javascript'
+  s.async = true
+  s.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//mc.yandex.ru/metrika/watch.js'
+  if (w.opera == '[object Opera]') { d.addEventListener('DOMContentLoaded', f, false) } else { f() }
+})(document, window, 'yandex_metrika_callbacks')</script>
+<noscript>
+    <div><img src="//mc.yandex.ru/watch/21398491" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript><!-- /Yandex.Metrika counter -->
+</body>
+</html>

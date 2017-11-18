@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="/_img/adeptus-mechanicus.png" type="image/png">
+    <link rel="stylesheet" href="/_css/css.css">
+    <link rel="stylesheet" href="/mtg/css/css.css">
+    <title>Ohar</title>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="/_js/lib/backbone-min.js"></script>
+    <script src="/mtg/js/init.js"></script>
+    <script src="/mtg/js/functions.js"></script>
+    <script src="/mtg/js/search.js"></script>
+    <script src="/mtg/js/converter.js"></script>
+    <script src="/mtg/js/interesection.js"></script>
+    <script>
+      var ABBRS = [['BNG', 'Born of the Gods'], ['C13', 'Commander 2013'], ['THS', 'Theros'], ['DDL', 'Duel Decks: Heroes vs. Monsters'], ['M14', 'Magic 2014 Core Set'], ['MMA', 'Modern Masters'], ['DGM', 'Dragon\'s Maze'], ['GTC', 'Gatecrash'], ['RTR', 'Return to Ravnica'], ['M13', 'Magic 2013'], ['PC2', 'Planechase (2012 Edition)'], ['AVR', 'Avacyn Restored'], ['DKA', 'Dark Ascension'], ['ISD', 'Innistrad'], ['M12', 'Magic 2012'], ['CMD', 'Commander'], ['NPH', 'New Phyrexia'], ['MBS', 'Mirrodin Besieged'], ['SOM', 'Scars of Mirrodin'], ['M11', 'Magic 2011'], ['ROE', 'Rise of the Eldrazi'], ['WWK', 'Worldwake'], ['ZEN', 'Zendikar'], ['PCH', 'Planechase'], ['M10', 'Magic 2010'], ['AR', 'Alara Reborn'], ['CF', 'Conflux'], ['SA', 'Shards of Alara'], ['ET', 'Eventide'], ['SM', 'Shadowmoor'], ['MT', 'Morningtide'], ['LW', 'Lorwyn'], ['10E', 'Tenth Edition'], ['FS', 'Future Sight'], ['PC', 'Planar Chaos'], ['TS', 'Time Spiral'], ['TST', 'Time Spiral "Timeshifted"'], ['CS', 'Coldsnap'], ['DI', 'Dissension'], ['GP', 'Guildpact'], ['RA', 'Ravnica: City of Guilds'], ['9E', 'Ninth Edition'], ['SK', 'Saviors of Kamigawa'], ['BK', 'Betrayers of Kamigawa'], ['UH', 'Unhinged'], ['CK', 'Champions of Kamigawa'], ['FD', 'Fifth Dawn'], ['DS', 'Darksteel'], ['MR', 'Mirrodin'], ['8E', 'Eighth Edition']]
+    </script>
+</head>
+<body>
+<h2>Исходник — формат <a href="http://mtg.ru">mtg.ru</a></h2>
+<button id="load_ohar" type="button">Загрузить мой обменник</button>
+<textarea name="input" id="input" cols="100" rows="8" placeholder="Введите список карт"></textarea>
+
+<h2>Конвертировать в формат </h2>
+<button class="doConvert" id="convert_CardList" type="button">Список карт</button>
+<button class="doConvert" id="convert_DeckboxOrg" type="button">Deckbox.org</button>
+<button class="doConvert" id="convert_TappedoutNet" type="button">Tappedout.net</button>
+<textarea id="output" readonly cols="50" rows="4"></textarea>
+
+<h2>Найти совпадения</h2>
+<textarea id="list_A" cols="50" rows="4" placeholder="Список А"></textarea>
+<textarea id="list_B" cols="50" rows="4" placeholder="Список Б"></textarea>
+<button id="do_intersec" type="button">↓ Найти совпадения между списками&nbsp;А и&nbsp;Б ↓</button>
+<button id="do_intersec_buy_list" type="button">↓ Найти совпадения списка&nbsp;А со&nbsp;списком покупки ↓</button>
+<p id="intersection_length" style="display:none"></p>
+<textarea id="intersection" readonly cols="50" rows="15"></textarea>
+
+<h2>Искать карты в обменнике игрока</h2>
+<input id="user_to_search" type="text" placeholder="Ник владельца обменника">
+<textarea id="search_list" cols="50" rows="4" placeholder="Что искать?"></textarea>
+<button id="do_search" type="button">↓ Искать по заданному списку ↓</button>
+<button id="load_my_tappedout_buylist" type="button">↓ Искать по моему списку с Tappedout ↓</button>
+<p id="search_length" style="display:none"></p>
+<textarea id="founded" readonly cols="50" rows="4"></textarea>
+</body>
+
+<script>
+  // Выполнить и получить полный список изданий
+
+  /* http://www.mtg.ru/help/cards/sets.phtml
+
+   var list = [];
+   $('#NoteDiv .Set').each(function(){
+   var abbr = $($('td', $(this))[1]).text().trim();
+   var text = $($('td', $(this))[2]).text().trim();
+   list.push([abbr, text]);
+   });
+   console.info(list);
+   */
+</script>
+</html>

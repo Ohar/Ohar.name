@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/_img/adeptus-mechanicus.png">
+    <link rel="stylesheet" href="/_css/css.css">
+    <title>Генератор имён | Ohar</title>
+    <meta class="meta_description"
+          name="description"
+          content="Генератор славянских и советских имён">
+    <link rel="stylesheet" type="text/css" href="/names/css.css">
+</head>
+<body>
+<header class="header">
+    <nav class="menu">
+        <ul class="menu_list">
+            <li class="menu_list_item"><a class="menu_list_item_link menu_list_item_link-img" href="/"
+                                          title="На главную"> <img class="menu_list_item_link_img" src="/_img/logo.png"
+                                                                   alt="Adeptus Mechanicus" width="48" height="48"> </a>
+            </li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="https://github.com/Ohar/" target="_blank"
+                                          title="Профиль на GitHub" rel="nofollow"> GitHub </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/life" title="Поиграть в «Жизнь»"> Игра
+                «Жизнь» </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/rules"
+                                          title="Правила оформления текстов на русском языке"> Оформлениe текстов </a>
+            </li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/quotes/#0" title="Всякие цитаты"> <span
+                    class="icon-quote-left"></span> Цитаты </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/names/"
+                                          title="Славянские, советские и греческие имена из Википедии"> Генератор
+                имён </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/about/" title="Связаться со мной"> <span
+                    class="icon-torso"></span> Обо мне </a></li>
+            <li class="menu_list_item"><a class="menu_list_item_link" href="/funny_js/"> Минутка занимательного
+                яваскрипта </a></li>
+        </ul>
+    </nav>
+</header>
+<fieldset>
+    <legend>Пол</legend>
+
+    <input type="radio"
+           id="gender_all"
+           class="j-gender"
+           name="gender"
+           value="all"
+           checked>
+    <label for="gender_all">
+        Любой
+    </label>
+
+    <input type="radio"
+           id="gender_male"
+           class="j-gender"
+           name="gender"
+           value="male">
+    <label for="gender_male"
+           class="icon-male">
+        Мужской
+    </label>
+
+    <input type="radio"
+           id="gender_female"
+           class="j-gender"
+           name="gender"
+           value="female">
+    <label for="gender_female"
+           class="icon-female">
+        Женский
+    </label>
+</fieldset>
+
+<fieldset>
+    <legend>Тип</legend>
+
+    <input type="radio"
+           id="type_all"
+           class="j-type"
+           name="type"
+           value="all"
+           checked>
+    <label for="type_all">
+        Любые
+    </label>
+
+    <input type="radio"
+           id="type_slavic"
+           class="j-type"
+           name="type"
+           value="slavic">
+    <label for="type_slavic"
+           class="icon-sun">
+        Славянские
+    </label>
+
+    <input type="radio"
+           id="type_soviet"
+           class="j-type"
+           name="type"
+           value="soviet">
+    <label for="type_soviet"
+           class="icon-star">
+        Советские
+    </label>
+
+    <input type="radio"
+           id="type_greek"
+           class="j-type"
+           name="type"
+           value="greek">
+    <label for="type_greek"
+           class="icon-bank">
+        Греческие
+    </label>
+</fieldset>
+
+<button id="j-generate"
+        class="generate"
+        type="button">
+    Сгенерить
+</button>
+
+<input id="j-generatedArea"
+       class="generatedArea"
+       type="text"
+       readonly>
+
+
+<script type="text/javascript" src="/_js/lib/lodash.js"></script>
+<script type="text/javascript" src="/_js/lib/jQuery/jquery-2.1.0.min.js"></script>
+
+<script type="text/javascript" src="/names/dict/names_slavic_male.js"></script>
+<script type="text/javascript" src="/names/dict/names_slavic_female.js"></script>
+<script type="text/javascript" src="/names/dict/names_soviet_male.js"></script>
+<script type="text/javascript" src="/names/dict/names_soviet_female.js"></script>
+<script type="text/javascript" src="/names/dict/names_greek_male.js"></script>
+<script type="text/javascript" src="/names/dict/names_greek_female.js"></script>
+
+<script type="text/javascript" src="/names/js/Name.js"></script>
+<script type="text/javascript" src="/names/js/functions.js"></script>
+<script type="text/javascript" src="/names/js/init.js"></script>
+<script type="text/javascript" src="/names/js/handlers.js"></script>
+
+<footer class="footer"></footer><!-- Yandex.Metrika counter -->
+<script type="text/javascript">  (function (d, w, c) {
+  (w[c] = w[c] || []).push(function () {
+    try {
+      w.yaCounter21398491 = new Ya.Metrika({
+        id                 : 21398491,
+        webvisor           : true,
+        clickmap           : true,
+        trackLinks         : true,
+        accurateTrackBounce: true,
+        trackHash          : true,
+      })
+    } catch (e) { }
+  })
+  var n = d.getElementsByTagName('script')[0], s = d.createElement('script'),
+      f = function () { n.parentNode.insertBefore(s, n) }
+  s.type = 'text/javascript'
+  s.async = true
+  s.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//mc.yandex.ru/metrika/watch.js'
+  if (w.opera == '[object Opera]') { d.addEventListener('DOMContentLoaded', f, false) } else { f() }
+})(document, window, 'yandex_metrika_callbacks')</script>
+<noscript>
+    <div><img src="//mc.yandex.ru/watch/21398491" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript><!-- /Yandex.Metrika counter -->
+</body>
+</html>

@@ -1,0 +1,85 @@
+/*
+* Логотип
+*/
+
+.mechanicus__logo {
+    min-width: 500px; /* Cog */
+    min-height: 500px; /* Cog */
+    position: relative;
+    padding: 1em;
+}
+
+.mechanicus__logo:before,
+.mechanicus__logo:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+}
+
+.mechanicus__logo:before {
+    background-image: url(/_img/am_outside2.png);
+    height: 500px;
+    width: 500px;
+    left: calc(50% - 250px);
+    top: 0;
+    -webkit-animation-timing-function: cubic-bezier(.64, -0.42, .28, 1.61);
+       -moz-animation-timing-function: cubic-bezier(.64, -0.42, .28, 1.61);
+         -o-animation-timing-function: cubic-bezier(.64, -0.42, .28, 1.61);
+            animation-timing-function: cubic-bezier(.64, -0.42, .28, 1.61);
+    -webkit-animation-name: cog_rotating;
+       -moz-animation-name: cog_rotating;
+         -o-animation-name: cog_rotating;
+            animation-name: cog_rotating;
+    -webkit-animation-duration: 30s;
+       -moz-animation-duration: 30s;
+         -o-animation-duration: 30s;
+            animation-duration: 30s;
+    -webkit-animation-iteration-count: infinite;
+       -moz-animation-iteration-count: infinite;
+         -o-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-delay: 1s;
+       -moz-animation-delay: 1s;
+         -o-animation-delay: 1s;
+            animation-delay: 1s;
+}
+.mechanicus__logo:after {
+    background-image: url(/_img/am_inside2.png);
+    height: 500px;
+    width: 500px;
+    left: calc(50% - 250px);
+    top: 0;
+}
+
+
+@keyframes cog_rotating {
+    0% { 
+        -webkit-transform: rotate(0);
+           -moz-transform: rotate(0);
+            -ms-transform: rotate(0);
+             -o-transform: rotate(0);
+                transform: rotate(0);
+    }
+    50% { 
+        -webkit-transform: rotate(90deg);
+           -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+             -o-transform: rotate(90deg);
+                transform: rotate(90deg);
+    }
+}
+
+
+
+/*
+    Слоган
+*/
+
+.mechanicus__motto {
+    letter-spacing: 1em;
+    text-align: center;
+}
+.mechanicus__motto__word {
+    display: inline-block;
+}

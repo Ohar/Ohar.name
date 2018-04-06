@@ -5,9 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf ./dist/*",
+    "zip": "cd ./old_static_site && bestzip ./../dist/ohar.name.zip ./* && cd ..",
     "deploy": "sh ./shell_scripts/deploy.sh",
-    "build": "npm run clean && bestzip ./dist/ohar.name.zip old_static_site/*",
-    "release": "npm version patch && npm run build && npm run deploy && git push origin --tags && git push"
+    "build": "npm run clean && npm run zip",
+    "update_site": "npm run build && npm run deploy",
+    "release": "npm version patch && npm run update_site && git push origin --tags && git push"
   },
   "repository": {
     "type": "git",

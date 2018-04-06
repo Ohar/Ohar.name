@@ -119,6 +119,12 @@
       "css": "female",
       "code": 59398,
       "src": "elusive"
+    },
+    {
+      "uid": "531359183f9fedb14b23666f1308591f",
+      "css": "telegram",
+      "code": 9992,
+      "src": "fontawesome"
     }
   ]
 }

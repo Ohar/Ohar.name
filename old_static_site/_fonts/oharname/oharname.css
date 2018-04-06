@@ -2,11 +2,12 @@
 
 @font-face {
   font-family: 'oharname';
-  src: url('oharname.eot?17735301');
-  src: url('oharname.eot?17735301#iefix') format('embedded-opentype'),
-       url('oharname.woff?17735301') format('woff'),
-       url('oharname.ttf?17735301') format('truetype'),
-       url('oharname.svg?17735301#oharname') format('svg');
+  src: url('oharname.eot?22206572');
+  src: url('oharname.eot?22206572#iefix') format('embedded-opentype'),
+       url('oharname.woff?22206572') format('woff'),
+       url('oharname.woff2?22206572') format('woff'),
+       url('oharname.ttf?22206572') format('truetype'),
+       url('oharname.svg?22206572#oharname') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -16,19 +17,12 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'oharname';
-    src: url('../font/oharname.svg?17735301#oharname') format('svg');
+    src: url('../font/oharname.svg?22206572#oharname') format('svg');
   }
 }
 */
- 
-[class^="icon-"], 
-[class*=" icon-"] {
-    padding-left: 2.5em;
-    position: relative;
-}
- 
-[class^="icon-"]:before, 
-[class*=" icon-"]:before {
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "oharname";
     font-style: normal;
     font-weight: normal;
@@ -39,6 +33,7 @@
     width: 1em;
     margin-right: .2em;
     text-align: center;
+    /* opacity: .8; */
 
     /* For safety - reset parent styles, that can break glyph codes*/
     font-variant: normal;
@@ -53,28 +48,29 @@
 
     /* Uncomment for 3D effect */
     /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-    
+
     position: absolute;
     left: .75em;
     font-size: 1.25em;
 }
- 
+
 .icon-skype:before { content: '\53'; } /* 'S' */
 .icon-wikipedia:before { content: '\57'; } /* 'W' */
 .icon-facebook-squared:before { content: '\66'; } /* 'f' */
-.icon-vkontakte:before { content: '\412'; } /* 'В' */
+.icon-vkontakte:before { content: '\0412'; } /* 'В' */
 .icon-quote-left:before { content: '\201c'; } /* '“' */
+.icon-telegram:before { content: '\2708'; } /* '✈' */
 .icon-file-pdf:before { content: '\e800'; } /* '' */
 .icon-file-word:before { content: '\e801'; } /* '' */
 .icon-file-code:before { content: '\e802'; } /* '' */
+.icon-star:before { content: '\e803'; } /* '' */
+.icon-sun:before { content: '\e804'; } /* '' */
 .icon-linkedin-squared:before { content: '\e805'; } /* '' */
+.icon-female:before { content: '\e806'; } /* '' */
 .icon-link-ext:before { content: '\e807'; } /* '' */
+.icon-male:before { content: '\e808'; } /* '' */
+.icon-bank:before { content: '\e809'; } /* '' */
 .icon-wordpress:before { content: '\e80b'; } /* '' */
 .icon-github-circled:before { content: '🐱'; } /* '\1f431' */
 .icon-torso:before { content: '👨'; } /* '\1f468' */
 .icon-mail:before { content: '📧'; } /* '\1f4e7' */
-.icon-star:before { content: '\e803'; } /* '' */
-.icon-sun:before { content: '\e804'; } /* '' */
-.icon-female:before { content: '\e806'; } /* '' */
-.icon-male:before { content: '\e808'; } /* '' */
-.icon-bank:before { content: '\e809'; } /* '' */

@@ -9,7 +9,7 @@ declare -r FOLDER=`node -p 'require("./../config.json")["path"]'`;
 declare -r SERVER=`node -p 'require("./../config.json")["server"]'`;
 declare -r USERNAME=`node -p 'require("./../config.json")["username"]'`;
 declare -r URL=$USERNAME@$SERVER
-declare -r FILE_NAME="old_static_site.zip"
+declare -r FILE_NAME="ohar.name.zip"
 
 scp ./../dist/$FILE_NAME $URL:~
 

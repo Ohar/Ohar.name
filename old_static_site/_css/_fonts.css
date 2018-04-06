@@ -47,7 +47,7 @@ a[href^='skype']:before {
 }
 
 a[href^='mailto']:before {
-    content: '\📧';
+    content: '📧';
 }
 
 a[href^='https://linkedin.com']:before {
@@ -55,7 +55,7 @@ a[href^='https://linkedin.com']:before {
 }
 
 a[href^='https://github.com']:before {
-    content: '\🐱';
+    content: '🐱';
 }
 
 a[href^='https://www.facebook.com']:before {

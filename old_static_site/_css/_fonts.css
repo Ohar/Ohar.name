@@ -76,7 +76,7 @@ a[href*='wikiquote.org']:before {
     content: '\57';
 }
 
-a[href*='https://t.me']:before {
+a[href^='https://t.me']:before {
     content: '\2708';
 }
 

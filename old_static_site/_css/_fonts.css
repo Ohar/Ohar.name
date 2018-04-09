@@ -79,3 +79,17 @@ a[href*='wikiquote.org']:before {
 a[href*='https://t.me']:before {
     content: '\2708';
 }
+
+a[href^='https://www.paypal.com']:before,
+a[href^='https://www.paypal.me']:before {
+    content: '\50';
+}
+
+a[href^='https://stackoverflow.com']:before {
+    content: '\f16c';
+}
+
+a[href*='https://store.steampowered.com']:before,
+a[href^='https://steamcommunity.com']:before {
+    content: '🚂';
+}

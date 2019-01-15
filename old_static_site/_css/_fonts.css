@@ -93,3 +93,7 @@ a[href*='https://store.steampowered.com']:before,
 a[href^='https://steamcommunity.com']:before {
     content: '🚂';
 }
+
+a[href^='https://twitter.com']:before {
+    content: '🐦';
+}

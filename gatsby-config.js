@@ -1,3 +1,5 @@
+const path = require('path')
+
 const {author, description, version} = require('./package')
 
 module.exports = {
@@ -30,6 +32,19 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@': path.resolve(__dirname, 'src')
+        },
+        extensions: [
+          'js',
+          'json',
+          'jsx',
+        ]
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

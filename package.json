@@ -3,6 +3,7 @@
   "version": "0.0.34",
   "description": "Site ohar.name",
   "scripts": {
+    "postinstall": "mkdir -p public dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env DEV=true webpack",
     "zip_old": "cd ./old_static_site && bestzip ./../dist/old_static_site.zip ./* && cd .. && echo 'Old site zipped'",

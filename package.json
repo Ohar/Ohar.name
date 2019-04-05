@@ -7,7 +7,7 @@
     "dev": "cross-env DEV=true webpack",
     "zip_old": "cd ./old_static_site && bestzip ./../dist/old_static_site.zip ./* && cd .. && echo 'Old site zipped'",
     "zip_spa": "cd ./public && bestzip ./../dist/spa.zip ./* && cd ./.. && echo 'SPA Zipped'",
-    "deploy": "sh ./shell_scripts/deploy.sh && echo 'Deployed'",
+    "deploy": "bash ./shell_scripts/deploy.sh && echo 'Deployed'",
     "build": "npm run build_spa && npm run build_old && echo 'Builded'",
     "build_old": "npm run zip_old && echo 'Old site builded'",
     "build_spa": "npm run gatsby:build && npm run zip_spa echo 'SPA builded'",

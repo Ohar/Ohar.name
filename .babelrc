@@ -1,4 +1,10 @@
 {
-  "presets": ["es2015", "react", "env", "stage-0"],
-  "plugins": ["syntax-object-rest-spread", "transform-object-rest-spread"]
+  "presets": [
+    "gatsby"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-export-default-from",
+    "syntax-object-rest-spread",
+    "transform-object-rest-spread"
+  ]
 }

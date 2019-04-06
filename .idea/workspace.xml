@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cce27bad-fe97-4691-8499-687927b6edb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Contacts/ContactsComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Contacts/ContactsStyles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Contacts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/mechanicus.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mechanicus.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_static_site/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/old_static_site/about/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Menu/MenuComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/MenuComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Seo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Seo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/page-2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/spa/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,28 +26,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/old_static_site/_css/menu.css">
+        <entry file="file://$PROJECT_DIR$/src/pages/about.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="41" column="57" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
+            <state relative-caret-position="100">
+              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/styles/mechanicus.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="300">
+              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -48,19 +50,65 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/YandexMetrika.jsx">
+        <entry file="file://$PROJECT_DIR$/src/components/Contacts/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+            <state relative-caret-position="25">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/offset.css">
+        <entry file="file://$PROJECT_DIR$/src/components/Contacts/ContactsComponent.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="150">
+              <caret line="132" column="33" lean-forward="true" selection-start-line="132" selection-start-column="33" selection-end-line="132" selection-end-column="33" />
+              <folding>
+                <element signature="e#1#26#0" expanded="true" />
+                <element signature="e#142#1391#0" />
+                <element signature="e#82#161#0" />
+                <element signature="e#183#258#0" />
+                <element signature="e#277#352#0" />
+                <element signature="e#362#439#0" />
+                <element signature="e#461#537#0" />
+                <element signature="e#556#651#0" />
+                <element signature="e#683#747#0" />
+                <element signature="e#759#830#0" />
+                <element signature="e#840#919#0" />
+                <element signature="e#939#1014#0" />
+                <element signature="e#1024#1099#0" />
+                <element signature="e#1119#1211#0" />
+                <element signature="e#1221#1317#0" />
+                <element signature="e#1335#1408#0" />
+                <element signature="e#1418#1490#0" />
+                <element signature="e#1506#1583#0" />
+                <element signature="e#1606#1703#0" />
+                <element signature="e#1725#1823#0" />
+                <element signature="e#1827#1917#0" />
+                <element signature="e#1947#2027#0" />
+                <element signature="e#2041#2125#0" />
+                <element signature="e#2146#2218#0" />
+                <element signature="e#2230#2299#0" />
+                <element signature="e#2309#2387#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Contacts/ContactsStyles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/old_static_site/about/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="541">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
@@ -105,10 +153,12 @@
       <find>offset.css</find>
       <find>am_outside2</find>
       <find>am_inside</find>
+      <find>rel=&quot;nofollow&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
       <replace>content</replace>
+      <replace>rel=&quot;nofollow noopener noreferrer&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -128,7 +178,6 @@
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/shell_scripts/deploy.sh" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/Seo.jsx" />
         <option value="$PROJECT_DIR$/src/components/YandexMetrika,jsx" />
         <option value="$PROJECT_DIR$/src/components/Image.jsx" />
         <option value="$PROJECT_DIR$/gatsby-config.js" />
@@ -143,17 +192,24 @@
         <option value="$PROJECT_DIR$/src/components/Footer/index.js" />
         <option value="$PROJECT_DIR$/src/components/Footer/Footer.jsx" />
         <option value="$PROJECT_DIR$/src/components/Layout/fonts.css" />
-        <option value="$PROJECT_DIR$/src/components/Layout/layout.jsx" />
         <option value="$PROJECT_DIR$/src/components/Header/menu.css" />
         <option value="$PROJECT_DIR$/src/components/Menu/menu.jsx" />
         <option value="$PROJECT_DIR$/src/components/Menu/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Menu/MenuComponent.jsx" />
         <option value="$PROJECT_DIR$/src/components/Header/header.jsx" />
         <option value="$PROJECT_DIR$/src/components/Header/index.js" />
         <option value="$PROJECT_DIR$/src/components/Header/HeaderComponent.jsx" />
-        <option value="$PROJECT_DIR$/src/pages/index.jsx" />
         <option value="$PROJECT_DIR$/old_static_site/_blocks/mechanicus/mechanicus.css" />
         <option value="$PROJECT_DIR$/src/styles/mechanicus.css" />
+        <option value="$PROJECT_DIR$/src/styles/about.css" />
+        <option value="$PROJECT_DIR$/src/components/Menu/MenuComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/pages/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Seo.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Layout/layout.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Contacts/index.js" />
+        <option value="$PROJECT_DIR$/old_static_site/about/index.html" />
+        <option value="$PROJECT_DIR$/src/components/Contacts/ContactsComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Contacts/ContactsStyles.css" />
+        <option value="$PROJECT_DIR$/src/pages/about.jsx" />
       </list>
     </option>
   </component>
@@ -234,6 +290,12 @@
             <path>
               <item name="Ohar.name" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ohar.name" type="462c0819:PsiDirectoryNode" />
+              <item name="old_static_site" type="462c0819:PsiDirectoryNode" />
+              <item name="about" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ohar.name" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ohar.name" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -246,7 +308,15 @@
               <item name="Ohar.name" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ohar.name" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Contacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ohar.name" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ohar.name" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ohar.name" type="b2602c69:ProjectViewProjectNode" />
@@ -271,7 +341,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -286,11 +356,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="A:\dev\Ohar.name\src\components" />
+      <recent name="A:\dev\Ohar.name\src\styles" />
       <recent name="A:\dev\Ohar.name\src\static" />
       <recent name="A:\dev\Ohar.name\src\images" />
       <recent name="A:\dev\Ohar.name\src\components\Menu" />
-      <recent name="A:\dev\Ohar.name\src\components\Layout" />
-      <recent name="A:\dev\Ohar.name\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="A:\dev\Ohar.name\src\components\Header" />
@@ -477,11 +547,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554590890013</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add Gatsby">
+      <created>1554591471865</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1554591471866</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23077000" />
+    <option name="totallyTimeSpent" value="25461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -560,12 +637,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add Gatsby" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/images/gatsby-icon.png" />
-    <entry file="file://$PROJECT_DIR$/src/images/gatsby-astronaut.png" />
-    <entry file="file://$PROJECT_DIR$/src/components/Image.jsx" />
-    <entry file="file://$PROJECT_DIR$/old_static_site/_img/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/old_static_site/_img/deus_est_machina.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -573,13 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="29" selection-start-column="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Seo.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -594,16 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
           <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/page-2.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="11" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -629,9 +683,6 @@
           <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_static_site/_css/contacts.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/old_static_site/_css/button.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -715,13 +766,6 @@
     <entry file="file://$PROJECT_DIR$/src/components/Layout/fonts.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Layout/layout.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -741,17 +785,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Header/menu.css" />
     <entry file="file://$PROJECT_DIR$/src/components/Menu/header.css" />
-    <entry file="file://$PROJECT_DIR$/src/components/Menu/MenuComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="79" column="19" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#193#1466#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Header/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -776,13 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Menu/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/offset.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -804,20 +830,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/styles/mechanicus.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="200">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old_static_site/_css/contacts.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Menu/MenuComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="66" column="4" lean-forward="true" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Menu/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Seo.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <element signature="e#151#176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Layout/layout.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/mechanicus.css">
+    <entry file="file://$PROJECT_DIR$/src/components/Contacts/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="25">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old_static_site/about/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Contacts/ContactsComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="132" column="33" lean-forward="true" selection-start-line="132" selection-start-column="33" selection-end-line="132" selection-end-column="33" />
+          <folding>
+            <element signature="e#1#26#0" expanded="true" />
+            <element signature="e#142#1391#0" />
+            <element signature="e#82#161#0" />
+            <element signature="e#183#258#0" />
+            <element signature="e#277#352#0" />
+            <element signature="e#362#439#0" />
+            <element signature="e#461#537#0" />
+            <element signature="e#556#651#0" />
+            <element signature="e#683#747#0" />
+            <element signature="e#759#830#0" />
+            <element signature="e#840#919#0" />
+            <element signature="e#939#1014#0" />
+            <element signature="e#1024#1099#0" />
+            <element signature="e#1119#1211#0" />
+            <element signature="e#1221#1317#0" />
+            <element signature="e#1335#1408#0" />
+            <element signature="e#1418#1490#0" />
+            <element signature="e#1506#1583#0" />
+            <element signature="e#1606#1703#0" />
+            <element signature="e#1725#1823#0" />
+            <element signature="e#1827#1917#0" />
+            <element signature="e#1947#2027#0" />
+            <element signature="e#2041#2125#0" />
+            <element signature="e#2146#2218#0" />
+            <element signature="e#2230#2299#0" />
+            <element signature="e#2309#2387#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/contacts.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Contacts/ContactsStyles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/about.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

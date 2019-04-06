@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '@/components/Layout'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 
 import ImgDeus from '@/images/deus.png'
 import ImgEst from '@/images/est.png'
@@ -12,10 +12,7 @@ import '@/styles/mechanicus.css'
 
 const IndexPage = () => (
   <Layout>
-    <SEO
-      title='Home'
-      keywords={['Pavel Lysenko site', 'Сайт Павла Лысенко', 'Ohar']}
-    />
+    <Seo keywords={['Pavel Lysenko site', 'Сайт Павла Лысенко', 'Ohar']} />
     <h1 className="offset">Сайт Павла Лысенко</h1>
 
     <article className="mechanicus">

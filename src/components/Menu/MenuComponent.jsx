@@ -56,7 +56,6 @@ const menuList = [
     content: 'Генератор имён',
   },
   {
-    gatsbyReady: false,
     url: '/about',
     title: 'Связаться со мной',
     content: (

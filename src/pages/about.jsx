@@ -4,6 +4,8 @@ import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import Contacts from '@/components/Contacts'
 
+import CV from '@/cv/Frontend-Developer-Lysenko-Pavel.pdf'
+
 const AboutPage = () => (
   <Layout>
     <Seo
@@ -15,9 +17,9 @@ const AboutPage = () => (
     <p>Привет! Меня зовут Павел Лысенко. Я — веб-разработчик.</p>
     <p>
       Моё <a
+        href={CV}
         download
         target="_blank"
-        href="/cv/Frontend-Developer-Lysenko-Pavel.pdf"
       >
         резюме
       </a> (на английском).

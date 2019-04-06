@@ -12,12 +12,12 @@ import './article.css'
 import './breadcrumbs.css'
 import './button.css'
 import './fonts.css'
-import './layout.css'
+import './LayoutStyles.css'
 import './main.css'
 import './radio.css'
 import './time.css'
 
-const Layout = ({ children }) => (
+const LayoutComponent = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -38,8 +38,8 @@ const Layout = ({ children }) => (
   />
 )
 
-Layout.propTypes = {
+LayoutComponent.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default LayoutComponent

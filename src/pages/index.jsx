@@ -12,7 +12,10 @@ import '@/styles/mechanicus.css'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title='Home' keywords={['Pavel Lysenko site', 'Сайт Павла Лысенко', 'Ohar']} />
+    <SEO
+      title='Home'
+      keywords={['Pavel Lysenko site', 'Сайт Павла Лысенко', 'Ohar']}
+    />
     <h1 className="offset">Сайт Павла Лысенко</h1>
 
     <article className="mechanicus">

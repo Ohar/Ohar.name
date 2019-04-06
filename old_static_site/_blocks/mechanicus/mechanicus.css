@@ -18,7 +18,7 @@
 }
 
 .mechanicus__logo:before {
-    background-image: url(/_img/am_outside2.png);
+    background-image: url(/_img/am_outside.png);
     height: 500px;
     width: 500px;
     left: calc(50% - 250px);
@@ -45,7 +45,7 @@
             animation-delay: 1s;
 }
 .mechanicus__logo:after {
-    background-image: url(/_img/am_inside2.png);
+    background-image: url(/_img/am_inside.png);
     height: 500px;
     width: 500px;
     left: calc(50% - 250px);
@@ -54,14 +54,14 @@
 
 
 @keyframes cog_rotating {
-    0% { 
+    0% {
         -webkit-transform: rotate(0);
            -moz-transform: rotate(0);
             -ms-transform: rotate(0);
              -o-transform: rotate(0);
                 transform: rotate(0);
     }
-    50% { 
+    50% {
         -webkit-transform: rotate(90deg);
            -moz-transform: rotate(90deg);
             -ms-transform: rotate(90deg);

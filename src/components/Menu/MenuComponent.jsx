@@ -1,11 +1,9 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
 import ImgLogo from '@/images/logo.png'
 
-import './menu.css'
-import './header.css'
+import './MenuStyles.css'
 
 const menuList = [
   {
@@ -79,55 +77,45 @@ function isOuterLink(url) {
   return /^http/.test(url)
 }
 
-const Header = () => (
-  <header className="header">
-    <nav className="menu">
-      <ul className="menu_list">
-        {
-          menuList.map(
-            ({url, title, content, gatsbyReady}) => (
-              <li
-                key={url}
-                className="menu_list_item"
-              >
-                {
-                  !gatsbyReady && isOuterLink(url)
-                    ? (
-                      <a
-                        className="menu_list_item_link"
-                        href={url}
-                        title={title || content}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        {content}
-                      </a>
-                    )
-                    : (
-                      <Link
-                        className="menu_list_item_link"
-                        to={url}
-                        title={title || content}
-                      >
-                        {content}
-                      </Link>
-                    )
-                }
-              </li>
-            )
+const MenuComponent = () => (
+  <nav className="menu">
+    <ul className="menu_list">
+      {
+        menuList.map(
+          ({url, title, content, gatsbyReady}) => (
+            <li
+              key={url}
+              className="menu_list_item"
+            >
+              {
+                !gatsbyReady && isOuterLink(url)
+                  ? (
+                    <a
+                      className="menu_list_item_link"
+                      href={url}
+                      title={title || content}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                    >
+                      {content}
+                    </a>
+                  )
+                  : (
+                    <Link
+                      className="menu_list_item_link"
+                      to={url}
+                      title={title || content}
+                    >
+                      {content}
+                    </Link>
+                  )
+              }
+            </li>
           )
-        }
-      </ul>
-    </nav>
-  </header>
+        )
+      }
+    </ul>
+  </nav>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default MenuComponent

@@ -7,6 +7,9 @@ import ImgDeus from '@/images/deus.png'
 import ImgEst from '@/images/est.png'
 import ImgMachina from '@/images/machina.png'
 
+import '@/styles/offset.css'
+import '@/styles/mechanicus.css'
+
 const IndexPage = () => (
   <Layout>
     <SEO title='Home' keywords={['Pavel Lysenko site', 'Сайт Павла Лысенко', 'Ohar']} />
@@ -21,9 +24,9 @@ const IndexPage = () => (
 
       <section className="mechanicus__motto">
         <h1 className="offset">Deus est machina</h1>
-        <img src={ImgDeus} width={229} height={85}/>
-        <img src={ImgEst} width={173} height={85}/>
-        <img src={ImgMachina} width={410} height={85}/>
+        <img src={ImgDeus} alt='Deus' width={229} height={85}/>
+        <img src={ImgEst} alt='Est' width={173} height={85}/>
+        <img src={ImgMachina} alt='Machina' width={410} height={85}/>
       </section>
     </article>
   </Layout>

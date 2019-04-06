@@ -2,8 +2,10 @@ import React from 'react'
 
 import YandexMetrika from '@/components/YandexMetrika'
 
+import './footer.css'
+
 const Footer = () => (
-  <footer className="Footer">
+  <footer className="footer">
     <YandexMetrika/>
   </footer>
 )

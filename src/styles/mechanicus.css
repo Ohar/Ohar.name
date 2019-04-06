@@ -18,7 +18,7 @@
 }
 
 .mechanicus__logo:before {
-    background-image: url(/images/am_outside.png);
+    background-image: url('./../images/am_outside.png');
     height: 500px;
     width: 500px;
     left: calc(50% - 250px);
@@ -45,7 +45,7 @@
             animation-delay: 1s;
 }
 .mechanicus__logo:after {
-    background-image: url(/images/am_inside.png);
+    background-image: url('./../images/am_inside.png');
     height: 500px;
     width: 500px;
     left: calc(50% - 250px);

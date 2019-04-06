@@ -20,7 +20,7 @@
     background-color: #fff;
     color: #000;
 }
-.menu_list_item_link:first-child,
+.menu_list_item:first-child .menu_list_item_link,
 .menu_list_item_link-img {
     padding: 0 1em;
     background-color: transparent;

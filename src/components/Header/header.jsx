@@ -4,8 +4,7 @@ import React from "react"
 
 import ImgLogo from '@/images/logo.png'
 
-import '@/styles/menu.css'
-
+import './menu.css'
 import './header.css'
 
 const menuList = [

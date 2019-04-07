@@ -19,7 +19,6 @@ const AboutPage = () => (
       Моё <a
         href={CV}
         download
-        target="_blank"
       >
         резюме
       </a> (на английском).

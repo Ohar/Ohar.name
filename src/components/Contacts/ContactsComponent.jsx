@@ -130,6 +130,7 @@ const contactList = [
   },
 ]
 
+// TODO: use here LinkList
 const ContactsComponent = () => (
   <ul className="contacts">
     {

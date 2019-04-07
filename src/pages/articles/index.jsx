@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from "gatsby"
 
 import Layout from '@/components/Layout'
+import LinkList from '@/components/LinkList'
 import Seo from '@/components/Seo'
+
+import funnyJsArticleList from '@/constants/funnyJsArticleList'
 
 const articleList = [
   {
@@ -12,6 +14,11 @@ const articleList = [
   {
     url: '/articles/how-does-a-visually-impaired-computer-programmer-do-programming',
     text: 'Как программируют слабовидящие программисты?',
+  },
+  {
+    url: '/articles/funny-js',
+    text: 'Минутка занимательного яваскрипта?',
+    subList: funnyJsArticleList,
   },
 ]
 
@@ -23,19 +30,7 @@ const ArticlesPage = () => (
       keywords={['Pavel Lysenko\'s articles', 'Статьи Павла Лысенко']}
     />
     <h1>Статьи</h1>
-    <ul>
-      {
-        articleList.map(
-          ({url, text}) => (
-            <li>
-              <Link to={url}>
-                {text}
-              </Link>
-            </li>
-          )
-        )
-      }
-    </ul>
+    <LinkList list={articleList}/>
   </Layout>
 )
 

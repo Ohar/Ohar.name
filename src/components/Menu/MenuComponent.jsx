@@ -66,11 +66,6 @@ const menuList = [
     ),
   },
   {
-    gatsbyReady: false,
-    url: '/funny_js',
-    content: 'Минутка занимательного яваскрипта',
-  },
-  {
     url: '/articles',
     title: 'Статьи обо всяком',
     content: 'Статьи',

@@ -59,16 +59,21 @@ const menuList = [
     url: '/about',
     title: 'Связаться со мной',
     content: (
-      <span>
+      <>
         <span className="icon-torso"/>
         Обо мне
-      </span>
+      </>
     ),
   },
   {
     gatsbyReady: false,
     url: '/funny_js',
     content: 'Минутка занимательного яваскрипта',
+  },
+  {
+    url: '/articles',
+    title: 'Статьи обо всяком',
+    content: 'Статьи',
   },
 ]
 

@@ -5,8 +5,8 @@ import Layout from "@/components/Layout"
 import Seo from "@/components/Seo"
 
 import RulesPdf from "./files/Rules.pdf"
-import RulesRtf from "./files/Rules.rtf"
-import RulesDoc from "./files/Rules.doc"
+// import RulesRtf from "./files/Rules.rtf"
+// import RulesDoc from "./files/Rules.doc"
 
 import RulesHtml from "./RulesText"
 import RulesBwHtml from "./RulesText_BW"
@@ -40,21 +40,21 @@ export default () => (
             PDF, 198&thinsp;КиБ
           </a>
         </li>
-        <li>
-          <a title="Правила оформления текстов на русском языке (RTF, 204 КиБ)"
-             href={RulesRtf}
-             download>
-            RTF, 204&thinsp;КиБ
-          </a>
-        </li>
-        <li>
-          <a
-            href={RulesDoc}
-            download
-          >
-            DOC, 47&thinsp;КиБ
-          </a>
-        </li>
+        {/*<li>*/}
+        {/*  <a title="Правила оформления текстов на русском языке (RTF, 204 КиБ)"*/}
+        {/*     href={RulesRtf}*/}
+        {/*     download>*/}
+        {/*    RTF, 204&thinsp;КиБ*/}
+        {/*  </a>*/}
+        {/*</li>*/}
+        {/*<li>*/}
+        {/*  <a*/}
+        {/*    href={RulesDoc}*/}
+        {/*    download*/}
+        {/*  >*/}
+        {/*    DOC, 47&thinsp;КиБ*/}
+        {/*  </a>*/}
+        {/*</li>*/}
       </ul>
       <h2>Текст правил</h2>
       <ul>

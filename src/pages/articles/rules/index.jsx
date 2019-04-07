@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 import Layout from "@/components/Layout"
 import Seo from "@/components/Seo"
 
-import RulesPdf from "@/files/Rules.pdf"
-import RulesRtf from "@/files/Rules.rtf"
-import RulesDoc from "@/files/Rules.doc"
+import RulesPdf from "./files/Rules.pdf"
+import RulesRtf from "./files/Rules.rtf"
+import RulesDoc from "./files/Rules.doc"
 
 import RulesHtml from "./RulesText"
 import RulesBwHtml from "./RulesText_BW"

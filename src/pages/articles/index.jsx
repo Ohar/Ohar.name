@@ -20,6 +20,10 @@ const articleList = [
     text: 'Минутка занимательного яваскрипта?',
     subList: funnyJsArticleList,
   },
+  {
+    url: '/articles/rules',
+    text: 'Правила оформления текстов на русском языке',
+  },
 ]
 
 const ArticlesPage = () => (

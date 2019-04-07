@@ -7,7 +7,6 @@ import './MenuStyles.css'
 
 const menuList = [
   {
-    gatsbyReady: false,
     url: '/',
     title: 'На главную',
     content: (
@@ -21,7 +20,6 @@ const menuList = [
     ),
   },
   {
-    gatsbyReady: false,
     url: 'https://github.com/Ohar/',
     title: 'Профиль на GitHub',
     content: 'GitHub',
@@ -31,12 +29,6 @@ const menuList = [
     url: '/life',
     title: 'Поиграть в «Жизнь»',
     content: 'Игра «Жизнь»',
-  },
-  {
-    gatsbyReady: false,
-    url: '/rules',
-    title: 'Правила оформления текстов на русском языке',
-    content: 'Оформлениe текстов',
   },
   {
     gatsbyReady: false,

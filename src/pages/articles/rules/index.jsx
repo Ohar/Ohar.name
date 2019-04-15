@@ -8,7 +8,7 @@ import Seo from "@/components/Seo"
 // import RulesRtf from "./files/Rules.rtf"
 // import RulesDoc from "./files/Rules.doc"
 
-import rulesRawText from './rules-raw-text'
+import RulesRawText from './RulesRawText'
 
 import './styles/rules.css'
 
@@ -57,7 +57,9 @@ export default () => (
       {/*</ul>*/}
       <h2>Текст правил</h2>
 
-      <article dangerouslySetInnerHTML={{ __html: rulesRawText}}/>
+      <article>
+        <RulesRawText/>
+      </article>
     </section>
   </Layout>
 )

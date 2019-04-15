@@ -1,7 +1,7 @@
-.generate {
+.NameGenerator_btn {
     font-size: 3em;
 }
-.generatedArea {
+.NameGenerator_result {
     display: block;
     width: 100%;
     font-size: 3em;

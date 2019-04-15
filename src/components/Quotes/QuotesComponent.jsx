@@ -105,9 +105,10 @@ class QuotesComponent extends Component {
                 >
                   №&thinsp;{quoteId}
                 </a>
-                <p className='quote_text'>
-                  {quote.text}
-                </p>
+                <p
+                  className='quote_text'
+                  dangerouslySetInnerHTML={quote.text}
+                />
                 <cite className='quote_cite'>
                   <a
                     className='quote_origin'

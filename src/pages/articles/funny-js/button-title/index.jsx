@@ -34,8 +34,8 @@ export default () => (
 
       <h2>Почему так?</h2>
 
-      <p>А это просто-напросто <a target="_blank" rel="nofollow"
-                                  href="https://bugzilla.mozilla.org/show_bug.cgi?id=183113&GoAheadAndLogIn=1">баг</a>,
+      <p>А это просто-напросто
+        <a target="_blank" rel="nofollow noopener noreferrer" href="https://bugzilla.mozilla.org/show_bug.cgi?id=183113&GoAheadAndLogIn=1">баг</a>,
         открытый ещё в 2002 году.</p>
 
       <h3>А что говорит спецификация?</h3>
@@ -46,7 +46,7 @@ export default () => (
         <cite>
           <a href="https://www.w3.org/TR/2011/WD-html5-20110405/elements.html#the-title-attribute"
              target="_blank"
-             rel="nofollow">W3C</a>
+             rel="nofollow noopener noreferrer">W3C</a>
         </cite>
       </blockquote>
 
@@ -56,7 +56,7 @@ export default () => (
         <cite>
           <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title"
              target="_blank"
-             rel="nofollow">MDN</a>
+             rel="nofollow noopener noreferrer">MDN</a>
         </cite>
       </blockquote>
 
@@ -66,7 +66,7 @@ export default () => (
       <h2>Что же делать?</h2>
 
       <p>Всё не так плохо, можно нагло заменять <code>title</code> псевдоэлементом.
-        Решение <a target="_blank" rel="nofollow" href="https://jsfiddle.net/pqrbdjsc/">предложено</a>
+        Решение <a target="_blank" rel="nofollow noopener noreferrer" href="https://jsfiddle.net/pqrbdjsc/">предложено</a>
         Антоном Немцовым.</p>
 
       <p>

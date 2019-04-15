@@ -29,7 +29,7 @@ arr[-1]; // foo — но это не так</code>
 — Нет.
 — И я не вижу. А он есть!
 </pre>
-        <cite>© <a target="_blank" rel="nofollow"
+        <cite>© <a target="_blank" rel="nofollow noopener noreferrer"
                    href="https://ru.wikiquote.org/wiki/%D0%94%D0%9C%D0%91_%28%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%29">прапорщик
           Казаков, фильм «ДМБ»</a></cite>
       </blockquote>

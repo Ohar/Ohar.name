@@ -122,7 +122,7 @@ class QuotesComponent extends Component {
                     className='quote_origin'
                     target='_blank'
                     href={quote.url}
-                    rel='nofollow'
+                    rel='nofollow noopener noreferrer'
                   >
                     {quote.author}
                   </a>

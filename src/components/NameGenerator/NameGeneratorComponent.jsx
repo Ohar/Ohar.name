@@ -23,7 +23,7 @@ class NameGeneratorComponent extends Component {
   }
 
   generate = () => {
-    const {gender, type, resultName} = this.state
+    const {gender, type} = this.state
 
     this.setState({
       resultName: generateName(gender, type),

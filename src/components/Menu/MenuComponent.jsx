@@ -31,7 +31,7 @@ const menuList = [
     content: 'Игра «Жизнь»',
   },
   {
-    url: '/quotes/#0',
+    url: '/quotes',
     title: 'Всякие цитаты',
     content: (
       <span>

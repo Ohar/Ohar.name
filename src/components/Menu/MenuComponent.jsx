@@ -31,7 +31,6 @@ const menuList = [
     content: 'Игра «Жизнь»',
   },
   {
-    gatsbyReady: false,
     url: '/quotes/#0',
     title: 'Всякие цитаты',
     content: (

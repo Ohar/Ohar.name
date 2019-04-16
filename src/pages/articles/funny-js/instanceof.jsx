@@ -39,6 +39,9 @@ true instanceof Boolean // false
         <em>являются экземплярами своих классов</em>, потому как конструктор создаёт не примитив, но объект.</p>
 
       <code>
+        {
+          /* eslint-disable react/jsx-no-comment-textnodes */
+        }
 <pre>
 // НИ В КОЕМ СЛУЧАЕ НЕ ПОВТОРЯЙТЕ ЭТОГО ДОМА ИЛИ НА РАБОТЕ
 // ЭТО МОЖЕТ ПРИВЕСТИ К САМОВОЛОСОВЫРЫВАНИЮ ИЛИ ПОБИТИЮ КОЛЛЕГАМИ
@@ -46,6 +49,9 @@ let foo = new String('bar');
 foo instanceof String // true
 </pre>
       </code>
+      {
+        /* eslint-enable react/jsx-no-comment-textnodes */
+      }
 
       <h2>Что же делать?</h2>
 

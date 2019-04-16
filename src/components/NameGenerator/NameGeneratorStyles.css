@@ -1,0 +1,10 @@
+.NameGenerator_btn {
+    font-size: 3em;
+}
+.NameGenerator_result {
+    display: block;
+    width: 100%;
+    font-size: 3em;
+    text-align: center;
+    box-sizing: border-box;
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "text": "Любой",
+    "value": "all"
+  },
+  {
+    "iconClass": "icon-male",
+    "text": "Мужской",
+    "value": "male"
+  },
+  {
+    "iconClass": "icon-female",
+    "text": "Женский",
+    "value": "female"
+  }
+]

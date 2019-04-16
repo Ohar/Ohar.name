@@ -1,0 +1,21 @@
+[
+  {
+    "text": "Любые",
+    "value": "all"
+  },
+  {
+    "iconClass": "icon-sun",
+    "text": "Славянские",
+    "value": "slavic"
+  },
+  {
+    "iconClass": "icon-star",
+    "text": "Советские",
+    "value": "soviet"
+  },
+  {
+    "iconClass": "icon-bank",
+    "text": "Греческие",
+    "value": "greek"
+  }
+]

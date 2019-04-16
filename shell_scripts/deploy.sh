@@ -11,33 +11,23 @@ declare -r USERNAME=`node -p 'require("./../config.json")["username"]'`;
 
 declare -r URL=$USERNAME@$SERVER
 
-declare -r FILE_NAME_OLD="old_static_site.zip"
-declare -r FILE_NAME_SPA="spa.zip"
+declare -r FILE_NAME="spa.zip"
 
-declare -r FOLDER_OLD=$FOLDER"/old_static_site"
 declare -r FOLDER_SPA=$FOLDER"/spa"
 
-scp ./../dist/$FILE_NAME_OLD $URL:~
-scp ./../dist/$FILE_NAME_SPA $URL:~
+scp ./../dist/$FILE_NAME $URL:~
 
 ssh -tt $URL <<DEPLOY
-    echo $FOLDER_OLD
     echo $FOLDER_SPA
     echo $USERNAME
     echo $SERVER
 
-    sudo rm -rf $FOLDER_OLD/*
     sudo rm -rf $FOLDER_SPA/*
-    sudo mv ~/$FILE_NAME_OLD $FOLDER_OLD
-    sudo mv ~/$FILE_NAME_SPA $FOLDER_SPA
-
-    cd $FOLDER_OLD
-    sudo unzip -u $FILE_NAME_OLD
-    sudo rm $FILE_NAME_OLD
+    sudo mv ~/$FILE_NAME $FOLDER_SPA
 
     cd $FOLDER_SPA
-    sudo unzip -u $FILE_NAME_SPA
-    sudo rm $FILE_NAME_SPA
+    sudo unzip -u $FILE_NAME
+    sudo rm $FILE_NAME
 
     sudo systemctl restart nginx
     echo "Done"

@@ -31,8 +31,7 @@ const menuList = [
     content: 'Игра «Жизнь»',
   },
   {
-    gatsbyReady: false,
-    url: '/quotes/#0',
+    url: '/quotes',
     title: 'Всякие цитаты',
     content: (
       <span>
@@ -42,7 +41,6 @@ const menuList = [
     ),
   },
   {
-    gatsbyReady: false,
     url: '/names',
     title: 'Славянские, советские и греческие имена из Википедии',
     content: 'Генератор имён',

@@ -17,7 +17,7 @@ const articleList = [
   },
   {
     url: '/articles/funny-js',
-    text: 'Минутка занимательного яваскрипта?',
+    text: 'Минутка занимательного яваскрипта',
     subList: funnyJsArticleList,
   },
   {

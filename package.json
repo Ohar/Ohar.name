@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run gatsby:develop",
     "dev": "npm run gatsby:develop",
-    "zip": "cd ./public && bestzip ./../dist/spa.zip ./* && cd ./.. && echo 'SPA Zipped'",
+    "zip": "cd ./public && bestzip ./../dist/ohar.name.zip ./* && cd ./.. && echo 'SPA Zipped'",
     "deploy": "bash ./shell_scripts/deploy.sh && echo 'Deployed'",
     "build": "npm run gatsby:build && npm run zip echo 'Builded'",
     "update_site": "npm run build && npm run deploy && echo 'Site is updated'",

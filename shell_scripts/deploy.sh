@@ -11,7 +11,7 @@ declare -r USERNAME=`node -p 'require("./../config.json")["username"]'`;
 
 declare -r URL=$USERNAME@$SERVER
 
-declare -r FILE_NAME="spa.zip"
+declare -r FILE_NAME="ohar.name.zip"
 
 scp ./../dist/$FILE_NAME $URL:~
 

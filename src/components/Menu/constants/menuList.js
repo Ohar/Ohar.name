@@ -22,12 +22,6 @@ const menuList = [
     content: 'GitHub',
   },
   {
-    gatsbyReady: false,
-    url: '/life',
-    title: 'Поиграть в «Жизнь»',
-    content: 'Игра «Жизнь»',
-  },
-  {
     url: '/quotes',
     title: 'Всякие цитаты',
     content: (

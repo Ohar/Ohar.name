@@ -44,6 +44,12 @@ const menuList = [
     iconClass: 'icon-doc-text',
     content: 'Статьи',
   },
+  {
+    url: '/dnd',
+    title: 'Dungeons & Dragons',
+    iconClass: 'icon-magic',
+    content: 'D&D',
+  },
 ]
 
 export default menuList

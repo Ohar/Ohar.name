@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
-@font-face {
- font-family: 'oharname';
- src: url('oharname.eot?45687207');
- src: url('oharname.eot?45687207#iefix') format('embedded-opentype'),
-      url('oharname.woff2?45687207') format('woff2'),
-      url('oharname.woff?45687207') format('woff'),
-      url('oharname.ttf?45687207') format('truetype'),
-      url('oharname.svg?45687207#oharname') format('svg');
- font-weight: normal;
- font-style: normal;
+ @font-face {
+  font-family: 'oharname';
+  src: url('oharname.eot?39696639');
+  src: url('oharname.eot?39696639#iefix') format('embedded-opentype'),
+       url('oharname.woff2?39696639') format('woff2'),
+       url('oharname.woff?39696639') format('woff'),
+       url('oharname.ttf?39696639') format('truetype'),
+       url('oharname.svg?39696639#oharname') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
@@ -17,7 +17,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'oharname';
-    src: url('/oharname.svg?45687207#oharname') format('svg');
+    src: url('oharname.svg?39696639#oharname') format('svg');
   }
 }
 */
@@ -78,6 +78,7 @@
 .icon-stackoverflow:before { content: '\f16c'; } /* '' */
 .icon-twitter:before { content: '🐦'; } /* '\1f426' */
 .icon-github-circled:before { content: '🐱'; } /* '\1f431' */
+.icon-magic:before { content: '🐲'; } /* '\1f432' */
 .icon-torso:before { content: '👨'; } /* '\1f468' */
 .icon-doc-text:before { content: '📃'; } /* '\1f4c3' */
 .icon-mail:before { content: '📧'; } /* '\1f4e7' */

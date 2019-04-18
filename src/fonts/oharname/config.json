@@ -155,6 +155,12 @@
       "css": "doc-text",
       "code": 128195,
       "src": "typicons"
+    },
+    {
+      "uid": "ff70f7b3228702e0d590e60ed3b90bea",
+      "css": "magic",
+      "code": 128050,
+      "src": "fontawesome"
     }
   ]
 }

@@ -12,6 +12,7 @@ function Seo({ description, lang, meta, keywords, title }) {
             title
             description
             author
+            version
           }
         }
       }
@@ -54,6 +55,10 @@ function Seo({ description, lang, meta, keywords, title }) {
         {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
+        },
+        {
+          name: `version`,
+          content: site.siteMetadata.version,
         },
         {
           name: `twitter:title`,

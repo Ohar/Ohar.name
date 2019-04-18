@@ -39,9 +39,9 @@ QuotePageTemplate.defaultProps = {
 }
 
 QuotePageTemplate.propTypes = {
-  quoteId: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+  quoteId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   pageContext: PropTypes.shape({
-    slug: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+    slug: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }),
 }
 

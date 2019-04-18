@@ -24,12 +24,8 @@ const menuList = [
   {
     url: '/quotes',
     title: 'Всякие цитаты',
-    content: (
-      <span>
-        <span className="icon-quote-left"/>
-        Цитаты
-      </span>
-    ),
+    iconClass: 'icon-quote-left',
+    content: 'Цитаты',
   },
   {
     url: '/names',
@@ -39,22 +35,14 @@ const menuList = [
   {
     url: '/about',
     title: 'Связаться со мной',
-    content: (
-      <>
-        <span className="icon-torso"/>
-        Обо мне
-      </>
-    ),
+    iconClass: 'icon-torso',
+    content: 'Обо мне',
   },
   {
     url: '/articles',
     title: 'Статьи обо всяком',
-    content: (
-      <span>
-        <span className="icon-doc-text"/>
-        Статьи
-      </span>
-    ),
+    iconClass: 'icon-doc-text',
+    content: 'Статьи',
   },
 ]
 

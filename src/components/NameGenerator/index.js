@@ -1,1 +1,1 @@
-export default from './NameGeneratorComponent'
+export default from './NameGeneratorContainer'

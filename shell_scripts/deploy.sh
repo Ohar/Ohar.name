@@ -11,21 +11,15 @@ declare -r USERNAME=`node -p 'require("./../config.json")["username"]'`;
 
 declare -r URL=$USERNAME@$SERVER
 
-declare -r FILE_NAME="spa.zip"
-
-declare -r FOLDER_SPA=$FOLDER"/spa"
+declare -r FILE_NAME="ohar.name.zip"
 
 scp ./../dist/$FILE_NAME $URL:~
 
 ssh -tt $URL <<DEPLOY
-    echo $FOLDER_SPA
-    echo $USERNAME
-    echo $SERVER
+    sudo rm -rf $FOLDER/*
+    sudo mv ~/$FILE_NAME $FOLDER
 
-    sudo rm -rf $FOLDER_SPA/*
-    sudo mv ~/$FILE_NAME $FOLDER_SPA
-
-    cd $FOLDER_SPA
+    cd $FOLDER
     sudo unzip -u $FILE_NAME
     sudo rm $FILE_NAME
 

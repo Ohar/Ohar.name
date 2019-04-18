@@ -1,72 +1,63 @@
-import React, { Component } from "react"
+import React from "react"
+import PropTypes from "prop-types"
 
-import RadioSet from '@/components/RadioSet'
+import RadioSet from "@/components/RadioSet"
 
-import genderFieldList from './constants/genderFieldList'
-import typeFieldList from './constants/typeFieldList'
+import genderFieldList from "./constants/genderFieldList"
+import typeFieldList from "./constants/typeFieldList"
 
-import generateName from './utils/generateName'
+import "./NameGeneratorStyles.css"
 
-import './NameGeneratorStyles.css'
+const NameGeneratorComponent = (
+  {
+    gender, type, resultName, onChangeRadio, onGenerate,
+  },
+) => (
+  <section className='NameGenerator'>
+    <RadioSet
+      chosen={gender}
+      fieldList={genderFieldList}
+      name='gender'
+      onChange={onChangeRadio("gender")}
+      title='Пол'
+    />
+    <RadioSet
+      chosen={type}
+      fieldList={typeFieldList}
+      name='type'
+      onChange={onChangeRadio("type")}
+      title='Тип'
+    />
 
-class NameGeneratorComponent extends Component {
-  state = {
-    gender: genderFieldList[0].value,
-    type: typeFieldList[0].value,
-    resultName: '',
-  }
+    <button
+      className='NameGenerator_btn'
+      type='button'
+      onClick={onGenerate}
+    >
+      Сгенерить
+    </button>
 
-  onChangeRadio = name => value => {
-    this.setState({
-      [name]: value,
-    })
-  }
+    <input
+      className='NameGenerator_result'
+      type='text'
+      value={resultName}
+      readOnly
+    />
+  </section>
+)
 
-  generate = () => {
-    const {gender, type} = this.state
+NameGeneratorComponent.propTypes = {
+  gender: PropTypes.string,
+  type: PropTypes.string,
+  resultName: PropTypes.string,
+  onChangeRadio: PropTypes.func.isRequired,
+  onGenerate: PropTypes.func.isRequired,
+}
 
-    this.setState({
-      resultName: generateName(gender, type),
-    })
-  }
-
-  render() {
-    const {gender, type, resultName} = this.state
-
-    return (
-      <section className='NameGenerator'>
-        <RadioSet
-          chosen={gender}
-          fieldList={genderFieldList}
-          name='gender'
-          onChange={this.onChangeRadio('gender')}
-          title='Пол'
-        />
-        <RadioSet
-          chosen={type}
-          fieldList={typeFieldList}
-          name='type'
-          onChange={this.onChangeRadio('type')}
-          title='Тип'
-        />
-
-        <button
-          className='NameGenerator_btn'
-          type='button'
-          onClick={this.generate}
-        >
-          Сгенерить
-        </button>
-
-        <input
-          className='NameGenerator_result'
-          type='text'
-          value={resultName}
-          readOnly
-        />
-      </section>
-    )
-  }
+NameGeneratorComponent.defaultProps = {
+  gender: 'all',
+  type: 'all',
+  resultName: '',
 }
 
 export default NameGeneratorComponent

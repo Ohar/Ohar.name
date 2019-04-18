@@ -1,8 +1,9 @@
 [
   {
-    "name": "foo",
-    "description": "foo",
-    "cost": "10",
+    "name": "Лёгкий доспех — Стёганный",
+    "description": "КД 11 + модификатор Лов; мешает скрытности",
+    "cost": "500",
+    "weight": "8",
     "supply": {
       "village_shop": {
         "probability": 1,
@@ -12,15 +13,16 @@
     }
   },
   {
-    "name": "bar",
-    "description": "bar",
-    "cost": "20",
+    "name": "Лёгкий доспех — Кожаный",
+    "description": "КД 11 + модификатор Лов",
+    "cost": "1000",
+    "weight": "10",
     "supply": {
       "village_shop": {
-        "probability": 0.5,
-        "min": 2,
-        "max": 3
+        "probability": 1,
+        "min": 0,
+        "max": 100
       }
     }
-  }
+  },
 ]

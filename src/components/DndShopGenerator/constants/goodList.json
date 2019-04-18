@@ -1,0 +1,26 @@
+[
+  {
+    "name": "foo",
+    "description": "foo",
+    "cost": "10",
+    "supply": {
+      "village_shop": {
+        "probability": 10,
+        "min": 0,
+        "max": 100
+      }
+    }
+  },
+  {
+    "name": "bar",
+    "description": "bar",
+    "cost": "20",
+    "supply": {
+      "village_shop": {
+        "probability": 50,
+        "min": 2,
+        "max": 3
+      }
+    }
+  }
+]

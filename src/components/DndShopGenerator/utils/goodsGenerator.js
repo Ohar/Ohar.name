@@ -1,25 +1,35 @@
 import goodList from './../constants/goodList'
+import ANY_TYPE from "../constants/ANY_TYPE"
+
+import getRandomShopType from './getRandomShopType'
 
 export default function goodsGenerator(shopType) {
+  console.log('goodsGenerator', shopType);
   return goodList.reduce(
     (shopGoods, good) => {
-      const supply = good.supply[shopType]
+      const supply = shopType === ANY_TYPE
+        ? good.supply[getRandomShopType()]
+        : good.supply[shopType]
+
+      console.log('supply', supply);
 
       if (supply) {
         const {probability} = supply
 
-        const isPresent = Math.random() >= probability
+        const isPresent = Math.random() >= 1 - probability
 
         if (isPresent) {
           const {min, max} = supply
           const {name, description, cost} = good
 
-          const quantity = Math.min(
+          const quantity = Math.round(
             Math.max(
-              min + Math.random() * (max - min),
-              max
-            ),
-            min
+              Math.min(
+                min + Math.random() * (max - min),
+                max
+              ),
+              min
+            )
           )
 
           return [

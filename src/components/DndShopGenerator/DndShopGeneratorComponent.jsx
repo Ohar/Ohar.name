@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import RadioSet from "@/components/RadioSet"
 
-import typeFieldList from "./constants/typeFieldList"
+import shopTypeList from "./constants/shopTypeList"
 
 import "./DndShopGeneratorStyles.css"
 
@@ -17,14 +17,18 @@ const DndShopGeneratorComponent = (
 ) => (
   <section className='DndShopGenerator'>
     <header>Генератор ассортимента магазинов</header>
+
     <RadioSet
       chosen={type}
-      fieldList={typeFieldList}
+      fieldList={shopTypeList}
       name='type'
       onChange={onChangeType}
       title='Тип магазина'
     />
-    <button onClick={onGenerate}>Сгенерировать ассортимент магазина</button>
+
+    <button onClick={onGenerate}>
+      Сгенерировать ассортимент магазина {type}
+    </button>
     {
       goodList.length
         ? (
@@ -32,7 +36,7 @@ const DndShopGeneratorComponent = (
             {
               goodList.map(
                 (good, i) => (
-                  <li key={i}>{good}</li>
+                  <li key={i}>{JSON.stringify(good)}</li>
                 )
               )
             }

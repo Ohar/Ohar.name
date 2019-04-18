@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import typeFieldList from "./constants/typeFieldList"
+import shopTypeList from "./constants/shopTypeList"
 
 import goodsGenerator from "./utils/goodsGenerator"
 
@@ -8,7 +8,7 @@ import DndShopGeneratorComponent from "./DndShopGeneratorComponent"
 
 class DndShopGeneratorContainer extends Component {
   state = {
-    type: typeFieldList[0].value,
+    type: shopTypeList[0].value,
     goodList: [],
   }
 
@@ -17,6 +17,7 @@ class DndShopGeneratorContainer extends Component {
   }
 
   generate = () => {
+    console.log('generate');
     const {type} = this.state
 
     this.setState({

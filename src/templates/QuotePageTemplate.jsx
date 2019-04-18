@@ -7,24 +7,7 @@ import Quotes from '@/components/Quotes'
 import quotesList from "@/constants/quotesList"
 import DEFAULT_QUOTE_ID from '@/constants/DEFAULT_QUOTE_ID'
 
-const getQuoteData = search => search
-  .substring(1) // remove ´?´ symbol
-  .split('&')
-  .map(
-    str => str.split('='),
-  )
-  .find(
-    ([key]) => key === 'id',
-  )
-
-const getQuoteId = search => {
-  const data = getQuoteData(search)
-
-  return data && data[1] || DEFAULT_QUOTE_ID
-}
-
-const QuotesPage = ({ location: {search} }) => {
-  const quoteId = getQuoteId(search)
+const QuotePageTemplate = ({pageContext: {slug: quoteId = DEFAULT_QUOTE_ID}}) => {
   const quote = quotesList[quoteId]
 
   const title = quoteId
@@ -46,4 +29,4 @@ const QuotesPage = ({ location: {search} }) => {
   )
 }
 
-export default QuotesPage
+export default QuotePageTemplate

@@ -68,7 +68,7 @@ class QuotesComponent extends Component {
             isPrevBtnEnabled
               ? (
                 <Link
-                  to={`/quotes?id=${quoteId - 1}`}
+                  to={`/quotes/${quoteId - 1}`}
                   title='Предыдущая цитата'
                 >
                   ←
@@ -77,7 +77,7 @@ class QuotesComponent extends Component {
               : <span>←</span>
           }
 
-          <Link to={`/quotes?id=${this.getRandomQuoteNum()}`}>
+          <Link to={`/quotes/${this.getRandomQuoteNum()}`}>
             Случайная цитата
           </Link>
 
@@ -85,7 +85,7 @@ class QuotesComponent extends Component {
             isNextBtnEnabled
               ? (
                 <Link
-                  to={`/quotes?id=${quoteId + 1}`}
+                  to={`/quotes/${quoteId + 1}`}
                   title='Следующая цитата'
                 >
                   →

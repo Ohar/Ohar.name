@@ -1,48 +1,44 @@
-import goodList from './../constants/goodList'
+import goodList from "./../constants/goodList"
 import ANY_TYPE from "../constants/ANY_TYPE"
 
-import getRandomShopType from './getRandomShopType'
+import getRandomShopType from "./getRandomShopType"
 
-export default function goodsGenerator(shopType) {
-  console.log('goodsGenerator', shopType);
-  return goodList.reduce(
-    (shopGoods, good) => {
-      const supply = shopType === ANY_TYPE
-        ? good.supply[getRandomShopType()]
-        : good.supply[shopType]
+const goodsGenerator = (shopType) => goodList.reduce(
+  (shopGoods, { supply, ...otherGoodParams }) => {
+    const inShop = shopType === ANY_TYPE
+      ? supply[getRandomShopType()]
+      : supply[shopType]
 
-      console.log('supply', supply);
+    if (inShop) {
+      const { probability } = inShop
 
-      if (supply) {
-        const {probability} = supply
+      const isPresent = Math.random() >= 1 - probability
 
-        const isPresent = Math.random() >= 1 - probability
+      if (isPresent) {
+        const { min, max } = inShop
 
-        if (isPresent) {
-          const {min, max} = supply
-          const {name, description, cost} = good
+        const quantity = Math.round(
+          Math.max(
+            Math.min(
+              min + Math.random() * (max - min),
+              max,
+            ),
+            min,
+          ),
+        )
 
-          const quantity = Math.round(
-            Math.max(
-              Math.min(
-                min + Math.random() * (max - min),
-                max
-              ),
-              min
-            )
-          )
-
-          return [
-            ...shopGoods,
-            {name, description, cost, quantity}
-          ]
-        } else {
-          return shopGoods
-        }
+        return [
+          ...shopGoods,
+          { quantity, ...otherGoodParams },
+        ]
       } else {
         return shopGoods
       }
-    },
-    []
-  )
-}
+    } else {
+      return shopGoods
+    }
+  },
+  [],
+)
+
+export default goodsGenerator

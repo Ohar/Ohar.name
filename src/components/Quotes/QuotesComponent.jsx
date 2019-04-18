@@ -107,7 +107,7 @@ class QuotesComponent extends Component {
                 </a>
                 <p
                   className='quote_text'
-                  dangerouslySetInnerHTML={quote.text}
+                  dangerouslySetInnerHTML={{__html: quote.text}}
                 />
                 <cite className='quote_cite'>
                   <a

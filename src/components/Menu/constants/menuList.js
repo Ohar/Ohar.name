@@ -49,7 +49,12 @@ const menuList = [
   {
     url: '/articles',
     title: 'Статьи обо всяком',
-    content: 'Статьи',
+    content: (
+      <span>
+        <span className="icon-doc-text"/>
+        Статьи
+      </span>
+    ),
   },
 ]
 

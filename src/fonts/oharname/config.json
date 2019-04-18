@@ -149,6 +149,12 @@
       "css": "twitter",
       "code": 128038,
       "src": "fontawesome"
+    },
+    {
+      "uid": "6a06892e76b81e023da6ddfb38a26b37",
+      "css": "doc-text",
+      "code": 128195,
+      "src": "typicons"
     }
   ]
 }

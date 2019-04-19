@@ -1,10 +1,12 @@
 [
   {
-    "name": "Лёгкий доспех — Стёганный",
-    "description": "КД 11 + модификатор Лов; мешает скрытности",
+    "name": "Стёганный доспех",
+    "description": "КД 11 + модификатор Лов. Мешает скрытности",
     "cost": "500",
     "weight": "8",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Лёгкие доспехи",
     "supply": {
       "armory": {
         "probability": 0.3,
@@ -14,11 +16,13 @@
     }
   },
   {
-    "name": "Лёгкий доспех — Кожаный",
+    "name": "Кожаный доспех",
     "description": "КД 11 + модификатор Лов",
     "cost": "1000",
     "weight": "10",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Лёгкие доспехи",
     "supply": {
       "armory": {
         "probability": 0.2,
@@ -28,11 +32,13 @@
     }
   },
   {
-    "name": "Лёгкий доспех — Проклёпанная кожа",
+    "name": "Доспех из проклёпанной кожи",
     "description": "КД 12 + модификатор Лов",
     "cost": "4500",
     "weight": "13",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Лёгкие доспехи",
     "supply": {
       "armory": {
         "probability": 0.1,
@@ -42,11 +48,13 @@
     }
   },
   {
-    "name": "Средний доспех — Шкурный",
+    "name": "Шкурный доспех",
     "description": "КД 12 + модификатор Лов (макс. 2)",
     "cost": "1000",
     "weight": "12",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Средние доспехи",
     "supply": {
       "armory": {
         "probability": 0.1,
@@ -56,11 +64,13 @@
     }
   },
   {
-    "name": "Средний доспех — Кольчужная рубаха",
+    "name": "Кольчужная рубаха",
     "description": "КД 13 + модификатор Лов (макс. 2)",
     "cost": "5000",
     "weight": "20",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Средние доспехи",
     "supply": {
       "armory": {
         "probability": 0.1,
@@ -70,11 +80,13 @@
     }
   },
   {
-    "name": "Средний доспех — Чешуйчатый",
-    "description": "КД 14 + модификатор Лов (макс. 2); мешает скрытности",
+    "name": "Чешуйчатый доспех",
+    "description": "КД 14 + модификатор Лов (макс. 2). Мешает скрытности",
     "cost": "5000",
     "weight": "45",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Средние доспехи",
     "supply": {
       "armory": {
         "probability": 0.1,
@@ -84,11 +96,13 @@
     }
   },
   {
-    "name": "Средний доспех — Кираса",
+    "name": "Кираса",
     "description": "КД 14 + модификатор Лов (макс. 2)",
     "cost": "40000",
     "weight": "20",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Средние доспехи",
     "supply": {
       "armory": {
         "probability": 0.1,
@@ -98,11 +112,13 @@
     }
   },
   {
-    "name": "Средний доспех — Полулаты",
-    "description": "КД 15 + модификатор Лов (макс. 2); мешает скрытности",
+    "name": "Полулаты",
+    "description": "КД 15 + модификатор Лов (макс. 2). Мешает скрытности",
     "cost": "75000",
     "weight": "40",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Средние доспехи",
     "supply": {
       "armory": {
         "probability": 0.1,
@@ -112,11 +128,13 @@
     }
   },
   {
-    "name": "Тяжёлый доспех — Колечный",
-    "description": "КД 14; мешает скрытности",
+    "name": "Колечный доспех",
+    "description": "КД 14. Мешает скрытности",
     "cost": "3000",
     "weight": "40",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Тяжёлые доспехи",
     "supply": {
       "armory": {
         "probability": 0.1,
@@ -126,11 +144,13 @@
     }
   },
   {
-    "name": "Тяжёлый доспех — Кольчуга",
-    "description": "КД 16; требует Сил 13; мешает скрытности",
+    "name": "Кольчуга",
+    "description": "КД 16; требует Сил 13. Мешает скрытности",
     "cost": "7500",
     "weight": "55",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Тяжёлые доспехи",
     "supply": {
       "armory": {
         "probability": 0.1,
@@ -140,11 +160,13 @@
     }
   },
   {
-    "name": "Тяжёлый доспех — Наборный",
-    "description": "КД 17; требует Сил 15; мешает скрытности",
+    "name": "Наборный доспех",
+    "description": "КД 17; требует Сил 15. Мешает скрытности",
     "cost": "20000",
     "weight": "60",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Тяжёлые доспехи",
     "supply": {
       "armory": {
         "probability": 0.1,
@@ -154,11 +176,13 @@
     }
   },
   {
-    "name": "Тяжёлый доспех — Латы",
-    "description": "КД 18; требует Сил 15; мешает скрытности",
+    "name": "Латы",
+    "description": "КД 18. Требует Сил 15. Мешает скрытности",
     "cost": "150000",
     "weight": "65",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Тяжёлые доспехи",
     "supply": {
       "armory": {
         "probability": 0.1,
@@ -173,9 +197,603 @@
     "cost": "1000",
     "weight": "6",
     "source": "PHB:145",
+    "category": "Доспехи",
+    "subcategory": "Щиты",
     "supply": {
       "armory": {
         "probability": 0.1,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Боевой посох",
+    "description": "Урон 1к6 дробящий. Универсальное (1к8)",
+    "cost": "20",
+    "weight": "4",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.9,
+        "min": 0,
+        "max": 3
+      }
+    }
+  },
+  {
+    "name": "Булава",
+    "description": "Урон 1к6 дробящий",
+    "cost": "500",
+    "weight": "4",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.7,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Дубинка",
+    "description": "Урон 1к4 дробящий. Лёгкое",
+    "cost": "10",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.9,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Кинжал",
+    "description": "Урон 1к4 колющий. Лёгкое, метательное (дис. 20/60), фехтовальное",
+    "cost": "200",
+    "weight": "1",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Копьё",
+    "description": "Урон 1к6 колющий. Метательное (дис. 20/60), универсальное (1к8)",
+    "cost": "100",
+    "weight": "3",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Лёгкий молот",
+    "description": "Урон 1к4 дробящий. Лёгкое, метательное (дис. 20/60)",
+    "cost": "200",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Метательное копьё",
+    "description": "Урон 1к6 колющий. Метательное (дис. 30/120) ",
+    "cost": "50",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Палица",
+    "description": "Урон 1к8 колющий. Двуручное",
+    "cost": "20",
+    "weight": "10",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Ручной топор",
+    "description": "Урон 1к6 рубящий. Лёгкое, метательное (дис. 20/60) ",
+    "cost": "500",
+    "weight": "10",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Серп",
+    "description": "Урон 1к4 рубящий. Лёгкое",
+    "cost": "100",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Арбалет, лёгкий ",
+    "description": "Урон 1к8 колющий. Боеприпас (дис. 80/320), двуручное, перезарядка",
+    "cost": "2500",
+    "weight": "5",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое дальнобойное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Дротик",
+    "description": "Урон 1к4 колющий. Метательное (дис. 20/60), фехтовальное",
+    "cost": "5",
+    "weight": "0.25",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое дальнобойное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Короткий лук",
+    "description": "Урон 1к6 колющий. Боеприпас (дис. 80/320), двуручное",
+    "cost": "2500",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое дальнобойное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Праща",
+    "description": "Урон 1к4 дробящий. Боеприпас (дис. 30/120) ",
+    "cost": "10",
+    "weight": "0",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Простое дальнобойное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.8,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Алебарда",
+    "description": "Урон 1к10 рубящий. Двуручное, досягаемость, тяжёлое ",
+    "cost": "2000",
+    "weight": "6",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.3,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Боевая кирка ",
+    "description": "Урон 1к8 колющий",
+    "cost": "500",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.3,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Боевой молот  ",
+    "description": "Урон 1к8 дробящий; Универсальное (1к10) ",
+    "cost": "1500",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.3,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Боевой топор ",
+    "description": "Урон 1к8 рубящий; Универсальное (1к10) ",
+    "cost": "1000",
+    "weight": "4",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.3,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Глефа",
+    "description": "Урон 1к10 рубящий; Двуручное, досягаемость, тяжёлое",
+    "cost": "2000",
+    "weight": "6",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.3,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Двуручный меч ",
+    "description": "Урон 2к6 рубящий; Двуручное, тяжёлое",
+    "cost": "5000",
+    "weight": "6",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.3,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Длинное копьё ",
+    "description": "Урон 1к12 колющий; Досягаемость, особое ",
+    "cost": "1000",
+    "weight": "6",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Длинный меч ",
+    "description": "Урон 1к8 рубящий; Универсальное (1к10)",
+    "cost": "1500",
+    "weight": "3",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Кнут",
+    "description": "Урон 1к4 рубящий; Досягаемость, фехтовальное ",
+    "cost": "200",
+    "weight": "3",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Короткий меч",
+    "description": "Урон 1к6 колющий; Лёгкое, фехтовальное ",
+    "cost": "1000",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Молот",
+    "description": "Урон 2к6 колющий; Двуручное, тяжёлое ",
+    "cost": "1000",
+    "weight": "10",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Моргенштерн",
+    "description": "Урон 1к8 колющий",
+    "cost": "1500",
+    "weight": "4",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Пика",
+    "description": "Урон 1к10 колющий; Двуручное, досягаемость, тяжёлое ",
+    "cost": "500",
+    "weight": "18",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Рапира",
+    "description": "Урон 1к8 колющий; Фехтовальное",
+    "cost": "2500",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Секира",
+    "description": "Урон 1к12 колющий; Двуручное, тяжёлое ",
+    "cost": "3000",
+    "weight": "7",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Скимитар",
+    "description": "Урон 1к6 колющий; Лёгкое, фехтовальное ",
+    "cost": "2500",
+    "weight": "3",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Трезубец",
+    "description": "Урон 1к6 колющий; Метательное (дис. 20/60), универсальное (1к8) ",
+    "cost": "500",
+    "weight": "4",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Цеп",
+    "description": "Урон 1к8 дробящий",
+    "cost": "1000",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское рукопашное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Арбалет, ручной ",
+    "description": "Урон 1к6 колющий; Боеприпас (дис. 30/120), лёгкое, перезарядка ",
+    "cost": "7500",
+    "weight": "3",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское дальнобойное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Арбалет, тяжёлый ",
+    "description": "Урон 1к10 колющий; Боеприпас (дис. 100/400), двуручное, перезарядка, тяжёлое",
+    "cost": "5000",
+    "weight": "18",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское дальнобойное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Длинный лук ",
+    "description": "Урон 1к8 колющий; Боеприпас (дис. 150/600), двуручное, тяжёлое",
+    "cost": "5000",
+    "weight": "2",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское дальнобойное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Духовая трубка ",
+    "description": "Урон 1 колющий; Боеприпас (дис. 25/100), перезарядка ",
+    "cost": "1000",
+    "weight": "1",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское дальнобойное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  {
+    "name": "Сеть",
+    "description": "Метательное (дис. 5/15), особое",
+    "cost": "100",
+    "weight": "3",
+    "source": "PHB:149",
+    "category": "Оружие",
+    "subcategory": "Воинское дальнобойное оружие",
+    "supply": {
+      "armory": {
+        "probability": 0.2,
         "min": 0,
         "max": 1
       }

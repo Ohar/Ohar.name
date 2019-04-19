@@ -1,11 +1,11 @@
-input[type=radio] {
+.RadioSet_input {
     position: absolute;
     width: 1px;
     height: 1px;
     opacity: .01;
 }
 
-input[type=radio] + label {
+.RadioSet_input + .RadioSet_label {
     border-color: #fff;
     border-style: solid;
     border-width: 1px 0 1px 1px;
@@ -18,7 +18,7 @@ input[type=radio] + label {
             border-radius: 0;
 }
 
-input[type=radio]:first-of-type + label {
+.RadioSet_item:first-of-type > .RadioSet_label {
     padding: .2em .4em;
     cursor: pointer;
     white-space: nowrap;
@@ -28,34 +28,33 @@ input[type=radio]:first-of-type + label {
             border-radius: 4px 0 0 4px;
 }
 
-input[type=radio] + label:last-of-type {
+.RadioSet_item:last-of-type > .RadioSet_label {
     border-width: 1px;
     -webkit-border-radius: 0 4px 4px 0;
        -moz-border-radius: 0 4px 4px 0;
             border-radius: 0 4px 4px 0;
 }
 
-input[type=radio]:checked + label,
-input[type=radio]:focus + label,
-input[type=radio]:active + label,
-input[type=radio] + label:hover {
+.RadioSet_input:checked + .RadioSet_label,
+.RadioSet_input:focus + .RadioSet_label,
+.RadioSet_input:active + .RadioSet_label,
+.RadioSet_input + .RadioSet_label:hover {
     border-color: gold;
     color: gold;
-    border-width: 1px;
 }
 
-input[type=radio]:checked + label + input[type=radio] + label,
-input[type=radio]:focus + label + input[type=radio] + label,
-input[type=radio]:active + label + input[type=radio] + label,
-input[type=radio] + label:hover + input[type=radio] + label {
+.RadioSet_item-isChecked + .RadioSet_item > .RadioSet_label,
+.RadioSet_input:focus + .RadioSet_label + .RadioSet_input + .RadioSet_label,
+.RadioSet_input:active + .RadioSet_label + .RadioSet_input + .RadioSet_label,
+.RadioSet_input + .RadioSet_label:hover + .RadioSet_input + .RadioSet_label {
     border-left-width: 0;
 }
 
-input[type=radio]:checked + label {
+.RadioSet_item.RadioSet_item-isChecked > .RadioSet_label {
     background-color: gold;
     color: black;
 }
 
-input[type=radio] + label[class^="icon-"] {
+.RadioSet_input + .RadioSet_label[class^="icon-"] {
     padding-left: 2.5em;
 }

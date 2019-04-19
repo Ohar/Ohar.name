@@ -1,37 +1,52 @@
 import React from 'react'
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
-const RadioSet = ({title, name, fieldList, chosen, onChange}) => (
-  <fieldset>
+import './RadioSetStyles.css'
+
+const RadioSetComponent = ({title, name, fieldList, chosen, onChange}) => (
+  <fieldset className='RadioSet'>
     <legend>{title}</legend>
 
     {
       fieldList.map(
-        ({value, text, iconClass}) => (
-          <span key={`${name}_${value}`}>
+        ({value, text, iconClass}) => {
+          const isChecked = chosen === value
+          return (
+            <span
+              key={`${name}_${value}`}
+              className={classNames(
+                'RadioSet_item',
+                {
+                  'RadioSet_item-isChecked': isChecked,
+                }
+              )}
+            >
             <input
               type='radio'
+              className='RadioSet_input'
               key={`${name}_${value}`}
               id={`${name}_${value}`}
               name={name}
               value={value}
               onChange={() => onChange(value)}
-              checked={chosen === value}
+              checked={isChecked}
             />
             <label
               htmlFor={`${name}_${value}`}
-              className={iconClass || ''}
+              className={classNames('RadioSet_label', iconClass || '')}
             >
               {text}
             </label>
           </span>
-        )
+          )
+        }
       )
     }
   </fieldset>
 )
 
-RadioSet.propTypes = {
+RadioSetComponent.propTypes = {
   chosen: PropTypes.string.isRequired,
   fieldList: PropTypes.arrayOf(PropTypes.shape({
     iconClass: PropTypes.string,
@@ -43,4 +58,4 @@ RadioSet.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-export default RadioSet
+export default RadioSetComponent

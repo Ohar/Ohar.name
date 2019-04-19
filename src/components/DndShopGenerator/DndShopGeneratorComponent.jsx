@@ -3,31 +3,42 @@ import PropTypes from "prop-types"
 
 import RadioSet from "@/components/RadioSet"
 
+import cityTypeList from "./constants/cityTypeList"
 import shopTypeList from "./constants/shopTypeList"
 
 import "./DndShopGeneratorStyles.css"
 
 const DndShopGeneratorComponent = (
   {
+    cityType,
     goodList,
-    onChangeType,
+    onChangeCityType,
+    onChangeShopType,
     onGenerate,
-    type,
+    shopType,
   }
 ) => (
   <section className='DndShopGenerator'>
-    <header>Генератор ассортимента магазинов</header>
+    <h1>Генератор ассортимента магазинов</h1>
 
     <RadioSet
-      chosen={type}
+      chosen={shopType}
       fieldList={shopTypeList}
-      name='type'
-      onChange={onChangeType}
+      name='shopType'
+      onChange={onChangeShopType}
       title='Тип магазина'
     />
 
+    <RadioSet
+      chosen={cityType}
+      fieldList={cityTypeList}
+      name='cityType'
+      onChange={onChangeCityType}
+      title='Тип поселения'
+    />
+
     <button onClick={onGenerate}>
-      Сгенерировать ассортимент магазина {type}
+      Сгенерировать ассортимент магазина
     </button>
     {
       goodList.length
@@ -49,9 +60,11 @@ const DndShopGeneratorComponent = (
 
 DndShopGeneratorComponent.propTypes = {
   goodList: PropTypes.array.isRequired,
-  onChangeType: PropTypes.func.isRequired,
+  onChangeCityType: PropTypes.func.isRequired,
+  onChangeShopType: PropTypes.func.isRequired,
   onGenerate: PropTypes.func.isRequired,
-  type: PropTypes.string.isRequired,
+  cityType: PropTypes.string.isRequired,
+  shopType: PropTypes.string.isRequired,
 }
 
 export default DndShopGeneratorComponent

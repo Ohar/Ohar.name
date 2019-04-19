@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import shopTypeList from "./constants/shopTypeList"
+import cityTypeList from "./constants/cityTypeList"
 
 import goodsGenerator from "./utils/goodsGenerator"
 
@@ -8,31 +9,37 @@ import DndShopGeneratorComponent from "./DndShopGeneratorComponent"
 
 class DndShopGeneratorContainer extends Component {
   state = {
-    type: shopTypeList[0].value,
+    shopType: shopTypeList[0].value,
+    cityType: cityTypeList[0].value,
     goodList: [],
   }
 
-  onChangeType = type => {
-    this.setState({type})
+  onChangeShopType = shopType => {
+    this.setState({shopType})
+  }
+
+  onChangeCityType = cityType => {
+    this.setState({cityType})
   }
 
   generate = () => {
-    console.log('generate');
-    const {type} = this.state
+    const {shopType, cityType} = this.state
 
     this.setState({
-      goodList: goodsGenerator(type),
+      goodList: goodsGenerator(shopType, cityType),
     })
   }
 
   render() {
-    const {type, goodList} = this.state
+    const {shopType, cityType, goodList} = this.state
 
     return (
       <DndShopGeneratorComponent
-        onChangeType={this.onChangeType}
+        onChangeShopType={this.onChangeShopType}
+        onChangeCityType={this.onChangeCityType}
         onGenerate={this.generate}
-        type={type}
+        cityType={cityType}
+        shopType={shopType}
         goodList={goodList}
       />
     )

@@ -1,22 +1,17 @@
 import goodList from "./../constants/goodList"
-import ANY_TYPE from "../constants/ANY_TYPE"
+import {cityTypeCollection} from "./../constants/cityTypeList"
 
-import getRandomShopType from "./getRandomShopType"
-
-const goodsGenerator = (shopType) => goodList.reduce(
+const goodsGenerator = (shopType, cityType) => goodList.reduce(
   (shopGoods, { supply, ...otherGoodParams }) => {
-    const inShop = shopType === ANY_TYPE
-      ? supply[getRandomShopType()]
-      : supply[shopType]
+    const inShop = supply[shopType]
 
     if (inShop) {
       const { probability } = inShop
-
-      const isPresent = Math.random() >= 1 - probability
+      const { supplyKoef } = cityTypeCollection[cityType]
+      const isPresent = Math.random() >= 1 - probability * supplyKoef
 
       if (isPresent) {
         const { min, max } = inShop
-
         const quantity = Math.round(
           Math.max(
             Math.min(
@@ -27,16 +22,16 @@ const goodsGenerator = (shopType) => goodList.reduce(
           ),
         )
 
-        return [
-          ...shopGoods,
-          { quantity, ...otherGoodParams },
-        ]
-      } else {
-        return shopGoods
+        if (quantity) {
+          return [
+            ...shopGoods,
+            { quantity, ...otherGoodParams },
+          ]
+        }
       }
-    } else {
-      return shopGoods
     }
+
+    return shopGoods
   },
   [],
 )

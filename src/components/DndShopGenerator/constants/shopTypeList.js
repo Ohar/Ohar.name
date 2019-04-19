@@ -1,13 +1,27 @@
-import ANY_TYPE from './ANY_TYPE'
-
 const shopTypeList = [
   {
-    text: 'Произвольный магазин',
-    value: ANY_TYPE,
+    text: 'Лавка',
+    value: 'shop',
   },
   {
-    text: 'Деревенская лавка',
-    value: 'village_shop',
+    text: 'Храм',
+    value: 'temple',
+  },
+  {
+    text: 'Гильдия магов',
+    value: 'mageguild',
+  },
+  {
+    text: 'Конюшня',
+    value: 'stable',
+  },
+  {
+    text: 'Картограф',
+    value: 'cartographer',
+  },
+  {
+    text: 'Оружейный магазин',
+    value: 'armory',
   },
 ]
 

@@ -2,12 +2,12 @@ const cityTypeList = [
   {
     text: 'Деревня',
     value: 'village',
-    supplyKoef: 0.05,
+    supplyKoef: 0.2,
   },
   {
     text: 'Небольшой городок',
     value: 'town',
-    supplyKoef: 0.15,
+    supplyKoef: 0.4,
   },
   {
     text: 'Большой город',

@@ -1,0 +1,18 @@
+.DndItemTable {
+    margin: 1em;
+}
+
+.DndItemTable_cell {
+    border-width: 0 0 1px 1px;
+    border-color: #fff;
+    border-style: solid;
+    padding: .5em;
+}
+
+.DndItemTable_cell:last-child {
+    border-right-width: 1px;
+}
+
+.DndItemTable_row:first-child > .DndItemTable_cell {
+    border-top-width: 1px;
+}

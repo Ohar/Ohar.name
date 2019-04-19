@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import PageTitle from "@/components/PageTitle"
 import RadioGroup from "@/components/RadioGroup"
 import RadioSet from "@/components/RadioSet"
+import DndItemTable from "@/components/DndItemTable"
 
 import cityTypeList from "./constants/cityTypeList"
 import shopTypeList from "./constants/shopTypeList"
@@ -46,18 +47,8 @@ const DndShopGeneratorComponent = (
     </button>
     {
       goodList.length
-        ? (
-          <ul>
-            {
-              goodList.map(
-                (good, i) => (
-                  <li key={i}>{JSON.stringify(good)}</li>
-                )
-              )
-            }
-          </ul>
-        )
-        : null
+        ? <DndItemTable itemList={goodList} className='DndShopGenerator_result'/>
+        : <p className='DndShopGenerator_result'>В магазине пусто</p>
     }
   </section>
 )

@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import PageTitle from "@/components/PageTitle"
 import RadioGroup from "@/components/RadioGroup"
 import RadioSet from "@/components/RadioSet"
 
@@ -20,7 +21,7 @@ const DndShopGeneratorComponent = (
   }
 ) => (
   <section className='DndShopGenerator'>
-    <h1>Генератор ассортимента магазинов</h1>
+    <PageTitle>Генератор ассортимента магазинов</PageTitle>
     <RadioGroup>
       <RadioSet
         chosen={shopType}

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import PageTitle from '@/components/PageTitle'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import Contacts from '@/components/Contacts'
@@ -13,7 +14,7 @@ const AboutPage = () => (
       description='Как со мной связаться'
       keywords={['Pavel Lysenko\'s contacts', 'Контакты Павла Лысенко']}
     />
-    <h1>Обо мне</h1>
+    <PageTitle>Обо мне</PageTitle>
     <p>Привет! Меня зовут Павел Лысенко. Я — веб-разработчик.</p>
     <p>
       Моё <a

@@ -24,6 +24,10 @@ nav {
     width: 100%;
 }
 
+h1 {
+    margin-bottom: 1em;
+}
+
 h2 {
 	color: gold;
 	text-shadow: 1px 1px #000, -1px -1px #000, -1px 1px #000, 1px -1px #000;

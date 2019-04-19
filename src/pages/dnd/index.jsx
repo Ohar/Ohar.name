@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Layout from '@/components/Layout'
+import PageTitle from '@/components/PageTitle'
 import Seo from '@/components/Seo'
 import DndShopGenerator from '@/components/DndShopGenerator'
 
@@ -14,7 +15,7 @@ const DndPage = () => (
         'Dungeons & Dragons tools', 'D&D tools', 'DnD tools', 'dnd tools'
       ]}
     />
-    <h1>Генераторы для Dungeons & Dragons</h1>
+    <PageTitle>Генераторы для Dungeons & Dragons</PageTitle>
     <DndShopGenerator/>
   </Layout>
 )

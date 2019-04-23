@@ -4,8 +4,6 @@ import consonantList from '@/constants/consonantList'
 
 import postfixCollection from './../constants/postfixCollection'
 
-import getNameList from './getNameList'
-
 const isConsonant = string => _.includes(consonantList, string)
 
 const postfixes = {
@@ -36,13 +34,4 @@ export default function getSurname(nameList, gender) {
   }
 
   return basis + postfix
-}
-
-function generateName(gender, type) {
-  const nameList = getNameList(gender, type)
-
-  const firstname = _.sample(nameList)
-  const surname = getSurname(nameList, gender)
-
-  return `${firstname} ${surname} `
 }

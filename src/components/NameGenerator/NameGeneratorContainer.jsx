@@ -1,45 +1,85 @@
-import React, { Component } from "react"
+import React, { PureComponent } from "react"
+import PropTypes from "prop-types"
 
-import genderFieldList from './constants/genderFieldList'
-import typeFieldList from './constants/typeFieldList'
-
-import generateName from './utils/generateName'
 import NameGeneratorComponent from './NameGeneratorComponent'
 
-class NameGeneratorContainer extends Component {
+class NameGeneratorContainer extends PureComponent {
   state = {
-    gender: genderFieldList[0].value,
-    type: typeFieldList[0].value,
-    resultName: '',
+    typeCollection: {},
+    result: '',
   }
 
-  onChangeRadio = name => value => {
+  componentDidMount() {
+    const {typeList} = this.props
+
+    const typeCollection = typeList.reduce(
+      (summ, item) => ({
+        ...summ,
+        [item.type]: {
+          ...item,
+          chosen: 'chosen' in item
+            ? item.chosen
+            : item.list[0].value
+        },
+      }),
+      {}
+    )
+
+    this.setState({typeCollection})
+  }
+
+  onChangeRadio = type => chosen => {
+    const {typeCollection} = this.state
+
     this.setState({
-      [name]: value,
+      typeCollection: {
+        ...typeCollection,
+        [type]: {
+          ...typeCollection[type],
+          chosen,
+        },
+      },
     })
   }
 
   onGenerate = () => {
-    const {gender, type} = this.state
+    const {typeCollection} = this.state
+    const {generate} = this.props
+
+    const params = Object.keys(typeCollection).reduce(
+      (summ, type) => ({
+        ...summ,
+        [type]: typeCollection[type].chosen,
+      }),
+      {}
+    )
 
     this.setState({
-      resultName: generateName(gender, type),
+      result: generate(params),
     })
   }
 
   render() {
-    const {gender, type, resultName} = this.state
+    const {result, typeCollection} = this.state
 
     return (
       <NameGeneratorComponent
-        gender={gender}
-        type={type}
-        resultName={resultName}
-        onGenerate={this.onGenerate}
         onChangeRadio={this.onChangeRadio}
+        onGenerate={this.onGenerate}
+        result={result}
+        typeList={Object.values(typeCollection)}
       />
     )
   }
+}
+
+NameGeneratorContainer.propTypes = {
+  typeList: PropTypes.array,
+  generate: PropTypes.func.isRequired,
+}
+
+NameGeneratorContainer.defaultProps = {
+  typeList: [],
 }
 
 export default NameGeneratorContainer

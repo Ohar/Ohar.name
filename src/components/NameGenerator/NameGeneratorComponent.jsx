@@ -3,31 +3,31 @@ import PropTypes from "prop-types"
 
 import RadioSet from "@/components/RadioSet"
 
-import genderFieldList from "./constants/genderFieldList"
-import typeFieldList from "./constants/typeFieldList"
-
 import "./NameGeneratorStyles.css"
 
 const NameGeneratorComponent = (
   {
-    gender, type, resultName, onChangeRadio, onGenerate,
+    onChangeRadio,
+    onGenerate,
+    result,
+    typeList,
   },
 ) => (
   <section className='NameGenerator'>
-    <RadioSet
-      chosen={gender}
-      fieldList={genderFieldList}
-      name='gender'
-      onChange={onChangeRadio("gender")}
-      title='Пол'
-    />
-    <RadioSet
-      chosen={type}
-      fieldList={typeFieldList}
-      name='type'
-      onChange={onChangeRadio("type")}
-      title='Тип'
-    />
+    {
+      typeList.map(
+        ({type, title, chosen, list}) => (
+          <RadioSet
+            key={type}
+            chosen={chosen}
+            fieldList={list}
+            name={type}
+            onChange={onChangeRadio(type)}
+            title={title}
+          />
+        )
+      )
+    }
 
     <button
       className='NameGenerator_btn'
@@ -40,24 +40,26 @@ const NameGeneratorComponent = (
     <input
       className='NameGenerator_result'
       type='text'
-      value={resultName}
+      value={result}
       readOnly
     />
   </section>
 )
 
 NameGeneratorComponent.propTypes = {
-  gender: PropTypes.string,
-  type: PropTypes.string,
-  resultName: PropTypes.string,
+  typeList: PropTypes.arrayOf(PropTypes.shape({
+    type: PropTypes.string,
+    title: PropTypes.string,
+    chosen: PropTypes.string,
+    list: PropTypes.array,
+  })),
+  result: PropTypes.string,
   onChangeRadio: PropTypes.func.isRequired,
   onGenerate: PropTypes.func.isRequired,
 }
 
 NameGeneratorComponent.defaultProps = {
-  gender: 'all',
-  type: 'all',
-  resultName: '',
+  result: '',
 }
 
 export default NameGeneratorComponent

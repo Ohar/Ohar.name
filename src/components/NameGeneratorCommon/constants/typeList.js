@@ -1,4 +1,5 @@
-import genderFieldList from "./genderFieldList"
+import genderFieldList from "@/constants/genderFieldList"
+
 import typeFieldList from "./typeFieldList"
 
 const commonTypeList = [

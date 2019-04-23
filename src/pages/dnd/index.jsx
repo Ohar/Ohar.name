@@ -4,6 +4,7 @@ import Layout from '@/components/Layout'
 import PageTitle from '@/components/PageTitle'
 import Seo from '@/components/Seo'
 import DndShopGenerator from '@/components/DndShopGenerator'
+import NameGeneratorChult from '@/components/NameGeneratorChult'
 
 const DndPage = () => (
   <Layout>
@@ -17,6 +18,7 @@ const DndPage = () => (
     />
     <PageTitle>Генераторы для Dungeons & Dragons</PageTitle>
     <DndShopGenerator/>
+    <NameGeneratorChult/>
   </Layout>
 )
 

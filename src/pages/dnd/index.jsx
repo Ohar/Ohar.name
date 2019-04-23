@@ -1,10 +1,20 @@
 import React from 'react'
+import { Link } from "gatsby"
 
 import Layout from '@/components/Layout'
 import PageTitle from '@/components/PageTitle'
 import Seo from '@/components/Seo'
-import DndShopGenerator from '@/components/DndShopGenerator'
-import NameGeneratorChult from '@/components/NameGeneratorChult'
+
+const dndSubpageList = [
+  {
+    title: 'Генератор ассортимента магазинов',
+    url: '/dnd/generator-shop',
+  },
+  {
+    title: 'Генератор имён чультов',
+    url: '/dnd/generator-names-chult',
+  },
+]
 
 const DndPage = () => (
   <Layout>
@@ -17,8 +27,19 @@ const DndPage = () => (
       ]}
     />
     <PageTitle>Генераторы для Dungeons & Dragons</PageTitle>
-    <DndShopGenerator/>
-    <NameGeneratorChult/>
+    <ul>
+      {
+        dndSubpageList.map(
+          ({title, url}) => (
+            <li>
+              <Link to={url}>
+                {title}
+              </Link>
+            </li>
+          )
+        )
+      }
+    </ul>
   </Layout>
 )
 

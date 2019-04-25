@@ -1,9 +1,10 @@
 import { Link } from "gatsby"
 import React from "react"
 
+import MenuIcon from '@/components/MenuIcon'
+
 import menuList from './constants/menuList'
 import isOuterLink from './utils/isOuterLink'
-import MenuIcon from './components/MenuIcon'
 
 import './MenuStyles.css'
 

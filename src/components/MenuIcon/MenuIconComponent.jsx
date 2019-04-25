@@ -1,16 +1,16 @@
 import React from "react"
 import PropTypes from 'prop-types'
 
-const MenuIcon = ({iconClass}) => iconClass
+const MenuIconComponent = ({iconClass}) => iconClass
   ? <span className={iconClass}/>
   : null
 
-MenuIcon.propTypes = {
+MenuIconComponent.propTypes = {
   iconClass: PropTypes.string,
 }
 
-MenuIcon.defaultProps = {
+MenuIconComponent.defaultProps = {
   iconClass: '',
 }
 
-export default MenuIcon
+export default MenuIconComponent

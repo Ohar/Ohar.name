@@ -2,15 +2,18 @@ import React from 'react'
 import { Link } from "gatsby"
 
 import Layout from '@/components/Layout'
+import MenuIcon from '@/components/MenuIcon'
 import PageTitle from '@/components/PageTitle'
 import Seo from '@/components/Seo'
 
 const dndSubpageList = [
   {
+    iconClass: 'icon-shop',
     title: 'Генератор ассортимента магазинов',
     url: '/dnd/generator-shop',
   },
   {
+    iconClass: 'icon-person',
     title: 'Генератор имён чультов',
     url: '/dnd/generator-names-chult',
   },
@@ -30,9 +33,10 @@ const DndPage = () => (
     <ul>
       {
         dndSubpageList.map(
-          ({title, url}) => (
+          ({title, url, iconClass}) => (
             <li>
               <Link to={url}>
+                <MenuIcon iconClass={iconClass}/>
                 {title}
               </Link>
             </li>

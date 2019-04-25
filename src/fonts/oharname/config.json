@@ -161,6 +161,18 @@
       "css": "magic",
       "code": 128050,
       "src": "fontawesome"
+    },
+    {
+      "uid": "5d27926667773d186de09fda4312af27",
+      "css": "shop",
+      "code": 127960,
+      "src": "linecons"
+    },
+    {
+      "uid": "1e394b6cd5e0da3e10d8e4f3fe355960",
+      "css": "person",
+      "code": 59402,
+      "src": "elusive"
     }
   ]
 }

@@ -31,16 +31,12 @@ class DndShopGeneratorContainer extends Component {
   }
 
   render() {
-    const {shopType, cityType, goodList} = this.state
-
     return (
       <DndShopGeneratorComponent
+        {...this.state}
         onChangeShopType={this.onChangeShopType}
         onChangeCityType={this.onChangeCityType}
         onGenerate={this.generate}
-        cityType={cityType}
-        shopType={shopType}
-        goodList={goodList}
       />
     )
   }

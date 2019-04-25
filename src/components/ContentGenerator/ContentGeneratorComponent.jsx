@@ -14,20 +14,24 @@ const ContentGeneratorComponent = (
   },
 ) => (
   <section className='ContentGenerator'>
-    {
-      typeList.map(
-        ({type, title, chosen, list}) => (
-          <RadioSet
-            key={type}
-            chosen={chosen}
-            fieldList={list}
-            name={type}
-            onChange={onChangeRadio(type)}
-            title={title}
-          />
+    <ul className='ContentGenerator_list'>
+      {
+        typeList.map(
+          ({type, title, chosen, list}) => (
+            <li className='ContentGenerator_item'>
+              <RadioSet
+                key={type}
+                chosen={chosen}
+                fieldList={list}
+                name={type}
+                onChange={onChangeRadio(type)}
+                title={title}
+              />
+            </li>
+          )
         )
-      )
-    }
+      }
+    </ul>
 
     <button
       className='ContentGenerator_btn'

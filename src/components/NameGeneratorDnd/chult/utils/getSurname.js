@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-import NAMES_FAMILY from "./../dict/names_family"
+import CHULT_NAMES_FAMILY from "../dict/names_family"
 
 export default function getSurname(type) {
   switch (type) {
@@ -9,10 +9,10 @@ export default function getSurname(type) {
 
     case 'all':
       return Math.random() > 0.5
-        ? _.sample(NAMES_FAMILY.names)
+        ? _.sample(CHULT_NAMES_FAMILY)
         : ''
 
     default:
-      return _.sample(NAMES_FAMILY.names)
+      return _.sample(CHULT_NAMES_FAMILY)
   }
 }

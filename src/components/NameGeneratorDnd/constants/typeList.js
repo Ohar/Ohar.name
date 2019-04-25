@@ -1,6 +1,6 @@
 import genderFieldList from "@/constants/genderFieldList"
 
-import typeFieldList from "./typeFieldList"
+import typeFieldList from "../chult/typeFieldList"
 
 const typeList = [
   {

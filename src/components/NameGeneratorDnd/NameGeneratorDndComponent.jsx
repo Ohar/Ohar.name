@@ -5,11 +5,11 @@ import PageTitle from "@/components/PageTitle"
 
 import typeList from "./constants/typeList"
 
-import generateName from "./utils/generateName"
+import generateName from "./chult/utils/generateName"
 
-const NameGeneratorChultComponent = () => (
+const NameGeneratorDndComponent = () => (
   <section>
-    <PageTitle>Генератор имён чультов</PageTitle>
+    <PageTitle>Генератор имён для D&D</PageTitle>
     <ContentGenerator
       generate={generateName}
       typeList={typeList}
@@ -17,4 +17,4 @@ const NameGeneratorChultComponent = () => (
   </section>
 )
 
-export default NameGeneratorChultComponent
+export default NameGeneratorDndComponent

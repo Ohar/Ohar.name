@@ -1,9 +1,9 @@
 import React, { PureComponent } from "react"
 import PropTypes from "prop-types"
 
-import NameGeneratorComponent from './NameGeneratorComponent'
+import ContentGeneratorComponent from './ContentGeneratorComponent'
 
-class NameGeneratorContainer extends PureComponent {
+class ContentGeneratorContainer extends PureComponent {
   state = {
     typeCollection: {},
     result: '',
@@ -63,7 +63,7 @@ class NameGeneratorContainer extends PureComponent {
     const {result, typeCollection} = this.state
 
     return (
-      <NameGeneratorComponent
+      <ContentGeneratorComponent
         onChangeRadio={this.onChangeRadio}
         onGenerate={this.onGenerate}
         result={result}
@@ -73,13 +73,13 @@ class NameGeneratorContainer extends PureComponent {
   }
 }
 
-NameGeneratorContainer.propTypes = {
+ContentGeneratorContainer.propTypes = {
   typeList: PropTypes.array,
   generate: PropTypes.func.isRequired,
 }
 
-NameGeneratorContainer.defaultProps = {
+ContentGeneratorContainer.defaultProps = {
   typeList: [],
 }
 
-export default NameGeneratorContainer
+export default ContentGeneratorContainer

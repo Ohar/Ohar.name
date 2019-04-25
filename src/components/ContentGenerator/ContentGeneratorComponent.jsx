@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 
 import RadioSet from "@/components/RadioSet"
 
-import "./NameGeneratorStyles.css"
+import "./ContentGeneratorStyles.css"
 
-const NameGeneratorComponent = (
+const ContentGeneratorComponent = (
   {
     onChangeRadio,
     onGenerate,
@@ -13,7 +13,7 @@ const NameGeneratorComponent = (
     typeList,
   },
 ) => (
-  <section className='NameGenerator'>
+  <section className='ContentGenerator'>
     {
       typeList.map(
         ({type, title, chosen, list}) => (
@@ -30,7 +30,7 @@ const NameGeneratorComponent = (
     }
 
     <button
-      className='NameGenerator_btn'
+      className='ContentGenerator_btn'
       type='button'
       onClick={onGenerate}
     >
@@ -38,7 +38,7 @@ const NameGeneratorComponent = (
     </button>
 
     <input
-      className='NameGenerator_result'
+      className='ContentGenerator_result'
       type='text'
       value={result}
       readOnly
@@ -46,7 +46,7 @@ const NameGeneratorComponent = (
   </section>
 )
 
-NameGeneratorComponent.propTypes = {
+ContentGeneratorComponent.propTypes = {
   typeList: PropTypes.arrayOf(PropTypes.shape({
     type: PropTypes.string,
     title: PropTypes.string,
@@ -58,8 +58,8 @@ NameGeneratorComponent.propTypes = {
   onGenerate: PropTypes.func.isRequired,
 }
 
-NameGeneratorComponent.defaultProps = {
+ContentGeneratorComponent.defaultProps = {
   result: '',
 }
 
-export default NameGeneratorComponent
+export default ContentGeneratorComponent

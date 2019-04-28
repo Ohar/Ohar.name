@@ -7,18 +7,18 @@ const biomeList = [
     text: 'Джунгли: без нежити',
     value: 'jungle_undead_clear',
   },
-  // {
-  //   text: 'Джунгли: мало нежити',
-  //   value: 'jungle_undead_few',
-  // },
-  // {
-  //   text: 'Джунгли: много нежити',
-  //   value: 'jungle_undead_many',
-  // },
-  // {
-  //   text: 'Горы',
-  //   value: 'mountain',
-  // },
+  {
+    text: 'Джунгли: мало нежити',
+    value: 'jungle_undead_few',
+  },
+  {
+    text: 'Джунгли: много нежити',
+    value: 'jungle_undead_many',
+  },
+  {
+    text: 'Горы',
+    value: 'mountain',
+  },
   // {
   //   text: 'Реки',
   //   value: 'river',

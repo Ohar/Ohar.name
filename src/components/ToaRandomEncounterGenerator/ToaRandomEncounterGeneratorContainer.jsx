@@ -14,7 +14,6 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
     encounterEndDay: null,
     encounterNight: null,
     isEncounterHappensOnFirstPartOfNight: false,
-    diceResults: [],
   }
 
   rollDice = diceNum => () => Math.round(Math.random() * (diceNum - 1))
@@ -27,16 +26,8 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
   }
 
   generateEncounter = () => {
-    const {diceResults} = this.state
     const d20Roll = this.rollD20() + 1
     const isEncounter = d20Roll >= ENCOUNTER_D20_MIN
-
-    this.setState({
-      diceResults: [
-        ...diceResults,
-        d20Roll,
-      ]
-    })
 
     if (isEncounter) {
       const { biome } = this.state
@@ -50,25 +41,17 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
   }
 
   generateTodayEncounters = () => {
-    this.setState(
-      {
-        diceResults: [],
-      },
-      () => {
-        const encounterStartDay = this.generateEncounter()
-        const encounterEndDay = this.generateEncounter()
-        const encounterNight = this.generateEncounter()
-        const isEncounterHappensOnFirstPartOfNight = Math.random() >= 0.5
+    const encounterStartDay = this.generateEncounter()
+    const encounterEndDay = this.generateEncounter()
+    const encounterNight = this.generateEncounter()
+    const isEncounterHappensOnFirstPartOfNight = Math.random() >= 0.5
 
-        this.setState({
-          encounterStartDay,
-          encounterEndDay,
-          encounterNight,
-          isEncounterHappensOnFirstPartOfNight,
-        })
-
-      }
-    )
+    this.setState({
+      encounterStartDay,
+      encounterEndDay,
+      encounterNight,
+      isEncounterHappensOnFirstPartOfNight,
+    })
   }
 
   render() {
@@ -78,13 +61,11 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
       encounterEndDay,
       encounterNight,
       isEncounterHappensOnFirstPartOfNight,
-      diceResults,
     } = this.state
 
     return (
       <ToaRandomEncounterGeneratorComponent
         biome={biome}
-        diceResults={diceResults}
         encounterEndDay={encounterEndDay}
         encounterNight={encounterNight}
         encounterStartDay={encounterStartDay}

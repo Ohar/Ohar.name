@@ -10,7 +10,6 @@ import './ToaRandomEncounterGeneratorStyles.css'
 const ToaRandomEncounterGeneratorComponent = (
   {
     biome,
-    diceResults,
     encounterEndDay,
     encounterNight,
     encounterStartDay,
@@ -35,7 +34,7 @@ const ToaRandomEncounterGeneratorComponent = (
         className='ToaRandomEncounterGenerator_btnGenerate'
         onClick={generateTodayEncounters}
       >
-        Сгенерировать столкновение {JSON.stringify(diceResults)}
+        Сгенерировать столкновение
       </button>
     </section>
 
@@ -67,7 +66,7 @@ const ToaRandomEncounterGeneratorComponent = (
                     colSpan='2'
                     className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'
                   >
-                    Утро ({diceResults[i]})
+                    Утро
                   </th>
                 )}
                 {i === 1 && (
@@ -75,7 +74,7 @@ const ToaRandomEncounterGeneratorComponent = (
                     colSpan='2'
                     className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'
                   >
-                    Вечер ({diceResults[i]})
+                    Вечер
                   </th>
                 )}
                 {i === 2 && (
@@ -83,7 +82,7 @@ const ToaRandomEncounterGeneratorComponent = (
                     rowSpan='2'
                     className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'
                   >
-                    Ночь ({diceResults[i]})
+                    Ночь
                   </th>
                 )}
                 {(i === 2 || i === 3) && (

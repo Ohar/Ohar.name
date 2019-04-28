@@ -17,6 +17,10 @@ const dndSubpageList = [
     title: 'Генератор имён чультов',
     url: '/dnd/generator-names-chult',
   },
+  {
+    title: 'Гробница аннигиляции: генератор случайных столкновений',
+    url: '/dnd/generator-toa-random-encounter',
+  },
 ]
 
 const DndPage = () => (

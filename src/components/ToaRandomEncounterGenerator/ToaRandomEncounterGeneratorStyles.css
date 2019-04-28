@@ -1,0 +1,33 @@
+.ToaRandomEncounterGenerator_cell {
+    padding: .5rem;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.thead .ToaRandomEncounterGenerator_cell-head {
+    text-align: left;
+}
+
+.ToaRandomEncounterGenerator_cell-empty {
+    text-align: center;
+}
+
+.ToaRandomEncounterGenerator_cell p,
+.ToaRandomEncounterGenerator_paragraph {
+    margin-bottom: 1rem;
+}
+
+.ToaRandomEncounterGenerator_btnGenerate {
+    font-size: 2rem;
+}
+
+.ToaRandomEncounterGenerator_table {
+    width: 100%;
+}
+
+.ToaRandomEncounterGenerator_controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}

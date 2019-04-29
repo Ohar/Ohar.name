@@ -1,5 +1,7 @@
 .RadioSet {
     margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .RadioSet_input {
@@ -12,7 +14,7 @@
 .RadioSet_input + .RadioSet_label {
     border-color: #fff;
     border-style: solid;
-    border-width: 1px 0 1px 1px;
+    border-width: 1px;
     padding: .2em .4em;
     cursor: pointer;
     white-space: nowrap;
@@ -45,13 +47,6 @@
 .RadioSet_input + .RadioSet_label:hover {
     border-color: gold;
     color: gold;
-}
-
-.RadioSet_item-isChecked + .RadioSet_item > .RadioSet_label,
-.RadioSet_input:focus + .RadioSet_label + .RadioSet_input + .RadioSet_label,
-.RadioSet_input:active + .RadioSet_label + .RadioSet_input + .RadioSet_label,
-.RadioSet_input + .RadioSet_label:hover + .RadioSet_input + .RadioSet_label {
-    border-left-width: 0;
 }
 
 .RadioSet_item.RadioSet_item-isChecked > .RadioSet_label {

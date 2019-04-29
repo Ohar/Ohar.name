@@ -737,191 +737,160 @@ const encounterByBiomeList = {
         return 'iuan_ti'
     }
   },
-  // ruin: dice => {
-  //   switch (true) {
-  //     case dice >= && dice <= :
-  //       return 'aarakokry'
-  //     case dice >= && dice <= :
-  //       return 'aldani'
-  //     case dice >= && dice <= :
-  //       return 'almirazh'
-  //     case dice >= && dice <= :
-  //       return 'artus_simber'
-  //     case dice >= && dice <= :
-  //       return 'babuiny'
-  //     case dice >= && dice <= :
-  //       return 'vaiia_trekhsotcvetnaia'
-  //     case dice >= && dice <= :
-  //       return 'vegepigmei'
-  //     case dice >= && dice <= :
-  //       return 'vervepr'
-  //     case dice >= && dice <= :
-  //       return 'vertigr'
-  //     case dice >= && dice <= :
-  //       return 'gigantskaia_shchyolkaiushchaia_cherepaha'
-  //     case dice >= && dice <= :
-  //       return 'gigantskie_kabany'
-  //     case dice >= && dice <= :
-  //       return 'gigantskie_liagushki'
-  //     case dice >= && dice <= :
-  //       return 'gigantskie_osy'
-  //     case dice >= && dice <= :
-  //       return 'gigantskie_skorpiony'
-  //     case dice >= && dice <= :
-  //       return 'gigantskie_iashcheritcy'
-  //     case dice >= && dice <= :
-  //       return 'gigantskii_krokodil'
-  //     case dice >= && dice <= :
-  //       return 'girallony'
-  //     case dice >= && dice <= :
-  //       return 'gobliny'
-  //     case dice >= && dice <= :
-  //       return 'grungi'
-  //     case dice >= && dice <= :
-  //       return 'dvarfy_albinos'
-  //     case dice >= && dice <= :
-  //       return 'dzhakuli'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_allozavr'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_ankilozavr'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_brontozavr'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_velotciraptor'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_gadrozavr'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_deinonikh'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_dimetrodon'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_kettcalkoatl'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_pleziozavr'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_pteranodon'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_stegozavr'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_tirannozavr'
-  //     case dice >= && dice <= :
-  //       return 'dinozavry_tritceratops'
-  //     case dice >= && dice <= :
-  //       return 'drakon_volshebnyi_drakonchik'
-  //     case dice >= && dice <= :
-  //       return 'drakon_krasnyi'
-  //     case dice >= && dice <= :
-  //       return 'zhyoltaia_muskusnaia_liana_i_zombi'
-  //     case dice >= && dice <= :
-  //       return 'zhentarim'
-  //     case dice >= && dice <= :
-  //       return 'zimnii_peizazh'
-  //     case dice >= && dice <= :
-  //       return 'zmeia_gigantskaia_iadovitaia '
-  //     case dice >= && dice <= :
-  //       return 'zmeia_gigantskii_udav'
-  //     case dice >= && dice <= :
-  //       return 'zmeia_udav'
-  //     case dice >= && dice <= :
-  //       return 'zorbo'
-  //     case dice >= && dice <= :
-  //       return 'izumrudnyi_anclav'
-  //     case dice >= && dice <= :
-  //       return 'issledovateli'
-  //     case dice >= && dice <= :
-  //       return 'issledovatel_myortvyi`'
-  //     case dice >= && dice <= :
-  //       return 'kamadany'
-  //     case dice >= && dice <= :
-  //       return 'kannibaly'
-  //     case dice >= && dice <= :
-  //       return 'kapkany'
-  //     case dice >= && dice <= :
-  //       return 'krasnyi_volshebnik'
-  //     case dice >= && dice <= :
-  //       return 'krovopiitcy'
-  //     case dice >= && dice <= :
-  //       return 'krokodily'
-  //     case dice >= && dice <= :
-  //       return 'ledianye_velikany'
-  //     case dice >= && dice <= :
-  //       return 'letaiushchie_zmei'
-  //     case dice >= && dice <= :
-  //       return 'letaiushchie_obeziany`'
-  //     case dice >= && dice <= :
-  //       return 'lozy_ubiitcy'
-  //     case dice >= && dice <= :
-  //       return 'liudoiashchery`'
-  //     case dice >= && dice <= :
-  //       return 'magminy`'
-  //     case dice >= && dice <= :
-  //       return 'mefity`'
-  //     case dice >= && dice <= :
-  //       return 'morskaia_karga'
-  //     case dice >= && dice <= :
-  //       return 'nezhit_zombi'
-  //     case dice >= && dice <= :
-  //       return 'nezhit_skelety`'
-  //     case dice >= && dice <= :
-  //       return 'nezhit_spektry`'
-  //     case dice >= && dice <= :
-  //       return 'nezhit_umertvie'
-  //     case dice >= && dice <= :
-  //       return 'nezhit_upyri'
-  //     case dice >= && dice <= :
-  //       return 'nochnaia_karga'
-  //     case dice >= && dice <= :
-  //       return 'ognennye_tritony`'
-  //     case dice >= && dice <= :
-  //       return 'pauki'
-  //     case dice >= && dice <= :
-  //       return 'polzaiushchaia_nasyp'
-  //     case dice >= && dice <= :
-  //       return 'pteraliudy`'
-  //     case dice >= && dice <= :
-  //       return 'pylaiushchii_kulak'
-  //     case dice >= && dice <= :
-  //       return 'redkoe_rastenie'
-  //     case dice >= && dice <= :
-  //       return 'roi_kviperov'
-  //     case dice >= && dice <= :
-  //       return 'roi_letuchikh_myshei`'
-  //     case dice >= && dice <= :
-  //       return 'roi_nasekomykh'
-  //     case dice >= && dice <= :
-  //       return 'salamandra'
-  //     case dice >= && dice <= :
-  //       return 'statuia_ubtao'
-  //     case dice >= && dice <= :
-  //       return 'su_monstry'
-  //     case dice >= && dice <= :
-  //       return 'tabaksi_ohotneyk'
-  //     case dice >= && dice <= :
-  //       return 'tigr'
-  //     case dice >= && dice <= :
-  //       return 'toporocliuvy`'
-  //     case dice >= && dice <= :
-  //       return 'troll'
-  //     case dice >= && dice <= :
-  //       return 'tuman_bezumnoi_obeziany'
-  //     case dice >= && dice <= :
-  //       return 'tcepovaia_ulitka'
-  //     case dice >= && dice <= :
-  //       return 'tciclopy`'
-  //     case dice >= && dice <= :
-  //       return 'chvinga'
-  //     case dice >= && dice <= :
-  //       return 'chelovekoobraznye_obeziany`'
-  //     case dice >= && dice <= :
-  //       return 'eblis'
-  //     case dice >= && dice <= :
-  //       return 'ekspeditcionnyi_zapas'
-  //     case dice >= && dice <= :
-  //       return 'iuan_ti
-  //
-  //   }
-  // },
+  ruin: dice => {
+    switch (dice) {
+      case 3:
+        return 'almirazh'
+      case 7:
+      case 8:
+        return 'artus_simber'
+      case 13:
+      case 14:
+        return 'babuiny'
+      case 79:
+      case 80:
+        return 'vaiia_trekhsotcvetnaia'
+      case 94:
+        return 'vertigr'
+      case 46:
+      case 47:
+      case 48:
+        return 'gigantskie_osy'
+      case 43:
+      case 44:
+      case 45:
+        return 'gigantskie_skorpiony'
+      case 42:
+        return 'gigantskie_iashcheritcy'
+      case 49:
+      case 50:
+        return 'girallony'
+      case 51:
+      case 52:
+        return 'gobliny'
+      case 1:
+      case 2:
+        return 'dvarfy_albinos'
+      case 53:
+      case 54:
+        return 'dzhakuli'
+      case 23:
+        return 'dinozavry_velotciraptor'
+      case 22:
+        return 'dinozavry_deinonikh'
+      case 96:
+        return 'zhyoltaia_muskusnaia_liana_i_zombi'
+      case 99:
+      case 0:
+        return 'zhentarim'
+      case 95:
+        return 'zimnii_peizazh'
+      case 64:
+      case 65:
+      case 66:
+        return 'zmeia_gigantskaia_iadovitaia '
+      case 82:
+        return 'zmeia_gigantskii_udav'
+      case 24:
+      case 25:
+      case 26:
+        return 'izumrudnyi_anclav'
+      case 29:
+      case 30:
+      case 31:
+        return 'issledovateli'
+      case 27:
+      case 28:
+        return 'issledovatel_myortvyi`'
+      case 55:
+      case 56:
+      case 57:
+        return 'kamadany'
+      case 63:
+        return 'krasnyi_volshebnik'
+      case 74:
+      case 75:
+        return 'krovopiitcy'
+      case 40:
+      case 41:
+        return 'ledianye_velikany'
+      case 39:
+        return 'letaiushchie_zmei'
+      case 37:
+      case 38:
+        return 'letaiushchie_obeziany`'
+      case 9:
+      case 10:
+      case 11:
+      case 12:
+        return 'lozy_ubiitcy'
+      case 58:
+        return 'liudoiashchery`'
+      case 92:
+      case 93:
+        return 'nezhit_zombi'
+      case 85:
+      case 86:
+      case 87:
+        return 'nezhit_skelety`'
+      case 88:
+      case 89:
+        return 'nezhit_spektry`'
+      case 90:
+      case 91:
+        return 'nezhit_umertvie'
+      case 83:
+      case 84:
+        return 'nezhit_upyri'
+      case 61:
+        return 'nochnaia_karga'
+      case 67:
+      case 68:
+        return 'pauki'
+      case 34:
+      case 35:
+      case 36:
+        return 'pylaiushchii_kulak'
+      case 62:
+        return 'redkoe_rastenie'
+      case 76:
+      case 77:
+        return 'roi_letuchikh_myshei`'
+      case 69:
+      case 70:
+      case 71:
+      case 72:
+      case 73:
+        return 'statuia_ubtao'
+      case 78:
+        return 'tabaksi_ohotneyk'
+      case 81:
+        return 'troll'
+      case 59:
+      case 60:
+        return 'tuman_bezumnoi_obeziany'
+      case 32:
+      case 33:
+        return 'tcepovaia_ulitka'
+      case 20:
+      case 21:
+        return 'tciclopy`'
+      case 19:
+        return 'chvinga'
+      case 4:
+      case 5:
+      case 6:
+        return 'chelovekoobraznye_obeziany`'
+      case 15:
+      case 16:
+      case 17:
+      case 18:
+        return 'ekspeditcionnyi_zapas'
+      case 97:
+      case 98:
+        return 'iuan_ti'
+    }
+  },
   // swamp: dice => {
   //   switch (true) {
   //     case dice >= && dice <= :

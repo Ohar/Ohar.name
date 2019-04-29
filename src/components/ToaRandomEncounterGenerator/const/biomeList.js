@@ -31,10 +31,10 @@ const biomeList = [
     text: 'Болото',
     value: 'swamp',
   },
-  // {
-  //   text: 'Пустошь',
-  //   value: 'wasteland',
-  // },
+  {
+    text: 'Пустошь',
+    value: 'wasteland',
+  },
 ]
 
 export default biomeList

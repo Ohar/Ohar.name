@@ -587,185 +587,156 @@ const encounterByBiomeList = {
         return 'ekspeditcionnyi_zapas'
     }
   },
-  // river: dice => {
-  //   switch (dice) {
-  //     case 1:
-  //     case 2:
-  //     case 3:
-  //       return 'aarakokry'
-  //     case 4:
-  //     case 5:
-  //     case 6:
-  //     case 7:
-  //       return 'aldani'
-  //     case 8:
-  //     case 9:
-  //       return 'artus_simber'
-  //     case 61:
-  //     case 62:
-  //       return 'gigantskaia_shchyolkaiushchaia_cherepaha'
-  //     case 59:
-  //     case 60:
-  //       return 'gigantskie_liagushki'
-  //     case :
-  //       return 'gigantskie_osy'
-  //     case :
-  //       return 'gigantskie_skorpiony'
-  //     case :
-  //       return 'gigantskie_iashcheritcy'
-  //     case :
-  //       return 'gigantskii_krokodil'
-  //     case :
-  //       return 'girallony'
-  //     case :
-  //       return 'gobliny'
-  //     case :
-  //       return 'grungi'
-  //     case :
-  //       return 'dvarfy_albinos'
-  //     case :
-  //       return 'dzhakuli'
-  //     case :
-  //       return 'dinozavry_allozavr'
-  //     case :
-  //       return 'dinozavry_ankilozavr'
-  //     case :
-  //       return 'dinozavry_brontozavr'
-  //     case :
-  //       return 'dinozavry_velotciraptor'
-  //     case :
-  //       return 'dinozavry_gadrozavr'
-  //     case :
-  //       return 'dinozavry_deinonikh'
-  //     case :
-  //       return 'dinozavry_dimetrodon'
-  //     case :
-  //       return 'dinozavry_kettcalkoatl'
-  //     case :
-  //       return 'dinozavry_pleziozavr'
-  //     case :
-  //       return 'dinozavry_pteranodon'
-  //     case :
-  //       return 'dinozavry_stegozavr'
-  //     case :
-  //       return 'dinozavry_tirannozavr'
-  //     case :
-  //       return 'dinozavry_tritceratops'
-  //     case :
-  //       return 'drakon_volshebnyi_drakonchik'
-  //     case :
-  //       return 'drakon_krasnyi'
-  //     case :
-  //       return 'zhyoltaia_muskusnaia_liana_i_zombi'
-  //     case :
-  //       return 'zhentarim'
-  //     case :
-  //       return 'zimnii_peizazh'
-  //     case :
-  //       return 'zmeia_gigantskaia_iadovitaia '
-  //     case :
-  //       return 'zmeia_gigantskii_udav'
-  //     case :
-  //       return 'zmeia_udav'
-  //     case :
-  //       return 'zorbo'
-  //     case :
-  //       return 'izumrudnyi_anclav'
-  //     case :
-  //       return 'issledovateli'
-  //     case :
-  //       return 'issledovatel_myortvyi`'
-  //     case :
-  //       return 'kamadany'
-  //     case :
-  //       return 'kannibaly'
-  //     case :
-  //       return 'kapkany'
-  //     case :
-  //       return 'krasnyi_volshebnik'
-  //     case :
-  //       return 'krovopiitcy'
-  //     case :
-  //       return 'krokodily'
-  //     case :
-  //       return 'ledianye_velikany'
-  //     case :
-  //       return 'letaiushchie_zmei'
-  //     case :
-  //       return 'letaiushchie_obeziany`'
-  //     case :
-  //       return 'lozy_ubiitcy'
-  //     case :
-  //       return 'liudoiashchery`'
-  //     case :
-  //       return 'magminy`'
-  //     case :
-  //       return 'mefity`'
-  //     case :
-  //       return 'morskaia_karga'
-  //     case :
-  //       return 'nezhit_zombi'
-  //     case :
-  //       return 'nezhit_skelety`'
-  //     case :
-  //       return 'nezhit_spektry`'
-  //     case :
-  //       return 'nezhit_umertvie'
-  //     case :
-  //       return 'nezhit_upyri'
-  //     case :
-  //       return 'nochnaia_karga'
-  //     case :
-  //       return 'ognennye_tritony`'
-  //     case :
-  //       return 'pauki'
-  //     case :
-  //       return 'polzaiushchaia_nasyp'
-  //     case :
-  //       return 'pteraliudy`'
-  //     case :
-  //       return 'pylaiushchii_kulak'
-  //     case :
-  //       return 'redkoe_rastenie'
-  //     case :
-  //       return 'roi_kviperov'
-  //     case :
-  //       return 'roi_letuchikh_myshei`'
-  //     case :
-  //       return 'roi_nasekomykh'
-  //     case :
-  //       return 'salamandra'
-  //     case :
-  //       return 'statuia_ubtao'
-  //     case :
-  //       return 'su_monstry'
-  //     case :
-  //       return 'tabaksi_ohotneyk'
-  //     case :
-  //       return 'tigr'
-  //     case :
-  //       return 'toporocliuvy`'
-  //     case :
-  //       return 'troll'
-  //     case :
-  //       return 'tuman_bezumnoi_obeziany'
-  //     case :
-  //       return 'tcepovaia_ulitka'
-  //     case :
-  //       return 'tciclopy`'
-  //     case :
-  //       return 'chvinga'
-  //     case :
-  //       return 'chelovekoobraznye_obeziany`'
-  //     case :
-  //       return 'eblis'
-  //     case :
-  //       return 'ekspeditcionnyi_zapas'
-  //     case :
-  //       return 'iuan_ti'
-  //
-  //   }
-  // },
+  river: dice => {
+    switch (dice) {
+      case 1:
+      case 2:
+      case 3:
+        return 'aarakokry'
+      case 4:
+      case 5:
+      case 6:
+      case 7:
+        return 'aldani'
+      case 8:
+      case 9:
+        return 'artus_simber'
+      case 61:
+      case 62:
+        return 'gigantskaia_shchyolkaiushchaia_cherepaha'
+      case 59:
+      case 60:
+        return 'gigantskie_liagushki'
+      case 63:
+        return 'gigantskie_osy'
+      case 56:
+      case 57:
+      case 58:
+        return 'gigantskii_krokodil'
+      case 64:
+      case 65:
+      case 66:
+        return 'grungi'
+      case 67:
+        return 'dzhakuli'
+      case 24:
+        return 'dinozavry_brontozavr'
+      case 27:
+      case 28:
+        return 'dinozavry_gadrozavr'
+      case 25:
+      case 26:
+        return 'dinozavry_dimetrodon'
+      case 35:
+      case 36:
+        return 'dinozavry_kettcalkoatl'
+      case 29:
+      case 30:
+      case 31:
+        return 'dinozavry_pleziozavr'
+      case 32:
+      case 33:
+      case 34:
+        return 'dinozavry_pteranodon'
+      case 37:
+        return 'drakon_volshebnyi_drakonchik'
+      case 99:
+      case 0:
+        return 'zhentarim'
+      case 80:
+        return 'zmeia_gigantskii_udav'
+      case 77:
+      case 78:
+      case 79:
+        return 'zmeia_udav'
+      case 41:
+      case 42:
+      case 43:
+        return 'izumrudnyi_anclav'
+      case 46:
+      case 47:
+      case 48:
+      case 49:
+        return 'issledovateli'
+      case 44:
+      case 45:
+        return 'issledovatel_myortvyi`'
+      case 13:
+      case 14:
+      case 15:
+        return 'kannibaly'
+      case 74:
+        return 'krasnyi_volshebnik'
+      case 82:
+      case 83:
+        return 'krovopiitcy'
+      case 19:
+      case 20:
+      case 21:
+      case 22:
+      case 23:
+        return 'krokodily'
+      case 54:
+      case 55:
+        return 'letaiushchie_zmei'
+      case 52:
+      case 53:
+        return 'letaiushchie_obeziany`'
+      case 10:
+        return 'lozy_ubiitcy'
+      case 68:
+        return 'liudoiashchery`'
+      case 75:
+      case 76:
+        return 'morskaia_karga'
+      case 96:
+        return 'nezhit_zombi'
+      case 95:
+        return 'nezhit_skelety`'
+      case 94:
+        return 'nezhit_upyri'
+      case 71:
+      case 72:
+        return 'pteraliudy`'
+      case 50:
+      case 51:
+        return 'pylaiushchii_kulak'
+      case 73:
+        return 'redkoe_rastenie'
+      case 86:
+      case 87:
+      case 88:
+      case 89:
+      case 90:
+      case 91:
+        return 'roi_kviperov'
+      case 84:
+      case 85:
+        return 'roi_nasekomykh'
+      case 81:
+        return 'statuia_ubtao'
+      case 92:
+      case 93:
+        return 'tabaksi_ohotneyk'
+      case 69:
+      case 70:
+        return 'tuman_bezumnoi_obeziany'
+      case 16:
+      case 17:
+      case 18:
+        return 'chvinga'
+      case 38:
+      case 39:
+      case 40:
+        return 'eblis'
+      case 11:
+      case 12:
+        return 'ekspeditcionnyi_zapas'
+      case 97:
+      case 98:
+        return 'iuan_ti'
+    }
+  },
   // ruin: dice => {
   //   switch (true) {
   //     case dice >= && dice <= :

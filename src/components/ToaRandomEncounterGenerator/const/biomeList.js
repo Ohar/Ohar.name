@@ -19,10 +19,10 @@ const biomeList = [
     text: 'Горы',
     value: 'mountain',
   },
-  // {
-  //   text: 'Реки',
-  //   value: 'river',
-  // },
+  {
+    text: 'Реки',
+    value: 'river',
+  },
   // {
   //   text: 'Руины',
   //   value: 'ruin',

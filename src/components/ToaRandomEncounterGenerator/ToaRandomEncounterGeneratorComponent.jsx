@@ -4,6 +4,7 @@ import RadioSet from '@/components/RadioSet'
 import PageTitle from "@/components/PageTitle"
 
 import biomeList from './const/biomeList'
+import additionalZombiesRadioList from './const/additionalZombiesRadioList'
 
 import './ToaRandomEncounterGeneratorStyles.css'
 
@@ -16,6 +17,8 @@ const ToaRandomEncounterGeneratorComponent = (
     generateTodayEncounters,
     isEncounterHappensOnFirstPartOfNight,
     onBiomeChange,
+    setAdditionalZombies,
+    useAdditionalZombies,
   }
 ) => (
   <section className='ToaRandomEncounterGenerator'>
@@ -28,6 +31,13 @@ const ToaRandomEncounterGeneratorComponent = (
         name='biome'
         onChange={onBiomeChange}
         title='Тип местности'
+      />
+      <RadioSet
+        chosen={useAdditionalZombies}
+        fieldList={additionalZombiesRadioList}
+        name='biome'
+        onChange={setAdditionalZombies}
+        title='Дополнительные зомби'
       />
 
       <button

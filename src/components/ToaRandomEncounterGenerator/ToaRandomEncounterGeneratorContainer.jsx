@@ -14,6 +14,7 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
     encounterEndDay: null,
     encounterNight: null,
     isEncounterHappensOnFirstPartOfNight: false,
+    useAdditionalZombies: true,
   }
 
   rollDice = diceNum => () => Math.round(Math.random() * (diceNum - 1))
@@ -30,9 +31,14 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
     const isEncounter = d20Roll >= ENCOUNTER_D20_MIN
 
     if (isEncounter) {
-      const { biome } = this.state
+      const { biome, useAdditionalZombies } = this.state
       const diceResult = this.rollD100()
-      const encounterId = encounterByBiomeList[biome](diceResult)
+
+      let encounterId = encounterByBiomeList[biome](diceResult)
+
+      if (useAdditionalZombies && encounterId === 'nezhit_zombi') {
+        encounterId = 'nezhit_zombi_additional'
+      }
 
       return encounterList.find(({id}) => id === encounterId)
     } else {
@@ -54,6 +60,12 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
     })
   }
 
+  setAdditionalZombies = useAdditionalZombies => {
+    this.setState({
+      useAdditionalZombies,
+    })
+  }
+
   render() {
     const {
       biome,
@@ -61,6 +73,7 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
       encounterEndDay,
       encounterNight,
       isEncounterHappensOnFirstPartOfNight,
+      useAdditionalZombies,
     } = this.state
 
     return (
@@ -72,6 +85,8 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
         generateTodayEncounters={this.generateTodayEncounters}
         isEncounterHappensOnFirstPartOfNight={isEncounterHappensOnFirstPartOfNight}
         onBiomeChange={this.onBiomeChange}
+        setAdditionalZombies={this.setAdditionalZombies}
+        useAdditionalZombies={useAdditionalZombies}
       />
     )
   }

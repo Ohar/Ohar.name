@@ -11,6 +11,7 @@ import './ToaRandomEncounterGeneratorStyles.css'
 const ToaRandomEncounterGeneratorComponent = (
   {
     biome,
+    encounterList,
     encounterEndDay,
     encounterNight,
     encounterStartDay,
@@ -51,6 +52,7 @@ const ToaRandomEncounterGeneratorComponent = (
     <table className='ToaRandomEncounterGenerator_table'>
       <thead className='ToaRandomEncounterGenerator_thead'>
       <tr className='ToaRandomEncounterGenerator_row'>
+        <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>Бросок к20</th>
         <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>Время суток</th>
         <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>Дежурство</th>
         <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>Название столкновения</th>
@@ -59,18 +61,19 @@ const ToaRandomEncounterGeneratorComponent = (
       </thead>
     <tbody>
       {
-        [
-          encounterStartDay,
-          encounterEndDay,
-          encounterNight,
-          encounterNight,
-        ]
+        encounterList
           .map(
-            (encounter, i) => (
+            ({encounter, d20Roll}, i) => (
               <tr
                 className='ToaRandomEncounterGenerator_row'
                 key={i}
               >
+                <th
+                  colSpan
+                  className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'
+                >
+                  {d20Roll}
+                </th>
                 {i === 0 && (
                   <th
                     colSpan='2'

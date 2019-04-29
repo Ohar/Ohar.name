@@ -10,9 +10,7 @@ import ToaRandomEncounterGeneratorComponent from './ToaRandomEncounterGeneratorC
 export default class ToaRandomEncounterGeneratorContainer extends PureComponent {
   state = {
     biome: biomeList[0].value,
-    encounterStartDay: null,
-    encounterEndDay: null,
-    encounterNight: null,
+    encounterList: [],
     isEncounterHappensOnFirstPartOfNight: false,
     useAdditionalZombies: true,
   }
@@ -40,22 +38,29 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
         encounterId = 'nezhit_zombi_additional'
       }
 
-      return encounterList.find(({id}) => id === encounterId)
+      return {
+        d20Roll,
+        encounter: encounterList.find(({id}) => id === encounterId),
+      }
     } else {
-      return null
+      return {
+        d20Roll,
+        encounter: null,
+      }
     }
   }
 
   generateTodayEncounters = () => {
-    const encounterStartDay = this.generateEncounter()
-    const encounterEndDay = this.generateEncounter()
-    const encounterNight = this.generateEncounter()
     const isEncounterHappensOnFirstPartOfNight = Math.random() >= 0.5
+    const encounterList = [
+      this.generateEncounter(),
+      this.generateEncounter(),
+      this.generateEncounter(),
+      this.generateEncounter(),
+    ]
 
     this.setState({
-      encounterStartDay,
-      encounterEndDay,
-      encounterNight,
+      encounterList,
       isEncounterHappensOnFirstPartOfNight,
     })
   }
@@ -69,9 +74,7 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
   render() {
     const {
       biome,
-      encounterStartDay,
-      encounterEndDay,
-      encounterNight,
+      encounterList,
       isEncounterHappensOnFirstPartOfNight,
       useAdditionalZombies,
     } = this.state
@@ -79,9 +82,7 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
     return (
       <ToaRandomEncounterGeneratorComponent
         biome={biome}
-        encounterEndDay={encounterEndDay}
-        encounterNight={encounterNight}
-        encounterStartDay={encounterStartDay}
+        encounterList={encounterList}
         generateTodayEncounters={this.generateTodayEncounters}
         isEncounterHappensOnFirstPartOfNight={isEncounterHappensOnFirstPartOfNight}
         onBiomeChange={this.onBiomeChange}

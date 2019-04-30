@@ -16,7 +16,11 @@ const ContentGeneratorComponent = (
   <section className='ContentGenerator'>
     <ul className='ContentGenerator_list'>
       {
-        typeList.map(
+        typeList
+          .filter(
+            ({visible}) => visible
+          )
+          .map(
           ({type, title, chosen, list}) => (
             <li
               key={type}

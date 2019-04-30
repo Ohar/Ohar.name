@@ -2,7 +2,7 @@ import _ from 'lodash'
 
 import CHULT_NAMES_FAMILY from "../dict/names_family"
 
-export default function getSurname(type) {
+export default function generateSurnameHumanChult(type) {
   switch (type) {
     case 'no_family':
       return '';

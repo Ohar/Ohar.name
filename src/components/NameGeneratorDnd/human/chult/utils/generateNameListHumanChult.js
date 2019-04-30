@@ -1,7 +1,7 @@
 import CHULT_NAMES_FEMALE from "../dict/names_female"
 import CHULT_NAMES_MALE from "../dict/names_male"
 
-export default function getNameList(gender) {
+export default function generateNameListHumanChult(gender) {
   switch (gender) {
     case 'all': {
       return [

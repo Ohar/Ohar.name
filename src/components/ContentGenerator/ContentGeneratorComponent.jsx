@@ -18,9 +18,11 @@ const ContentGeneratorComponent = (
       {
         typeList.map(
           ({type, title, chosen, list}) => (
-            <li className='ContentGenerator_item'>
+            <li
+              key={type}
+              className='ContentGenerator_item'
+            >
               <RadioSet
-                key={type}
                 chosen={chosen}
                 fieldList={list}
                 name={type}

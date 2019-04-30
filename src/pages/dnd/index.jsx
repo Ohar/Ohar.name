@@ -15,7 +15,7 @@ const dndSubpageList = [
   {
     iconClass: 'icon-person',
     title: 'Генератор имён чультов',
-    url: '/dnd/generator-names-chult',
+    url: '/dnd/generator-names',
   },
   {
     title: 'Гробница аннигиляции: генератор случайных столкновений',

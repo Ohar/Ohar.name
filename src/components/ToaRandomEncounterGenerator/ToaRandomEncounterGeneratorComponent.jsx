@@ -12,9 +12,6 @@ const ToaRandomEncounterGeneratorComponent = (
   {
     biome,
     encounterList,
-    encounterEndDay,
-    encounterNight,
-    encounterStartDay,
     generateTodayEncounters,
     isEncounterHappensOnFirstPartOfNight,
     onBiomeChange,

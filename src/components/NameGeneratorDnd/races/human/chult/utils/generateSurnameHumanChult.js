@@ -7,7 +7,7 @@ export default function generateSurnameHumanChult(type) {
     case 'no_family':
       return '';
 
-    case 'all':
+    case 'any':
       return Math.random() > 0.5
         ? _.sample(CHULT_NAMES_FAMILY)
         : ''

@@ -17,11 +17,11 @@ export default function getNameList(gender, type) {
     NAMES_GREEK_MALE,
   ]
 
-  if (gender !== "all") {
+  if (gender !== "any") {
     names = _.filter(names, { gender })
   }
 
-  if (type !== "all") {
+  if (type !== "any") {
     names = _.filter(names, { type })
   }
 

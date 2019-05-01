@@ -15,7 +15,7 @@ const postfixes = {
     postfixCollection.male,
     postfixCollection.unisex,
   ],
-  all: [
+  any: [
     postfixCollection.male,
     postfixCollection.female,
     postfixCollection.unisex,

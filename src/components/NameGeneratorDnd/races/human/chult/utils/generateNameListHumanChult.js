@@ -3,7 +3,7 @@ import CHULT_NAMES_MALE from "../dict/names_male"
 
 export default function generateNameListHumanChult(gender) {
   switch (gender) {
-    case 'all': {
+    case 'any': {
       return [
         ...CHULT_NAMES_FEMALE,
         ...CHULT_NAMES_MALE,

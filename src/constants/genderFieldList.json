@@ -1,7 +1,7 @@
 [
   {
     "text": "Любой",
-    "value": "all"
+    "value": "any"
   },
   {
     "iconClass": "icon-male",
@@ -12,5 +12,12 @@
     "iconClass": "icon-female",
     "text": "Женский",
     "value": "female"
+  },
+  {
+    "text": "Средний",
+    "value": "undefined",
+    "show": {
+      "race": "tabaxi"
+    }
   }
 ]

@@ -1,6 +1,6 @@
 import genderFieldList from "@/constants/genderFieldList"
 
-import typeFieldList from "../human/chult/typeFieldList"
+import typeFieldList from "../races/human/chult/typeFieldList"
 import raceList from "./raceList"
 import subRaceList from "./subRaceList"
 
@@ -19,9 +19,6 @@ const typeList = [
     type: 'gender',
     title: 'Пол',
     list: genderFieldList,
-    show: {
-      race: 'human',
-    },
   },
   {
     type: 'type',

@@ -1,0 +1,278 @@
+[
+    {
+        "male": {
+            "nominative": "Мешок",
+            "genitive": "Мешка",
+            "prepositional": "Мешке"
+        },
+        "plural": {
+            "nominative": "Мешки",
+            "genitive": "Мешков",
+            "prepositional": "Мешках"
+        }
+    },
+    {
+        "male": {
+            "nominative": "Утёс",
+            "genitive": "Утёса",
+            "prepositional": "Утёсе"
+        },
+        "plural": {
+            "nominative": "Утёсы",
+            "genitive": "Утёсов",
+            "prepositional": "Утёсах"
+        }
+    },
+    {
+        "male": {
+            "nominative": "Дождь",
+            "genitive": "Дождя",
+            "prepositional": "Дожде"
+        },
+        "plural": {
+            "nominative": "Дожди",
+            "genitive": "Дождей",
+            "prepositional": "Дождях"
+        }
+    },
+    {
+        "male": {
+            "nominative": "Гвоздь",
+            "genitive": "Гвоздя",
+            "prepositional": "Гвозде"
+        },
+        "plural": {
+            "nominative": "Гвозди",
+            "genitive": "Гвоздей",
+            "prepositional": "Гвоздях"
+        }
+    },
+    {
+        "male": {
+            "nominative": "Фонарь",
+            "genitive": "Фонаря",
+            "prepositional": "Фонаре"
+        },
+        "plural": {
+            "nominative": "Фонари",
+            "genitive": "Фонарей",
+            "prepositional": "Фонарях"
+        }
+    },
+    {
+        "male": {
+            "nominative": "Колокол",
+            "genitive": "Колокола",
+            "prepositional": "Колоколе"
+        },
+        "plural": {
+            "nominative": "Колоколы",
+            "genitive": "Колоколов",
+            "prepositional": "Колоколах"
+        }
+    },
+    {
+        "male": {
+            "nominative": "Стол",
+            "genitive": "Стола",
+            "prepositional": "Столе"
+        },
+        "plural": {
+            "nominative": "Столы",
+            "genitive": "Столов",
+            "prepositional": "Столах"
+        }
+    },
+    {
+        "male": {
+            "nominative": "Башмак",
+            "genitive": "Башмака",
+            "prepositional": "Башмаке"
+        },
+        "plural": {
+            "nominative": "Башмаки",
+            "genitive": "Башмаков",
+            "prepositional": "Башмаках"
+        }
+    },
+    {
+        "undefined": {
+            "nominative": "Дерево",
+            "genitive": "Дерева",
+            "prepositional": "Дереве"
+        },
+        "plural": {
+            "nominative": "Деревья",
+            "genitive": "Деревьев",
+            "prepositional": "Деревьях"
+        }
+    },
+    {
+        "undefined": {
+            "nominative": "Облако",
+            "genitive": "Облака",
+            "prepositional": "Облаке"
+        },
+        "plural": {
+            "nominative": "Облака",
+            "genitive": "Облаков",
+            "prepositional": "Облаках"
+        }
+    },
+    {
+        "undefined": {
+            "nominative": "Вино",
+            "genitive": "Вина",
+            "prepositional": "Вине"
+        },
+        "plural": {
+            "nominative": "Вина",
+            "genitive": "Вин",
+            "prepositional": "Винах"
+        }
+    },
+    {
+        "undefined": {
+            "nominative": "Зеркало",
+            "genitive": "Зеркала",
+            "prepositional": "Зеркале"
+        },
+        "plural": {
+            "nominative": "Зеркала",
+            "genitive": "Зеркал",
+            "prepositional": "Зеркалах"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Река",
+            "genitive": "Реки",
+            "prepositional": "Реке"
+        },
+        "plural": {
+            "nominative": "Реки",
+            "genitive": "Рек",
+            "prepositional": "Реках"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Колибри",
+            "genitive": "Колибри",
+            "prepositional": "Колибри"
+        },
+        "plural": {
+            "nominative": "Колибри",
+            "genitive": "Колибри",
+            "prepositional": "Колибри"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Вершина",
+            "genitive": "Вершины",
+            "prepositional": "Вершине"
+        },
+        "plural": {
+            "nominative": "Вершины",
+            "genitive": "Вершин",
+            "prepositional": "Вершинах"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Птица",
+            "genitive": "Птицы",
+            "prepositional": "Птице"
+        },
+        "plural": {
+            "nominative": "Птицы",
+            "genitive": "Птиц",
+            "prepositional": "Птицах"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Туча",
+            "genitive": "Тучи",
+            "prepositional": "Туче"
+        },
+        "plural": {
+            "nominative": "Тучи",
+            "genitive": "Туч",
+            "prepositional": "Тучах"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Юбка",
+            "genitive": "Юбки",
+            "prepositional": "Юбке"
+        },
+        "plural": {
+            "nominative": "Юбки",
+            "genitive": "Юбок",
+            "prepositional": "Юбках"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Змея",
+            "genitive": "Змеи",
+            "prepositional": "Змее"
+        },
+        "plural": {
+            "nominative": "Змеи",
+            "genitive": "Змей",
+            "prepositional": "Змеях"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Гора",
+            "genitive": "Горы",
+            "prepositional": "Горе"
+        },
+        "plural": {
+            "nominative": "Горы",
+            "genitive": "Гор",
+            "prepositional": "Горах"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Фляга",
+            "genitive": "Фляги",
+            "prepositional": "Фляге"
+        },
+        "plural": {
+            "nominative": "Фляги",
+            "genitive": "Фляг",
+            "prepositional": "Флягах"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Бочка",
+            "genitive": "Бочки",
+            "prepositional": "Бочке"
+        },
+        "plural": {
+            "nominative": "Бочки",
+            "genitive": "Бочек",
+            "prepositional": "Бочках"
+        }
+    },
+    {
+        "female": {
+            "nominative": "Вуаль",
+            "genitive": "Вуали",
+            "prepositional": "Вуали"
+        },
+        "plural": {
+            "nominative": "Вуали",
+            "genitive": "Вуалей",
+            "prepositional": "Вуалях"
+        }
+    }
+]

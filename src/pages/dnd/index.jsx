@@ -38,7 +38,7 @@ const DndPage = () => (
       {
         dndSubpageList.map(
           ({title, url, iconClass}) => (
-            <li>
+            <li key={url}>
               <Link to={url}>
                 <MenuIcon iconClass={iconClass}/>
                 {title}

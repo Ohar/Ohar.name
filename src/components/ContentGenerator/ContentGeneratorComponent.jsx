@@ -28,7 +28,7 @@ const ContentGeneratorComponent = (
             >
               <RadioSet
                 chosen={chosen}
-                fieldList={list}
+                fieldList={list.filter(({visible}) => visible)}
                 name={type}
                 onChange={onChangeRadio(type)}
                 title={title}

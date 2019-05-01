@@ -8,18 +8,35 @@ const enhanceTypeCollectionWithVisibility = typeCollection => Object
   .reduce(
     (result, type) => {
       const {show} = typeCollection[type]
-      const visible = !(
+      const isTypeVisible = !(
         show
         && Object.keys(show).find(
-        showKey => typeCollection[showKey].chosen !== show[showKey]
+          key => typeCollection[key].chosen !== show[key]
         )
+      )
+
+      const list = typeCollection[type].list.map(
+        ({show: showItem, ...rest}) => {
+          const visible = !(
+            showItem && Object.keys(showItem).find(
+            key => typeCollection[key].chosen !== showItem[key]
+            )
+          )
+
+          return {
+            ...rest,
+            show: showItem,
+            visible,
+          }
+        }
       )
 
       return {
         ...result,
         [type]: {
           ...typeCollection[type],
-          visible,
+          visible: isTypeVisible,
+          list,
         },
       }
     },

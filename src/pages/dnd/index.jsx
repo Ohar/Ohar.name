@@ -14,7 +14,7 @@ const dndSubpageList = [
   },
   {
     iconClass: 'icon-person',
-    title: 'Генератор имён чультов',
+    title: 'Генератор имён персонажей',
     url: '/dnd/generator-names',
   },
   {

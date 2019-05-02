@@ -2,46 +2,7 @@ import React, { PureComponent } from "react"
 import PropTypes from "prop-types"
 
 import ContentGeneratorComponent from './ContentGeneratorComponent'
-
-const enhanceTypeCollectionWithVisibility = typeCollection => Object
-  .keys(typeCollection)
-  .reduce(
-    (result, type) => {
-      const {show} = typeCollection[type]
-      const isTypeVisible = !(
-        show
-        && Object.keys(show).find(
-          key => typeCollection[key].chosen !== show[key]
-        )
-      )
-
-      const list = typeCollection[type].list.map(
-        ({show: showItem, ...rest}) => {
-          const visible = !(
-            showItem && Object.keys(showItem).find(
-            key => typeCollection[key].chosen !== showItem[key]
-            )
-          )
-
-          return {
-            ...rest,
-            show: showItem,
-            visible,
-          }
-        }
-      )
-
-      return {
-        ...result,
-        [type]: {
-          ...typeCollection[type],
-          visible: isTypeVisible,
-          list,
-        },
-      }
-    },
-    {}
-  )
+import enhanceTypeCollectionWithVisibility from './utils/enhanceTypeCollectionWithVisibility'
 
 class ContentGeneratorContainer extends PureComponent {
   state = {

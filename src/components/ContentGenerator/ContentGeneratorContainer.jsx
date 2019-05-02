@@ -102,7 +102,11 @@ class ContentGeneratorContainer extends PureComponent {
 
   render() {
     const {result, typeCollection} = this.state
-    const typeList = Object.values(typeCollection)
+    const typeList = Object
+      .values(typeCollection)
+      .filter(
+        ({visible}) => visible
+      )
 
     return (
       <ContentGeneratorComponent

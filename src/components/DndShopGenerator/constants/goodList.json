@@ -6,14 +6,7 @@
     "weight": "8",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Лёгкие доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.3,
-        "min": 0,
-        "max": 3
-      }
-    }
+    "subcategory": "Лёгкие доспехи"
   },
   {
     "name": "Кожаный доспех",
@@ -22,14 +15,7 @@
     "weight": "10",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Лёгкие доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 2
-      }
-    }
+    "subcategory": "Лёгкие доспехи"
   },
   {
     "name": "Доспех из проклёпанной кожи",
@@ -38,14 +24,7 @@
     "weight": "13",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Лёгкие доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Лёгкие доспехи"
   },
   {
     "name": "Шкурный доспех",
@@ -54,14 +33,7 @@
     "weight": "12",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Средние доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Средние доспехи"
   },
   {
     "name": "Кольчужная рубаха",
@@ -70,14 +42,7 @@
     "weight": "20",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Средние доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Средние доспехи"
   },
   {
     "name": "Чешуйчатый доспех",
@@ -86,14 +51,7 @@
     "weight": "45",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Средние доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Средние доспехи"
   },
   {
     "name": "Кираса",
@@ -102,14 +60,7 @@
     "weight": "20",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Средние доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Средние доспехи"
   },
   {
     "name": "Полулаты",
@@ -118,14 +69,7 @@
     "weight": "40",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Средние доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Средние доспехи"
   },
   {
     "name": "Колечный доспех",
@@ -134,14 +78,7 @@
     "weight": "40",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Тяжёлые доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Тяжёлые доспехи"
   },
   {
     "name": "Кольчуга",
@@ -150,14 +87,7 @@
     "weight": "55",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Тяжёлые доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Тяжёлые доспехи"
   },
   {
     "name": "Наборный доспех",
@@ -166,14 +96,7 @@
     "weight": "60",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Тяжёлые доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Тяжёлые доспехи"
   },
   {
     "name": "Латы",
@@ -182,14 +105,7 @@
     "weight": "65",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Тяжёлые доспехи",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Тяжёлые доспехи"
   },
   {
     "name": "Щит",
@@ -198,14 +114,7 @@
     "weight": "6",
     "source": "PHB:145",
     "category": "Доспехи",
-    "subcategory": "Щиты",
-    "supply": {
-      "armory": {
-        "probability": 0.1,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Щиты"
   },
   {
     "name": "Боевой посох",
@@ -214,14 +123,7 @@
     "weight": "4",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.9,
-        "min": 0,
-        "max": 3
-      }
-    }
+    "subcategory": "Простое рукопашное оружие"
   },
   {
     "name": "Булава",
@@ -230,14 +132,7 @@
     "weight": "4",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.7,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое рукопашное оружие"
   },
   {
     "name": "Дубинка",
@@ -246,14 +141,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.9,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое рукопашное оружие"
   },
   {
     "name": "Кинжал",
@@ -262,14 +150,7 @@
     "weight": "1",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое рукопашное оружие"
   },
   {
     "name": "Копьё",
@@ -278,14 +159,7 @@
     "weight": "3",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое рукопашное оружие"
   },
   {
     "name": "Лёгкий молот",
@@ -294,14 +168,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое рукопашное оружие"
   },
   {
     "name": "Метательное копьё",
@@ -310,14 +177,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое рукопашное оружие"
   },
   {
     "name": "Палица",
@@ -326,14 +186,7 @@
     "weight": "10",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое рукопашное оружие"
   },
   {
     "name": "Ручной топор",
@@ -342,14 +195,7 @@
     "weight": "10",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое рукопашное оружие"
   },
   {
     "name": "Серп",
@@ -358,14 +204,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое рукопашное оружие"
   },
   {
     "name": "Арбалет, лёгкий ",
@@ -374,14 +213,7 @@
     "weight": "5",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое дальнобойное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое дальнобойное оружие"
   },
   {
     "name": "Дротик",
@@ -390,14 +222,7 @@
     "weight": "0.25",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое дальнобойное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое дальнобойное оружие"
   },
   {
     "name": "Короткий лук",
@@ -406,14 +231,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое дальнобойное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое дальнобойное оружие"
   },
   {
     "name": "Праща",
@@ -422,14 +240,7 @@
     "weight": "0",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Простое дальнобойное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.8,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Простое дальнобойное оружие"
   },
   {
     "name": "Алебарда",
@@ -438,14 +249,7 @@
     "weight": "6",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.3,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Боевая кирка ",
@@ -454,14 +258,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.3,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Боевой молот  ",
@@ -470,14 +267,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.3,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Боевой топор ",
@@ -486,14 +276,7 @@
     "weight": "4",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.3,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Глефа",
@@ -502,14 +285,7 @@
     "weight": "6",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.3,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Двуручный меч ",
@@ -518,14 +294,7 @@
     "weight": "6",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.3,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Длинное копьё ",
@@ -534,14 +303,7 @@
     "weight": "6",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Длинный меч ",
@@ -550,14 +312,7 @@
     "weight": "3",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Кнут",
@@ -566,14 +321,7 @@
     "weight": "3",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Короткий меч",
@@ -582,14 +330,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Молот",
@@ -598,14 +339,7 @@
     "weight": "10",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Моргенштерн",
@@ -614,14 +348,7 @@
     "weight": "4",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Пика",
@@ -630,14 +357,7 @@
     "weight": "18",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Рапира",
@@ -646,14 +366,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Секира",
@@ -662,14 +375,7 @@
     "weight": "7",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Скимитар",
@@ -678,14 +384,7 @@
     "weight": "3",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Трезубец",
@@ -694,14 +393,7 @@
     "weight": "4",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Цеп",
@@ -710,14 +402,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское рукопашное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское рукопашное оружие"
   },
   {
     "name": "Арбалет, ручной ",
@@ -726,14 +411,7 @@
     "weight": "3",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское дальнобойное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское дальнобойное оружие"
   },
   {
     "name": "Арбалет, тяжёлый ",
@@ -742,14 +420,7 @@
     "weight": "18",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское дальнобойное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское дальнобойное оружие"
   },
   {
     "name": "Длинный лук ",
@@ -758,14 +429,7 @@
     "weight": "2",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское дальнобойное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское дальнобойное оружие"
   },
   {
     "name": "Духовая трубка ",
@@ -774,14 +438,7 @@
     "weight": "1",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское дальнобойное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское дальнобойное оружие"
   },
   {
     "name": "Сеть",
@@ -790,13 +447,6 @@
     "weight": "3",
     "source": "PHB:149",
     "category": "Оружие",
-    "subcategory": "Воинское дальнобойное оружие",
-    "supply": {
-      "armory": {
-        "probability": 0.2,
-        "min": 0,
-        "max": 1
-      }
-    }
+    "subcategory": "Воинское дальнобойное оружие"
   }
 ]

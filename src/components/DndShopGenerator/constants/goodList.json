@@ -2014,5 +2014,75 @@
     "weight": 1,
     "source": "PHB:157",
     "category": "Товары"
+  },
+  {
+    "name": "Вино, обычное",
+    "description": "кружка",
+    "cost": 20,
+    "source": "PHB:158",
+    "category": "Еда и напитки"
+  },
+  {
+    "name": "Вино, обычное",
+    "description": "бутылка",
+    "cost": 50,
+    "source": "PHB:158",
+    "category": "Еда и напитки"
+  },
+  {
+    "name": "Вино, отличное",
+    "description": "кружка",
+    "cost": 400,
+    "source": "PHB:158",
+    "category": "Еда и напитки"
+  },
+  {
+    "name": "Вино, отличное",
+    "description": "бутылка",
+    "cost": 1000,
+    "source": "PHB:158",
+    "category": "Еда и напитки"
+  },
+  {
+    "name": "Мясо",
+    "description": "кусок",
+    "cost": 300,
+    "source": "PHB:158",
+    "category": "Еда и напитки"
+  },
+  {
+    "name": "Пиво",
+    "description": "кружка",
+    "cost": 4,
+    "source": "PHB:158",
+    "category": "Еда и напитки"
+  },
+  {
+    "name": "Пиво",
+    "description": "галлон",
+    "cost": 20,
+    "source": "PHB:158",
+    "category": "Еда и напитки"
+  },
+  {
+    "name": "Сыр",
+    "description": "кусок",
+    "cost": 10,
+    "source": "PHB:158",
+    "category": "Еда и напитки"
+  },
+  {
+    "name": "Торжественный обед",
+    "description": "на 1 едока",
+    "cost": 1000,
+    "source": "PHB:158",
+    "category": "Еда и напитки"
+  },
+  {
+    "name": "Хлеб",
+    "description": "ломоть",
+    "cost": 2,
+    "source": "PHB:158",
+    "category": "Еда и напитки"
   }
 ]

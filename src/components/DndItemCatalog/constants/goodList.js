@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 import SEARCH_PROP_NAME from "./SEARCH_PROP_NAME";
 
 const goodList = [
@@ -2089,23 +2091,30 @@ const goodList = [
     }
 ]
 
-const goodListPreparedForFullTextSearch = goodList.map(
-    item => ({
-        ...item,
-        [SEARCH_PROP_NAME]: [
-            item.name,
-            item.description,
-            item.category,
-            item.subcategory,
-        ]
-            .filter(
-                e => e
-            )
-            .map(
-                e => String(e).toLowerCase()
-            )
-            .join(' ')
-    })
+const goodListPreparedForFullTextSearch = _.sortBy(
+    goodList.map(
+        (item, i) => ({
+            ...item,
+            id: i,
+            [SEARCH_PROP_NAME]: [
+                item.name,
+                item.description,
+                item.category,
+                item.subcategory,
+            ]
+                .filter(
+                    e => e
+                )
+                .map(
+                    e => String(e).toLowerCase()
+                )
+                .join(' ')
+        })
+    ),
+    [
+        'name',
+        'description',
+    ]
 )
 
 export default goodListPreparedForFullTextSearch

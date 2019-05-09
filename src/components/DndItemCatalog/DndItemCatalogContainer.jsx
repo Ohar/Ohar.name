@@ -1,4 +1,3 @@
-import _ from "lodash"
 import React, {Component} from "react"
 
 import goodList from "./constants/goodList"
@@ -6,23 +5,20 @@ import SEARCH_PROP_NAME from "./constants/SEARCH_PROP_NAME";
 
 import DndItemCatalogComponent from "./DndItemCatalogComponent"
 
-const TIME = 200
-
 class DndItemCatalogContainer extends Component {
     state = {
         goodsFilteredList: [],
     }
 
-    onSearch = _.throttle(
-        ({target: {value}}) => {
-            const goodsFilteredList = goodList.filter(
-                good => good[SEARCH_PROP_NAME].includes(value)
+    onSearch = ({target: {value}}) => {
+        const goodsFilteredList = value
+            ? goodList.filter(
+                good => good[SEARCH_PROP_NAME].includes(value.toLowerCase())
             )
+            : []
 
-            this.setState({goodsFilteredList})
-        },
-        TIME
-    )
+        this.setState({goodsFilteredList})
+    }
 
     render() {
         return (

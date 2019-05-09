@@ -10,7 +10,11 @@ const DndItemTableComponent = ({ itemList, className }) => {
   const columnList = itemList.reduce(
     (list, item) => _.uniq([
       ...list,
-      ...Object.keys(item).filter(propName => propName !== SEARCH_PROP_NAME),
+      ...Object
+          .keys(item)
+          .filter(
+              propName => propName !== SEARCH_PROP_NAME && propName !== 'id'
+          ),
     ]),
     [],
   )
@@ -37,7 +41,7 @@ const DndItemTableComponent = ({ itemList, className }) => {
         itemList.map(
           item => (
             <tr
-              key={item.name}
+              key={item.id || item.name}
               className='DndItemTable_row'
             >
               {

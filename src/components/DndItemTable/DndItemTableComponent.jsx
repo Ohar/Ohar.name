@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import columnNameCollection from "./constants/columnNameCollection"
+
 import "./DndItemTableStyles.css"
 
 const DndItemTableComponent = ({itemList, columnList, className}) => (
@@ -14,7 +16,7 @@ const DndItemTableComponent = ({itemList, columnList, className}) => (
                             key={columnName}
                             className='DndItemTable_cell DndItemTable_cell-head'
                         >
-                            {columnName}
+                            {columnNameCollection[columnName] || columnName}
                         </th>
                     ),
                 )

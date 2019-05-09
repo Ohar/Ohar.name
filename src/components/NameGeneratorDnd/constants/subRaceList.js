@@ -38,6 +38,13 @@ const subRaceList = [
       race: 'human',
     },
   },
+  {
+    text: 'Рашеми',
+    value: 'human:rashemi',
+    show: {
+      race: 'human',
+    },
+  },
 ]
 
 export default subRaceList

@@ -3,6 +3,7 @@ import generateDamar from './damar/utils/generateFullNameHumanDamar'
 import generateIlluskan from './illuskan/utils/generateFullNameHumanIlluskan'
 import generateKalishit from './kalishit/utils/generateFullNameHumanKalishit'
 import generateMulan from './mulan/utils/generateFullNameHumanMulan'
+import generateRashemi from './rashemi/utils/generateFullNameHumanRashemi'
 
 const generateFullNameHuman = ({subrace, ...rest}) => {
   switch (subrace) {
@@ -20,6 +21,9 @@ const generateFullNameHuman = ({subrace, ...rest}) => {
 
     case 'human:mulan':
       return generateMulan(rest)
+
+    case 'human:rashemi':
+      return generateRashemi(rest)
 
     default:
       return 'NOT READY'

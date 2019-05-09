@@ -32,7 +32,7 @@ const subRaceList = [
     },
   },
   {
-    text: 'Мулан',
+    text: 'Муланы',
     value: 'human:mulan',
     show: {
       race: 'human',

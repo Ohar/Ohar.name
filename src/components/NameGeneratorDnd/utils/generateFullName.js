@@ -1,10 +1,10 @@
-import generateFullNameHuman from '../races/human/generateFullNameHuman'
+import generateNameHuman from '../races/human/generateNameHuman'
 import generateNameTabaxi from "../races/tabaxi/generateNameTabaxi"
 
 const generateFullName = ({race, ...rest}) => {
   switch (race) {
     case 'human':
-      return generateFullNameHuman(rest)
+      return generateNameHuman(rest)
 
     case 'tabaxi':
       return generateNameTabaxi(rest)

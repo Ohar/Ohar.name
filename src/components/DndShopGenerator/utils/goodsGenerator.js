@@ -3,7 +3,7 @@ import {cityTypeCollection} from "./../constants/cityTypeList"
 
 const goodsGenerator = (shopType, cityType) => goodList.reduce(
   (shopGoods, { supply, ...otherGoodParams }) => {
-    const inShop = supply[shopType]
+    const inShop = supply && supply[shopType]
 
     if (inShop) {
       const { probability } = inShop

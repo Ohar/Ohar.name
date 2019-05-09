@@ -1,21 +1,25 @@
-import generateFullNameHumanChult from './chult/utils/generateFullNameHumanChult'
-import generateFullNameHumanDamar from './damar/utils/generateFullNameHumanDamar'
-import generateFullNameHumanIlluskan from './illuskan/utils/generateFullNameHumanIlluskan'
-import generateFullNameHumanKalishit from './kalishit/utils/generateFullNameHumanKalishit'
+import generateChult from './chult/utils/generateFullNameHumanChult'
+import generateDamar from './damar/utils/generateFullNameHumanDamar'
+import generateIlluskan from './illuskan/utils/generateFullNameHumanIlluskan'
+import generateKalishit from './kalishit/utils/generateFullNameHumanKalishit'
+import generateMulan from './mulan/utils/generateFullNameHumanMulan'
 
 const generateFullNameHuman = ({subrace, ...rest}) => {
   switch (subrace) {
     case 'human:chult':
-      return generateFullNameHumanChult(rest)
+      return generateChult(rest)
 
     case 'human:damar':
-      return generateFullNameHumanDamar(rest)
+      return generateDamar(rest)
 
     case 'human:illuskan':
-      return generateFullNameHumanIlluskan(rest)
+      return generateIlluskan(rest)
 
     case 'human:kalishit':
-      return generateFullNameHumanKalishit(rest)
+      return generateKalishit(rest)
+
+    case 'human:mulan':
+      return generateMulan(rest)
 
     default:
       return 'NOT READY'

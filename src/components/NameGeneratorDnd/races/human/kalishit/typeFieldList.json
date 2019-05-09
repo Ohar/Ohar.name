@@ -1,0 +1,14 @@
+[
+  {
+    "text": "Любые",
+    "value": "any"
+  },
+  {
+    "text": "С фамилией",
+    "value": "with_family"
+  },
+  {
+    "text": "Без фамилии",
+    "value": "no_family"
+  }
+]

@@ -68,6 +68,12 @@ class ContentGeneratorContainer extends PureComponent {
       .filter(
         ({visible}) => visible
       )
+      .map(
+        ({list, ...rest}) => ({
+            ...rest,
+            list: list.filter(({visible}) => visible)
+        })
+      )
 
     return (
       <ContentGeneratorComponent

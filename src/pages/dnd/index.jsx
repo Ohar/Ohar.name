@@ -9,8 +9,8 @@ import Seo from '@/components/Seo'
 const dndSubpageList = [
   {
     iconClass: 'icon-shop',
-    title: 'Генератор ассортимента магазинов',
-    url: '/dnd/generator-shop',
+    title: 'Каталог товаров',
+    url: '/dnd/item-catalog',
   },
   {
     iconClass: 'icon-person',

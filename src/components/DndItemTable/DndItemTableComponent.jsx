@@ -2,13 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import _ from "lodash"
 
+import SEARCH_PROP_NAME from "@/components/DndItemCatalog/constants/SEARCH_PROP_NAME";
+
 import "./DndItemTableStyles.css"
 
 const DndItemTableComponent = ({ itemList, className }) => {
   const columnList = itemList.reduce(
     (list, item) => _.uniq([
       ...list,
-      ...Object.keys(item),
+      ...Object.keys(item).filter(propName => propName !== SEARCH_PROP_NAME),
     ]),
     [],
   )

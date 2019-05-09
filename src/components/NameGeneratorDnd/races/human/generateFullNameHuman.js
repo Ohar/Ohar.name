@@ -1,12 +1,12 @@
-import generateChult from './chult/utils/generateFullNameHumanChult'
-import generateDamar from './damar/utils/generateFullNameHumanDamar'
-import generateIlluskan from './illuskan/utils/generateFullNameHumanIlluskan'
-import generateKalishit from './kalishit/utils/generateFullNameHumanKalishit'
-import generateMulan from './mulan/utils/generateFullNameHumanMulan'
-import generateRashemi from './rashemi/utils/generateFullNameHumanRashemi'
-import generateTyorami from './tyorami/utils/generateFullNameHumanTyorami'
-import generateChondatan from './chondatan/utils/generateFullNameHumanChondatan'
-import generateShu from './shu/utils/generateFullNameHumanShu'
+import generateChult from './subraces/chult/utils/generateChult'
+import generateDamar from './subraces/damar/utils/generateDamar'
+import generateIlluskan from './subraces/illuskan/utils/generateIlluskan'
+import generateKalishit from './subraces/kalishit/utils/generateKalishit'
+import generateMulan from './subraces/mulan/utils/generateMulan'
+import generateRashemi from './subraces/rashemi/utils/generateRashemi'
+import generateTyorami from './subraces/tyorami/utils/generateTyorami'
+import generateChondatan from './subraces/chondatan/utils/generateChondatan'
+import generateShu from './subraces/shu/utils/generateShu'
 
 const generateFullNameHuman = ({subrace, ...rest}) => {
   switch (subrace) {

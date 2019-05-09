@@ -6,6 +6,7 @@ import generateMulan from './mulan/utils/generateFullNameHumanMulan'
 import generateRashemi from './rashemi/utils/generateFullNameHumanRashemi'
 import generateTyorami from './tyorami/utils/generateFullNameHumanTyorami'
 import generateChondatan from './chondatan/utils/generateFullNameHumanChondatan'
+import generateShu from './shu/utils/generateFullNameHumanShu'
 
 const generateFullNameHuman = ({subrace, ...rest}) => {
   switch (subrace) {
@@ -33,6 +34,9 @@ const generateFullNameHuman = ({subrace, ...rest}) => {
     case 'human:chondatan':
     case 'human:tetir':
       return generateChondatan(rest)
+
+    case 'human:shu':
+      return generateShu(rest)
 
     default:
       return 'NOT READY'

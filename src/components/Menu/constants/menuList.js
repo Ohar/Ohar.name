@@ -28,11 +28,6 @@ const menuList = [
     content: 'Цитаты',
   },
   {
-    url: '/names',
-    title: 'Славянские, советские и греческие имена из Википедии',
-    content: 'Генератор имён',
-  },
-  {
     url: '/about',
     title: 'Связаться со мной',
     iconClass: 'icon-torso',

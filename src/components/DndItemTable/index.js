@@ -1,1 +1,1 @@
-export default from './DndItemTableComponent'
+export default from './DndItemTableContainer'

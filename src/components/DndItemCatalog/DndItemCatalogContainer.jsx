@@ -5,7 +5,7 @@ import SEARCH_PROP_NAME from "./constants/SEARCH_PROP_NAME";
 
 import DndItemCatalogComponent from "./DndItemCatalogComponent"
 
-const MAX_LEN = 15
+const MAX_LEN = 20
 
 class DndItemCatalogContainer extends Component {
     state = {

@@ -4,6 +4,7 @@ import generateIlluskan from './illuskan/utils/generateFullNameHumanIlluskan'
 import generateKalishit from './kalishit/utils/generateFullNameHumanKalishit'
 import generateMulan from './mulan/utils/generateFullNameHumanMulan'
 import generateRashemi from './rashemi/utils/generateFullNameHumanRashemi'
+import generateTyorami from './tyorami/utils/generateFullNameHumanTyorami'
 
 const generateFullNameHuman = ({subrace, ...rest}) => {
   switch (subrace) {
@@ -24,6 +25,9 @@ const generateFullNameHuman = ({subrace, ...rest}) => {
 
     case 'human:rashemi':
       return generateRashemi(rest)
+
+    case 'human:tyorami':
+      return generateTyorami(rest)
 
     default:
       return 'NOT READY'

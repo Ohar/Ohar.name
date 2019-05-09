@@ -46,6 +46,13 @@ const subRaceList = [
     },
   },
   {
+    text: 'Тетирцы',
+    value: 'human:tetir',
+    show: {
+      race: 'human',
+    },
+  },
+  {
     text: 'Тёрами',
     value: 'human:tyorami',
     show: {

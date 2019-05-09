@@ -31,6 +31,7 @@ const generateFullNameHuman = ({subrace, ...rest}) => {
       return generateTyorami(rest)
 
     case 'human:chondatan':
+    case 'human:tetir':
       return generateChondatan(rest)
 
     default:

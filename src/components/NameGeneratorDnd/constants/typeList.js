@@ -1,6 +1,6 @@
 import genderFieldList from "@/constants/genderFieldList"
 
-import typeFieldList from "../races/human/chult/typeFieldList"
+import useSurnameList from "../races/human/useSurnameList"
 import schemaList from "../races/tabaxi/constants/schemaList"
 import raceList from "./raceList"
 import subRaceList from "./subRaceList"
@@ -30,11 +30,11 @@ const typeList = [
     },
   },
   {
-    type: 'type',
-    title: 'Тип',
-    list: typeFieldList,
+    type: 'useSurname',
+    title: 'Использование фамилии',
+    list: useSurnameList,
     show: {
-      subrace: 'human:chult',
+      race: 'human',
     },
   },
 ]

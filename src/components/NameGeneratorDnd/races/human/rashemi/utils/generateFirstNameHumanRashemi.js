@@ -2,8 +2,8 @@ import _ from "lodash"
 
 import generateNameListHumanRashemi from "./generateNameListHumanRashemi"
 
-const generateFirstNameHumanRashemi = ({gender, type}) => {
-  const nameList = generateNameListHumanRashemi(gender, type)
+const generateFirstNameHumanRashemi = ({gender, useSurname}) => {
+  const nameList = generateNameListHumanRashemi(gender, useSurname)
 
   return _.sample(nameList)
 }

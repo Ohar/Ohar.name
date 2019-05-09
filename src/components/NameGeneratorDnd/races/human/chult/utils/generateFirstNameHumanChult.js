@@ -2,8 +2,8 @@ import _ from "lodash"
 
 import generateNameListHumanChult from "./generateNameListHumanChult"
 
-const generateFirstNameHumanChult = ({gender, type}) => {
-  const nameList = generateNameListHumanChult(gender, type)
+const generateFirstNameHumanChult = ({gender, useSurname}) => {
+  const nameList = generateNameListHumanChult(gender, useSurname)
 
   return _.sample(nameList)
 }

@@ -1,9 +1,9 @@
 import generateFirstNameHumanShu from './generateFirstNameHumanShu'
 import generateSurnameHumanShu from './generateSurnameHumanShu'
 
-const generateFullNameHumanShu = ({gender, type}) => {
-  const firstname = generateFirstNameHumanShu({gender, type})
-  const surname = generateSurnameHumanShu(type)
+const generateFullNameHumanShu = ({gender, useSurname}) => {
+  const firstname = generateFirstNameHumanShu({gender, useSurname})
+  const surname = generateSurnameHumanShu(useSurname)
 
   return `${surname} ${firstname}`.trim()
 }

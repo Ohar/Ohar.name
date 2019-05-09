@@ -2,8 +2,8 @@ import _ from 'lodash'
 
 import NAMES_FAMILY from "../dict/names_family"
 
-export default function generateSurnameHumanMulan(type) {
-  switch (type) {
+export default function generateSurnameHumanMulan(useSurname) {
+  switch (useSurname) {
     case 'no_family':
       return '';
 

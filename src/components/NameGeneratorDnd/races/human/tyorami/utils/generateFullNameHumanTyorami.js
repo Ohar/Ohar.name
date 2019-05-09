@@ -1,9 +1,9 @@
 import generateFirstNameHumanTyorami from './generateFirstNameHumanTyorami'
 import generateSurnameHumanTyorami from './generateSurnameHumanTyorami'
 
-const generateFullNameHumanTyorami = ({gender, type}) => {
-  const firstname = generateFirstNameHumanTyorami({gender, type})
-  const surname = generateSurnameHumanTyorami(type)
+const generateFullNameHumanTyorami = ({gender, useSurname}) => {
+  const firstname = generateFirstNameHumanTyorami({gender, useSurname})
+  const surname = generateSurnameHumanTyorami(useSurname)
 
   return `${firstname} ${surname}`.trim()
 }

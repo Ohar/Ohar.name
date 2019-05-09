@@ -1,18 +1,18 @@
 import _ from 'lodash'
 
-import DAMAR_NAMES_FAMILY from "../dict/names_family"
+import NAMES_FAMILY from "../dict/names_family"
 
-export default function generateSurnameHumanDamar(type) {
-  switch (type) {
+export default function generateSurnameHumanDamar(useSurname) {
+  switch (useSurname) {
     case 'no_family':
       return '';
 
     case 'any':
       return Math.random() > 0.5
-        ? _.sample(DAMAR_NAMES_FAMILY)
+        ? _.sample(NAMES_FAMILY)
         : ''
 
     default:
-      return _.sample(DAMAR_NAMES_FAMILY)
+      return _.sample(NAMES_FAMILY)
   }
 }

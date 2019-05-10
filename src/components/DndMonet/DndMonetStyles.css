@@ -1,0 +1,23 @@
+.DndMonet + .DndMonet {
+    margin-left: .4rem;
+}
+.DndMonet:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 100%;
+    margin-right: .2rem;
+}
+
+.DndMonet-gold:before {
+    background-color: gold;
+}
+
+.DndMonet-silver:before {
+    background-color: silver;
+}
+
+.DndMonet-copper:before {
+    background-color: chocolate;
+}

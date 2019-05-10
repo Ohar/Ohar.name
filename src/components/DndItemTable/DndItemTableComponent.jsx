@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import DndPrice from "@/components/DndPrice"
+
 import columnNameCollection from "./constants/columnNameCollection"
 
 import "./DndItemTableStyles.css"
@@ -38,7 +40,11 @@ const DndItemTableComponent = ({itemList, columnList, className}) => (
                                         key={columnName}
                                         className='DndItemTable_cell'
                                     >
-                                        {item[columnName]}
+                                        {
+                                            columnName === 'cost'
+                                                ? <DndPrice price={item[columnName]}/>
+                                                : item[columnName]
+                                        }
                                     </td>
                                 ),
                             )

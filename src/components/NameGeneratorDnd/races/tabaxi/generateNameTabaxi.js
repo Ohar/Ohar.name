@@ -8,6 +8,7 @@ const generateNameTabaxi = ({gender, ...rest}) => {
   switch (gender) {
     case 'any': {
       const genderList = _.map(genderFieldList, 'value').filter(e => e !== 'any')
+
       return generateFullNameTabaxi({
         gender: _.sample(genderList),
         ...rest,

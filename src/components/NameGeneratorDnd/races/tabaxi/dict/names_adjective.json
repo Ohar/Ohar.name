@@ -1,571 +1,1065 @@
 [
     {
-        "female": {
-            "nominative": "Красная",
-            "genitive": "Красной",
-            "prepositional": "Красной"
+        "single": {
+            "female": {
+                "nominative": "Красная",
+                "genitive": "Красной",
+                "prepositional": "Красной"
+            },
+            "male": {
+                "nominative": "Красный",
+                "genitive": "Красного",
+                "prepositional": "Красном"
+            },
+            "undefined": {
+                "nominative": "Красное",
+                "genitive": "Красного",
+                "prepositional": "Красном"
+            }
         },
-        "male": {
-            "nominative": "Красный",
-            "genitive": "Красного",
-            "prepositional": "Красном"
+		"dual": {
+            "female": {
+                "nominative": "Красные",
+                "genitive": "Красных",
+                "prepositional": "Красных"
+            },
+            "male": {
+                "nominative": "Красных",
+                "genitive": "Красных",
+                "prepositional": "Красных"
+            },
+            "undefined": {
+                "nominative": "Красных",
+                "genitive": "Красных",
+                "prepositional": "Красных"
+            }
         },
-        "undefined": {
-            "nominative": "Красное",
-            "genitive": "Красного",
-            "prepositional": "Красном"
-        },
-        "plural": {
-            "nominative": "Красные",
+		"plural": {
+            "nominative": "Красных",
             "genitive": "Красных",
             "prepositional": "Красных"
         }
     },
     {
-        "female": {
-            "nominative": "Жёлтая",
-            "genitive": "Жёлтой",
-            "prepositional": "Жёлтой"
+        "single": {
+            "female": {
+                "nominative": "Жёлтая",
+                "genitive": "Жёлтой",
+                "prepositional": "Жёлтой"
+            },
+            "male": {
+                "nominative": "Жёлтый",
+                "genitive": "Жёлтого",
+                "prepositional": "Жёлтом"
+            },
+            "undefined": {
+                "nominative": "Жёлтое",
+                "genitive": "Жёлтого",
+                "prepositional": "Жёлтом"
+            }
         },
-        "male": {
-            "nominative": "Жёлтый",
-            "genitive": "Жёлтого",
-            "prepositional": "Жёлтом"
+		"dual": {
+            "female": {
+                "nominative": "Жёлтые",
+                "genitive": "Жёлтых",
+                "prepositional": "Жёлтых"
+            },
+            "male": {
+                "nominative": "Жёлтых",
+                "genitive": "Жёлтых",
+                "prepositional": "Жёлтых"
+            },
+            "undefined": {
+                "nominative": "Жёлтых",
+                "genitive": "Жёлтых",
+                "prepositional": "Жёлтых"
+            }
         },
-        "undefined": {
-            "nominative": "Жёлтое",
-            "genitive": "Жёлтого",
-            "prepositional": "Жёлтом"
-        },
-        "plural": {
-            "nominative": "Жёлтые",
+		"plural": {
+            "nominative": "Жёлтых",
             "genitive": "Жёлтых",
             "prepositional": "Жёлтых"
         }
     },
     {
-        "female": {
-            "nominative": "Белая",
-            "genitive": "Белой",
-            "prepositional": "Белой"
+        "single": {
+            "female": {
+                "nominative": "Белая",
+                "genitive": "Белой",
+                "prepositional": "Белой"
+            },
+            "male": {
+                "nominative": "Белый",
+                "genitive": "Белого",
+                "prepositional": "Белом"
+            },
+            "undefined": {
+                "nominative": "Белое",
+                "genitive": "Белого",
+                "prepositional": "Белом"
+            }
         },
-        "male": {
-            "nominative": "Белый",
-            "genitive": "Белого",
-            "prepositional": "Белом"
+		"dual": {
+            "female": {
+                "nominative": "Белые",
+                "genitive": "Белых",
+                "prepositional": "Белых"
+            },
+            "male": {
+                "nominative": "Белых",
+                "genitive": "Белых",
+                "prepositional": "Белых"
+            },
+            "undefined": {
+                "nominative": "Белых",
+                "genitive": "Белых",
+                "prepositional": "Белых"
+            }
         },
-        "undefined": {
-            "nominative": "Белое",
-            "genitive": "Белого",
-            "prepositional": "Белом"
-        },
-        "plural": {
-            "nominative": "Белые",
+		"plural": {
+            "nominative": "Белых",
             "genitive": "Белых",
             "prepositional": "Белых"
         }
     },
     {
-        "female": {
-            "nominative": "Чёрная",
-            "genitive": "Чёрной",
-            "prepositional": "Чёрной"
+        "single": {
+            "female": {
+                "nominative": "Чёрная",
+                "genitive": "Чёрной",
+                "prepositional": "Чёрной"
+            },
+            "male": {
+                "nominative": "Чёрный",
+                "genitive": "Чёрного",
+                "prepositional": "Чёрном"
+            },
+            "undefined": {
+                "nominative": "Чёрное",
+                "genitive": "Чёрного",
+                "prepositional": "Чёрном"
+            }
         },
-        "male": {
-            "nominative": "Чёрный",
-            "genitive": "Чёрного",
-            "prepositional": "Чёрном"
+		"dual": {
+            "female": {
+                "nominative": "Чёрные",
+                "genitive": "Чёрных",
+                "prepositional": "Чёрных"
+            },
+            "male": {
+                "nominative": "Чёрных",
+                "genitive": "Чёрных",
+                "prepositional": "Чёрных"
+            },
+            "undefined": {
+                "nominative": "Чёрных",
+                "genitive": "Чёрных",
+                "prepositional": "Чёрных"
+            }
         },
-        "undefined": {
-            "nominative": "Чёрное",
-            "genitive": "Чёрного",
-            "prepositional": "Чёрном"
-        },
-        "plural": {
-            "nominative": "Чёрные",
+		"plural": {
+            "nominative": "Чёрных",
             "genitive": "Чёрных",
             "prepositional": "Чёрных"
         }
     },
     {
-        "female": {
-            "nominative": "Зелёная",
-            "genitive": "Зелёной",
-            "prepositional": "Зелёной"
+        "single": {
+            "female": {
+                "nominative": "Зелёная",
+                "genitive": "Зелёной",
+                "prepositional": "Зелёной"
+            },
+            "male": {
+                "nominative": "Зелёный",
+                "genitive": "Зелёного",
+                "prepositional": "Зелёном"
+            },
+            "undefined": {
+                "nominative": "Зелёное",
+                "genitive": "Зелёного",
+                "prepositional": "Зелёном"
+            }
         },
-        "male": {
-            "nominative": "Зелёный",
-            "genitive": "Зелёного",
-            "prepositional": "Зелёном"
+		"dual": {
+            "female": {
+                "nominative": "Зелёные",
+                "genitive": "Зелёных",
+                "prepositional": "Зелёных"
+            },
+            "male": {
+                "nominative": "Зелёных",
+                "genitive": "Зелёных",
+                "prepositional": "Зелёных"
+            },
+            "undefined": {
+                "nominative": "Зелёных",
+                "genitive": "Зелёных",
+                "prepositional": "Зелёных"
+            }
         },
-        "undefined": {
-            "nominative": "Зелёное",
-            "genitive": "Зелёного",
-            "prepositional": "Зелёном"
-        },
-        "plural": {
-            "nominative": "Зелёные",
+		"plural": {
+            "nominative": "Зелёных",
             "genitive": "Зелёных",
             "prepositional": "Зелёных"
         }
     },
     {
-        "female": {
-            "nominative": "Седая",
-            "genitive": "Седой",
-            "prepositional": "Седой"
+        "single": {
+            "female": {
+                "nominative": "Седая",
+                "genitive": "Седой",
+                "prepositional": "Седой"
+            },
+            "male": {
+                "nominative": "Седой",
+                "genitive": "Седого",
+                "prepositional": "Седом"
+            },
+            "undefined": {
+                "nominative": "Седое",
+                "genitive": "Седого",
+                "prepositional": "Седом"
+            }
         },
-        "male": {
-            "nominative": "Седой",
-            "genitive": "Седого",
-            "prepositional": "Седом"
+		"dual": {
+            "female": {
+                "nominative": "Седые",
+                "genitive": "Седых",
+                "prepositional": "Седых"
+            },
+            "male": {
+                "nominative": "Седых",
+                "genitive": "Седых",
+                "prepositional": "Седых"
+            },
+            "undefined": {
+                "nominative": "Седых",
+                "genitive": "Седых",
+                "prepositional": "Седых"
+            }
         },
-        "undefined": {
-            "nominative": "Седое",
-            "genitive": "Седого",
-            "prepositional": "Седом"
-        },
-        "plural": {
-            "nominative": "Седые",
+		"plural": {
+            "nominative": "Седых",
             "genitive": "Седых",
             "prepositional": "Седых"
         }
     },
     {
-        "female": {
-            "nominative": "Синяя",
-            "genitive": "Синей",
-            "prepositional": "Синей"
+        "single": {
+            "female": {
+                "nominative": "Синяя",
+                "genitive": "Синей",
+                "prepositional": "Синей"
+            },
+            "male": {
+                "nominative": "Синий",
+                "genitive": "Синего",
+                "prepositional": "Синем"
+            },
+            "undefined": {
+                "nominative": "Синее",
+                "genitive": "Синего",
+                "prepositional": "Синем"
+            }
         },
-        "male": {
-            "nominative": "Синий",
-            "genitive": "Синего",
-            "prepositional": "Синем"
+		"dual": {
+            "female": {
+                "nominative": "Синие",
+                "genitive": "Синих",
+                "prepositional": "Синих"
+            },
+            "male": {
+                "nominative": "Синих",
+                "genitive": "Синих",
+                "prepositional": "Синих"
+            },
+            "undefined": {
+                "nominative": "Синих",
+                "genitive": "Синих",
+                "prepositional": "Синих"
+            }
         },
-        "undefined": {
-            "nominative": "Синее",
-            "genitive": "Синего",
-            "prepositional": "Синем"
-        },
-        "plural": {
-            "nominative": "Синие",
+		"plural": {
+            "nominative": "Синих",
             "genitive": "Синих",
             "prepositional": "Синих"
         }
     },
     {
-        "female": {
-            "nominative": "Ловкая",
-            "genitive": "Ловкой",
-            "prepositional": "Ловкой"
+        "single": {
+            "female": {
+                "nominative": "Ловкая",
+                "genitive": "Ловкой",
+                "prepositional": "Ловкой"
+            },
+            "male": {
+                "nominative": "Ловкий",
+                "genitive": "Ловкого",
+                "prepositional": "Ловком"
+            },
+            "undefined": {
+                "nominative": "Ловкое",
+                "genitive": "Ловкого",
+                "prepositional": "Ловком"
+            }
         },
-        "male": {
-            "nominative": "Ловкий",
-            "genitive": "Ловкого",
-            "prepositional": "Ловком"
+		"dual": {
+            "female": {
+                "nominative": "Ловкие",
+                "genitive": "Ловких",
+                "prepositional": "Ловких"
+            },
+            "male": {
+                "nominative": "Ловких",
+                "genitive": "Ловких",
+                "prepositional": "Ловких"
+            },
+            "undefined": {
+                "nominative": "Ловких",
+                "genitive": "Ловких",
+                "prepositional": "Ловких"
+            }
         },
-        "undefined": {
-            "nominative": "Ловкое",
-            "genitive": "Ловкого",
-            "prepositional": "Ловком"
-        },
-        "plural": {
-            "nominative": "Ловкие",
+		"plural": {
+            "nominative": "Ловких",
             "genitive": "Ловких",
             "prepositional": "Ловких"
         }
     },
     {
-        "female": {
-            "nominative": "Сизая",
-            "genitive": "Сизой",
-            "prepositional": "Сизой"
+        "single": {
+            "female": {
+                "nominative": "Сизая",
+                "genitive": "Сизой",
+                "prepositional": "Сизой"
+            },
+            "male": {
+                "nominative": "Сизый",
+                "genitive": "Сизого",
+                "prepositional": "Сизым"
+            },
+            "undefined": {
+                "nominative": "Сизое",
+                "genitive": "Сизого",
+                "prepositional": "Сизым"
+            }
         },
-        "male": {
-            "nominative": "Сизый",
-            "genitive": "Сизого",
-            "prepositional": "Сизым"
+		"dual": {
+            "female": {
+                "nominative": "Сизые",
+                "genitive": "Сизых",
+                "prepositional": "Сизых"
+            },
+            "male": {
+                "nominative": "Сизых",
+                "genitive": "Сизых",
+                "prepositional": "Сизых"
+            },
+            "undefined": {
+                "nominative": "Сизых",
+                "genitive": "Сизых",
+                "prepositional": "Сизых"
+            }
         },
-        "undefined": {
-            "nominative": "Сизое",
-            "genitive": "Сизого",
-            "prepositional": "Сизым"
-        },
-        "plural": {
-            "nominative": "Сизые",
+		"plural": {
+            "nominative": "Сизых",
             "genitive": "Сизых",
             "prepositional": "Сизых"
         }
     },
     {
-        "female": {
-            "nominative": "Пахучая",
-            "genitive": "Пахучей",
-            "prepositional": "Пахучей"
+        "single": {
+            "female": {
+                "nominative": "Пахучая",
+                "genitive": "Пахучей",
+                "prepositional": "Пахучей"
+            },
+            "male": {
+                "nominative": "Пахучий",
+                "genitive": "Пахучего",
+                "prepositional": "Пахучем"
+            },
+            "undefined": {
+                "nominative": "Пахучее",
+                "genitive": "Пахучего",
+                "prepositional": "Пахучем"
+            }
         },
-        "male": {
-            "nominative": "Пахучий",
-            "genitive": "Пахучего",
-            "prepositional": "Пахучем"
+		"dual": {
+            "female": {
+                "nominative": "Пахучие",
+                "genitive": "Пахучих",
+                "prepositional": "Пахучих"
+            },
+            "male": {
+                "nominative": "Пахучих",
+                "genitive": "Пахучих",
+                "prepositional": "Пахучих"
+            },
+            "undefined": {
+                "nominative": "Пахучих",
+                "genitive": "Пахучих",
+                "prepositional": "Пахучих"
+            }
         },
-        "undefined": {
-            "nominative": "Пахучее",
-            "genitive": "Пахучего",
-            "prepositional": "Пахучем"
-        },
-        "plural": {
-            "nominative": "Пахучие",
+		"plural": {
+            "nominative": "Пахучих",
             "genitive": "Пахучих",
             "prepositional": "Пахучих"
         }
     },
     {
-        "female": {
-            "nominative": "Яркая",
-            "genitive": "Яркой",
-            "prepositional": "Яркой"
+        "single": {
+            "female": {
+                "nominative": "Яркая",
+                "genitive": "Яркой",
+                "prepositional": "Яркой"
+            },
+            "male": {
+                "nominative": "Яркий",
+                "genitive": "Яркого",
+                "prepositional": "Ярком"
+            },
+            "undefined": {
+                "nominative": "Яркое",
+                "genitive": "Яркого",
+                "prepositional": "Ярком"
+            }
         },
-        "male": {
-            "nominative": "Яркий",
-            "genitive": "Яркого",
-            "prepositional": "Ярком"
+		"dual": {
+            "female": {
+                "nominative": "Яркие",
+                "genitive": "Ярких",
+                "prepositional": "Ярких"
+            },
+            "male": {
+                "nominative": "Ярких",
+                "genitive": "Ярких",
+                "prepositional": "Ярких"
+            },
+            "undefined": {
+                "nominative": "Ярких",
+                "genitive": "Ярких",
+                "prepositional": "Ярких"
+            }
         },
-        "undefined": {
-            "nominative": "Яркое",
-            "genitive": "Яркого",
-            "prepositional": "Ярком"
-        },
-        "plural": {
-            "nominative": "Яркие",
+		"plural": {
+            "nominative": "Ярких",
             "genitive": "Ярких",
             "prepositional": "Ярких"
         }
     },
     {
-        "female": {
-            "nominative": "Далёкая",
-            "genitive": "Далёкой",
-            "prepositional": "Далёкой"
+        "single": {
+            "female": {
+                "nominative": "Далёкая",
+                "genitive": "Далёкой",
+                "prepositional": "Далёкой"
+            },
+            "male": {
+                "nominative": "Далёкий",
+                "genitive": "Далёкого",
+                "prepositional": "Далёком"
+            },
+            "undefined": {
+                "nominative": "Далёкое",
+                "genitive": "Далёкого",
+                "prepositional": "Далёком"
+            }
         },
-        "male": {
-            "nominative": "Далёкий",
-            "genitive": "Далёкого",
-            "prepositional": "Далёком"
+		"dual": {
+            "female": {
+                "nominative": "Далёкие",
+                "genitive": "Далёких",
+                "prepositional": "Далёких"
+            },
+            "male": {
+                "nominative": "Далёких",
+                "genitive": "Далёких",
+                "prepositional": "Далёких"
+            },
+            "undefined": {
+                "nominative": "Далёких",
+                "genitive": "Далёких",
+                "prepositional": "Далёких"
+            }
         },
-        "undefined": {
-            "nominative": "Далёкое",
-            "genitive": "Далёкого",
-            "prepositional": "Далёком"
-        },
-        "plural": {
-            "nominative": "Далёкие",
+		"plural": {
+            "nominative": "Далёких",
             "genitive": "Далёких",
             "prepositional": "Далёких"
         }
     },
     {
-        "female": {
-            "nominative": "Горная",
-            "genitive": "Горной",
-            "prepositional": "Горной"
+        "single": {
+            "female": {
+                "nominative": "Горная",
+                "genitive": "Горной",
+                "prepositional": "Горной"
+            },
+            "male": {
+                "nominative": "Горный",
+                "genitive": "Горного",
+                "prepositional": "Горном"
+            },
+            "undefined": {
+                "nominative": "Горное",
+                "genitive": "Горного",
+                "prepositional": "Горном"
+            }
         },
-        "male": {
-            "nominative": "Горный",
-            "genitive": "Горного",
-            "prepositional": "Горном"
+		"dual": {
+            "female": {
+                "nominative": "Горные",
+                "genitive": "Горных",
+                "prepositional": "Горных"
+            },
+            "male": {
+                "nominative": "Горных",
+                "genitive": "Горных",
+                "prepositional": "Горных"
+            },
+            "undefined": {
+                "nominative": "Горных",
+                "genitive": "Горных",
+                "prepositional": "Горных"
+            }
         },
-        "undefined": {
-            "nominative": "Горное",
-            "genitive": "Горного",
-            "prepositional": "Горном"
-        },
-        "plural": {
-            "nominative": "Горные",
+		"plural": {
+            "nominative": "Горных",
             "genitive": "Горных",
             "prepositional": "Горных"
         }
     },
     {
-        "female": {
-            "nominative": "Шумная",
-            "genitive": "Шумной",
-            "prepositional": "Шумной"
+        "single": {
+            "female": {
+                "nominative": "Шумная",
+                "genitive": "Шумной",
+                "prepositional": "Шумной"
+            },
+            "male": {
+                "nominative": "Шумный",
+                "genitive": "Шумного",
+                "prepositional": "Шумном"
+            },
+            "undefined": {
+                "nominative": "Шумное",
+                "genitive": "Шумного",
+                "prepositional": "Шумном"
+            }
         },
-        "male": {
-            "nominative": "Шумный",
-            "genitive": "Шумного",
-            "prepositional": "Шумном"
+		"dual": {
+            "female": {
+                "nominative": "Шумные",
+                "genitive": "Шумных",
+                "prepositional": "Шумных"
+            },
+            "male": {
+                "nominative": "Шумных",
+                "genitive": "Шумных",
+                "prepositional": "Шумных"
+            },
+            "undefined": {
+                "nominative": "Шумных",
+                "genitive": "Шумных",
+                "prepositional": "Шумных"
+            }
         },
-        "undefined": {
-            "nominative": "Шумное",
-            "genitive": "Шумного",
-            "prepositional": "Шумном"
-        },
-        "plural": {
-            "nominative": "Шумные",
+		"plural": {
+            "nominative": "Шумных",
             "genitive": "Шумных",
             "prepositional": "Шумных"
         }
     },
     {
-        "female": {
-            "nominative": "Храпящая",
-            "genitive": "Храпящей",
-            "prepositional": "Храпящей"
+        "single": {
+            "female": {
+                "nominative": "Храпящая",
+                "genitive": "Храпящей",
+                "prepositional": "Храпящей"
+            },
+            "male": {
+                "nominative": "Храпящий",
+                "genitive": "Храпящего",
+                "prepositional": "Храпящем"
+            },
+            "undefined": {
+                "nominative": "Храпящее",
+                "genitive": "Храпящего",
+                "prepositional": "Храпящем"
+            }
         },
-        "male": {
-            "nominative": "Храпящий",
-            "genitive": "Храпящего",
-            "prepositional": "Храпящем"
+		"dual": {
+            "female": {
+                "nominative": "Храпящие",
+                "genitive": "Храпящих",
+                "prepositional": "Храпящих"
+            },
+            "male": {
+                "nominative": "Храпящих",
+                "genitive": "Храпящих",
+                "prepositional": "Храпящих"
+            },
+            "undefined": {
+                "nominative": "Храпящих",
+                "genitive": "Храпящих",
+                "prepositional": "Храпящих"
+            }
         },
-        "undefined": {
-            "nominative": "Храпящее",
-            "genitive": "Храпящего",
-            "prepositional": "Храпящем"
-        },
-        "plural": {
-            "nominative": "Храпящие",
+		"plural": {
+            "nominative": "Храпящих",
             "genitive": "Храпящих",
             "prepositional": "Храпящих"
         }
     },
     {
-        "female": {
-            "nominative": "Туманная",
-            "genitive": "Туманной",
-            "prepositional": "Туманной"
+        "single": {
+            "female": {
+                "nominative": "Туманная",
+                "genitive": "Туманной",
+                "prepositional": "Туманной"
+            },
+            "male": {
+                "nominative": "Туманный",
+                "genitive": "Туманного",
+                "prepositional": "Туманном"
+            },
+            "undefined": {
+                "nominative": "Туманное",
+                "genitive": "Туманного",
+                "prepositional": "Туманном"
+            }
         },
-        "male": {
-            "nominative": "Туманный",
-            "genitive": "Туманного",
-            "prepositional": "Туманном"
+		"dual": {
+            "female": {
+                "nominative": "Туманные",
+                "genitive": "Туманных",
+                "prepositional": "Туманных"
+            },
+            "male": {
+                "nominative": "Туманных",
+                "genitive": "Туманных",
+                "prepositional": "Туманных"
+            },
+            "undefined": {
+                "nominative": "Туманных",
+                "genitive": "Туманных",
+                "prepositional": "Туманных"
+            }
         },
-        "undefined": {
-            "nominative": "Туманное",
-            "genitive": "Туманного",
-            "prepositional": "Туманном"
-        },
-        "plural": {
-            "nominative": "Туманные",
+		"plural": {
+            "nominative": "Туманных",
             "genitive": "Туманных",
             "prepositional": "Туманных"
         }
     },
     {
-        "female": {
-            "nominative": "Закрытая",
-            "genitive": "Закрытой",
-            "prepositional": "Закрытой"
+        "single": {
+            "female": {
+                "nominative": "Закрытая",
+                "genitive": "Закрытой",
+                "prepositional": "Закрытой"
+            },
+            "male": {
+                "nominative": "Закрытый",
+                "genitive": "Закрытого",
+                "prepositional": "Закрытом"
+            },
+            "undefined": {
+                "nominative": "Закрытое",
+                "genitive": "Закрытого",
+                "prepositional": "Закрытом"
+            }
         },
-        "male": {
-            "nominative": "Закрытый",
-            "genitive": "Закрытого",
-            "prepositional": "Закрытом"
+		"dual": {
+            "female": {
+                "nominative": "Закрытые",
+                "genitive": "Закрытых",
+                "prepositional": "Закрытых"
+            },
+            "male": {
+                "nominative": "Закрытых",
+                "genitive": "Закрытых",
+                "prepositional": "Закрытых"
+            },
+            "undefined": {
+                "nominative": "Закрытых",
+                "genitive": "Закрытых",
+                "prepositional": "Закрытых"
+            }
         },
-        "undefined": {
-            "nominative": "Закрытое",
-            "genitive": "Закрытого",
-            "prepositional": "Закрытом"
-        },
-        "plural": {
-            "nominative": "Закрытые",
+		"plural": {
+            "nominative": "Закрытых",
             "genitive": "Закрытых",
             "prepositional": "Закрытых"
         }
     },
     {
-        "female": {
-            "nominative": "Медная",
-            "genitive": "Медной",
-            "prepositional": "Медной"
+        "single": {
+            "female": {
+                "nominative": "Медная",
+                "genitive": "Медной",
+                "prepositional": "Медной"
+            },
+            "male": {
+                "nominative": "Медный",
+                "genitive": "Медного",
+                "prepositional": "Медном"
+            },
+            "undefined": {
+                "nominative": "Медное",
+                "genitive": "Медного",
+                "prepositional": "Медном"
+            }
         },
-        "male": {
-            "nominative": "Медный",
-            "genitive": "Медного",
-            "prepositional": "Медном"
+		"dual": {
+            "female": {
+                "nominative": "Медные",
+                "genitive": "Медных",
+                "prepositional": "Медных"
+            },
+            "male": {
+                "nominative": "Медных",
+                "genitive": "Медных",
+                "prepositional": "Медных"
+            },
+            "undefined": {
+                "nominative": "Медных",
+                "genitive": "Медных",
+                "prepositional": "Медных"
+            }
         },
-        "undefined": {
-            "nominative": "Медное",
-            "genitive": "Медного",
-            "prepositional": "Медном"
-        },
-        "plural": {
-            "nominative": "Медные",
+		"plural": {
+            "nominative": "Медных",
             "genitive": "Медных",
             "prepositional": "Медных"
         }
     },
     {
-        "female": {
-            "nominative": "Стальная",
-            "genitive": "Стальной",
-            "prepositional": "Стальной"
+        "single": {
+            "female": {
+                "nominative": "Стальная",
+                "genitive": "Стальной",
+                "prepositional": "Стальной"
+            },
+            "male": {
+                "nominative": "Стальной",
+                "genitive": "Стального",
+                "prepositional": "Стальном"
+            },
+            "undefined": {
+                "nominative": "Стальное",
+                "genitive": "Стального",
+                "prepositional": "Стальном"
+            }
         },
-        "male": {
-            "nominative": "Стальной",
-            "genitive": "Стального",
-            "prepositional": "Стальном"
+		"dual": {
+            "female": {
+                "nominative": "Стальные",
+                "genitive": "Стальных",
+                "prepositional": "Стальных"
+            },
+            "male": {
+                "nominative": "Стальных",
+                "genitive": "Стальных",
+                "prepositional": "Стальных"
+            },
+            "undefined": {
+                "nominative": "Стальных",
+                "genitive": "Стальных",
+                "prepositional": "Стальных"
+            }
         },
-        "undefined": {
-            "nominative": "Стальное",
-            "genitive": "Стального",
-            "prepositional": "Стальном"
-        },
-        "plural": {
-            "nominative": "Стальные",
+		"plural": {
+            "nominative": "Стальных",
             "genitive": "Стальных",
             "prepositional": "Стальных"
         }
     },
     {
-        "female": {
-            "nominative": "Бумажная",
-            "genitive": "Бумажной",
-            "prepositional": "Бумажной"
+        "single": {
+            "female": {
+                "nominative": "Бумажная",
+                "genitive": "Бумажной",
+                "prepositional": "Бумажной"
+            },
+            "male": {
+                "nominative": "Бумажный",
+                "genitive": "Бумажного",
+                "prepositional": "Бумажном"
+            },
+            "undefined": {
+                "nominative": "Бумажное",
+                "genitive": "Бумажного",
+                "prepositional": "Бумажном"
+            }
         },
-        "male": {
-            "nominative": "Бумажный",
-            "genitive": "Бумажного",
-            "prepositional": "Бумажном"
+		"dual": {
+            "female": {
+                "nominative": "Бумажные",
+                "genitive": "Бумажных",
+                "prepositional": "Бумажных"
+            },
+            "male": {
+                "nominative": "Бумажных",
+                "genitive": "Бумажных",
+                "prepositional": "Бумажных"
+            },
+            "undefined": {
+                "nominative": "Бумажных",
+                "genitive": "Бумажных",
+                "prepositional": "Бумажных"
+            }
         },
-        "undefined": {
-            "nominative": "Бумажное",
-            "genitive": "Бумажного",
-            "prepositional": "Бумажном"
-        },
-        "plural": {
-            "nominative": "Бумажные",
+		"plural": {
+            "nominative": "Бумажных",
             "genitive": "Бумажных",
             "prepositional": "Бумажных"
         }
     },
     {
-        "female": {
-            "nominative": "Стеклянная",
-            "genitive": "Стеклянной",
-            "prepositional": "Стеклянной"
+        "single": {
+            "female": {
+                "nominative": "Стеклянная",
+                "genitive": "Стеклянной",
+                "prepositional": "Стеклянной"
+            },
+            "male": {
+                "nominative": "Стеклянный",
+                "genitive": "Стеклянного",
+                "prepositional": "Стеклянном"
+            },
+            "undefined": {
+                "nominative": "Стеклянное",
+                "genitive": "Стеклянного",
+                "prepositional": "Стеклянном"
+            }
         },
-        "male": {
-            "nominative": "Стеклянный",
-            "genitive": "Стеклянного",
-            "prepositional": "Стеклянном"
+		"dual": {
+            "female": {
+                "nominative": "Стеклянные",
+                "genitive": "Стеклянных",
+                "prepositional": "Стеклянных"
+            },
+            "male": {
+                "nominative": "Стеклянных",
+                "genitive": "Стеклянных",
+                "prepositional": "Стеклянных"
+            },
+            "undefined": {
+                "nominative": "Стеклянных",
+                "genitive": "Стеклянных",
+                "prepositional": "Стеклянных"
+            }
         },
-        "undefined": {
-            "nominative": "Стеклянное",
-            "genitive": "Стеклянного",
-            "prepositional": "Стеклянном"
-        },
-        "plural": {
-            "nominative": "Стеклянные",
+		"plural": {
+            "nominative": "Стеклянных",
             "genitive": "Стеклянных",
             "prepositional": "Стеклянных"
         }
     },
     {
-        "female": {
-            "nominative": "Кожаная",
-            "genitive": "Кожаной",
-            "prepositional": "Кожаной"
+        "single": {
+            "female": {
+                "nominative": "Кожаная",
+                "genitive": "Кожаной",
+                "prepositional": "Кожаной"
+            },
+            "male": {
+                "nominative": "Кожаный",
+                "genitive": "Кожаного",
+                "prepositional": "Кожаном"
+            },
+            "undefined": {
+                "nominative": "Кожаное",
+                "genitive": "Кожаного",
+                "prepositional": "Кожаном"
+            }
         },
-        "male": {
-            "nominative": "Кожаный",
-            "genitive": "Кожаного",
-            "prepositional": "Кожаном"
+		"dual": {
+            "female": {
+                "nominative": "Кожаные",
+                "genitive": "Кожаных",
+                "prepositional": "Кожаных"
+            },
+            "male": {
+                "nominative": "Кожаных",
+                "genitive": "Кожаных",
+                "prepositional": "Кожаных"
+            },
+            "undefined": {
+                "nominative": "Кожаных",
+                "genitive": "Кожаных",
+                "prepositional": "Кожаных"
+            }
         },
-        "undefined": {
-            "nominative": "Кожаное",
-            "genitive": "Кожаного",
-            "prepositional": "Кожаном"
-        },
-        "plural": {
-            "nominative": "Кожаные",
+		"plural": {
+            "nominative": "Кожаных",
             "genitive": "Кожаных",
             "prepositional": "Кожаных"
         }
     },
     {
-        "female": {
-            "nominative": "Горная",
-            "genitive": "Горной",
-            "prepositional": "Горной"
+        "single": {
+            "female": {
+                "nominative": "Горная",
+                "genitive": "Горной",
+                "prepositional": "Горной"
+            },
+            "male": {
+                "nominative": "Горный",
+                "genitive": "Горного",
+                "prepositional": "Горном"
+            },
+            "undefined": {
+                "nominative": "Горное",
+                "genitive": "Горного",
+                "prepositional": "Горном"
+            }
         },
-        "male": {
-            "nominative": "Горный",
-            "genitive": "Горного",
-            "prepositional": "Горном"
+		"dual": {
+            "female": {
+                "nominative": "Горные",
+                "genitive": "Горных",
+                "prepositional": "Горных"
+            },
+            "male": {
+                "nominative": "Горных",
+                "genitive": "Горных",
+                "prepositional": "Горных"
+            },
+            "undefined": {
+                "nominative": "Горных",
+                "genitive": "Горных",
+                "prepositional": "Горных"
+            }
         },
-        "undefined": {
-            "nominative": "Горное",
-            "genitive": "Горного",
-            "prepositional": "Горном"
-        },
-        "plural": {
-            "nominative": "Горные",
+		"plural": {
+            "nominative": "Горных",
             "genitive": "Горных",
             "prepositional": "Горных"
         }
     },
     {
-        "female": {
-            "nominative": "Нефритовая",
-            "genitive": "Нефритовой",
-            "prepositional": "Нефритовой"
+        "single": {
+            "female": {
+                "nominative": "Нефритовая",
+                "genitive": "Нефритовой",
+                "prepositional": "Нефритовой"
+            },
+            "male": {
+                "nominative": "Нефритовый",
+                "genitive": "Нефритового",
+                "prepositional": "Нефритовом"
+            },
+            "undefined": {
+                "nominative": "Нефритовое",
+                "genitive": "Нефритового",
+                "prepositional": "Нефритовом"
+            }
         },
-        "male": {
-            "nominative": "Нефритовый",
-            "genitive": "Нефритового",
-            "prepositional": "Нефритовом"
+		"dual": {
+            "female": {
+                "nominative": "Нефритовые",
+                "genitive": "Нефритовых",
+                "prepositional": "Нефритовых"
+            },
+            "male": {
+                "nominative": "Нефритовых",
+                "genitive": "Нефритовых",
+                "prepositional": "Нефритовых"
+            },
+            "undefined": {
+                "nominative": "Нефритовых",
+                "genitive": "Нефритовых",
+                "prepositional": "Нефритовых"
+            }
         },
-        "undefined": {
-            "nominative": "Нефритовое",
-            "genitive": "Нефритового",
-            "prepositional": "Нефритовом"
-        },
-        "plural": {
-            "nominative": "Нефритовые",
+		"plural": {
+            "nominative": "Нефритовых",
             "genitive": "Нефритовых",
             "prepositional": "Нефритовых"
         }
     },
     {
-        "female": {
-            "nominative": "Леворукая",
-            "genitive": "Леворукой",
-            "prepositional": "Леворукой"
+        "single": {
+            "female": {
+                "nominative": "Леворукая",
+                "genitive": "Леворукой",
+                "prepositional": "Леворукой"
+            },
+            "male": {
+                "nominative": "Леворукий",
+                "genitive": "Леворукого",
+                "prepositional": "Леворуким"
+            },
+            "undefined": {
+                "nominative": "Леворукое",
+                "genitive": "Леворукого",
+                "prepositional": "Леворуким"
+            }
         },
-        "male": {
-            "nominative": "Леворукий",
-            "genitive": "Леворукого",
-            "prepositional": "Леворуким"
+		"dual": {
+            "female": {
+                "nominative": "Леворукие",
+                "genitive": "Леворуких",
+                "prepositional": "Леворуких"
+            },
+            "male": {
+                "nominative": "Леворуких",
+                "genitive": "Леворуких",
+                "prepositional": "Леворуких"
+            },
+            "undefined": {
+                "nominative": "Леворуких",
+                "genitive": "Леворуких",
+                "prepositional": "Леворуких"
+            }
         },
-        "undefined": {
-            "nominative": "Леворукое",
-            "genitive": "Леворукого",
-            "prepositional": "Леворуким"
-        },
-        "plural": {
+		"plural": {
             "nominative": "Леворукие",
             "genitive": "Леворуких",
             "prepositional": "Леворуких"
         }
     },
     {
-        "female": {
-            "nominative": "Грозовая",
-            "genitive": "Грозовой",
-            "prepositional": "Грозовой"
+        "single": {
+            "female": {
+                "nominative": "Грозовая",
+                "genitive": "Грозовой",
+                "prepositional": "Грозовой"
+            },
+            "male": {
+                "nominative": "Грозовой",
+                "genitive": "Грозового",
+                "prepositional": "Грозовом"
+            },
+            "undefined": {
+                "nominative": "Грозовое",
+                "genitive": "Грозового",
+                "prepositional": "Грозовом"
+            }
         },
-        "male": {
-            "nominative": "Грозовой",
-            "genitive": "Грозового",
-            "prepositional": "Грозовом"
+		"dual": {
+            "female": {
+                "nominative": "Грозовые",
+                "genitive": "Грозовых",
+                "prepositional": "Грозовых"
+            },
+            "male": {
+                "nominative": "Грозовых",
+                "genitive": "Грозовых",
+                "prepositional": "Грозовых"
+            },
+            "undefined": {
+                "nominative": "Грозовых",
+                "genitive": "Грозовых",
+                "prepositional": "Грозовых"
+            }
         },
-        "undefined": {
-            "nominative": "Грозовое",
-            "genitive": "Грозового",
-            "prepositional": "Грозовом"
-        },
-        "plural": {
+		"plural": {
             "nominative": "Грозовые",
             "genitive": "Грозовых",
             "prepositional": "Грозовых"

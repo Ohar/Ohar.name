@@ -1,0 +1,236 @@
+[
+  {
+    "type": "single",
+    "female": {
+      "nominative": "Одинокая",
+      "genitive": "Одинокой",
+      "prepositional": "Одиноких"
+    },
+    "male": {
+      "nominative": "Одинокий",
+      "genitive": "Одинокого",
+      "prepositional": "Одиноких"
+    },
+    "undefined": {
+      "nominative": "Одинокое",
+      "genitive": "Одинокого",
+      "prepositional": "Одиноких"
+    }
+  },
+  {
+    "type": "dual",
+    "female": {
+      "nominative": "Две",
+      "genitive": "Двух",
+      "prepositional": "Двух"
+    },
+    "male": {
+      "nominative": "Два",
+      "genitive": "Двух",
+      "prepositional": "Двух"
+    },
+    "undefined": {
+      "nominative": "Два",
+      "genitive": "Двух",
+      "prepositional": "Двух"
+    }
+  },
+  {
+    "type": "dual",
+    "female": {
+      "nominative": "Три",
+      "genitive": "Трёх",
+      "prepositional": "Трёх"
+    },
+    "male": {
+      "nominative": "Три",
+      "genitive": "Трёх",
+      "prepositional": "Трёх"
+    },
+    "undefined": {
+      "nominative": "Три",
+      "genitive": "Трёх",
+      "prepositional": "Трёх"
+    }
+  },
+  {
+    "type": "dual",
+    "female": {
+      "nominative": "Четыре",
+      "genitive": "Четырёх",
+      "prepositional": "Четырёх"
+    },
+    "male": {
+      "nominative": "Четыре",
+      "genitive": "Четырёх",
+      "prepositional": "Четырёх"
+    },
+    "undefined": {
+      "nominative": "Четыре",
+      "genitive": "Четырёх",
+      "prepositional": "Четырёх"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
+      "nominative": "Пара",
+      "genitive": "Пары",
+      "prepositional": "Паре"
+    },
+    "male": {
+      "nominative": "Пара",
+      "genitive": "Пары",
+      "prepositional": "Паре"
+    },
+    "undefined": {
+      "nominative": "Пара",
+      "genitive": "Пары",
+      "prepositional": "Паре"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
+      "nominative": "Пять",
+      "genitive": "Пяти",
+      "prepositional": "Пяти"
+    },
+    "male": {
+      "nominative": "Пять",
+      "genitive": "Пяти",
+      "prepositional": "Пяти"
+    },
+    "undefined": {
+      "nominative": "Пять",
+      "genitive": "Пяти",
+      "prepositional": "Пяти"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
+      "nominative": "Шесть",
+      "genitive": "Шести",
+      "prepositional": "Шести"
+    },
+    "male": {
+      "nominative": "Шесть",
+      "genitive": "Шести",
+      "prepositional": "Шести"
+    },
+    "undefined": {
+      "nominative": "Шесть",
+      "genitive": "Шести",
+      "prepositional": "Шести"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
+      "nominative": "Семь",
+      "genitive": "Семи",
+      "prepositional": "Семи"
+    },
+    "male": {
+      "nominative": "Семь",
+      "genitive": "Семи",
+      "prepositional": "Семи"
+    },
+    "undefined": {
+      "nominative": "Семь",
+      "genitive": "Семи",
+      "prepositional": "Семи"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
+      "nominative": "Восемь",
+      "genitive": "Восьми",
+      "prepositional": "Восьми"
+    },
+    "male": {
+      "nominative": "Восемь",
+      "genitive": "Восьми",
+      "prepositional": "Восьми"
+    },
+    "undefined": {
+      "nominative": "Восемь",
+      "genitive": "Восьми",
+      "prepositional": "Восьми"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
+      "nominative": "Девять",
+      "genitive": "Девяти",
+      "prepositional": "Девяти"
+    },
+    "male": {
+      "nominative": "Девять",
+      "genitive": "Девяти",
+      "prepositional": "Девяти"
+    },
+    "undefined": {
+      "nominative": "Девять",
+      "genitive": "Девяти",
+      "prepositional": "Девяти"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
+      "nominative": "Десять",
+      "genitive": "Десяти",
+      "prepositional": "Десяти"
+    },
+    "male": {
+      "nominative": "Десять",
+      "genitive": "Десяти",
+      "prepositional": "Десяти"
+    },
+    "undefined": {
+      "nominative": "Десять",
+      "genitive": "Десяти",
+      "prepositional": "Десяти"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
+      "nominative": "Дюжина",
+      "genitive": "Дюжины",
+      "prepositional": "Дюжине"
+    },
+    "male": {
+      "nominative": "Дюжина",
+      "genitive": "Дюжины",
+      "prepositional": "Дюжине"
+    },
+    "undefined": {
+      "nominative": "Дюжина",
+      "genitive": "Дюжины",
+      "prepositional": "Дюжине"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
+      "nominative": "Сто",
+      "genitive": "Ста",
+      "prepositional": "Ста"
+    },
+    "male": {
+      "nominative": "Сто",
+      "genitive": "Ста",
+      "prepositional": "Ста"
+    },
+    "undefined": {
+      "nominative": "Сто",
+      "genitive": "Ста",
+      "prepositional": "Ста"
+    }
+  }
+]

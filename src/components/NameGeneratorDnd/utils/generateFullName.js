@@ -1,5 +1,6 @@
 import generateNameHuman from '../races/human/generateNameHuman'
 import generateNameTabaxi from "../races/tabaxi/generateNameTabaxi"
+import generateNameGrung from "../races/grung/generateNameGrung"
 
 const generateFullName = ({race, ...rest}) => {
   switch (race) {
@@ -8,6 +9,9 @@ const generateFullName = ({race, ...rest}) => {
 
     case 'tabaxi':
       return generateNameTabaxi(rest)
+
+    case 'grung':
+      return generateNameGrung(rest)
 
     default:
       return 'NOT READY'

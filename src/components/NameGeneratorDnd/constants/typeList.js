@@ -15,6 +15,9 @@ const typeList = [
     type: 'subrace',
     title: 'Подраса',
     list: subRaceList,
+    show: {
+      race: 'human',
+    },
   },
   {
     type: 'gender',

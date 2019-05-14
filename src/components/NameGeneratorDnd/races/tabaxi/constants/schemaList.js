@@ -1,7 +1,7 @@
 export const ADJECTIVE_NOUN = 'adjective_noun'
 export const NOUN_AT_NOUN = 'noun_at_noun'
-export const NOUN_OF_NOUN = 'noun_of_noun'
 export const NOUN_OF_ADJECTIVE_NOUN = 'noun_of_adjective_noun'
+export const NOUN_OF_NOUN = 'noun_of_noun'
 
 const schemaList = [
   {

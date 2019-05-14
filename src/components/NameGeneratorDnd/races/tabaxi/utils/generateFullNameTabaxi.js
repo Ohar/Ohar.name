@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-import {
+import schemaList, {
   ADJECTIVE_NOUN,
   NOUN_AT_NOUN,
   NOUN_OF_ADJECTIVE_NOUN,
@@ -16,12 +16,7 @@ import generateNameTabaxiSchemeNounOfAdjectiveNoun from './generateNameTabaxiSch
 // Кланы табакси
 const generateFullNameTabaxi = ({gender, schema}) => {
   const schemaToUse = schema === 'any'
-    ? _.sample([
-      ADJECTIVE_NOUN,
-      NOUN_AT_NOUN,
-      NOUN_OF_ADJECTIVE_NOUN,
-      NOUN_OF_NOUN,
-    ])
+    ? _.sample(schemaList)
     : schema
 
   switch (schemaToUse) {

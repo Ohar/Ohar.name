@@ -28,7 +28,9 @@ import generateNameTabaxiSchemeNumberNounOfNoun from './generateBySchemes/genera
 // Кланы табакси
 const generateFullNameTabaxi = ({gender, schema}) => {
   const schemaToUse = schema === 'any'
-    ? _.sample(schemaList).value
+    ? _.sample(
+      schemaList.filter(({value}) => value !== 'any')
+    ).value
     : schema
 
   switch (schemaToUse) {

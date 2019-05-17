@@ -5,6 +5,9 @@ import encounterByBiomeList from './const/encounterByBiomeList'
 import encounterList from './const/encounterList'
 import ENCOUNTER_D20_MIN from './const/ENCOUNTER_D20_MIN'
 
+import rollD20 from './utils/rollD20'
+import rollD100 from './utils/rollD100'
+
 import ToaRandomEncounterGeneratorComponent from './ToaRandomEncounterGeneratorComponent'
 
 export default class ToaRandomEncounterGeneratorContainer extends PureComponent {
@@ -15,22 +18,17 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
     useAdditionalZombies: true,
   }
 
-  rollDice = diceNum => () => Math.round(Math.random() * (diceNum - 1))
-
-  rollD20 = this.rollDice(20)
-  rollD100 = this.rollDice(100)
-
   onBiomeChange = biome => {
     this.setState({biome})
   }
 
   generateEncounter = () => {
-    const d20Roll = this.rollD20() + 1
+    const d20Roll = rollD20() + 1
     const isEncounter = d20Roll >= ENCOUNTER_D20_MIN
 
     if (isEncounter) {
       const { biome, useAdditionalZombies } = this.state
-      const diceResult = this.rollD100()
+      const diceResult = rollD100()
 
       let encounterId = encounterByBiomeList[biome](diceResult)
 

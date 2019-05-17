@@ -1,39 +1,39 @@
-.ToaRandomEncounterGenerator {
+.DndToaEncounterGenerator {
     max-width: 100vw;
     min-width: 20rem;
     padding: 1rem;
     box-sizing: border-box;
 }
 
-.ToaRandomEncounterGenerator_cell {
+.DndToaEncounterGenerator_cell {
     padding: .5rem;
     border-color: #fff;
     border-style: solid;
     border-width: 1px;
 }
 
-.thead .ToaRandomEncounterGenerator_cell-head {
+.thead .DndToaEncounterGenerator_cell-head {
     text-align: left;
 }
 
-.ToaRandomEncounterGenerator_cell-empty {
+.DndToaEncounterGenerator_cell-empty {
     text-align: center;
 }
 
-.ToaRandomEncounterGenerator_cell p,
-.ToaRandomEncounterGenerator_paragraph {
+.DndToaEncounterGenerator_cell p,
+.DndToaEncounterGenerator_paragraph {
     margin-bottom: 1rem;
 }
 
-.ToaRandomEncounterGenerator_btnGenerate {
+.DndToaEncounterGenerator_btnGenerate {
     font-size: 2rem;
 }
 
-.ToaRandomEncounterGenerator_table {
+.DndToaEncounterGenerator_table {
     width: 100%;
 }
 
-.ToaRandomEncounterGenerator_controls {
+.DndToaEncounterGenerator_controls {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

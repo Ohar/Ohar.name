@@ -6,9 +6,9 @@ import PageTitle from "@/components/PageTitle"
 import biomeList from './const/biomeList'
 import additionalZombiesRadioList from './const/additionalZombiesRadioList'
 
-import './ToaRandomEncounterGeneratorStyles.css'
+import './DndToaEncounterGeneratorStyles.css'
 
-const ToaRandomEncounterGeneratorComponent = (
+const DndToaEncounterGeneratorComponent = (
   {
     biome,
     encounterList,
@@ -19,10 +19,10 @@ const ToaRandomEncounterGeneratorComponent = (
     useAdditionalZombies,
   }
 ) => (
-  <section className='ToaRandomEncounterGenerator'>
+  <section className='DndToaEncounterGenerator'>
     <PageTitle>Гробница аннигиляции: генератор случайных столкновений</PageTitle>
 
-    <section className="ToaRandomEncounterGenerator_controls">
+    <section className="DndToaEncounterGenerator_controls">
       <RadioSet
         chosen={biome}
         fieldList={biomeList}
@@ -39,21 +39,21 @@ const ToaRandomEncounterGeneratorComponent = (
       />
 
       <button
-        className='ToaRandomEncounterGenerator_btnGenerate'
+        className='DndToaEncounterGenerator_btnGenerate'
         onClick={generateTodayEncounters}
       >
         Сгенерировать столкновение
       </button>
     </section>
 
-    <table className='ToaRandomEncounterGenerator_table'>
-      <thead className='ToaRandomEncounterGenerator_thead'>
-      <tr className='ToaRandomEncounterGenerator_row'>
-        <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>Бросок к20</th>
-        <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>Время суток</th>
-        <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>Дежурство</th>
-        <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>Название столкновения</th>
-        <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>Описание столкновения</th>
+    <table className='DndToaEncounterGenerator_table'>
+      <thead className='DndToaEncounterGenerator_thead'>
+      <tr className='DndToaEncounterGenerator_row'>
+        <th className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'>Бросок к20</th>
+        <th className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'>Время суток</th>
+        <th className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'>Дежурство</th>
+        <th className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'>Название столкновения</th>
+        <th className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'>Описание столкновения</th>
       </tr>
       </thead>
     <tbody>
@@ -62,19 +62,19 @@ const ToaRandomEncounterGeneratorComponent = (
           .map(
             ({encounter, d20Roll}, i) => (
               <tr
-                className='ToaRandomEncounterGenerator_row'
+                className='DndToaEncounterGenerator_row'
                 key={i}
               >
                 <th
                   colSpan
-                  className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'
+                  className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'
                 >
                   {d20Roll}
                 </th>
                 {i === 0 && (
                   <th
                     colSpan='2'
-                    className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'
+                    className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'
                   >
                     Утро
                   </th>
@@ -82,7 +82,7 @@ const ToaRandomEncounterGeneratorComponent = (
                 {i === 1 && (
                   <th
                     colSpan='2'
-                    className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'
+                    className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'
                   >
                     Вечер
                   </th>
@@ -90,13 +90,13 @@ const ToaRandomEncounterGeneratorComponent = (
                 {i === 2 && (
                   <th
                     rowSpan='2'
-                    className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'
+                    className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'
                   >
                     Ночь
                   </th>
                 )}
                 {(i === 2 || i === 3) && (
-                  <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>
+                  <th className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'>
                     {i === 2 && 'Первое дежурство'}
                     {i === 3 && 'Второе дежурство'}
                   </th>
@@ -109,13 +109,13 @@ const ToaRandomEncounterGeneratorComponent = (
                   )
                     ? (
                       <>
-                        <th className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-head'>{encounter.title}</th>
-                        <td className='ToaRandomEncounterGenerator_cell'>
+                        <th className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-head'>{encounter.title}</th>
+                        <td className='DndToaEncounterGenerator_cell'>
                           {
                             encounter.description.split('\n').map(
                               (item, i) => (
                                 <p
-                                  className='ToaRandomEncounterGenerator_paragraph'
+                                  className='DndToaEncounterGenerator_paragraph'
                                   key={i}
                                 >
                                   {item}
@@ -128,7 +128,7 @@ const ToaRandomEncounterGeneratorComponent = (
                     )
                     : (
                       <td
-                        className='ToaRandomEncounterGenerator_cell ToaRandomEncounterGenerator_cell-empty'
+                        className='DndToaEncounterGenerator_cell DndToaEncounterGenerator_cell-empty'
                         colSpan='2'
                         key={i}
                       >
@@ -145,4 +145,4 @@ const ToaRandomEncounterGeneratorComponent = (
   </section>
 )
 
-export default ToaRandomEncounterGeneratorComponent
+export default DndToaEncounterGeneratorComponent

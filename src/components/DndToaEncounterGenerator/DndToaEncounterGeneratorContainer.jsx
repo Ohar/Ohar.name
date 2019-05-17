@@ -8,9 +8,9 @@ import ENCOUNTER_D20_MIN from './const/ENCOUNTER_D20_MIN'
 import rollD20 from './utils/rollD20'
 import rollD100 from './utils/rollD100'
 
-import ToaRandomEncounterGeneratorComponent from './ToaRandomEncounterGeneratorComponent'
+import DndToaEncounterGeneratorComponent from './DndToaEncounterGeneratorComponent'
 
-export default class ToaRandomEncounterGeneratorContainer extends PureComponent {
+export default class DndToaEncounterGeneratorContainer extends PureComponent {
   state = {
     biome: biomeList[0].value,
     encounterList: [],
@@ -78,7 +78,7 @@ export default class ToaRandomEncounterGeneratorContainer extends PureComponent 
     } = this.state
 
     return (
-      <ToaRandomEncounterGeneratorComponent
+      <DndToaEncounterGeneratorComponent
         biome={biome}
         encounterList={encounterList}
         generateTodayEncounters={this.generateTodayEncounters}

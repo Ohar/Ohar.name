@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react'
 
+import rollD20 from '@/utils/rollD20'
+import rollD100 from '@/utils/rollD100'
+
 import biomeList from './const/biomeList'
 import encounterByBiomeList from './const/encounterByBiomeList'
 import encounterList from './const/encounterList'
 import ENCOUNTER_D20_MIN from './const/ENCOUNTER_D20_MIN'
-
-import rollD20 from './utils/rollD20'
-import rollD100 from './utils/rollD100'
 
 import DndToaEncounterGeneratorComponent from './DndToaEncounterGeneratorComponent'
 

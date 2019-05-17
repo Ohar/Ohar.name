@@ -21,6 +21,10 @@ const dndSubpageList = [
     title: 'Гробница аннигиляции: генератор случайных столкновений',
     url: '/dnd/generator-toa-random-encounter',
   },
+  {
+    title: 'Гробница аннигиляции: генератор выпавших сокровищ',
+    url: '/dnd/generator-toa-treasures',
+  },
 ]
 
 const DndPage = () => (

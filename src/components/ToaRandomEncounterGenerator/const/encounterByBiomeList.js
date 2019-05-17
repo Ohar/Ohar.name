@@ -1,311 +1,461 @@
 const encounterByBiomeList = {
   beach: dice => {
-    switch (true) {
-      case dice >= 1 && dice <= 7:
+    switch (dice) {
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+      case 7:
         return 'aarakokry'
-      case dice === 8:
+      case 8:
         return 'artus_simber'
-      case dice >= 9 && dice <= 10:
+      case 9:
+      case 10:
         return 'ekspeditcionnyi_zapas'
-      case dice >= 11 && dice <= 12:
+      case 11:
+      case 12:
         return 'chvinga'
-      case dice >= 13 && dice <= 14:
+      case 13:
+      case 14:
         return 'dinozavry_allozavr'
-      case dice >= 15 && dice <= 16:
+      case 15:
+      case 16:
         return 'dinozavry_dimetrodon'
-      case dice >= 17 && dice <= 21:
+      case 17:
+      case 18:
+      case 19:
+      case 20:
+      case 21:
         return 'dinozavry_pleziozavr'
-      case dice >= 22 && dice <= 28:
+      case 22:
+      case 23:
+      case 24:
+      case 25:
+      case 26:
+      case 27:
+      case 28:
         return 'dinozavry_pteranodon'
-      case dice >= 29 && dice <= 31:
+      case 29:
+      case 30:
+      case 31:
         return 'dinozavry_kettcalkoatl'
-      case dice >= 32 && dice <= 37:
+      case 32:
+      case 33:
+      case 34:
+      case 35:
+      case 36:
+      case 37:
         return 'dinozavry_velotciraptor'
-      case dice >= 38 && dice <= 40:
+      case 38:
+      case 39:
+      case 40:
         return 'drakon_krasnyi'
-      case dice >= 41 && dice <= 42:
+      case 41:
+      case 42:
         return 'izumrudnyi_anclav'
-      case dice >= 43 && dice <= 46:
+      case 43:
+      case 44:
+      case 45:
+      case 46:
         return 'issledovateli'
-      case dice >= 47 && dice <= 49:
+      case 47:
+      case 48:
+      case 49:
         return 'pylaiushchii_kulak'
-      case dice >= 50 && dice <= 52:
+      case 50:
+      case 51:
+      case 52:
         return 'letaiushchie_obeziany'
-      case dice >= 53 && dice <= 55:
+      case 53:
+      case 54:
+      case 55:
         return 'letaiushchie_zmei'
-      case dice >= 56 && dice <= 57:
+      case 56:
+      case 57:
         return 'ledianye_velikany'
-      case dice >= 58 && dice <= 63:
+      case 58:
+      case 59:
+      case 60:
+      case 61:
+      case 62:
+      case 63:
         return 'gigantskie_iashcheritcy'
-      case dice >= 64 && dice <= 67:
+      case 64:
+      case 65:
+      case 66:
+      case 67:
         return 'gigantskaia_shchyolkaiushchaia_cherepaha'
-      case dice >= 68 && dice <= 71:
+      case 68:
+      case 69:
+      case 70:
+      case 71:
         return 'liudoiashchery'
-      case dice >= 72 && dice <= 74:
+      case 72:
+      case 73:
+      case 74:
         return 'krasnyi_volshebnik'
-      case dice >= 75 && dice <= 84:
+      case 75:
+      case 76:
+      case 77:
+      case 78:
+      case 79:
+      case 80:
+      case 81:
+      case 82:
+      case 83:
+      case 84:
         return 'morskaia_karga'
-      case dice >= 85 && dice <= 87:
+      case 85:
+      case 86:
+      case 87:
         return 'krovopiitcy'
-      case dice >= 88 && dice <= 89:
+      case 88:
+      case 89:
         return 'roi_letuchikh_myshei'
-      case dice >= 90 && dice <= 94:
+      case 90:
+      case 91:
+      case 92:
+      case 93:
+      case 94:
         return 'tabaksi_ohotneyk'
-      case dice >= 95 && dice <= 99:
+      case 95:
+      case 96:
+      case 97:
+      case 98:
+      case 99:
       case 0:
         return 'vaiia_trekhsotcvetnaia'
     }
   },
   jungle_undead_clear: dice => {
-    console.log('jungle_undead_clear', dice);
-    switch (true) {
-      case dice === 1:
+    switch (dice) {
+      case 1:
         return 'dvarfy_albinos'
-      case dice === 2:
+      case 2:
         return 'almirazh'
-      case dice >= 3 && dice <= 4:
+      case 3:
+      case 4:
         return 'chelovekoobraznye_obeziany'
-      case dice === 5:
+      case 5:
         return 'artus_simber'
-      case dice >= 6 && dice <= 7:
+      case 6:
+      case 7:
         return 'lozy_ubiitcy'
-      case dice === 8:
+      case 8:
         return 'toporocliuvy'
-      case dice === 9:
+      case 9:
         return 'babuiny'
-      case dice >= 10 && dice <= 11:
+      case 10:
+      case 11:
         return 'ekspeditcionnyi_zapas'
-      case dice >= 12 && dice <= 13:
+      case 12:
+      case 13:
         return 'kannibaly'
-      case dice >= 14 && dice <= 15:
+      case 14:
+      case 15:
         return 'chvinga'
-      case dice === 16:
+      case 16:
         return 'tciclopy'
-      case dice === 17:
+      case 17:
         return 'dinozavry_allozavr'
-      case dice === 18:
+      case 18:
         return 'dinozavry_ankilozavr'
-      case dice === 19:
+      case 19:
         return 'dinozavry_brontozavr'
-      case dice >= 20 && dice <= 21:
+      case 20:
+      case 21:
         return 'dinozavry_deinonikh'
-      case dice >= 22 && dice <= 23:
+      case 22:
+      case 23:
         return 'dinozavry_gadrozavr'
-      case dice === 24:
+      case 24:
         return 'dinozavry_pteranodon'
-      case dice >= 25 && dice <= 26:
+      case 25:
+      case 26:
         return 'dinozavry_stegozavr'
-      case dice >= 27 && dice <= 28:
+      case 27:
+      case 28:
         return 'dinozavry_tritceratops'
-      case dice >= 29 && dice <= 30:
+      case 29:
+      case 30:
         return 'dinozavry_tirannozavr'
-      case dice >= 31 && dice <= 35:
+      case 31:
+      case 32:
+      case 33:
+      case 34:
+      case 35:
         return 'dinozavry_velotciraptor'
-      case dice === 36:
+      case 36:
         return 'drakon_volshebnyi_drakonchik'
-      case dice === 37:
+      case 37:
         return 'eblis'
-      case dice >= 38 && dice <= 42:
+      case 38:
+      case 39:
+      case 40:
+      case 41:
+      case 42:
         return 'izumrudnyi_anclav'
-      case dice >= 43 && dice <= 44:
+      case 43:
+      case 44:
         return 'issledovatel_myortvyi'
-      case dice === 45:
+      case 45:
         return 'issledovateli'
-      case dice === 46:
+      case 46:
         return 'tcepovaia_ulitka'
-      case dice >= 47 && dice <= 50:
+      case 47:
+      case 48:
+      case 49:
+      case 50:
         return 'pylaiushchii_kulak'
-      case dice === 51:
+      case 51:
         return 'letaiushchie_obeziany'
-      case dice >= 52 && dice <= 53:
+      case 52:
+      case 53:
         return 'letaiushchie_zmei'
-      case dice >= 54 && dice <= 55:
+      case 54:
+      case 55:
         return 'ledianye_velikany'
-      case dice === 56:
+      case 56:
         return 'gigantskie_kabany'
-      case dice === 57:
+      case 57:
         return 'gigantskie_liagushki'
-      case dice === 58:
+      case 58:
         return 'gigantskie_iashcheritcy'
-      case dice === 59:
+      case 59:
         return 'gigantskie_skorpiony'
-      case dice === 60:
+      case 60:
         return 'gigantskie_osy'
-      case dice >= 61 && dice <= 62:
+      case 61:
+      case 62:
         return 'girallony'
-      case dice >= 63 && dice <= 64:
+      case 63:
+      case 64:
         return 'gobliny'
-      case dice >= 65 && dice <= 66:
+      case 65:
+      case 66:
         return 'grungi'
-      case dice === 67:
+      case 67:
         return 'dzhakuli'
-      case dice === 68:
+      case 68:
         return 'kamadany'
-      case dice >= 69 && dice <= 70:
+      case 69:
+      case 70:
         return 'liudoiashchery'
-      case dice >= 71 && dice <= 72:
+      case 71:
+      case 72:
         return 'tuman_bezumnoi_obeziany'
-      case dice === 73:
+      case 73:
         return 'kapkany'
-      case dice === 74:
+      case 74:
         return 'nochnaia_karga'
-      case dice === 75:
+      case 75:
         return 'pteraliudy'
-      case dice === 76:
+      case 76:
         return 'redkoe_rastenie'
-      case dice === 77:
+      case 77:
         return 'krasnyi_volshebnik'
-      case dice >= 78 && dice <= 79:
+      case 78:
+      case 79:
         return 'zmeia_udav'
-      case dice === 80:
+      case 80:
         return 'zmeia_gigantskii_udav'
-      case dice === 81:
+      case 81:
         return 'zmeia_gigantskaia_iadovitaia'
-      case dice === 82:
+      case 82:
         return 'pauki'
-      case dice >= 83 && dice <= 85:
+      case 83:
+      case 84:
+      case 85:
         return 'statuia_ubtao'
-      case dice === 86:
+      case 86:
         return 'krovopiitcy'
-      case dice === 87:
+      case 87:
         return 'su_monstry'
-      case dice === 88:
+      case 88:
         return 'roi_letuchikh_myshei'
-      case dice === 89:
+      case 89:
         return 'roi_nasekomykh'
-      case dice === 90:
+      case 90:
         return 'tabaksi_ohotneyk'
-      case dice === 91:
+      case 91:
         return 'tigr'
-      case dice === 92:
+      case 92:
         return 'vaiia_trekhsotcvetnaia'
-      case dice === 93:
+      case 93:
         return 'vegepigmei'
-      case dice === 94:
+      case 94:
         return 'vervepr'
-      case dice === 95:
+      case 95:
         return 'vertigr'
-      case dice === 96:
+      case 96:
         return 'zimnii_peizazh'
-      case dice === 97:
+      case 97:
         return 'zhyoltaia_muskusnaia_liana_i_zombi'
-      case dice === 98:
+      case 98:
         return 'iuan_ti'
-      case dice === 99:
+      case 99:
         return 'zhentarim'
-      case dice === 0:
+      case 0:
         return 'zorbo'
     }
   },
   jungle_undead_few: dice => {
-    switch (true) {
-      case dice === 2:
+    switch (dice) {
+      case 2:
         return 'artus_simber'
-      case dice === 66:
+      case 66:
         return 'vaiia_trekhsotcvetnaia'
-      case dice >= 90 && dice <= 91:
+      case 90:
+      case 91:
         return 'vegepigmei'
-      case dice === 92:
+      case 92:
         return 'vervepr'
-      case dice === 93:
+      case 93:
         return 'vertigr'
-      case dice === 29:
+      case 29:
         return 'gigantskie_osy'
-      case dice === 28:
+      case 28:
         return 'gigantskie_iashcheritcy'
-      case dice >= 30 && dice <= 31:
+      case 30:
+      case 31:
         return 'girallony'
-      case dice >= 32 && dice <= 33:
+      case 32:
+      case 33:
         return 'gobliny'
-      case dice >= 34 && dice <= 35:
+      case 34:
+      case 35:
         return 'grungi'
-      case dice === 1:
+      case 1:
         return 'dvarfy_albinos'
-      case dice === 11:
+      case 11:
         return 'dinozavry_allozavr'
-      case dice === 12:
+      case 12:
         return 'dinozavry_ankilozavr'
-      case dice === 14:
+      case 14:
         return 'dinozavry_gadrozavr'
-      case dice === 13:
+      case 13:
         return 'dinozavry_deinonikh'
-      case dice === 15:
+      case 15:
         return 'dinozavry_pteranodon'
-      case dice === 16:
+      case 16:
         return 'dinozavry_stegozavr'
-      case dice === 18:
+      case 18:
         return 'dinozavry_tirannozavr'
-      case dice === 17:
+      case 17:
         return 'dinozavry_tritceratops'
-      case dice >= 95 && dice <= 96:
+      case 95:
+      case 96:
         return 'zhyoltaia_muskusnaia_liana_i_zombi'
-      case dice === 99:
+      case 99:
         return 'zhentarim'
-      case dice === 94:
+      case 94:
         return 'zimnii_peizazh'
-      case dice === 50:
+      case 50:
         return 'zmeia_gigantskaia_iadovitaia '
-      case dice === 49:
+      case 49:
         return 'zmeia_gigantskii_udav'
-      case dice >= 47 && dice <= 48:
+      case 47:
+      case 48:
         return 'zmeia_udav'
-      case dice === 0:
+      case 0:
         return 'zorbo'
-      case dice >= 19 && dice <= 20:
+      case 19:
+      case 20:
         return 'izumrudnyi_anclav'
-      case dice === 23:
+      case 23:
         return 'issledovateli'
-      case dice >= 21 && dice <= 22:
+      case 21:
+      case 22:
         return 'issledovatel_myortvyi`'
-      case dice >= 9 && dice <= 10:
+      case 9:
+      case 10:
         return 'kannibaly'
-      case dice >= 40 && dice <= 41:
+      case 40:
+      case 41:
         return 'kapkany'
-      case dice === 46:
+      case 46:
         return 'krasnyi_volshebnik'
-      case dice >= 56 && dice <= 57:
+      case 56:
+      case 57:
         return 'krovopiitcy'
-      case dice === 27:
+      case 27:
         return 'letaiushchie_zmei'
-      case dice >= 3 && dice <= 5:
+      case 3:
+      case 4:
+      case 5:
         return 'lozy_ubiitcy'
-      case dice >= 81 && dice <= 89:
+      case 81:
+      case 82:
+      case 83:
+      case 84:
+      case 85:
+      case 86:
+      case 87:
+      case 88:
+      case 89:
         return 'nezhit_zombi'
-      case dice >= 73 && dice <= 77:
+      case 73:
+      case 74:
+      case 75:
+      case 76:
+      case 77:
         return 'nezhit_skelety`'
-      case dice >= 78 && dice <= 79:
+      case 78:
+      case 79:
         return 'nezhit_spektry`'
-      case dice === 80:
+      case 80:
         return 'nezhit_umertvie'
-      case dice >= 68 && dice <= 72:
+      case 68:
+      case 69:
+      case 70:
+      case 71:
+      case 72:
         return 'nezhit_upyri'
-      case dice === 42:
+      case 42:
         return 'nochnaia_karga'
-      case dice >= 51 && dice <= 52:
+      case 51:
+      case 52:
         return 'pauki'
-      case dice >= 43 && dice <= 44:
+      case 43:
+      case 44:
         return 'pteraliudy`'
-      case dice >= 24 && dice <= 26:
+      case 24:
+      case 25:
+      case 26:
         return 'pylaiushchii_kulak'
-      case dice === 45:
+      case 45:
         return 'redkoe_rastenie'
-      case dice >= 60 && dice <= 62:
+      case 60:
+      case 61:
+      case 62:
         return 'roi_letuchikh_myshei`'
-      case dice >= 63 && dice <= 65:
+      case 63:
+      case 64:
+      case 65:
         return 'roi_nasekomykh'
-      case dice >= 53 && dice <= 55:
+      case 53:
+      case 54:
+      case 55:
         return 'statuia_ubtao'
-      case dice >= 58 && dice <= 59:
+      case 58:
+      case 59:
         return 'su_monstry'
-      case dice === 6:
+      case 6:
         return 'toporocliuvy`'
-      case dice === 67:
+      case 67:
         return 'troll'
-      case dice >= 36 && dice <= 39:
+      case 36:
+      case 37:
+      case 38:
+      case 39:
         return 'tuman_bezumnoi_obeziany'
-      case dice >= 7 && dice <= 8:
+      case 7:
+      case 8:
         return 'ekspeditcionnyi_zapas'
-      case dice >= 97 && dice <= 98:
+      case 97:
+      case 98:
         return 'iuan_ti'
     }
   },

@@ -368,7 +368,7 @@ const encounterByBiomeList = {
         return 'issledovateli'
       case 21:
       case 22:
-        return 'issledovatel_myortvyi`'
+        return 'issledovatel_myortvyi'
       case 9:
       case 10:
         return 'kannibaly'
@@ -519,7 +519,7 @@ const encounterByBiomeList = {
       case 18:
       case 19:
       case 20:
-        return 'issledovatel_myortvyi`'
+        return 'issledovatel_myortvyi'
       case 25:
         return 'kapkany'
       case 28:
@@ -679,7 +679,7 @@ const encounterByBiomeList = {
       case 48:
       case 49:
       case 50:
-        return 'issledovatel_myortvyi`'
+        return 'issledovatel_myortvyi'
       case 81:
         return 'krasnyi_volshebnik'
       case 85:
@@ -810,7 +810,7 @@ const encounterByBiomeList = {
         return 'issledovateli'
       case 44:
       case 45:
-        return 'issledovatel_myortvyi`'
+        return 'issledovatel_myortvyi'
       case 13:
       case 14:
       case 15:
@@ -951,7 +951,7 @@ const encounterByBiomeList = {
         return 'issledovateli'
       case 27:
       case 28:
-        return 'issledovatel_myortvyi`'
+        return 'issledovatel_myortvyi'
       case 55:
       case 56:
       case 57:
@@ -1110,7 +1110,7 @@ const encounterByBiomeList = {
         return 'issledovateli'
       case 40:
       case 41:
-        return 'issledovatel_myortvyi`'
+        return 'issledovatel_myortvyi'
       case 86:
       case 87:
         return 'krovopiitcy'
@@ -1213,7 +1213,7 @@ const encounterByBiomeList = {
       case 16:
       case 17:
       case 18:
-        return 'issledovatel_myortvyi`'
+        return 'issledovatel_myortvyi'
       case 46:
       case 47:
       case 48:
@@ -1223,7 +1223,7 @@ const encounterByBiomeList = {
       case 52:
       case 53:
       case 54:
-        return 'magminy`'
+        return 'magminy'
       case 55:
       case 56:
       case 57:
@@ -1300,6 +1300,361 @@ const encounterByBiomeList = {
       case 4:
       case 5:
         return 'ekspeditcionnyi_zapas'
+    }
+  },
+  omu_ruins: dice => {
+    switch (dice) {
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+        return 'chelovekoobraznye_obeziany'
+      case 6:
+      case 7:
+      case 8:
+      case 9:
+      case 10:
+        return 'babuiny'
+      case 11:
+      case 12:
+      case 13:
+      case 14:
+      case 15:
+        return 'kannibaly'
+      case 16:
+      case 17:
+      case 18:
+      case 19:
+      case 20:
+        return 'drakon_volshebnyi_drakonchik'
+      case 21:
+      case 22:
+      case 23:
+      case 24:
+      case 25:
+        return 'gargoyles'
+      case 26:
+      case 27:
+      case 28:
+      case 29:
+      case 30:
+        return 'gigantskie_osy'
+      case 31:
+      case 32:
+      case 33:
+      case 34:
+      case 35:
+        return 'giant_wolf_spiders'
+      case 36:
+      case 37:
+      case 38:
+      case 39:
+      case 40:
+        return 'gobliny'
+      case 41:
+      case 42:
+      case 43:
+      case 44:
+      case 45:
+        return 'grungi'
+      case 46:
+      case 47:
+      case 48:
+      case 49:
+      case 50:
+        return 'king_of_feathers'
+      case 51:
+      case 52:
+      case 53:
+      case 54:
+      case 55:
+        return 'kobolds'
+      case 56:
+      case 57:
+      case 58:
+      case 59:
+      case 60:
+        return 'krasnyi_volshebnik'
+      case 61:
+      case 62:
+      case 63:
+      case 64:
+      case 65:
+        return 'polzaiushchaia_nasyp'
+      case 66:
+      case 67:
+      case 68:
+      case 69:
+      case 70:
+        return 'su_monstry'
+      case 71:
+      case 72:
+      case 73:
+      case 74:
+      case 75:
+        return 'tabaksi_ohotneyk'
+      case 76:
+      case 77:
+      case 78:
+      case 79:
+      case 80:
+        return 'nezhit_upyri'
+      case 81:
+      case 82:
+      case 83:
+      case 84:
+      case 85:
+        return 'nezhit_zombi'
+      case 86:
+      case 87:
+      case 88:
+      case 89:
+      case 90:
+        return 'vegepigmei'
+      case 91:
+      case 92:
+      case 93:
+      case 94:
+      case 95:
+        return 'zhyoltaia_muskusnaia_liana_i_zombi'
+      case 96:
+      case 97:
+      case 98:
+      case 99:
+      case 0:
+        return 'iuan_ti'
+    }
+  },
+  omu_palace: dice => {
+    switch (dice) {
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+      case 7:
+      case 8:
+      case 9:
+      case 10:
+        return 'babuiny'
+      case 11:
+      case 12:
+      case 13:
+      case 14:
+      case 15:
+        return 'drakon_volshebnyi_drakonchik'
+      case 16:
+      case 17:
+      case 18:
+      case 19:
+      case 20:
+      case 21:
+      case 22:
+      case 23:
+      case 24:
+      case 25:
+        return 'gargoyles'
+      case 26:
+      case 27:
+      case 28:
+      case 29:
+      case 30:
+      case 31:
+      case 32:
+      case 33:
+      case 34:
+      case 35:
+        return 'giant_wolf_spiders'
+      case 36:
+      case 37:
+      case 38:
+      case 39:
+      case 40:
+        return 'gobliny'
+      case 41:
+      case 42:
+      case 43:
+      case 44:
+      case 45:
+      case 46:
+      case 47:
+      case 48:
+      case 49:
+      case 50:
+        return 'king_of_feathers'
+      case 51:
+      case 52:
+      case 53:
+      case 54:
+      case 55:
+      case 56:
+      case 57:
+      case 58:
+      case 59:
+      case 60:
+        return 'kobolds'
+      case 61:
+      case 62:
+      case 63:
+      case 64:
+      case 65:
+      case 66:
+      case 67:
+      case 68:
+      case 69:
+      case 70:
+        return 'krasnyi_volshebnik'
+      case 71:
+      case 72:
+      case 73:
+      case 74:
+      case 75:
+        return 'su_monstry'
+      case 76:
+      case 77:
+      case 78:
+      case 79:
+      case 80:
+        return 'tabaksi_ohotneyk'
+      case 81:
+      case 82:
+      case 83:
+      case 84:
+      case 85:
+      case 86:
+      case 87:
+      case 88:
+      case 89:
+      case 90:
+        return 'zhyoltaia_muskusnaia_liana_i_zombi'
+      case 91:
+      case 92:
+      case 93:
+      case 94:
+      case 95:
+      case 96:
+      case 97:
+      case 98:
+      case 99:
+      case 0:
+        return 'iuan_ti'
+    }
+  },
+  omu_swamp: dice => {
+    switch (dice) {
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+      case 7:
+      case 8:
+      case 9:
+      case 10:
+        return 'krokodily'
+      case 11:
+      case 12:
+      case 13:
+      case 14:
+      case 15:
+        return 'gargoyles'
+      case 16:
+      case 17:
+      case 18:
+      case 19:
+      case 20:
+      case 21:
+      case 22:
+      case 23:
+      case 24:
+      case 25:
+        return 'gigantskie_osy'
+      case 26:
+      case 27:
+      case 28:
+      case 29:
+      case 30:
+      case 31:
+      case 32:
+      case 33:
+      case 34:
+      case 35:
+        return 'grungi'
+      case 36:
+      case 37:
+      case 38:
+      case 39:
+      case 40:
+      case 41:
+      case 42:
+      case 43:
+      case 44:
+      case 45:
+      case 46:
+      case 47:
+      case 48:
+      case 49:
+      case 50:
+        return 'king_of_feathers'
+      case 51:
+      case 52:
+      case 53:
+      case 54:
+      case 55:
+      case 56:
+      case 57:
+      case 58:
+      case 59:
+      case 60:
+        return 'polzaiushchaia_nasyp'
+      case 61:
+      case 62:
+      case 63:
+      case 64:
+      case 65:
+        return 'nezhit_upyri'
+      case 66:
+      case 67:
+      case 68:
+      case 69:
+      case 70:
+        return 'nezhit_zombi'
+      case 71:
+      case 72:
+      case 73:
+      case 74:
+      case 75:
+      case 76:
+      case 77:
+      case 78:
+      case 79:
+      case 80:
+        return 'vegepigmei'
+      case 81:
+      case 82:
+      case 83:
+      case 84:
+      case 85:
+      case 86:
+      case 87:
+      case 88:
+      case 89:
+      case 90:
+        return 'zhyoltaia_muskusnaia_liana_i_zombi'
+      case 91:
+      case 92:
+      case 93:
+      case 94:
+      case 95:
+      case 96:
+      case 97:
+      case 98:
+      case 99:
+      case 0:
+        return 'iuan_ti'
     }
   },
 }

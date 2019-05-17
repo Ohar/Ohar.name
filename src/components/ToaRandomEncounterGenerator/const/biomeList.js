@@ -35,6 +35,18 @@ const biomeList = [
     text: 'Пустошь',
     value: 'wasteland',
   },
+  {
+    text: 'Ому: Руины',
+    value: 'omu_ruins',
+  },
+  {
+    text: 'Ому: Дворец',
+    value: 'omu_palace',
+  },
+  {
+    text: 'Ому: Болото',
+    value: 'omu_swamp',
+  },
 ]
 
 export default biomeList

@@ -477,42 +477,43 @@ const encounterList = [
   {
     id: 'mezro_apes',
     title: 'Обезьяны',
-    description: `A troop of apes howl through the trees and attack the characters.\nThe apes recently ransacked a wine cellar, and they’re drunk on the Chultan mead known as “tej”. Whenever a drunk ape misses with an attack, it falls prone.\nThere are 1d4+1 apes at tier 1 and 2d10+5 apes at tier 2.\nTreasure. The ransacked wine cellar is just nearby. Fifteen kegs of tej remain intact, each holding five gallons of mead (8 sp per keg). Another shelf holds five bottles of vintage Turami brandy worth 200 gp each.`,
+    description: `Отряд обезьян вопит из-за деревьев и атакует персонажей.\nОбезьяны недавно обыскали винный погреб и напились тежа. Всякий раз, когда пьяная обезьяна промахивается атакой, она падает.\nДля ранга 1 — 1к4 + 1 обезьян.\nДля ранга 2к10 + 5 обезьян.\nСокровище. Разграбленный винный погреб находится совсем рядом. Пятнадцать бочонков тежа остаются неповрежденными, в каждом — 5 галлонов меда (8 см за бочонок). На полке стоит 5 бутылок марочного бренди Турами по 200 зм.`,
   },
   {
     id: 'mezro_cannibals',
     title: 'Каннибалы',
-    description: `A band of cannibals have entered Mezro to find the lost god Ubtao. The painted warrior Rhondu leads this all-female troupe: she hopes to win the favor of her god and become a bara. The cannibals attack explorers on sight.\nAt tier 1, there are 1d4+2 tribal warriors and a veteran.\nAt tier 2, there are 3d6+5 tribal warriors and a gladiator.\nTreasure. Rhondu carries a sack of offerings stolen from waylaid explorers. To determine the sack’s contents, roll once on the Treasure Hoard table in chapter 7 of the Dungeon Master’s Guide.`,
+    description: `Группа каннибалов пришла в Мезро чтобы найти пропавшего бога Убтао. Раскрашенная воинша Ронду возглавляет этот женский отряд: она надеется завоевать благосклонность своего бога и стать бара. Каннибалы нападают на исследователей сразу, как только видят их.\nДля ранга 1 — 1к4+2 воинов племени и ветеран.\nДля ранга 2 — 3к6+5 воинов племени и гладиатор.\nСокровище. Ронду носит мешок ценностей, которые она забрала у других групп исследователей. Для определения их стоимости бросьте кубик по таблице «Индивидуальные сокровища» из главы 7 Руководства Мастера.`,
   },
   {
     id: 'mezro_crocodile_cultists',
     title: 'Культисты крокодила',
-    description: `Crocodile cultists have set a net-trap in this area to catch sacrifices for their prophet. Characters with a passive Perception of 17 or higher spot the net as the group approaches. If nobody spots it, the lead character in the group is hoisted into the air and restrained by the net (DC 18 to escape). \nThe cultists hide nearby. They attack only if they have an advantage, and try to capture their enemies instead of killing them. Any captives are thrown before Emberon Coalscuttle at location 11.\n• At tier 1, there are 1d4+3 cultists and a cult fanatic. \n• At tier 2, add 1d3+1 veterans.\nAt tier 3, double the number of enemies listed above. \nTreasure. The cultists carry gold and wear valuable jewelry from outside Mezro. To determine how much, roll once on the Individual Treasure table in chapter 7 of the Dungeon Master’s Guide and multiply the result by five.`,
+    description: `Культисты крокодила устроили ловушку, ловя жертв для своего пророка. Персонажи с пассивным Восприятием 17 или выше замечают сеть на пути группы. Если её никто не замечает, то первый персонаж в группе ловится сетью и поднимается в воздух (чтобы вырваться — Сила сл 18).\nКультисты прячутся поблизости. Они атакуют, только если у них есть преимущество, и пытаются захватить своих врагов, а не убивать их. Любые пленники доставляются перед Эмбероне Коальскатлю в локацию 11.\n• Для ранга 1 — 1к4+3 культиста и фанатик культа. \n• Для ранга 2 добавьте 1к3+1 ветерана.\nДля ранга 3 — удвойте количество врагов. \nСокровище. Культисты носят золото и ценные украшения извне Мезро. Для определения их стоимости бросьте кубик по таблице «Индивидуальные сокровища» из главы 7 Руководства Мастера и умножьте результат на 5.`,
+
   },
   {
     id: 'mezro_crocodiles',
     title: 'Крокодилы',
-    description: `Some crocodiles wallow in the mud ahead. One of the crocodiles has an ornate spearhead embedded under its horny scales. If a character wades into the mud to snatch the spearhead, the other crocodiles round on them.\nThere are 1d4+2 crocodiles at tier 1, and 1d6+5 crocodiles and a giant crocodile at tier 2.\nTreasure. The gold spearhead is engraved with frogs and is worth 250 gp.`,
+    description: `Несколько крокодилов валяются в грязи впереди. У одного из крокодилов в чешуе торчит богато украшенное остриё копья. Если персонаж заходит в грязь, чтобы схватить наконечник копья, крокодилы нападают.\nДля ранга 1 — 1к4 + 2 крокодила.\nДля ранга 2 — 1к6 + 5 и гигантский крокодил.\nСокровище. Золотой наконечник копья с выгравированными лягушками стоит 250 зм.`,
   },
   {
     id: 'mezro_death_knight',
     title: 'Рыцарь смерти',
-    description: `A death knight dressed in rotten “tobe” robes stands on a rooftop ahead. When it spots the group, it summons four ghasts from nearby buildings and attacks. This is a disgraced bara called Ras T’fima. After Ubtao robbed him of his powers, T’fima used the Ring of Winter to keep his station until Artus Cimber exposed his treachery. When the Spellplague wracked Chult, Ras T’fima arose as a death knight and swore to redeem himself to Ubtao. His undying duty is to protect the holy city from defilers.\n Treasure. Ras T’fima wields a flame tongue scimitar and wears jeweled rings on his fingers. To determine their value, roll once on the Individual Treasure table in chapter 7 of the Dungeon Master’s Guide and multiply the result by seven. `,
+    description: `Впереди на крыше стоит рыцарь смерти, одетый в гнилую робу. Заметив группу, он вызывает четырех вурдалаков из близлежащих зданий и атакует. Это опальный бара Рас Т'фима. После того, как Убтао отнял у него силу, Т'фима использовал Кольцо Зимы, чтобы сохранить свое положение, пока Артус Кимбер не разоблачил его предательство. Когда Магическая Чума обрушилась на Чульт, Рас Т'фима стал рыцарем смерти и поклялся искупить свою вину перед Убтао. Его бессмертный долг — защищать святой город Мезро от осквернителей.\n Сокровище. Рас T'фима владеет ятаганом Язык пламени и носит драгоценные кольца на пальцах. Для определения их стоимости бросьте кубик по таблице «Индивидуальные сокровища» из главы 7 Руководства Мастера и умножьте результат на 7. `,
   },
   {
     id: 'mezro_dino_ambush',
     title: 'Засада динозавров',
-    description: `The characters come across a maimed hippo dying in the mud. Predatory dinosaurs hide nearby, using the hippo as bait to lure prey. If the characters approach the hippo, the dinosaurs spring their ambush.\nAt tier 2, there are 2d4+5 deinonychus. \nAt tier 3, they are a mated pair of tyrannosaurus rex. `,
+    description: `Персонажи встречают искалеченного бегемота, умирающего в грязи. Хищные динозавры прячутся поблизости, используя бегемота как приманку, чтобы приманить добычу. Если персонажи приближаются к бегемоту, динозавры нападают из засады.\nДля ранга 2 — 2к4 + 5 дейнонихов.\nДля ранга 3 — пара тиранозавров.`,
   },
   {
     id: 'mezro_dino_nest',
     title: 'Трицератопс',
-    description: `A triceratops has made a nest ahead, and four infant dinosaurs frolic in the vicinity. As the group approaches, ask for a group DC 10 Wisdom (Perception) check. If they succeed, the characters are a good distance away when they spot the infant dinosaurs. If not, they blunder too close and are ambushed by the protective parent.\nTreasure. 1d6 triceratops eggs rest inside the nest. To the correct buyer in Port Nyanzaru, each egg is worth 50 gp.`,
+    description: `Трицератопс устроил логово на пути и четыре маленьких трицератопсика резвятся поблизости. Когда группа приближается, попросите группу сделать проверку Мудрости (Восприятие) сл 10. При успехе персонажи издалека замечают маленьких трицератопсиков. При провале они подходят слишком близко и попадают в засаду защищающегося родителя.\nСокровище. В гнезде лежит 1к6 трицератопсовых яиц. Подходящий покупатель в порту Нянзару купит каждое яйцо за 50 зм.`,
   },
   {
     id: 'mezro_explorers',
     title: 'Исследователи',
-    description: `The characters meet another party of explorers in the ruins. These consist of a mage, a knight, a scout and 1d4 tribal warriors. The explorers have just lost some of their number to a living trap (see appendix B), and are preparing to leave the city. They warn the group to steer clear of the building where they encountered the monster. `,
+    description: `Персонажи встречают другую группу исследователей руин: мага, рыцаря, разведчика и 1к4 воинов племени. Исследователи только что потеряли часть своих в живой ловушке (см. Приложение B) и хотят покинуть Мезро. Они предупреждают группу держаться подальше от здания, где они встретили монстра.`,
   },
   {
     id: 'mezro_faerie_dragon',
@@ -522,82 +523,82 @@ const encounterList = [
   {
     id: 'mezro_flaming_fist_patrol',
     title: 'Патруль Пылающего Кулака',
-    description: `The characters encounter a patrol of Flaming Fist soldiers. If they spot the characters, they try to capture them and take them back to Promise (location 3). \n• At tier 1, there are 2d8+3 guards. \n• At tier 2, add 2 knights. \n• At tier 3, add 2 gladiators. \nTreasure. The soldiers carry a small amount of gold originating from outside the city. To determine how much, roll once on the Individual Treasure table in chapter 7 of the Dungeon Master’s Guide and multiply the result by six.`,
+    description: `Персонажи встречают патруль Пылающего Кулака. Если патруль замечает персонажей, то пытается поймать их и отвести их в Перспективу (локация 3). \n• Для ранга 1 — 2к8+3 стражей. \n• Для ранга 2 добавьте 2 рыцарей. \n• Для ранга 3 добавьте 2 гладиатора. \nСокровище. У солдат с собой есть немного золота извне Мезро. Для определения их стоимости бросьте кубик по таблице «Индивидуальные сокровища» из главы 7 Руководства Мастера и умножьте результат на 6.`,
   },
   {
     id: 'mezro_ghost',
     title: 'Призрак',
-    description: `Music drifts from a house ahead and warm lights twinkle from its windows. In the blink of an eye, the building is a silent ruin once more. The ghost of a Mezroan merchant haunts the premises, waiting in vain for his son to arrive for his coming-of-age ceremony. If the players parley with the spirit, he asks them to find his son’s remains and bring them to him. \nTreasure. The merchant’s gift to his son still rests inside its casket. To determine what it is, roll once on the “Gems or Art Objects” column of the Treasure Hoard table in chapter 7 of the Dungeon Master’s Guide.`,
+    description: `Музыка доносится из дома впереди, и в окнах мерцает мягкий свет. В мгновение ока здание снова становится тихим и разрушенным. Призрак мезроанского купца часто посещает помещение. Он напрасно ожидает сына, который должен был прийти на церемонию своего совершеннолетия. Если игроки соглашаются помочь духу, то он просит их найти останки его сына и принести их.\nСокровище. Подарок купца сыну всё ещё лежит в его гробу. Для определения их стоимости бросьте кубик по таблице «Драгоценные камни или предметы искусства» таблицы «Сокровищница» из главы 7 Руководства Мастера`,
   },
   {
     id: 'mezro_ghouls',
     title: 'Упыри',
-    description: `A pack of ghouls hide in a nearby basement, wearing the torn attire of tribal warriors. As the characters pass by, the ghouls slip out to ambush them. \n• At tier 1, there are 1d3+1 ghouls. \n• At tier 2, add 1d4+3 ghasts. \n• At tier 3, add a night hag and double the number of ghouls.`,
+    description: `В соседнем подвале прячется стая упырей, одетых в рваные наряды воинов племени. Когда персонажи проходят мимо, упыри выскакивают из засады.\n• Для ранга 1 - 1к3 + 1 упырей.\n• Для ранга 2 добавьте 1к4 + 3 вурдалака.\n• Для ранга 3, добавьте ночную каргу и удвойте количество упырей`,
   },
   {
     id: 'mezro_giant_spiders',
     title: 'Гигантские пауки',
-    description: `Giant spiders descend from the rooftops as the characters pass underneath. The cocooned corpses of 1d4 explorers dangle from their webs. There are 1d3+1 giant spiders at tier 1 and 2d6+5 giant spiders at tier 2. \nTreasure. Roll on the Dead Explorers table from Tomb of Annihilation to describe the corpses. Roll on the Treasure Drops table in the same chapter to determine if each corpse carries any treasure.`,
+    description: `Гигантские пауки спускаются с крыш, когда персонажи проходят под ними. Несколько (1к4) коконов с трупами исследователей свисают с аутины.\nДля ранга 1 — 1к3 + 1 гигантских пауков.\nДля ранга 1 — 2к6 + 5 гигантских пауков.\nСокровище. Бросьте кубик по таблице «Мёртвые исследователи» из Гробницы Аннигиляции, чтобы описать трупы. Бросьте кубик по таблице «Выпавшие Сокровища» оттуда же, чтобы определить, есть ли у каждого из трупов какое-либо сокровище.`,
   },
   {
     id: 'mezro_vegepygmies',
     title: 'Плесневики',
-    description: `Vegepygmies riding giant wasps are spotted ahead. The wasps are drinking from a heap of fermented fruit that has fallen in the shade of a mango tree. If the characters succeed on a group DC 12 Dexterity (Stealth) check, they can sneak past the monsters without being seen.\nAt tier 1, there are 1d3+1 vegepygmies (see Appendix C) riding an equal number of giant wasps.\nAt tier 2, there are 2d6+4 of each type.`,
+    description: `Впереди видны плесневики на гигантских осах. Осы едят из кучи гниющих фруктов в тени мангового дерева. Если персонажи преуспевают в проверке Ловкости (Скрытность) сл 12, они могут проскользнуть мимо монстров, не будучи замеченными.\nДля ранга 1 — 1d3 + 1 плесневик на таком количестве гигантских ос.\nДля ранга 2 — 2к6 + 4 пар плесневиков и ос.`,
   },
   {
     id: 'mezro_goblins',
     title: 'Отряд гоблинов',
-    description: `An elite company of Batiri goblins marches into Mezro to avenge their queen’s murder. Chained velociraptors serve them as primitive bloodhounds.\nIf the characters killed Queen Grabstab during chapter 2 of Tomb of Annihilation, her son Bang leads the warband. If not, the goblins hunt the Flaming Fist mercenaries who raided their village. Bang wears his mother’s flayed face over his war mask.\nAt tier 1, there are 1d6+3 goblins, a goblin boss, and two velociraptors.\nAt tier 2, there are 3d8+5 goblins, a goblin boss, and 2d4+1 velociraptors.\nTreasure. Bang carries a silvered +1 rapier that he stole from a pirate. Every time the blade delivers a mortal wound, snatches of an elven song are heard. Bang believes this is the god Maglubiyet thanking him for his sacrifices. `,
+    description: `An elite company of Batiri goblins marches into Mezro to avenge their queen’s murder. Chained velociraptors serve them as primitive bloodhounds.\nIf the characters killed Queen Grabstab during chapter 2 of Tomb of Annihilation, her son Bang leads the warband. If not, the goblins hunt the Flaming Fist mercenaries who raided their village. Bang wears his mother’s flayed face over his war mask.\nДля ранга 1, there are 1d6+3 goblins, a goblin boss, and two velociraptors.\nДля ранга 2, there are 3d8+5 goblins, a goblin boss, and 2d4+1 velociraptors.\nСокровище. Bang carries a silvered +1 rapier that he stole from a pirate. Every time the blade delivers a mortal wound, snatches of an elven song are heard. Bang believes this is the god Maglubiyet thanking him for his sacrifices. `,
   },
   {
     id: 'mezro_grung_hatchery',
     title: 'Садок грунгов',
-    description: `A welter of slimy eggs float inside a flooded courtyard, watched over by a group of grungs. An enslaved ogre called Umok mucks out the hatchery. Umok was dumb already, but the grung poison used to subdue him has made him obedient to anyone’s commands. \nAt tier 1, there is one ogre and 1d4+4 grungs (see appendix C).\nAt tier 2, add 1d4+2 grung elite warriors. \nTreasure. The eggs aren’t valuable. One of the grungs wears a bandolier containing five potions of healing.`,
+    description: `A welter of slimy eggs float inside a flooded courtyard, watched over by a group of grungs. An enslaved ogre called Umok mucks out the hatchery. Umok was dumb already, but the grung poison used to subdue him has made him obedient to anyone’s commands. \nДля ранга 1, there is one ogre and 1d4+4 grungs (see appendix C).\nДля ранга 2, add 1d4+2 grung elite warriors. \nСокровище. The eggs aren’t valuable. One of the grungs wears a bandolier containing five potions of healing.`,
   },
   {
     id: 'mezro_grung_patrol',
     title: 'Патруль грунгов',
-    description: `A patrol of grungs sneak through the swamp, led by the warrior chief Nopugluu (No-POO-gloo). They’re hunting crocodiles, and have a string of kills on a long pole carried between them. \n• At tier 1, there are 1d6+3 grungs and 1 grung elite warrior (see appendix C). \n• At tier 2, add 1d6+3 grungs and 1d4+2 grung elite warriors (see appendix C). \n• At tier 3, their kills are slung to a titanosaurus (see appendix c) that also has a bamboo howdah strapped to its back. \nTreasure. The grungs wear golden jewelry. To determine its value, roll once on the Individual Treasure table in chapter 7 of the Dungeon Master’s Guide and multiply the result by five.`,
+    description: `Патруль грунгов пробирается через болото. Его ведёт вождь Нопуглуу (No-POO-gloo). Они охотятся на крокодилов, и отмечают убийства на длинном шесте.\n• Для ранга 1 — 1к6 + 3 грунга и 1 элитный воин грунгов.\n• Для ранга 2 добавьте 1к6 + 3 грунгов и 1d4 + 2 элитных воина грунгов.\n• Для ранга 3 — их добыча сложена в бамбуковая корзину на спине титанозавра.\nСокровище. Грунги носят золотые украшения. Для определения их стоимости бросьте кубик по таблице «Индивидуальные сокровища» в главе 7 Руководства Мастера и умножьте результат на 5.`,
   },
   {
     id: 'mezro_karanok',
     title: 'Дом Каранок',
-    description: `The group cross paths with an expeditionary patrol from House Karanok. A priest of entropy leads a gang of grizzled mercenaries in search of clues to the true location of Mezro. At tier 2, there is one priest of entropy and 1d4+4 guards. At tier 3, add 1d4+2 veterans. \nTreasure. The priest of entropy carries a sack of treasure purloined from elsewhere in Chult. To determine its value, roll once on Individual Treasure table in chapter 7 of the Dungeon Master’s Guide, and multiply the resulting wealth by eight. `,
+    description: `The group cross paths with an expeditionary patrol from House Karanok. A priest of entropy leads a gang of grizzled mercenaries in search of clues to the true location of Mezro. Для ранга 2, there is one priest of entropy and 1d4+4 guards. Для ранга 3, add 1d4+2 veterans. \nСокровище. The priest of entropy carries a sack of treasure purloined from elsewhere in Chult. To determine its value, roll once on Individual Treasure table in chapter 7 of the Dungeon Master’s Guide, and multiply the resulting wealth by eight. `,
   },
   {
     id: 'mezro_living_traps',
     title: 'Живая ловушка',
-    description: `The characters hear strangled screams from a nearby street. If they investigate, they spot a Flaming Fist soldier with his leg caught in a bear trap. In fact, the soldier is dead, and the living trap (see appendix B) that killed him is puppeteering his corpse to lure prey closer. At tier 3, this could be a pair of living traps working together. `,
+    description: `Персонажи слышат приглушённые крики с соседней улицы. Если они проводят расследование, они замечают солдата Пылающего Кулака, чья нога застряла в медвежьей ловушке. На самом деле солдат мертв, а живая ловушка, которая убила его, управляет его трупом, чтобы заманить добычу поближе.\nДля ранга 3 это может быть пара живых ловушек, работающих вместе.`,
   },
   {
     id: 'mezro_mage_hunters',
     title: 'Маголовы',
-    description: `The group encounters a party of “mage hunters”: Lawful Good Chultan wizards who traveled from tribe-to-tribe, combating evil and bringing renegade wizards back into society. In this group, there is one mage and six apprentice wizards. \nMost mage hunters were lost in the Spellplague, but this group has arisen to rebuild the order to its former strength. Led by the mage Imari Jabu, they have returned to Mezro to seek out the College of Wizards (location 9). \nTreasure. Imari Jabu wields a staff of swarming insects. The rest wear gold jewelry and carry simple supplies. To determine their value, roll once on the Individual Treasure table in chapter 7 of the Dungeon Master’s Guide and multiply the result by five.`,
+    description: `Группа встречает группу «маголовов»: законопослушных добрых чультских волшебников, которые путешествовуют из племени в племя, сражаясь со злом и возвращая волшебников-отступников обратно в общество. В этой группе есть 1 маг и 6 учеников-волшебников.\nБольшинство маголовов исчезли после Чумы Заклинаний, но эта группа хочет восстановить орден в его прежней силе. Во главе с магом Имари Джабу они вернулись в Мезро, чтобы разыскать мезроанскую Коллегию Волшебников (локация  9).\nСокровище. Имари Джабу владеет посохом роя насекомых. У остальных есть припасы и золотые украшения. Чтобы определить их ценность, бросьте один раз по таблице «Индивидуальные сокровища» в главе 7 Руководства Мастера и умножьте результат на пять.`,
   },
   {
     id: 'mezro_mantraps',
     title: 'Капканы',
-    description: `The ground underfoot collapses, pitching the characters into a half-buried cellar that is choked with vegetation. Inside are 1d4+1 mantraps (see appendix C) and the bones of many explorers. Treasure. Valuable gear is scattered around the bones, including a climbing kit, three potions of invisibility, and a pouch of 1d6 garnets worth 100 gp each.`,
+    description: `Земля под ногами рушится и персонажи попадают в полуподвальный погреб, заросший растительностью. Внутри находятся 1к4 + 1 капкана и кости множества исследователей.\nСокровище. Ценные предметы снаряжения разбросаны по костям, включая набор для скалолазания, три зелья невидимости и мешочек с 1к6 гранатами стоимостью по 100 зм каждый.`,
   },
   {
     id: 'mezro_mazewalker',
     title: 'Лабиринтоходец',
-    description: `The characters meet an ancient Chultan priest of Ubtao called Cha Nkrumané. As a youth, Cha was a “mazewalker”: a member of the Mezroan clergy who guided his fellow citizens through the maze of life. Now 120 years old, he has returned to die inside the barado of the Temple of Ubtao (location 15).`,
+    description: `Персонажи встречают древнего чультского священника Убтао по имени Ча Нкрумане. В молодости Ча был «лабиринтоходцем»: представителем мезроанского духовенства, направлявшим своих сограждан через лабиринт жизни. Сейчас ему 120 лет, и он вернулся, чтобы умереть в барадо храма Убтао (локация 15).`,
   },
   {
     id: 'mezro_minotaurs',
     title: 'Минотавры',
-    description: `Since the cataclysm, the maze-like walkways of Mezro’s Residential Quarter have become a place of pilgrimage for the minotaur race. \n• At tier 1, there are 1d3 minotaurs. \n• At tier 2, add 1d3+3 minotaurs. \n• At tier 3, add 2 barlgura demons.`,
+    description: `После катаклизма лабиринтные улицы жилого квартала Мезро стали местом паломничества для минотавров.\n• Для ранга 1 — 1к3 минотавров.\n• Для ранга 2 добавьте 1к3 + 3 минотавра.\n• Для ранга 3 добавьте 2 демона Барлгура.`,
   },
   {
     id: 'mezro_shambling_mound',
     title: 'Ползающая насыпь',
-    description: `A shambling mound lugs a vegepygmy chief through the ruins on a bamboo litter.\nAt tier 2, there are accompanied by 2d6+2 vegepygmies.\nAt tier 3, double the number of vegepygmies. `,
+    description: `Плесневик-вождь едет на ползающей насыпи через руины, сидя на бамбуковом седле.\nДля ранга 2, его сопровождают 2к6+2 плесневиков.\nДля ранга 3 их вдвое больше.`,
   },
   {
     id: 'mezro_skeletons',
     title: 'Скелеты',
-    description: `Skeletons dressed in tribal armor charge the group. Each skeleton has the symbol of Ras Nsi painted on its brow. \nAt tier 1, there are 2d4+3 skeletons. \nAt tier 2, add 1d4+2 minotaur skeletons. `,
+    description: `Одетые в доспехи из шкур скелеты набрасываются на группу. У каждого скелета на лбу нарисован синий треугольник. \nДля ранга 1 — 2к4+3 скелетов. \nДля ранга 2 добавьте 1к4+2 скелетов минотавров.`,
   },
   {
     id: 'mezro_golem',
@@ -607,7 +608,7 @@ const encounterList = [
   {
     id: 'mezro_supply_wagon',
     title: 'Телега с добычей',
-    description: `A supply wagon threads through the city to the Flaming Fist headquarters at location 3. The covered wagon contains fruit and vegetables harvested from the ruins, and is pulled by a trained triceratops. \n• At tier 1, there are 1d8+2 guards. \n• At tier 2, add one knight. \n• At tier 3, add one mage. \nTreasure. The mercenaries carry a few personal riches in the form of Chultan jewelry or ornamented weapons taken from outside the city. To determine its worth, roll on the Individual Treasure table in chapter 7 of the Dungeon Master’s Guide, and multiply the resulting wealth by three.`,
+    description: `Телега с добычей едет по городу в сторону штаба Пылающего Кулака (Перспектива, локация 3). В закрытой телеге — фрукты и овощи, собранные в руинах. Её тянет обученный трицератопс. \n• Для ранга 1 её сопровождают 1к8+2 перчаток (стражей). \n• Для ранга 2 — добаьте 1 манипа (рыцаря). \n• Для ранга 3 — добавьте 1 мага. \nСокровище. У наёмников с собой есть личные предметы: чультские украшения или украшенное оружие, принесённое ими извне Мезро. Для определения их стоимости бросьте кубик по таблице «Индивидуальные сокровища» из главы 7 Руководства Мастера и умножьте результат на 3.`,
   },
   {
     id: 'mezro_wights',
@@ -617,27 +618,27 @@ const encounterList = [
   {
     id: 'mezro_yuan_ti_abomination',
     title: 'Отродье юань-ти',
-    description: `Отродье юань-ти пролезло в город, чтобы найти в библиотеке Мезро информацию о Дендар Ночной Змее.\nНа ранге 3 его сопровождает группа из 1к3+3 проклинателей юань-ти.\nСокровище. У юань-ти с собой есть змеевидное украшение. Для определения их стоимости бросьте кубик по таблице Инивидуальные сокровища из главы 7 Руководства Мастера и умножьте результат на 6.`,
+    description: `Отродье юань-ти пролезло в город, чтобы найти в библиотеке Мезро информацию о Дендар Ночной Змее.\nНа ранге 3 его сопровождает группа из 1к3+3 проклинателей юань-ти.\nСокровище. У юань-ти с собой есть змеевидное украшение. Для определения их стоимости бросьте кубик по таблице «Индивидуальные сокровища» из главы 7 Руководства Мастера и умножьте результат на 6.`,
   },
   {
     id: 'mezro_yuan_ti_pureblood',
     title: 'Нивоно',
-    description: `A Chultan man dressed in the torn attire of a merchant stumbles into view, chased by yuan-ti malisons. If the characters rescue him, he grovels their feet and begs them to look after him. Nyewono is a yuan-ti pureblood sent by Ras Nsi to infiltrate the group. \n• At tier 1, just one yuan-ti malison chases Nyewono. \n• At tier 2, there are 1d3+2 yuan-ti malisons. \n• At tier 3, there are 2d4+5 yuan-ti malisons.`,
+    description: `Чульт, одетый в рваную одежду торговца, ковыляет, ведомый проклинателями юань-ти. Если персонажи его спасают, он встаёт на колени и униженно просит их взять его с собой. Нивоно - чистокровный юань-ти, посланный расом Нси, чтобы проникнуть в группу.\n• Для ранга 1 — один проклинатель юань-ти малисон охраняет за Нивоно.\n• Для ранга 2 — 1d3 + 2 проклинателя юань-ти.\n• Для ранга 3 — 2d4 + 5 проклинателей юань-ти.`,
   },
   {
     id: 'mezro_beholder_zombie',
     title: 'Злобоглаз-зомби',
-    description: `An upturned cart lies in the street ahead, surrounded by rubble. The armored legs of a knight protrude from underneath the cart. On closer inspection, the cart looks as though it was hurled from afar to crash down on the knight. Flies buzz around it. If the characters lift the cart, they unleash the beholder zombie squashed beneath it. At tier 3, the combat attracts the attention of 2d4+3 wights. Treasure. The knight wears a suit of +1 plate armor and carries a pouch containing 131 gp. `,
+    description: `Перевёрнутая телега лежит в куче обломков посреди улицы. Ноги в латных ботинках торчат из-под телеги. Под телегой лежит мёртвый рыцарь. Вокруг летают мухи. При ближайшем рассмотрении телега выглядит так, словно ее издалека швырнуло на рыцаря. Если персонажи поднимают телегу, то из-под неё вылезает злобоглаз-зомби.\nДля ранга 3 — бой привлекает 2к4+3 умертвий.\nСокровище. Рыцарь носил Латы +1 и кошель со 131 зм.`,
   },
   {
     id: 'mezro_zombie_dinosaurs',
     title: 'Динозавры-зомби',
-    description: `The characters encounter a pack of mindless zombie dinosaurs. \n• At tier 1, there are 1d3 zealoraptor zombies. \n• At tier 2, there are 2d4+2 zeoloraptor zombies. \n• At tier 3, there are 2d4+2 triceratops zombies.`,
+    description: `Персонажи встречают группу безмозглых динозавров-зомби.\n• Для ранга 1 — 1к3 зеалорапторов-зомби. \n• Для ранга 2 — 2к4+2 зеалорапторов-зомби. \nРанг 3\n 2к4+2 трицератопсов-зомби.`,
   },
   {
     id: 'mezro_zombies',
     title: 'Зомби',
-    description: `The characters encounter a horde of shambling undead. Each zombie has Ras Nsi’s symbol stitched onto its forehead.\nAt tier 1, there are 2d4+4 zombies.\nAt tier 2, add 1d3+2 ogre zombies.`,
+    description: `Персонажи встречают орду нежити. У каждого зомби на лбу нарисован синий треугольник.\nДля ранга 1 — 2к4+4 зомби.\nДля ранга 2 добавьте 1к3+2 огра-зомби.`,
   },
 ]
 

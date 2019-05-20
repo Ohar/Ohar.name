@@ -47,6 +47,18 @@ const biomeList = [
     text: 'Ому: Болото',
     value: 'omu_swamp',
   },
+  {
+    text: 'Мезро: 1–4',
+    value: 'mezro_tier_1',
+  },
+  {
+    text: 'Мезро: 5–10',
+    value: 'mezro_tier_2',
+  },
+  {
+    text: 'Мезро: 11–16',
+    value: 'mezro_tier_3',
+  },
 ]
 
 export default biomeList

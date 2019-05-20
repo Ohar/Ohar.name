@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import _ from "lodash"
 
-import SEARCH_PROP_NAME from "@/components/DndItemCatalog/constants/SEARCH_PROP_NAME";
+import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
 
 import DndItemTableComponent from "./DndItemTableComponent"
 

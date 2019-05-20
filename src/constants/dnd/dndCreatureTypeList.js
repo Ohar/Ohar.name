@@ -47,7 +47,7 @@ const dndCreatureTypeList = [
   },
   {
     id: 'dragon',
-    name: '',
+    name: 'дракон',
   },
   {
     id: 'aberration',

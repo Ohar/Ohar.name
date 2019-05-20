@@ -1,20 +1,28 @@
-export default [
+import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
+
+const dndCreatureList = [
   {
     name: {
-      ru: 'test name',
-      en: 'test name',
+      ru: 'Обыватель',
+      en: 'Commoner',
     },
     description: {
-      ru: 'test description',
-      en: 'test description',
+      ru: 'Описание',
+      en: 'Description',
     },
-    aligment: 'no',
-    source: '',
-    speed: 30,
+    aligment: 'any',
+    source: 'PHB',
+    speed: [
+      {
+        type: 'walk',
+        value: 30,
+      },
+    ],
     hitPoint: 10,
     armorClass: 10,
     challengeRating: '1',
     sizeType: 2,
+    lairPoints: null,
     typeId: 'humanoid',
     params: {
       str: 10,
@@ -25,6 +33,7 @@ export default [
       cha: 10,
     },
     skillList: [],
+    equipmentList: [],
     abilityList: [
       {
         typeId: 'ability',
@@ -38,25 +47,25 @@ export default [
         },
       },
       {
-        typeId: 'melee',
+        typeId: 'melee_attack',
         name: {
-          ru: 'test melee name',
-          en: 'test melee name',
+          ru: 'test melee_attack name',
+          en: 'test melee_attack name',
         },
         description: {
-          ru: 'test melee description',
-          en: 'test melee description',
+          ru: 'test melee_attack description',
+          en: 'test melee_attack description',
         },
       },
       {
-        typeId: 'range',
+        typeId: 'range_attack',
         name: {
-          ru: 'test range name',
-          en: 'test range name',
+          ru: 'test range_attack name',
+          en: 'test range_attack name',
         },
         description: {
-          ru: 'test range description',
-          en: 'test range description',
+          ru: 'test range_attack description',
+          en: 'test range_attack description',
         },
       },
       {
@@ -94,4 +103,33 @@ export default [
       },
     ],
   },
-]
+].map(
+  (creature, id) => ({
+    ...creature,
+    id,
+    [SEARCH_PROP_NAME]: [
+      creature.name.ru,
+      creature.name.en,
+      creature.description.ru,
+      creature.description.en,
+    ]
+      .join('\n'),
+  })
+)
+
+export default dndCreatureList
+
+export const dndCreatureCollection = dndCreatureList.reduce(
+  (collection, creature) => ({
+    ...collection,
+    [creature.id]: creature,
+  }),
+  {}
+)
+
+export const dndCreatureNameList = dndCreatureList.map(
+  ({id, name}) => ({
+    id,
+    name
+  })
+)

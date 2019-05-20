@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 
 import goodList from "./constants/goodList"
-import SEARCH_PROP_NAME from "./constants/SEARCH_PROP_NAME";
+import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
 
 import DndItemCatalogComponent from "./DndItemCatalogComponent"
 

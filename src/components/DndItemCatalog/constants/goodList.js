@@ -1,6 +1,6 @@
 import _ from "lodash";
 
-import SEARCH_PROP_NAME from "./SEARCH_PROP_NAME";
+import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
 
 const goodList = [
     {

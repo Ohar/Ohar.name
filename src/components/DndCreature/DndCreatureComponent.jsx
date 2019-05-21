@@ -8,6 +8,8 @@ import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
 import dndSizeList from "@/constants/dnd/dndSizeList"
 
+import DndParamList from "@/components/DndParamList"
+
 import "./DndCreatureStyles.css"
 
 const LANG = 'ru'
@@ -16,16 +18,17 @@ const DndCreatureComponent = (
   {
     creature,
     creature: {
-      name,
-      description,
-      source,
-      challengeRating,
-      speed,
       aligment,
-      sizeType,
       armorClass,
-      typeId,
+      challengeRating,
+      description,
       hitPoint,
+      name,
+      params,
+      sizeType,
+      source,
+      speed,
+      typeId,
     },
   },
 ) => (
@@ -57,6 +60,8 @@ const DndCreatureComponent = (
     <p className='DndCreature_exp'>
       Опыт: {dndCrCollection[challengeRating].exp}
     </p>
+
+    <DndParamList params={params} />
 
     {
       speed.map(

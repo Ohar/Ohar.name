@@ -22,6 +22,7 @@ const DndCreatureComponent = (
       challengeRating,
       description,
       hitPoint,
+      languageList,
       legendaryPoints,
       name: [nameSingle],
       params,

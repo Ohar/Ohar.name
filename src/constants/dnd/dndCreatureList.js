@@ -33,6 +33,7 @@ const dndCreatureList = [
       cha: 10,
     },
     skillList: [],
+    languageList: ['any_one'],
     spellList: [],
     equipmentList: [],
     abilityList: [
@@ -75,6 +76,7 @@ const dndCreatureList = [
       cha: 10,
     },
     skillList: [],
+    languageList: [],
     spellList: [],
     equipmentList: [],
     abilityList: [

@@ -3,31 +3,19 @@ import listToCollectionById from '@/utils/listToCollectionById'
 const dndManualList = [
   {
     id: 'PHB',
-    name: {
-      ru: 'Книга игрока',
-      en: 'Player\'s Handbook',
-    },
+    name: 'Книга игрока',
   },
   {
     id: 'DMM',
-    name: {
-      ru: 'Руководство мастера',
-      en: 'Dungeon Master Manual',
-    },
+    name: 'Руководство мастера',
   },
   {
     id: 'MM',
-    name: {
-      ru: 'Бестиарий',
-      en: 'Monster Manual',
-    },
+    name: 'Бестиарий',
   },
   {
     id: 'VMG',
-    name: {
-      ru: 'Руководство Воло по монстрам',
-      en: 'Volo\'s Monster Guide',
-    },
+    name: 'Руководство Воло по монстрам',
   },
 ]
 

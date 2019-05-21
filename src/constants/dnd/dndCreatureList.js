@@ -2,14 +2,13 @@ import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
 
 const dndCreatureList = [
   {
-    name: {
-      ru: 'Обыватель',
-      en: 'Commoner',
-    },
-    description: {
-      ru: 'Описание',
-      en: 'Description',
-    },
+    name: [
+      'Обыватель',
+      'Обывателя',
+      'Обывателей',
+    ],
+    nameEn: 'Commoner',
+    description: 'Описание',
     aligment: 'any',
     source: 'PHB',
     speed: [
@@ -22,7 +21,8 @@ const dndCreatureList = [
     armorClass: 10,
     challengeRating: '1',
     sizeType: 2,
-    lairPoints: null,
+    lairPoints: 0,
+    legendaryPoints: 1,
     typeId: 'humanoid',
     params: {
       str: 10,
@@ -33,73 +33,75 @@ const dndCreatureList = [
       cha: 10,
     },
     skillList: [],
+    spellList: [],
     equipmentList: [],
     abilityList: [
       {
-        typeId: 'ability',
-        name: {
-          ru: 'test ability name',
-          en: 'test ability name',
-        },
-        description: {
-          ru: 'test ability description',
-          en: 'test ability description',
-        },
+        typeId: 'melee_attack',
+        name: 'Дубина',
+        description: 'Рукопашная атака оружием: +2 к попаданию, досягаемость 5 фт., одна цель. Попадание: Дробящий урон 2 (1к4). ',
       },
+    ],
+  },
+  {
+    name: [
+      'Тарраск',
+      'Тарраска',
+      'Таррасков',
+    ],
+    nameEn: 'Tarrasque',
+    description: 'Описание',
+    aligment: 'any',
+    source: 'PHB',
+    speed: [
+      {
+        type: 'walk',
+        value: 30,
+      },
+    ],
+    hitPoint: 10,
+    armorClass: 10,
+    challengeRating: '1',
+    sizeType: 2,
+    lairPoints: 0,
+    legendaryPoints: 1,
+    typeId: 'humanoid',
+    params: {
+      str: 10,
+      dex: 10,
+      con: 10,
+      int: 10,
+      wit: 10,
+      cha: 10,
+    },
+    skillList: [],
+    spellList: [],
+    equipmentList: [],
+    abilityList: [
       {
         typeId: 'melee_attack',
-        name: {
-          ru: 'test melee_attack name',
-          en: 'test melee_attack name',
-        },
-        description: {
-          ru: 'test melee_attack description',
-          en: 'test melee_attack description',
-        },
+        name: 'test melee_attack name',
+        description: 'test melee_attack description',
       },
       {
         typeId: 'range_attack',
-        name: {
-          ru: 'test range_attack name',
-          en: 'test range_attack name',
-        },
-        description: {
-          ru: 'test range_attack description',
-          en: 'test range_attack description',
-        },
+        name: 'test range_attack name',
+        description: 'test range_attack description',
       },
       {
         typeId: 'reaction',
-        name: {
-          ru: 'test reaction name',
-          en: 'test reaction name',
-        },
-        description: {
-          ru: 'test reaction description',
-          en: 'test reaction description',
-        },
+        name: 'test reaction name',
+        description: 'test reaction description',
       },
       {
         typeId: 'legendary_action',
-        name: {
-          ru: 'test legendary_action name',
-          en: 'test legendary_action name',
-        },
-        description: {
-          ru: 'test legendary_action description',
-          en: 'test legendary_action description',
-        },
+        name: 'Ничего',
+        description: 'Обыватель ничего не делает',
       },
       {
         typeId: 'lair_action',
-        name: {
-          ru: 'test lair_action name',
-          en: 'test lair_action name',
-        },
-        description: {
-          ru: 'test lair_action description',
-          en: 'test lair_action description',
-        },
+        name: 'test lair_action name',
+        description: 'test lair_action description',
       },
     ],
   },
@@ -108,10 +110,9 @@ const dndCreatureList = [
     ...creature,
     id,
     [SEARCH_PROP_NAME]: [
-      creature.name.ru,
-      creature.name.en,
-      creature.description.ru,
-      creature.description.en,
+      creature.name[0],
+      creature.nameEn,
+      creature.description,
     ]
       .join('\n'),
   })

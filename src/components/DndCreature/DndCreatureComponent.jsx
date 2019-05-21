@@ -1,18 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import {dndManualCollection} from "@/constants/dnd/dndManualList"
-import {dndCrCollection} from "@/constants/dnd/dndCrList"
-import {dndSpeedCollection} from "@/constants/dnd/dndSpeedList"
-import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
-import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
 import dndSizeList from "@/constants/dnd/dndSizeList"
+import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
+import {dndCrCollection} from "@/constants/dnd/dndCrList"
+import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
+import {dndManualCollection} from "@/constants/dnd/dndManualList"
 
+import DndCreatureSpeed from "@/components/DndCreatureSpeed"
+import DndLegendaryActionList from "@/components/DndLegendaryActionList"
 import DndParamList from "@/components/DndParamList"
 
 import "./DndCreatureStyles.css"
-
-const LANG = 'ru'
 
 const DndCreatureComponent = (
   {
@@ -23,7 +22,8 @@ const DndCreatureComponent = (
       challengeRating,
       description,
       hitPoint,
-      name,
+      legendaryPoints,
+      name: [nameSingle],
       params,
       sizeType,
       source,
@@ -34,44 +34,42 @@ const DndCreatureComponent = (
 ) => (
   <section className='DndCreature'>
     <header className='DndCreature_name'>
-      {name[LANG]}
+      {nameSingle}
     </header>
     <p className='DndCreature_description'>
-      {description[LANG]}
-    </p>
-    <p className='DndCreature_aligment'>
-      Мировоззрение: {dndAligmentCollection[aligment].name}
+      {description}
     </p>
     <p className='DndCreature_info'>
-      {dndSizeList[sizeType]} {dndCreatureTypeCollection[typeId].name}
+      {dndSizeList[sizeType]}
+      {dndCreatureTypeCollection[typeId].name},
+      {dndAligmentCollection[aligment].name}
     </p>
     <p className='DndCreature_armorClass'>
-      Класс доспеха: {armorClass}
+      <b>Класс доспеха</b> {armorClass}
     </p>
     <p className='DndCreature_hitPoint'>
-      Хитов: {hitPoint}
+      <b>Хитов</b> {hitPoint}
     </p>
-    <p className='DndCreature_source'>
-      Источник: {dndManualCollection[source].name[LANG]}
-    </p>
+
+    <DndCreatureSpeed speed={speed} />
+
     <p className='DndCreature_cr'>
-      Уровень опасности: {dndCrCollection[challengeRating].cr}
-    </p>
-    <p className='DndCreature_exp'>
-      Опыт: {dndCrCollection[challengeRating].exp}
+      <b>Уровень опасности</b> {dndCrCollection[challengeRating].cr}
+      <span className='DndCreature_exp'>
+        ({dndCrCollection[challengeRating].exp} опыта)
+      </span>
     </p>
 
     <DndParamList params={params} />
 
-    {
-      speed.map(
-        ({type, value}) => (
-          <p key={type}>
-            {dndSpeedCollection[type].name[LANG]}: {value}
-          </p>
-        )
-      )
-    }
+    <p className='DndCreature_source'>
+      <b>Источник</b> {dndManualCollection[source].name}
+    </p>
+
+    <DndLegendaryActionList
+      name={nameSingle}
+      legendaryPoints={legendaryPoints}
+    />
 
     <p>
       {JSON.stringify(creature)}

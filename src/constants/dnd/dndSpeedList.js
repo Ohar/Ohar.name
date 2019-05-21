@@ -3,38 +3,23 @@ import listToCollectionById from '@/utils/listToCollectionById'
 const dndSpeedList = [
   {
     id: 'walk',
-    name: {
-      ru: 'скорость ходьбы',
-      en: 'walk speed',
-    }
+    name: '',
   },
   {
     id: 'fly',
-    name: {
-      ru: 'скорость полёта',
-      en: 'fly speed',
-    }
+    name: 'летая',
   },
   {
     id: 'swim',
-    name: {
-      ru: 'скорость плавания',
-      en: 'swim speed',
-    }
+    name: 'плавая',
   },
   {
     id: 'dig',
-    name: {
-      ru: 'скорость копания',
-      en: 'dig speed',
-    }
+    name: 'копая',
   },
   {
     id: 'crawl',
-    name: {
-      ru: 'скорость лазания',
-      en: 'crawl speed',
-    }
+    name: 'лазая',
   },
 ]
 

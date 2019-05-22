@@ -7,9 +7,9 @@ import {dndCrCollection} from "@/constants/dnd/dndCrList"
 import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
 import {dndManualCollection} from "@/constants/dnd/dndManualList"
 
-import DndCreatureSpeed from "@/components/DndCreatureSpeed"
-import DndLegendaryActionList from "@/components/DndLegendaryActionList"
-import DndParamList from "@/components/DndParamList"
+import DndCreatureSpeed from "./components/DndCreatureSpeed"
+import DndLegendaryActionList from "./components/DndLegendaryActionList"
+import DndParamList from "./components/DndParamList"
 
 import "./DndCreatureStyles.css"
 

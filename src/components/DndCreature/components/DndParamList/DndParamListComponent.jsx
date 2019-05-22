@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import DndParam from "@/components/DndParam"
+import DndParam from "./../DndParam"
 
 import "./DndParamListStyles.css"
 

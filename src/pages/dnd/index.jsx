@@ -25,10 +25,10 @@ const dndSubpageList = [
     title: 'Гробница аннигиляции: генератор выпавших сокровищ',
     url: '/dnd/generator-toa-treasures',
   },
-  {
-    title: 'Каталог существ',
-    url: '/dnd/creature-catalog',
-  },
+  // {
+  //   title: 'Каталог существ',
+  //   url: '/dnd/creature-catalog',
+  // },
 ]
 
 const DndPage = () => (

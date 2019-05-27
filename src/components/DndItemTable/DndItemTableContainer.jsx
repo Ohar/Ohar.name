@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import _ from "lodash"
 
-import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
+import filterTechColumns from "./utils/filterTechColumns";
 
 import DndItemTableComponent from "./DndItemTableComponent"
 
@@ -12,9 +12,7 @@ const DndItemTableContainer = ({itemList, ...rest}) => {
             ...list,
             ...Object
                 .keys(item)
-                .filter(
-                    propName => propName !== SEARCH_PROP_NAME && propName !== 'id'
-                ),
+                .filter(filterTechColumns),
         ]),
         [],
     )

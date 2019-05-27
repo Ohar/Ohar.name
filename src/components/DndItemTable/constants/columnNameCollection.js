@@ -6,4 +6,7 @@ export default {
     subcategory: 'Подкатегория',
     name: 'Название',
     description: 'Описание',
+    damage: 'Урон',
+    poisonType: 'Тип яда',
+    saveThrow: 'Спасбросок',
 }

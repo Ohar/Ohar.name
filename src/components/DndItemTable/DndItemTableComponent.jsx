@@ -1,9 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import DndPrice from "@/components/DndPrice"
-
 import columnNameCollection from "./constants/columnNameCollection"
+
+import DndItemCell from "./components/DndItemCell"
 
 import "./DndItemTableStyles.css"
 
@@ -40,11 +40,10 @@ const DndItemTableComponent = ({itemList, columnList, className}) => (
                                         key={columnName}
                                         className='DndItemTable_cell'
                                     >
-                                        {
-                                            columnName === 'cost'
-                                                ? <DndPrice price={item[columnName]}/>
-                                                : item[columnName]
-                                        }
+                                      <DndItemCell
+                                        columnName={columnName}
+                                        item={item}
+                                      />
                                     </td>
                                 ),
                             )

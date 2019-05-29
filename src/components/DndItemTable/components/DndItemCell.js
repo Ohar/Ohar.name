@@ -2,6 +2,7 @@ import React from "react"
 
 import DndCube from "@/components/DndCube"
 import DndPrice from "@/components/DndPrice"
+import DndPoisonType from "@/components/DndPoisonType"
 
 const DndItemCell = ({columnName, item}) => {
   switch (columnName) {
@@ -15,8 +16,11 @@ const DndItemCell = ({columnName, item}) => {
       return <DndCube cube={item[columnName]}/>
     }
 
-    case 'saveThrow':
     case 'poisonType': {
+      return <DndPoisonType poisonType={item[columnName]}/>
+    }
+
+    case 'saveThrow': {
       return (
         <section>
           {JSON.stringify(item[columnName])}

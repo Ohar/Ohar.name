@@ -5,19 +5,26 @@ import calcAverage from "./utils/calcAverage"
 
 import "./DndCubeStyles.css"
 
-const DndCubeComponent = ({ cube, cube: { cubeType, cubeCount, cubeBonus } }) => (
+const DndCubeComponent = ({ cube, cube: { cubeType = 0, cubeCount = 0, cubeBonus = 0 } }) => (
   <span className='DndCube'>
     {calcAverage(cube)}
-    {` (${cubeCount}к${cubeType}`}
+    {' ('}
     {
-      cubeBonus
-        ? ` + ${cubeBonus})`
-        : ')'
+      cubeCount
+        ? `${cubeCount}к${cubeType}`
+        : ''
     }
+    {
+      cubeCount && cubeBonus
+        ? ' + '
+        : ''
+    }
+    {cubeBonus || ''}
+    )
   </span>
 )
 
-DndCubeComponent.default = {
+DndCubeComponent.defaultProps = {
   cube: {
     cubeType: 0,
     cubeCount: 0,

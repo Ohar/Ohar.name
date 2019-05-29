@@ -137,6 +137,10 @@ const goodList = [
         name: 'Боевой посох',
         nameEn: '',
         description: 'Урон 1к6 дробящий. Универсальное (1к8)',
+        damage: {
+            cubeType: 6,
+            cubeCount: 1,
+        },
         cost: 20,
         weight: 4,
         source: 'PHB:149',
@@ -147,6 +151,10 @@ const goodList = [
         name: 'Булава',
         nameEn: '',
         description: 'Урон 1к6 дробящий',
+        damage: {
+            cubeType: 6,
+            cubeCount: 1,
+        },
         cost: 500,
         weight: 4,
         source: 'PHB:149',
@@ -156,6 +164,10 @@ const goodList = [
     {
         name: 'Дубинка',
         nameEn: '',
+        damage: {
+            cubeType: 4,
+            cubeCount: 1,
+        },
         description: 'Урон 1к4 дробящий. Лёгкое',
         cost: 10,
         weight: 2,
@@ -167,6 +179,10 @@ const goodList = [
         name: 'Кинжал',
         nameEn: '',
         description: 'Урон 1к4 колющий. Лёгкое, метательное (дис. 20/60), фехтовальное',
+        damage: {
+            cubeType: 4,
+            cubeCount: 1,
+        },
         cost: 200,
         weight: 1,
         source: 'PHB:149',
@@ -177,6 +193,10 @@ const goodList = [
         name: 'Копьё',
         nameEn: '',
         description: 'Урон 1к6 колющий. Метательное (дис. 20/60), универсальное (1к8)',
+        damage: {
+            cubeType: 6,
+            cubeCount: 1,
+        },
         cost: 100,
         weight: 3,
         source: 'PHB:149',
@@ -187,6 +207,10 @@ const goodList = [
         name: 'Лёгкий молот',
         nameEn: '',
         description: 'Урон 1к4 дробящий. Лёгкое, метательное (дис. 20/60)',
+        damage: {
+            cubeType: 4,
+            cubeCount: 1,
+        },
         cost: 200,
         weight: 2,
         source: 'PHB:149',
@@ -197,6 +221,10 @@ const goodList = [
         name: 'Метательное копьё',
         nameEn: '',
         description: 'Урон 1к6 колющий. Метательное (дис. 30/120) ',
+        damage: {
+            cubeType: 6,
+            cubeCount: 1,
+        },
         cost: 50,
         weight: 2,
         source: 'PHB:149',
@@ -207,6 +235,10 @@ const goodList = [
         name: 'Палица',
         nameEn: '',
         description: 'Урон 1к8 колющий. Двуручное',
+        damage: {
+            cubeType: 8,
+            cubeCount: 1,
+        },
         cost: 20,
         weight: 10,
         source: 'PHB:149',
@@ -217,6 +249,10 @@ const goodList = [
         name: 'Ручной топор',
         nameEn: '',
         description: 'Урон 1к6 рубящий. Лёгкое, метательное (дис. 20/60) ',
+        damage: {
+            cubeType: 6,
+            cubeCount: 1,
+        },
         cost: 500,
         weight: 10,
         source: 'PHB:149',
@@ -227,6 +263,10 @@ const goodList = [
         name: 'Серп',
         nameEn: '',
         description: 'Урон 1к4 рубящий. Лёгкое',
+        damage: {
+            cubeType: 4,
+            cubeCount: 1,
+        },
         cost: 100,
         weight: 2,
         source: 'PHB:149',
@@ -237,6 +277,10 @@ const goodList = [
         name: 'Арбалет, лёгкий ',
         nameEn: '',
         description: 'Урон 1к8 колющий. Боеприпас (дис. 80/320), двуручное, перезарядка',
+        damage: {
+            cubeType: 8,
+            cubeCount: 1,
+        },
         cost: 2500,
         weight: 5,
         source: 'PHB:149',
@@ -247,6 +291,10 @@ const goodList = [
         name: 'Дротик',
         nameEn: '',
         description: 'Урон 1к4 колющий. Метательное (дис. 20/60), фехтовальное',
+        damage: {
+            cubeType: 4,
+            cubeCount: 1,
+        },
         cost: 5,
         weight: '0.25',
         source: 'PHB:149',
@@ -257,6 +305,10 @@ const goodList = [
         name: 'Короткий лук',
         nameEn: '',
         description: 'Урон 1к6 колющий. Боеприпас (дис. 80/320), двуручное',
+        damage: {
+            cubeType: 6,
+            cubeCount: 1,
+        },
         cost: 2500,
         weight: 2,
         source: 'PHB:149',
@@ -267,6 +319,10 @@ const goodList = [
         name: 'Праща',
         nameEn: '',
         description: 'Урон 1к4 дробящий. Боеприпас (дис. 30/120) ',
+        damage: {
+            cubeType: 4,
+            cubeCount: 1,
+        },
         cost: 10,
         weight: 0,
         source: 'PHB:149',
@@ -277,6 +333,10 @@ const goodList = [
         name: 'Алебарда',
         nameEn: '',
         description: 'Урон 1к10 рубящий. Двуручное, досягаемость, тяжёлое ',
+        damage: {
+            cubeType: 10,
+            cubeCount: 1,
+        },
         cost: 2000,
         weight: 6,
         source: 'PHB:149',
@@ -287,6 +347,10 @@ const goodList = [
         name: 'Боевая кирка ',
         nameEn: '',
         description: 'Урон 1к8 колющий',
+        damage: {
+            cubeType: 8,
+            cubeCount: 1,
+        },
         cost: 500,
         weight: 2,
         source: 'PHB:149',
@@ -297,6 +361,10 @@ const goodList = [
         name: 'Боевой молот  ',
         nameEn: '',
         description: 'Урон 1к8 дробящий; Универсальное (1к10) ',
+        damage: {
+            cubeType: 8,
+            cubeCount: 1,
+        },
         cost: 1500,
         weight: 2,
         source: 'PHB:149',
@@ -307,6 +375,10 @@ const goodList = [
         name: 'Боевой топор ',
         nameEn: '',
         description: 'Урон 1к8 рубящий; Универсальное (1к10) ',
+        damage: {
+            cubeType: 8,
+            cubeCount: 1,
+        },
         cost: 1000,
         weight: 4,
         source: 'PHB:149',
@@ -317,6 +389,10 @@ const goodList = [
         name: 'Глефа',
         nameEn: '',
         description: 'Урон 1к10 рубящий; Двуручное, досягаемость, тяжёлое',
+        damage: {
+            cubeType: 10,
+            cubeCount: 1,
+        },
         cost: 2000,
         weight: 6,
         source: 'PHB:149',
@@ -327,6 +403,10 @@ const goodList = [
         name: 'Двуручный меч ',
         nameEn: '',
         description: 'Урон 2к6 рубящий; Двуручное, тяжёлое',
+        damage: {
+            cubeType: 6,
+            cubeCount: 2,
+        },
         cost: 5000,
         weight: 6,
         source: 'PHB:149',
@@ -337,6 +417,10 @@ const goodList = [
         name: 'Длинное копьё ',
         nameEn: '',
         description: 'Урон 1к12 колющий; Досягаемость, особое ',
+        damage: {
+            cubeType: 12,
+            cubeCount: 1,
+        },
         cost: 1000,
         weight: 6,
         source: 'PHB:149',
@@ -347,6 +431,10 @@ const goodList = [
         name: 'Длинный меч ',
         nameEn: '',
         description: 'Урон 1к8 рубящий; Универсальное (1к10)',
+        damage: {
+            cubeType: 8,
+            cubeCount: 1,
+        },
         cost: 1500,
         weight: 3,
         source: 'PHB:149',
@@ -357,6 +445,10 @@ const goodList = [
         name: 'Кнут',
         nameEn: '',
         description: 'Урон 1к4 рубящий; Досягаемость, фехтовальное ',
+        damage: {
+            cubeType: 4,
+            cubeCount: 1,
+        },
         cost: 200,
         weight: 3,
         source: 'PHB:149',
@@ -367,6 +459,10 @@ const goodList = [
         name: 'Короткий меч',
         nameEn: '',
         description: 'Урон 1к6 колющий; Лёгкое, фехтовальное ',
+        damage: {
+            cubeType: 6,
+            cubeCount: 1,
+        },
         cost: 1000,
         weight: 2,
         source: 'PHB:149',
@@ -377,6 +473,10 @@ const goodList = [
         name: 'Молот',
         nameEn: '',
         description: 'Урон 2к6 колющий; Двуручное, тяжёлое ',
+        damage: {
+            cubeType: 6,
+            cubeCount: 2,
+        },
         cost: 1000,
         weight: 10,
         source: 'PHB:149',
@@ -387,6 +487,10 @@ const goodList = [
         name: 'Моргенштерн',
         nameEn: '',
         description: 'Урон 1к8 колющий',
+        damage: {
+            cubeType: 8,
+            cubeCount: 1,
+        },
         cost: 1500,
         weight: 4,
         source: 'PHB:149',
@@ -397,6 +501,10 @@ const goodList = [
         name: 'Пика',
         nameEn: '',
         description: 'Урон 1к10 колющий; Двуручное, досягаемость, тяжёлое ',
+        damage: {
+            cubeType: 10,
+            cubeCount: 1,
+        },
         cost: 500,
         weight: 18,
         source: 'PHB:149',
@@ -407,6 +515,10 @@ const goodList = [
         name: 'Рапира',
         nameEn: '',
         description: 'Урон 1к8 колющий; Фехтовальное',
+        damage: {
+            cubeType: 8,
+            cubeCount: 1,
+        },
         cost: 2500,
         weight: 2,
         source: 'PHB:149',
@@ -417,6 +529,10 @@ const goodList = [
         name: 'Секира',
         nameEn: '',
         description: 'Урон 1к12 колющий; Двуручное, тяжёлое ',
+        damage: {
+            cubeType: 12,
+            cubeCount: 1,
+        },
         cost: 3000,
         weight: 7,
         source: 'PHB:149',
@@ -427,6 +543,10 @@ const goodList = [
         name: 'Скимитар',
         nameEn: '',
         description: 'Урон 1к6 колющий; Лёгкое, фехтовальное ',
+        damage: {
+            cubeType: 6,
+            cubeCount: 1,
+        },
         cost: 2500,
         weight: 3,
         source: 'PHB:149',
@@ -437,6 +557,10 @@ const goodList = [
         name: 'Трезубец',
         nameEn: '',
         description: 'Урон 1к6 колющий; Метательное (дис. 20/60), универсальное (1к8) ',
+        damage: {
+            cubeType: 6,
+            cubeCount: 1,
+        },
         cost: 500,
         weight: 4,
         source: 'PHB:149',
@@ -447,6 +571,10 @@ const goodList = [
         name: 'Цеп',
         nameEn: '',
         description: 'Урон 1к8 дробящий',
+        damage: {
+            cubeType: 8,
+            cubeCount: 1,
+        },
         cost: 1000,
         weight: 2,
         source: 'PHB:149',
@@ -457,6 +585,10 @@ const goodList = [
         name: 'Арбалет, ручной ',
         nameEn: '',
         description: 'Урон 1к6 колющий; Боеприпас (дис. 30/120), лёгкое, перезарядка ',
+        damage: {
+            cubeType: 6,
+            cubeCount: 1,
+        },
         cost: 7500,
         weight: 3,
         source: 'PHB:149',
@@ -467,6 +599,10 @@ const goodList = [
         name: 'Арбалет, тяжёлый ',
         nameEn: '',
         description: 'Урон 1к10 колющий; Боеприпас (дис. 100/400), двуручное, перезарядка, тяжёлое',
+        damage: {
+            cubeType: 10,
+            cubeCount: 1,
+        },
         cost: 5000,
         weight: 18,
         source: 'PHB:149',
@@ -477,6 +613,10 @@ const goodList = [
         name: 'Длинный лук ',
         nameEn: '',
         description: 'Урон 1к8 колющий; Боеприпас (дис. 150/600), двуручное, тяжёлое',
+        damage: {
+            cubeType: 8,
+            cubeCount: 1,
+        },
         cost: 5000,
         weight: 2,
         source: 'PHB:149',
@@ -487,6 +627,11 @@ const goodList = [
         name: 'Духовая трубка ',
         nameEn: '',
         description: 'Урон 1 колющий; Боеприпас (дис. 25/100), перезарядка ',
+        damage: {
+            cubeType: 0,
+            cubeCount: 0,
+            cubeBonus: 1,
+        },
         cost: 1000,
         weight: 1,
         source: 'PHB:149',
@@ -723,6 +868,10 @@ const goodList = [
         name: 'Кислота',
         nameEn: '',
         description: 'Флакон. Вы можете действием выплеснуть содержимое этого сосуда на существо, находящееся в пределах 5 футов от вас, или метнуть сосуд на расстояние до 20 футов, чтобы он разбился от удара. В любом случае совершите дальнобойную атаку против существа или предмета, считая кислоту импровизированным оружием. При попадании цель получает урон кислотой 2к6.',
+        damage: {
+            cubeType: 6,
+            cubeCount: 2,
+        },
         cost: 2500,
         weight: 1,
         source: 'PHB:150',
@@ -1419,7 +1568,6 @@ const goodList = [
         damage: {
             cubeType: 4,
             cubeCount: 1,
-            cubeBonus: 0,
         },
         saveThrow: {
             type: 'con',
@@ -2364,7 +2512,6 @@ const goodList = [
         damage: {
             cubeType: 12,
             cubeCount: 1,
-            cubeBonus: 0,
         },
         saveThrow: {
             type: 'con',
@@ -2383,7 +2530,6 @@ const goodList = [
         damage: {
             cubeType: 6,
             cubeCount: 3,
-            cubeBonus: 0,
         },
         saveThrow: {
             type: 'con',
@@ -2458,7 +2604,6 @@ const goodList = [
         damage: {
             cubeType: 6,
             cubeCount: 9,
-            cubeBonus: 0,
         },
         saveThrow: {
             type: 'con',
@@ -2491,7 +2636,6 @@ const goodList = [
         damage: {
             cubeType: 6,
             cubeCount: 1,
-            cubeBonus: 0,
         },
         saveThrow: {
             type: 'con',
@@ -2510,7 +2654,6 @@ const goodList = [
         damage: {
             cubeType: 6,
             cubeCount: 12,
-            cubeBonus: 0,
         },
         saveThrow: {
             type: 'con',
@@ -2529,7 +2672,6 @@ const goodList = [
         damage: {
             cubeType: 6,
             cubeCount: 3,
-            cubeBonus: 0,
         },
         saveThrow: {
             type: 'con',
@@ -2576,7 +2718,6 @@ const goodList = [
         damage: {
             cubeType: 6,
             cubeCount: 7,
-            cubeBonus: 0,
         },
         saveThrow: {
             type: 'con',

@@ -1,0 +1,12 @@
+.DndSimpleTableGenerator_cell {
+    padding: .4rem;
+    border: 1px solid #fff;
+}
+
+.DndSimpleTableGenerator_label {
+    margin-right: 2rem;
+}
+
+.DndSimpleTableGenerator_btnGenerate {
+    font-size: 2rem;
+}

@@ -1,5 +1,6 @@
 import React from "react"
 
+import DndCube from "@/components/DndCube"
 import DndPrice from "@/components/DndPrice"
 
 const DndItemCell = ({columnName, item}) => {
@@ -10,7 +11,10 @@ const DndItemCell = ({columnName, item}) => {
       )
     }
 
-    case 'damage':
+    case 'damage': {
+      return <DndCube cube={item[columnName]}/>
+    }
+
     case 'saveThrow':
     case 'poisonType': {
       return (

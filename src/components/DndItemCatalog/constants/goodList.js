@@ -1420,7 +1420,6 @@ const goodList = [
             cubeType: 4,
             cubeCount: 1,
             cubeBonus: 0,
-            average: 2,
         },
         saveThrow: {
             type: 'con',
@@ -2366,7 +2365,6 @@ const goodList = [
             cubeType: 12,
             cubeCount: 1,
             cubeBonus: 0,
-            average: 6,
         },
         saveThrow: {
             type: 'con',
@@ -2386,7 +2384,6 @@ const goodList = [
             cubeType: 6,
             cubeCount: 3,
             cubeBonus: 0,
-            average: 10,
         },
         saveThrow: {
             type: 'con',
@@ -2462,7 +2459,6 @@ const goodList = [
             cubeType: 6,
             cubeCount: 9,
             cubeBonus: 0,
-            average: 31,
         },
         saveThrow: {
             type: 'con',
@@ -2496,7 +2492,6 @@ const goodList = [
             cubeType: 6,
             cubeCount: 1,
             cubeBonus: 0,
-            average: 3,
         },
         saveThrow: {
             type: 'con',
@@ -2516,7 +2511,6 @@ const goodList = [
             cubeType: 6,
             cubeCount: 12,
             cubeBonus: 0,
-            average: 42,
         },
         saveThrow: {
             type: 'con',
@@ -2536,7 +2530,6 @@ const goodList = [
             cubeType: 6,
             cubeCount: 3,
             cubeBonus: 0,
-            average: 10,
         },
         saveThrow: {
             type: 'con',
@@ -2584,7 +2577,6 @@ const goodList = [
             cubeType: 6,
             cubeCount: 7,
             cubeBonus: 0,
-            average: 24,
         },
         saveThrow: {
             type: 'con',

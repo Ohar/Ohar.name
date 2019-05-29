@@ -1,5 +1,6 @@
 import React from "react"
 
+import DndAbilityCheck from "@/components/DndAbilityCheck"
 import DndCube from "@/components/DndCube"
 import DndPrice from "@/components/DndPrice"
 import DndPoisonType from "@/components/DndPoisonType"
@@ -21,11 +22,7 @@ const DndItemCell = ({columnName, item}) => {
     }
 
     case 'saveThrow': {
-      return (
-        <section>
-          {JSON.stringify(item[columnName])}
-        </section>
-      )
+      return <DndAbilityCheck abilityCheck={item[columnName]}/>
     }
 
     default: {

@@ -4,6 +4,7 @@ import DndAbilityCheck from "@/components/DndAbilityCheck"
 import DndCube from "@/components/DndCube"
 import DndPrice from "@/components/DndPrice"
 import DndPoisonType from "@/components/DndPoisonType"
+import DndDamageType from "@/components/DndDamageType"
 
 const DndItemCell = ({columnName, item}) => {
   switch (columnName) {
@@ -23,6 +24,10 @@ const DndItemCell = ({columnName, item}) => {
 
     case 'saveThrow': {
       return <DndAbilityCheck abilityCheck={item[columnName]}/>
+    }
+
+    case 'damageType': {
+      return <DndDamageType damageType={item[columnName]}/>
     }
 
     default: {

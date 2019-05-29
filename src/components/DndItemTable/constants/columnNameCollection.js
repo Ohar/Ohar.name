@@ -9,4 +9,5 @@ export default {
     damage: 'Урон',
     poisonType: 'Тип яда',
     saveThrow: 'Спасбросок',
+    damageType: 'Тип урона',
 }

@@ -1,3 +1,6 @@
+.DndMonet {
+    white-space: nowrap;
+}
 .DndMonet + .DndMonet {
     margin-left: .4rem;
 }

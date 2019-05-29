@@ -5,6 +5,7 @@ import DndCube from "@/components/DndCube"
 import DndPrice from "@/components/DndPrice"
 import DndPoisonType from "@/components/DndPoisonType"
 import DndDamageType from "@/components/DndDamageType"
+import DndSourceInfo from "@/components/DndSourceInfo"
 
 const DndItemCell = ({columnName, item}) => {
   switch (columnName) {
@@ -28,6 +29,10 @@ const DndItemCell = ({columnName, item}) => {
 
     case 'damageType': {
       return <DndDamageType damageType={item[columnName]}/>
+    }
+
+    case 'source': {
+      return <DndSourceInfo source={item[columnName]}/>
     }
 
     default: {

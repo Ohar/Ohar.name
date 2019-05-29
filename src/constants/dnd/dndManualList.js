@@ -6,7 +6,7 @@ const dndManualList = [
     name: 'Книга игрока',
   },
   {
-    id: 'DMM',
+    id: 'DMG',
     name: 'Руководство мастера',
   },
   {
@@ -14,7 +14,7 @@ const dndManualList = [
     name: 'Бестиарий',
   },
   {
-    id: 'VMG',
+    id: 'VGtM',
     name: 'Руководство Воло по монстрам',
   },
 ]

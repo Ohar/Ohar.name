@@ -1627,7 +1627,7 @@ const goodList = [
             dc: 10,
         },
         cost: 10000,
-        poisonType: '',
+        poisonType: 'injury',
         weight: 0,
         source: 'PHB:150',
         category: 'Снаряжение',

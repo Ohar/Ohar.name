@@ -1,0 +1,7 @@
+.DndDamageType {
+    white-space: nowrap;
+}
+
+.DndDamageType::first-letter {
+    text-transform: uppercase;
+}

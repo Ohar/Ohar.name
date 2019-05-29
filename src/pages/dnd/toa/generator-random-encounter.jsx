@@ -4,7 +4,7 @@ import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import DndToaEncounterGenerator from '@/components/DndToaEncounterGenerator'
 
-const NameGeneratorChultage = () => (
+const ToaRandomEncounterGeneratorPage = () => (
   <Layout>
     <Seo
       title='Гробница аннигиляции: генератор случайных столкновений'
@@ -21,4 +21,4 @@ const NameGeneratorChultage = () => (
   </Layout>
 )
 
-export default NameGeneratorChultage
+export default ToaRandomEncounterGeneratorPage

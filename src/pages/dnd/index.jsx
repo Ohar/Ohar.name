@@ -18,12 +18,8 @@ const dndSubpageList = [
     url: '/dnd/generator-names',
   },
   {
-    title: 'Гробница аннигиляции: генератор случайных столкновений',
-    url: '/dnd/generator-toa-random-encounter',
-  },
-  {
-    title: 'Гробница аннигиляции: генератор выпавших сокровищ',
-    url: '/dnd/generator-toa-treasures',
+    title: 'Гробница аннигиляции: инструменты для ведущего (спойлеры)',
+    url: '/dnd/toa',
   },
   // {
   //   title: 'Каталог существ',

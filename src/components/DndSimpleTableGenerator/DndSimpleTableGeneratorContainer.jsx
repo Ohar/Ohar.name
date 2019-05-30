@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react"
 
-import rollD100 from '@/utils/rollD100'
+import rollDice from '@/utils/rollDice'
 
 import DndSimpleTableGeneratorComponent from './DndSimpleTableGeneratorComponent'
 
@@ -18,14 +18,15 @@ class DndSimpleTableGeneratorContainer extends PureComponent {
 
   generate = () => {
     let {rollCount} = this.state
-    let {list, pickId} = this.props
+    const {probabilitySumm, idListToPick, collection} = this.props
 
+    const makeRoll = rollDice(probabilitySumm)
     const diceRollList = []
 
     while (rollCount) {
-      const diceRoll = rollD100()
-      const treasureId = pickId(diceRoll)
-      const treasure = list.find(({id}) => id === treasureId)
+      const diceRoll = makeRoll()
+      const treasureId = idListToPick[diceRoll]
+      const treasure = collection[treasureId]
 
       diceRollList.push({
         diceRoll,

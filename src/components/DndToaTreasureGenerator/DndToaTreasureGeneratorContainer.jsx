@@ -2,9 +2,7 @@ import React, { PureComponent } from "react"
 
 import DndSimpleTableGenerator from '@/components/DndSimpleTableGenerator'
 
-import treasureList from './constants/treasureList'
-
-import treasureProbability from './utils/treasureProbability'
+import treasureList, {treasureListProbabilitySumm, treasureIdListToPick, treasureCollection} from './constants/treasureList'
 
 class DndToaTreasureGeneratorContainer extends PureComponent {
   render () {
@@ -12,7 +10,9 @@ class DndToaTreasureGeneratorContainer extends PureComponent {
       <DndSimpleTableGenerator
         title='Генератор выпавших сокровищ для кампании Гробницы Аннигиляции'
         list={treasureList}
-        pickId={treasureProbability}
+        collection={treasureCollection}
+        idListToPick={treasureIdListToPick}
+        probabilitySumm={treasureListProbabilitySumm}
       />
     )
   }

@@ -38,7 +38,7 @@ const DndSimpleTableGeneratorComponent = (
       <thead className='DndSimpleTableGenerator_thead'>
       <tr className='DndSimpleTableGenerator_row'>
         <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>Бросок к100</th>
-        <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>Сокровище</th>
+        <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>Результат</th>
       </tr>
       </thead>
       <tbody>

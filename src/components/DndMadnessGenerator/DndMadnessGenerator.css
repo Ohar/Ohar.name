@@ -1,0 +1,10 @@
+.DndMadnessGenerator_list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.DndMadnessGenerator_item {
+    max-width: 30vw;
+    margin-left: 0;
+}

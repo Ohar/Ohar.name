@@ -21,6 +21,10 @@ const dndSubpageList = [
     title: 'Гробница аннигиляции: инструменты для ведущего (спойлеры)',
     url: '/dnd/toa',
   },
+  {
+    title: 'Генератор эффектов безумия',
+    url: '/dnd/generator-madness',
+  },
   // {
   //   title: 'Каталог существ',
   //   url: '/dnd/creature-catalog',

@@ -21,6 +21,7 @@ const DndSimpleTableGeneratorComponent = (
       <input
         className='DndSimpleTableGenerator_range'
         type='range'
+        min='1'
         max={rollCountMax}
         value={rollCount}
         onChange={updateRollCount}

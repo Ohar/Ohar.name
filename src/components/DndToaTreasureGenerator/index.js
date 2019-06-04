@@ -1,1 +1,1 @@
-export default from './DndToaTreasureGeneratorContainer'
+export default from './DndToaTreasureGeneratorComponent'

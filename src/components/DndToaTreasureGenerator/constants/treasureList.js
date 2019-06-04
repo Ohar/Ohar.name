@@ -1,5 +1,3 @@
-import listToCollectionById from '@/utils/listToCollectionById'
-
 const treasureList = [
   {
     id: 'nothing',
@@ -134,22 +132,3 @@ const treasureList = [
 ]
 
 export default treasureList
-
-// TODO: Move these to SimpleTableGenerator
-export const treasureCollection = listToCollectionById(treasureList)
-
-export const treasureListProbabilitySumm = treasureList.reduce(
-  (summ, {probabilityWeight}) => summ + probabilityWeight,
-  0
-)
-
-export const treasureIdListToPick = treasureList.reduce(
-  (arr, {probabilityWeight, id}) => {
-    for (let i = 0; i <= probabilityWeight; i++) {
-      arr.push(id)
-    }
-
-    return arr
-  },
-  []
-)

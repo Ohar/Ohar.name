@@ -9,11 +9,8 @@ const diceList = [4, 6, 8, 10, 12, 20, 100, 1000]
 const RollDiceComponent = ({ result, onRoll }) => (
   <section className='RollDice'>
     <PageTitle>Броски кубиков</PageTitle>
-    {
-      result
-        ? <p className='RollDice_result'>{result}</p>
-        : null
-    }
+
+    <p className='RollDice_result'>{result}</p>
 
     <ul className='RollDice_list'>
       {

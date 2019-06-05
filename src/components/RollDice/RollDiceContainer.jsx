@@ -6,7 +6,7 @@ import RollDiceComponent from './RollDiceComponent'
 
 class RollDiceContainer extends Component {
   state = {
-    result: 0,
+    result: '?',
   }
 
   onRoll = diceType => () => {

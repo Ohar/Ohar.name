@@ -1,0 +1,26 @@
+.RollDice_list {
+    list-style-type: none;
+    margin: 0 1rem;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.RollDice_item {
+    margin-right: 1rem;
+}
+
+.RollDice_btn {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+}
+
+
+.RollDice_result {
+    display: block;
+    text-align: center;
+    margin: 1rem;
+    font-size: 5rem;
+}

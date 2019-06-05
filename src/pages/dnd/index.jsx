@@ -25,6 +25,10 @@ const dndSubpageList = [
     title: 'Генератор эффектов безумия',
     url: '/dnd/generator-madness',
   },
+  {
+    title: 'Броски кубиков',
+    url: '/dnd/roll',
+  },
   // {
   //   title: 'Каталог существ',
   //   url: '/dnd/creature-catalog',

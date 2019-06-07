@@ -1,4 +1,5 @@
 import React from "react"
+import ReactMarkdown from "react-markdown"
 
 import DndAbilityCheck from "@/components/DndAbilityCheck"
 import DndCube from "@/components/DndCube"
@@ -37,7 +38,7 @@ const DndItemCell = ({columnName, item}) => {
 
     default: {
       return (
-        <span>{item[columnName]}</span>
+        <ReactMarkdown>{String(item[columnName] || '')}</ReactMarkdown>
       )
     }
   }

@@ -17,6 +17,10 @@ const dndManualList = [
     id: 'VGtM',
     name: 'Руководство Воло по монстрам',
   },
+  {
+    id: 'ToA',
+    name: 'Гробница Аннигиляции',
+  },
 ]
 
 export const dndManualCollection = listToCollectionById(dndManualList)

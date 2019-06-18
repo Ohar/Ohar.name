@@ -10,4 +10,5 @@ export default {
     poisonType: 'Тип яда',
     saveThrow: 'Спасбросок',
     damageType: 'Тип урона',
+    range: 'Дальность',
 }

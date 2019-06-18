@@ -7,6 +7,7 @@ import DndPrice from "@/components/DndPrice"
 import DndPoisonType from "@/components/DndPoisonType"
 import DndDamageType from "@/components/DndDamageType"
 import DndSourceInfo from "@/components/DndSourceInfo"
+import DndRange from "@/components/DndRange"
 
 const DndItemCell = ({columnName, item}) => {
   switch (columnName) {
@@ -34,6 +35,10 @@ const DndItemCell = ({columnName, item}) => {
 
     case 'source': {
       return <DndSourceInfo source={item[columnName]}/>
+    }
+
+    case 'range': {
+      return <DndRange range={item[columnName]}/>
     }
 
     default: {

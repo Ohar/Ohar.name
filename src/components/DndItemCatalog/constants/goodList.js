@@ -329,7 +329,7 @@ const goodList = [
     },
     {
         name: 'Короткий лук',
-        nameEn: '',
+        nameEn: 'Shortbow',
         description: 'Урон 1к6 колющий. Боеприпас (дис. 80/320), двуручное',
         damage: {
             cubeType: 6,
@@ -494,7 +494,7 @@ const goodList = [
     },
     {
         name: 'Короткий меч',
-        nameEn: 'Short sword',
+        nameEn: 'Shortsword',
         description: 'Урон 1к6 колющий; Лёгкое, фехтовальное',
         damage: {
             cubeType: 6,
@@ -657,7 +657,7 @@ const goodList = [
     },
     {
         name: 'Длинный лук',
-        nameEn: '',
+        nameEn: 'Longbow',
         description: 'Урон 1к8 колющий; Боеприпас (дис. 150/600), двуручное, тяжёлое',
         damage: {
             cubeType: 8,

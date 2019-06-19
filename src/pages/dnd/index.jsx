@@ -29,6 +29,10 @@ const dndSubpageList = [
     title: 'Броски кубиков',
     url: '/dnd/roll',
   },
+  {
+    title: 'Генератор разумных магических предметов',
+    url: '/dnd/generator-sentient-items',
+  },
   // {
   //   title: 'Каталог существ',
   //   url: '/dnd/creature-catalog',

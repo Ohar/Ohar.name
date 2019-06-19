@@ -1,4 +1,6 @@
+import aligmentList from "./constants/aligmentList"
 import communicationTypeList from "./constants/communicationTypeList"
+import goalList from "./constants/goalList"
 import senseTypeList from "./constants/senseTypeList"
 
 import generateStats from "./utils/generateStats"
@@ -14,5 +16,7 @@ export default class SentientItem {
 
     this.communication = pickByPropability(communicationTypeList)
     this.senses = pickByPropability(senseTypeList)
+    this.aligment = pickByPropability(aligmentList)
+    this.goal = pickByPropability(goalList)
   }
 }

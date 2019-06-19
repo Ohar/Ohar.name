@@ -1,1 +1,1 @@
-export default diceNum => () => Math.round(Math.random() * (diceNum - 1))
+export default diceNum => () => Math.floor(Math.random() * diceNum)

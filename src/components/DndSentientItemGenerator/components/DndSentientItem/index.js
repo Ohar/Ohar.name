@@ -1,1 +1,1 @@
-export default from './DndSentientItemComponent'
+export default from './DndSentientItemContainer'

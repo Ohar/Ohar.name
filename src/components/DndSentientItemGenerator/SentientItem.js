@@ -12,22 +12,31 @@ import pickByPropability from "./utils/pickByPropability"
 
 export default class SentientItem {
   constructor () {
-    this.stats = {
-      cha: generateStats(),
-      int: generateStats(),
-      wit: generateStats(),
-    }
+    this.stats = [
+      {
+        id: 'int',
+        value: generateStats(),
+      },
+      {
+        id: 'wit',
+        value: generateStats(),
+      },
+      {
+        id: 'cha',
+        value: generateStats(),
+      },
+    ]
 
     this.char = {
-      bad: pickByPropability(charBadList),
-      good: pickByPropability(charGoodList),
+      bad: pickByPropability(charBadList).description,
+      good: pickByPropability(charGoodList).description,
     }
 
-    this.aligment = pickByPropability(aligmentList)
-    this.interactions = pickByPropability(interactionTypeList)
-    this.goal = pickByPropability(goalList)
-    this.senses = pickByPropability(senseTypeList)
-    this.manner = pickByPropability(mannerList)
-    this.communication = pickByPropability(communicationList)
+    this.aligmentId = pickByPropability(aligmentList).id
+    this.interactions = pickByPropability(interactionTypeList).description
+    this.goal = pickByPropability(goalList).description
+    this.senses = pickByPropability(senseTypeList).description
+    this.manner = pickByPropability(mannerList).description
+    this.communication = pickByPropability(communicationList).description
   }
 }

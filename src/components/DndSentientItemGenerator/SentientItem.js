@@ -5,6 +5,7 @@ import interactionTypeList from "./constants/interactionTypeList"
 import goalList from "./constants/goalList"
 import senseTypeList from "./constants/senseTypeList"
 import mannerList from "./constants/mannerList"
+import communicationList from "./constants/communicationList"
 
 import generateStats from "./utils/generateStats"
 import pickByPropability from "./utils/pickByPropability"
@@ -27,5 +28,6 @@ export default class SentientItem {
     this.goal = pickByPropability(goalList)
     this.senses = pickByPropability(senseTypeList)
     this.manner = pickByPropability(mannerList)
+    this.communication = pickByPropability(communicationList)
   }
 }

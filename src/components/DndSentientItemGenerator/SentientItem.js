@@ -1,7 +1,7 @@
 import aligmentList from "./constants/aligmentList"
 import charBadList from "./constants/charBadList"
 import charGoodList from "./constants/charGoodList"
-import communicationTypeList from "./constants/communicationTypeList"
+import interactionTypeList from "./constants/interactionTypeList"
 import goalList from "./constants/goalList"
 import senseTypeList from "./constants/senseTypeList"
 import mannerList from "./constants/mannerList"
@@ -23,7 +23,7 @@ export default class SentientItem {
     }
 
     this.aligment = pickByPropability(aligmentList)
-    this.communication = pickByPropability(communicationTypeList)
+    this.interactions = pickByPropability(interactionTypeList)
     this.goal = pickByPropability(goalList)
     this.senses = pickByPropability(senseTypeList)
     this.manner = pickByPropability(mannerList)

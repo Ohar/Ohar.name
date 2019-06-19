@@ -1,5 +1,6 @@
 import React from 'react'
 
+import BtnGenerate from "@/components/BtnGenerate"
 import PageTitle from "@/components/PageTitle"
 
 import './DndSimpleTableGenerator.css'
@@ -28,12 +29,7 @@ const DndSimpleTableGeneratorComponent = (
       />
     </label>
 
-    <button
-      className='DndSimpleTableGenerator_btnGenerate'
-      onClick={generate}
-    >
-      Сгенерировать
-    </button>
+    <BtnGenerate onClick={generate}/>
 
     <table className='DndSimpleTableGenerator_table'>
       <thead className='DndSimpleTableGenerator_thead'>

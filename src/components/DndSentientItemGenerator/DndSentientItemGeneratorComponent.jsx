@@ -1,38 +1,17 @@
-import React, { Component } from "react"
+import React from "react"
 
-import PageTitle from '@/components/PageTitle'
+import PageTitle from "@/components/PageTitle"
 import BtnGenerate from "@/components/BtnGenerate"
+import DndSentientItem from "./components/DndSentientItem"
 
-import SentientItem from "./SentientItem"
+import "./DndSentientItemGeneratorStyles.css"
 
-import './DndSentientItemGeneratorStyles.css'
+const DndSentientItemGeneratorComponent = ({ item, onGenerate }) => (
+  <section className='DndSentientItemGenerator'>
+    <PageTitle>Генератор разумных магических предметов</PageTitle>
+    <DndSentientItem item={item}/>
+    <BtnGenerate onClick={onGenerate}/>
+  </section>
+)
 
-class DndSentientItemGenerator extends Component {
-  state = {
-    item: null,
-  }
-
-  onGenerate = () => {
-    this.setState({
-      item: new SentientItem(),
-    })
-  }
-
-  render() {
-    const {item} = this.state
-
-    return (
-      <section className='DndSentientItemGenerator'>
-        <PageTitle>Генератор разумных магических предметов</PageTitle>
-
-        <p>
-          {JSON.stringify(item)}
-        </p>
-
-        <BtnGenerate onClick={this.onGenerate}/>
-      </section>
-    )
-  }
-}
-
-export default DndSentientItemGenerator
+export default DndSentientItemGeneratorComponent

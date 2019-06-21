@@ -11,7 +11,7 @@ const goodList = [
         weight: 8,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Лёгкие доспехи'
+        subcategory: 'Лёгкие доспехи',
     },
     {
         name: 'Кожаный доспех',
@@ -21,7 +21,7 @@ const goodList = [
         weight: 10,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Лёгкие доспехи'
+        subcategory: 'Лёгкие доспехи',
     },
     {
         name: 'Доспех из проклёпанной кожи',
@@ -31,7 +31,7 @@ const goodList = [
         weight: 13,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Лёгкие доспехи'
+        subcategory: 'Лёгкие доспехи',
     },
     {
         name: 'Шкурный доспех',
@@ -41,7 +41,7 @@ const goodList = [
         weight: 12,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Средние доспехи'
+        subcategory: 'Средние доспехи',
     },
     {
         name: 'Кольчужная рубаха',
@@ -51,7 +51,7 @@ const goodList = [
         weight: 20,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Средние доспехи'
+        subcategory: 'Средние доспехи',
     },
     {
         name: 'Чешуйчатый доспех',
@@ -61,7 +61,7 @@ const goodList = [
         weight: 45,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Средние доспехи'
+        subcategory: 'Средние доспехи',
     },
     {
         name: 'Кираса',
@@ -71,7 +71,7 @@ const goodList = [
         weight: 20,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Средние доспехи'
+        subcategory: 'Средние доспехи',
     },
     {
         name: 'Полулаты',
@@ -81,7 +81,7 @@ const goodList = [
         weight: 40,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Средние доспехи'
+        subcategory: 'Средние доспехи',
     },
     {
         name: 'Колечный доспех',
@@ -91,7 +91,7 @@ const goodList = [
         weight: 40,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Тяжёлые доспехи'
+        subcategory: 'Тяжёлые доспехи',
     },
     {
         name: 'Кольчуга',
@@ -101,7 +101,7 @@ const goodList = [
         weight: 55,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Тяжёлые доспехи'
+        subcategory: 'Тяжёлые доспехи',
     },
     {
         name: 'Наборный доспех',
@@ -111,7 +111,7 @@ const goodList = [
         weight: 60,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Тяжёлые доспехи'
+        subcategory: 'Тяжёлые доспехи',
     },
     {
         name: 'Латы',
@@ -121,7 +121,7 @@ const goodList = [
         weight: 65,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Тяжёлые доспехи'
+        subcategory: 'Тяжёлые доспехи',
     },
     {
         name: 'Щит',
@@ -131,7 +131,7 @@ const goodList = [
         weight: 6,
         source: 'PHB:145',
         category: 'Доспехи',
-        subcategory: 'Щиты'
+        subcategory: 'Щиты',
     },
     {
         name: 'Боевой посох',
@@ -146,7 +146,7 @@ const goodList = [
         weight: 4,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Булава',
@@ -161,7 +161,7 @@ const goodList = [
         weight: 4,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Дубинка',
@@ -176,7 +176,7 @@ const goodList = [
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Кинжал',
@@ -186,12 +186,16 @@ const goodList = [
             cubeType: 4,
             cubeCount: 1,
         },
+        range: {
+            normal: 20,
+            max: 60,
+        },
         cost: 200,
         damageType: 'piercing',
         weight: 1,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Копьё',
@@ -201,12 +205,16 @@ const goodList = [
             cubeType: 6,
             cubeCount: 1,
         },
+        range: {
+            normal: 20,
+            max: 60,
+        },
         cost: 100,
         damageType: 'piercing',
         weight: 3,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Лёгкий молот',
@@ -216,12 +224,16 @@ const goodList = [
             cubeType: 4,
             cubeCount: 1,
         },
+        range: {
+            normal: 20,
+            max: 60,
+        },
         cost: 200,
         damageType: 'bludgeoning',
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Метательное копьё',
@@ -231,12 +243,16 @@ const goodList = [
             cubeType: 6,
             cubeCount: 1,
         },
+        range: {
+            normal: 30,
+            max: 120,
+        },
         cost: 50,
         damageType: 'piercing',
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Палица',
@@ -251,7 +267,7 @@ const goodList = [
         weight: 10,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Ручной топор',
@@ -261,12 +277,16 @@ const goodList = [
             cubeType: 6,
             cubeCount: 1,
         },
+        range: {
+            normal: 20,
+            max: 60,
+        },
         cost: 500,
         damageType: 'slashing',
         weight: 10,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Серп',
@@ -281,21 +301,25 @@ const goodList = [
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Илква',
         nameEn: 'Yklwa',
-        description: 'Урон 1к8 колющий; Метательное (дис. 10/30). Иклва — это традиционное оружие ближнего боя чультских воинов. Иклва состоит из 3-футовой деревянной рукояти со стальным или каменным лезвием длиной до 18 дюймов.',
+        description: 'Урон 1к8 колющий; Метательное (дис. 10/30). Иклва — это традиционное оружие ближнего боя чультских воинов. Иклва состоит из 3-футой деревянной рукояти со стальным или каменным лезвием длиной до 18 дюймов.',
         damage: {
             cubeType: 8,
             cubeCount: 1,
+        },
+        range: {
+            normal: 10,
+            max: 30,
         },
         cost: 100,
         damageType: 'piercing',
         source: 'ToA:32',
         category: 'Оружие',
-        subcategory: 'Простое рукопашное оружие'
+        subcategory: 'Простое рукопашное оружие',
     },
     {
         name: 'Арбалет, лёгкий',
@@ -305,12 +329,16 @@ const goodList = [
             cubeType: 8,
             cubeCount: 1,
         },
+        range: {
+            normal: 80,
+            max: 320,
+        },
         cost: 2500,
         damageType: 'piercing',
         weight: 5,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое дальнобойное оружие'
+        subcategory: 'Простое дальнобойное оружие',
     },
     {
         name: 'Дротик',
@@ -320,12 +348,16 @@ const goodList = [
             cubeType: 4,
             cubeCount: 1,
         },
+        range: {
+            normal: 20,
+            max: 60,
+        },
         cost: 5,
         damageType: 'piercing',
         weight: '0.25',
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое дальнобойное оружие'
+        subcategory: 'Простое дальнобойное оружие',
     },
     {
         name: 'Короткий лук',
@@ -340,7 +372,7 @@ const goodList = [
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое дальнобойное оружие'
+        subcategory: 'Простое дальнобойное оружие',
     },
     {
         name: 'Праща',
@@ -355,7 +387,7 @@ const goodList = [
         weight: 0,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Простое дальнобойное оружие'
+        subcategory: 'Простое дальнобойное оружие',
     },
     {
         name: 'Алебарда',
@@ -370,7 +402,7 @@ const goodList = [
         weight: 6,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Боевая кирка',
@@ -385,7 +417,7 @@ const goodList = [
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Боевой молот ',
@@ -400,7 +432,7 @@ const goodList = [
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Боевой топор',
@@ -415,7 +447,7 @@ const goodList = [
         weight: 4,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Глефа',
@@ -430,7 +462,7 @@ const goodList = [
         weight: 6,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Двуручный меч',
@@ -445,7 +477,7 @@ const goodList = [
         weight: 6,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Длинное копьё',
@@ -460,7 +492,7 @@ const goodList = [
         weight: 6,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Длинный меч',
@@ -475,7 +507,7 @@ const goodList = [
         weight: 3,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Кнут',
@@ -490,7 +522,7 @@ const goodList = [
         weight: 3,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Короткий меч',
@@ -505,7 +537,7 @@ const goodList = [
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Молот',
@@ -520,7 +552,7 @@ const goodList = [
         weight: 10,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Моргенштерн',
@@ -534,7 +566,7 @@ const goodList = [
         weight: 4,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Пика',
@@ -549,7 +581,7 @@ const goodList = [
         weight: 18,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Рапира',
@@ -563,7 +595,7 @@ const goodList = [
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Секира',
@@ -578,7 +610,7 @@ const goodList = [
         weight: 7,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Скимитар',
@@ -593,7 +625,7 @@ const goodList = [
         weight: 3,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Трезубец',
@@ -603,12 +635,16 @@ const goodList = [
             cubeType: 6,
             cubeCount: 1,
         },
+        range: {
+            normal: 20,
+            max: 60,
+        },
         cost: 500,
         damageType: 'piercing',
         weight: 4,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Цеп',
@@ -623,7 +659,7 @@ const goodList = [
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское рукопашное оружие'
+        subcategory: 'Воинское рукопашное оружие',
     },
     {
         name: 'Арбалет, ручной',
@@ -633,12 +669,16 @@ const goodList = [
             cubeType: 6,
             cubeCount: 1,
         },
+        range: {
+            normal: 30,
+            max: 120,
+        },
         cost: 7500,
         damageType: 'piercing',
         weight: 3,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское дальнобойное оружие'
+        subcategory: 'Воинское дальнобойное оружие',
     },
     {
         name: 'Арбалет, тяжёлый',
@@ -648,12 +688,16 @@ const goodList = [
             cubeType: 10,
             cubeCount: 1,
         },
+        range: {
+            normal: 100,
+            max: 400,
+        },
         cost: 5000,
         damageType: 'piercing',
         weight: 18,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское дальнобойное оружие'
+        subcategory: 'Воинское дальнобойное оружие',
     },
     {
         name: 'Длинный лук',
@@ -663,12 +707,16 @@ const goodList = [
             cubeType: 8,
             cubeCount: 1,
         },
+        range: {
+            normal: 150,
+            max: 600,
+        },
         cost: 5000,
         damageType: 'piercing',
         weight: 2,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское дальнобойное оружие'
+        subcategory: 'Воинское дальнобойное оружие',
     },
     {
         name: 'Духовая трубка',
@@ -679,22 +727,30 @@ const goodList = [
             cubeCount: 0,
             cubeBonus: 1,
         },
+        range: {
+            normal: 25,
+            max: 100,
+        },
         cost: 1000,
         damageType: 'piercing',
         weight: 1,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское дальнобойное оружие'
+        subcategory: 'Воинское дальнобойное оружие',
     },
     {
         name: 'Сеть',
         nameEn: '',
         description: 'Метательное (дис. 5/15), особое',
+        range: {
+            normal: 5,
+            max: 15,
+        },
         cost: 100,
         weight: 3,
         source: 'PHB:149',
         category: 'Оружие',
-        subcategory: 'Воинское дальнобойное оружие'
+        subcategory: 'Воинское дальнобойное оружие',
     },
     {
         name: 'Абак',
@@ -702,19 +758,19 @@ const goodList = [
         cost: 200,
         weight: 2,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Алхимический огонь',
         nameEn: 'Alchemist\'s Fire',
-        description: 'Эта вязкая и клейкая жидкость воспламеняется при контакте с воздухом. Вы можете действием метнуть фляжку на расстояние до 20 футов, разбив её от удара. Совершите дальнобойную атаку по существу или предмету, считая алхимический огонь импровизированным оружием. При попадании цель получает урон огнём 1к4 в начале каждого своего хода. Существо может окончить этот урон, потратив действие на тушение пламени, и совершив проверку Ловкости со Сл 10.',
+        description: 'Эта вязкая и клейкая жидкость воспламеняется при контакте с воздухом. Вы можете действием метнуть фляжку на расстояние до 20 фт, разбив её от удара. Совершите дальнобойную атаку по существу или предмету, считая алхимический огонь импровизированным оружием. При попадании цель получает урон огнём 1к4 в начале каждого своего хода. Существо может окончить этот урон, потратив действие на тушение пламени, и совершив проверку Ловкости со Сл 10.',
         damage: {
             cubeType: 4,
             cubeCount: 1,
         },
         range: {
             normal: 20,
-            max: 60,
+            max: 20,
         },
         cost: 5000,
         damageType: 'fire',
@@ -725,7 +781,7 @@ const goodList = [
         weight: 1,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Расходники'
+        subcategory: 'Расходники',
     },
     {
         name: 'Блок и лебёдка',
@@ -734,7 +790,7 @@ const goodList = [
         cost: 100,
         weight: 5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Арбалетные болты',
@@ -744,7 +800,7 @@ const goodList = [
         weight: 1.5,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Боеприпасы'
+        subcategory: 'Боеприпасы',
     },
     {
         name: 'Иглы для трубки',
@@ -754,7 +810,7 @@ const goodList = [
         weight: 1,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Боеприпасы '
+        subcategory: 'Боеприпасы ',
     },
     {
         name: 'Снаряды для пращи',
@@ -764,7 +820,7 @@ const goodList = [
         weight: 1.5,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Боеприпасы '
+        subcategory: 'Боеприпасы ',
     },
     {
         name: 'Стрелы',
@@ -774,7 +830,7 @@ const goodList = [
         weight: 1,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Боеприпасы '
+        subcategory: 'Боеприпасы ',
     },
     {
         name: 'Бочка',
@@ -783,7 +839,7 @@ const goodList = [
         cost: 200,
         weight: 70,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Бумага',
@@ -792,7 +848,7 @@ const goodList = [
         cost: 20,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Бурдюк',
@@ -801,7 +857,7 @@ const goodList = [
         cost: 20,
         weight: 5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Бутылка, стеклянная',
@@ -810,34 +866,34 @@ const goodList = [
         cost: 200,
         weight: 2,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Ведро',
         nameEn: 'Bucket',
-        description: '3 галлона, ½ кубического фута',
+        description: '3 галлона, ½ фт³',
         cost: 5,
         weight: 2,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Верёвка пеньковая',
         nameEn: '',
-        description: '50 футов. У верёвки 2 хита, и её можно порвать проверкой Силы со Сл 17',
+        description: '50 фт. У верёвки 2 хита, и её можно порвать проверкой Силы со Сл 17',
         cost: 100,
         weight: 10,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Верёвка шёлковая',
         nameEn: '',
-        description: '50 футов. У верёвки 2 хита, и её можно порвать проверкой Силы со Сл 17',
+        description: '50 фт. У верёвки 2 хита, и её можно порвать проверкой Силы со Сл 17',
         cost: 1000,
         weight: 5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Весы, торговые',
@@ -846,7 +902,7 @@ const goodList = [
         cost: 500,
         weight: 3,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Воск',
@@ -854,7 +910,7 @@ const goodList = [
         cost: 50,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Горшок, железный',
@@ -863,7 +919,7 @@ const goodList = [
         cost: 200,
         weight: 10,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Графин',
@@ -872,7 +928,7 @@ const goodList = [
         cost: 2,
         weight: 4,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Духи',
@@ -881,7 +937,7 @@ const goodList = [
         cost: 500,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Замок',
@@ -890,7 +946,7 @@ const goodList = [
         cost: 1000,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Зелье лечения',
@@ -899,7 +955,7 @@ const goodList = [
         cost: 5000,
         weight: 0.5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Зеркало, стальное',
@@ -907,17 +963,17 @@ const goodList = [
         cost: 500,
         weight: 0.5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Калтропы',
         nameEn: 'Caltrops',
-        description: '20 штук в сумке. Вы можете действием рассыпать сумку калтропов по площади в 5 × 5 футов. Все существа, входящие в эту область, должны преуспеть в спасброске Ловкости со Сл 15, иначе они останавливаются и получают колющий урон 1. Пока это существо не восстановит как минимум 1 хит, его скорость ходьбы уменьшена на 10 футов. Существо, перемещающееся по этой области с уменьшенной вдвое скоростью, не обязано совершать спасбросок.',
+        description: '20 штук в сумке. Вы можете действием рассыпать сумку калтропов по площади в 5 × 5 фт. Все существа, входящие в эту область, должны преуспеть в спасброске Ловкости со Сл 15, иначе они останавливаются и получают колющий урон 1. Пока это существо не восстановит как минимум 1 хит, его скорость ходьбы уменьшена на 10 фт. Существо, перемещающееся по этой области с уменьшенной вдвое скоростью, не обязано совершать спасбросок.',
         cost: 100,
         damageType: 'piercing',
         weight: 2,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Кандалы',
@@ -926,21 +982,25 @@ const goodList = [
         cost: 200,
         weight: 6,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Кислота',
         nameEn: 'Acid',
-        description: 'Флакон. Вы можете действием выплеснуть содержимое этого сосуда на существо, находящееся в пределах 5 футов от вас, или метнуть сосуд на расстояние до 20 футов, чтобы он разбился от удара. В любом случае совершите дальнобойную атаку против существа или предмета, считая кислоту импровизированным оружием. При попадании цель получает урон кислотой 2к6.',
+        description: 'Флакон. Вы можете действием выплеснуть содержимое этого сосуда на существо, находящееся в пределах 5 фт от вас, или метнуть сосуд на расстояние до 20 фт, чтобы он разбился от удара. В любом случае совершите дальнобойную атаку против существа или предмета, считая кислоту импровизированным оружием. При попадании цель получает урон кислотой 2к6.',
         damage: {
             cubeType: 6,
             cubeCount: 2,
+        },
+        range: {
+            normal: 20,
+            max: 20,
         },
         cost: 2500,
         damageType: 'acid',
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Книга',
@@ -949,7 +1009,7 @@ const goodList = [
         cost: 2500,
         weight: 5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Книга заклинаний',
@@ -958,7 +1018,7 @@ const goodList = [
         cost: 5000,
         weight: 3,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Колокольчик',
@@ -966,7 +1026,7 @@ const goodList = [
         cost: 100,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Колчан',
@@ -975,7 +1035,7 @@ const goodList = [
         cost: 100,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Кольцо-печатка',
@@ -983,16 +1043,16 @@ const goodList = [
         cost: 500,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Комплект для лазания',
         nameEn: 'Climber\'s kit',
-        description: 'В набор для лазания входят шлямбуры, накладные подошвы, перчатки и страховочная привязь. Вы можете действием использовать набор для лазания, чтобы закрепиться на высоте; если вы делаете это, вы не можете упасть более чем на 25 футов от того места, где закрепились, но и не можете подняться выше 25 футов от этого места, не открепившись.',
+        description: 'В набор для лазания входят шлямбуры, накладные подошвы, перчатки и страховочная привязь. Вы можете действием использовать набор для лазания, чтобы закрепиться на высоте; если вы делаете это, вы не можете упасть более чем на 25 фт от того места, где закрепились, но и не можете подняться выше 25 фт от этого места, не открепившись.',
         cost: 2500,
         weight: 12,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Комплект для рыбалки',
@@ -1001,7 +1061,7 @@ const goodList = [
         cost: 100,
         weight: 4,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Комплект целителя',
@@ -1010,7 +1070,7 @@ const goodList = [
         cost: 500,
         weight: 3,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Контейнер для арбалетных болтов',
@@ -1019,7 +1079,7 @@ const goodList = [
         cost: 100,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Контейнер для карт и свитков',
@@ -1028,25 +1088,25 @@ const goodList = [
         cost: 100,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Корзина',
         nameEn: '',
-        description: '2 кубических фута/40 фунтов',
+        description: '2 фт³/40 фунтов',
         cost: 40,
         weight: 2,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Кошель',
         nameEn: '',
-        description: '0,2 кубических фута/6 фунтов. В кожаном или тканевом кошеле поместится 20 снарядов для пращи или 50 иголок для духовой трубки, а также другие вещи.',
+        description: '0,2 фт³/6 фунтов. В кожаном или тканевом кошеле поместится 20 снарядов для пращи или 50 иголок для духовой трубки, а также другие вещи.',
         cost: 50,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Крюк-кошка',
@@ -1054,7 +1114,7 @@ const goodList = [
         cost: 200,
         weight: 4,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Кувшин',
@@ -1063,25 +1123,29 @@ const goodList = [
         cost: 2,
         weight: 4,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Лампа',
         nameEn: '',
-        description: 'Лампа испускает яркий свет в пределах 15 футов и тусклый свет в пределах ещё 30 футов. Зажжённая лампа горит 6 часов от одной фляги (1 пинта) масла.',
+        description: 'Лампа испускает яркий свет в пределах 15 фт и тусклый свет в пределах ещё 30 фт. Зажжённая лампа горит 6 часов от одной фляги (1 пинта) масла.',
+        range: {
+            normal: 15,
+            max: 45,
+        },
         cost: 50,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Лестница',
         nameEn: '',
-        description: '10 футов',
+        description: '10 фт',
         cost: 10,
         weight: 25,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Ломик',
@@ -1090,7 +1154,7 @@ const goodList = [
         cost: 200,
         weight: 5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Лопата',
@@ -1099,7 +1163,7 @@ const goodList = [
         cost: 200,
         weight: 5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Волшебная палочка',
@@ -1109,7 +1173,7 @@ const goodList = [
         weight: 1,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Магическая фокусировка'
+        subcategory: 'Магическая фокусировка',
     },
     {
         name: 'Жезл',
@@ -1119,7 +1183,7 @@ const goodList = [
         weight: 2,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Магическая фокусировка'
+        subcategory: 'Магическая фокусировка',
     },
     {
         name: 'Кристал',
@@ -1129,7 +1193,7 @@ const goodList = [
         weight: 1,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Магическая фокусировка'
+        subcategory: 'Магическая фокусировка',
     },
     {
         name: 'Посох',
@@ -1139,7 +1203,7 @@ const goodList = [
         weight: 4,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Магическая фокусировка'
+        subcategory: 'Магическая фокусировка',
     },
     {
         name: 'Сфера',
@@ -1149,20 +1213,24 @@ const goodList = [
         weight: 3,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Магическая фокусировка'
+        subcategory: 'Магическая фокусировка',
     },
     {
         name: 'Масло',
         nameEn: '',
-        description: 'Фляга. Обычно масло продаётся в глиняных флягах по 1 пинте (0,5 литра). Вы можете действием облить маслом из фляги существо, находящееся в пределах 5 футов, или кинуть её на 20 футов, ломая при ударе. Совершите дальнобойную атаку по целевому существу или предмету, считая масло импровизированным оружием. При попадании цель покрывается маслом. Если цель получает урон огнём, пока масло не высохло (1 минута), она получает дополнительный урон огнём 5 от горящего масла. Вы можете также вылить фляжку масла на землю, покрыв площадь 5 × 5 футов, при условии, что пол ровный. Если теперь масло поджечь, оно горит 2 раунда и причиняет урон огнём 5 всем существам, входящим в эту область или оканчивающим в ней ход. Существо может получить этот урон только один раз за ход.',
+        description: 'Фляга. Обычно масло продаётся в глиняных флягах по 1 пинте (0,5 литра). Вы можете действием облить маслом из фляги существо, находящееся в пределах 5 фт, или кинуть её на 20 фт, ломая при ударе. Совершите дальнобойную атаку по целевому существу или предмету, считая масло импровизированным оружием. При попадании цель покрывается маслом. Если цель получает урон огнём, пока масло не высохло (1 минута), она получает дополнительный урон огнём 5 от горящего масла. Вы можете также вылить фляжку масла на землю, покрыв площадь 5 × 5 фт, при условии, что пол ровный. Если теперь масло поджечь, оно горит 2 раунда и причиняет урон огнём 5 всем существам, входящим в эту область или оканчивающим в ней ход. Существо может получить этот урон только один раз за ход.',
         cost: 10,
         damage: {
             cubeBonus: 5,
         },
+        range: {
+            normal: 20,
+            max: 20,
+        },
         damageType: 'fire',
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Мел',
@@ -1171,16 +1239,16 @@ const goodList = [
         cost: 1,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Металлические шарики',
         nameEn: '',
-        description: 'В сумке 1000 шт. Вы можете действием рассыпать из этого мешка крохотные металлические шарики, покрыв площадь 10 × 10 футов. Существа, перемещающиеся по этой области, должны преуспеть в спасброске Ловкости со Сл 10, иначе они падают ничком. Существо, перемещающееся по этой области с уменьшенной вдвое скоростью, не обязано совершать спасбросок',
+        description: 'В сумке 1000 шт. Вы можете действием рассыпать из этого мешка крохотные металлические шарики, покрыв площадь 10 × 10 фт. Существа, перемещающиеся по этой области, должны преуспеть в спасброске Ловкости со Сл 10, иначе они падают ничком. Существо, перемещающееся по этой области с уменьшенной вдвое скоростью, не обязано совершать спасбросок',
         cost: 100,
         weight: 2,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Мешок',
@@ -1189,7 +1257,7 @@ const goodList = [
         cost: 1,
         weight: 0.5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Мешочек с компонентами',
@@ -1198,7 +1266,7 @@ const goodList = [
         cost: 2500,
         weight: 2,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Молот, кузнечный',
@@ -1206,7 +1274,7 @@ const goodList = [
         cost: 200,
         weight: 10,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Молоток',
@@ -1214,7 +1282,7 @@ const goodList = [
         cost: 100,
         weight: 3,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Мыло',
@@ -1222,7 +1290,7 @@ const goodList = [
         cost: 2,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Дорожная одежда',
@@ -1231,7 +1299,7 @@ const goodList = [
         weight: 4,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Одежда'
+        subcategory: 'Одежда',
     },
     {
         name: 'Костюм',
@@ -1240,7 +1308,7 @@ const goodList = [
         weight: 4,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Одежда'
+        subcategory: 'Одежда',
     },
     {
         name: 'Обычная одежда',
@@ -1249,7 +1317,7 @@ const goodList = [
         weight: 3,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Одежда'
+        subcategory: 'Одежда',
     },
     {
         name: 'Отличная одежда',
@@ -1258,7 +1326,7 @@ const goodList = [
         weight: 6,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Одежда'
+        subcategory: 'Одежда',
     },
     {
         name: 'Одеяло',
@@ -1266,7 +1334,7 @@ const goodList = [
         cost: 50,
         weight: 3,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Охотничий капкан',
@@ -1280,7 +1348,7 @@ const goodList = [
         damageType: 'piercing',
         weight: 25,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Палатка',
@@ -1289,7 +1357,7 @@ const goodList = [
         cost: 200,
         weight: 20,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Пергамент',
@@ -1298,7 +1366,7 @@ const goodList = [
         cost: 10,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Песочные часы',
@@ -1306,7 +1374,7 @@ const goodList = [
         cost: 2500,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Писчее перо',
@@ -1314,7 +1382,7 @@ const goodList = [
         cost: 2,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Подзорная труба',
@@ -1323,16 +1391,16 @@ const goodList = [
         cost: 100000,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Противоядие',
-        nameEn: '',
+        nameEn: 'Antitoxin ',
         description: 'Флакон. Существо, выпившее жидкость из этого флакона, в течение часа совершает спасброски от яда с преимуществом. Оно не предоставляет преимущества нежити и конструктам.',
         cost: 5000,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Рацион',
@@ -1341,16 +1409,16 @@ const goodList = [
         cost: 50,
         weight: 2,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Рюкзак',
         nameEn: '',
-        description: '1 кубический фут/30 фунтов',
+        description: '1 фт³/30 фунтов',
         cost: 200,
         weight: 5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Ряса',
@@ -1358,12 +1426,12 @@ const goodList = [
         cost: 100,
         weight: 4,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Свеча',
         nameEn: 'Candle',
-        description: 'В течение 1 часа свеча испускает яркий свет в пределах радиуса 5 футов и тусклый свет в пределах ещё 5 футов.',
+        description: 'В течение 1 часа свеча испускает яркий свет в пределах радиуса 5 фт и тусклый свет в пределах ещё 5 фт.',
         range: {
             normal: 5,
             max: 10,
@@ -1371,21 +1439,25 @@ const goodList = [
         cost: 1,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Святая вода',
         nameEn: '',
-        description: 'Вы можете действием облить содержимым этой фляги существо, находящееся в пределах 5 футов, или кинуть флягу на 20 футов, ломая при ударе. Совершите дальнобойную атаку по целевому существу, считая святую воду импровизированным оружием. Если цель — изверг или нежить, она получает урон излучением 2к6.\nЖрец или паладин может создать святую воду, исполнив особый ритуал. Этот ритуал исполняется 1 час, использует толчёное серебро на 25 зм и требует, чтобы заклинатель потратил ячейку заклинаний 1 уровня.',
+        description: 'Вы можете действием облить содержимым этой фляги существо, находящееся в пределах 5 фт, или кинуть флягу на 20 фт, ломая при ударе. Совершите дальнобойную атаку по целевому существу, считая святую воду импровизированным оружием. Если цель — изверг или нежить, она получает урон излучением 2к6.\nЖрец или паладин может создать святую воду, исполнив особый ритуал. Этот ритуал исполняется 1 час, использует толчёное серебро на 25 зм и требует, чтобы заклинатель потратил ячейку заклинаний 1 уровня.',
         damage: {
             cubeType: 6,
             cubeCount: 2,
+        },
+        range: {
+            normal: 20,
+            max: 20,
         },
         cost: 2500,
         damageType: 'radiant',
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Амулет',
@@ -1395,7 +1467,7 @@ const goodList = [
         weight: 1,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Священный символ'
+        subcategory: 'Священный символ',
     },
     {
         name: 'Реликварий',
@@ -1405,7 +1477,7 @@ const goodList = [
         weight: 2,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Священный символ'
+        subcategory: 'Священный символ',
     },
     {
         name: 'Эмблема',
@@ -1415,7 +1487,7 @@ const goodList = [
         weight: 0,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Священный символ'
+        subcategory: 'Священный символ',
     },
     {
         name: 'Сигнальный свисток',
@@ -1423,7 +1495,7 @@ const goodList = [
         cost: 5,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Спальник',
@@ -1431,7 +1503,7 @@ const goodList = [
         cost: 100,
         weight: 7,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Столовый набор',
@@ -1440,16 +1512,16 @@ const goodList = [
         cost: 20,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Сундук',
         nameEn: 'Chest',
-        description: '12 кубических футов/300 фунтов',
+        description: '12 фт³/300 фунтов',
         cost: 500,
         weight: 25,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Таран, портативный',
@@ -1458,7 +1530,7 @@ const goodList = [
         cost: 400,
         weight: 35,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Точильный камень',
@@ -1466,7 +1538,7 @@ const goodList = [
         cost: 1,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Трутница',
@@ -1475,7 +1547,7 @@ const goodList = [
         cost: 50,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Увеличительное стекло',
@@ -1484,20 +1556,24 @@ const goodList = [
         cost: 10000,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Факел',
         nameEn: '',
-        description: 'Факел горит 1 час, испуская яркий свет в пределах 20 футов и тусклый свет в пределах ещё 20 футов. Если вы совершаете рукопашную атаку горящим факелом и попадаете, он причиняет урон огнём 1.',
+        description: 'Факел горит 1 час, испуская яркий свет в пределах 20 фт и тусклый свет в пределах ещё 20 фт. Если вы совершаете рукопашную атаку горящим факелом и попадаете, он причиняет урон огнём 1.',
         damage: {
             cubeBonus: 1,
+        },
+        range: {
+            normal: 20,
+            max: 40,
         },
         cost: 1,
         damageType: 'fire',
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Флакон',
@@ -1506,7 +1582,7 @@ const goodList = [
         cost: 100,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Большая кружка',
@@ -1515,7 +1591,7 @@ const goodList = [
         cost: 2,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Фляга',
@@ -1524,7 +1600,7 @@ const goodList = [
         cost: 2,
         weight: 1,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Веточка омелы',
@@ -1534,7 +1610,7 @@ const goodList = [
         weight: 0,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Фокусировка друидов'
+        subcategory: 'Фокусировка друидов',
     },
     {
         name: 'Веточка падуба',
@@ -1544,7 +1620,7 @@ const goodList = [
         weight: 0,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Фокусировка друидов'
+        subcategory: 'Фокусировка друидов',
     },
     {
         name: 'Деревянная палочка',
@@ -1554,7 +1630,7 @@ const goodList = [
         weight: 1,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Фокусировка друидов'
+        subcategory: 'Фокусировка друидов',
     },
     {
         name: 'Деревянный скипетр',
@@ -1564,7 +1640,7 @@ const goodList = [
         weight: 1,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Фокусировка друидов'
+        subcategory: 'Фокусировка друидов',
     },
     {
         name: 'Деревянный посох',
@@ -1574,7 +1650,7 @@ const goodList = [
         weight: 4,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Фокусировка друидов'
+        subcategory: 'Фокусировка друидов',
     },
     {
         name: 'Тотем',
@@ -1584,12 +1660,12 @@ const goodList = [
         weight: 0,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Фокусировка друидов'
+        subcategory: 'Фокусировка друидов',
     },
     {
         name: 'Фонарь, закрытый',
         nameEn: '',
-        description: 'Закрытый фонарь испускает яркий свет в пределах 30 футов и тусклый свет в  пределах ещё 30 футов. Зажжённый фонарь горит 6 часов от одной фляги (1 пинта) масла. Вы можете действием опустить козырёк, уменьшив освещение до тусклого света в пределах 5 футов.',
+        description: 'Закрытый фонарь испускает яркий свет в пределах 30 фт и тусклый свет в  пределах ещё 30 фт. Зажжённый фонарь горит 6 часов от одной фляги (1 пинта) масла. Вы можете действием опустить козырёк, уменьшив освещение до тусклого света в пределах 5 фт.',
         range: {
             normal: 30,
             max: 60,
@@ -1597,12 +1673,12 @@ const goodList = [
         cost: 500,
         weight: 2,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Фонарь, направленный',
         nameEn: 'Bullseye lantern',
-        description: 'Направленный фонарь испускает яркий свет 60-футовым конусом и тусклый свет в пределах ещё 60 футов. Зажжённый фонарь горит 6 часов от одной фляги (1 пинта) масла.',
+        description: 'Направленный фонарь испускает яркий свет 60-фтым конусом и тусклый свет в пределах ещё 60 фт. Зажжённый фонарь горит 6 часов от одной фляги (1 пинта) масла.',
         range: {
             normal: 60,
             max: 120,
@@ -1610,12 +1686,12 @@ const goodList = [
         cost: 1000,
         weight: 2,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Цепь',
         nameEn: 'Chain',
-        description: 'Длина 10 футов. У цепи 10 хитов. Её можно порвать успешной проверкой Силы со Сл 20.',
+        description: 'Длина 10 фт. У цепи 10 хитов. Её можно порвать успешной проверкой Силы со Сл 20.',
         length: 10,
         hp: 10,
         cost: 500,
@@ -1625,7 +1701,7 @@ const goodList = [
         },
         weight: 10,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Чернила',
@@ -1634,16 +1710,16 @@ const goodList = [
         cost: 1000,
         weight: 0,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Шест',
         nameEn: '',
-        description: 'Длина 10 футов',
+        description: 'Длина 10 фт',
         cost: 5,
         weight: 7,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Шипы железные',
@@ -1652,7 +1728,7 @@ const goodList = [
         cost: 100,
         weight: 5,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Шлямбур',
@@ -1660,7 +1736,7 @@ const goodList = [
         cost: 5,
         weight: 0.25,
         source: 'PHB:150',
-        category: 'Снаряжение'
+        category: 'Снаряжение',
     },
     {
         name: 'Яд, простой',
@@ -1679,7 +1755,7 @@ const goodList = [
         weight: 0,
         source: 'PHB:150',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Набор артиста',
@@ -1689,17 +1765,17 @@ const goodList = [
         weight: 35,
         source: 'PHB:151',
         category: 'Снаряжение',
-        subcategory: 'Набор'
+        subcategory: 'Набор',
     },
     {
         name: 'Набор взломщика',
         nameEn: '',
-        description: 'Включает рюкзак, сумку с 1 000 металлических шариков, 10 футов лески, колокольчик, 5 свечек, ломик, молоток, 10 шлямбуров, закрытый фонарь, 2 фляги масла, рационы на 5 дней, трутницу и бурдюк. В набор также входит 50-футовая пеньковая верёвка, закреплённая сбоку.',
+        description: 'Включает рюкзак, сумку с 1 000 металлических шариков, 10 фт лески, колокольчик, 5 свечек, ломик, молоток, 10 шлямбуров, закрытый фонарь, 2 фляги масла, рационы на 5 дней, трутницу и бурдюк. В набор также входит 50-футовая пеньковая верёвка, закреплённая сбоку.',
         cost: 1600,
         weight: 39,
         source: 'PHB:151',
         category: 'Снаряжение',
-        subcategory: 'Набор'
+        subcategory: 'Набор',
     },
     {
         name: 'Набор дипломата',
@@ -1709,7 +1785,7 @@ const goodList = [
         weight: 36,
         source: 'PHB:151',
         category: 'Снаряжение',
-        subcategory: 'Набор'
+        subcategory: 'Набор',
     },
     {
         name: 'Набор исследователя подземелий',
@@ -1719,7 +1795,7 @@ const goodList = [
         weight: 43,
         source: 'PHB:151',
         category: 'Снаряжение',
-        subcategory: 'Набор'
+        subcategory: 'Набор',
     },
     {
         name: 'Набор путешественника',
@@ -1729,7 +1805,7 @@ const goodList = [
         weight: 59,
         source: 'PHB:151',
         category: 'Снаряжение',
-        subcategory: 'Набор'
+        subcategory: 'Набор',
     },
     {
         name: 'Набор священника',
@@ -1739,7 +1815,7 @@ const goodList = [
         weight: 22,
         source: 'PHB:151',
         category: 'Снаряжение',
-        subcategory: 'Набор'
+        subcategory: 'Набор',
     },
     {
         name: 'Набор учёного',
@@ -1749,7 +1825,7 @@ const goodList = [
         weight: 11,
         source: 'PHB:151',
         category: 'Снаряжение',
-        subcategory: 'Набор'
+        subcategory: 'Набор',
     },
     {
         name: 'Воровские инструменты',
@@ -1758,7 +1834,7 @@ const goodList = [
         cost: 2500,
         weight: 1,
         source: 'PHB:154',
-        category: 'Инструменты'
+        category: 'Инструменты',
     },
     {
         name: 'Драконьи шахматы',
@@ -1768,7 +1844,7 @@ const goodList = [
         weight: 0.5,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Игровой набор'
+        subcategory: 'Игровой набор',
     },
     {
         name: 'Карты',
@@ -1778,7 +1854,7 @@ const goodList = [
         weight: 0,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Игровой набор'
+        subcategory: 'Игровой набор',
     },
     {
         name: 'Кости',
@@ -1788,7 +1864,7 @@ const goodList = [
         weight: 0,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Игровой набор'
+        subcategory: 'Игровой набор',
     },
     {
         name: 'Ставка трёх драконов',
@@ -1798,7 +1874,7 @@ const goodList = [
         weight: 0,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Игровой набор'
+        subcategory: 'Игровой набор',
     },
     {
         name: 'Инструменты навигатора',
@@ -1807,7 +1883,7 @@ const goodList = [
         cost: 2500,
         weight: 2,
         source: 'PHB:154',
-        category: 'Инструменты'
+        category: 'Инструменты',
     },
     {
         name: 'Инструменты отравителя',
@@ -1816,277 +1892,277 @@ const goodList = [
         cost: 5000,
         weight: 2,
         source: 'PHB:154',
-        category: 'Инструменты'
+        category: 'Инструменты',
     },
     {
         name: 'Инструменты алхимика',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 5000,
         weight: 8,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты гончара',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 1000,
         weight: 3,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты жестянщика',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 5000,
         weight: 10,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты каллиграфа',
         nameEn: 'Calligrapher\'s Supplies',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 1000,
         weight: 5,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты каменщика',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 1000,
         weight: 8,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты картографа',
         nameEn: 'Cartographer\'s Tools',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 1500,
         weight: 6,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты кожевника',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 500,
         weight: 5,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты кузнеца',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 2000,
         weight: 8,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты пивовара',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 2000,
         weight: 9,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты плотника',
         nameEn: 'Carpenter\'s Tools',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 800,
         weight: 6,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты повара',
         nameEn: 'Cook\'s utensils',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 100,
         weight: 8,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты резчика по дереву',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 100,
         weight: 5,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты сапожника',
         nameEn: 'Cobbler\'s Tools',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 500,
         weight: 5,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты стеклодува',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 3000,
         weight: 5,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты ткача',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 100,
         weight: 5,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты художника',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 1000,
         weight: 5,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Инструменты ювелира',
         nameEn: '',
-        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. В таблице приведены примеры самых распространённых наборов, каждый из которых связан со своим ремеслом. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле. Для каждого набора инструментов требуется отдельное владение.',
+        description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
         cost: 2500,
         weight: 2,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Инструменты ремесленников'
+        subcategory: 'Инструменты ремесленников',
     },
     {
         name: 'Барабан',
         nameEn: 'Drum',
-        description: 'Самые популярные музыкальные инструменты указаны в таблице. Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний. Для каждого музыкального инструмента нужно отдельное владение.',
+        description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
         cost: 600,
         weight: 3,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Музыкальные инструменты'
+        subcategory: 'Музыкальные инструменты',
     },
     {
         name: 'Виола',
         nameEn: '',
-        description: 'Самые популярные музыкальные инструменты указаны в таблице. Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний. Для каждого музыкального инструмента нужно отдельное владение.',
+        description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
         cost: 3000,
         weight: 1,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Музыкальные инструменты'
+        subcategory: 'Музыкальные инструменты',
     },
     {
         name: 'Волынка',
         nameEn: '',
-        description: 'Самые популярные музыкальные инструменты указаны в таблице. Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний. Для каждого музыкального инструмента нужно отдельное владение.',
+        description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
         cost: 3000,
         weight: 6,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Музыкальные инструменты'
+        subcategory: 'Музыкальные инструменты',
     },
     {
         name: 'Лира',
         nameEn: '',
-        description: 'Самые популярные музыкальные инструменты указаны в таблице. Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний. Для каждого музыкального инструмента нужно отдельное владение.',
+        description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
         cost: 3000,
         weight: 2,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Музыкальные инструменты'
+        subcategory: 'Музыкальные инструменты',
     },
     {
         name: 'Лютня',
         nameEn: '',
-        description: 'Самые популярные музыкальные инструменты указаны в таблице. Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний. Для каждого музыкального инструмента нужно отдельное владение.',
+        description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
         cost: 3500,
         weight: 2,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Музыкальные инструменты'
+        subcategory: 'Музыкальные инструменты',
     },
     {
         name: 'Рожок',
         nameEn: '',
-        description: 'Самые популярные музыкальные инструменты указаны в таблице. Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний. Для каждого музыкального инструмента нужно отдельное владение.',
+        description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
         cost: 300,
         weight: 2,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Музыкальные инструменты'
+        subcategory: 'Музыкальные инструменты',
     },
     {
         name: 'Свирель',
         nameEn: '',
-        description: 'Самые популярные музыкальные инструменты указаны в таблице. Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний. Для каждого музыкального инструмента нужно отдельное владение.',
+        description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
         cost: 1200,
         weight: 2,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Музыкальные инструменты'
+        subcategory: 'Музыкальные инструменты',
     },
     {
         name: 'Флейта',
         nameEn: '',
-        description: 'Самые популярные музыкальные инструменты указаны в таблице. Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний. Для каждого музыкального инструмента нужно отдельное владение.',
+        description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
         cost: 200,
         weight: 1,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Музыкальные инструменты'
+        subcategory: 'Музыкальные инструменты',
     },
     {
         name: 'Цимбалы',
         nameEn: '',
-        description: 'Самые популярные музыкальные инструменты указаны в таблице. Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний. Для каждого музыкального инструмента нужно отдельное владение.',
+        description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
         cost: 2500,
         weight: 10,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Музыкальные инструменты'
+        subcategory: 'Музыкальные инструменты',
     },
     {
         name: 'Шалмей',
         nameEn: '',
-        description: 'Самые популярные музыкальные инструменты указаны в таблице. Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний. Для каждого музыкального инструмента нужно отдельное владение.',
+        description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
         cost: 200,
         weight: 1,
         source: 'PHB:154',
         category: 'Инструменты',
-        subcategory: 'Музыкальные инструменты'
+        subcategory: 'Музыкальные инструменты',
     },
     {
         name: 'Набор для грима',
@@ -2095,7 +2171,7 @@ const goodList = [
         cost: 2500,
         weight: 3,
         source: 'PHB:154',
-        category: 'Инструменты'
+        category: 'Инструменты',
     },
     {
         name: 'Набор для фальсификации',
@@ -2104,7 +2180,7 @@ const goodList = [
         cost: 1500,
         weight: 5,
         source: 'PHB:154',
-        category: 'Инструменты'
+        category: 'Инструменты',
     },
     {
         name: 'Набор травника',
@@ -2113,87 +2189,87 @@ const goodList = [
         cost: 500,
         weight: 3,
         source: 'PHB:154',
-        category: 'Инструменты'
+        category: 'Инструменты',
     },
     {
         name: 'Боевой конь',
         nameEn: '',
-        description: 'Скорость 60 футов. Грузоподъёмность 540 фунтов.',
+        description: 'Скорость 60 фт. Грузоподъёмность 540 фунтов.',
         cost: 40000,
         source: 'PHB:157',
-        category: 'Скакуны и другие животные'
+        category: 'Скакуны и другие животные',
     },
     {
         name: 'Верблюд',
         nameEn: '',
-        description: 'Скорость 50 футов. Грузоподъёмность 480 фунтов.',
+        description: 'Скорость 50 фт. Грузоподъёмность 480 фунтов.',
         cost: 5000,
         source: 'PHB:157',
-        category: 'Скакуны и другие животные'
+        category: 'Скакуны и другие животные',
     },
     {
         name: 'Лошадь, ездовая',
         nameEn: '',
-        description: 'Скорость 60 футов. Грузоподъёмность 480 фунтов.',
+        description: 'Скорость 60 фт. Грузоподъёмность 480 фунтов.',
         cost: 7500,
         source: 'PHB:157',
-        category: 'Скакуны и другие животные'
+        category: 'Скакуны и другие животные',
     },
     {
         name: 'Лошадь, тягловая',
         nameEn: '',
-        description: 'Скорость 40 футов. Грузоподъёмность 540 фунтов.',
+        description: 'Скорость 40 фт. Грузоподъёмность 540 фунтов.',
         cost: 5000,
         source: 'PHB:157',
-        category: 'Скакуны и другие животные'
+        category: 'Скакуны и другие животные',
     },
     {
         name: 'Мастифф',
         nameEn: '',
-        description: 'Скорость 4000 футов. Грузоподъёмность 195 фунтов.',
+        description: 'Скорость 40 фт. Грузоподъёмность 195 фунтов.',
         cost: 2500,
         source: 'PHB:157',
-        category: 'Скакуны и другие животные'
+        category: 'Скакуны и другие животные',
     },
     {
         name: 'Мул',
         nameEn: '',
-        description: 'Скорость 40 футов. Грузоподъёмность 420 фунтов.',
+        description: 'Скорость 40 фт. Грузоподъёмность 420 фунтов.',
         cost: 800,
         source: 'PHB:157',
-        category: 'Скакуны и другие животные'
+        category: 'Скакуны и другие животные',
     },
     {
         name: 'Осёл',
         nameEn: '',
-        description: 'Скорость 40 футов. Грузоподъёмность 420 фунтов.',
+        description: 'Скорость 40 фт. Грузоподъёмность 420 фунтов.',
         cost: 800,
         source: 'PHB:157',
-        category: 'Скакуны и другие животные'
+        category: 'Скакуны и другие животные',
     },
     {
         name: 'Пони',
         nameEn: '',
-        description: 'Скорость 40 футов. Грузоподъёмность 225 фунтов.',
+        description: 'Скорость 40 фт. Грузоподъёмность 225 фунтов.',
         cost: 3000,
         source: 'PHB:157',
-        category: 'Скакуны и другие животные'
+        category: 'Скакуны и другие животные',
     },
     {
         name: 'Слон',
         nameEn: '',
-        description: 'Скорость 40 футов. Грузоподъёмность 1320 фунтов.',
+        description: 'Скорость: 40 фт. Грузоподъёмность 1320 фунтов.',
         cost: 20000,
         source: 'PHB:157',
-        category: 'Скакуны и другие животные'
+        category: 'Скакуны и другие животные',
     },
     {
         name: 'Трицератопс',
         nameEn: '',
-        description: 'Скорость 50 футов. Грузоподъёмность 1320 фунтов.',
+        description: 'Скорость: 50 фт. Грузоподъёмность 1320 фунтов.',
         cost: 50000,
         source: 'PHB:157',
-        category: 'Скакуны и другие животные'
+        category: 'Скакуны и другие животные',
     },
     {
         name: 'Карета',
@@ -2201,7 +2277,7 @@ const goodList = [
         cost: 25000,
         weight: 100,
         source: 'PHB:157',
-        category: 'Сёдла, упряжь и транспорт'
+        category: 'Сёдла, упряжь и транспорт',
     },
     {
         name: 'Коляска',
@@ -2209,7 +2285,7 @@ const goodList = [
         cost: 10000,
         weight: 600,
         source: 'PHB:157',
-        category: 'Сёдла, упряжь и транспорт'
+        category: 'Сёдла, упряжь и транспорт',
     },
     {
         name: 'Конюшня',
@@ -2217,7 +2293,7 @@ const goodList = [
         description: 'В день',
         cost: 50,
         source: 'PHB:157',
-        category: 'Сёдла, упряжь и транспорт'
+        category: 'Сёдла, упряжь и транспорт',
     },
     {
         name: 'Корм',
@@ -2226,7 +2302,7 @@ const goodList = [
         cost: 5,
         weight: 10,
         source: 'PHB:157',
-        category: 'Сёдла, упряжь и транспорт'
+        category: 'Сёдла, упряжь и транспорт',
     },
     {
         name: 'Сани',
@@ -2234,7 +2310,7 @@ const goodList = [
         cost: 2000,
         weight: 300,
         source: 'PHB:157',
-        category: 'Сёдла, упряжь и транспорт'
+        category: 'Сёдла, упряжь и транспорт',
     },
     {
         name: 'Седельные сумки',
@@ -2242,7 +2318,7 @@ const goodList = [
         cost: 400,
         weight: 8,
         source: 'PHB:157',
-        category: 'Сёдла, упряжь и транспорт'
+        category: 'Сёдла, упряжь и транспорт',
     },
     {
         name: 'Военное седло',
@@ -2251,7 +2327,7 @@ const goodList = [
         weight: 30,
         source: 'PHB:157',
         category: 'Сёдла, упряжь и транспорт',
-        subcategory: 'Сёдла'
+        subcategory: 'Сёдла',
     },
     {
         name: 'Грузовое седло',
@@ -2260,7 +2336,7 @@ const goodList = [
         weight: 15,
         source: 'PHB:157',
         category: 'Сёдла, упряжь и транспорт',
-        subcategory: 'Сёдла'
+        subcategory: 'Сёдла',
     },
     {
         name: 'Ездовое седло',
@@ -2269,7 +2345,7 @@ const goodList = [
         weight: 25,
         source: 'PHB:157',
         category: 'Сёдла, упряжь и транспорт',
-        subcategory: 'Сёдла'
+        subcategory: 'Сёдла',
     },
     {
         name: 'Экзотическое седло',
@@ -2278,7 +2354,7 @@ const goodList = [
         weight: 40,
         source: 'PHB:157',
         category: 'Сёдла, упряжь и транспорт',
-        subcategory: 'Сёдла'
+        subcategory: 'Сёдла',
     },
     {
         name: 'Телега',
@@ -2286,7 +2362,7 @@ const goodList = [
         cost: 1500,
         weight: 200,
         source: 'PHB:157',
-        category: 'Сёдла, упряжь и транспорт'
+        category: 'Сёдла, упряжь и транспорт',
     },
     {
         name: 'Упряжь и уздечка',
@@ -2294,7 +2370,7 @@ const goodList = [
         cost: 200,
         weight: 1,
         source: 'PHB:157',
-        category: 'Сёдла, упряжь и транспорт'
+        category: 'Сёдла, упряжь и транспорт',
     },
     {
         name: 'Фургон',
@@ -2302,7 +2378,7 @@ const goodList = [
         cost: 3500,
         weight: 400,
         source: 'PHB:157',
-        category: 'Сёдла, упряжь и транспорт'
+        category: 'Сёдла, упряжь и транспорт',
     },
     {
         name: 'Военный корабль',
@@ -2310,7 +2386,7 @@ const goodList = [
         description: 'Скорость: 2,5 узла',
         cost: 2500000,
         source: 'PHB:157',
-        category: 'Водный транспорт'
+        category: 'Водный транспорт',
     },
     {
         name: 'Галера',
@@ -2318,7 +2394,7 @@ const goodList = [
         description: 'Скорость: 4 узла',
         cost: 3000000,
         source: 'PHB:157',
-        category: 'Водный транспорт'
+        category: 'Водный транспорт',
     },
     {
         name: 'Килевая лодка',
@@ -2326,7 +2402,7 @@ const goodList = [
         description: 'Скорость: 1 узел',
         cost: 300000,
         source: 'PHB:157',
-        category: 'Водный транспорт'
+        category: 'Водный транспорт',
     },
     {
         name: 'Ладья',
@@ -2334,7 +2410,7 @@ const goodList = [
         description: 'Скорость: 3 узла',
         cost: 1000000,
         source: 'PHB:157',
-        category: 'Водный транспорт'
+        category: 'Водный транспорт',
     },
     {
         name: 'Парусный корабль',
@@ -2342,7 +2418,7 @@ const goodList = [
         description: 'Скорость: 2 узла',
         cost: 1000000,
         source: 'PHB:157',
-        category: 'Водный транспорт'
+        category: 'Водный транспорт',
     },
     {
         name: 'Шлюпка (вёсельная лодка)',
@@ -2351,7 +2427,7 @@ const goodList = [
         cost: 50,
         weight: 100,
         source: 'PHB:157',
-        category: 'Водный транспорт'
+        category: 'Водный транспорт',
     },
     {
         name: 'Каноэ',
@@ -2360,7 +2436,7 @@ const goodList = [
         cost: 5000,
         weight: 100,
         source: 'ToA:32',
-        category: 'Водный транспорт'
+        category: 'Водный транспорт',
     },
     {
         name: 'Пшеница',
@@ -2368,7 +2444,7 @@ const goodList = [
         cost: 1,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Мука',
@@ -2376,14 +2452,14 @@ const goodList = [
         cost: 2,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Курица',
         nameEn: '',
         cost: 2,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Соль',
@@ -2391,7 +2467,7 @@ const goodList = [
         cost: 5,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Железо',
@@ -2400,15 +2476,15 @@ const goodList = [
         cost: 10,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Холст',
         nameEn: '',
-        description: '10 квадратных футов',
+        description: '10 фт²',
         cost: 10,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Медь',
@@ -2416,15 +2492,15 @@ const goodList = [
         cost: 50,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Хлопчатобумажная ткань',
         nameEn: '',
-        description: '10 квадратных футов',
+        description: '10 фт²',
         cost: 50,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Имбирь',
@@ -2432,14 +2508,14 @@ const goodList = [
         cost: 100,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Коза',
         nameEn: '',
         cost: 100,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Корица',
@@ -2447,7 +2523,7 @@ const goodList = [
         cost: 200,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Перец',
@@ -2455,14 +2531,14 @@ const goodList = [
         cost: 200,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Овца',
         nameEn: '',
         cost: 200,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Гвоздика',
@@ -2470,14 +2546,14 @@ const goodList = [
         cost: 300,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Свинья',
         nameEn: '',
         cost: 300,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Серебро',
@@ -2485,15 +2561,15 @@ const goodList = [
         cost: 500,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Льняная ткань',
         nameEn: '',
-        description: '10 квадратных футов',
+        description: '10 фт²',
         cost: 300,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Шафран',
@@ -2501,14 +2577,14 @@ const goodList = [
         cost: 1500,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Вол',
         nameEn: '',
         cost: 1500,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Золото',
@@ -2516,7 +2592,7 @@ const goodList = [
         cost: 5000,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Платина',
@@ -2524,7 +2600,7 @@ const goodList = [
         cost: 50000,
         weight: 1,
         source: 'PHB:157',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Средство для отпугивания насекомых: мазь',
@@ -2532,7 +2608,7 @@ const goodList = [
         description: 'Бутыль из тыквы или флакон мази содержит 20 порций мази. Одна порция защищает носителя от обычных насекомых в течение 24 часов. Средство водостойкое, так что оно не смывается дождём.',
         cost: 100,
         source: 'ToA:32',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Средство для отпугивания насекомых: ароматическая свеча',
@@ -2540,7 +2616,7 @@ const goodList = [
         description: 'Свеча горит в течение 8 часов и отгоняет насекомых в радиусе 20 фт вокруг себя.',
         cost: 10,
         source: 'ToA:32',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Дождесборник',
@@ -2549,7 +2625,7 @@ const goodList = [
         cost: 100,
         weight: 5,
         source: 'ToA:32',
-        category: 'Товары'
+        category: 'Товары',
     },
     {
         name: 'Вино, обычное',
@@ -2557,7 +2633,7 @@ const goodList = [
         description: 'кружка',
         cost: 20,
         source: 'PHB:158',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Теж: кружка',
@@ -2565,7 +2641,7 @@ const goodList = [
         description: 'Перебродивший напиток янтарного цвета на основе мёда. В Чульте он куда более распространён и популярен, чем пиво или эль.',
         cost: 4,
         source: 'ToA:32',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Теж: бочонок в 1 галлон',
@@ -2573,7 +2649,7 @@ const goodList = [
         description: 'Перебродивший напиток янтарного цвета на основе мёда. В Чульте он куда более распространён и популярен, чем пиво или эль.',
         cost: 20,
         source: 'ToA:32',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Вино, обычное',
@@ -2581,7 +2657,7 @@ const goodList = [
         description: 'бутылка',
         cost: 50,
         source: 'PHB:158',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Вино, отличное',
@@ -2589,7 +2665,7 @@ const goodList = [
         description: 'кружка',
         cost: 400,
         source: 'PHB:158',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Вино, отличное',
@@ -2597,7 +2673,7 @@ const goodList = [
         description: 'бутылка',
         cost: 1000,
         source: 'PHB:158',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Мясо',
@@ -2605,7 +2681,7 @@ const goodList = [
         description: 'кусок',
         cost: 300,
         source: 'PHB:158',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Пиво',
@@ -2613,7 +2689,7 @@ const goodList = [
         description: 'кружка',
         cost: 4,
         source: 'PHB:158',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Пиво',
@@ -2621,7 +2697,7 @@ const goodList = [
         description: 'галлон',
         cost: 20,
         source: 'PHB:158',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Сыр',
@@ -2629,7 +2705,7 @@ const goodList = [
         description: 'кусок',
         cost: 10,
         source: 'PHB:158',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Торжественный обед',
@@ -2637,7 +2713,7 @@ const goodList = [
         description: 'на 1 едока',
         cost: 1000,
         source: 'PHB:158',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Хлеб',
@@ -2645,7 +2721,7 @@ const goodList = [
         description: 'ломоть',
         cost: 2,
         source: 'PHB:158',
-        category: 'Еда и напитки'
+        category: 'Еда и напитки',
     },
     {
         name: 'Кровь ассасина',
@@ -2663,7 +2739,7 @@ const goodList = [
         poisonType: 'ingested',
         source: 'DMG 257',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Дым жжённого отура',
@@ -2681,7 +2757,7 @@ const goodList = [
         poisonType: 'inhaled',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Слизь ползающего падальщика',
@@ -2695,7 +2771,7 @@ const goodList = [
         poisonType: 'contact',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Яд дроу',
@@ -2709,7 +2785,7 @@ const goodList = [
         poisonType: 'injury',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Эссенция эфира',
@@ -2723,7 +2799,7 @@ const goodList = [
         poisonType: 'inhaled',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Злоба',
@@ -2737,7 +2813,7 @@ const goodList = [
         poisonType: 'inhaled',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Полуночные слёзы',
@@ -2755,7 +2831,7 @@ const goodList = [
         poisonType: 'ingested',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Масло таггита',
@@ -2769,7 +2845,7 @@ const goodList = [
         poisonType: 'contact',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Бледная настойка',
@@ -2788,7 +2864,7 @@ const goodList = [
         poisonType: 'ingested',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Яд лилового червя',
@@ -2807,7 +2883,7 @@ const goodList = [
         poisonType: 'injury',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Змеиный яд',
@@ -2826,7 +2902,7 @@ const goodList = [
         poisonType: 'injury',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Ступор',
@@ -2840,7 +2916,7 @@ const goodList = [
         poisonType: 'ingested',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Сыворотка правды',
@@ -2854,7 +2930,7 @@ const goodList = [
         poisonType: 'ingested',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
     {
         name: 'Яд виверны',
@@ -2873,7 +2949,7 @@ const goodList = [
         poisonType: 'injury',
         source: 'DMG:258',
         category: 'Снаряжение',
-        subcategory: 'Яды'
+        subcategory: 'Яды',
     },
 ]
 

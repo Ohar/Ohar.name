@@ -1,6 +1,6 @@
 {
   "name": "ohar.name",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "Site ohar.name",
   "scripts": {
     "postinstall": "mkdir -p public dist",

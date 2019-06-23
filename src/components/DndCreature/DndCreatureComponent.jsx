@@ -43,7 +43,7 @@ const DndCreatureComponent = (
     <p className='DndCreature_info'>
       {dndSizeList[sizeType]}
       {dndCreatureTypeCollection[typeId].name},
-      {dndAligmentCollection[aligment].name}
+      {dndAligmentCollection[aligment].name.nominative}
     </p>
     <p className='DndCreature_armorClass'>
       <b>Класс доспеха</b> {armorClass}

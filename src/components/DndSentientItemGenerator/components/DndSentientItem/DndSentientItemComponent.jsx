@@ -43,7 +43,7 @@ const DndSentientItem = (
 
     <section>
       <h2>Мировоззрение</h2>
-      <p>{dndAligmentCollection[aligmentId].name}</p>
+      <p>{dndAligmentCollection[aligmentId].name.nominative}</p>
     </section>
 
     <section>

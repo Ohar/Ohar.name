@@ -1,4 +1,5 @@
 import {dndGodCollection} from "@/constants/dnd/dndGodList"
+import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 
 import aligmentList from "./constants/aligmentList"
 import charBadList from "./constants/charBadList"
@@ -44,13 +45,23 @@ export default class SentientItem {
   }
 
   generateGoal = () => {
-    const goal = pickByPropability(goalList)
+    let goal = pickByPropability(goalList)
+
+    while (goal.id === 'aligment' && this.aligmentId === 'n') {
+      goal = pickByPropability(goalList)
+    }
 
     switch (goal.id) {
-      // case 'aligment': {
-      //
-      // }
-      //
+      case 'aligment': {
+        const {oppositeId} = dndAligmentCollection[this.aligmentId]
+        const oppositeAligment = dndAligmentCollection[oppositeId]
+
+        return goal.description.replace(
+          'тех, чьё мировоззрение диаметрально противоположно его собственному (такой предмет не может быть нейтральным)',
+          `существ с ${oppositeAligment.name.instrumental} мировоззрением`,
+        )
+      }
+
       // case 'defender':
       // case 'doom': {
       //

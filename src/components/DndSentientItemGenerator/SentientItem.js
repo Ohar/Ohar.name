@@ -85,7 +85,7 @@ export default class SentientItem {
         return kind
           ? goal.description.replace(
             'определённую расу или существ определённого вида',
-            kind.name.plural.genitive
+            kind.name.plural.accusative
           )
           : goal.description
       }

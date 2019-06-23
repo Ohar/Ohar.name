@@ -86,6 +86,66 @@ const dndAligmentList = [
     },
   },
   {
+    id: 'not_good',
+    oppositeId: 'not_evil',
+    name: {
+        nominative: 'недоброе',
+        genitive: 'недоброго',
+        dative: 'недоброму',
+        accusative: 'недоброе',
+        instrumental: 'недобрым',
+        prepositional: 'недобром',
+    },
+  },
+  {
+    id: 'not_evil',
+    oppositeId: 'not_good',
+    name: {
+        nominative: 'незлое',
+        genitive: 'незлого',
+        dative: 'незлому',
+        accusative: 'незлое',
+        instrumental: 'незлым',
+        prepositional: 'незлом',
+    },
+  },
+  {
+    id: 'not_lawfull',
+    oppositeId: 'not_chaotic',
+    name: {
+        nominative: 'незаконопослушное',
+        genitive: 'незаконопослушного',
+        dative: 'незаконопослушному',
+        accusative: 'незаконопослушное',
+        instrumental: 'незаконопослушным',
+        prepositional: 'незаконопослушном',
+    },
+  },
+  {
+    id: 'not_chaotic',
+    oppositeId: 'not_lawfull',
+    name: {
+        nominative: 'нехаотичное',
+        genitive: 'нехаотичного',
+        dative: 'нехаотичному',
+        accusative: 'нехаотичное',
+        instrumental: 'нехаотичным',
+        prepositional: 'нехаотичном',
+    },
+  },
+  {
+    id: 'any_neutral',
+    oppositeId: null,
+    name: {
+        nominative: 'любое нейтральное',
+        genitive: 'любого нейтрального',
+        dative: 'любому нейтральному',
+        accusative: 'любое нейтральное',
+        instrumental: 'любым нейтральным',
+        prepositional: 'любом нейтральном',
+    },
+  },
+  {
     id: 'lg',
     oppositeId: 'ce',
     name: {

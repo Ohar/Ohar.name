@@ -1,5 +1,7 @@
 import {dndGodCollection} from "@/constants/dnd/dndGodList"
 import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
+import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
+import {dndPcClassCollection} from "@/constants/dnd/dndPcClassList"
 
 import aligmentList from "./constants/aligmentList"
 import charBadList from "./constants/charBadList"
@@ -10,6 +12,7 @@ import godList from "./constants/godList"
 import senseTypeList from "./constants/senseTypeList"
 import mannerList from "./constants/mannerList"
 import communicationList from "./constants/communicationList"
+import kindList from "./constants/kindList"
 
 import generateStats from "./utils/generateStats"
 import pickByPropability from "./utils/pickByPropability"
@@ -62,10 +65,30 @@ export default class SentientItem {
         )
       }
 
-      // case 'defender':
-      // case 'doom': {
-      //
-      // }
+      case 'defender':
+      case 'doom': {
+        const {id, type} = pickByPropability(kindList)
+        let kind = null
+
+        switch (type) {
+          case 'creatureType': {
+            kind = dndCreatureTypeCollection[id]
+            break;
+          }
+
+          case 'pcClass': {
+            kind = dndPcClassCollection[id]
+            break;
+          }
+        }
+
+        return kind
+          ? goal.description.replace(
+            'определённую расу или существ определённого вида',
+            kind.name.plural.genitive
+          )
+          : goal.description
+      }
 
       case 'crusader':
       case 'tamplier': {

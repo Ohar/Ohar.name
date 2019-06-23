@@ -62,11 +62,6 @@ const DndSentientItem = (
     </section>
 
     <section>
-      <h2>Цель</h2>
-      <p>{senses}</p>
-    </section>
-
-    <section>
       <h2>Манеры</h2>
       <p>{manner}</p>
     </section>

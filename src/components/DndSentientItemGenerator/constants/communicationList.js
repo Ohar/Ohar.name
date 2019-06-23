@@ -48,12 +48,12 @@ export default [
   {
     id: 'Tedious',
     probabilityWeight: 1,
-    description: 'Нудный',
+    description: 'Нуден',
   },
   {
     id: 'Quiet',
     probabilityWeight: 1,
-    description: 'Тихий',
+    description: 'Тих',
   },
   {
     id: 'Suspicious',

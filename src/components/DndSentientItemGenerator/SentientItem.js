@@ -2,6 +2,10 @@ import {dndGodCollection} from "@/constants/dnd/dndGodList"
 import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
 import {dndPcClassCollection} from "@/constants/dnd/dndPcClassList"
+import {dndLanguageCollection} from "@/constants/dnd/dndLanguageList"
+import dndStatBaseValue from '@/constants/dnd/dndStatBaseValue'
+
+import dndCalcStatBonus from "@/utils/dndCalcStatBonus"
 
 import aligmentList from "./constants/aligmentList"
 import charBadList from "./constants/charBadList"
@@ -13,9 +17,13 @@ import senseTypeList from "./constants/senseTypeList"
 import mannerList from "./constants/mannerList"
 import communicationList from "./constants/communicationList"
 import kindList from "./constants/kindList"
+import languageList from "./constants/languageList"
 
 import generateStats from "./utils/generateStats"
 import pickByPropability from "./utils/pickByPropability"
+
+const MAX_LANG_BASE = 2
+const ADDITIONAL_LANG_PROBABILITY_BASE = 0.7
 
 export default class SentientItem {
   constructor () {
@@ -40,11 +48,61 @@ export default class SentientItem {
     }
 
     this.aligmentId = pickByPropability(aligmentList).id
-    this.interactions = pickByPropability(interactionTypeList)
+    this.interactions = this.generateInteractions()
     this.goal = this.generateGoal()
     this.senses = pickByPropability(senseTypeList).description
     this.manner = this.generateManner()
     this.communication = pickByPropability(communicationList).description
+  }
+
+  generateInteractions = () => {
+    const interaction = pickByPropability(interactionTypeList)
+    const {isAbleToSpeak} = interaction
+    let {description} = interaction
+
+    if (isAbleToSpeak) {
+      const langIdList = this.generateLanguageList()
+      const langStr = langIdList
+        .map(
+          id => dndLanguageCollection[id].name
+        )
+        .join(', ')
+
+      description = description.replace(
+        'одном или нескольких языках',
+        `языках: ${langStr}`
+      )
+    }
+
+    return {
+      ...interaction,
+      description,
+    }
+  }
+
+  generateLanguageList = () => {
+    const int = this.stats.find(({id}) => id === 'int').value
+    const intBonus = dndCalcStatBonus(int)
+    const generatedLanguageList = []
+    const maxLangCount = Math.max(intBonus * MAX_LANG_BASE, 1)
+    let addMoreLang = true
+
+    for (let i = 1; i <= maxLangCount && addMoreLang; i++) {
+      const additionalLangProbability = ((int + intBonus) / dndStatBaseValue) * ADDITIONAL_LANG_PROBABILITY_BASE / generatedLanguageList.length
+      const pickedLangId = pickByPropability(languageList).id
+
+      if (generatedLanguageList.includes(pickedLangId)) {
+        i--
+      } else {
+        generatedLanguageList.push(pickedLangId)
+      }
+
+      if (Math.random() >= additionalLangProbability) {
+        addMoreLang = false
+      }
+    }
+
+    return generatedLanguageList
   }
 
   generateManner = () => {

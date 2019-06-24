@@ -40,11 +40,20 @@ export default class SentientItem {
     }
 
     this.aligmentId = pickByPropability(aligmentList).id
-    this.interactions = pickByPropability(interactionTypeList).description
+    this.interactions = pickByPropability(interactionTypeList)
     this.goal = this.generateGoal()
     this.senses = pickByPropability(senseTypeList).description
-    this.manner = pickByPropability(mannerList).description
+    this.manner = this.generateManner()
     this.communication = pickByPropability(communicationList).description
+  }
+
+  generateManner = () => {
+    const {isAbleToSpeak} = this.interactions
+    const availablemannerList = isAbleToSpeak
+      ? mannerList
+      : mannerList.filter(({shouldAbleToSpeak}) => !shouldAbleToSpeak)
+
+    return pickByPropability(availablemannerList).description
   }
 
   generateGoal = () => {

@@ -53,7 +53,7 @@ const DndSentientItem = (
 
     <section>
       <h2>Общение</h2>
-      <p>{interactions}</p>
+      <p>{interactions.description}</p>
     </section>
 
     <section>

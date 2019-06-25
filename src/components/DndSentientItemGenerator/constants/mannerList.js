@@ -131,4 +131,40 @@ export default [
     description: 'Нервно дёргается',
     shouldAbleToSpeak: false,
   },
+  {
+    id: 'color-switch',
+    probabilityWeight: 12,
+    description: 'Иногда меняет цвет',
+    shouldAbleToSpeak: false,
+  },
+  {
+    id: 'creep',
+    probabilityWeight: 12,
+    description: 'Слегка шевелится, если не смотреть прямо на него',
+    shouldAbleToSpeak: false,
+  },
+  {
+    id: 'pupsik',
+    probabilityWeight: 1,
+    description: 'Зовёт владельца только «Пупсик», но не замечает этого',
+    shouldAbleToSpeak: true,
+  },
+  {
+    id: 'jemanno',
+    probabilityWeight: 12,
+    description: 'Жеманно говорит',
+    shouldAbleToSpeak: true,
+  },
+  {
+    id: 'vejliv',
+    probabilityWeight: 12,
+    description: 'Чрезвычайно вежлив',
+    shouldAbleToSpeak: true,
+  },
+  {
+    id: 'skripit',
+    probabilityWeight: 12,
+    description: 'Поскрипывает при использовании',
+    shouldAbleToSpeak: false,
+  },
 ]

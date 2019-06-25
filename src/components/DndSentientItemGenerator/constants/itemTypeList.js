@@ -180,7 +180,7 @@ export default [
     probabilityWeight: 1000,
   },
   {
-    id: 'tCep',
+    id: 'tsep',
     probabilityWeight: 1000,
   },
   {

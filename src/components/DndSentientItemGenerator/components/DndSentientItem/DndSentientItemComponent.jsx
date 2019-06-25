@@ -57,9 +57,9 @@ const DndSentientItem = (
         </ul>
       </section>
 
-      <section>
+      <section className='DndSentientItem_char'>
         <h2>Черты характера</h2>
-        <p>{char.good}, но {char.bad}.</p>
+        <p className='DndSentientItem_charText'>{char.good}, но {char.bad}.</p>
       </section>
 
       <section>

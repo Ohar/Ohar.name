@@ -13,7 +13,7 @@ export default [
   {
     id: 'Shows-off',
     probabilityWeight: 1,
-    description: 'Хвастается',
+    description: 'Хвастлив',
   },
   {
     id: 'Rough',
@@ -59,5 +59,15 @@ export default [
     id: 'Suspicious',
     probabilityWeight: 1,
     description: 'Подозрителен',
+  },
+  {
+    id: 'pragmatic',
+    probabilityWeight: 1,
+    description: 'Прагматичен',
+  },
+  {
+    id: 'surov',
+    probabilityWeight: 1,
+    description: 'Суров',
   },
 ]

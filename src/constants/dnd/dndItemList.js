@@ -694,7 +694,7 @@ const dndItemList = [
         subcategory: 'Воинское рукопашное оружие',
     },
     {
-        id: 'tCep',
+        id: 'tsep',
         name: 'Цеп',
         nameEn: '',
         description: 'Урон 1к8 дробящий',
@@ -1838,7 +1838,7 @@ const dndItemList = [
         category: 'Снаряжение',
     },
     {
-        id: 'tCep',
+        id: 'chain',
         name: 'Цепь',
         nameEn: 'Chain',
         description: 'Длина 10 фт. У цепи 10 хитов. Её можно порвать успешной проверкой Силы со Сл 20.',

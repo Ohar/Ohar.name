@@ -2,31 +2,36 @@ export default [
   {
     id: 'stupid',
     probabilityWeight: 1,
-    description: 'глупый',
+    description: 'глуп',
   },
   {
     id: 'dimwitted',
     probabilityWeight: 1,
-    description: 'недалёкий',
+    description: 'недалёк',
   },
   {
     id: 'forgetful',
     probabilityWeight: 1,
-    description: 'забывчивый',
+    description: 'забывчив',
   },
   {
     id: 'scattered',
     probabilityWeight: 1,
-    description: 'рассеянный',
+    description: 'рассеян',
   },
   {
     id: 'boring',
     probabilityWeight: 1,
-    description: 'скучный',
+    description: 'скучен',
   },
   {
     id: 'monotone',
     probabilityWeight: 1,
-    description: 'монотонный',
+    description: 'монотонен',
+  },
+  {
+    id: 'monotone',
+    probabilityWeight: 1,
+    description: 'труслив',
   },
 ]

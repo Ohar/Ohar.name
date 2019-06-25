@@ -2,6 +2,8 @@ import _ from "lodash";
 
 import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
 
+import listToCollectionById from "@/utils/listToCollectionById"
+
 const dndItemList = [
     {
         id: 'styoganny`i` dospekh',
@@ -3230,7 +3232,7 @@ const dndItemList = [
     },
 ]
 
-const goodListPreparedForFullTextSearch = _.sortBy(
+const itemListPreparedForFullTextSearch = _.sortBy(
     dndItemList.map(
       item => ({
             ...item,
@@ -3256,4 +3258,7 @@ const goodListPreparedForFullTextSearch = _.sortBy(
     ]
 )
 
-export default goodListPreparedForFullTextSearch
+export default itemListPreparedForFullTextSearch
+
+export const dndItemCollection = listToCollectionById(dndItemList)
+

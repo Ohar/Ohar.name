@@ -2,6 +2,7 @@ import React from "react"
 
 import {dndParamCollection} from "@/constants/dnd/dndParamList"
 import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
+import {dndItemCollection} from "@/constants/dnd/dndItemList"
 
 import "./DndSentientItemStyles.css"
 
@@ -13,6 +14,7 @@ const DndSentientItem = (
       communication,
       interactions,
       manner,
+      type,
       senses,
       stats,
       goal,
@@ -20,6 +22,11 @@ const DndSentientItem = (
   }
 ) => (
   <section className='DndSentientItem'>
+    <section>
+      <h2>Тип предмета</h2>
+      <p>{dndItemCollection[type].name}</p>
+    </section>
+
     <section>
       <h2>Параметры</h2>
       <ul>

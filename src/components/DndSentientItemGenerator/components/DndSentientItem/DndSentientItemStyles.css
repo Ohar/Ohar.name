@@ -1,3 +1,3 @@
-.DndSentientItem {
-
+.DndSentientItem_charText:first-letter {
+    text-transform: uppercase;
 }

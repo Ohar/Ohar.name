@@ -18,6 +18,7 @@ import mannerList from "./constants/mannerList"
 import communicationList from "./constants/communicationList"
 import kindList from "./constants/kindList"
 import languageList from "./constants/languageList"
+import itemTypeList from "./constants/itemTypeList"
 
 import generateStats from "./utils/generateStats"
 import pickByPropability from "./utils/pickByPropability"
@@ -47,6 +48,7 @@ export default class SentientItem {
       good: pickByPropability(charGoodList).description,
     }
 
+    this.type = pickByPropability(itemTypeList).id
     this.aligmentId = pickByPropability(aligmentList).id
     this.interactions = this.generateInteractions()
     this.goal = this.generateGoal()

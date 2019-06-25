@@ -20,64 +20,79 @@ const DndSentientItem = (
       goal,
     }
   }
-) => (
-  <section className='DndSentientItem'>
-    <section>
-      <h2>Тип предмета</h2>
-      <p>{dndItemCollection[type].name}</p>
-    </section>
+) => {
+  const {
+    name: typeName,
+    description: typeDescription,
+    category: typeCategory,
+    subcategory,
+  } = dndItemCollection[type]
 
-    <section>
-      <h2>Параметры</h2>
-      <ul>
-        {
-          stats.map(
-            ({id, value}) => (
-              <li key={id}>
-                {dndParamCollection[id].shortName}
-                {value}
-              </li>
+  const typeSubcategory = subcategory
+    ? ` — ${subcategory}`
+    : ''
+
+  return (
+    <section className='DndSentientItem'>
+      <section>
+        <h2>Тип предмета</h2>
+        <p title={`${typeCategory} ${typeSubcategory}\n${typeDescription}`}>
+          {typeName}
+        </p>
+      </section>
+
+      <section>
+        <h2>Параметры</h2>
+        <ul>
+          {
+            stats.map(
+              ({id, value}) => (
+                <li key={id}>
+                  {dndParamCollection[id].shortName}
+                  {value}
+                </li>
+              )
             )
-          )
-        }
-      </ul>
-    </section>
+          }
+        </ul>
+      </section>
 
-    <section>
-      <h2>Черты характера</h2>
-      <p>{char.good}, но {char.bad}.</p>
-    </section>
+      <section>
+        <h2>Черты характера</h2>
+        <p>{char.good}, но {char.bad}.</p>
+      </section>
 
-    <section>
-      <h2>Мировоззрение</h2>
-      <p>{dndAligmentCollection[aligmentId].name.nominative}</p>
-    </section>
+      <section>
+        <h2>Мировоззрение</h2>
+        <p>{dndAligmentCollection[aligmentId].name.nominative}</p>
+      </section>
 
-    <section>
-      <h2>Чувства</h2>
-      <p>{senses}</p>
-    </section>
+      <section>
+        <h2>Чувства</h2>
+        <p>{senses}</p>
+      </section>
 
-    <section>
-      <h2>Общение</h2>
-      <p>{interactions.description}</p>
-    </section>
+      <section>
+        <h2>Общение</h2>
+        <p>{interactions.description}</p>
+      </section>
 
-    <section>
-      <h2>Предназначение</h2>
-      <p>{goal}</p>
-    </section>
+      <section>
+        <h2>Предназначение</h2>
+        <p>{goal}</p>
+      </section>
 
-    <section>
-      <h2>Манеры</h2>
-      <p>{manner}</p>
-    </section>
+      <section>
+        <h2>Манеры</h2>
+        <p>{manner}</p>
+      </section>
 
-    <section>
-      <h2>Особенности</h2>
-      <p>{communication}</p>
+      <section>
+        <h2>Особенности</h2>
+        <p>{communication}</p>
+      </section>
     </section>
-  </section>
-)
+  )
+}
 
 export default DndSentientItem

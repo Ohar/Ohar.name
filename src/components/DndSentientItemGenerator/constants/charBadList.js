@@ -27,11 +27,41 @@ export default [
   {
     id: 'monotone',
     probabilityWeight: 1,
-    description: 'монотонен',
+    description: 'зануден',
   },
   {
-    id: 'monotone',
+    id: 'trusliv',
     probabilityWeight: 1,
     description: 'труслив',
+  },
+  {
+    id: 'hamovat',
+    probabilityWeight: 1,
+    description: 'хамоват',
+  },
+  {
+    id: 'leniv',
+    probabilityWeight: 1,
+    description: 'ленив',
+  },
+  {
+    id: 'vzdoren',
+    probabilityWeight: 1,
+    description: 'вздорен',
+  },
+  {
+    id: 'boltliv',
+    probabilityWeight: 1,
+    description: 'болтлив',
+  },
+  {
+    id: 'brezgliv',
+    probabilityWeight: 1,
+    description: 'брезглив',
+  },
+  {
+    id: 'nadmenen',
+    probabilityWeight: 1,
+    description: 'надменен',
   },
 ]

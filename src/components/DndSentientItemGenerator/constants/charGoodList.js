@@ -44,4 +44,14 @@ export default [
     probabilityWeight: 1,
     description: 'самоуверен',
   },
+  {
+    id: 'otvajen',
+    probabilityWeight: 1,
+    description: 'отважен',
+  },
+  {
+    id: 'predusmotritelen',
+    probabilityWeight: 1,
+    description: 'предусмотрителен',
+  },
 ]

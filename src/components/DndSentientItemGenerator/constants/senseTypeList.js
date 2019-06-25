@@ -19,4 +19,9 @@ export default [
     probabilityWeight: 10,
     description: 'Слух и тёмное зрение в пределах 120 футов.',
   },
+  {
+    id: 'true_120',
+    probabilityWeight: 1,
+    description: 'Слух и истинное зрение в пределах 120 футов.',
+  },
 ]

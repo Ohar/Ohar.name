@@ -9,8 +9,8 @@ const roll = rollDice(CUBE_TYPE)
 export default () => {
   const rollArr = []
 
-  for (let i = 0; i <= CUBE_ROLL_COUNT; i++) {
-    rollArr.push(roll())
+  for (let i = 0; i < CUBE_ROLL_COUNT; i++) {
+    rollArr.push(roll() + 1)
   }
 
   return rollArr

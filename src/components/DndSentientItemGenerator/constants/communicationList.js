@@ -3,7 +3,7 @@ export default [
   {
     id: 'Argues',
     probabilityWeight: 1,
-    description: 'Спорит',
+    description: 'Сварлив',
   },
   {
     id: 'Arrogant',

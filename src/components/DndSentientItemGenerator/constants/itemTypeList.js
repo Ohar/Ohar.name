@@ -497,7 +497,7 @@ export default [
   },
   {
     id: 'karty',
-    probabilityWeight: 1020,
+    probabilityWeight: 2,
   },
   {
     id: 'kosti',

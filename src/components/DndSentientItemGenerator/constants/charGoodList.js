@@ -2,27 +2,27 @@ export default [
   {
     id: 'educated',
     probabilityWeight: 1,
-    description: 'образован',
+    description: 'образованный',
   },
   {
     id: 'curious',
     probabilityWeight: 1,
-    description: 'любознателен',
+    description: 'любознательный',
   },
   {
     id: 'insightful',
     probabilityWeight: 1,
-    description: 'проницателен',
+    description: 'проницательный',
   },
   {
     id: 'attentive',
     probabilityWeight: 1,
-    description: 'внимателен',
+    description: 'внимательный',
   },
   {
     id: 'convincing',
     probabilityWeight: 1,
-    description: 'убедителен',
+    description: 'убедительньный',
   },
   {
     id: 'volitional',
@@ -37,21 +37,21 @@ export default [
   {
     id: 'brave',
     probabilityWeight: 1,
-    description: 'смел',
+    description: 'смелый',
   },
   {
     id: 'self-uveren',
     probabilityWeight: 1,
-    description: 'самоуверен',
+    description: 'самоуверенный',
   },
   {
     id: 'otvajen',
     probabilityWeight: 1,
-    description: 'отважен',
+    description: 'отважный',
   },
   {
     id: 'predusmotritelen',
     probabilityWeight: 1,
-    description: 'предусмотрителен',
+    description: 'предусмотрительный',
   },
 ]

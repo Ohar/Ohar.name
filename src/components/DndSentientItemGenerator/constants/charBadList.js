@@ -32,36 +32,36 @@ export default [
   {
     id: 'trusliv',
     probabilityWeight: 1,
-    description: 'труслив',
+    description: 'трусливый',
   },
   {
     id: 'hamovat',
     probabilityWeight: 1,
-    description: 'хамоват',
+    description: 'хамоватый',
   },
   {
     id: 'leniv',
     probabilityWeight: 1,
-    description: 'ленив',
+    description: 'ленивый',
   },
   {
     id: 'vzdoren',
     probabilityWeight: 1,
-    description: 'вздорен',
+    description: 'вздорный',
   },
   {
     id: 'boltliv',
     probabilityWeight: 1,
-    description: 'болтлив',
+    description: 'болтливый',
   },
   {
     id: 'brezgliv',
     probabilityWeight: 1,
-    description: 'брезглив',
+    description: 'брезгливый',
   },
   {
     id: 'nadmenen',
     probabilityWeight: 1,
-    description: 'надменен',
+    description: 'надменный',
   },
 ]

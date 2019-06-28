@@ -74,15 +74,15 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'any_neutral',
-    oppositeId: null,
+    id: 'not_neutral',
+    oppositeId: 'any_neutral',
     name: {
-        nominative: 'любое нейтральное',
-        genitive: 'любого нейтрального',
-        dative: 'любому нейтральному',
-        accusative: 'любое нейтральное',
-        instrumental: 'любым нейтральным',
-        prepositional: 'любом нейтральном',
+      nominative: 'не нейтральное',
+      genitive: 'не нейтрального',
+      dative: 'не нейтральному',
+      accusative: 'не нейтральное',
+      instrumental: 'не нейтральным',
+      prepositional: 'не нейтральном',
     },
   },
   {
@@ -135,7 +135,7 @@ const dndAligmentList = [
   },
   {
     id: 'any_neutral',
-    oppositeId: null,
+    oppositeId: 'not_neutral',
     name: {
         nominative: 'любое нейтральное',
         genitive: 'любого нейтрального',

@@ -50,7 +50,7 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'any_lawfull',
+    id: 'any_lawful',
     oppositeId: 'any_chaotic',
     name: {
         nominative: 'любое законопослушное',
@@ -63,7 +63,7 @@ const dndAligmentList = [
   },
   {
     id: 'any_chaotic',
-    oppositeId: 'any_lawfull',
+    oppositeId: 'any_lawful',
     name: {
         nominative: 'любое хаотичное',
         genitive: 'любого хаотичного',
@@ -110,7 +110,7 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'not_lawfull',
+    id: 'not_lawful',
     oppositeId: 'not_chaotic',
     name: {
         nominative: 'незаконопослушное',
@@ -123,7 +123,7 @@ const dndAligmentList = [
   },
   {
     id: 'not_chaotic',
-    oppositeId: 'not_lawfull',
+    oppositeId: 'not_lawful',
     name: {
         nominative: 'нехаотичное',
         genitive: 'нехаотичного',

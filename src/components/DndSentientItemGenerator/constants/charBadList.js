@@ -2,32 +2,32 @@ export default [
   {
     id: 'stupid',
     probabilityWeight: 1,
-    description: 'глуп',
+    description: 'глупый',
   },
   {
     id: 'dimwitted',
     probabilityWeight: 1,
-    description: 'недалёк',
+    description: 'недалёкий',
   },
   {
     id: 'forgetful',
     probabilityWeight: 1,
-    description: 'забывчив',
+    description: 'забывчивый',
   },
   {
     id: 'scattered',
     probabilityWeight: 1,
-    description: 'рассеян',
+    description: 'рассеянный',
   },
   {
     id: 'boring',
     probabilityWeight: 1,
-    description: 'скучен',
+    description: 'скучный',
   },
   {
     id: 'monotone',
     probabilityWeight: 1,
-    description: 'зануден',
+    description: 'занудный',
   },
   {
     id: 'trusliv',

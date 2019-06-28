@@ -112,6 +112,11 @@ const dndLanguageList = [
     script: 'common',
   },
   {
+    id: 'iazyk_burykh_uvalnei',
+    name: 'язык Бурых увальней',
+    script: null,
+  },
+  {
     id: 'ignan',
     name: 'игнан',
     script: 'draconic',
@@ -125,6 +130,11 @@ const dndLanguageList = [
     id: 'terran',
     name: 'терран',
     script: 'dwarvish',
+  },
+  {
+    id: 'vorovskoi_zhargon',
+    name: 'воровской жаргон',
+    script: null,
   },
 ]
 

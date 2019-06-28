@@ -73,7 +73,7 @@ export default [
   },
   {
     id: 'halfling',
-    probabilityWeight: 2,
+    probabilityWeight: 5,
   },
   {
     id: 'ignan',
@@ -81,10 +81,18 @@ export default [
   },
   {
     id: 'orc',
-    probabilityWeight: 2,
+    probabilityWeight: 5,
   },
   {
     id: 'terran',
     probabilityWeight: 2,
+  },
+  {
+    id: 'vorovskoi_zhargon',
+    probabilityWeight: 2,
+  },
+  {
+    id: 'iazyk_burykh_uvalnei',
+    probabilityWeight: 1,
   },
 ]

@@ -4,9 +4,10 @@
 }
 
 .DndSentientItem_cell {
-    padding: .25rem;
+    padding: .5rem;
 }
 
+.DndSentientItem_cell-aligment:first-letter,
 .DndSentientItem_cell-charText:first-letter,
 .DndSentientItem_cell-idealText:first-letter {
     text-transform: uppercase;

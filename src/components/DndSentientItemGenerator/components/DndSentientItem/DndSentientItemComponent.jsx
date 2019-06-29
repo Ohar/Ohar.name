@@ -71,7 +71,7 @@ const DndSentientItem = (
       </tr>
       <tr className='DndSentientItem_row'>
         <th className='DndSentientItem_cell DndSentientItem_cell-head'>Мировоззрение</th>
-        <td className='DndSentientItem_cell'>{dndAligmentCollection[aligmentId].name.nominative}</td>
+        <td className='DndSentientItem_cell DndSentientItem_cell-aligment'>{dndAligmentCollection[aligmentId].name.nominative}</td>
       </tr>
       <tr className='DndSentientItem_row'>
         <th className='DndSentientItem_cell DndSentientItem_cell-head'>Чувства</th>

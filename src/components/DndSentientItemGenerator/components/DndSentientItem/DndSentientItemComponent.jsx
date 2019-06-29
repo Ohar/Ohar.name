@@ -12,6 +12,7 @@ const DndSentientItem = (
       aligmentId,
       char,
       communication,
+      ideal,
       interactions,
       manner,
       type,
@@ -85,6 +86,11 @@ const DndSentientItem = (
       <section>
         <h2>Манеры</h2>
         <p>{manner}</p>
+      </section>
+
+      <section className='DndSentientItem_ideal'>
+        <h2>Идеал</h2>
+        <p className='DndSentientItem_idealText'>{ideal}</p>
       </section>
 
       <section>

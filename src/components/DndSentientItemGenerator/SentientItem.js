@@ -6,6 +6,7 @@ import {dndLanguageCollection} from "@/constants/dnd/dndLanguageList"
 import dndStatBaseValue from '@/constants/dnd/dndStatBaseValue'
 
 import dndCalcStatBonus from "@/utils/dndCalcStatBonus"
+import checkIfAligmentPossible from "@/utils/checkIfAligmentPossible"
 
 import aligmentList from "./constants/aligmentList"
 import charBadList from "./constants/charBadList"
@@ -19,6 +20,7 @@ import communicationList from "./constants/communicationList"
 import kindList from "./constants/kindList"
 import languageList from "./constants/languageList"
 import itemTypeList from "./constants/itemTypeList"
+import idealList from "./constants/idealList"
 
 import generateStats from "./utils/generateStats"
 import pickByPropability from "./utils/pickByPropability"
@@ -55,6 +57,13 @@ export default class SentientItem {
     this.senses = pickByPropability(senseTypeList).description
     this.manner = this.generateManner()
     this.communication = pickByPropability(communicationList).description
+    this.ideal = this.generateIdeal()
+  }
+
+  generateIdeal = () => {
+    const idealListFiltered = idealList.filter(({aligmentId}) => checkIfAligmentPossible(this.aligmentId, aligmentId))
+
+    return pickByPropability(idealListFiltered).description
   }
 
   generateInteractions = () => {

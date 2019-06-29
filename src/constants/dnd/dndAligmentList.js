@@ -24,6 +24,13 @@ const dndAligmentList = [
         instrumental: 'любым',
         prepositional: 'любом',
     },
+    children: [
+      'any_good',
+      'any_evil',
+      'any_lawful',
+      'any_chaotic',
+      'any_neutral',
+    ],
   },
   {
     id: 'any_good',
@@ -36,6 +43,11 @@ const dndAligmentList = [
         instrumental: 'любым добрым',
         prepositional: 'любом добром',
     },
+    children: [
+      'lg',
+      'ng',
+      'cg',
+    ],
   },
   {
     id: 'any_evil',
@@ -48,6 +60,11 @@ const dndAligmentList = [
         instrumental: 'любым злым',
         prepositional: 'любом злом',
     },
+    children: [
+      'le',
+      'ne',
+      'ce',
+    ],
   },
   {
     id: 'any_lawful',
@@ -60,6 +77,11 @@ const dndAligmentList = [
         instrumental: 'любым законопослушным',
         prepositional: 'любом законопослушном',
     },
+    children: [
+      'lg',
+      'ln',
+      'le',
+    ],
   },
   {
     id: 'any_chaotic',
@@ -72,6 +94,11 @@ const dndAligmentList = [
         instrumental: 'любым хаотичным',
         prepositional: 'любом хаотичном',
     },
+    children: [
+      'cg',
+      'cn',
+      'ce',
+    ],
   },
   {
     id: 'not_neutral',
@@ -84,6 +111,12 @@ const dndAligmentList = [
       instrumental: 'не нейтральным',
       prepositional: 'не нейтральном',
     },
+    children: [
+      'lg',
+      'le',
+      'cg',
+      'ce',
+    ],
   },
   {
     id: 'not_good',
@@ -96,6 +129,12 @@ const dndAligmentList = [
         instrumental: 'недобрым',
         prepositional: 'недобром',
     },
+    children: [
+      'ln',
+      'n',
+      'cn',
+      'any_evil',
+    ],
   },
   {
     id: 'not_evil',
@@ -108,6 +147,12 @@ const dndAligmentList = [
         instrumental: 'незлым',
         prepositional: 'незлом',
     },
+    children: [
+      'ln',
+      'n',
+      'cn',
+      'any_good',
+    ],
   },
   {
     id: 'not_lawful',
@@ -120,6 +165,12 @@ const dndAligmentList = [
         instrumental: 'незаконопослушным',
         prepositional: 'незаконопослушном',
     },
+    children: [
+      'ng',
+      'n',
+      'ne',
+      'any_chaotic',
+    ],
   },
   {
     id: 'not_chaotic',
@@ -132,6 +183,12 @@ const dndAligmentList = [
         instrumental: 'нехаотичным',
         prepositional: 'нехаотичном',
     },
+    children: [
+      'ng',
+      'n',
+      'ne',
+      'any_lawful',
+    ],
   },
   {
     id: 'any_neutral',
@@ -144,6 +201,13 @@ const dndAligmentList = [
         instrumental: 'любым нейтральным',
         prepositional: 'любом нейтральном',
     },
+    children: [
+      'ng',
+      'ln',
+      'n',
+      'cn',
+      'ne',
+    ],
   },
   {
     id: 'lg',

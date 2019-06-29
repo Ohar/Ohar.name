@@ -49,8 +49,7 @@ const DndSentientItem = (
             stats.map(
               ({id, value}) => (
                 <li key={id}>
-                  {dndParamCollection[id].shortName}
-                  {value}
+                  {dndParamCollection[id].shortName} {value}
                 </li>
               )
             )

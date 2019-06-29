@@ -10,17 +10,17 @@ const DndSentientItem = (
   {
     item: {
       aligmentId,
+      bond,
       char,
       communication,
+      goal,
       ideal,
       interactions,
       manner,
-      type,
       senses,
       stats,
-      goal,
+      type,
       weakness,
-      bond,
     }
   }
 ) => {

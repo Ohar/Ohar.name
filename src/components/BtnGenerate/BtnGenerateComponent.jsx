@@ -1,8 +1,8 @@
 import React from "react"
 
-const BtnGenerate = ({onClick}) => (
+const BtnGenerate = ({onClick, className = ''}) => (
   <button
-    className='BtnGenerate'
+    className={`BtnGenerate ${className}`}
     onClick={onClick}
   >
     Сгенерировать

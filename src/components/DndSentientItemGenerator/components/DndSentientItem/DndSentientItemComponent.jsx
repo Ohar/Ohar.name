@@ -36,79 +36,77 @@ const DndSentientItem = (
     : ''
 
   return (
-    <section className='DndSentientItem'>
-      <section>
-        <h2>Тип предмета</h2>
-        <p title={`${typeCategory} ${typeSubcategory}\n${typeDescription}`}>
+    <table className='DndSentientItem'>
+    <tbody>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Тип предмета</th>
+        <td
+          className='DndSentientItem_cell'
+          title={`${typeCategory} ${typeSubcategory}\n${typeDescription}`}
+        >
           {typeName}
-        </p>
-      </section>
-
-      <section>
-        <h2>Параметры</h2>
-        <ul>
-          {
-            stats.map(
-              ({id, value}) => (
-                <li key={id}>
-                  {dndParamCollection[id].shortName} {value}
-                </li>
+        </td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Параметры</th>
+        <td className='DndSentientItem_cell'>
+          <ul>
+            {
+              stats.map(
+                ({id, value}) => (
+                  <li key={id}>
+                    {dndParamCollection[id].shortName} {value}
+                  </li>
+                )
               )
-            )
-          }
-        </ul>
-      </section>
-
-      <section className='DndSentientItem_char'>
-        <h2>Черты характера</h2>
-        <p className='DndSentientItem_charText'>{char.good}, но {char.bad}.</p>
-      </section>
-
-      <section>
-        <h2>Мировоззрение</h2>
-        <p>{dndAligmentCollection[aligmentId].name.nominative}</p>
-      </section>
-
-      <section>
-        <h2>Чувства</h2>
-        <p>{senses}</p>
-      </section>
-
-      <section>
-        <h2>Общение</h2>
-        <p>{interactions.description}</p>
-      </section>
-
-      <section>
-        <h2>Предназначение</h2>
-        <p>{goal}</p>
-      </section>
-
-      <section>
-        <h2>Манеры</h2>
-        <p>{manner}</p>
-      </section>
-
-      <section className='DndSentientItem_ideal'>
-        <h2>Идеал</h2>
-        <p className='DndSentientItem_idealText'>{ideal}</p>
-      </section>
-
-      <section>
-        <h2>Особенности</h2>
-        <p>{communication}</p>
-      </section>
-
-      <section>
-        <h2>Привязанность</h2>
-        <p>{bond}</p>
-      </section>
-
-      <section>
-        <h2>Слабость или тайна</h2>
-        <p>{weakness}</p>
-      </section>
-    </section>
+            }
+          </ul>
+        </td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Черты характера</th>
+        <td className='DndSentientItem_cell DndSentientItem_cell-charText'>
+          {char.good}, но {char.bad}.
+        </td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Мировоззрение</th>
+        <td className='DndSentientItem_cell'>{dndAligmentCollection[aligmentId].name.nominative}</td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Чувства</th>
+        <td className='DndSentientItem_cell'>{senses}</td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Общение</th>
+        <td className='DndSentientItem_cell'>{interactions.description}</td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Предназначение</th>
+        <td className='DndSentientItem_cell'>{goal}</td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Манеры</th>
+        <td className='DndSentientItem_cell'>{manner}</td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Идеал</th>
+        <td className='DndSentientItem_cell DndSentientItem_cell-idealText'>{ideal}</td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Особенности</th>
+        <td className='DndSentientItem_cell'>{communication}</td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Привязанность</th>
+        <td className='DndSentientItem_cell'>{bond}</td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Слабость или тайна</th>
+        <td className='DndSentientItem_cell'>{weakness}</td>
+      </tr>
+    </tbody>
+    </table>
   )
 }
 

@@ -22,6 +22,7 @@ import languageList from "./constants/languageList"
 import itemTypeList from "./constants/itemTypeList"
 import idealList from "./constants/idealList"
 import bondList from "./constants/bondList"
+import weaknessList from "./constants/weaknessList"
 
 import generateStats from "./utils/generateStats"
 import pickByPropability from "./utils/pickByPropability"
@@ -60,6 +61,7 @@ export default class SentientItem {
     this.communication = pickByPropability(communicationList).description
     this.ideal = this.generateIdeal()
     this.bond = pickByPropability(bondList).description
+    this.weakness = pickByPropability(weaknessList).description
   }
 
   generateIdeal = () => {

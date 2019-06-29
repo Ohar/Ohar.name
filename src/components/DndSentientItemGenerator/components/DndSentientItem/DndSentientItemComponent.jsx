@@ -19,6 +19,7 @@ const DndSentientItem = (
       senses,
       stats,
       goal,
+      weakness,
       bond,
     }
   }
@@ -101,6 +102,11 @@ const DndSentientItem = (
       <section>
         <h2>Привязанность</h2>
         <p>{bond}</p>
+      </section>
+
+      <section>
+        <h2>Слабость или тайна</h2>
+        <p>{weakness}</p>
       </section>
     </section>
   )

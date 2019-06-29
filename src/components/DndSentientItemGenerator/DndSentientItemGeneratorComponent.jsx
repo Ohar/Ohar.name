@@ -10,7 +10,10 @@ const DndSentientItemGeneratorComponent = ({ item, onGenerate }) => (
   <section className='DndSentientItemGenerator'>
     <PageTitle>Генератор разумных магических предметов</PageTitle>
     <DndSentientItem item={item}/>
-    <BtnGenerate onClick={onGenerate}/>
+    <BtnGenerate
+      className='DndSentientItemGenerator_btn'
+      onClick={onGenerate}
+    />
   </section>
 )
 

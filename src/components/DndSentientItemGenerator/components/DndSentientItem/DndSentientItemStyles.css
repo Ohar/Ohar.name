@@ -1,4 +1,14 @@
-.DndSentientItem_charText:first-letter,
-.DndSentientItem_idealText:first-letter {
+.DndSentientItem,
+.DndSentientItem_cell {
+    border: 1px solid #fff;
+}
+
+.DndSentientItem_cell {
+    padding: .5rem;
+}
+
+.DndSentientItem_cell-aligment:first-letter,
+.DndSentientItem_cell-charText:first-letter,
+.DndSentientItem_cell-idealText:first-letter {
     text-transform: uppercase;
 }

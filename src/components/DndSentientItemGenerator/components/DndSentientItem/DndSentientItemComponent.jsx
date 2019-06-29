@@ -19,6 +19,7 @@ const DndSentientItem = (
       senses,
       stats,
       goal,
+      bond,
     }
   }
 ) => {
@@ -95,6 +96,11 @@ const DndSentientItem = (
       <section>
         <h2>Особенности</h2>
         <p>{communication}</p>
+      </section>
+
+      <section>
+        <h2>Привязанность</h2>
+        <p>{bond}</p>
       </section>
     </section>
   )

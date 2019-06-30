@@ -22,6 +22,11 @@ const dndLanguageList = [
     script: null,
   },
   {
+    id: 'all',
+    name: 'все',
+    script: 'all',
+  },
+  {
     id: 'primordial',
     name: 'первичный',
     script: 'dwarvish',
@@ -112,8 +117,8 @@ const dndLanguageList = [
     script: 'common',
   },
   {
-    id: 'iazyk_burykh_uvalnei',
-    name: 'язык Бурых увальней',
+    id: 'umber_hulk',
+    name: 'язык бурых увальней',
     script: null,
   },
   {
@@ -134,6 +139,121 @@ const dndLanguageList = [
   {
     id: 'vorovskoi_zhargon',
     name: 'воровской жаргон',
+    script: null,
+  },
+  {
+    id: 'telepatiia',
+    name: 'телепатия',
+    script: null,
+  },
+  {
+    id: 'sahuagin',
+    name: 'сахуагинский',
+    script: null,
+  },
+  {
+    id: 'vegepygmy',
+    name: 'вегепигмейский',
+    script: null,
+  },
+  {
+    id: 'worgen',
+    name: 'язык воргов',
+    script: null,
+  },
+  {
+    id: 'giant_owl',
+    name: 'язык гигантских сов',
+    script: null,
+  },
+  {
+    id: 'giant_eagle',
+    name: 'язык гигантских орлов',
+    script: null,
+  },
+  {
+    id: 'sphinx',
+    name: 'язык сфинксов',
+    script: null,
+  },
+  {
+    id: 'gith',
+    name: 'гитский',
+    script: 'gith',
+  },
+  {
+    id: 'grell',
+    name: 'грелльский',
+    script: 'grell',
+  },
+  {
+    id: 'grung',
+    name: 'грунгский',
+    script: null,
+  },
+  {
+    id: 'modrone',
+    name: 'модронский',
+    script: null,
+  },
+  {
+    id: 'bullywug',
+    name: 'жаболюдский',
+    script: null,
+  },
+  {
+    id: 'slaad',
+    name: 'слаадский',
+    script: null,
+  },
+  {
+    id: 'yeti',
+    name: 'язык йети',
+    script: null,
+  },
+  {
+    id: 'hook_horror',
+    name: 'язык крюкастых ужасов',
+    script: null,
+  },
+  {
+    id: 'ice_toad',
+    name: 'язык ледяных жаб',
+    script: null,
+  },
+  {
+    id: 'blink_dog',
+    name: 'язык мерцающих псов',
+    script: null,
+  },
+  {
+    id: 'otyugh',
+    name: 'отиджский',
+    script: null,
+  },
+  {
+    id: 'winter_wolf',
+    name: 'язык полярных волков',
+    script: null,
+  },
+  {
+    id: 'thay',
+    name: 'тэйский',
+    script: ['infernal', 'common'],
+  },
+  {
+    id: 'tlincalli',
+    name: 'язык тлинкалли',
+    script: null,
+  },
+  {
+    id: 'thri_kreen',
+    name: 'три-кринский',
+    script: null,
+  },
+  {
+    id: 'troglodyte',
+    name: 'троглодитский',
     script: null,
   },
 ]

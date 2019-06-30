@@ -75,6 +75,141 @@ export default [
     probabilityWeight: 1,
   },
   {
+    id: 'titan',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'bullywug',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'gnoll',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'gith',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'gnome',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'grimlock',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'orc',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'grung',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'yugolot',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'dwarf',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'sahuagin',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'elf',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'quaggoth',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'lizardfolk',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'xvart',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'thri_kreen',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'troglodyte',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'giant',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'fire_giant',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'firenewt',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'fey',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'human',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'kuo_toa',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'kenku',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'yoan_ti',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'elemental',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'jelly',
+    type: 'creatureType',
+    probabilityWeight: 1,
+  },
+  {
     id: 'barbarian',
     type: 'pcClass',
     probabilityWeight: 1,

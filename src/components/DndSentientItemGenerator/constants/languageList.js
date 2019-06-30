@@ -92,7 +92,95 @@ export default [
     probabilityWeight: 2,
   },
   {
-    id: 'iazyk_burykh_uvalnei',
+    id: 'umber_hulk',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'sahuagin',
+    probabilityWeight: 2,
+  },
+  {
+    id: 'vegepygmy',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'worgen',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'giant_owl',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'giant_eagle',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'sphinx',
+    probabilityWeight: 2,
+  },
+  {
+    id: 'gith',
+    probabilityWeight: 5,
+  },
+  {
+    id: 'grell',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'grung',
+    probabilityWeight: 2,
+  },
+  {
+    id: 'modrone',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'bullywug',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'slaad',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'yeti',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'hook_horror',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'ice_toad',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'blink_dog',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'otyugh',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'winter_wolf',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'thay',
+    probabilityWeight: 5,
+  },
+  {
+    id: 'tlincalli',
+    probabilityWeight: 1,
+  },
+  {
+    id: 'thri_kreen',
+    probabilityWeight: 2,
+  },
+  {
+    id: 'troglodyte',
     probabilityWeight: 1,
   },
 ]

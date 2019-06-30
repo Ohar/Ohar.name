@@ -26,6 +26,10 @@ const dndManualList = [
     name: 'Гробница Аннигиляции',
     shortName: 'ГА',
   },
+  {
+    id: 'Homebrew',
+    name: 'Самоделка',
+  },
 ]
 
 export const dndManualCollection = listToCollectionById(dndManualList)

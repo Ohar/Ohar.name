@@ -1,4 +1,7 @@
 import React from "react"
+import { faNpm, faGithub } from '@fortawesome/free-brands-svg-icons'
+
+import MenuIcon from '@/components/MenuIcon'
 
 import './ContactsStyles.css'
 
@@ -51,7 +54,12 @@ const contactList = [
   {
     url: 'https://github.com/Ohar',
     type: 'github',
-    text: 'GitHub',
+    text:  (
+      <React.Fragment>
+        <MenuIcon icon={faGithub}/>
+        GitHub
+      </React.Fragment>
+    ),
   },
   {
     url: 'https://linkedin.com/in/oharr',
@@ -71,7 +79,12 @@ const contactList = [
   {
     url: 'https://www.npmjs.com/~ohar',
     type: 'npm',
-    text: 'NPM',
+    text:  (
+      <React.Fragment>
+        <MenuIcon icon={faNpm}/>
+        NPM
+      </React.Fragment>
+    ),
   },
   {
     url: 'https://www.paypal.me/ohar',

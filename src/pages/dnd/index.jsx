@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from "gatsby"
 
+import { faAngry, faDice, faMagic, faSkull } from '@fortawesome/free-solid-svg-icons'
+
 import Layout from '@/components/Layout'
 import MenuIcon from '@/components/MenuIcon'
 import PageTitle from '@/components/PageTitle'
@@ -18,18 +20,22 @@ const dndSubpageList = [
     url: '/dnd/generator-names',
   },
   {
+    icon: faSkull,
     title: 'Гробница аннигиляции: инструменты для ведущего (спойлеры)',
     url: '/dnd/toa',
   },
   {
+    icon: faAngry,
     title: 'Генератор эффектов безумия',
     url: '/dnd/generator-madness',
   },
   {
+    icon: faDice,
     title: 'Броски кубиков',
     url: '/dnd/roll',
   },
   {
+    icon: faMagic,
     title: 'Генератор разумных магических предметов',
     url: '/dnd/generator-sentient-items',
   },

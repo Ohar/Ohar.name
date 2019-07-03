@@ -1,16 +1,25 @@
 import React from "react"
 import PropTypes from 'prop-types'
 
-const MenuIconComponent = ({iconClass}) => iconClass
-  ? <span className={iconClass}/>
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const MenuIconComponent = ({icon}) => icon
+  ? (
+    typeof icon === 'string'
+      ? <span className={icon}/>
+      : <FontAwesomeIcon icon={icon} />
+  )
   : null
 
 MenuIconComponent.propTypes = {
-  iconClass: PropTypes.string,
+  icon: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 }
 
 MenuIconComponent.defaultProps = {
-  iconClass: '',
+  icon: '',
 }
 
 export default MenuIconComponent

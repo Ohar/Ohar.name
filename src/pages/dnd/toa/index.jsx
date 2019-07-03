@@ -32,10 +32,10 @@ const DndPage = () => (
     <ul>
       {
         toaSubpageList.map(
-          ({title, url, iconClass}) => (
+          ({title, url, icon}) => (
             <li key={url}>
               <Link to={url}>
-                <MenuIcon iconClass={iconClass}/>
+                <MenuIcon icon={icon}/>
                 {title}
               </Link>
             </li>

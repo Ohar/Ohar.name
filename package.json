@@ -56,6 +56,10 @@
     "webfontloader": "^1.6.26"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "classnames": "^2.2.5",
     "gatsby": "^2.3.5",
     "gatsby-image": "^2.0.37",

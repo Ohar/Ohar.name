@@ -1,5 +1,7 @@
 import React from "react"
 
+import { faDAndD } from '@fortawesome/free-brands-svg-icons'
+
 import ImgLogo from '@/images/logo.png'
 
 const menuList = [
@@ -8,7 +10,7 @@ const menuList = [
     title: 'На главную',
     content: (
       <img
-        className="menu_list_item_link_img"
+        className="MenuLink_img"
         src={ImgLogo}
         alt="Adeptus Mechanicus"
         width="48"
@@ -24,25 +26,25 @@ const menuList = [
   {
     url: '/quotes',
     title: 'Всякие цитаты',
-    iconClass: 'icon-quote-left',
+    icon: 'icon-quote-left',
     content: 'Цитаты',
   },
   {
     url: '/about',
     title: 'Связаться со мной',
-    iconClass: 'icon-torso',
+    icon: 'icon-torso',
     content: 'Обо мне',
   },
   {
     url: '/articles',
     title: 'Статьи обо всяком',
-    iconClass: 'icon-doc-text',
+    icon: 'icon-doc-text',
     content: 'Статьи',
   },
   {
     url: '/dnd',
     title: 'Dungeons & Dragons',
-    iconClass: 'icon-magic',
+    icon: faDAndD,
     content: 'D&D',
   },
 ]

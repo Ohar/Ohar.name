@@ -1,10 +1,9 @@
-import { Link } from "gatsby"
 import React from "react"
 
 import MenuIcon from '@/components/MenuIcon'
+import MenuLink from '@/components/MenuLink'
 
 import menuList from './constants/menuList'
-import isOuterLink from './utils/isOuterLink'
 
 import './MenuStyles.css'
 
@@ -13,36 +12,19 @@ const MenuComponent = () => (
     <ul className="menu_list">
       {
         menuList.map(
-          ({url, title, content, gatsbyReady, iconClass}) => (
+          ({url, title, content, icon, faIcon}) => (
             <li
               key={url}
               className="menu_list_item"
             >
-              {
-                !gatsbyReady && isOuterLink(url)
-                  ? (
-                    <a
-                      className="menu_list_item_link"
-                      href={url}
-                      title={title || content}
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
-                    >
-                      <MenuIcon iconClass={iconClass}/>
-                      {content}
-                    </a>
-                  )
-                  : (
-                    <Link
-                      className="menu_list_item_link"
-                      to={url}
-                      title={title || content}
-                    >
-                      <MenuIcon iconClass={iconClass}/>
-                      {content}
-                    </Link>
-                  )
-              }
+              <MenuLink
+                url={url}
+                title={title}
+                content={content}
+              >
+                <MenuIcon icon={icon}/>
+                {content}
+              </MenuLink>
             </li>
           )
         )

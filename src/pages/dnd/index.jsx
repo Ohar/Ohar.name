@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from "gatsby"
 
+import { faAngry, faDice, faMagic, faSkull } from '@fortawesome/free-solid-svg-icons'
+
 import Layout from '@/components/Layout'
 import MenuIcon from '@/components/MenuIcon'
 import PageTitle from '@/components/PageTitle'
@@ -8,28 +10,32 @@ import Seo from '@/components/Seo'
 
 const dndSubpageList = [
   {
-    iconClass: 'icon-shop',
+    icon: 'icon-shop',
     title: 'Каталог товаров',
     url: '/dnd/item-catalog',
   },
   {
-    iconClass: 'icon-person',
+    icon: 'icon-person',
     title: 'Генератор имён персонажей',
     url: '/dnd/generator-names',
   },
   {
+    icon: faSkull,
     title: 'Гробница аннигиляции: инструменты для ведущего (спойлеры)',
     url: '/dnd/toa',
   },
   {
+    icon: faAngry,
     title: 'Генератор эффектов безумия',
     url: '/dnd/generator-madness',
   },
   {
+    icon: faDice,
     title: 'Броски кубиков',
     url: '/dnd/roll',
   },
   {
+    icon: faMagic,
     title: 'Генератор разумных магических предметов',
     url: '/dnd/generator-sentient-items',
   },
@@ -53,10 +59,10 @@ const DndPage = () => (
     <ul>
       {
         dndSubpageList.map(
-          ({title, url, iconClass}) => (
+          ({title, url, icon}) => (
             <li key={url}>
               <Link to={url}>
-                <MenuIcon iconClass={iconClass}/>
+                <MenuIcon icon={icon}/>
                 {title}
               </Link>
             </li>

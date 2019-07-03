@@ -10,7 +10,7 @@ const RadioSetComponent = ({title, name, fieldList, chosen, onChange}) => (
 
     {
       fieldList.map(
-        ({value, text, iconClass}) => {
+        ({value, text, icon}) => {
           const isChecked = chosen === value
           return (
             <span
@@ -34,7 +34,7 @@ const RadioSetComponent = ({title, name, fieldList, chosen, onChange}) => (
             />
             <label
               htmlFor={`${name}_${value}`}
-              className={classNames('RadioSet_label', iconClass || '')}
+              className={classNames('RadioSet_label', icon || '')}
             >
               {text}
             </label>
@@ -49,7 +49,7 @@ const RadioSetComponent = ({title, name, fieldList, chosen, onChange}) => (
 RadioSetComponent.propTypes = {
   chosen: PropTypes.string.isRequired,
   fieldList: PropTypes.arrayOf(PropTypes.shape({
-    iconClass: PropTypes.string,
+    icon: PropTypes.string,
     text: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
   })).isRequired,

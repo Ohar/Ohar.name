@@ -4,12 +4,12 @@
     "value": "any"
   },
   {
-    "iconClass": "icon-male",
+    "icon": "icon-male",
     "text": "Мужской",
     "value": "male"
   },
   {
-    "iconClass": "icon-female",
+    "icon": "icon-female",
     "text": "Женский",
     "value": "female"
   },

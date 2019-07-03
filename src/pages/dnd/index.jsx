@@ -8,12 +8,12 @@ import Seo from '@/components/Seo'
 
 const dndSubpageList = [
   {
-    iconClass: 'icon-shop',
+    icon: 'icon-shop',
     title: 'Каталог товаров',
     url: '/dnd/item-catalog',
   },
   {
-    iconClass: 'icon-person',
+    icon: 'icon-person',
     title: 'Генератор имён персонажей',
     url: '/dnd/generator-names',
   },
@@ -53,10 +53,10 @@ const DndPage = () => (
     <ul>
       {
         dndSubpageList.map(
-          ({title, url, iconClass}) => (
+          ({title, url, icon}) => (
             <li key={url}>
               <Link to={url}>
-                <MenuIcon iconClass={iconClass}/>
+                <MenuIcon icon={icon}/>
                 {title}
               </Link>
             </li>

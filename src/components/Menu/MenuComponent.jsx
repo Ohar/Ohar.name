@@ -12,7 +12,7 @@ const MenuComponent = () => (
     <ul className="menu_list">
       {
         menuList.map(
-          ({url, title, content, iconClass}) => (
+          ({url, title, content, icon, faIcon}) => (
             <li
               key={url}
               className="menu_list_item"
@@ -22,7 +22,7 @@ const MenuComponent = () => (
                 title={title}
                 content={content}
               >
-                <MenuIcon iconClass={iconClass}/>
+                <MenuIcon icon={icon}/>
                 {content}
               </MenuLink>
             </li>

@@ -13,13 +13,13 @@ const MenuComponent = () => (
     <ul className="menu_list">
       {
         menuList.map(
-          ({url, title, content, gatsbyReady, iconClass}) => (
+          ({url, title, content, iconClass}) => (
             <li
               key={url}
               className="menu_list_item"
             >
               {
-                !gatsbyReady && isOuterLink(url)
+                isOuterLink(url)
                   ? (
                     <a
                       className="menu_list_item_link"

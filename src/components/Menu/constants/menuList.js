@@ -8,7 +8,7 @@ const menuList = [
     title: 'На главную',
     content: (
       <img
-        className="menu_list_item_link_img"
+        className="MenuLink_img"
         src={ImgLogo}
         alt="Adeptus Mechanicus"
         width="48"

@@ -1,0 +1,111 @@
+import listToCollectionById from '@/utils/listToCollectionById'
+
+const dndBusinessTypeList = [
+  {
+    id: 'abby',
+    name: 'Аббатство',
+    cost: 2000,
+    skilled: 5,
+    unskilled: 25,
+  },
+  {
+    id: 'farm',
+    name: 'Ферма',
+    cost: 50,
+    skilled: 1,
+    unskilled: 2,
+  },
+  {
+    id: 'townhall',
+    name: 'Ратуша посёлка или города',
+    cost: 500,
+    skilled: 5,
+    unskilled: 3,
+  },
+  {
+    id: 'road_inn',
+    name: 'Придорожный постоялый двор',
+    cost: 1000,
+    skilled: 5,
+    unskilled: 10,
+  },
+  {
+    id: 'town_inn',
+    name: 'Постоялый двор в городе',
+    cost: 500,
+    skilled: 1,
+    unskilled: 5,
+  },
+  {
+    id: 'citadel',
+    name: 'Цитадель или небольшой замок',
+    cost: 10000,
+    skilled: 50,
+    unskilled: 50,
+  },
+  {
+    id: 'hunter',
+    name: 'Охотничий дом',
+    cost: 50,
+    skilled: 1,
+    unskilled: 0,
+  },
+  {
+    id: 'mansion',
+    name: 'Дворянский особняк',
+    cost: 1000,
+    skilled: 3,
+    unskilled: 15,
+  },
+  {
+    id: 'fort',
+    name: 'Застава или форт',
+    cost: 5000,
+    skilled: 20,
+    unskilled: 40,
+  },
+  {
+    id: 'castle',
+    name: 'Дворец или большой замок',
+    cost: 40000,
+    skilled: 200,
+    unskilled: 100,
+  },
+  {
+    id: 'shop',
+    name: 'Магазин',
+    cost: 200,
+    skilled: 1,
+    unskilled: 0,
+  },
+  {
+    id: 'temple_big',
+    name: 'Большой храм',
+    cost: 2500,
+    skilled: 10,
+    unskilled: 10,
+  },
+  {
+    id: 'temple_small',
+    name: 'Небольшой храм',
+    cost: 100,
+    skilled: 2,
+    unskilled: 0,
+  },
+  {
+    id: 'tower',
+    name: 'Укреплённая башня',
+    cost: 2500,
+    skilled: 10,
+    unskilled: 0,
+  },
+  {
+    id: 'trade_post',
+    name: 'Торговый пост',
+    cost: 1000,
+    skilled: 4,
+    unskilled: 2,
+  },
+]
+
+export const dndBusinessTypeCollection = listToCollectionById(dndBusinessTypeList)

@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from 'prop-types'
 
+import './MenuIconStyles.css'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const MenuIconComponent = ({icon}) => icon

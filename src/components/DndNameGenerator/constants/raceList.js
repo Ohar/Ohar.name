@@ -11,6 +11,10 @@ const raceList = [
     text: 'Грунги',
     value: 'grung',
   },
+  {
+    text: 'Дварфы',
+    value: 'dwarf',
+  },
 ]
 
 export default raceList

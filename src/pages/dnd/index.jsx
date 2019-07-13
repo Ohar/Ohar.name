@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 
-import { faAngry, faDice, faMagic, faSkull } from '@fortawesome/free-solid-svg-icons'
+import { faAngry, faDice, faMagic, faSkull, faUserTag } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '@/components/Layout'
 import Icon from '@/components/Icon'
@@ -15,7 +15,7 @@ const dndSubpageList = [
     url: '/dnd/item-catalog',
   },
   {
-    icon: 'icon-person',
+    icon: faUserTag,
     title: 'Генератор имён персонажей',
     url: '/dnd/generator-names',
   },

@@ -6,18 +6,22 @@ import Icon from '@/components/Icon'
 import PageTitle from '@/components/PageTitle'
 import Seo from '@/components/Seo'
 
+import { faGem, faRandom } from '@fortawesome/free-solid-svg-icons'
+
 const toaSubpageList = [
   {
     title: 'Гробница аннигиляции: генератор случайных столкновений',
     url: '/dnd/toa/generator-random-encounter',
+    icon: faRandom,
   },
   {
     title: 'Гробница аннигиляции: генератор выпавших сокровищ',
     url: '/dnd/toa/generator-treasures',
+    icon: faGem,
   },
 ]
 
-const DndPage = () => (
+export default () => (
   <Layout>
     <Seo
       title='Гробница аннигиляции'
@@ -45,5 +49,3 @@ const DndPage = () => (
     </ul>
   </Layout>
 )
-
-export default DndPage

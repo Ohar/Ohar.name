@@ -1,6 +1,6 @@
 import React from "react"
 
-import MenuIcon from '@/components/MenuIcon'
+import Icon from '@/components/Icon'
 import MenuLink from '@/components/MenuLink'
 
 import menuList from './constants/menuList'
@@ -22,7 +22,7 @@ const MenuComponent = () => (
                 title={title}
                 content={content}
               >
-                <MenuIcon icon={icon}/>
+                <Icon icon={icon}/>
                 {content}
               </MenuLink>
             </li>

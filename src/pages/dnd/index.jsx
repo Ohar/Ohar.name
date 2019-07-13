@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { faAngry, faDice, faMagic, faSkull } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '@/components/Layout'
-import MenuIcon from '@/components/MenuIcon'
+import Icon from '@/components/Icon'
 import PageTitle from '@/components/PageTitle'
 import Seo from '@/components/Seo'
 
@@ -62,7 +62,7 @@ const DndPage = () => (
           ({title, url, icon}) => (
             <li key={url}>
               <Link to={url}>
-                <MenuIcon icon={icon}/>
+                <Icon icon={icon}/>
                 {title}
               </Link>
             </li>

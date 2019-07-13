@@ -1,7 +1,7 @@
 import React from "react"
 import { faNpm, faGithub } from '@fortawesome/free-brands-svg-icons'
 
-import MenuIcon from '@/components/MenuIcon'
+import Icon from '@/components/Icon'
 
 import './ContactsStyles.css'
 
@@ -56,7 +56,7 @@ const contactList = [
     type: 'github',
     text:  (
       <React.Fragment>
-        <MenuIcon icon={faGithub}/>
+        <Icon icon={faGithub}/>
         GitHub
       </React.Fragment>
     ),
@@ -81,7 +81,7 @@ const contactList = [
     type: 'npm',
     text:  (
       <React.Fragment>
-        <MenuIcon icon={faNpm}/>
+        <Icon icon={faNpm}/>
         NPM
       </React.Fragment>
     ),

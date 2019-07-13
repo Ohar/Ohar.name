@@ -2,9 +2,9 @@ import React from 'react'
 
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import NameGeneratorDnd from '@/components/NameGeneratorDnd'
+import DndNameGenerator from '@/components/DndNameGenerator'
 
-const NameGeneratorChultage = () => (
+export default () => (
   <Layout>
     <Seo
       title='Генератор имён для D&D'
@@ -15,8 +15,6 @@ const NameGeneratorChultage = () => (
         'Генератор имён'
       ]}
     />
-    <NameGeneratorDnd/>
+    <DndNameGenerator/>
   </Layout>
 )
-
-export default NameGeneratorChultage

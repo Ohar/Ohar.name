@@ -7,7 +7,7 @@ import typeList from "./constants/typeList"
 
 import generateFullName from "./utils/generateFullName"
 
-const NameGeneratorDndComponent = () => (
+const DndNameGeneratorComponent = () => (
   <section>
     <PageTitle>Генератор имён для D&D</PageTitle>
     <ContentGenerator
@@ -17,4 +17,4 @@ const NameGeneratorDndComponent = () => (
   </section>
 )
 
-export default NameGeneratorDndComponent
+export default DndNameGeneratorComponent

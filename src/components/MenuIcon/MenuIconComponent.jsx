@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const MenuIconComponent = ({icon}) => icon
   ? (
     typeof icon === 'string'
-      ? <span className={icon}/>
-      : <FontAwesomeIcon icon={icon} />
+      ? <span className={icon} className='MenuIcon'/>
+      : <FontAwesomeIcon icon={icon} className='MenuIcon'/>
   )
   : null
 

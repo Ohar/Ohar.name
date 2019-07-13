@@ -40,6 +40,7 @@ const generateNameHuman = ({subrace, ...rest}) => {
         case 'human:shu':
             return generateShu(rest)
 
+        default:
         case 'any': {
             const nameGenerator = _.sample([
                 generateChult,
@@ -55,9 +56,6 @@ const generateNameHuman = ({subrace, ...rest}) => {
             ])
             return nameGenerator(rest)
         }
-
-        default:
-            return 'NOT READY'
     }
 }
 

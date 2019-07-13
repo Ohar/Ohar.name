@@ -3,19 +3,20 @@ import nameListMale from "./../dict/names_male"
 
 export default gender => {
   switch (gender) {
-    case 'any': {
-      return [
-        ...nameListFemale,
-        ...nameListMale,
-      ]
-    }
-
     case 'female': {
       return nameListFemale
     }
 
     case 'male': {
       return nameListMale
+    }
+
+    case 'any':
+    default: {
+      return [
+        ...nameListFemale,
+        ...nameListMale,
+      ]
     }
   }
 }

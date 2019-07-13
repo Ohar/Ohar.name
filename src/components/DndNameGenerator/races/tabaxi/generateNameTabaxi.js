@@ -6,6 +6,13 @@ import generateFullNameTabaxi from './utils/generateFullNameTabaxi'
 
 const generateNameTabaxi = ({gender, ...rest}) => {
   switch (gender) {
+    case 'female':
+    case 'male':
+    case 'undefined': {
+      return generateFullNameTabaxi({gender, ...rest})
+    }
+
+    default:
     case 'any': {
       const genderList = _.map(genderFieldList, 'value').filter(e => e !== 'any')
 
@@ -13,10 +20,6 @@ const generateNameTabaxi = ({gender, ...rest}) => {
         gender: _.sample(genderList),
         ...rest,
       })
-    }
-
-    default: {
-      return generateFullNameTabaxi({gender, ...rest})
     }
   }
 }

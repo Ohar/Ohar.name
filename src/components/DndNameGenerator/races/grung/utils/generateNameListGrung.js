@@ -4,14 +4,6 @@ import nameListUnisex from "./../dict/names_unisex"
 
 export default gender => {
   switch (gender) {
-    case 'any': {
-      return [
-        ...nameListFemale,
-        ...nameListMale,
-        ...nameListUnisex,
-      ]
-    }
-
     case 'female': {
       return [
         ...nameListFemale,
@@ -21,6 +13,15 @@ export default gender => {
 
     case 'male': {
       return [
+        ...nameListMale,
+        ...nameListUnisex,
+      ]
+    }
+
+    default:
+    case 'any': {
+      return [
+        ...nameListFemale,
         ...nameListMale,
         ...nameListUnisex,
       ]

@@ -21,6 +21,10 @@ const raceList = [
     value: 'dwarf',
     icon: faGavel,
   },
+  {
+    text: 'Эльфы',
+    value: 'elf',
+  },
 ]
 
 export default raceList

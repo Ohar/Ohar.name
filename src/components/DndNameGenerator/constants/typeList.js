@@ -4,6 +4,7 @@ import useSurnameList from "../races/human/useSurnameList"
 import schemaList from "../races/tabaxi/constants/schemaList"
 import raceList from "./raceList"
 import subRaceList from "./subRaceList"
+import ageList from "./ageList"
 
 const typeList = [
   {
@@ -20,9 +21,20 @@ const typeList = [
     },
   },
   {
+    type: 'age',
+    title: 'Возраст',
+    list: ageList,
+    show: {
+      race: 'elf',
+    },
+  },
+  {
     type: 'gender',
     title: 'Пол',
     list: genderFieldList,
+    hide: {
+      age: 'child',
+    },
   },
   {
     type: 'schema',

@@ -2,6 +2,8 @@ import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
+import Icon from "@/components/Icon/IconComponent"
+
 import './RadioSetStyles.css'
 
 const RadioSetComponent = ({title, name, fieldList, chosen, onChange}) => (
@@ -34,8 +36,13 @@ const RadioSetComponent = ({title, name, fieldList, chosen, onChange}) => (
             />
             <label
               htmlFor={`${name}_${value}`}
-              className={classNames('RadioSet_label', icon || '')}
+              className='RadioSet_label'
             >
+              {
+                icon
+                  ? <Icon icon={icon}/>
+                  : null
+              }
               {text}
             </label>
           </span>

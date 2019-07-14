@@ -1,4 +1,4 @@
-const funnyJsArticleList = [
+export default [
   {
     url: '/articles/funny-js/button-title',
     text: 'Невидимый title у детей button',
@@ -24,5 +24,3 @@ const funnyJsArticleList = [
     text: 'Конструктор дат',
   },
 ]
-
-export default funnyJsArticleList

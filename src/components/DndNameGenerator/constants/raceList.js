@@ -1,4 +1,5 @@
 import { faFrog, faCat, faMale, faGavel } from '@fortawesome/free-solid-svg-icons'
+import { faEnvira } from '@fortawesome/free-brands-svg-icons'
 
 const raceList = [
   {
@@ -24,6 +25,7 @@ const raceList = [
   {
     text: 'Эльфы',
     value: 'elf',
+    icon: faEnvira,
   },
 ]
 

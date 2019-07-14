@@ -1,28 +1,32 @@
+const isVisible = (show, hide, collection) => (
+  !(
+    show
+    && Object.keys(show).find(
+      key => collection[key].chosen !== show[key]
+    )
+  ) && !(
+    hide
+    && Object.keys(hide).find(
+      key => collection[key].chosen === hide[key]
+    )
+  )
+)
+
 const enhanceTypeCollectionWithVisibility = typeCollection => Object
     .keys(typeCollection)
     .reduce(
         (result, type) => {
-            const {show, list, chosen} = typeCollection[type]
-            const isTypeVisible = !(
-                show
-                && Object.keys(show).find(
-                    key => typeCollection[key].chosen !== show[key]
-                )
-            )
-
+            const {show, hide, list, chosen} = typeCollection[type]
             const [{value: chosenDefault}] = list
+            const isTypeVisible = isVisible(show, hide, typeCollection)
 
             let updatedChosen = isTypeVisible
                 ? chosen
                 : chosenDefault
 
             const updatedList = list.map(
-                ({show: showItem, value, ...rest}) => {
-                    const visible = !(
-                        showItem && Object.keys(showItem).find(
-                            key => typeCollection[key].chosen !== showItem[key]
-                        )
-                    )
+                ({show: showItem, hide: hideItem, value, ...rest}) => {
+                    const visible = isVisible(showItem, hideItem, typeCollection)
 
                     if (isTypeVisible && !visible && chosen === value) {
                         updatedChosen = chosenDefault
@@ -31,6 +35,7 @@ const enhanceTypeCollectionWithVisibility = typeCollection => Object
                     return {
                         ...rest,
                         show: showItem,
+                        hide: hideItem,
                         value,
                         visible,
                     }

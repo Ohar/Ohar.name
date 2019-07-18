@@ -1,6 +1,6 @@
 import _ from "lodash"
 
-import genderFieldList from "@/constants/genderFieldList"
+import genderFieldList from "@/constants/dnd/genderFieldList"
 
 import generateFullNameTabaxi from './utils/generateFullNameTabaxi'
 

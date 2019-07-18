@@ -256,6 +256,11 @@ const dndLanguageList = [
     name: 'троглодитский',
     script: null,
   },
+  {
+    id: 'ixitxachitl',
+    name: 'язык икситксачитлов',
+    script: null,
+  },
 ]
 
 export const dndLanguageCollection = listToCollectionById(dndLanguageList)

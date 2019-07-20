@@ -47,7 +47,12 @@ const DndItemCell = ({columnName, item}) => {
       return <DndAc item={item}/>
     }
 
-    case 'blockHiding': {
+    case 'blockHiding':
+    case 'isHeavy':
+    case 'isReach':
+    case 'isReloading':
+    case 'isTwoHanded':
+    case 'needAmmo': {
       return <BooleanMark val={item[columnName]}/>
     }
 

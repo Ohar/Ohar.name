@@ -13,4 +13,9 @@ export default {
   range: 'Дальность',
   blockHiding: 'Мешает скрытности',
   acChangeTo: 'КД',
+  isTwoHanded: 'Двуручное',
+  isReach: 'Досягаемость',
+  isHeavy: 'Тяжёлое',
+  isReloading: 'Перезарядка',
+  needAmmo: 'Боеприпас',
 }

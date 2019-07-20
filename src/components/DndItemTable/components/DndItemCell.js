@@ -1,6 +1,7 @@
 import React from "react"
 import ReactMarkdown from "react-markdown"
 
+import BooleanMark from "@/components/BooleanMark"
 import DndAbilityCheck from "@/components/DndAbilityCheck"
 import DndCube from "@/components/DndCube"
 import DndPrice from "@/components/DndPrice"
@@ -44,6 +45,10 @@ const DndItemCell = ({columnName, item}) => {
 
     case 'acChangeTo': {
       return <DndAc item={item}/>
+    }
+
+    case 'blockHiding': {
+      return <BooleanMark val={item[columnName]}/>
     }
 
     default: {

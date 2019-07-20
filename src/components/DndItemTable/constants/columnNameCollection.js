@@ -11,4 +11,6 @@ export default {
   saveThrow: 'Спасбросок',
   damageType: 'Тип урона',
   range: 'Дальность',
+  blockHiding: 'Мешает скрытности',
+  acChangeTo: 'КД',
 }

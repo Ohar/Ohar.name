@@ -8,6 +8,7 @@ import DndPoisonType from "@/components/DndPoisonType"
 import DndDamageType from "@/components/DndDamageType"
 import DndSourceInfo from "@/components/DndSourceInfo"
 import DndRange from "@/components/DndRange"
+import DndAc from "@/components/DndAc"
 
 const DndItemCell = ({columnName, item}) => {
   switch (columnName) {
@@ -39,6 +40,10 @@ const DndItemCell = ({columnName, item}) => {
 
     case 'range': {
       return <DndRange range={item[columnName]}/>
+    }
+
+    case 'acChangeTo': {
+      return <DndAc item={item}/>
     }
 
     default: {

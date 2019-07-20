@@ -4,6 +4,8 @@ const techColumnList = [
     SEARCH_PROP_NAME,
     'id',
     'nameEn',
+    'acUseDexMod',
+    'acDexModMax',
 ]
 
 export default techColumnList

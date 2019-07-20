@@ -49,6 +49,10 @@ const DndItemCell = ({columnName, item}) => {
 
     case 'blockHiding':
     case 'isHeavy':
+    case 'isLight':
+    case 'isThrown':
+    case 'isFinesse':
+    case 'isSpecial':
     case 'isReach':
     case 'isReloading':
     case 'isTwoHanded':

@@ -18,4 +18,9 @@ export default {
   isHeavy: 'Тяжёлое',
   isReloading: 'Перезарядка',
   needAmmo: 'Боеприпас',
+  acBonus: 'Бонус к КД',
+  isLight: 'Лёгкое',
+  isThrown: 'Метательное',
+  isFinesse: 'Фехтовальное',
+  isSpecial: 'Особое',
 }

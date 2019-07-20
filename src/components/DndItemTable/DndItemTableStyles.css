@@ -7,6 +7,14 @@
     border-color: #fff;
     border-style: solid;
     padding: .5em;
+    hyphens: auto;
+}
+
+.DndItemTable_cell-narrow {
+    width: 1em;
+}
+.DndItemTable_cell-narrow .DndItemTable_narrowWrapper {
+    writing-mode: vertical-lr;
 }
 
 .DndItemTable_cell:last-child {

@@ -1,5 +1,8 @@
 export default [
+  'acBonus',
   'blockHiding',
+  'category',
+  'damageType',
   'isFinesse',
   'isHeavy',
   'isLight',
@@ -9,4 +12,7 @@ export default [
   'isThrown',
   'isTwoHanded',
   'needAmmo',
+  'range',
+  'saveThrow',
+  'weight',
 ]

@@ -10,6 +10,7 @@ import DndDamageType from "@/components/DndDamageType"
 import DndSourceInfo from "@/components/DndSourceInfo"
 import DndRange from "@/components/DndRange"
 import DndAc from "@/components/DndAc"
+import DndRequirementList from "@/components/DndRequirementList"
 
 const DndItemCell = ({columnName, item}) => {
   switch (columnName) {
@@ -58,6 +59,10 @@ const DndItemCell = ({columnName, item}) => {
     case 'isTwoHanded':
     case 'needAmmo': {
       return <BooleanMark val={item[columnName]}/>
+    }
+
+    case 'requirementList': {
+      return <DndRequirementList list={item[columnName]}/>
     }
 
     default: {

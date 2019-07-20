@@ -13,6 +13,7 @@ export default [
   'isTwoHanded',
   'needAmmo',
   'range',
+  'requirementList',
   'saveThrow',
   'weight',
 ]

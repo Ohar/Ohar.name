@@ -19,6 +19,7 @@ export default {
   needAmmo: 'Боеприпас',
   poisonType: 'Тип яда',
   range: 'Дальность',
+  requirementList: 'Требования',
   saveThrow: 'Спасбросок',
   source: 'Источник информации',
   subcategory: 'Подкатегория',

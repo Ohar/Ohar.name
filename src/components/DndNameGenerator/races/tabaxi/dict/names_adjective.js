@@ -7,7 +7,7 @@ export default adjectiveList.map(
       single: {
         female: singleFemale,
         male: singleMale,
-        undefined: singleUndefined,
+        middle: singleMiddle,
       },
       dualFemale,
       dualFemale: {
@@ -23,8 +23,8 @@ export default adjectiveList.map(
         ...singleFemale,
         prepositional: singleFemale.genitive,
       },
-      undefined: {
-        ...singleUndefined,
+      middle: {
+        ...singleMiddle,
         genitive: singleMale.genitive,
         prepositional: singleMale.prepositional,
       },
@@ -39,7 +39,7 @@ export default adjectiveList.map(
         genitive: dualGenitive,
         prepositional: dualGenitive,
       },
-      undefined: {
+      middle: {
         nominative: dualGenitive,
         genitive: dualGenitive,
         prepositional: dualGenitive,

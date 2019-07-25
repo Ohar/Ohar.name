@@ -18,7 +18,7 @@ export default [
   {
     icon: faGenderless,
     text: 'Средний',
-    value: 'undefined',
+    value: 'middle',
     show: {
       race: 'tabaxi',
     },

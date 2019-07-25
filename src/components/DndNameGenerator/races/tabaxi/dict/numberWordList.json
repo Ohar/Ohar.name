@@ -2,6 +2,24 @@
   {
     "type": "single",
     "female": {
+      "nominative": "",
+      "genitive": "",
+      "prepositional": ""
+    },
+    "male": {
+      "nominative": "",
+      "genitive": "",
+      "prepositional": ""
+    },
+    "middle": {
+      "nominative": "",
+      "genitive": "",
+      "prepositional": ""
+    }
+  },
+  {
+    "type": "single",
+    "female": {
       "nominative": "Одинокая",
       "genitive": "Одинокой",
       "prepositional": "Одиноких"
@@ -11,10 +29,28 @@
       "genitive": "Одинокого",
       "prepositional": "Одиноких"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Одинокое",
       "genitive": "Одинокого",
       "prepositional": "Одиноких"
+    }
+  },
+  {
+    "type": "dual",
+    "female": {
+      "nominative": "Половина",
+      "genitive": "Половины",
+      "prepositional": "Половине"
+    },
+    "male": {
+      "nominative": "Половина",
+      "genitive": "Половины",
+      "prepositional": "Половине"
+    },
+    "middle": {
+      "nominative": "Половина",
+      "genitive": "Половины",
+      "prepositional": "Половине"
     }
   },
   {
@@ -29,7 +65,7 @@
       "genitive": "Двух",
       "prepositional": "Двух"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Два",
       "genitive": "Двух",
       "prepositional": "Двух"
@@ -47,7 +83,7 @@
       "genitive": "Трёх",
       "prepositional": "Трёх"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Три",
       "genitive": "Трёх",
       "prepositional": "Трёх"
@@ -65,7 +101,7 @@
       "genitive": "Четырёх",
       "prepositional": "Четырёх"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Четыре",
       "genitive": "Четырёх",
       "prepositional": "Четырёх"
@@ -83,7 +119,7 @@
       "genitive": "Пары",
       "prepositional": "Паре"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Пара",
       "genitive": "Пары",
       "prepositional": "Паре"
@@ -101,7 +137,7 @@
       "genitive": "Пяти",
       "prepositional": "Пяти"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Пять",
       "genitive": "Пяти",
       "prepositional": "Пяти"
@@ -110,6 +146,24 @@
   {
     "type": "plural",
     "female": {
+      "nominative": "Пяток",
+      "genitive": "Пятка",
+      "prepositional": "Пятке"
+    },
+    "male": {
+      "nominative": "Пяток",
+      "genitive": "Пятка",
+      "prepositional": "Пятке"
+    },
+    "middle": {
+      "nominative": "Пяток",
+      "genitive": "Пятка",
+      "prepositional": "Пятке"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
       "nominative": "Шесть",
       "genitive": "Шести",
       "prepositional": "Шести"
@@ -119,7 +173,7 @@
       "genitive": "Шести",
       "prepositional": "Шести"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Шесть",
       "genitive": "Шести",
       "prepositional": "Шести"
@@ -137,7 +191,7 @@
       "genitive": "Семи",
       "prepositional": "Семи"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Семь",
       "genitive": "Семи",
       "prepositional": "Семи"
@@ -155,7 +209,7 @@
       "genitive": "Восьми",
       "prepositional": "Восьми"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Восемь",
       "genitive": "Восьми",
       "prepositional": "Восьми"
@@ -173,7 +227,7 @@
       "genitive": "Девяти",
       "prepositional": "Девяти"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Девять",
       "genitive": "Девяти",
       "prepositional": "Девяти"
@@ -191,7 +245,7 @@
       "genitive": "Десяти",
       "prepositional": "Десяти"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Десять",
       "genitive": "Десяти",
       "prepositional": "Десяти"
@@ -209,7 +263,7 @@
       "genitive": "Дюжины",
       "prepositional": "Дюжине"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Дюжина",
       "genitive": "Дюжины",
       "prepositional": "Дюжине"
@@ -227,10 +281,28 @@
       "genitive": "Ста",
       "prepositional": "Ста"
     },
-    "undefined": {
+    "middle": {
       "nominative": "Сто",
       "genitive": "Ста",
       "prepositional": "Ста"
+    }
+  },
+  {
+    "type": "plural",
+    "female": {
+      "nominative": "Сотня",
+      "genitive": "Сотни",
+      "prepositional": "Сотне"
+    },
+    "male": {
+      "nominative": "Сотня",
+      "genitive": "Сотни",
+      "prepositional": "Сотне"
+    },
+    "middle": {
+      "nominative": "Сотня",
+      "genitive": "Сотни",
+      "prepositional": "Сотне"
     }
   }
 ]

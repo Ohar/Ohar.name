@@ -1,0 +1,210 @@
+[
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Дерево",
+      "genitive": "Дерева",
+      "prepositional": "Дереве"
+    },
+    "plural": {
+      "nominative": "Деревья",
+      "genitive": "Деревьев",
+      "prepositional": "Деревьях"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Облако",
+      "genitive": "Облака",
+      "prepositional": "Облаке"
+    },
+    "plural": {
+      "nominative": "Облака",
+      "genitive": "Облаков",
+      "prepositional": "Облаках"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Вино",
+      "genitive": "Вина",
+      "prepositional": "Вине"
+    },
+    "plural": {
+      "nominative": "Вина",
+      "genitive": "Вин",
+      "prepositional": "Винах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Зеркало",
+      "genitive": "Зеркала",
+      "prepositional": "Зеркале"
+    },
+    "plural": {
+      "nominative": "Зеркала",
+      "genitive": "Зеркал",
+      "prepositional": "Зеркалах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Болото",
+      "genitive": "Болота",
+      "prepositional": "Болоте"
+    },
+    "plural": {
+      "nominative": "Болота",
+      "genitive": "Болот",
+      "prepositional": "Болотах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Логово",
+      "genitive": "Логова",
+      "prepositional": "Логове"
+    },
+    "plural": {
+      "nominative": "Логова",
+      "genitive": "Логов",
+      "prepositional": "Логовах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Ребро",
+      "genitive": "Ребра",
+      "prepositional": "Ребре"
+    },
+    "plural": {
+      "nominative": "Рёбра",
+      "genitive": "Рёбер",
+      "prepositional": "Рёбрах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Побережье",
+      "genitive": "Побережья",
+      "prepositional": "Побережье"
+    },
+    "plural": {
+      "nominative": "Побережья",
+      "genitive": "Побережий",
+      "prepositional": "Побережьях"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Копьё",
+      "genitive": "Копья",
+      "prepositional": "Копье"
+    },
+    "plural": {
+      "nominative": "Копья",
+      "genitive": "Копий",
+      "prepositional": "Копьях"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Шатание",
+      "genitive": "Шатания",
+      "prepositional": "Шатании"
+    },
+    "plural": {
+      "nominative": "Шатания",
+      "genitive": "Шатаний",
+      "prepositional": "Шатаниях"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Устье",
+      "genitive": "Устья",
+      "prepositional": "Устье"
+    },
+    "plural": {
+      "nominative": "Устья",
+      "genitive": "Устий",
+      "prepositional": "Устьях"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Спокойствие",
+      "genitive": "Спокойствия",
+      "prepositional": "Спокойствии"
+    },
+    "plural": {
+      "nominative": "Спокойствия",
+      "genitive": "Спокойствий",
+      "prepositional": "Спокойствиях"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Безмолвие",
+      "genitive": "Безмолвия",
+      "prepositional": "Безмолвии"
+    },
+    "plural": {
+      "nominative": "Безмолвия",
+      "genitive": "Безмолвий",
+      "prepositional": "Безмолвиях"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Озеро",
+      "genitive": "Озера",
+      "prepositional": "Озере"
+    },
+    "plural": {
+      "nominative": "Озёра",
+      "genitive": "Озёр",
+      "prepositional": "Озёрах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Полено",
+      "genitive": "Полена",
+      "prepositional": "Полене"
+    },
+    "plural": {
+      "nominative": "Дрова",
+      "genitive": "Дров",
+      "prepositional": "Дровах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Поле",
+      "genitive": "Поля",
+      "prepositional": "Поле"
+    },
+    "plural": {
+      "nominative": "Поля",
+      "genitive": "Полей",
+      "prepositional": "Полях"
+    }
+  }
+]

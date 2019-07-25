@@ -1,5 +1,5 @@
 import getRandomAdjective from './../getRandomAdjective'
-import getRandomNoun from './../getRandomNoun'
+import getRandomNounByNumber from '../getRandomNounByNumber'
 import getRandomNumber from './../getRandomNumber'
 import getRandomNumberType from './../getRandomNumberType'
 
@@ -8,7 +8,7 @@ const generateNameTabaxiSchemeNumberAdjectiveNoun = ({gender}) => {
 
     const number = getRandomNumber({gender, numberType}).nominative
     const adjective = getRandomAdjective({gender, numberType}).nominative
-    const noun = getRandomNoun({gender, numberType}).nominative
+    const noun = getRandomNounByNumber({gender, numberType})
 
     return `${number} ${adjective} ${noun}`
 }

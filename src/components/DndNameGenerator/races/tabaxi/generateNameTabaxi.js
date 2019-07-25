@@ -8,7 +8,7 @@ const generateNameTabaxi = ({gender, ...rest}) => {
   switch (gender) {
     case 'female':
     case 'male':
-    case 'undefined': {
+    case 'middle': {
       return generateFullNameTabaxi({gender, ...rest})
     }
 

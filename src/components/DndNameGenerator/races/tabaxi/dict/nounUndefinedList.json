@@ -1,0 +1,50 @@
+[
+  {
+    "gender": "undefined",
+    "single": {
+      "nominative": "Дерево",
+      "genitive": "Дерева",
+      "prepositional": "Дереве"
+    },
+    "plural": {
+      "nominative": "Деревьев",
+      "prepositional": "Деревьях"
+    }
+  },
+  {
+    "gender": "undefined",
+    "single": {
+      "nominative": "Облако",
+      "genitive": "Облака",
+      "prepositional": "Облаке"
+    },
+    "plural": {
+      "nominative": "Облаков",
+      "prepositional": "Облаках"
+    }
+  },
+  {
+    "gender": "undefined",
+    "single": {
+      "nominative": "Вино",
+      "genitive": "Вина",
+      "prepositional": "Вине"
+    },
+    "plural": {
+      "nominative": "Вин",
+      "prepositional": "Винах"
+    }
+  },
+  {
+    "gender": "undefined",
+    "single": {
+      "nominative": "Зеркало",
+      "genitive": "Зеркала",
+      "prepositional": "Зеркале"
+    },
+    "plural": {
+      "nominative": "Зеркал",
+      "prepositional": "Зеркалах"
+    }
+  }
+]

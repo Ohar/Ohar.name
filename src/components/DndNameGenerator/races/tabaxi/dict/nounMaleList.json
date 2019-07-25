@@ -1,0 +1,98 @@
+[
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Мешок",
+      "genitive": "Мешка",
+      "prepositional": "Мешке"
+    },
+    "plural": {
+      "nominative": "Мешков",
+      "prepositional": "Мешках"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Утёс",
+      "genitive": "Утёса",
+      "prepositional": "Утёсе"
+    },
+    "plural": {
+      "nominative": "Утёсов",
+      "prepositional": "Утёсах"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Дождь",
+      "genitive": "Дождя",
+      "prepositional": "Дожде"
+    },
+    "plural": {
+      "nominative": "Дождей",
+      "prepositional": "Дождях"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Гвоздь",
+      "genitive": "Гвоздя",
+      "prepositional": "Гвозде"
+    },
+    "plural": {
+      "nominative": "Гвоздей",
+      "prepositional": "Гвоздях"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Фонарь",
+      "genitive": "Фонаря",
+      "prepositional": "Фонаре"
+    },
+    "plural": {
+      "nominative": "Фонарей",
+      "prepositional": "Фонарях"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Колокол",
+      "genitive": "Колокола",
+      "prepositional": "Колоколе"
+    },
+    "plural": {
+      "nominative": "Колоколов",
+      "prepositional": "Колоколах"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Стол",
+      "genitive": "Стола",
+      "prepositional": "Столе"
+    },
+    "plural": {
+      "nominative": "Столов",
+      "prepositional": "Столах"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Башмак",
+      "genitive": "Башмака",
+      "prepositional": "Башмаке"
+    },
+    "plural": {
+      "nominative": "Башмаков",
+      "prepositional": "Башмаках"
+    }
+  }
+]

@@ -7,10 +7,17 @@ const generateNameTabaxiSchemeNumberNounOfNoun = ({gender}) => {
     const numberType = getRandomNumberType()
 
     const number = getRandomNumber({gender, numberType}).nominative
-    const noun1st = getRandomNounByNumber({gender, numberType})
-    const noun2nd = getRandomNoun({gender, numberType}).genitive
+    const noun2nd = getRandomNoun({gender, numberType})
+    const noun2ndText = noun2nd.genitive
+    const noun1st = getRandomNounByNumber(
+      {
+          gender,
+          numberType,
+          nounToFilter: noun2nd,
+      }
+    )
 
-    return `${number} ${noun1st} ${noun2nd}`
+    return `${number} ${noun1st} ${noun2ndText}`
 }
 
 export default generateNameTabaxiSchemeNumberNounOfNoun

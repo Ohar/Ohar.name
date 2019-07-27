@@ -8,11 +8,18 @@ const getRandomNoun = (
   {
     gender,
     genderToUse,
+    nounToFilter = null,
     numberType = SINGLE_NUMBER_TYPE,
   }
 ) => _.sample(
   NAMES_NOUN.filter(
-    item => item.gender === gender || item.gender === genderToUse
+    item => (
+      item !== nounToFilter
+      && (
+        item.gender === gender
+        || item.gender === genderToUse
+      )
+    )
   )
 )[numberType]
 

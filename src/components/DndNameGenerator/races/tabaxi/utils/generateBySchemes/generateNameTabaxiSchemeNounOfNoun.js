@@ -4,10 +4,17 @@ import getRandomNoun from './../getRandomNoun'
 const generateNameTabaxiSchemeNounAtNoun = ({gender}) => {
   const genderToUseSecond = maybePluralGender(gender)
 
-  const nounFirst = getRandomNoun({gender}).nominative
-  const nounSecond = getRandomNoun({gender, genderToUseSecond}).genitive
+  const nounFirst = getRandomNoun({gender})
+  const nounFirstText = nounFirst.nominative
+  const nounSecond = getRandomNoun(
+    {
+      gender,
+      genderToUseSecond,
+      nounToFilter: nounFirst,
+    }
+  ).genitive
 
-  return `${nounFirst} ${nounSecond}`
+  return `${nounFirstText} ${nounSecond}`
 }
 
 export default generateNameTabaxiSchemeNounAtNoun

@@ -476,8 +476,21 @@
     },
     "plural": {
       "nominative": "Лучи",
-      "genitive": "Лучов",
+      "genitive": "Лучей",
       "prepositional": "Лучах"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Соловей",
+      "genitive": "Соловья",
+      "prepositional": "Соловье"
+    },
+    "plural": {
+      "nominative": "Соловьи",
+      "genitive": "Соловьёв",
+      "prepositional": "Соловьях"
     }
   },
   {
@@ -632,7 +645,7 @@
     },
     "plural": {
       "nominative": "Кряжи",
-      "genitive": "Кряжов",
+      "genitive": "Кряжей",
       "prepositional": "Кряжах"
     }
   },

@@ -1,5 +1,4 @@
 export const ADJECTIVE_NOUN = 'adjective_noun'
-export const NOUN_AT_NOUN = 'noun_at_noun'
 export const NOUN_OF_ADJECTIVE_NOUN = 'noun_of_adjective_noun'
 export const NOUN_OF_NOUN = 'noun_of_noun'
 export const NOUN_OF_NUMBER_ADJECTIVE_NOUN = 'noun_of_number_adjective_noun'
@@ -20,10 +19,6 @@ const schemaList = [
   {
     text: 'Сколько-то какого-то чего-то',
     value: NUMBER_ADJECTIVE_NOUN,
-  },
-  {
-    text: 'Что-то на чём-то',
-    value: NOUN_AT_NOUN,
   },
   {
     text: 'Что-то чего-то',

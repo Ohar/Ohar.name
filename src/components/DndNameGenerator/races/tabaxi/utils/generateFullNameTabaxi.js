@@ -2,7 +2,6 @@ import _ from 'lodash'
 
 import schemaList, {
   ADJECTIVE_NOUN,
-  NOUN_AT_NOUN,
   NOUN_OF_ADJECTIVE_NOUN,
   NOUN_OF_NOUN,
   NOUN_OF_NUMBER_ADJECTIVE_NOUN,
@@ -13,7 +12,6 @@ import schemaList, {
 } from './../constants/schemaList'
 
 import generateNameTabaxiSchemeAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeAdjectiveNoun'
-import generateNameTabaxiSchemeNounAtNoun from './generateBySchemes/generateNameTabaxiSchemeNounAtNoun'
 import generateNameTabaxiSchemeNounOfNoun from './generateBySchemes/generateNameTabaxiSchemeNounOfNoun'
 import generateNameTabaxiSchemeNounOfAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeNounOfAdjectiveNoun'
 import generateNameTabaxiSchemeNounOfNumberAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeNounOfNumberAdjectiveNoun'
@@ -36,10 +34,6 @@ const generateFullNameTabaxi = ({gender, schema}) => {
   switch (schemaToUse) {
     case ADJECTIVE_NOUN:
       result = generateNameTabaxiSchemeAdjectiveNoun({gender})
-      break
-
-    case NOUN_AT_NOUN:
-      result = generateNameTabaxiSchemeNounAtNoun({gender})
       break
 
     case NOUN_OF_ADJECTIVE_NOUN:

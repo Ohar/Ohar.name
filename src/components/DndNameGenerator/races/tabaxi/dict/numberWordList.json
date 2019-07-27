@@ -18,25 +18,7 @@
     }
   },
   {
-    "type": "single",
-    "female": {
-      "nominative": "Одинокая",
-      "genitive": "Одинокой",
-      "prepositional": "Одиноких"
-    },
-    "male": {
-      "nominative": "Одинокий",
-      "genitive": "Одинокого",
-      "prepositional": "Одиноких"
-    },
-    "middle": {
-      "nominative": "Одинокое",
-      "genitive": "Одинокого",
-      "prepositional": "Одиноких"
-    }
-  },
-  {
-    "type": "dual",
+    "type": "plural",
     "female": {
       "nominative": "Половина",
       "genitive": "Половины",

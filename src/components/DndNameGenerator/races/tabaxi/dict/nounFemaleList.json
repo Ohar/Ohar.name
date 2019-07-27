@@ -132,6 +132,19 @@
   {
     "gender": "female",
     "single": {
+      "nominative": "Куча",
+      "genitive": "Кучи",
+      "prepositional": "Куче"
+    },
+    "plural": {
+      "nominative": "Кучи",
+      "genitive": "Куч",
+      "prepositional": "Кучах"
+    }
+  },
+  {
+    "gender": "female",
+    "single": {
       "nominative": "Ночь",
       "genitive": "Ночи",
       "prepositional": "Ночи"
@@ -593,7 +606,7 @@
     },
     "plural": {
       "nominative": "Полыньи",
-      "genitive": "Полыньей",
+      "genitive": "Полыней",
       "prepositional": "Полыньях"
     }
   },

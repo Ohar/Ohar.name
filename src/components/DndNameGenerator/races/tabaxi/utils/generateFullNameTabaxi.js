@@ -8,7 +8,6 @@ import schemaList, {
   NOUN_OF_NUMBER_ADJECTIVE_NOUN,
   NOUN_OF_NUMBER_NOUN,
   NUMBER_ADJECTIVE_NOUN,
-  NUMBER_NOUN_AT_NOUN,
   NUMBER_NOUN_OF_ADJECTIVE_NOUN,
   NUMBER_NOUN_OF_NOUN,
 } from './../constants/schemaList'
@@ -20,7 +19,6 @@ import generateNameTabaxiSchemeNounOfAdjectiveNoun from './generateBySchemes/gen
 import generateNameTabaxiSchemeNounOfNumberAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeNounOfNumberAdjectiveNoun'
 import generateNameTabaxiSchemeNounOfNumberNoun from './generateBySchemes/generateNameTabaxiSchemeNounOfNumberNoun'
 import generateNameTabaxiSchemeNumberAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeNumberAdjectiveNoun'
-import generateNameTabaxiSchemeNumberNounAtNoun from './generateBySchemes/generateNameTabaxiSchemeNumberNounAtNoun'
 import generateNameTabaxiSchemeNumberNounOfAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeNumberNounOfAdjectiveNoun'
 import generateNameTabaxiSchemeNumberNounOfNoun from './generateBySchemes/generateNameTabaxiSchemeNumberNounOfNoun'
 
@@ -54,9 +52,6 @@ const generateFullNameTabaxi = ({gender, schema}) => {
 
     case NUMBER_ADJECTIVE_NOUN:
       return generateNameTabaxiSchemeNumberAdjectiveNoun({gender})
-
-    case NUMBER_NOUN_AT_NOUN:
-      return generateNameTabaxiSchemeNumberNounAtNoun({gender})
 
     case NUMBER_NOUN_OF_ADJECTIVE_NOUN:
       return generateNameTabaxiSchemeNumberNounOfAdjectiveNoun({gender})

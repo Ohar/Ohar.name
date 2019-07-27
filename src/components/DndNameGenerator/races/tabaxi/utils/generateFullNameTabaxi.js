@@ -31,37 +31,50 @@ const generateFullNameTabaxi = ({gender, schema}) => {
     ).value
     : schema
 
+  let result = ''
+
   switch (schemaToUse) {
     case ADJECTIVE_NOUN:
-      return generateNameTabaxiSchemeAdjectiveNoun({gender})
+      result = generateNameTabaxiSchemeAdjectiveNoun({gender})
+      break
 
     case NOUN_AT_NOUN:
-      return generateNameTabaxiSchemeNounAtNoun({gender})
+      result = generateNameTabaxiSchemeNounAtNoun({gender})
+      break
 
     case NOUN_OF_ADJECTIVE_NOUN:
-      return generateNameTabaxiSchemeNounOfAdjectiveNoun({gender})
+      result = generateNameTabaxiSchemeNounOfAdjectiveNoun({gender})
+      break
 
     case NOUN_OF_NOUN:
-      return generateNameTabaxiSchemeNounOfNoun({gender})
+      result = generateNameTabaxiSchemeNounOfNoun({gender})
+      break
 
     case NOUN_OF_NUMBER_ADJECTIVE_NOUN:
-      return generateNameTabaxiSchemeNounOfNumberAdjectiveNoun({gender})
+      result = generateNameTabaxiSchemeNounOfNumberAdjectiveNoun({gender})
+      break
 
     case NOUN_OF_NUMBER_NOUN:
-      return generateNameTabaxiSchemeNounOfNumberNoun({gender})
+      result = generateNameTabaxiSchemeNounOfNumberNoun({gender})
+      break
 
     case NUMBER_ADJECTIVE_NOUN:
-      return generateNameTabaxiSchemeNumberAdjectiveNoun({gender})
+      result = generateNameTabaxiSchemeNumberAdjectiveNoun({gender})
+      break
 
     case NUMBER_NOUN_OF_ADJECTIVE_NOUN:
-      return generateNameTabaxiSchemeNumberNounOfAdjectiveNoun({gender})
+      result = generateNameTabaxiSchemeNumberNounOfAdjectiveNoun({gender})
+      break
 
     case NUMBER_NOUN_OF_NOUN:
-      return generateNameTabaxiSchemeNumberNounOfNoun({gender})
+      result = generateNameTabaxiSchemeNumberNounOfNoun({gender})
+      break
 
     default:
-      return 'Не готово ¯\\_(ツ)_/¯'
+      result = 'Не готово ¯\\_(ツ)_/¯'
   }
+
+  return result.replace(/\s+/g, ' ')
 }
 
 export default generateFullNameTabaxi

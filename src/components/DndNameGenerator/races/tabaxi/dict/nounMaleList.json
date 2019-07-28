@@ -54,6 +54,19 @@
   {
     "gender": "male",
     "single": {
+      "nominative": "Огонь",
+      "genitive": "Огня",
+      "prepositional": "Огне"
+    },
+    "plural": {
+      "nominative": "Огни",
+      "genitive": "Огней",
+      "prepositional": "Огнях"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
       "nominative": "Гвоздь",
       "genitive": "Гвоздя",
       "prepositional": "Гвозде"
@@ -88,6 +101,45 @@
       "nominative": "Колокола",
       "genitive": "Колоколов",
       "prepositional": "Колоколах"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Нарыв",
+      "genitive": "Нарыва",
+      "prepositional": "Нарыве"
+    },
+    "plural": {
+      "nominative": "Нарыва",
+      "genitive": "Нарывов",
+      "prepositional": "Нарывах"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Гнойник",
+      "genitive": "Гнойника",
+      "prepositional": "Гнойнике"
+    },
+    "plural": {
+      "nominative": "Гнойника",
+      "genitive": "Гнойников",
+      "prepositional": "Гнойниках"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Воздух",
+      "genitive": "Воздуха",
+      "prepositional": "Воздухе"
+    },
+    "plural": {
+      "nominative": "Воздуха",
+      "genitive": "Воздухов",
+      "prepositional": "Воздухах"
     }
   },
   {
@@ -834,6 +886,19 @@
   {
     "gender": "male",
     "single": {
+      "nominative": "Кусок",
+      "genitive": "Куска",
+      "prepositional": "Куске"
+    },
+    "plural": {
+      "nominative": "Куски",
+      "genitive": "Кусков",
+      "prepositional": "Кусках"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
       "nominative": "Притон",
       "genitive": "Притона",
       "prepositional": "Притоне"
@@ -920,6 +985,19 @@
       "nominative": "Обманы",
       "genitive": "Обманов",
       "prepositional": "Обманах"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Свет",
+      "genitive": "Света",
+      "prepositional": "Свете"
+    },
+    "plural": {
+      "nominative": "Светы",
+      "genitive": "Светов",
+      "prepositional": "Светах"
     }
   },
   {
@@ -1024,6 +1102,19 @@
       "nominative": "Башмаки",
       "genitive": "Башмаков",
       "prepositional": "Башмаках"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Пьяница",
+      "genitive": "Пьяницы",
+      "prepositional": "Пьянице"
+    },
+    "plural": {
+      "nominative": "Пьяницы",
+      "genitive": "Пьяниц",
+      "prepositional": "Пьяницах"
     }
   },
   {

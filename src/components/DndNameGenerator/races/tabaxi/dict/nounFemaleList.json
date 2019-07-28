@@ -80,6 +80,19 @@
   {
     "gender": "female",
     "single": {
+      "nominative": "Слежка",
+      "genitive": "Слежки",
+      "prepositional": "Слежке"
+    },
+    "plural": {
+      "nominative": "Слежки",
+      "genitive": "Слежек",
+      "prepositional": "Слежках"
+    }
+  },
+  {
+    "gender": "female",
+    "single": {
       "nominative": "Птица",
       "genitive": "Птицы",
       "prepositional": "Птице"
@@ -262,6 +275,19 @@
   {
     "gender": "female",
     "single": {
+      "nominative": "Засада",
+      "genitive": "Засады",
+      "prepositional": "Засаде"
+    },
+    "plural": {
+      "nominative": "Засады",
+      "genitive": "Засад",
+      "prepositional": "Засадах"
+    }
+  },
+  {
+    "gender": "female",
+    "single": {
       "nominative": "Складка",
       "genitive": "Складки",
       "prepositional": "Складке"
@@ -340,6 +366,32 @@
   {
     "gender": "female",
     "single": {
+      "nominative": "Вода",
+      "genitive": "Воды",
+      "prepositional": "Воде"
+    },
+    "plural": {
+      "nominative": "Воды",
+      "genitive": "Вод",
+      "prepositional": "Водах"
+    }
+  },
+  {
+    "gender": "female",
+    "single": {
+      "nominative": "Земля",
+      "genitive": "Земли",
+      "prepositional": "Земле"
+    },
+    "plural": {
+      "nominative": "Земли",
+      "genitive": "Земель",
+      "prepositional": "Землях"
+    }
+  },
+  {
+    "gender": "female",
+    "single": {
       "nominative": "Сабля",
       "genitive": "Сабли",
       "prepositional": "Сабле"
@@ -413,6 +465,45 @@
       "nominative": "Тропинки",
       "genitive": "Тропинок",
       "prepositional": "Тропинках"
+    }
+  },
+  {
+    "gender": "female",
+    "single": {
+      "nominative": "Наживка",
+      "genitive": "Наживки",
+      "prepositional": "Наживке"
+    },
+    "plural": {
+      "nominative": "Наживки",
+      "genitive": "Наживок",
+      "prepositional": "Наживках"
+    }
+  },
+  {
+    "gender": "female",
+    "single": {
+      "nominative": "Уборка",
+      "genitive": "Уборки",
+      "prepositional": "Уборке"
+    },
+    "plural": {
+      "nominative": "Уборки",
+      "genitive": "Уборок",
+      "prepositional": "Уборках"
+    }
+  },
+  {
+    "gender": "female",
+    "single": {
+      "nominative": "Топка",
+      "genitive": "Топки",
+      "prepositional": "Топке"
+    },
+    "plural": {
+      "nominative": "Топки",
+      "genitive": "Топок",
+      "prepositional": "Топках"
     }
   },
   {

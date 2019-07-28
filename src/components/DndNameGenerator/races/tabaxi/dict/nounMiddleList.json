@@ -28,6 +28,19 @@
   {
     "gender": "middle",
     "single": {
+      "nominative": "Дверь",
+      "genitive": "Двери",
+      "prepositional": "Двери"
+    },
+    "plural": {
+      "nominative": "Двери",
+      "genitive": "Дверей",
+      "prepositional": "Дверях"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
       "nominative": "Вино",
       "genitive": "Вина",
       "prepositional": "Вине"
@@ -93,6 +106,58 @@
   {
     "gender": "middle",
     "single": {
+      "nominative": "Горе",
+      "genitive": "Горя",
+      "prepositional": "Горе"
+    },
+    "plural": {
+      "nominative": "Беды",
+      "genitive": "Бед",
+      "prepositional": "Бедах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Беда",
+      "genitive": "Беды",
+      "prepositional": "Беде"
+    },
+    "plural": {
+      "nominative": "Беды",
+      "genitive": "Бед",
+      "prepositional": "Бедах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Плечо",
+      "genitive": "Плеча",
+      "prepositional": "Плече"
+    },
+    "plural": {
+      "nominative": "Плечи",
+      "genitive": "Плеч",
+      "prepositional": "Плечах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Бедро",
+      "genitive": "Бедра",
+      "prepositional": "Бедре"
+    },
+    "plural": {
+      "nominative": "Бёдра",
+      "genitive": "Бёдер",
+      "prepositional": "Бёдрах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
       "nominative": "Побережье",
       "genitive": "Побережья",
       "prepositional": "Побережье"
@@ -132,14 +197,14 @@
   {
     "gender": "middle",
     "single": {
-      "nominative": "Устье",
-      "genitive": "Устья",
-      "prepositional": "Устье"
+      "nominative": "Желание",
+      "genitive": "Желания",
+      "prepositional": "Желании"
     },
     "plural": {
-      "nominative": "Устья",
-      "genitive": "Устий",
-      "prepositional": "Устьях"
+      "nominative": "Желания",
+      "genitive": "Желаний",
+      "prepositional": "Желаниях"
     }
   },
   {
@@ -192,6 +257,19 @@
       "nominative": "Дрова",
       "genitive": "Дров",
       "prepositional": "Дровах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Окно",
+      "genitive": "Окна",
+      "prepositional": "Окне"
+    },
+    "plural": {
+      "nominative": "Окна",
+      "genitive": "Окон",
+      "prepositional": "Окнах"
     }
   },
   {

@@ -54,6 +54,19 @@
   {
     "gender": "middle",
     "single": {
+      "nominative": "Одеяло ",
+      "genitive": "Одеяла",
+      "prepositional": "Одеяле"
+    },
+    "plural": {
+      "nominative": "Одеяла",
+      "genitive": "Одеял",
+      "prepositional": "Одеялах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
       "nominative": "Болото",
       "genitive": "Болота",
       "prepositional": "Болоте"
@@ -62,6 +75,19 @@
       "nominative": "Болота",
       "genitive": "Болот",
       "prepositional": "Болотах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Ухо",
+      "genitive": "Уха",
+      "prepositional": "Ухе"
+    },
+    "plural": {
+      "nominative": "Уши",
+      "genitive": "Ушей",
+      "prepositional": "Ушах"
     }
   },
   {
@@ -93,6 +119,19 @@
   {
     "gender": "middle",
     "single": {
+      "nominative": "Бревно",
+      "genitive": "Бревна",
+      "prepositional": "Бревне"
+    },
+    "plural": {
+      "nominative": "Брёвна",
+      "genitive": "Брёвен",
+      "prepositional": "Брёвнах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
       "nominative": "Горе",
       "genitive": "Горя",
       "prepositional": "Горе"
@@ -114,6 +153,32 @@
       "nominative": "Беды",
       "genitive": "Бед",
       "prepositional": "Бедах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Желание",
+      "genitive": "Желания",
+      "prepositional": "Желании"
+    },
+    "plural": {
+      "nominative": "Желания",
+      "genitive": "Желаний",
+      "prepositional": "Желаниях"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Укрытие",
+      "genitive": "Укрытия",
+      "prepositional": "Укрытии"
+    },
+    "plural": {
+      "nominative": "Укрытия",
+      "genitive": "Укрытий",
+      "prepositional": "Укрытиях"
     }
   },
   {
@@ -257,6 +322,19 @@
       "nominative": "Окна",
       "genitive": "Окон",
       "prepositional": "Окнах"
+    }
+  },
+  {
+    "gender": "middle",
+    "single": {
+      "nominative": "Слово",
+      "genitive": "Слова",
+      "prepositional": "Слове"
+    },
+    "plural": {
+      "nominative": "Слова",
+      "genitive": "Слов",
+      "prepositional": "Словах"
     }
   },
   {

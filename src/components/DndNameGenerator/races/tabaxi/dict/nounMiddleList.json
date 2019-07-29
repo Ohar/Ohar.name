@@ -28,19 +28,6 @@
   {
     "gender": "middle",
     "single": {
-      "nominative": "Дверь",
-      "genitive": "Двери",
-      "prepositional": "Двери"
-    },
-    "plural": {
-      "nominative": "Двери",
-      "genitive": "Дверей",
-      "prepositional": "Дверях"
-    }
-  },
-  {
-    "gender": "middle",
-    "single": {
       "nominative": "Вино",
       "genitive": "Вина",
       "prepositional": "Вине"

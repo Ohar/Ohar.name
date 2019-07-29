@@ -457,6 +457,32 @@
   {
     "gender": "female",
     "single": {
+      "nominative": "Река",
+      "genitive": "Рекы",
+      "prepositional": "Реке"
+    },
+    "plural": {
+      "nominative": "Рекы",
+      "genitive": "Рек",
+      "prepositional": "Реках"
+    }
+  },
+  {
+    "gender": "female",
+    "single": {
+      "nominative": "Забава",
+      "genitive": "Забавы",
+      "prepositional": "Забаве"
+    },
+    "plural": {
+      "nominative": "Забавы",
+      "genitive": "Забав",
+      "prepositional": "Забавах"
+    }
+  },
+  {
+    "gender": "female",
+    "single": {
       "nominative": "Тропа",
       "genitive": "Тропы",
       "prepositional": "Тропе"

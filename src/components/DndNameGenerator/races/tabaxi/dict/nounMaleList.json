@@ -691,6 +691,19 @@
   {
     "gender": "male",
     "single": {
+      "nominative": "Пот",
+      "genitive": "Пота",
+      "prepositional": "Поте"
+    },
+    "plural": {
+      "nominative": "Поты",
+      "genitive": "Потов",
+      "prepositional": "Потах"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
       "nominative": "Кряж",
       "genitive": "Кряжа",
       "prepositional": "Кряже"
@@ -829,6 +842,32 @@
       "nominative": "Запасы",
       "genitive": "Запасов",
       "prepositional": "Запасах"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Запах",
+      "genitive": "Запаха",
+      "prepositional": "Запахе"
+    },
+    "plural": {
+      "nominative": "Запахы",
+      "genitive": "Запахов",
+      "prepositional": "Запахах"
+    }
+  },
+  {
+    "gender": "male",
+    "single": {
+      "nominative": "Аромат",
+      "genitive": "Аромата",
+      "prepositional": "Аромате"
+    },
+    "plural": {
+      "nominative": "Ароматы",
+      "genitive": "Ароматов",
+      "prepositional": "Ароматах"
     }
   },
   {

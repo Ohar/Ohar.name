@@ -128,24 +128,6 @@
   {
     "type": "plural",
     "female": {
-      "nominative": "Пяток",
-      "genitive": "Пятка",
-      "prepositional": "Пятке"
-    },
-    "male": {
-      "nominative": "Пяток",
-      "genitive": "Пятка",
-      "prepositional": "Пятке"
-    },
-    "middle": {
-      "nominative": "Пяток",
-      "genitive": "Пятка",
-      "prepositional": "Пятке"
-    }
-  },
-  {
-    "type": "plural",
-    "female": {
       "nominative": "Шесть",
       "genitive": "Шести",
       "prepositional": "Шести"

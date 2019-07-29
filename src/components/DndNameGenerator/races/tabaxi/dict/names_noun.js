@@ -1,11 +1,13 @@
+import mapGender from './../utils/mapGender'
+
 import nounFemaleList from './nounFemaleList'
 import nounMaleList from './nounMaleList'
 import nounMiddleList from './nounMiddleList'
 
 export default [
-  ...nounFemaleList,
-  ...nounMaleList,
-  ...nounMiddleList,
+  ...nounFemaleList.map(mapGender('female')),
+  ...nounMaleList.map(mapGender('male')),
+  ...nounMiddleList.map(mapGender('middle')),
 ].map(
   ({ single, plural, ...rest }) => ({
     ...rest,

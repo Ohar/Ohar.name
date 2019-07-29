@@ -1,6 +1,5 @@
 [
   {
-    "gender": "middle",
     "single": {
       "nominative": "Дерево",
       "genitive": "Дерева",
@@ -13,7 +12,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Облако",
       "genitive": "Облака",
@@ -26,7 +24,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Вино",
       "genitive": "Вина",
@@ -39,7 +36,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Зеркало ",
       "genitive": "Зеркала",
@@ -52,7 +48,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Одеяло ",
       "genitive": "Одеяла",
@@ -65,7 +60,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Болото",
       "genitive": "Болота",
@@ -78,7 +72,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Ухо",
       "genitive": "Уха",
@@ -91,7 +84,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Логово",
       "genitive": "Логова",
@@ -104,7 +96,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Ребро",
       "genitive": "Ребра",
@@ -117,7 +108,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Бревно",
       "genitive": "Бревна",
@@ -130,7 +120,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Горе",
       "genitive": "Горя",
@@ -143,7 +132,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Беда",
       "genitive": "Беды",
@@ -156,7 +144,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Желание",
       "genitive": "Желания",
@@ -169,7 +156,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Укрытие",
       "genitive": "Укрытия",
@@ -182,7 +168,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Плечо",
       "genitive": "Плеча",
@@ -195,7 +180,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Бедро",
       "genitive": "Бедра",
@@ -208,7 +192,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Побережье",
       "genitive": "Побережья",
@@ -221,7 +204,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Копьё",
       "genitive": "Копья",
@@ -234,7 +216,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Шатание",
       "genitive": "Шатания",
@@ -247,7 +228,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Желание",
       "genitive": "Желания",
@@ -260,7 +240,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Спокойствие",
       "genitive": "Спокойствия",
@@ -273,7 +252,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Безмолвие",
       "genitive": "Безмолвия",
@@ -286,7 +264,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Озеро",
       "genitive": "Озера",
@@ -299,7 +276,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Полено",
       "genitive": "Полена",
@@ -312,7 +288,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Окно",
       "genitive": "Окна",
@@ -325,7 +300,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Слово",
       "genitive": "Слова",
@@ -338,7 +312,6 @@
     }
   },
   {
-    "gender": "middle",
     "single": {
       "nominative": "Поле",
       "genitive": "Поля",

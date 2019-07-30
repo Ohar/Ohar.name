@@ -277,6 +277,18 @@
   },
   {
     "single": {
+      "nominative": "Тайник",
+      "genitive": "Тайника",
+      "prepositional": "Тайнике"
+    },
+    "plural": {
+      "nominative": "Тайника",
+      "genitive": "Тайников",
+      "prepositional": "Тайниках"
+    }
+  },
+  {
+    "single": {
       "nominative": "Воздух",
       "genitive": "Воздуха",
       "prepositional": "Воздухе"
@@ -1609,6 +1621,18 @@
   },
   {
     "single": {
+      "nominative": "Бант",
+      "genitive": "Банта",
+      "prepositional": "Банте"
+    },
+    "plural": {
+      "nominative": "Банты",
+      "genitive": "Бантов",
+      "prepositional": "Бантах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Змей",
       "genitive": "Змея",
       "prepositional": "Змее"
@@ -1677,6 +1701,18 @@
       "nominative": "Замки",
       "genitive": "Замков",
       "prepositional": "Замках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Коршун",
+      "genitive": "Коршуна",
+      "prepositional": "Коршуне"
+    },
+    "plural": {
+      "nominative": "Коршуны",
+      "genitive": "Коршунов",
+      "prepositional": "Коршунах"
     }
   },
   {

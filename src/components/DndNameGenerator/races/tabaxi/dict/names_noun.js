@@ -385,11 +385,4 @@ var nm3 = [
   'Guide',
   'Hen',
   'Hide',
-  'Honey',
-  'Ice',
-  'Ink',
-  'Jewel',
-  'Kite',
-  'Knot',
-  'Lace'
 ]

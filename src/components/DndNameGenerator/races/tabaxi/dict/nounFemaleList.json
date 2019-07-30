@@ -1872,6 +1872,18 @@
   },
   {
     "single": {
+      "nominative": "Шишка",
+      "genitive": "Шишки",
+      "prepositional": "Шишке"
+    },
+    "plural": {
+      "nominative": "Шишки",
+      "genitive": "Шишек",
+      "prepositional": "Шишках"
+    }
+  },
+  {
+    "single": {
       "nominative": "Поэма",
       "genitive": "Поэмы",
       "prepositional": "Поэме"
@@ -1880,6 +1892,18 @@
       "nominative": "Поэмы",
       "genitive": "Поэм",
       "prepositional": "Поэмах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Шкура",
+      "genitive": "Шкуры",
+      "prepositional": "Шкуре"
+    },
+    "plural": {
+      "nominative": "Шкуры",
+      "genitive": "Шкур",
+      "prepositional": "Шкурах"
     }
   },
   {

@@ -582,6 +582,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Дутая",
+        "genitive": "Дутой"
+      },
+      "male": {
+        "nominative": "Дутый",
+        "genitive": "Дутого",
+        "prepositional": "Дутом"
+      },
+      "middle": {
+        "nominative": "Дутое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Дутые",
+      "genitive": "Дутых"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Забытая",
         "genitive": "Забытой"
       },
@@ -2917,6 +2937,46 @@
     "dualFemale": {
       "nominative": "Бесшумные",
       "genitive": "Бесшумных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Бесполезная",
+        "genitive": "Бесполезной"
+      },
+      "male": {
+        "nominative": "Бесполезный",
+        "genitive": "Бесполезного",
+        "prepositional": "Бесполезном"
+      },
+      "middle": {
+        "nominative": "Бесполезное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Бесполезные",
+      "genitive": "Бесполезных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Чернильная",
+        "genitive": "Чернильной"
+      },
+      "male": {
+        "nominative": "Чернильный",
+        "genitive": "Чернильного",
+        "prepositional": "Чернильном"
+      },
+      "middle": {
+        "nominative": "Чернильное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Чернильные",
+      "genitive": "Чернильных"
     }
   },
   {

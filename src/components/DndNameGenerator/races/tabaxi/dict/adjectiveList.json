@@ -142,6 +142,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Бескрайняя",
+        "genitive": "Бескрайней"
+      },
+      "male": {
+        "nominative": "Бескрайний",
+        "genitive": "Бескрайнего",
+        "prepositional": "Бескрайнем"
+      },
+      "middle": {
+        "nominative": "Бескрайнее"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Бескрайние",
+      "genitive": "Бескрайних"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Кривая",
         "genitive": "Кривой"
       },
@@ -217,6 +237,26 @@
     "dualFemale": {
       "nominative": "Смешные",
       "genitive": "Смешных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Сплошная",
+        "genitive": "Сплошной"
+      },
+      "male": {
+        "nominative": "Сплошной",
+        "genitive": "Сплошного",
+        "prepositional": "Сплошном"
+      },
+      "middle": {
+        "nominative": "Сплошное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Сплошные",
+      "genitive": "Сплошных"
     }
   },
   {
@@ -448,7 +488,7 @@
       "male": {
         "nominative": "Сизый",
         "genitive": "Сизого",
-        "prepositional": "Сизым"
+        "prepositional": "Сизом"
       },
       "middle": {
         "nominative": "Сизое"
@@ -462,13 +502,33 @@
   {
     "single": {
       "female": {
+        "nominative": "Твёрдая",
+        "genitive": "Твёрдой"
+      },
+      "male": {
+        "nominative": "Твёрдый",
+        "genitive": "Твёрдого",
+        "prepositional": "Твёрдом"
+      },
+      "middle": {
+        "nominative": "Твёрдое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Твёрдые",
+      "genitive": "Твёрдых"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Забавная",
         "genitive": "Забавной"
       },
       "male": {
         "nominative": "Забавный",
         "genitive": "Забавного",
-        "prepositional": "Забавным"
+        "prepositional": "Забавном"
       },
       "middle": {
         "nominative": "Забавное"
@@ -482,13 +542,33 @@
   {
     "single": {
       "female": {
+        "nominative": "Забытая",
+        "genitive": "Забытой"
+      },
+      "male": {
+        "nominative": "Забытый",
+        "genitive": "Забытого",
+        "prepositional": "Забытом"
+      },
+      "middle": {
+        "nominative": "Забытое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Забытые",
+      "genitive": "Забытых"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Добрая",
         "genitive": "Доброй"
       },
       "male": {
         "nominative": "Добрый",
         "genitive": "Доброго",
-        "prepositional": "Добрым"
+        "prepositional": "Добром"
       },
       "middle": {
         "nominative": "Доброе"
@@ -497,6 +577,26 @@
     "dualFemale": {
       "nominative": "Добрые",
       "genitive": "Добрых"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Брошенная",
+        "genitive": "Брошенной"
+      },
+      "male": {
+        "nominative": "Брошенный",
+        "genitive": "Брошенного",
+        "prepositional": "Брошенном"
+      },
+      "middle": {
+        "nominative": "Брошенное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Брошенные",
+      "genitive": "Брошенных"
     }
   },
   {
@@ -588,7 +688,7 @@
       "male": {
         "nominative": "Чистый",
         "genitive": "Чистого",
-        "prepositional": "Чистым"
+        "prepositional": "Чистом"
       },
       "middle": {
         "nominative": "Чистое"
@@ -608,7 +708,7 @@
       "male": {
         "nominative": "Старый",
         "genitive": "Старого",
-        "prepositional": "Старым"
+        "prepositional": "Старом"
       },
       "middle": {
         "nominative": "Старое"
@@ -628,7 +728,7 @@
       "male": {
         "nominative": "Искусный",
         "genitive": "Искусного",
-        "prepositional": "Искусным"
+        "prepositional": "Искусном"
       },
       "middle": {
         "nominative": "Искусное"
@@ -648,7 +748,7 @@
       "male": {
         "nominative": "Путаный",
         "genitive": "Путаного",
-        "prepositional": "Путаным"
+        "prepositional": "Путаном"
       },
       "middle": {
         "nominative": "Путаное"
@@ -668,7 +768,7 @@
       "male": {
         "nominative": "Странный",
         "genitive": "Странного",
-        "prepositional": "Странным"
+        "prepositional": "Странном"
       },
       "middle": {
         "nominative": "Странное"
@@ -688,7 +788,7 @@
       "male": {
         "nominative": "Сильный",
         "genitive": "Сильного",
-        "prepositional": "Сильным"
+        "prepositional": "Сильном"
       },
       "middle": {
         "nominative": "Сильное"
@@ -708,7 +808,7 @@
       "male": {
         "nominative": "Волшебный",
         "genitive": "Волшебного",
-        "prepositional": "Волшебным"
+        "prepositional": "Волшебном"
       },
       "middle": {
         "nominative": "Волшебное"
@@ -728,7 +828,7 @@
       "male": {
         "nominative": "Вольный",
         "genitive": "Вольного",
-        "prepositional": "Вольным"
+        "prepositional": "Вольном"
       },
       "middle": {
         "nominative": "Вольное"
@@ -937,6 +1037,26 @@
     "dualFemale": {
       "nominative": "Шумные",
       "genitive": "Шумных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Умная",
+        "genitive": "Умной"
+      },
+      "male": {
+        "nominative": "Умный",
+        "genitive": "Умного",
+        "prepositional": "Умном"
+      },
+      "middle": {
+        "nominative": "Умное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Умные",
+      "genitive": "Умных"
     }
   },
   {
@@ -1222,6 +1342,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Распутная",
+        "genitive": "Распутной"
+      },
+      "male": {
+        "nominative": "Распутный",
+        "genitive": "Распутного",
+        "prepositional": "Распутном"
+      },
+      "middle": {
+        "nominative": "Распутное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Распутные",
+      "genitive": "Распутных"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Тусклая",
         "genitive": "Тусклой"
       },
@@ -1502,6 +1642,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Медленная",
+        "genitive": "Медленной"
+      },
+      "male": {
+        "nominative": "Медленный",
+        "genitive": "Медленного",
+        "prepositional": "Медленном"
+      },
+      "middle": {
+        "nominative": "Медленное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Медленные",
+      "genitive": "Медленных"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Стальная",
         "genitive": "Стальной"
       },
@@ -1557,6 +1717,26 @@
     "dualFemale": {
       "nominative": "Спокойные",
       "genitive": "Спокойных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Покинутая",
+        "genitive": "Покинутой"
+      },
+      "male": {
+        "nominative": "Покинутый",
+        "genitive": "Покинутого",
+        "prepositional": "Покинутом"
+      },
+      "middle": {
+        "nominative": "Покинутое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Покинутые",
+      "genitive": "Покинутых"
     }
   },
   {
@@ -1737,6 +1917,66 @@
     "dualFemale": {
       "nominative": "Чопорные",
       "genitive": "Чопорных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Заветная",
+        "genitive": "Заветной"
+      },
+      "male": {
+        "nominative": "Заветный",
+        "genitive": "Заветного",
+        "prepositional": "Заветном"
+      },
+      "middle": {
+        "nominative": "Заветное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Заветные",
+      "genitive": "Заветных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Ветренная",
+        "genitive": "Ветренной"
+      },
+      "male": {
+        "nominative": "Ветренный",
+        "genitive": "Ветренного",
+        "prepositional": "Ветренном"
+      },
+      "middle": {
+        "nominative": "Ветренное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Ветренные",
+      "genitive": "Ветренных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Переменчивая",
+        "genitive": "Переменчивой"
+      },
+      "male": {
+        "nominative": "Переменчивый",
+        "genitive": "Переменчивого",
+        "prepositional": "Переменчивом"
+      },
+      "middle": {
+        "nominative": "Переменчивое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Переменчивые",
+      "genitive": "Переменчивых"
     }
   },
   {
@@ -2402,6 +2642,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Снежная",
+        "genitive": "Снежной"
+      },
+      "male": {
+        "nominative": "Снежный",
+        "genitive": "Снежного",
+        "prepositional": "Снежном"
+      },
+      "middle": {
+        "nominative": "Снежное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Снежные",
+      "genitive": "Снежних"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Укромная",
         "genitive": "Укромной"
       },
@@ -2942,6 +3202,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Древняя",
+        "genitive": "Древней"
+      },
+      "male": {
+        "nominative": "Древний",
+        "genitive": "Древнего",
+        "prepositional": "Древнем"
+      },
+      "middle": {
+        "nominative": "Древнее"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Древние",
+      "genitive": "Древних"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Резкая",
         "genitive": "Резкой"
       },
@@ -3237,6 +3517,26 @@
     "dualFemale": {
       "nominative": "Огромные",
       "genitive": "Огромных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Ледяная",
+        "genitive": "Ледяной"
+      },
+      "male": {
+        "nominative": "Ледяной",
+        "genitive": "Ледяного",
+        "prepositional": "Ледяном"
+      },
+      "middle": {
+        "nominative": "Ледяное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Ледяные",
+      "genitive": "Ледяных"
     }
   },
   {
@@ -3982,6 +4282,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Греющая",
+        "genitive": "Греющей"
+      },
+      "male": {
+        "nominative": "Греющий",
+        "genitive": "Греющего",
+        "prepositional": "Греющем"
+      },
+      "middle": {
+        "nominative": "Греющее"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Греющие",
+      "genitive": "Греющих"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Горящая",
         "genitive": "Горящей"
       },
@@ -4097,6 +4417,66 @@
     "dualFemale": {
       "nominative": "Шатающиеся",
       "genitive": "Шатающихся"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Начинающийся",
+        "genitive": "Начинающаяся"
+      },
+      "male": {
+        "nominative": "Начинающийся",
+        "genitive": "Начинающегося",
+        "prepositional": "Начинающемся"
+      },
+      "middle": {
+        "nominative": "Начинающееся"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Начинающиеся",
+      "genitive": "Начинающихся"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Поднимающийся",
+        "genitive": "Поднимающаяся"
+      },
+      "male": {
+        "nominative": "Поднимающийся",
+        "genitive": "Поднимающегося",
+        "prepositional": "Поднимающемся"
+      },
+      "middle": {
+        "nominative": "Поднимающееся"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Поднимающиеся",
+      "genitive": "Поднимающихся"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Свежий",
+        "genitive": "Свежая"
+      },
+      "male": {
+        "nominative": "Свежий",
+        "genitive": "Свежего",
+        "prepositional": "Свежем"
+      },
+      "middle": {
+        "nominative": "Свежее"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Свежие",
+      "genitive": "Свежих"
     }
   },
   {
@@ -4662,6 +5042,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Скорая",
+        "genitive": "Скорой"
+      },
+      "male": {
+        "nominative": "Скорый",
+        "genitive": "Скорого",
+        "prepositional": "Скором"
+      },
+      "middle": {
+        "nominative": "Скорое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Скорые",
+      "genitive": "Скорых"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Наглая",
         "genitive": "Наглой"
       },
@@ -4902,6 +5302,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Проворная",
+        "genitive": "Проворной"
+      },
+      "male": {
+        "nominative": "Проворный",
+        "genitive": "Проворного",
+        "prepositional": "Проворном"
+      },
+      "middle": {
+        "nominative": "Проворное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Проворные",
+      "genitive": "Проворных"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Простая",
         "genitive": "Простой"
       },
@@ -4962,6 +5382,66 @@
   {
     "single": {
       "female": {
+        "nominative": "Оживлённая",
+        "genitive": "Оживлённой"
+      },
+      "male": {
+        "nominative": "Оживлённый",
+        "genitive": "Оживлённого",
+        "prepositional": "Оживлённом"
+      },
+      "middle": {
+        "nominative": "Оживлённое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Оживлённые",
+      "genitive": "Оживлённых"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Сломаная",
+        "genitive": "Сломаной"
+      },
+      "male": {
+        "nominative": "Сломаный",
+        "genitive": "Сломаного",
+        "prepositional": "Сломаном"
+      },
+      "middle": {
+        "nominative": "Сломаное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Сломаные",
+      "genitive": "Сломаных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Ломаная",
+        "genitive": "Ломаной"
+      },
+      "male": {
+        "nominative": "Ломаный",
+        "genitive": "Ломаного",
+        "prepositional": "Ломаном"
+      },
+      "middle": {
+        "nominative": "Ломаное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Ломаные",
+      "genitive": "Ломаных"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Прекрасная",
         "genitive": "Прекрасной"
       },
@@ -4977,6 +5457,26 @@
     "dualFemale": {
       "nominative": "Прекрасные",
       "genitive": "Прекрасных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Разбитая",
+        "genitive": "Разбитой"
+      },
+      "male": {
+        "nominative": "Разбитый",
+        "genitive": "Разбитого",
+        "prepositional": "Разбитом"
+      },
+      "middle": {
+        "nominative": "Разбитое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Разбитые",
+      "genitive": "Разбитых"
     }
   },
   {
@@ -5082,6 +5582,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Осознанная",
+        "genitive": "Осознанной"
+      },
+      "male": {
+        "nominative": "Осознанный",
+        "genitive": "Осознанного",
+        "prepositional": "Осознанном"
+      },
+      "middle": {
+        "nominative": "Осознанное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Осознанные",
+      "genitive": "Осознанных"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Гибкая",
         "genitive": "Гибкой"
       },
@@ -5097,6 +5617,26 @@
     "dualFemale": {
       "nominative": "Гибкие",
       "genitive": "Гибких"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Юркая",
+        "genitive": "Юркой"
+      },
+      "male": {
+        "nominative": "Юркий",
+        "genitive": "Юркого",
+        "prepositional": "Юрком"
+      },
+      "middle": {
+        "nominative": "Юркое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Юркие",
+      "genitive": "Юрких"
     }
   },
   {
@@ -5182,6 +5722,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Шипучая",
+        "genitive": "Шипучей"
+      },
+      "male": {
+        "nominative": "Шипучий",
+        "genitive": "Шипучего",
+        "prepositional": "Шипучем"
+      },
+      "middle": {
+        "nominative": "Шипучее"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Шипучие",
+      "genitive": "Шипучих"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Одинокая",
         "genitive": "Одинокой"
       },
@@ -5257,6 +5817,26 @@
     "dualFemale": {
       "nominative": "Бегущие",
       "genitive": "Бегущих"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Цветущая",
+        "genitive": "Цветущей"
+      },
+      "male": {
+        "nominative": "Цветущий",
+        "genitive": "Цветущего",
+        "prepositional": "Цветущем"
+      },
+      "middle": {
+        "nominative": "Цветущее"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Цветущие",
+      "genitive": "Цветущих"
     }
   },
   {
@@ -5362,6 +5942,46 @@
   {
     "single": {
       "female": {
+        "nominative": "Верная",
+        "genitive": "Верной"
+      },
+      "male": {
+        "nominative": "Верный",
+        "genitive": "Верного",
+        "prepositional": "Верном"
+      },
+      "middle": {
+        "nominative": "Верное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Верные",
+      "genitive": "Верных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Коварная",
+        "genitive": "Коварной"
+      },
+      "male": {
+        "nominative": "Коварный",
+        "genitive": "Коварного",
+        "prepositional": "Коварном"
+      },
+      "middle": {
+        "nominative": "Коварное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Коварные",
+      "genitive": "Коварных"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Безупречная",
         "genitive": "Безупречной"
       },
@@ -5397,6 +6017,26 @@
     "dualFemale": {
       "nominative": "Насыщенные",
       "genitive": "Насыщенных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Настороженная",
+        "genitive": "Настороженной"
+      },
+      "male": {
+        "nominative": "Настороженный",
+        "genitive": "Настороженного",
+        "prepositional": "Настороженном"
+      },
+      "middle": {
+        "nominative": "Настороженное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Настороженные",
+      "genitive": "Настороженных"
     }
   },
   {
@@ -5637,6 +6277,46 @@
     "dualFemale": {
       "nominative": "Небесные",
       "genitive": "Небесных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Бесцветная",
+        "genitive": "Бесцветной"
+      },
+      "male": {
+        "nominative": "Бесцветный",
+        "genitive": "Бесцветного",
+        "prepositional": "Бесцветном"
+      },
+      "middle": {
+        "nominative": "Бесцветное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Бесцветные",
+      "genitive": "Бесцветных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Бессмысленная",
+        "genitive": "Бессмысленной"
+      },
+      "male": {
+        "nominative": "Бессмысленный",
+        "genitive": "Бессмысленного",
+        "prepositional": "Бессмысленном"
+      },
+      "middle": {
+        "nominative": "Бессмысленное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Бессмысленные",
+      "genitive": "Бессмысленных"
     }
   },
   {

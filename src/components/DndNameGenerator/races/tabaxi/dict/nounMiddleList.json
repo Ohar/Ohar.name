@@ -133,6 +133,18 @@
   },
   {
     "single": {
+      "nominative": "Дыхание",
+      "genitive": "Дыхания",
+      "prepositional": "Дыхание"
+    },
+    "plural": {
+      "nominative": "Дыхания",
+      "genitive": "Дыханий",
+      "prepositional": "Дыханиях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Беда",
       "genitive": "Беды",
       "prepositional": "Беде"
@@ -177,6 +189,18 @@
       "nominative": "Плечи",
       "genitive": "Плеч",
       "prepositional": "Плечах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Крыло",
+      "genitive": "Крыла",
+      "prepositional": "Крыле"
+    },
+    "plural": {
+      "nominative": "Крылья",
+      "genitive": "Крыльев",
+      "prepositional": "Крыльях"
     }
   },
   {
@@ -309,6 +333,30 @@
       "nominative": "Слова",
       "genitive": "Слов",
       "prepositional": "Словах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Чудо",
+      "genitive": "Чуда",
+      "prepositional": "Чуде"
+    },
+    "plural": {
+      "nominative": "Чудеса",
+      "genitive": "Чудес",
+      "prepositional": "Чудесах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Мычание",
+      "genitive": "Мычания",
+      "prepositional": "Мычании"
+    },
+    "plural": {
+      "nominative": "Мычания",
+      "genitive": "Мычаний",
+      "prepositional": "Мычаниях"
     }
   },
   {

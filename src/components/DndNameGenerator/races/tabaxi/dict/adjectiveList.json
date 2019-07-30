@@ -542,6 +542,46 @@
   {
     "single": {
       "female": {
+        "nominative": "Нервная",
+        "genitive": "Нервной"
+      },
+      "male": {
+        "nominative": "Нервный",
+        "genitive": "Нервного",
+        "prepositional": "Нервном"
+      },
+      "middle": {
+        "nominative": "Нервное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Нервные",
+      "genitive": "Нервных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Надутая",
+        "genitive": "Надутой"
+      },
+      "male": {
+        "nominative": "Надутый",
+        "genitive": "Надутого",
+        "prepositional": "Надутом"
+      },
+      "middle": {
+        "nominative": "Надутое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Надутые",
+      "genitive": "Надутых"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Забытая",
         "genitive": "Забытой"
       },
@@ -677,6 +717,26 @@
     "dualFemale": {
       "nominative": "Широкие",
       "genitive": "Широких"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Косая",
+        "genitive": "Косой"
+      },
+      "male": {
+        "nominative": "Косой",
+        "genitive": "Косого",
+        "prepositional": "Косом"
+      },
+      "middle": {
+        "nominative": "Косое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Косые",
+      "genitive": "Косых"
     }
   },
   {
@@ -2202,6 +2262,46 @@
   {
     "single": {
       "female": {
+        "nominative": "Храбрая",
+        "genitive": "Храброй"
+      },
+      "male": {
+        "nominative": "Храбрый",
+        "genitive": "Храброго",
+        "prepositional": "Храбром"
+      },
+      "middle": {
+        "nominative": "Храброе"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Храбрые",
+      "genitive": "Храбрых"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Трусливая",
+        "genitive": "Трусливой"
+      },
+      "male": {
+        "nominative": "Трусливый",
+        "genitive": "Трусливого",
+        "prepositional": "Трусливом"
+      },
+      "middle": {
+        "nominative": "Трусливое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Трусливые",
+      "genitive": "Трусливых"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Хитрая",
         "genitive": "Хитрой"
       },
@@ -2342,6 +2442,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Морская",
+        "genitive": "Морской"
+      },
+      "male": {
+        "nominative": "Морской",
+        "genitive": "Морского",
+        "prepositional": "Морском"
+      },
+      "middle": {
+        "nominative": "Морское"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Морские",
+      "genitive": "Морских"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Любящая",
         "genitive": "Любящой"
       },
@@ -2477,6 +2597,26 @@
     "dualFemale": {
       "nominative": "Трезвые",
       "genitive": "Трезвых"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Тревожная",
+        "genitive": "Тревожной"
+      },
+      "male": {
+        "nominative": "Тревожный",
+        "genitive": "Тревожного",
+        "prepositional": "Тревожном"
+      },
+      "middle": {
+        "nominative": "Тревожное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Тревожные",
+      "genitive": "Тревожных"
     }
   },
   {
@@ -2782,6 +2922,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Свисающая",
+        "genitive": "Свисающей"
+      },
+      "male": {
+        "nominative": "Свисающий",
+        "genitive": "Свисающего",
+        "prepositional": "Свисающем"
+      },
+      "middle": {
+        "nominative": "Свисающее"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Свисающие",
+      "genitive": "Свисающих"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Светлая",
         "genitive": "Светлой"
       },
@@ -2837,6 +2997,26 @@
     "dualFemale": {
       "nominative": "Свободные",
       "genitive": "Свободных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Обманчивая",
+        "genitive": "Обманчивой"
+      },
+      "male": {
+        "nominative": "Обманчивый",
+        "genitive": "Обманчивого",
+        "prepositional": "Обманчивом"
+      },
+      "middle": {
+        "nominative": "Обманчивое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Обманчивые",
+      "genitive": "Обманчивых"
     }
   },
   {
@@ -3797,6 +3977,26 @@
     "dualFemale": {
       "nominative": "Солёные",
       "genitive": "Солёных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Соломенная",
+        "genitive": "Соломенной"
+      },
+      "male": {
+        "nominative": "Соломенный",
+        "genitive": "Соломенного",
+        "prepositional": "Соломенном"
+      },
+      "middle": {
+        "nominative": "Соломенное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Соломенные",
+      "genitive": "Соломенных"
     }
   },
   {

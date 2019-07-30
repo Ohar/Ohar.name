@@ -13,6 +13,18 @@
   },
   {
     "single": {
+      "nominative": "Древо",
+      "genitive": "Древа",
+      "prepositional": "Древе"
+    },
+    "plural": {
+      "nominative": "Древа",
+      "genitive": "Древ",
+      "prepositional": "Древах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Облако",
       "genitive": "Облака",
       "prepositional": "Облаке"
@@ -141,6 +153,18 @@
       "nominative": "Дыхания",
       "genitive": "Дыханий",
       "prepositional": "Дыханиях"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Время",
+      "genitive": "Времени",
+      "prepositional": "Времени"
+    },
+    "plural": {
+      "nominative": "Времена",
+      "genitive": "Времён",
+      "prepositional": "Временах"
     }
   },
   {
@@ -301,6 +325,42 @@
   },
   {
     "single": {
+      "nominative": "Решето",
+      "genitive": "Решета",
+      "prepositional": "Решете"
+    },
+    "plural": {
+      "nominative": "Решёта",
+      "genitive": "Решёт",
+      "prepositional": "Решётах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Море",
+      "genitive": "Моря",
+      "prepositional": "Море"
+    },
+    "plural": {
+      "nominative": "Моря",
+      "genitive": "Морей",
+      "prepositional": "Морах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Зерно",
+      "genitive": "Зерна",
+      "prepositional": "Зерне"
+    },
+    "plural": {
+      "nominative": "Зёрна",
+      "genitive": "Зёрен",
+      "prepositional": "Зёрнах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Полено",
       "genitive": "Полена",
       "prepositional": "Полене"
@@ -321,6 +381,18 @@
       "nominative": "Окна",
       "genitive": "Окон",
       "prepositional": "Окнах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Перо",
+      "genitive": "Пера",
+      "prepositional": "Пере"
+    },
+    "plural": {
+      "nominative": "Перья",
+      "genitive": "Перьев",
+      "prepositional": "Перьях"
     }
   },
   {

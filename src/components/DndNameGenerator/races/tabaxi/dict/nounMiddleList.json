@@ -133,6 +133,18 @@
   },
   {
     "single": {
+      "nominative": "Клеймо",
+      "genitive": "Клейма",
+      "prepositional": "Клейме"
+    },
+    "plural": {
+      "nominative": "Клейма",
+      "genitive": "Клейм",
+      "prepositional": "Клеймах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Горе",
       "genitive": "Горя",
       "prepositional": "Горе"
@@ -157,6 +169,18 @@
   },
   {
     "single": {
+      "nominative": "Отражение",
+      "genitive": "Отражения",
+      "prepositional": "Отражение"
+    },
+    "plural": {
+      "nominative": "Отражения",
+      "genitive": "Отражений",
+      "prepositional": "Отражениях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Время",
       "genitive": "Времени",
       "prepositional": "Времени"
@@ -165,18 +189,6 @@
       "nominative": "Времена",
       "genitive": "Времён",
       "prepositional": "Временах"
-    }
-  },
-  {
-    "single": {
-      "nominative": "Беда",
-      "genitive": "Беды",
-      "prepositional": "Беде"
-    },
-    "plural": {
-      "nominative": "Беды",
-      "genitive": "Бед",
-      "prepositional": "Бедах"
     }
   },
   {
@@ -237,6 +249,18 @@
       "nominative": "Бёдра",
       "genitive": "Бёдер",
       "prepositional": "Бёдрах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Пятно",
+      "genitive": "Пятна",
+      "prepositional": "Пятне"
+    },
+    "plural": {
+      "nominative": "Пятна",
+      "genitive": "Пятен",
+      "prepositional": "Пятнах"
     }
   },
   {
@@ -361,6 +385,18 @@
   },
   {
     "single": {
+      "nominative": "Звено",
+      "genitive": "Звена",
+      "prepositional": "Звене"
+    },
+    "plural": {
+      "nominative": "Звенья",
+      "genitive": "Звений",
+      "prepositional": "Звеньях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Полено",
       "genitive": "Полена",
       "prepositional": "Полене"
@@ -381,6 +417,30 @@
       "nominative": "Окна",
       "genitive": "Окон",
       "prepositional": "Окнах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Кольцо",
+      "genitive": "Кольца",
+      "prepositional": "Кольце"
+    },
+    "plural": {
+      "nominative": "Кольца",
+      "genitive": "Колец",
+      "prepositional": "Кольцах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Светило",
+      "genitive": "Светила",
+      "prepositional": "Светиле"
+    },
+    "plural": {
+      "nominative": "Светила",
+      "genitive": "Светил",
+      "prepositional": "Светилах"
     }
   },
   {
@@ -417,6 +477,18 @@
       "nominative": "Чудеса",
       "genitive": "Чудес",
       "prepositional": "Чудесах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Утро",
+      "genitive": "Утра",
+      "prepositional": "Утре"
+    },
+    "plural": {
+      "nominative": "Утра",
+      "genitive": "Утров",
+      "prepositional": "Утрах"
     }
   },
   {

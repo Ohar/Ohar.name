@@ -842,6 +842,26 @@
   {
     "single": {
       "female": {
+        "nominative": "Страстная",
+        "genitive": "Страстной"
+      },
+      "male": {
+        "nominative": "Страстный",
+        "genitive": "Страстного",
+        "prepositional": "Страстном"
+      },
+      "middle": {
+        "nominative": "Страстное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Страстные",
+      "genitive": "Страстных"
+    }
+  },
+  {
+    "single": {
+      "female": {
         "nominative": "Сильная",
         "genitive": "Сильной"
       },
@@ -1537,6 +1557,26 @@
     "dualFemale": {
       "nominative": "Цветные",
       "genitive": "Цветных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Везучая",
+        "genitive": "Везучей"
+      },
+      "male": {
+        "nominative": "Везучий",
+        "genitive": "Везучего",
+        "prepositional": "Везучем"
+      },
+      "middle": {
+        "nominative": "Везучее"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Везучие",
+      "genitive": "Везучих"
     }
   },
   {
@@ -4717,6 +4757,86 @@
     "dualFemale": {
       "nominative": "Удачные",
       "genitive": "Удачных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Ударная",
+        "genitive": "Ударной"
+      },
+      "male": {
+        "nominative": "Ударный",
+        "genitive": "Ударного",
+        "prepositional": "Ударном"
+      },
+      "middle": {
+        "nominative": "Ударное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Ударные",
+      "genitive": "Ударных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Подземная",
+        "genitive": "Подземной"
+      },
+      "male": {
+        "nominative": "Подземный",
+        "genitive": "Подземного",
+        "prepositional": "Подземном"
+      },
+      "middle": {
+        "nominative": "Подземное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Подземные",
+      "genitive": "Подземных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Подводная",
+        "genitive": "Подводной"
+      },
+      "male": {
+        "nominative": "Подводный",
+        "genitive": "Подводного",
+        "prepositional": "Подводном"
+      },
+      "middle": {
+        "nominative": "Подводное"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Подводные",
+      "genitive": "Подводных"
+    }
+  },
+  {
+    "single": {
+      "female": {
+        "nominative": "Удачливая",
+        "genitive": "Удачливой"
+      },
+      "male": {
+        "nominative": "Удачливый",
+        "genitive": "Удачливого",
+        "prepositional": "Удачливом"
+      },
+      "middle": {
+        "nominative": "Удачливое"
+      }
+    },
+    "dualFemale": {
+      "nominative": "Удачливые",
+      "genitive": "Удачливых"
     }
   },
   {

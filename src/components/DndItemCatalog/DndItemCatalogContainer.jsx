@@ -10,7 +10,6 @@ const MAX_LEN = 20
 class DndItemCatalogContainer extends Component {
     state = {
         goodsFilteredList: [],
-        isTooMuch: false,
     }
 
     onSearch = ({target: {value}}) => {
@@ -21,11 +20,8 @@ class DndItemCatalogContainer extends Component {
                 )
             : []
 
-        const isTooMuch = goodsFilteredList.length > MAX_LEN
-
         this.setState({
             goodsFilteredList: goodsFilteredList.slice(0, MAX_LEN),
-            isTooMuch,
         })
     }
 

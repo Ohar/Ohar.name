@@ -10,7 +10,7 @@ import checkIfNarrow from './utils/checkIfNarrow'
 
 import './DndItemTableStyles.css'
 
-const DndItemTableComponent = ({ itemList, columnList, className, isTooMuch }) => (
+const DndItemTableComponent = ({ itemList, columnList, className }) => (
   <table className={`DndItemTable ${className}`}>
     <thead className='DndItemTable_head'>
     <tr className='DndItemTable_row'>
@@ -36,14 +36,7 @@ const DndItemTableComponent = ({ itemList, columnList, className, isTooMuch }) =
       }
     </tr>
     </thead>
-    <tbody
-      className={classNames(
-        'DndItemTable_body',
-        {
-          'DndItemTable_body-isTooMuch': isTooMuch,
-        }
-      )}
-    >
+    <tbody className='DndItemTable_body'>
     {
       itemList.map(
         item => (

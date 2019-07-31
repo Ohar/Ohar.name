@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
 
 import PageTitle from '@/components/PageTitle'
 import DndItemTable from '@/components/DndItemTable'
@@ -10,7 +9,6 @@ import './DndItemCatalogStyles.css'
 const DndItemCatalogComponent = (
     {
         onSearch,
-        isTooMuch,
         goodsFilteredList,
     }
 ) => (
@@ -28,14 +26,8 @@ const DndItemCatalogComponent = (
             goodsFilteredList.length
                 ? (
                     <DndItemTable
-                        className={classNames(
-                            'DndItemCatalog_result',
-                            {
-                                'DndItemCatalog_result-tooMuch': isTooMuch,
-                            }
-                        )}
+                        className='DndItemCatalog_result'
                         itemList={goodsFilteredList}
-                        isTooMuch={isTooMuch}
                     />
                 )
                 : <p className='DndItemCatalog_result'>Ничего не найдено</p>
@@ -43,14 +35,9 @@ const DndItemCatalogComponent = (
     </section>
 )
 
-DndItemCatalogComponent.defaultProps = {
-    isTooMuch: false,
-}
-
 DndItemCatalogComponent.propTypes = {
     goodsFilteredList: PropTypes.array.isRequired,
     onSearch: PropTypes.func.isRequired,
-    isTooMuch: PropTypes.bool,
 }
 
 export default DndItemCatalogComponent

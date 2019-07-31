@@ -61,7 +61,7 @@
   },
   {
     "single": {
-      "nominative": "Одеяло ",
+      "nominative": "Одеяло",
       "genitive": "Одеяла",
       "prepositional": "Одеяле"
     },
@@ -69,6 +69,18 @@
       "nominative": "Одеяла",
       "genitive": "Одеял",
       "prepositional": "Одеялах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Зубило",
+      "genitive": "Зубила",
+      "prepositional": "Зубиле"
+    },
+    "plural": {
+      "nominative": "Зубила",
+      "genitive": "Зубил",
+      "prepositional": "Зубилах"
     }
   },
   {
@@ -169,6 +181,18 @@
   },
   {
     "single": {
+      "nominative": "Течение",
+      "genitive": "Течения",
+      "prepositional": "Течение"
+    },
+    "plural": {
+      "nominative": "Течения",
+      "genitive": "Течений",
+      "prepositional": "Течениях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Отражение",
       "genitive": "Отражения",
       "prepositional": "Отражение"
@@ -217,6 +241,30 @@
   },
   {
     "single": {
+      "nominative": "Падение",
+      "genitive": "Падения",
+      "prepositional": "Падении"
+    },
+    "plural": {
+      "nominative": "Падения",
+      "genitive": "Падений",
+      "prepositional": "Падениях"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Действие",
+      "genitive": "Действия",
+      "prepositional": "Действии"
+    },
+    "plural": {
+      "nominative": "Действия",
+      "genitive": "Действий",
+      "prepositional": "Действиях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Плечо",
       "genitive": "Плеча",
       "prepositional": "Плече"
@@ -225,6 +273,90 @@
       "nominative": "Плечи",
       "genitive": "Плеч",
       "prepositional": "Плечах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Кружево",
+      "genitive": "Кружева",
+      "prepositional": "Кружеве"
+    },
+    "plural": {
+      "nominative": "Кружева",
+      "genitive": "Кружев",
+      "prepositional": "Кружевах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Жало",
+      "genitive": "Жала",
+      "prepositional": "Жале"
+    },
+    "plural": {
+      "nominative": "Жала",
+      "genitive": "Жал",
+      "prepositional": "Жалах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Лето",
+      "genitive": "Лета",
+      "prepositional": "Лете"
+    },
+    "plural": {
+      "nominative": "Лета",
+      "genitive": "Лет",
+      "prepositional": "Летах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Мясо",
+      "genitive": "Мяса",
+      "prepositional": "Мясе"
+    },
+    "plural": {
+      "nominative": "Мяса",
+      "genitive": "Мяс",
+      "prepositional": "Мясах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Сокровище",
+      "genitive": "Сокровища",
+      "prepositional": "Сокровище"
+    },
+    "plural": {
+      "nominative": "Сокровища",
+      "genitive": "Сокровищ",
+      "prepositional": "Сокровищах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Страшилище",
+      "genitive": "Страшилища",
+      "prepositional": "Страшилище"
+    },
+    "plural": {
+      "nominative": "Страшилища",
+      "genitive": "Страшилищ",
+      "prepositional": "Страшилищах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Чудовище",
+      "genitive": "Чудовища",
+      "prepositional": "Чудовище"
+    },
+    "plural": {
+      "nominative": "Чудовища",
+      "genitive": "Чудовищ",
+      "prepositional": "Чудовищах"
     }
   },
   {
@@ -261,6 +393,18 @@
       "nominative": "Пятна",
       "genitive": "Пятен",
       "prepositional": "Пятнах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Дело",
+      "genitive": "Дела",
+      "prepositional": "Деле"
+    },
+    "plural": {
+      "nominative": "Дела",
+      "genitive": "Дел",
+      "prepositional": "Делах"
     }
   },
   {
@@ -337,6 +481,18 @@
   },
   {
     "single": {
+      "nominative": "Заклинание",
+      "genitive": "Заклинания",
+      "prepositional": "Заклинании"
+    },
+    "plural": {
+      "nominative": "Заклинания",
+      "genitive": "Заклинаний",
+      "prepositional": "Заклинаниях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Озеро",
       "genitive": "Озера",
       "prepositional": "Озере"
@@ -345,6 +501,18 @@
       "nominative": "Озёра",
       "genitive": "Озёр",
       "prepositional": "Озёрах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Стадо",
+      "genitive": "Стада",
+      "prepositional": "Стаде"
+    },
+    "plural": {
+      "nominative": "Стада",
+      "genitive": "Стад",
+      "prepositional": "Стадах"
     }
   },
   {
@@ -397,6 +565,42 @@
   },
   {
     "single": {
+      "nominative": "Полотно",
+      "genitive": "Полотна",
+      "prepositional": "Полотне"
+    },
+    "plural": {
+      "nominative": "Полотна",
+      "genitive": "Полотен",
+      "prepositional": "Полотнах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Долото",
+      "genitive": "Долота",
+      "prepositional": "Долоте"
+    },
+    "plural": {
+      "nominative": "Долота",
+      "genitive": "Долотов",
+      "prepositional": "Долотах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Каноэ",
+      "genitive": "Каноэ",
+      "prepositional": "Каноэ"
+    },
+    "plural": {
+      "nominative": "Каноэ",
+      "genitive": "Каноэ",
+      "prepositional": "Каноэ"
+    }
+  },
+  {
+    "single": {
       "nominative": "Полено",
       "genitive": "Полена",
       "prepositional": "Полене"
@@ -433,6 +637,18 @@
   },
   {
     "single": {
+      "nominative": "Солнце",
+      "genitive": "Солнца",
+      "prepositional": "Солнце"
+    },
+    "plural": {
+      "nominative": "Солнца",
+      "genitive": "Солнц",
+      "prepositional": "Солнцах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Светило",
       "genitive": "Светила",
       "prepositional": "Светиле"
@@ -441,6 +657,18 @@
       "nominative": "Светила",
       "genitive": "Светил",
       "prepositional": "Светилах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Искусство",
+      "genitive": "Искусства",
+      "prepositional": "Искусстве"
+    },
+    "plural": {
+      "nominative": "Искусства",
+      "genitive": "Искусств",
+      "prepositional": "Искусствах"
     }
   },
   {
@@ -501,6 +729,54 @@
       "nominative": "Мычания",
       "genitive": "Мычаний",
       "prepositional": "Мычаниях"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Звучание",
+      "genitive": "Звучания",
+      "prepositional": "Звучании"
+    },
+    "plural": {
+      "nominative": "Звучания",
+      "genitive": "Звучаний",
+      "prepositional": "Звучаниях"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Свечение",
+      "genitive": "Свечения",
+      "prepositional": "Свечении"
+    },
+    "plural": {
+      "nominative": "Свечения",
+      "genitive": "Свечений",
+      "prepositional": "Свечениях"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Лезвие",
+      "genitive": "Лезвия",
+      "prepositional": "Лезвии"
+    },
+    "plural": {
+      "nominative": "Лезвия",
+      "genitive": "Лезвий",
+      "prepositional": "Лезвиях"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Остриё",
+      "genitive": "Острия",
+      "prepositional": "Острии"
+    },
+    "plural": {
+      "nominative": "Острия",
+      "genitive": "Острий",
+      "prepositional": "Остриях"
     }
   },
   {

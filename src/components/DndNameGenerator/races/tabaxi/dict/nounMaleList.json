@@ -25,6 +25,18 @@
   },
   {
     "single": {
+      "nominative": "Шорох",
+      "genitive": "Шороха",
+      "prepositional": "Шорохе"
+    },
+    "plural": {
+      "nominative": "Шорохи",
+      "genitive": "Шорохов",
+      "prepositional": "Шорохах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Шов",
       "genitive": "Шва",
       "prepositional": "Шве"
@@ -49,6 +61,18 @@
   },
   {
     "single": {
+      "nominative": "Колпак",
+      "genitive": "Колпака",
+      "prepositional": "Колпаке"
+    },
+    "plural": {
+      "nominative": "Колпаки",
+      "genitive": "Колпаков",
+      "prepositional": "Колпаках"
+    }
+  },
+  {
+    "single": {
       "nominative": "Рассказ",
       "genitive": "Рассказа",
       "prepositional": "Рассказе"
@@ -57,6 +81,30 @@
       "nominative": "Рассказы",
       "genitive": "Рассказов",
       "prepositional": "Рассказах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Цвет",
+      "genitive": "Цвета",
+      "prepositional": "Цвете"
+    },
+    "plural": {
+      "nominative": "Цвета",
+      "genitive": "Цветов",
+      "prepositional": "Цветах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Расцвет",
+      "genitive": "Расцвета",
+      "prepositional": "Расцвете"
+    },
+    "plural": {
+      "nominative": "Расцвета",
+      "genitive": "Расцветов",
+      "prepositional": "Расцветах"
     }
   },
   {
@@ -145,6 +193,18 @@
   },
   {
     "single": {
+      "nominative": "Опал",
+      "genitive": "Опала",
+      "prepositional": "Опале"
+    },
+    "plural": {
+      "nominative": "Опалы",
+      "genitive": "Опалов",
+      "prepositional": "Опалах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Изумруд",
       "genitive": "Изумруда",
       "prepositional": "Изумруде"
@@ -153,6 +213,30 @@
       "nominative": "Изумруды",
       "genitive": "Изумрудов",
       "prepositional": "Изумрудах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Мир",
+      "genitive": "Мира",
+      "prepositional": "Мире"
+    },
+    "plural": {
+      "nominative": "Миры",
+      "genitive": "Миров",
+      "prepositional": "Мирах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Удар",
+      "genitive": "Удара",
+      "prepositional": "Ударе"
+    },
+    "plural": {
+      "nominative": "Удары",
+      "genitive": "Ударов",
+      "prepositional": "Ударах"
     }
   },
   {
@@ -181,6 +265,18 @@
   },
   {
     "single": {
+      "nominative": "Олень",
+      "genitive": "Оленя",
+      "prepositional": "Олене"
+    },
+    "plural": {
+      "nominative": "Олени",
+      "genitive": "Оленей",
+      "prepositional": "Оленях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Огонь",
       "genitive": "Огня",
       "prepositional": "Огне"
@@ -205,6 +301,30 @@
   },
   {
     "single": {
+      "nominative": "Зверь",
+      "genitive": "Зверя",
+      "prepositional": "Звере"
+    },
+    "plural": {
+      "nominative": "Звери",
+      "genitive": "Зверей",
+      "prepositional": "Зверях"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Пузырь",
+      "genitive": "Пузыря",
+      "prepositional": "Пузыре"
+    },
+    "plural": {
+      "nominative": "Пузыри",
+      "genitive": "Пузырей",
+      "prepositional": "Пузырях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Фонарь",
       "genitive": "Фонаря",
       "prepositional": "Фонаре"
@@ -217,6 +337,30 @@
   },
   {
     "single": {
+      "nominative": "Зверь",
+      "genitive": "Зверя",
+      "prepositional": "Звере"
+    },
+    "plural": {
+      "nominative": "Звери",
+      "genitive": "Зверей",
+      "prepositional": "Зверях"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Звук",
+      "genitive": "Звука",
+      "prepositional": "Звуке"
+    },
+    "plural": {
+      "nominative": "Звука",
+      "genitive": "Звуков",
+      "prepositional": "Звуках"
+    }
+  },
+  {
+    "single": {
       "nominative": "Колокол",
       "genitive": "Колокола",
       "prepositional": "Колоколе"
@@ -225,6 +369,42 @@
       "nominative": "Колокола",
       "genitive": "Колоколов",
       "prepositional": "Колоколах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Колокольчик",
+      "genitive": "Колокольчика",
+      "prepositional": "Колокольчике"
+    },
+    "plural": {
+      "nominative": "Колокольчики",
+      "genitive": "Колокольчиков",
+      "prepositional": "Колокольчиках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Флакон",
+      "genitive": "Флакона",
+      "prepositional": "Флаконе"
+    },
+    "plural": {
+      "nominative": "Флаконы",
+      "genitive": "Флаконов",
+      "prepositional": "Флаконах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Звон",
+      "genitive": "Звона",
+      "prepositional": "Звоне"
+    },
+    "plural": {
+      "nominative": "Звоны",
+      "genitive": "Звонов",
+      "prepositional": "Звонах"
     }
   },
   {
@@ -253,12 +433,36 @@
   },
   {
     "single": {
+      "nominative": "Сыр",
+      "genitive": "Сыра",
+      "prepositional": "Сыре"
+    },
+    "plural": {
+      "nominative": "Сыры",
+      "genitive": "Сыров",
+      "prepositional": "Сырах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Куб",
+      "genitive": "Куба",
+      "prepositional": "Кубе"
+    },
+    "plural": {
+      "nominative": "Кубы",
+      "genitive": "Кубов",
+      "prepositional": "Кубах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Нарыв",
       "genitive": "Нарыва",
       "prepositional": "Нарыве"
     },
     "plural": {
-      "nominative": "Нарыва",
+      "nominative": "Нарывы",
       "genitive": "Нарывов",
       "prepositional": "Нарывах"
     }
@@ -270,9 +474,21 @@
       "prepositional": "Гнойнике"
     },
     "plural": {
-      "nominative": "Гнойника",
+      "nominative": "Гнойники",
       "genitive": "Гнойников",
       "prepositional": "Гнойниках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Мазок",
+      "genitive": "Мазка",
+      "prepositional": "Мазке"
+    },
+    "plural": {
+      "nominative": "Мазки",
+      "genitive": "Мазков",
+      "prepositional": "Мазках"
     }
   },
   {
@@ -285,6 +501,30 @@
       "nominative": "Тайника",
       "genitive": "Тайников",
       "prepositional": "Тайниках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Справочник",
+      "genitive": "Справочника",
+      "prepositional": "Справочнике"
+    },
+    "plural": {
+      "nominative": "Справочника",
+      "genitive": "Справочников",
+      "prepositional": "Справочниках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Учебник",
+      "genitive": "Учебника",
+      "prepositional": "Учебнике"
+    },
+    "plural": {
+      "nominative": "Учебника",
+      "genitive": "Учебников",
+      "prepositional": "Учебниках"
     }
   },
   {
@@ -321,6 +561,18 @@
       "nominative": "Столы",
       "genitive": "Столов",
       "prepositional": "Столах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Стог",
+      "genitive": "Стога",
+      "prepositional": "Стоге"
+    },
+    "plural": {
+      "nominative": "Стога",
+      "genitive": "Стогов",
+      "prepositional": "Стогах"
     }
   },
   {
@@ -373,6 +625,18 @@
   },
   {
     "single": {
+      "nominative": "Дар",
+      "genitive": "Дара",
+      "prepositional": "Даре"
+    },
+    "plural": {
+      "nominative": "Дары",
+      "genitive": "Даров",
+      "prepositional": "Дарах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Бочонок",
       "genitive": "Бочонка",
       "prepositional": "Бочонке"
@@ -417,6 +681,42 @@
       "nominative": "Гроты",
       "genitive": "Гротов",
       "prepositional": "Гротах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Гриб",
+      "genitive": "Гриба",
+      "prepositional": "Грибе"
+    },
+    "plural": {
+      "nominative": "Грибы",
+      "genitive": "Грибов",
+      "prepositional": "Грибах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Бутон",
+      "genitive": "Бутона",
+      "prepositional": "Бутоне"
+    },
+    "plural": {
+      "nominative": "Бутоны",
+      "genitive": "Бутонов",
+      "prepositional": "Бутонах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Булыжник",
+      "genitive": "Булыжника",
+      "prepositional": "Булыжнике"
+    },
+    "plural": {
+      "nominative": "Булыжники",
+      "genitive": "Булыжников",
+      "prepositional": "Булыжниках"
     }
   },
   {
@@ -577,6 +877,54 @@
   },
   {
     "single": {
+      "nominative": "Слон",
+      "genitive": "Слона",
+      "prepositional": "Слоне"
+    },
+    "plural": {
+      "nominative": "Слоны",
+      "genitive": "Слонов",
+      "prepositional": "Слонах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Нефрит",
+      "genitive": "Нефрита",
+      "prepositional": "Нефрите"
+    },
+    "plural": {
+      "nominative": "Нефриты",
+      "genitive": "Нефритов",
+      "prepositional": "Нефритах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Фрукт",
+      "genitive": "Фрукта",
+      "prepositional": "Фрукте"
+    },
+    "plural": {
+      "nominative": "Фрукты",
+      "genitive": "Фруктов",
+      "prepositional": "Фруктах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Ритм",
+      "genitive": "Ритма",
+      "prepositional": "Ритме"
+    },
+    "plural": {
+      "nominative": "Ритмы",
+      "genitive": "Ритмов",
+      "prepositional": "Ритмах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Секрет",
       "genitive": "Секрета",
       "prepositional": "Секрете"
@@ -585,6 +933,18 @@
       "nominative": "Секреты",
       "genitive": "Секретов",
       "prepositional": "Секретах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Комар",
+      "genitive": "Комара",
+      "prepositional": "Комаре"
+    },
+    "plural": {
+      "nominative": "Комары",
+      "genitive": "Комаров",
+      "prepositional": "Комарах"
     }
   },
   {
@@ -637,6 +997,42 @@
   },
   {
     "single": {
+      "nominative": "Воз",
+      "genitive": "Воза",
+      "prepositional": "Возе"
+    },
+    "plural": {
+      "nominative": "Возы",
+      "genitive": "Возов",
+      "prepositional": "Возах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Зов",
+      "genitive": "Зова",
+      "prepositional": "Зове"
+    },
+    "plural": {
+      "nominative": "Зовы",
+      "genitive": "Зовов",
+      "prepositional": "Зовах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Закат",
+      "genitive": "Заката",
+      "prepositional": "Закате"
+    },
+    "plural": {
+      "nominative": "Закаты",
+      "genitive": "Закатов",
+      "prepositional": "Закатах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Лист",
       "genitive": "Листа",
       "prepositional": "Листе"
@@ -661,6 +1057,18 @@
   },
   {
     "single": {
+      "nominative": "Голос",
+      "genitive": "Голоса",
+      "prepositional": "Голосе"
+    },
+    "plural": {
+      "nominative": "Голосы",
+      "genitive": "Голосов",
+      "prepositional": "Голосах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Спуск",
       "genitive": "Спуска",
       "prepositional": "Спуске"
@@ -681,6 +1089,18 @@
       "nominative": "Стежки",
       "genitive": "Стежков",
       "prepositional": "Стежках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Обрезок",
+      "genitive": "Обрезка",
+      "prepositional": "Обрезке"
+    },
+    "plural": {
+      "nominative": "Обрезки",
+      "genitive": "Обрезков",
+      "prepositional": "Обрезках"
     }
   },
   {
@@ -717,6 +1137,18 @@
       "nominative": "Подъёмы",
       "genitive": "Подъёмов",
       "prepositional": "Подъёмах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Стежок",
+      "genitive": "Стежка",
+      "prepositional": "Стежке"
+    },
+    "plural": {
+      "nominative": "Стежки",
+      "genitive": "Стежков",
+      "prepositional": "Стежках"
     }
   },
   {
@@ -765,6 +1197,18 @@
       "nominative": "Мотки",
       "genitive": "Мотков",
       "prepositional": "Мотках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Подарок",
+      "genitive": "Подарка",
+      "prepositional": "Подарке"
+    },
+    "plural": {
+      "nominative": "Подарки",
+      "genitive": "Подарков",
+      "prepositional": "Подарках"
     }
   },
   {
@@ -901,6 +1345,18 @@
   },
   {
     "single": {
+      "nominative": "Крючок",
+      "genitive": "Крючка",
+      "prepositional": "Крючке"
+    },
+    "plural": {
+      "nominative": "Крючки",
+      "genitive": "Крючков",
+      "prepositional": "Крючках"
+    }
+  },
+  {
+    "single": {
       "nominative": "Восход",
       "genitive": "Восхода",
       "prepositional": "Восходе"
@@ -921,18 +1377,6 @@
       "nominative": "Источники",
       "genitive": "Источников",
       "prepositional": "Источниках"
-    }
-  },
-  {
-    "single": {
-      "nominative": "Восход",
-      "genitive": "Восхода",
-      "prepositional": "Восходе"
-    },
-    "plural": {
-      "nominative": "Восходы",
-      "genitive": "Восходов",
-      "prepositional": "Восходах"
     }
   },
   {
@@ -973,6 +1417,18 @@
   },
   {
     "single": {
+      "nominative": "Жук",
+      "genitive": "Жука",
+      "prepositional": "Жуке"
+    },
+    "plural": {
+      "nominative": "Жуки",
+      "genitive": "Жуков",
+      "prepositional": "Жуках"
+    }
+  },
+  {
+    "single": {
       "nominative": "Храп",
       "genitive": "Храпа",
       "prepositional": "Храпе"
@@ -993,6 +1449,18 @@
       "nominative": "Луки",
       "genitive": "Луков",
       "prepositional": "Луках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Паук",
+      "genitive": "Паука",
+      "prepositional": "Пауке"
+    },
+    "plural": {
+      "nominative": "Пауки",
+      "genitive": "Пауков",
+      "prepositional": "Пауках"
     }
   },
   {
@@ -1065,6 +1533,42 @@
       "nominative": "Хвосты",
       "genitive": "Хвостов",
       "prepositional": "Хвостах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Вздох",
+      "genitive": "Вздоха",
+      "prepositional": "Вздохе"
+    },
+    "plural": {
+      "nominative": "Вздохи",
+      "genitive": "Вздохов",
+      "prepositional": "Вздохах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Час",
+      "genitive": "Часа",
+      "prepositional": "Часе"
+    },
+    "plural": {
+      "nominative": "Часы",
+      "genitive": "Часов",
+      "prepositional": "Часах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Клевер",
+      "genitive": "Клевера",
+      "prepositional": "Клевере"
+    },
+    "plural": {
+      "nominative": "Клеверы",
+      "genitive": "Клеверов",
+      "prepositional": "Клеверах"
     }
   },
   {
@@ -1177,6 +1681,18 @@
   },
   {
     "single": {
+      "nominative": "Скачок",
+      "genitive": "Скачка",
+      "prepositional": "Скачке"
+    },
+    "plural": {
+      "nominative": "Скачки",
+      "genitive": "Скачков",
+      "prepositional": "Скачках"
+    }
+  },
+  {
+    "single": {
       "nominative": "Сыч",
       "genitive": "Сыча",
       "prepositional": "Сыче"
@@ -1249,6 +1765,18 @@
   },
   {
     "single": {
+      "nominative": "Полдень",
+      "genitive": "Полудня",
+      "prepositional": "Полудне"
+    },
+    "plural": {
+      "nominative": "Полудни",
+      "genitive": "Полудней",
+      "prepositional": "Полуднях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Гребень",
       "genitive": "Гребня",
       "prepositional": "Гребне"
@@ -1269,6 +1797,18 @@
       "nominative": "Муссоны",
       "genitive": "Муссонов",
       "prepositional": "Муссонах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Полёт",
+      "genitive": "Полёта",
+      "prepositional": "Полёте"
+    },
+    "plural": {
+      "nominative": "Полёты",
+      "genitive": "Полётов",
+      "prepositional": "Полётах"
     }
   },
   {
@@ -1321,6 +1861,18 @@
   },
   {
     "single": {
+      "nominative": "Визг",
+      "genitive": "Визга",
+      "prepositional": "Визге"
+    },
+    "plural": {
+      "nominative": "Визги",
+      "genitive": "Визгов",
+      "prepositional": "Визгах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Шёпот",
       "genitive": "Шёпота",
       "prepositional": "Шёпоте"
@@ -1357,6 +1909,18 @@
   },
   {
     "single": {
+      "nominative": "Шанс",
+      "genitive": "Шанса",
+      "prepositional": "Шансе"
+    },
+    "plural": {
+      "nominative": "Шансы",
+      "genitive": "Шансов",
+      "prepositional": "Шансах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Шаг",
       "genitive": "Шага",
       "prepositional": "Шаге"
@@ -1389,6 +1953,42 @@
       "nominative": "Кряжи",
       "genitive": "Кряжей",
       "prepositional": "Кряжах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Круг",
+      "genitive": "Круга",
+      "prepositional": "Круге"
+    },
+    "plural": {
+      "nominative": "Круги",
+      "genitive": "Кругов",
+      "prepositional": "Кругах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Квадрат",
+      "genitive": "Квадрата",
+      "prepositional": "Квадрате"
+    },
+    "plural": {
+      "nominative": "Квадраты",
+      "genitive": "Квадратов",
+      "prepositional": "Квадратах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Ястреб",
+      "genitive": "Ястреба",
+      "prepositional": "Ястребе"
+    },
+    "plural": {
+      "nominative": "Ястребы",
+      "genitive": "Ястребов",
+      "prepositional": "Ястребах"
     }
   },
   {
@@ -1465,6 +2065,18 @@
   },
   {
     "single": {
+      "nominative": "Пляж",
+      "genitive": "Пляжа",
+      "prepositional": "Пляже"
+    },
+    "plural": {
+      "nominative": "Пляжи",
+      "genitive": "Пляжей",
+      "prepositional": "Пляжах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Танец",
       "genitive": "Танца",
       "prepositional": "Танце"
@@ -1489,6 +2101,90 @@
   },
   {
     "single": {
+      "nominative": "Дом",
+      "genitive": "Дома",
+      "prepositional": "Доме"
+    },
+    "plural": {
+      "nominative": "Дома",
+      "genitive": "Домов",
+      "prepositional": "Домах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Месяц",
+      "genitive": "Месяца",
+      "prepositional": "Месяце"
+    },
+    "plural": {
+      "nominative": "Месяца",
+      "genitive": "Месяцов",
+      "prepositional": "Месяцах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Враг",
+      "genitive": "Врага",
+      "prepositional": "Враге"
+    },
+    "plural": {
+      "nominative": "Враги",
+      "genitive": "Врагов",
+      "prepositional": "Врагах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Мел",
+      "genitive": "Мела",
+      "prepositional": "Меле"
+    },
+    "plural": {
+      "nominative": "Мелки",
+      "genitive": "Мелков",
+      "prepositional": "Мелках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Друг",
+      "genitive": "Друга",
+      "prepositional": "Друге"
+    },
+    "plural": {
+      "nominative": "Друзья",
+      "genitive": "Друзей",
+      "prepositional": "Друзьях"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Котёл",
+      "genitive": "Котла",
+      "prepositional": "Котле"
+    },
+    "plural": {
+      "nominative": "Котлы",
+      "genitive": "Котлов",
+      "prepositional": "Котлах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Мелок",
+      "genitive": "Мелка",
+      "prepositional": "Мелке"
+    },
+    "plural": {
+      "nominative": "Мелки",
+      "genitive": "Мелков",
+      "prepositional": "Мелках"
+    }
+  },
+  {
+    "single": {
       "nominative": "Бассейн",
       "genitive": "Бассейна",
       "prepositional": "Бассейне"
@@ -1501,6 +2197,18 @@
   },
   {
     "single": {
+      "nominative": "Близнец",
+      "genitive": "Близнеца",
+      "prepositional": "Близнеце"
+    },
+    "plural": {
+      "nominative": "Близнецы",
+      "genitive": "Близнецов",
+      "prepositional": "Близнецах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Плач",
       "genitive": "Плача",
       "prepositional": "Плаче"
@@ -1509,6 +2217,18 @@
       "nominative": "Плачи",
       "genitive": "Плачей",
       "prepositional": "Плачах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Плащ",
+      "genitive": "Плаща",
+      "prepositional": "Плаще"
+    },
+    "plural": {
+      "nominative": "Плащи",
+      "genitive": "Плащей",
+      "prepositional": "Плащах"
     }
   },
   {
@@ -1537,6 +2257,18 @@
   },
   {
     "single": {
+      "nominative": "Холст",
+      "genitive": "Холста",
+      "prepositional": "Холсте"
+    },
+    "plural": {
+      "nominative": "Холсты",
+      "genitive": "Холстов",
+      "prepositional": "Холстах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Хлопок",
       "genitive": "Хлопка",
       "prepositional": "Хлопке"
@@ -1557,6 +2289,42 @@
       "nominative": "Шнурки",
       "genitive": "Шнурков",
       "prepositional": "Шнурках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Пряник",
+      "genitive": "Пряника",
+      "prepositional": "Прянике"
+    },
+    "plural": {
+      "nominative": "Пряники",
+      "genitive": "Пряников",
+      "prepositional": "Пряниках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Канат",
+      "genitive": "Каната",
+      "prepositional": "Канате"
+    },
+    "plural": {
+      "nominative": "Канаты",
+      "genitive": "Канатов",
+      "prepositional": "Канатах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Кекс",
+      "genitive": "Кекса",
+      "prepositional": "Кексе"
+    },
+    "plural": {
+      "nominative": "Кексы",
+      "genitive": "Кексов",
+      "prepositional": "Кексах"
     }
   },
   {
@@ -1633,6 +2401,18 @@
   },
   {
     "single": {
+      "nominative": "Барабан",
+      "genitive": "Барабана",
+      "prepositional": "Барабане"
+    },
+    "plural": {
+      "nominative": "Барабаны",
+      "genitive": "Барабанов",
+      "prepositional": "Барабанах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Змей",
       "genitive": "Змея",
       "prepositional": "Змее"
@@ -1705,6 +2485,18 @@
   },
   {
     "single": {
+      "nominative": "Мозг",
+      "genitive": "Мозга",
+      "prepositional": "Мозге"
+    },
+    "plural": {
+      "nominative": "Мозги",
+      "genitive": "Мозгов",
+      "prepositional": "Мозгах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Коршун",
       "genitive": "Коршуна",
       "prepositional": "Коршуне"
@@ -1713,6 +2505,30 @@
       "nominative": "Коршуны",
       "genitive": "Коршунов",
       "prepositional": "Коршунах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Год",
+      "genitive": "Года",
+      "prepositional": "Году"
+    },
+    "plural": {
+      "nominative": "Годы",
+      "genitive": "Лет",
+      "prepositional": "Годах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Нож",
+      "genitive": "Ножа",
+      "prepositional": "Ножу"
+    },
+    "plural": {
+      "nominative": "Ножи",
+      "genitive": "Ножей",
+      "prepositional": "Ножах"
     }
   },
   {
@@ -1729,6 +2545,30 @@
   },
   {
     "single": {
+      "nominative": "Рог",
+      "genitive": "Рога",
+      "prepositional": "Роге"
+    },
+    "plural": {
+      "nominative": "Рога",
+      "genitive": "Рогов",
+      "prepositional": "Рогах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Рожок",
+      "genitive": "Рожка",
+      "prepositional": "Рожке"
+    },
+    "plural": {
+      "nominative": "Рожки",
+      "genitive": "Рожков",
+      "prepositional": "Рожках"
+    }
+  },
+  {
+    "single": {
       "nominative": "Аромат",
       "genitive": "Аромата",
       "prepositional": "Аромате"
@@ -1737,6 +2577,18 @@
       "nominative": "Ароматы",
       "genitive": "Ароматов",
       "prepositional": "Ароматах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Кинжал",
+      "genitive": "Кинжала",
+      "prepositional": "Кинжале"
+    },
+    "plural": {
+      "nominative": "Кинжалы",
+      "genitive": "Кинжалов",
+      "prepositional": "Кинжалах"
     }
   },
   {
@@ -1777,6 +2629,18 @@
   },
   {
     "single": {
+      "nominative": "Прут",
+      "genitive": "Прута",
+      "prepositional": "Пруте"
+    },
+    "plural": {
+      "nominative": "Прутья",
+      "genitive": "Прутьев",
+      "prepositional": "Прутьях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Рукав",
       "genitive": "Рукава",
       "prepositional": "Рукаве"
@@ -1789,6 +2653,18 @@
   },
   {
     "single": {
+      "nominative": "Медведь",
+      "genitive": "Медведя",
+      "prepositional": "Медведе"
+    },
+    "plural": {
+      "nominative": "Медведи",
+      "genitive": "Медведей",
+      "prepositional": "Медведях"
+    }
+  },
+  {
+    "single": {
       "nominative": "Намёк",
       "genitive": "Намёка",
       "prepositional": "Намёке"
@@ -1797,6 +2673,18 @@
       "nominative": "Намёки",
       "genitive": "Намёков",
       "prepositional": "Намёках"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Мёд",
+      "genitive": "Мёда",
+      "prepositional": "Мёде"
+    },
+    "plural": {
+      "nominative": "Мёды",
+      "genitive": "Мёдов",
+      "prepositional": "Мёдах"
     }
   },
   {
@@ -1837,6 +2725,18 @@
   },
   {
     "single": {
+      "nominative": "Укус",
+      "genitive": "Укуса",
+      "prepositional": "Укусе"
+    },
+    "plural": {
+      "nominative": "Укусы",
+      "genitive": "Укусов",
+      "prepositional": "Укусах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Притон",
       "genitive": "Притона",
       "prepositional": "Притоне"
@@ -1861,6 +2761,18 @@
   },
   {
     "single": {
+      "nominative": "Призыв",
+      "genitive": "Призыва",
+      "prepositional": "Призыве"
+    },
+    "plural": {
+      "nominative": "Призывы",
+      "genitive": "Призывов",
+      "prepositional": "Призывах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Сад",
       "genitive": "Сада",
       "prepositional": "Саду"
@@ -1881,6 +2793,42 @@
       "nominative": "Сапоги",
       "genitive": "Сапогов",
       "prepositional": "Сапогах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Сапфир",
+      "genitive": "Сапфира",
+      "prepositional": "Сапфиру"
+    },
+    "plural": {
+      "nominative": "Сапфиры",
+      "genitive": "Сапфиров",
+      "prepositional": "Сапфирах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Огород",
+      "genitive": "Огорода",
+      "prepositional": "Огороду"
+    },
+    "plural": {
+      "nominative": "Огороды",
+      "genitive": "Огородов",
+      "prepositional": "Огородах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Горизонт",
+      "genitive": "Горизонта",
+      "prepositional": "Горизонту"
+    },
+    "plural": {
+      "nominative": "Горизонты",
+      "genitive": "Горизонтов",
+      "prepositional": "Горизонтах"
     }
   },
   {
@@ -1957,6 +2905,18 @@
   },
   {
     "single": {
+      "nominative": "Лоскут",
+      "genitive": "Лоскута",
+      "prepositional": "Лоскуте"
+    },
+    "plural": {
+      "nominative": "Лоскуты",
+      "genitive": "Лоскут",
+      "prepositional": "Лоскутах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Обман",
       "genitive": "Обмана",
       "prepositional": "Обмане"
@@ -1965,6 +2925,18 @@
       "nominative": "Обманы",
       "genitive": "Обманов",
       "prepositional": "Обманах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Обморок",
+      "genitive": "Обморока",
+      "prepositional": "Обмороке"
+    },
+    "plural": {
+      "nominative": "Обмороки",
+      "genitive": "Обмороков",
+      "prepositional": "Обмороках"
     }
   },
   {
@@ -2049,6 +3021,18 @@
       "nominative": "Обрывы",
       "genitive": "Обрывов",
       "prepositional": "Обрывах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Обрывок",
+      "genitive": "Обрывка",
+      "prepositional": "Обрывке"
+    },
+    "plural": {
+      "nominative": "Обрывки",
+      "genitive": "Обрывков",
+      "prepositional": "Обрывках"
     }
   },
   {
@@ -2161,6 +3145,18 @@
   },
   {
     "single": {
+      "nominative": "Торт",
+      "genitive": "Торта",
+      "prepositional": "Торте"
+    },
+    "plural": {
+      "nominative": "Торты",
+      "genitive": "Тортов",
+      "prepositional": "Тортах"
+    }
+  },
+  {
+    "single": {
       "nominative": "Шлем",
       "genitive": "Шлема",
       "prepositional": "Шлеме"
@@ -2193,6 +3189,42 @@
       "nominative": "Рассветы",
       "genitive": "Рассветов",
       "prepositional": "Рассветах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Краб",
+      "genitive": "Краба",
+      "prepositional": "Крабе"
+    },
+    "plural": {
+      "nominative": "Крабы",
+      "genitive": "Крабов",
+      "prepositional": "Крабах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Пожар",
+      "genitive": "Пожара",
+      "prepositional": "Пожаре"
+    },
+    "plural": {
+      "nominative": "Пожары",
+      "genitive": "Пожаров",
+      "prepositional": "Пожарах"
+    }
+  },
+  {
+    "single": {
+      "nominative": "Жар",
+      "genitive": "Жара",
+      "prepositional": "Жаре"
+    },
+    "plural": {
+      "nominative": "Пожары",
+      "genitive": "Пожаров",
+      "prepositional": "Пожарах"
     }
   },
   {

@@ -16,10 +16,11 @@ declare -r FILE_NAME="ohar.name.zip"
 scp ./../dist/$FILE_NAME $URL:~
 
 ssh -tt $URL <<DEPLOY
-    sudo rm -rf $FOLDER/*
+    cd $FOLDER
+
+    sudo rm -rf ./*
     sudo mv ~/$FILE_NAME $FOLDER
 
-    cd $FOLDER
     sudo unzip -u $FILE_NAME
     sudo rm $FILE_NAME
 

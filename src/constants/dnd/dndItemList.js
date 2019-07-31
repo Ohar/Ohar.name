@@ -2030,6 +2030,7 @@ const dndItemList = [
       dc: 10,
     },
     cost: 10000,
+    damageType: 'poison',
     poisonType: 'injury',
     weight: 0,
     source: 'PHB:150',

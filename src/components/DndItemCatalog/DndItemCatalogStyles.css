@@ -19,3 +19,9 @@
     max-height: calc(100vh - 166px);
     overflow-y: scroll;
 }
+
+@media (max-width: 620px) {
+    .DndItemCatalog_result {
+        max-height: calc(100vh - 214px);
+    }
+}

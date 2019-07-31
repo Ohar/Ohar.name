@@ -133,7 +133,7 @@ const dndItemList = [
   {
     id: 'kol`chuga',
     name: 'Кольчуга',
-    nameEn: '',
+    nameEn: 'Chain mail',
     description: 'Изготовленная из переплетающихся металлических колец кольчуга включает также слой стёганой ткани, надеваемой под низ, дабы предотвратить натирание и смягчать удары. В комплект входят рукавицы.',
     cost: 7500,
     weight: 55,
@@ -468,6 +468,10 @@ const dndItemList = [
       cubeType: 6,
       cubeCount: 1,
     },
+    range: {
+      normal: 80,
+      max: 320,
+    },
     isTwoHanded: true,
     needAmmo: true,
     cost: 2500,
@@ -485,6 +489,10 @@ const dndItemList = [
     damage: {
       cubeType: 4,
       cubeCount: 1,
+    },
+    range: {
+      normal: 30,
+      max: 120,
     },
     needAmmo: true,
     cost: 10,
@@ -696,6 +704,7 @@ const dndItemList = [
       cubeCount: 1,
     },
     cost: 1500,
+    damageType: 'piercing',
     weight: 4,
     source: 'PHB:149',
     category: 'Оружие',
@@ -731,6 +740,7 @@ const dndItemList = [
     },
     isFinesse: true,
     cost: 2500,
+    damageType: 'piercing',
     weight: 2,
     source: 'PHB:149',
     category: 'Оружие',

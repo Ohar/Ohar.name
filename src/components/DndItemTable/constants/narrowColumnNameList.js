@@ -15,7 +15,6 @@ export default [
   'range',
   'requirementList',
   'saveThrow',
-  'source',
   'subcategory',
   'weight',
 ]

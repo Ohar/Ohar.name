@@ -15,21 +15,22 @@
     max-width: 100vw;
     text-align: center;
     box-sizing: border-box;
-    margin: 3rem 0;
-    max-height: 65vh;
+    /*margin: 3rem 0;*/
+    margin: 0;
+    max-height: calc(100vh - 166px);
     overflow-y: scroll;
 }
 
-.DndItemCatalog_result-tooMuch {
-    position: relative;
-}
+/*.DndItemCatalog_result-tooMuch {*/
+/*    position: relative;*/
+/*}*/
 
-.DndItemCatalog_result-tooMuch:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 5rem;
-    left: 0;
-    bottom: 0;
-    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
-}
+/*.DndItemCatalog_result-tooMuch:after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: 5rem;*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));*/
+/*}*/

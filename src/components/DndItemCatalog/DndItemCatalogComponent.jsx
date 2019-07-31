@@ -35,6 +35,7 @@ const DndItemCatalogComponent = (
                             }
                         )}
                         itemList={goodsFilteredList}
+                        isTooMuch={isTooMuch}
                     />
                 )
                 : <p className='DndItemCatalog_result'>Ничего не найдено</p>

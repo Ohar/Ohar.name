@@ -21,7 +21,7 @@ export default {
   range: 'Дальность',
   requirementList: 'Требования',
   saveThrow: 'Спасбросок',
-  source: 'Источник информации',
+  source: 'Источник',
   subcategory: 'Подкатегория',
   weight: 'Масса',
 }

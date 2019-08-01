@@ -4,6 +4,8 @@ import {dndParamCollection} from "@/constants/dnd/dndParamList"
 import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 import {dndItemCollection} from "@/constants/dnd/dndItemList"
 
+import DndItemCreator from "@/components/DndItemCreator"
+
 import "./DndSentientItemStyles.css"
 
 const DndSentientItem = (
@@ -13,6 +15,7 @@ const DndSentientItem = (
       bond,
       char,
       communication,
+      creator,
       goal,
       ideal,
       interactions,
@@ -104,6 +107,12 @@ const DndSentientItem = (
       <tr className='DndSentientItem_row'>
         <th className='DndSentientItem_cell DndSentientItem_cell-head'>Слабость или тайна</th>
         <td className='DndSentientItem_cell'>{weakness}</td>
+      </tr>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Создатель</th>
+        <td className='DndSentientItem_cell'>
+          <DndItemCreator creator={creator}/>
+        </td>
       </tr>
     </tbody>
     </table>

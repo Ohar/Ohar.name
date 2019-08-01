@@ -11,6 +11,7 @@ import checkIfAligmentPossible from "@/utils/checkIfAligmentPossible"
 import aligmentList from "./constants/aligmentList"
 import charBadList from "./constants/charBadList"
 import charGoodList from "./constants/charGoodList"
+import creatorList from "./constants/creatorList"
 import interactionTypeList from "./constants/interactionTypeList"
 import goalList from "./constants/goalList"
 import godList from "./constants/godList"
@@ -62,6 +63,7 @@ export default class SentientItem {
     this.ideal = this.generateIdeal()
     this.bond = pickByPropability(bondList).description
     this.weakness = pickByPropability(weaknessList).description
+    this.creator = pickByPropability(creatorList)
   }
 
   generateIdeal = () => {

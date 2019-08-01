@@ -138,12 +138,6 @@ export default [
     shouldAbleToSpeak: false,
   },
   {
-    id: 'creep',
-    probabilityWeight: 12,
-    description: 'Слегка шевелится, если не смотреть прямо на него',
-    shouldAbleToSpeak: false,
-  },
-  {
     id: 'pupsik',
     probabilityWeight: 1,
     description: 'Зовёт владельца только «Пупсик», но не замечает этого',

@@ -1,10 +1,9 @@
 import React from "react"
+import ReactMarkdown from "react-markdown"
 
 import {dndParamCollection} from "@/constants/dnd/dndParamList"
 import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 import {dndItemCollection} from "@/constants/dnd/dndItemList"
-
-import DndItemCreator from "@/components/DndItemCreator"
 
 import "./DndSentientItemStyles.css"
 
@@ -86,7 +85,9 @@ const DndSentientItem = (
       </tr>
       <tr className='DndSentientItem_row'>
         <th className='DndSentientItem_cell DndSentientItem_cell-head'>Предназначение</th>
-        <td className='DndSentientItem_cell'>{goal}</td>
+        <td className='DndSentientItem_cell'>
+          <ReactMarkdown>{goal}</ReactMarkdown>
+        </td>
       </tr>
       <tr className='DndSentientItem_row'>
         <th className='DndSentientItem_cell DndSentientItem_cell-head'>Манеры</th>
@@ -111,7 +112,7 @@ const DndSentientItem = (
       <tr className='DndSentientItem_row'>
         <th className='DndSentientItem_cell DndSentientItem_cell-head'>Создатель</th>
         <td className='DndSentientItem_cell'>
-          <DndItemCreator creator={creator}/>
+          <ReactMarkdown>{creator}</ReactMarkdown>
         </td>
       </tr>
     </tbody>

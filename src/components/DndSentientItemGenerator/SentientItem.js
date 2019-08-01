@@ -63,7 +63,7 @@ export default class SentientItem {
     this.ideal = this.generateIdeal()
     this.bond = pickByPropability(bondList).description
     this.weakness = pickByPropability(weaknessList).description
-    this.creator = pickByPropability(creatorList)
+    this.creator = pickByPropability(creatorList).description
   }
 
   generateIdeal = () => {

@@ -81,7 +81,9 @@ const DndSentientItem = (
       </tr>
       <tr className='DndSentientItem_row'>
         <th className='DndSentientItem_cell DndSentientItem_cell-head'>Общение</th>
-        <td className='DndSentientItem_cell'>{interactions.description}</td>
+        <td className='DndSentientItem_cell'>
+          <ReactMarkdown>{interactions.description}</ReactMarkdown>
+        </td>
       </tr>
       <tr className='DndSentientItem_row'>
         <th className='DndSentientItem_cell DndSentientItem_cell-head'>Предназначение</th>

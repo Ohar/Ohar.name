@@ -83,11 +83,11 @@ export default class SentientItem {
         .map(
           id => dndLanguageCollection[id].name
         )
-        .join(', ')
+        .join('*, *')
 
       description = description.replace(
         'одном или нескольких языках',
-        `языках: ${langStr}`
+        `языках: *${langStr}*`
       )
     }
 
@@ -145,7 +145,7 @@ export default class SentientItem {
 
         return goal.description.replace(
           'тех, чьё мировоззрение диаметрально противоположно его собственному (такой предмет не может быть нейтральным)',
-          `существ с ${oppositeAligment.name.instrumental} мировоззрением`,
+          `существ с *${oppositeAligment.name.instrumental}* мировоззрением`,
         )
       }
 
@@ -169,7 +169,7 @@ export default class SentientItem {
         return kind
           ? goal.description.replace(
             'определённую расу или существ определённого вида',
-            kind.name.plural.accusative
+            `*${kind.name.plural.accusative}*`
           )
           : goal.description
       }
@@ -179,7 +179,10 @@ export default class SentientItem {
         const godId = pickByPropability(godList).id
         const god = dndGodCollection[godId]
 
-        return goal.description.replace('определённого божества', god.name.full.genitive)
+        return goal.description.replace(
+          'определённого божества',
+          `*${god.name.full.genitive}*`
+        )
       }
 
       default: {

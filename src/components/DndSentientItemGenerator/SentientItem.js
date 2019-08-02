@@ -15,7 +15,6 @@ import charGoodList from "./constants/charGoodList"
 import communicationList from "./constants/communicationList"
 import creatorList from "./constants/creatorList"
 import goalList from "./constants/goalList"
-import godList from "./constants/godList"
 import idealList from "./constants/idealList"
 import interactionTypeList from "./constants/interactionTypeList"
 import itemTypeList from "./constants/itemTypeList"
@@ -26,6 +25,7 @@ import weaknessList from "./constants/weaknessList"
 
 import generateStats from "./utils/generateStats"
 import generateName from "./utils/generateName"
+import getRandomGod from "./utils/getRandomGod"
 import getRandomKind from "./utils/getRandomKind"
 import pickByPropability from "./utils/pickByPropability"
 
@@ -165,12 +165,11 @@ export default class SentientItem {
 
       case 'crusader':
       case 'tamplier': {
-        const godId = pickByPropability(godList).id
-        const god = dndGodCollection[godId]
+        const god = getRandomGod()
 
         return goal.description.replace(
           'определённого божества',
-          `*${god.name.full.genitive}*`
+          `*${god.full.genitive}*`
         )
       }
 

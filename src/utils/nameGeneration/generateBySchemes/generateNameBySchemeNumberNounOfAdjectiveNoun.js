@@ -1,10 +1,10 @@
-import getRandomAdjective from './../getRandomAdjective'
-import getRandomNoun from './../getRandomNoun'
-import getRandomNounByNumber from '../getRandomNounByNumber'
-import getRandomNumber from './../getRandomNumber'
-import getRandomNumberType from './../getRandomNumberType'
+import getRandomAdjective from '@/utils/nameGeneration/getRandomAdjective'
+import getRandomNoun from '@/utils/nameGeneration/getRandomNoun'
+import getRandomNounByNumber from '@/utils/nameGeneration/getRandomNounByNumber'
+import getRandomNumber from '@/utils/nameGeneration/getRandomNumber'
+import getRandomNumberType from '@/utils/nameGeneration/getRandomNumberType'
 
-const generateNameTabaxiSchemeNumberNounOfAdjectiveNoun = ({gender}) => {
+export default ({gender}) => {
     const numberType = getRandomNumberType()
 
     const number = getRandomNumber({gender, numberType}).nominative
@@ -21,5 +21,3 @@ const generateNameTabaxiSchemeNumberNounOfAdjectiveNoun = ({gender}) => {
 
     return `${number} ${noun1st} ${adjective} ${noun2ndText}`
 }
-
-export default generateNameTabaxiSchemeNumberNounOfAdjectiveNoun

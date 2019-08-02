@@ -1,8 +1,11 @@
-import getRandomNoun from './getRandomNoun'
+import {
+  SINGLE_NUMBER_TYPE,
+  PLURAL_NUMBER_TYPE,
+} from "@/constants/nameGeneration/numberTypeList"
 
-import { SINGLE_NUMBER_TYPE, PLURAL_NUMBER_TYPE } from '../constants/numberList'
+import getRandomNoun from '@/utils/nameGeneration/getRandomNoun'
 
-const getRandomNounByNumber = (
+export default (
   {
     numberType = SINGLE_NUMBER_TYPE,
     ...rest
@@ -14,5 +17,3 @@ const getRandomNounByNumber = (
     ? nounObj.genitive
     : nounObj.nominative
 }
-
-export default getRandomNounByNumber

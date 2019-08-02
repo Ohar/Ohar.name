@@ -19,6 +19,7 @@ const DndSentientItem = (
       ideal,
       interactions,
       manner,
+      name,
       senses,
       stats,
       type,
@@ -40,6 +41,10 @@ const DndSentientItem = (
   return (
     <table className='DndSentientItem'>
     <tbody>
+      <tr className='DndSentientItem_row'>
+        <th className='DndSentientItem_cell DndSentientItem_cell-head'>Название</th>
+        <td className='DndSentientItem_cell'>{name}</td>
+      </tr>
       <tr className='DndSentientItem_row'>
         <th className='DndSentientItem_cell DndSentientItem_cell-head'>Тип предмета</th>
         <td

@@ -1,6 +1,4 @@
-import _ from "lodash"
-
-import genderFieldList from "@/constants/dnd/genderFieldList"
+import generateRandomGender from '@/utils/nameGeneration/generateRandomGender'
 
 import generateFullNameTabaxi from './utils/generateFullNameTabaxi'
 
@@ -14,10 +12,8 @@ const generateNameTabaxi = ({gender, ...rest}) => {
 
     default:
     case 'any': {
-      const genderList = _.map(genderFieldList, 'value').filter(e => e !== 'any')
-
       return generateFullNameTabaxi({
-        gender: _.sample(genderList),
+        gender: generateRandomGender(),
         ...rest,
       })
     }

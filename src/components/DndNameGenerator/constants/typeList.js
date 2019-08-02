@@ -1,4 +1,4 @@
-import genderFieldList from "@/constants/dnd/genderFieldList"
+import genderFieldList from "@/constants/nameGeneration/genderFieldList"
 
 import useSurnameList from "../races/human/useSurnameList"
 import schemaList from "../races/tabaxi/constants/schemaList"

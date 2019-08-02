@@ -1,4 +1,4 @@
-import mapGender from './../utils/mapGender'
+import mapGender from '@/utils/nameGeneration/mapGender'
 
 import nounFemaleList from './nounFemaleList'
 import nounMaleList from './nounMaleList'

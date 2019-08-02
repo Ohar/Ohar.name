@@ -9,16 +9,16 @@ import schemaList, {
   NUMBER_ADJECTIVE_NOUN,
   NUMBER_NOUN_OF_ADJECTIVE_NOUN,
   NUMBER_NOUN_OF_NOUN,
-} from './../constants/schemaList'
+} from '@/constants/nameGeneration/nameSchemaList'
 
-import generateNameTabaxiSchemeAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeAdjectiveNoun'
-import generateNameTabaxiSchemeNounOfNoun from './generateBySchemes/generateNameTabaxiSchemeNounOfNoun'
-import generateNameTabaxiSchemeNounOfAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeNounOfAdjectiveNoun'
-import generateNameTabaxiSchemeNounOfNumberAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeNounOfNumberAdjectiveNoun'
-import generateNameTabaxiSchemeNounOfNumberNoun from './generateBySchemes/generateNameTabaxiSchemeNounOfNumberNoun'
-import generateNameTabaxiSchemeNumberAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeNumberAdjectiveNoun'
-import generateNameTabaxiSchemeNumberNounOfAdjectiveNoun from './generateBySchemes/generateNameTabaxiSchemeNumberNounOfAdjectiveNoun'
-import generateNameTabaxiSchemeNumberNounOfNoun from './generateBySchemes/generateNameTabaxiSchemeNumberNounOfNoun'
+import generateNameBySchemeAdjectiveNoun from '@/utils/nameGeneration/generateBySchemes/generateNameBySchemeAdjectiveNoun'
+import generateNameBySchemeNounOfNoun from '@/utils/nameGeneration/generateBySchemes/generateNameBySchemeNounOfNoun'
+import generateNameBySchemeNounOfAdjectiveNoun from '@/utils/nameGeneration/generateBySchemes/generateNameBySchemeNounOfAdjectiveNoun'
+import generateNameBySchemeNounOfNumberAdjectiveNoun from '@/utils/nameGeneration/generateBySchemes/generateNameBySchemeNounOfNumberAdjectiveNoun'
+import generateNameBySchemeNounOfNumberNoun from '@/utils/nameGeneration/generateBySchemes/generateNameBySchemeNounOfNumberNoun'
+import generateNameBySchemeNumberAdjectiveNoun from '@/utils/nameGeneration/generateBySchemes/generateNameBySchemeNumberAdjectiveNoun'
+import generateNameBySchemeNumberNounOfAdjectiveNoun from '@/utils/nameGeneration/generateBySchemes/generateNameBySchemeNumberNounOfAdjectiveNoun'
+import generateNameBySchemeNumberNounOfNoun from '@/utils/nameGeneration/generateBySchemes/generateNameBySchemeNumberNounOfNoun'
 
 // TODO
 // Кланы табакси
@@ -33,35 +33,35 @@ const generateFullNameTabaxi = ({gender, schema}) => {
 
   switch (schemaToUse) {
     case ADJECTIVE_NOUN:
-      result = generateNameTabaxiSchemeAdjectiveNoun({gender})
+      result = generateNameBySchemeAdjectiveNoun({gender})
       break
 
     case NOUN_OF_ADJECTIVE_NOUN:
-      result = generateNameTabaxiSchemeNounOfAdjectiveNoun({gender})
+      result = generateNameBySchemeNounOfAdjectiveNoun({gender})
       break
 
     case NOUN_OF_NOUN:
-      result = generateNameTabaxiSchemeNounOfNoun({gender})
+      result = generateNameBySchemeNounOfNoun({gender})
       break
 
     case NOUN_OF_NUMBER_ADJECTIVE_NOUN:
-      result = generateNameTabaxiSchemeNounOfNumberAdjectiveNoun({gender})
+      result = generateNameBySchemeNounOfNumberAdjectiveNoun({gender})
       break
 
     case NOUN_OF_NUMBER_NOUN:
-      result = generateNameTabaxiSchemeNounOfNumberNoun({gender})
+      result = generateNameBySchemeNounOfNumberNoun({gender})
       break
 
     case NUMBER_ADJECTIVE_NOUN:
-      result = generateNameTabaxiSchemeNumberAdjectiveNoun({gender})
+      result = generateNameBySchemeNumberAdjectiveNoun({gender})
       break
 
     case NUMBER_NOUN_OF_ADJECTIVE_NOUN:
-      result = generateNameTabaxiSchemeNumberNounOfAdjectiveNoun({gender})
+      result = generateNameBySchemeNumberNounOfAdjectiveNoun({gender})
       break
 
     case NUMBER_NOUN_OF_NOUN:
-      result = generateNameTabaxiSchemeNumberNounOfNoun({gender})
+      result = generateNameBySchemeNumberNounOfNoun({gender})
       break
 
     default:

@@ -1,7 +1,7 @@
-import maybePluralGender from './../maybePluralGender'
-import getRandomNoun from './../getRandomNoun'
+import maybePluralGender from '@/utils/nameGeneration/maybePluralGender'
+import getRandomNoun from '@/utils/nameGeneration/getRandomNoun'
 
-const generateNameTabaxiSchemeNounAtNoun = ({gender}) => {
+export default ({gender}) => {
   const genderToUseSecond = maybePluralGender(gender)
 
   const nounFirst = getRandomNoun({gender})
@@ -16,5 +16,3 @@ const generateNameTabaxiSchemeNounAtNoun = ({gender}) => {
 
   return `${nounFirstText} ${nounSecond}`
 }
-
-export default generateNameTabaxiSchemeNounAtNoun

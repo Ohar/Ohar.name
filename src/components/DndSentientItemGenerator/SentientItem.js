@@ -26,6 +26,7 @@ import bondList from "./constants/bondList"
 import weaknessList from "./constants/weaknessList"
 
 import generateStats from "./utils/generateStats"
+import generateName from "./utils/generateName"
 import pickByPropability from "./utils/pickByPropability"
 
 const MAX_LANG_BASE = 2
@@ -64,6 +65,7 @@ export default class SentientItem {
     this.bond = pickByPropability(bondList).description
     this.weakness = pickByPropability(weaknessList).description
     this.creator = pickByPropability(creatorList).description
+    this.name = generateName()
   }
 
   generateIdeal = () => {

@@ -1,8 +1,8 @@
-import maybePluralGender from './../maybePluralGender'
-import getRandomNoun from './../getRandomNoun'
-import getRandomAdjective from './../getRandomAdjective'
+import maybePluralGender from '@/utils/nameGeneration/maybePluralGender'
+import getRandomNoun from '@/utils/nameGeneration/getRandomNoun'
+import getRandomAdjective from '@/utils/nameGeneration/getRandomAdjective'
 
-const generateNameTabaxiSchemeNounOfAdjectiveNoun = ({gender}) => {
+export default ({gender}) => {
     const genderToUseSecond = maybePluralGender(gender)
 
     const nounFirst = getRandomNoun({gender})
@@ -18,5 +18,3 @@ const generateNameTabaxiSchemeNounOfAdjectiveNoun = ({gender}) => {
 
     return `${nounFirstText} ${adjectiveSecond} ${nounSecond}`
 }
-
-export default generateNameTabaxiSchemeNounOfAdjectiveNoun

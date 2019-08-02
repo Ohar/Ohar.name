@@ -1,6 +1,6 @@
-import adjectiveList from './adjectiveList'
+import adjectiveRawList from './adjectiveRawList'
 
-export default adjectiveList.map(
+export default adjectiveRawList.map(
   (
     {
       single,

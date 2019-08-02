@@ -19,7 +19,6 @@ import godList from "./constants/godList"
 import idealList from "./constants/idealList"
 import interactionTypeList from "./constants/interactionTypeList"
 import itemTypeList from "./constants/itemTypeList"
-import kindList from "./constants/kindList"
 import languageList from "./constants/languageList"
 import mannerList from "./constants/mannerList"
 import senseTypeList from "./constants/senseTypeList"
@@ -27,6 +26,7 @@ import weaknessList from "./constants/weaknessList"
 
 import generateStats from "./utils/generateStats"
 import generateName from "./utils/generateName"
+import getRandomKind from "./utils/getRandomKind"
 import pickByPropability from "./utils/pickByPropability"
 
 const MAX_LANG_BASE = 2
@@ -153,25 +153,12 @@ export default class SentientItem {
 
       case 'defender':
       case 'doom': {
-        const {id, type} = pickByPropability(kindList)
-        let kind = null
-
-        switch (type) {
-          case 'creatureType': {
-            kind = dndCreatureTypeCollection[id]
-            break;
-          }
-
-          case 'pcClass': {
-            kind = dndPcClassCollection[id]
-            break;
-          }
-        }
+        let kind = getRandomKind()
 
         return kind
           ? goal.description.replace(
             'определённую расу или существ определённого вида',
-            `*${kind.name.plural.accusative}*`
+            `*${kind.plural.accusative}*`
           )
           : goal.description
       }

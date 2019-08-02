@@ -48,6 +48,7 @@ export default class DndSentientItemContainer extends Component {
         name,
         senses,
         stats,
+        story,
         type,
         weakness,
       } = item
@@ -125,6 +126,11 @@ export default class DndSentientItemContainer extends Component {
           headerTitle: 'Кем или для кого он создан?',
           header: 'Создатель или предполагаемый владелец',
           content: creator,
+        },
+        {
+          headerTitle: 'Детали его истории?',
+          header: 'История',
+          content: story,
         },
       ]
 

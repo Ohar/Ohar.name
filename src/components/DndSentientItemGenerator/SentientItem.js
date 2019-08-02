@@ -21,6 +21,7 @@ import itemTypeList from "./constants/itemTypeList"
 import languageList from "./constants/languageList"
 import mannerList from "./constants/mannerList"
 import senseTypeList from "./constants/senseTypeList"
+import storyList from "./constants/storyList"
 import weaknessList from "./constants/weaknessList"
 
 import generateStats from "./utils/generateStats"
@@ -66,6 +67,7 @@ export default class SentientItem {
     this.weakness = pickByPropability(weaknessList).description
     this.creator = pickByPropability(creatorList).description
     this.name = generateName()
+    this.story = this.generateStory()
   }
 
   generateIdeal = () => {
@@ -133,6 +135,50 @@ export default class SentientItem {
     return pickByPropability(availablemannerList).description
   }
 
+  generateStory = () => {
+    let {id, description} = pickByPropability(storyList)
+
+    switch (id) {
+      case 'Zashchitneyk':
+      case 'Pogibel': {
+        const {plural: {nominative, accusative}} = getRandomKind()
+
+        return description
+          .replace(
+            'какой-либо культуры или вида существ',
+            `*${accusative}*`
+          )
+          .replace(
+            'культура или существа',
+            `*${nominative}*`
+          )
+      }
+
+      case 'Religiia-require':
+      case 'Religiia-steal':
+      case 'Religiia-use': {
+        const {short, full} = getRandomGod()
+
+        return description
+          .replace(
+            'какому-либо богу',
+            `*${full.dative}*`
+          )
+          .replace(
+            'Последователи бога',
+            `Последователи *${short.genitive}*`
+          )
+          .replace(
+            'того же бога',
+            `*${short.genitive}*`
+          )
+      }
+
+      default:
+        return description
+    }
+  }
+
   generateGoal = () => {
     let goal = pickByPropability(goalList)
 
@@ -153,7 +199,7 @@ export default class SentientItem {
 
       case 'defender':
       case 'doom': {
-        let kind = getRandomKind()
+        const kind = getRandomKind()
 
         return kind
           ? goal.description.replace(

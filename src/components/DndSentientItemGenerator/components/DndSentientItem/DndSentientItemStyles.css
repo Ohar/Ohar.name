@@ -7,8 +7,6 @@
     padding: .5rem;
 }
 
-.DndSentientItem_cell-aligment:first-letter,
-.DndSentientItem_cell-charText:first-letter,
-.DndSentientItem_cell-idealText:first-letter {
+.DndSentientItem_cell :first-child:first-letter {
     text-transform: uppercase;
 }

@@ -122,7 +122,8 @@ export default class DndSentientItemContainer extends Component {
           content: weakness,
         },
         {
-          header: 'Создатель',
+          headerTitle: 'Кем или для кого он создан?',
+          header: 'Создатель или предполагаемый владелец',
           content: creator,
         },
       ]

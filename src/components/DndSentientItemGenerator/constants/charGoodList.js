@@ -5,6 +5,11 @@ export default [
     description: 'образованный',
   },
   {
+    id: 'umnyi',
+    probabilityWeight: 1,
+    description: 'умный',
+  },
+  {
     id: 'curious',
     probabilityWeight: 1,
     description: 'любознательный',
@@ -22,7 +27,7 @@ export default [
   {
     id: 'convincing',
     probabilityWeight: 1,
-    description: 'убедительньный',
+    description: 'убедительный',
   },
   {
     id: 'volitional',
@@ -53,5 +58,15 @@ export default [
     id: 'predusmotritelen',
     probabilityWeight: 1,
     description: 'предусмотрительный',
+  },
+  {
+    id: 'vesyolyi',
+    probabilityWeight: 1,
+    description: 'весёлый',
+  },
+  {
+    id: 'vezhlivyi',
+    probabilityWeight: 1,
+    description: 'вежливый',
   },
 ]

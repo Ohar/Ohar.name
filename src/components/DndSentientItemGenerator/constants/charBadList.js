@@ -64,4 +64,9 @@ export default [
     probabilityWeight: 1,
     description: 'надменный',
   },
+  {
+    id: 'zlopamiatnyi',
+    probabilityWeight: 1,
+    description: 'злопамятный',
+  },
 ]

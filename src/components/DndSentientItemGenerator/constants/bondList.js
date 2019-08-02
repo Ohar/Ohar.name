@@ -30,4 +30,9 @@ export default [
     probabilityWeight: 1,
     description: 'Желание попасть в особое место',
   },
+  {
+    id: 'Zhelanie otomstit',
+    probabilityWeight: 1,
+    description: 'Желание отомстить',
+  },
 ]

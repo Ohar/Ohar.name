@@ -42,6 +42,6 @@ export default [
   {
     id: 'Samouveren_i_khrabr',
     probabilityWeight: 2,
-    description: 'Самоуверен и храбр',
+    description: 'Самоуверен',
   },
 ]

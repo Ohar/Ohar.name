@@ -8,12 +8,15 @@ const DndSentientItemComponent = ({itemDataList}) => (
     <tbody>
     {
       itemDataList.map(
-        ({title, header, content, i}) => (
+        ({title, headerTitle, header, content, i}) => (
           <tr
             className='DndSentientItem_row'
             key={i}
           >
-            <th className='DndSentientItem_cell DndSentientItem_cell-head'>
+            <th
+              className='DndSentientItem_cell DndSentientItem_cell-head'
+              title={headerTitle || null}
+            >
               {header}
             </th>
             <td

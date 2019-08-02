@@ -70,4 +70,9 @@ export default [
     probabilityWeight: 1,
     description: 'Суров',
   },
+  {
+    id: 'obshchitelen',
+    probabilityWeight: 1,
+    description: 'общителен',
+  },
 ]

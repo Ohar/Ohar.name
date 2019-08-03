@@ -37,6 +37,7 @@ export default class DndSentientItemContainer extends Component {
     if (item) {
       const {
         aligmentId,
+        bizzare,
         bond,
         char,
         communication,
@@ -137,6 +138,11 @@ export default class DndSentientItemContainer extends Component {
           headerTitle: 'Каким малым свойством обладает предмет?',
           header: 'Малое свойство',
           content: lesserAbility,
+        },
+        {
+          headerTitle: 'Какими еще причудливыми особенностями обладает предмет?',
+          header: 'Причудливая особенность',
+          content: bizzare,
         },
       ]
 

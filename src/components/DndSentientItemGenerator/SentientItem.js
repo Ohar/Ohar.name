@@ -7,6 +7,7 @@ import checkIfAligmentPossible from "@/utils/checkIfAligmentPossible"
 import dndCalcStatBonus from "@/utils/dndCalcStatBonus"
 
 import aligmentList from "./constants/aligmentList"
+import bizzareList from "./constants/bizzareList"
 import bondList from "./constants/bondList"
 import charBadList from "./constants/charBadList"
 import charGoodList from "./constants/charGoodList"
@@ -69,6 +70,7 @@ export default class SentientItem {
     this.name = generateName()
     this.story = this.generateStory()
     this.lesserAbility = this.generateLesserAbility()
+    this.bizzare = pickByPropability(bizzareList).description
   }
 
   generateIdeal = () => {

@@ -1,5 +1,6 @@
 import dndStatBaseValue from '@/constants/dnd/dndStatBaseValue'
 import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
+import {dndCreatureTypeCollection} from '@/constants/dnd/dndCreatureTypeList'
 import {dndLanguageCollection} from "@/constants/dnd/dndLanguageList"
 
 import checkIfAligmentPossible from "@/utils/checkIfAligmentPossible"
@@ -11,11 +12,13 @@ import charBadList from "./constants/charBadList"
 import charGoodList from "./constants/charGoodList"
 import communicationList from "./constants/communicationList"
 import creatorList from "./constants/creatorList"
+import creatureTypeList from "./constants/creatureTypeList"
 import goalList from "./constants/goalList"
 import idealList from "./constants/idealList"
 import interactionTypeList from "./constants/interactionTypeList"
 import itemTypeList from "./constants/itemTypeList"
-import languageList from "./constants/languageList"
+import languageList, {withoutCommonLanguageList} from "./constants/languageList"
+import lesserAbilityList from "./constants/lesserAbilityList"
 import mannerList from "./constants/mannerList"
 import senseTypeList from "./constants/senseTypeList"
 import storyList from "./constants/storyList"
@@ -65,6 +68,7 @@ export default class SentientItem {
     this.creator = pickByPropability(creatorList).description
     this.name = generateName()
     this.story = this.generateStory()
+    this.lesserAbility = this.generateLesserAbility()
   }
 
   generateIdeal = () => {
@@ -168,6 +172,40 @@ export default class SentientItem {
           .replace(
             'того же бога',
             `*${short.genitive}*`
+          )
+      }
+
+      default:
+        return description
+    }
+  }
+
+  generateLesserAbility = () => {
+    const {id, description} = pickByPropability(lesserAbilityList)
+
+    switch (id) {
+      case 'Iazyk': {
+        const langId = pickByPropability(withoutCommonLanguageList).id
+        const {name} = dndLanguageCollection[langId]
+
+        return description.replace(
+          'на одном дополнительном языке (по выбору Мастера)',
+          `на одном дополнительном языке: *${name}*`
+        )
+      }
+
+      case 'Chasovoi': {
+        const creatureTypeId = pickByPropability(creatureTypeList).id
+        const {name} = dndCreatureTypeCollection[creatureTypeId]
+
+        return description
+          .replace(
+            'Выберите какой-либо вид существ — они были врагами создателя предмета',
+            `Врагами создателя предмета были *${name.plural.nominative}*`
+          )
+          .replace(
+            'такие существа',
+            `*${name.plural.nominative}*`
           )
       }
 

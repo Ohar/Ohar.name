@@ -1,8 +1,9 @@
-export default [
-  {
-    id: 'common',
-    probabilityWeight: 200,
-  },
+const common = {
+  id: 'common',
+  probabilityWeight: 200,
+}
+
+export const withoutCommonLanguageList = [
   {
     id: 'primordial',
     probabilityWeight: 20,
@@ -183,4 +184,9 @@ export default [
     id: 'troglodyte',
     probabilityWeight: 1,
   },
+]
+
+export default [
+  common,
+  ...withoutCommonLanguageList,
 ]

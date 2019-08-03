@@ -44,6 +44,7 @@ export default class DndSentientItemContainer extends Component {
         goal,
         ideal,
         interactions,
+        lesserAbility,
         manner,
         name,
         senses,
@@ -131,6 +132,11 @@ export default class DndSentientItemContainer extends Component {
           headerTitle: 'Детали его истории?',
           header: 'История',
           content: story,
+        },
+        {
+          headerTitle: 'Каким малым свойством обладает предмет?',
+          header: 'Малое свойство',
+          content: lesserAbility,
         },
       ]
 

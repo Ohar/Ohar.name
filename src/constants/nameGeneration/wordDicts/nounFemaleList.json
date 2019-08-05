@@ -9,7 +9,8 @@
       "nominative": "Реки",
       "genitive": "Рек",
       "prepositional": "Реках"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -45,7 +46,8 @@
       "nominative": "Вершины",
       "genitive": "Вершин",
       "prepositional": "Вершинах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -141,7 +143,8 @@
       "nominative": "Впадины",
       "genitive": "Впадин",
       "prepositional": "Впадинах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -201,7 +204,8 @@
       "nominative": "Дыры",
       "genitive": "Дыр",
       "prepositional": "Дырах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -357,7 +361,8 @@
       "nominative": "Кучи",
       "genitive": "Куч",
       "prepositional": "Кучах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -369,7 +374,8 @@
       "nominative": "Ямы",
       "genitive": "Ям",
       "prepositional": "Ямах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -549,7 +555,8 @@
       "nominative": "Дороги",
       "genitive": "Дорог",
       "prepositional": "Дорогах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -741,7 +748,8 @@
       "nominative": "Горы",
       "genitive": "Гор",
       "prepositional": "Горах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -849,7 +857,8 @@
       "nominative": "Глыбы",
       "genitive": "Глыб",
       "prepositional": "Глыбах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -873,7 +882,8 @@
       "nominative": "Высоты",
       "genitive": "Высот",
       "prepositional": "Высотах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -909,7 +919,8 @@
       "nominative": "Горки",
       "genitive": "Горок",
       "prepositional": "Горках"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -921,7 +932,8 @@
       "nominative": "Лужайки",
       "genitive": "Лужайок",
       "prepositional": "Лужайках"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1005,7 +1017,8 @@
       "nominative": "Лагуны",
       "genitive": "Лагун",
       "prepositional": "Лагунах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1017,7 +1030,8 @@
       "nominative": "Гряды",
       "genitive": "Гряд",
       "prepositional": "Грядах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1161,7 +1175,8 @@
       "nominative": "Скалы",
       "genitive": "Скал",
       "prepositional": "Скалах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1209,7 +1224,8 @@
       "nominative": "Рощи",
       "genitive": "Рощ",
       "prepositional": "Рощах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1305,7 +1321,8 @@
       "nominative": "Воды",
       "genitive": "Вод",
       "prepositional": "Водах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1365,18 +1382,6 @@
       "nominative": "Байки",
       "genitive": "Баек",
       "prepositional": "Байках"
-    }
-  },
-  {
-    "single": {
-      "nominative": "Земля",
-      "genitive": "Земли",
-      "prepositional": "Земле"
-    },
-    "plural": {
-      "nominative": "Земли",
-      "genitive": "Земель",
-      "prepositional": "Землях"
     }
   },
   {
@@ -1556,7 +1561,8 @@
       "nominative": "Трясины",
       "genitive": "Трясин",
       "prepositional": "Трясинах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1604,7 +1610,8 @@
       "nominative": "Реки",
       "genitive": "Рек",
       "prepositional": "Реках"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1628,7 +1635,8 @@
       "nominative": "Тропы",
       "genitive": "Троп",
       "prepositional": "Тропах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1640,7 +1648,8 @@
       "nominative": "Тропинки",
       "genitive": "Тропинок",
       "prepositional": "Тропинках"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1808,7 +1817,8 @@
       "nominative": "Просеки",
       "genitive": "Просек",
       "prepositional": "Просеках"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1880,7 +1890,8 @@
       "nominative": "Поляны",
       "genitive": "Полян",
       "prepositional": "Полянах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1904,7 +1915,8 @@
       "nominative": "Пещеры",
       "genitive": "Пещер",
       "prepositional": "Пещерах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1928,7 +1940,8 @@
       "nominative": "Чащи",
       "genitive": "Чащ",
       "prepositional": "Чащах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1940,7 +1953,8 @@
       "nominative": "Дюны",
       "genitive": "Дюн",
       "prepositional": "Дюнах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1988,7 +2002,8 @@
       "nominative": "Берлоги",
       "genitive": "Берлог",
       "prepositional": "Берлогах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2000,7 +2015,8 @@
       "nominative": "Норы",
       "genitive": "Нор",
       "prepositional": "Норах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2120,7 +2136,8 @@
       "nominative": "Травы",
       "genitive": "Трав",
       "prepositional": "Травах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2228,7 +2245,8 @@
       "nominative": "Пустыни",
       "genitive": "Пустынь",
       "prepositional": "Пустынях"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2420,7 +2438,8 @@
       "nominative": "Земли",
       "genitive": "Земель",
       "prepositional": "Землях"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2480,7 +2499,8 @@
       "nominative": "Пустоши",
       "genitive": "Пустошей",
       "prepositional": "Пустошах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2492,7 +2512,8 @@
       "nominative": "Топи",
       "genitive": "Топей",
       "prepositional": "Топях"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2504,7 +2525,8 @@
       "nominative": "Заросли",
       "genitive": "Зарослей",
       "prepositional": "Зарослях"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {

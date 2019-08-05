@@ -505,18 +505,6 @@
   },
   {
     "single": {
-      "nominative": "Справочник",
-      "genitive": "Справочника",
-      "prepositional": "Справочнике"
-    },
-    "plural": {
-      "nominative": "Справочника",
-      "genitive": "Справочников",
-      "prepositional": "Справочниках"
-    }
-  },
-  {
-    "single": {
       "nominative": "Учебник",
       "genitive": "Учебника",
       "prepositional": "Учебнике"

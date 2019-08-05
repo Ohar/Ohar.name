@@ -218,24 +218,6 @@
   {
     "type": "plural",
     "female": {
-      "nominative": "Дюжина",
-      "genitive": "Дюжины",
-      "prepositional": "Дюжине"
-    },
-    "male": {
-      "nominative": "Дюжина",
-      "genitive": "Дюжины",
-      "prepositional": "Дюжине"
-    },
-    "middle": {
-      "nominative": "Дюжина",
-      "genitive": "Дюжины",
-      "prepositional": "Дюжине"
-    }
-  },
-  {
-    "type": "plural",
-    "female": {
       "nominative": "Сто",
       "genitive": "Ста",
       "prepositional": "Ста"

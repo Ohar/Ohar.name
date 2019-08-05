@@ -3602,26 +3602,6 @@
   {
     "single": {
       "female": {
-        "nominative": "Леворукая",
-        "genitive": "Леворукой"
-      },
-      "male": {
-        "nominative": "Леворукий",
-        "genitive": "Леворукого",
-        "prepositional": "Леворуким"
-      },
-      "middle": {
-        "nominative": "Леворукое"
-      }
-    },
-    "dualFemale": {
-      "nominative": "Леворукие",
-      "genitive": "Леворуких"
-    }
-  },
-  {
-    "single": {
-      "female": {
         "nominative": "Звонкая",
         "genitive": "Звонкой"
       },

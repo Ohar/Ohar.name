@@ -9,7 +9,8 @@
       "nominative": "Деревья",
       "genitive": "Деревьев",
       "prepositional": "Деревьях"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -21,7 +22,8 @@
       "nominative": "Древа",
       "genitive": "Древ",
       "prepositional": "Древах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -93,7 +95,8 @@
       "nominative": "Болота",
       "genitive": "Болот",
       "prepositional": "Болотах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -117,7 +120,8 @@
       "nominative": "Логова",
       "genitive": "Логов",
       "prepositional": "Логовах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -417,7 +421,8 @@
       "nominative": "Побережья",
       "genitive": "Побережий",
       "prepositional": "Побережьях"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -501,7 +506,8 @@
       "nominative": "Озёра",
       "genitive": "Озёр",
       "prepositional": "Озёрах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -537,7 +543,8 @@
       "nominative": "Моря",
       "genitive": "Морей",
       "prepositional": "Морах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -789,6 +796,7 @@
       "nominative": "Поля",
       "genitive": "Полей",
       "prepositional": "Полях"
-    }
+    },
+    "isLocation": true
   }
 ]

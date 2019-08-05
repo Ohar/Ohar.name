@@ -3,21 +3,25 @@ import generateRandomGender from '@/utils/nameGeneration/generateRandomGender'
 import generateFullNameTabaxi from './utils/generateFullNameTabaxi'
 
 const generateNameTabaxi = ({gender, ...rest}) => {
+  let genderToUse = ''
+
   switch (gender) {
     case 'female':
     case 'male':
     case 'middle': {
-      return generateFullNameTabaxi({gender, ...rest})
+      genderToUse = gender
+      break
     }
 
     default:
     case 'any': {
-      return generateFullNameTabaxi({
-        gender: generateRandomGender(),
-        ...rest,
-      })
+      genderToUse = generateRandomGender()
+      break
     }
   }
+
+  return generateFullNameTabaxi({gender: genderToUse, ...rest})
+    .replace(/\s+/g, ' ')
 }
 
 export default generateNameTabaxi

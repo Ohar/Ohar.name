@@ -141,7 +141,8 @@
       "nominative": "Утёсы",
       "genitive": "Утёсов",
       "prepositional": "Утёсах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -609,7 +610,8 @@
       "nominative": "Столбы",
       "genitive": "Столбов",
       "prepositional": "Столбах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -669,7 +671,8 @@
       "nominative": "Гроты",
       "genitive": "Гротов",
       "prepositional": "Гротах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -705,7 +708,8 @@
       "nominative": "Булыжники",
       "genitive": "Булыжников",
       "prepositional": "Булыжниках"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -729,7 +733,8 @@
       "nominative": "Фьорды",
       "genitive": "Фьордов",
       "prepositional": "Фьордах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -777,7 +782,8 @@
       "nominative": "Потоки",
       "genitive": "Потоков",
       "prepositional": "Потоках"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -849,7 +855,8 @@
       "nominative": "Откосы",
       "genitive": "Откосов",
       "prepositional": "Откосах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -957,7 +964,8 @@
       "nominative": "Шпили",
       "genitive": "Шпилей",
       "prepositional": "Шпилях"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -969,7 +977,8 @@
       "nominative": "Отлоги",
       "genitive": "Отлогов",
       "prepositional": "Отлогах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1065,7 +1074,8 @@
       "nominative": "Спуски",
       "genitive": "Спусков",
       "prepositional": "Спусках"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1113,7 +1123,8 @@
       "nominative": "Камни",
       "genitive": "Камней",
       "prepositional": "Камнях"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1125,7 +1136,8 @@
       "nominative": "Подъёмы",
       "genitive": "Подъёмов",
       "prepositional": "Подъёмах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1357,6 +1369,19 @@
   },
   {
     "single": {
+      "nominative": "Фонтан",
+      "genitive": "Фонтана",
+      "prepositional": "Фонтане"
+    },
+    "plural": {
+      "nominative": "Фонтаны",
+      "genitive": "Фонтанов",
+      "prepositional": "Фонтанах"
+    },
+    "isLocation": true
+  },
+  {
+    "single": {
       "nominative": "Источник",
       "genitive": "Источника",
       "prepositional": "Источнике"
@@ -1365,7 +1390,8 @@
       "nominative": "Источники",
       "genitive": "Источников",
       "prepositional": "Источниках"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1485,7 +1511,8 @@
       "nominative": "Пути",
       "genitive": "Путей",
       "prepositional": "Путях"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1569,7 +1596,8 @@
       "nominative": "Уклоны",
       "genitive": "Уклонов",
       "prepositional": "Уклонах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1641,7 +1669,8 @@
       "nominative": "Наклоны",
       "genitive": "Наклонов",
       "prepositional": "Наклонах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1653,7 +1682,8 @@
       "nominative": "Склоны",
       "genitive": "Склонов",
       "prepositional": "Склонах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1737,7 +1767,8 @@
       "nominative": "Оазисы",
       "genitive": "Оазисов",
       "prepositional": "Оазисах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -1773,19 +1804,8 @@
       "nominative": "Гребни",
       "genitive": "Гребней",
       "prepositional": "Гребнях"
-    }
-  },
-  {
-    "single": {
-      "nominative": "Муссон",
-      "genitive": "Муссона",
-      "prepositional": "Муссоне"
     },
-    "plural": {
-      "nominative": "Муссоны",
-      "genitive": "Муссонов",
-      "prepositional": "Муссонах"
-    }
+    "isLocation": true
   },
   {
     "single": {
@@ -1941,7 +1961,8 @@
       "nominative": "Кряжи",
       "genitive": "Кряжей",
       "prepositional": "Кряжах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2001,7 +2022,8 @@
       "nominative": "Утёсы",
       "genitive": "Утёсов",
       "prepositional": "Утёсах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2013,7 +2035,8 @@
       "nominative": "Луга",
       "genitive": "Лугов",
       "prepositional": "Лугах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2025,7 +2048,8 @@
       "nominative": "Берега",
       "genitive": "Берегов",
       "prepositional": "Берегах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2061,7 +2085,8 @@
       "nominative": "Пляжи",
       "genitive": "Пляжей",
       "prepositional": "Пляжах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2097,7 +2122,8 @@
       "nominative": "Дома",
       "genitive": "Домов",
       "prepositional": "Домах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2169,18 +2195,6 @@
       "nominative": "Мелки",
       "genitive": "Мелков",
       "prepositional": "Мелках"
-    }
-  },
-  {
-    "single": {
-      "nominative": "Бассейн",
-      "genitive": "Бассейна",
-      "prepositional": "Бассейне"
-    },
-    "plural": {
-      "nominative": "Бассейны",
-      "genitive": "Бассейнов",
-      "prepositional": "Бассейнах"
     }
   },
   {
@@ -2337,7 +2351,8 @@
       "nominative": "Холмы",
       "genitive": "Холмов",
       "prepositional": "Холмах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2349,7 +2364,8 @@
       "nominative": "Мосты",
       "genitive": "Мостов",
       "prepositional": "Мостах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2421,7 +2437,8 @@
       "nominative": "Ручьи",
       "genitive": "Ручьёв",
       "prepositional": "Ручьях"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2613,7 +2630,8 @@
       "nominative": "Пруды",
       "genitive": "Прудов",
       "prepositional": "Прудах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2769,7 +2787,8 @@
       "nominative": "Сады",
       "genitive": "Садов",
       "prepositional": "Садах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2805,7 +2824,8 @@
       "nominative": "Огороды",
       "genitive": "Огородов",
       "prepositional": "Огородах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -2853,7 +2873,8 @@
       "nominative": "Острова",
       "genitive": "Островов",
       "prepositional": "Островах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -3009,7 +3030,8 @@
       "nominative": "Обрывы",
       "genitive": "Обрывов",
       "prepositional": "Обрывах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -3045,7 +3067,8 @@
       "nominative": "Броды",
       "genitive": "Бродов",
       "prepositional": "Бродах"
-    }
+    },
+    "isLocation": true
   },
   {
     "single": {
@@ -3105,18 +3128,6 @@
       "nominative": "Дети",
       "genitive": "Детей",
       "prepositional": "Детях"
-    }
-  },
-  {
-    "single": {
-      "nominative": "Муссон",
-      "genitive": "Муссона",
-      "prepositional": "Муссоне"
-    },
-    "plural": {
-      "nominative": "Муссоны",
-      "genitive": "Муссонов",
-      "prepositional": "Муссонах"
     }
   },
   {

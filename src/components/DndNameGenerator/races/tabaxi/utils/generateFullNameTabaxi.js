@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-import schemaList, {
+import {
   ADJECTIVE_NOUN,
   NOUN_OF_NOUN,
   NOUN_OF_NUMBER_NOUN,
@@ -12,39 +12,41 @@ import generateNameBySchemeNounOfNoun from '@/utils/nameGeneration/generateBySch
 import generateNameBySchemeNounOfNumberNoun from '@/utils/nameGeneration/generateBySchemes/generateNameBySchemeNounOfNumberNoun'
 import generateNameBySchemeNumberAdjectiveNoun from '@/utils/nameGeneration/generateBySchemes/generateNameBySchemeNumberAdjectiveNoun'
 
-// TODO
-// Кланы табакси
-const generateFullNameTabaxi = ({gender, schema}) => {
+import generateClanNameTabaxi from './generateClanNameTabaxi'
+
+export default ({gender, schema}) => {
+  const clanName = generateClanNameTabaxi()
   const schemaToUse = schema === 'any'
     ? _.sample(
-      schemaList.filter(({value}) => value !== 'any')
-    ).value
+      [
+        ADJECTIVE_NOUN,
+        NOUN_OF_NOUN,
+        NOUN_OF_NUMBER_NOUN,
+        NUMBER_ADJECTIVE_NOUN,
+      ]
+        .filter(item => item !== 'any')
+    )
     : schema
 
-  let result = ''
+  let fullName = ''
 
   switch (schemaToUse) {
     case ADJECTIVE_NOUN:
-      result = generateNameBySchemeAdjectiveNoun({gender})
+      fullName = generateNameBySchemeAdjectiveNoun({gender})
       break
 
     case NOUN_OF_NOUN:
-      result = generateNameBySchemeNounOfNoun({gender})
+      fullName = generateNameBySchemeNounOfNoun({gender})
       break
 
     case NOUN_OF_NUMBER_NOUN:
-      result = generateNameBySchemeNounOfNumberNoun({gender})
+      fullName = generateNameBySchemeNounOfNumberNoun({gender})
       break
 
     case NUMBER_ADJECTIVE_NOUN:
-      result = generateNameBySchemeNumberAdjectiveNoun({gender})
+      fullName = generateNameBySchemeNumberAdjectiveNoun({gender})
       break
-
-    default:
-      result = 'Не готово ¯\\_(ツ)_/¯'
   }
 
-  return result.replace(/\s+/g, ' ')
+  return `${fullName} из клана ${clanName}`
 }
-
-export default generateFullNameTabaxi

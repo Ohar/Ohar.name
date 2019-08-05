@@ -4,12 +4,12 @@ import nounFemaleList from './nounFemaleList'
 import nounMaleList from './nounMaleList'
 import nounMiddleList from './nounMiddleList'
 
-export default [
+const nounList = [
   ...nounFemaleList.map(mapGender('female')),
   ...nounMaleList.map(mapGender('male')),
   ...nounMiddleList.map(mapGender('middle')),
 ].map(
-  ({ single, plural, ...rest }) => ({
+  ({ single, plural, isLocation, ...rest }) => ({
     ...rest,
     single,
     dual: {
@@ -18,5 +18,12 @@ export default [
       prepositional: plural.prepositional,
     },
     plural,
+    isLocation: isLocation || false,
   }),
 )
+
+export const nounLocationList = nounList.filter(
+  ({isLocation}) => isLocation
+)
+
+export default nounList

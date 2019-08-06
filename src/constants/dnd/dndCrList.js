@@ -4,7 +4,7 @@ const dndCrList = [
   {
     cr: '0',
     id: '0',
-    exp: 0,
+    exp: 10,
   },
   {
     cr: '1/8',

@@ -17,12 +17,12 @@ const DndSourceInfoComponent = ({ source }) => {
     const text = `${sourceData.shortName}${pageText}`
 
     return (
-      <section
+      <span
         className='DndSourceInfo'
         title={title}
       >
         {text}
-      </section>
+      </span>
     )
   }
 

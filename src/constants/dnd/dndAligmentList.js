@@ -1,8 +1,30 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
+export const ALIGMENT_NO = 'no'
+export const ALIGMENT_ANY = 'any'
+export const ALIGMENT_ANY_GOOD = 'any_good'
+export const ALIGMENT_ANY_EVIL = 'any_evil'
+export const ALIGMENT_ANY_LAWFUL = 'any_lawful'
+export const ALIGMENT_ANY_CHAOTIC = 'any_chaotic'
+export const ALIGMENT_NOT_NEUTRAL = 'not_neutral'
+export const ALIGMENT_NOT_GOOD = 'not_good'
+export const ALIGMENT_NOT_EVIL = 'not_evil'
+export const ALIGMENT_NOT_LAWFUL = 'not_lawful'
+export const ALIGMENT_NOT_CHAOTIC = 'not_chaotic'
+export const ALIGMENT_ANY_NEUTRAL = 'any_neutral'
+export const ALIGMENT_LG = 'lg'
+export const ALIGMENT_NG = 'ng'
+export const ALIGMENT_CG = 'cg'
+export const ALIGMENT_LN = 'ln'
+export const ALIGMENT_N = 'n'
+export const ALIGMENT_CN = 'cn'
+export const ALIGMENT_LE = 'le'
+export const ALIGMENT_NE = 'ne'
+export const ALIGMENT_CE = 'ce'
+
 const dndAligmentList = [
   {
-    id: 'no',
+    id: ALIGMENT_NO,
     oppositeId: null,
     name: {
         nominative: 'без мировоззрения',
@@ -14,7 +36,7 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'any',
+    id: ALIGMENT_ANY,
     oppositeId: null,
     name: {
         nominative: 'любое',
@@ -25,16 +47,16 @@ const dndAligmentList = [
         prepositional: 'любом',
     },
     children: [
-      'any_good',
-      'any_evil',
-      'any_lawful',
-      'any_chaotic',
-      'any_neutral',
+      ALIGMENT_ANY_GOOD,
+      ALIGMENT_ANY_EVIL,
+      ALIGMENT_ANY_LAWFUL,
+      ALIGMENT_ANY_CHAOTIC,
+      ALIGMENT_NOT_NEUTRAL,
     ],
   },
   {
-    id: 'any_good',
-    oppositeId: 'any_evil',
+    id: ALIGMENT_ANY_GOOD,
+    oppositeId: ALIGMENT_ANY_EVIL,
     name: {
         nominative: 'любое доброе',
         genitive: 'любого доброго',
@@ -44,14 +66,14 @@ const dndAligmentList = [
         prepositional: 'любом добром',
     },
     children: [
-      'lg',
-      'ng',
-      'cg',
+      ALIGMENT_LG,
+      ALIGMENT_NG,
+      ALIGMENT_CG,
     ],
   },
   {
-    id: 'any_evil',
-    oppositeId: 'any_good',
+    id: ALIGMENT_ANY_EVIL,
+    oppositeId: ALIGMENT_ANY_GOOD,
     name: {
         nominative: 'любое злое',
         genitive: 'любого злого',
@@ -61,14 +83,14 @@ const dndAligmentList = [
         prepositional: 'любом злом',
     },
     children: [
-      'le',
-      'ne',
-      'ce',
+      ALIGMENT_LE,
+      ALIGMENT_NE,
+      ALIGMENT_CE,
     ],
   },
   {
-    id: 'any_lawful',
-    oppositeId: 'any_chaotic',
+    id: ALIGMENT_ANY_LAWFUL,
+    oppositeId: ALIGMENT_ANY_CHAOTIC,
     name: {
         nominative: 'любое законопослушное',
         genitive: 'любого законопослушного',
@@ -78,14 +100,14 @@ const dndAligmentList = [
         prepositional: 'любом законопослушном',
     },
     children: [
-      'lg',
-      'ln',
-      'le',
+      ALIGMENT_LG,
+      ALIGMENT_LN,
+      ALIGMENT_LE,
     ],
   },
   {
-    id: 'any_chaotic',
-    oppositeId: 'any_lawful',
+    id: ALIGMENT_ANY_CHAOTIC,
+    oppositeId: ALIGMENT_ANY_LAWFUL,
     name: {
         nominative: 'любое хаотичное',
         genitive: 'любого хаотичного',
@@ -95,14 +117,14 @@ const dndAligmentList = [
         prepositional: 'любом хаотичном',
     },
     children: [
-      'cg',
-      'cn',
-      'ce',
+      ALIGMENT_CG,
+      ALIGMENT_CN,
+      ALIGMENT_CE,
     ],
   },
   {
-    id: 'not_neutral',
-    oppositeId: 'any_neutral',
+    id: ALIGMENT_NOT_NEUTRAL,
+    oppositeId: ALIGMENT_NOT_NEUTRAL,
     name: {
       nominative: 'не нейтральное',
       genitive: 'не нейтрального',
@@ -112,15 +134,15 @@ const dndAligmentList = [
       prepositional: 'не нейтральном',
     },
     children: [
-      'lg',
-      'le',
-      'cg',
-      'ce',
+      ALIGMENT_LG,
+      ALIGMENT_LE,
+      ALIGMENT_CG,
+      ALIGMENT_CE,
     ],
   },
   {
-    id: 'not_good',
-    oppositeId: 'not_evil',
+    id: ALIGMENT_NOT_GOOD,
+    oppositeId: ALIGMENT_NOT_EVIL,
     name: {
         nominative: 'недоброе',
         genitive: 'недоброго',
@@ -130,15 +152,15 @@ const dndAligmentList = [
         prepositional: 'недобром',
     },
     children: [
-      'ln',
-      'n',
-      'cn',
-      'any_evil',
+      ALIGMENT_LN,
+      ALIGMENT_N,
+      ALIGMENT_CN,
+      ALIGMENT_ANY_EVIL,
     ],
   },
   {
-    id: 'not_evil',
-    oppositeId: 'not_good',
+    id: ALIGMENT_NOT_EVIL,
+    oppositeId: ALIGMENT_NOT_GOOD,
     name: {
         nominative: 'незлое',
         genitive: 'незлого',
@@ -148,15 +170,15 @@ const dndAligmentList = [
         prepositional: 'незлом',
     },
     children: [
-      'ln',
-      'n',
-      'cn',
-      'any_good',
+      ALIGMENT_LN,
+      ALIGMENT_N,
+      ALIGMENT_CN,
+      ALIGMENT_ANY_GOOD,
     ],
   },
   {
-    id: 'not_lawful',
-    oppositeId: 'not_chaotic',
+    id: ALIGMENT_NOT_LAWFUL,
+    oppositeId: ALIGMENT_NOT_CHAOTIC,
     name: {
         nominative: 'незаконопослушное',
         genitive: 'незаконопослушного',
@@ -166,15 +188,15 @@ const dndAligmentList = [
         prepositional: 'незаконопослушном',
     },
     children: [
-      'ng',
-      'n',
-      'ne',
-      'any_chaotic',
+      ALIGMENT_NG,
+      ALIGMENT_N,
+      ALIGMENT_NE,
+      ALIGMENT_ANY_CHAOTIC,
     ],
   },
   {
-    id: 'not_chaotic',
-    oppositeId: 'not_lawful',
+    id: ALIGMENT_NOT_CHAOTIC,
+    oppositeId: ALIGMENT_NOT_LAWFUL,
     name: {
         nominative: 'нехаотичное',
         genitive: 'нехаотичного',
@@ -184,15 +206,15 @@ const dndAligmentList = [
         prepositional: 'нехаотичном',
     },
     children: [
-      'ng',
-      'n',
-      'ne',
-      'any_lawful',
+      ALIGMENT_NG,
+      ALIGMENT_N,
+      ALIGMENT_NE,
+      ALIGMENT_ANY_LAWFUL,
     ],
   },
   {
-    id: 'any_neutral',
-    oppositeId: 'not_neutral',
+    id: ALIGMENT_ANY_NEUTRAL,
+    oppositeId: ALIGMENT_NOT_NEUTRAL,
     name: {
         nominative: 'любое нейтральное',
         genitive: 'любого нейтрального',
@@ -202,16 +224,16 @@ const dndAligmentList = [
         prepositional: 'любом нейтральном',
     },
     children: [
-      'ng',
-      'ln',
-      'n',
-      'cn',
-      'ne',
+      ALIGMENT_NG,
+      ALIGMENT_LN,
+      ALIGMENT_N,
+      ALIGMENT_CN,
+      ALIGMENT_NE,
     ],
   },
   {
-    id: 'lg',
-    oppositeId: 'ce',
+    id: ALIGMENT_LG,
+    oppositeId: ALIGMENT_CE,
     name: {
         nominative: 'законопослушно-доброе',
         genitive: 'законопослушно-доброго',
@@ -222,8 +244,8 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'ng',
-    oppositeId: 'ne',
+    id: ALIGMENT_NG,
+    oppositeId: ALIGMENT_NE,
     name: {
         nominative: 'нейтрально-доброе',
         genitive: 'нейтрально-доброго',
@@ -234,8 +256,8 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'cg',
-    oppositeId: 'le',
+    id: ALIGMENT_CG,
+    oppositeId: ALIGMENT_LE,
     name: {
         nominative: 'хаотично-доброе',
         genitive: 'хаотично-доброго',
@@ -246,8 +268,8 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'ln',
-    oppositeId: 'cn',
+    id: ALIGMENT_LN,
+    oppositeId: ALIGMENT_CN,
     name: {
         nominative: 'законопослушно-нейтральное',
         genitive: 'законопослушно-нейтрального',
@@ -258,7 +280,7 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'n',
+    id: ALIGMENT_N,
     oppositeId: null,
     name: {
         nominative: 'нейтральное',
@@ -270,8 +292,8 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'cn',
-    oppositeId: 'ln',
+    id: ALIGMENT_CN,
+    oppositeId: ALIGMENT_LN,
     name: {
         nominative: 'хаотично-нейтральное',
         genitive: 'хаотично-нейтрального',
@@ -282,8 +304,8 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'le',
-    oppositeId: 'cg',
+    id: ALIGMENT_LE,
+    oppositeId: ALIGMENT_CG,
     name: {
         nominative: 'законопослушно-злое',
         genitive: 'законопослушно-злого',
@@ -294,8 +316,8 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'ne',
-    oppositeId: 'ng',
+    id: ALIGMENT_NE,
+    oppositeId: ALIGMENT_NG,
     name: {
         nominative: 'нейтрально-злое',
         genitive: 'нейтрально-злого',
@@ -306,8 +328,8 @@ const dndAligmentList = [
     },
   },
   {
-    id: 'ce',
-    oppositeId: 'lg',
+    id: ALIGMENT_CE,
+    oppositeId: ALIGMENT_LG,
     name: {
         nominative: 'хаотично-злое',
         genitive: 'хаотично-злого',

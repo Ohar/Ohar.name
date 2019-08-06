@@ -1,149 +1,179 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
+export const CR_0 = '0'
+export const CR_1_8 = '1/8'
+export const CR_1_4 = '1/4'
+export const CR_1_2 = '1/2'
+export const CR_1 = '1'
+export const CR_2 = '2'
+export const CR_3 = '3'
+export const CR_4 = '4'
+export const CR_5 = '5'
+export const CR_6 = '6'
+export const CR_7 = '7'
+export const CR_8 = '8'
+export const CR_9 = '9'
+export const CR_10 = '10'
+export const CR_11 = '11'
+export const CR_12 = '12'
+export const CR_13 = '13'
+export const CR_14 = '14'
+export const CR_15 = '15'
+export const CR_16 = '16'
+export const CR_17 = '17'
+export const CR_18 = '18'
+export const CR_19 = '19'
+export const CR_20 = '20'
+export const CR_21 = '21'
+export const CR_22 = '22'
+export const CR_23 = '23'
+export const CR_24 = '24'
+export const CR_30 = '30'
+
 const dndCrList = [
   {
-    cr: '0',
-    id: '0',
+    name: '0',
+    id: CR_0,
     exp: 10,
   },
   {
-    cr: '1/8',
-    id: '1/8',
+    name: '1/8',
+    id: CR_1_8,
     exp: 25,
   },
   {
-    cr: '1/4',
-    id: '1/4',
+    name: '1/4',
+    id: CR_1_4,
     exp: 50,
   },
   {
-    cr: '1/2',
-    id: '1/2',
+    name: '1/2',
+    id: CR_1_2,
     exp: 100,
   },
   {
-    cr: '1',
-    id: '1',
+    name: '1',
+    id: CR_1,
     exp: 200,
   },
   {
-    cr: '2',
-    id: '2',
+    name: '2',
+    id: CR_2,
     exp: 450,
   },
   {
-    cr: '3',
-    id: '3',
+    name: '3',
+    id: CR_3,
     exp: 700,
   },
   {
-    cr: '4',
-    id: '4',
+    name: '4',
+    id: CR_4,
     exp: 1100,
   },
   {
-    cr: '5',
-    id: '5',
+    name: '5',
+    id: CR_5,
     exp: 1800,
   },
   {
-    cr: '6',
-    id: '6',
+    name: '6',
+    id: CR_6,
     exp: 2300,
   },
   {
-    cr: '7',
-    id: '7',
+    name: '7',
+    id: CR_7,
     exp: 2900,
   },
   {
-    cr: '8',
-    id: '8',
+    name: '8',
+    id: CR_8,
     exp: 3900,
   },
   {
-    cr: '9',
-    id: '9',
+    name: '9',
+    id: CR_9,
     exp: 5000,
   },
   {
-    cr: '10',
-    id: '10',
+    name: '10',
+    id: CR_10,
     exp: 5900,
   },
   {
-    cr: '11',
-    id: '11',
+    name: '11',
+    id: CR_11,
     exp: 7200,
   },
   {
-    cr: '12',
-    id: '12',
+    name: '12',
+    id: CR_12,
     exp: 8400,
   },
   {
-    cr: '13',
-    id: '13',
+    name: '13',
+    id: CR_13,
     exp: 10000,
   },
   {
-    cr: '14',
-    id: '14',
+    name: '14',
+    id: CR_14,
     exp: 11500,
   },
   {
-    cr: '15',
-    id: '15',
+    name: '15',
+    id: CR_15,
     exp: 13000,
   },
   {
-    cr: '16',
-    id: '16',
+    name: '16',
+    id: CR_16,
     exp: 15000,
   },
   {
-    cr: '17',
-    id: '17',
+    name: '17',
+    id: CR_17,
     exp: 18000,
   },
   {
-    cr: '18',
-    id: '18',
+    name: '18',
+    id: CR_18,
     exp: 20000,
   },
   {
-    cr: '19',
-    id: '19',
+    name: '19',
+    id: CR_19,
     exp: 22000,
   },
   {
-    cr: '20',
-    id: '20',
+    name: '20',
+    id: CR_20,
     exp: 25000,
   },
   {
-    cr: '21',
-    id: '21',
+    name: '21',
+    id: CR_21,
     exp: 33000,
   },
   {
-    cr: '22',
-    id: '22',
+    name: '22',
+    id: CR_22,
     exp: 41000,
   },
   {
-    cr: '23',
-    id: '23',
+    name: '23',
+    id: CR_23,
     exp: 50000,
   },
   {
-    cr: '24',
-    id: '24',
+    name: '24',
+    id: CR_24,
     exp: 62000,
   },
   {
-    cr: '30',
-    id: '30',
+    name: '30',
+    id: CR_30,
     exp: 155000,
   },
 ]

@@ -1,11 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
+import ReactMarkdown from "react-markdown";
 
-import dndSizeList from "@/constants/dnd/dndSizeList"
 import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 import {dndCrCollection} from "@/constants/dnd/dndCrList"
 import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
-import {dndManualCollection} from "@/constants/dnd/dndManualList"
+import {dndSizeCollection} from "@/constants/dnd/dndSizeList"
+
+import DndCube from "@/components/DndCube"
+import DndSourceInfo from "@/components/DndSourceInfo"
 
 import DndCreatureSpeed from "./components/DndCreatureSpeed"
 import DndLegendaryActionList from "./components/DndLegendaryActionList"
@@ -19,14 +22,14 @@ const DndCreatureComponent = (
     creature: {
       aligment,
       armorClass,
-      challengeRating,
+      cr,
       description,
-      hitPoint,
+      hp,
       languageList,
       legendaryPoints,
-      name: [nameSingle],
+      name,
       params,
-      sizeType,
+      size,
       source,
       speed,
       typeId,
@@ -35,42 +38,41 @@ const DndCreatureComponent = (
 ) => (
   <section className='DndCreature'>
     <header className='DndCreature_name'>
-      {nameSingle}
+      {name}
     </header>
     <p className='DndCreature_description'>
-      {description}
+      <ReactMarkdown>{description}</ReactMarkdown>
     </p>
     <p className='DndCreature_info'>
-      {dndSizeList[sizeType]}
-      {dndCreatureTypeCollection[typeId].name.singular.nominative},
-      {dndAligmentCollection[aligment].name.nominative}
+      {dndSizeCollection[size].name} {dndCreatureTypeCollection[typeId].name.singular.nominative}, {dndAligmentCollection[aligment].name.nominative}
     </p>
     <p className='DndCreature_armorClass'>
       <b>Класс доспеха</b> {armorClass}
     </p>
     <p className='DndCreature_hitPoint'>
-      <b>Хитов</b> {hitPoint}
+      <b>Хитов</b>
+      <DndCube cube={hp}/>
     </p>
 
-    <DndCreatureSpeed speed={speed} />
+    {/*<DndCreatureSpeed speed={speed} />*/}
 
     <p className='DndCreature_cr'>
-      <b>Уровень опасности</b> {dndCrCollection[challengeRating].cr}
+      <b>Уровень опасности</b> {dndCrCollection[cr].name}
       <span className='DndCreature_exp'>
-        ({dndCrCollection[challengeRating].exp} опыта)
+        ({dndCrCollection[cr].exp} опыта)
       </span>
     </p>
 
     <DndParamList params={params} />
 
     <p className='DndCreature_source'>
-      <b>Источник</b> {dndManualCollection[source].name}
+      <b>Источник</b> <DndSourceInfo source={source}/>
     </p>
 
-    <DndLegendaryActionList
-      name={nameSingle}
-      legendaryPoints={legendaryPoints}
-    />
+    {/*<DndLegendaryActionList*/}
+    {/*  name={name}*/}
+    {/*  legendaryPoints={legendaryPoints}*/}
+    {/*/>*/}
 
     <p>
       {JSON.stringify(creature)}

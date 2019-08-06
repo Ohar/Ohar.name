@@ -1,29 +1,27 @@
 import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
+import {CR_0} from "@/constants/dnd/dndCrList"
+import {SIZE_MEDIUM} from "@/constants/dnd/dndSizeList"
+import {CREATURE_TYPE_HUMANOID} from "@/constants/dnd/dndCreatureTypeList"
+import { ALIGMENT_ANY } from '@/constants/dnd/dndAligmentList'
 
 const dndCreatureList = [
   {
-    name: [
-      'Обыватель',
-      'Обывателя',
-      'Обывателей',
-    ],
+    name: 'Обыватель',
     nameEn: 'Commoner',
-    description: 'Описание',
-    aligment: 'any',
-    source: 'PHB',
-    speed: [
-      {
-        type: 'walk',
-        value: 30,
-      },
-    ],
-    hitPoint: 10,
+    description: '**Обыватели** включают в себя крестьян, крепостных, рабов, слуг, пилигримов, торговцев, ремесленников и отшельников.',
+    aligment: ALIGMENT_ANY,
+    source: 'MM:346',
+    speed: {
+      walk: 30,
+    },
+    hp: {
+      cubeType: 8,
+      cubeCount: 1,
+    },
     armorClass: 10,
-    challengeRating: '1',
-    sizeType: 2,
-    lairPoints: 0,
-    legendaryPoints: 1,
-    typeId: 'humanoid',
+    cr: CR_0,
+    size: SIZE_MEDIUM,
+    typeId: CREATURE_TYPE_HUMANOID,
     params: {
       str: 10,
       dex: 10,
@@ -32,10 +30,7 @@ const dndCreatureList = [
       wit: 10,
       cha: 10,
     },
-    skillList: [],
     languageList: ['any_one'],
-    spellList: [],
-    equipmentList: [],
     abilityList: [
       {
         typeId: 'melee_attack',
@@ -44,75 +39,12 @@ const dndCreatureList = [
       },
     ],
   },
-  {
-    name: [
-      'Тарраск',
-      'Тарраска',
-      'Таррасков',
-    ],
-    nameEn: 'Tarrasque',
-    description: 'Описание',
-    aligment: 'any',
-    source: 'PHB',
-    speed: [
-      {
-        type: 'walk',
-        value: 30,
-      },
-    ],
-    hitPoint: 10,
-    armorClass: 10,
-    challengeRating: '1',
-    sizeType: 2,
-    lairPoints: 0,
-    legendaryPoints: 1,
-    typeId: 'humanoid',
-    params: {
-      str: 10,
-      dex: 10,
-      con: 10,
-      int: 10,
-      wit: 10,
-      cha: 10,
-    },
-    skillList: [],
-    languageList: [],
-    spellList: [],
-    equipmentList: [],
-    abilityList: [
-      {
-        typeId: 'melee_attack',
-        name: 'test melee_attack name',
-        description: 'test melee_attack description',
-      },
-      {
-        typeId: 'range_attack',
-        name: 'test range_attack name',
-        description: 'test range_attack description',
-      },
-      {
-        typeId: 'reaction',
-        name: 'test reaction name',
-        description: 'test reaction description',
-      },
-      {
-        typeId: 'legendary_action',
-        name: 'Ничего',
-        description: 'Обыватель ничего не делает',
-      },
-      {
-        typeId: 'lair_action',
-        name: 'test lair_action name',
-        description: 'test lair_action description',
-      },
-    ],
-  },
 ].map(
-  (creature, id) => ({
+  creature => ({
     ...creature,
-    id,
+    id: creature.nameEn,
     [SEARCH_PROP_NAME]: [
-      creature.name[0],
+      creature.name,
       creature.nameEn,
       creature.description,
     ]

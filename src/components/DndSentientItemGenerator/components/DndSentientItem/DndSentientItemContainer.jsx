@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import { dndAligmentCollection } from '@/constants/dnd/dndAligmentList'
 import { dndItemCollection } from '@/constants/dnd/dndItemList'
 import { dndParamCollection } from '@/constants/dnd/dndParamList'
 
 import DndSentientItemComponent from './DndSentientItemComponent'
-import { dndAligmentCollection } from '../../../../constants/dnd/dndAligmentList'
 
 export default class DndSentientItemContainer extends Component {
   static propTypes = {

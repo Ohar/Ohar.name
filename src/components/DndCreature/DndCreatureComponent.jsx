@@ -28,6 +28,7 @@ const DndCreatureComponent = (
       languageList,
       legendaryPoints,
       name,
+      nameEn,
       params,
       size,
       source,
@@ -38,17 +39,18 @@ const DndCreatureComponent = (
 ) => (
   <section className='DndCreature'>
     <header className='DndCreature_name'>
-      {name}
+      {name} [{nameEn}]
     </header>
     <p className='DndCreature_info'>
       {dndSizeCollection[size].name} {dndCreatureTypeCollection[typeId].name.singular.nominative}, {dndAligmentCollection[aligment].name.nominative}
     </p>
     <section className='DndCreature_infoBlock'>
       <p className='DndCreature_armorClass'>
-        <b>Класс доспеха</b> {armorClass}
+        <b className='DndCreature_blockHeader'>Класс доспеха</b>
+        {armorClass}
       </p>
       <p className='DndCreature_hitPoint'>
-        <b>Хитов</b>
+        <b className='DndCreature_blockHeader'>Хитов</b>
         <DndCube cube={hp}/>
       </p>
       {/*<DndCreatureSpeed speed={speed} />*/}
@@ -58,13 +60,15 @@ const DndCreatureComponent = (
     </section>
     <section className='DndCreature_infoBlock'>
       <p className='DndCreature_cr'>
-        <b>Уровень опасности</b> {dndCrCollection[cr].name}
+        <b className='DndCreature_blockHeader'>Уровень опасности</b>
+        {dndCrCollection[cr].name}
         <span className='DndCreature_exp'>
         ({dndCrCollection[cr].exp} опыта)
       </span>
       </p>
       <p className='DndCreature_source'>
-        <b>Источник</b> <DndSourceInfo source={source}/>
+        <b className='DndCreature_blockHeader'>Источник</b>
+        <DndSourceInfo source={source}/>
       </p>
     </section>
     <section className='DndCreature_infoBlock'>

@@ -50,7 +50,7 @@ const DndCreatureComponent = (
         {armorClass}
       </p>
       <p className='DndCreature_hitPoint'>
-        <b className='DndCreature_blockHeader'>Хитов</b>
+        <b className='DndCreature_blockHeader'>Хиты</b>
         <DndCube cube={hp}/>
       </p>
       {/*<DndCreatureSpeed speed={speed} />*/}

@@ -40,43 +40,47 @@ const DndCreatureComponent = (
     <header className='DndCreature_name'>
       {name}
     </header>
-    <p className='DndCreature_description'>
-      <ReactMarkdown>{description}</ReactMarkdown>
-    </p>
     <p className='DndCreature_info'>
       {dndSizeCollection[size].name} {dndCreatureTypeCollection[typeId].name.singular.nominative}, {dndAligmentCollection[aligment].name.nominative}
     </p>
-    <p className='DndCreature_armorClass'>
-      <b>Класс доспеха</b> {armorClass}
-    </p>
-    <p className='DndCreature_hitPoint'>
-      <b>Хитов</b>
-      <DndCube cube={hp}/>
-    </p>
-
-    {/*<DndCreatureSpeed speed={speed} />*/}
-
-    <p className='DndCreature_cr'>
-      <b>Уровень опасности</b> {dndCrCollection[cr].name}
-      <span className='DndCreature_exp'>
+    <section className='DndCreature_infoBlock'>
+      <p className='DndCreature_armorClass'>
+        <b>Класс доспеха</b> {armorClass}
+      </p>
+      <p className='DndCreature_hitPoint'>
+        <b>Хитов</b>
+        <DndCube cube={hp}/>
+      </p>
+      {/*<DndCreatureSpeed speed={speed} />*/}
+    </section>
+    <section className='DndCreature_infoBlock'>
+      <DndParamList params={params} />
+    </section>
+    <section className='DndCreature_infoBlock'>
+      <p className='DndCreature_cr'>
+        <b>Уровень опасности</b> {dndCrCollection[cr].name}
+        <span className='DndCreature_exp'>
         ({dndCrCollection[cr].exp} опыта)
       </span>
-    </p>
+      </p>
+      <p className='DndCreature_source'>
+        <b>Источник</b> <DndSourceInfo source={source}/>
+      </p>
+    </section>
+    <section className='DndCreature_infoBlock'>
+      {/*<DndLegendaryActionList*/}
+      {/*  name={name}*/}
+      {/*  legendaryPoints={legendaryPoints}*/}
+      {/*/>*/}
 
-    <DndParamList params={params} />
+      <p className='DndCreature_description'>
+        <ReactMarkdown>{description}</ReactMarkdown>
+      </p>
 
-    <p className='DndCreature_source'>
-      <b>Источник</b> <DndSourceInfo source={source}/>
-    </p>
-
-    {/*<DndLegendaryActionList*/}
-    {/*  name={name}*/}
-    {/*  legendaryPoints={legendaryPoints}*/}
-    {/*/>*/}
-
-    <p>
-      {JSON.stringify(creature)}
-    </p>
+      <p>
+        {JSON.stringify(creature)}
+      </p>
+    </section>
   </section>
 )
 

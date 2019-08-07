@@ -1,0 +1,9 @@
+.DndCreatureCatalog_list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+.DndCreatureCatalog_item {
+    list-style-type: none;
+    margin: 1rem;
+}

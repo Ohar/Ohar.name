@@ -39,12 +39,12 @@ const dndAligmentList = [
     id: ALIGMENT_ANY,
     oppositeId: null,
     name: {
-        nominative: 'любое',
-        genitive: 'любого',
-        dative: 'любому',
-        accusative: 'любое',
-        instrumental: 'любым',
-        prepositional: 'любом',
+        nominative: 'любое мировоззрение',
+        genitive: 'любого мировоззрения',
+        dative: 'любому мировоззрению',
+        accusative: 'любое мировоззрение',
+        instrumental: 'любым мировоззрением',
+        prepositional: 'любом мировоззрении',
     },
     children: [
       ALIGMENT_ANY_GOOD,

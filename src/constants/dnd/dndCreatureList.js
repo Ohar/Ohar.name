@@ -3,6 +3,7 @@ import {CR_0} from "@/constants/dnd/dndCrList"
 import {SIZE_MEDIUM} from "@/constants/dnd/dndSizeList"
 import {CREATURE_TYPE_HUMANOID} from "@/constants/dnd/dndCreatureTypeList"
 import { ALIGMENT_ANY } from '@/constants/dnd/dndAligmentList'
+import { SPEED_WALK } from '@/constants/dnd/dndSpeedList'
 
 const dndCreatureList = [
   {
@@ -12,7 +13,7 @@ const dndCreatureList = [
     aligment: ALIGMENT_ANY,
     source: 'MM:346',
     speed: {
-      walk: 30,
+      [SPEED_WALK]: 30,
     },
     hp: {
       cubeType: 8,

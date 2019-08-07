@@ -53,7 +53,11 @@ const DndCreatureComponent = (
         <b className='DndCreature_blockHeader'>Хиты</b>
         <DndCube cube={hp}/>
       </p>
-      {/*<DndCreatureSpeed speed={speed} />*/}
+      <p className='DndCreature_hitPoint'>
+        <b className='DndCreature_blockHeader'>Скорость</b>
+        <DndCreatureSpeed speed={speed} />
+      </p>
+
     </section>
     <section className='DndCreature_infoBlock'>
       <DndParamList params={params} />

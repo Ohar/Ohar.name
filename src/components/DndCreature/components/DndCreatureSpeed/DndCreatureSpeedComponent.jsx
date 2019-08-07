@@ -2,27 +2,38 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import { dndSpeedCollection } from "@/constants/dnd/dndSpeedList"
+import {
+  SPEED_CRAWL,
+  SPEED_DIG,
+  SPEED_FLY,
+  SPEED_SWIM,
+  SPEED_WALK,
+} from '@/constants/dnd/dndSpeedList'
 
 import "./DndCreatureSpeedStyles.css"
 
 const DndCreatureSpeedComponent = ({ speed }) => (
-  <section className='DndCreatureSpeed'>
-    <b>Скорость</b>
-
+  <span className='DndCreatureSpeed'>
     {
-      speed.map(
-        ({ type, value }) => (
+      Object.keys(speed).map(
+        type => (
           <span key={type}>
-            {dndSpeedCollection[type].name}: {value} футов
+            {dndSpeedCollection[type].name} {speed[type]} фт.
           </span>
         ),
       )
     }
-  </section>
+  </span>
 )
 
 DndCreatureSpeedComponent.propTypes = {
-  speed: PropTypes.array.isRequired,
+  speed: PropTypes.shape({
+    [SPEED_CRAWL]: PropTypes.number,
+    [SPEED_DIG]: PropTypes.number,
+    [SPEED_FLY]: PropTypes.number,
+    [SPEED_SWIM]: PropTypes.number,
+    [SPEED_WALK]: PropTypes.number,
+  }).isRequired,
 }
 
 export default DndCreatureSpeedComponent

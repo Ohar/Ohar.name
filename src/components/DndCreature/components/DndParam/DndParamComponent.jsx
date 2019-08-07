@@ -9,7 +9,12 @@ import "./DndParamStyles.css"
 
 const DndParamComponent = ({ id, value }) => (
   <span className='DndParam'>
-    <b>{dndParamCollection[id].shortName}</b>: {value} ({calcParamBonus(value)})
+    <b className='DndParam_header'>
+      {dndParamCollection[id].shortName}
+    </b>
+    <span className='DndParam_value'>
+      {value} ({calcParamBonus(value)})
+    </span>
   </span>
 )
 

@@ -63,12 +63,12 @@ const DndCreatureComponent = (
         <b className='DndCreature_blockHeader'>Уровень опасности</b>
         {dndCrCollection[cr].name}
         <span className='DndCreature_exp'>
-        ({dndCrCollection[cr].exp} опыта)
-      </span>
+          ({dndCrCollection[cr].exp} опыта)
+        </span>
       </p>
       <p className='DndCreature_source'>
         <b className='DndCreature_blockHeader'>Источник</b>
-        <DndSourceInfo source={source}/>
+        <DndSourceInfo source={source} useFullName/>
       </p>
     </section>
     <section className='DndCreature_infoBlock'>

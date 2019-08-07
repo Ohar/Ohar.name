@@ -1,3 +1,24 @@
 .DndParam {
 
 }
+
+.DndParam_header:after {
+    content: ':';
+}
+
+.DndCreature .DndParam_header {
+    color: #734439;
+    font-weight: 700;
+}
+
+.DndCreature .DndParam_header:after {
+    content: none;
+}
+
+.DndCreature .DndParam_value {
+    display: block;
+}
+
+.DndCreature .DndParam {
+    text-align: center;
+}

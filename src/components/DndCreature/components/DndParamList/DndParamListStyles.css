@@ -1,3 +1,4 @@
 .DndParamList {
-
+    display: flex;
+    justify-content: space-between;
 }

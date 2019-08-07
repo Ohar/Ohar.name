@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from "prop-types"
 
 import { dndManualCollection } from '@/constants/dnd/dndManualList'
 
 import './DndSourceInfoStyles.css'
 
-const DndSourceInfoComponent = ({ source }) => {
+const DndSourceInfoComponent = ({ source, useFullName }) => {
   const [sourceName, sourcePage] = source.split(':')
   const sourceData = dndManualCollection[sourceName]
 
@@ -13,20 +14,39 @@ const DndSourceInfoComponent = ({ source }) => {
       ? `, ${sourcePage}`
       : ''
 
-    const title = `${sourceData.name}${pageText}`
-    const text = `${sourceData.shortName}${pageText}`
+    const fullText = `${sourceData.name}${pageText}`
+    const shortText = `${sourceData.shortName}${pageText}`
+    const title = `${fullText} страница`
 
-    return (
-      <span
-        className='DndSourceInfo'
-        title={title}
-      >
-        {text}
-      </span>
-    )
+    return useFullName
+      ? (
+        <span
+          className='DndSourceInfo'
+          title={title}
+        >
+          {fullText}
+        </span>
+      )
+      : (
+        <span
+          className='DndSourceInfo'
+          title={title}
+        >
+          {shortText}
+        </span>
+      )
   }
 
   return null
+}
+
+DndSourceInfoComponent.propTypes = {
+  source: PropTypes.string.isRequired,
+  useFullName: PropTypes.bool,
+}
+
+DndSourceInfoComponent.defaultProps= {
+  useFullName: false,
 }
 
 export default DndSourceInfoComponent

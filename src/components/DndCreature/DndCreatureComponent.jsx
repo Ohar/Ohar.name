@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 
 import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 import {dndCrCollection} from "@/constants/dnd/dndCrList"
-import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
 import {dndSizeCollection} from "@/constants/dnd/dndSizeList"
 
 import DndCube from "@/components/DndCube"
@@ -14,10 +13,9 @@ import DndCreatureSpeed from "./components/DndCreatureSpeed"
 import DndLegendaryActionList from "./components/DndLegendaryActionList"
 import DndParamList from "./components/DndParamList"
 import DndAbilityList from "./components/DndAbilityList"
+import getCreatureTypeName from "./utils/getCreatureTypeName"
 
 import "./DndCreatureStyles.css"
-
-const getCreatureTypeName = id => dndCreatureTypeCollection[id].name.singular.nominative
 
 const DndCreatureComponent = (
   {

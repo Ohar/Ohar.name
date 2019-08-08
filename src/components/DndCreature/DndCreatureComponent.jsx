@@ -13,6 +13,8 @@ import DndCreatureSpeed from "./components/DndCreatureSpeed"
 import DndLegendaryActionList from "./components/DndLegendaryActionList"
 import DndParamList from "./components/DndParamList"
 import DndAbilityList from "./components/DndAbilityList"
+import DndLanguageList from "./components/DndLanguageList"
+
 import getCreatureTypeName from "./utils/getCreatureTypeName"
 
 import "./DndCreatureStyles.css"
@@ -96,8 +98,12 @@ const DndCreatureComponent = (
           <b className='DndCreature_blockHeader'>Опасность</b>
           {dndCrCollection[cr].name}
           <span className='DndCreature_exp'>
-          ({dndCrCollection[cr].exp} опыта)
-        </span>
+            ({dndCrCollection[cr].exp} опыта)
+          </span>
+        </p>
+        <p className='DndCreature_languageList'>
+          <b className='DndCreature_blockHeader'>Языки</b>
+          <DndLanguageList list={languageList}/>
         </p>
         <p className='DndCreature_source'>
           <b className='DndCreature_blockHeader'>Источник</b>

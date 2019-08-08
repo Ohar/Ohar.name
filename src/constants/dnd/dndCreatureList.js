@@ -4,13 +4,16 @@ import {SIZE_MEDIUM} from "@/constants/dnd/dndSizeList"
 import {CREATURE_TYPE_HUMANOID} from "@/constants/dnd/dndCreatureTypeList"
 import { ALIGMENT_ANY } from '@/constants/dnd/dndAligmentList'
 import { SPEED_WALK } from '@/constants/dnd/dndSpeedList'
+import { ACTION_M_ATTACK } from '@/constants/dnd/dndActionTypeList'
+import { LANG_ANY_ONE } from '@/constants/dnd/dndLanguageList'
+import { DAMAGE_BLUDGEONING } from '@/constants/dnd/dndDamageTypeList'
 
 const dndCreatureList = [
   {
     name: 'Обыватель',
     nameEn: 'Commoner',
     description: '**Обыватели** включают в себя крестьян, крепостных, рабов, слуг, пилигримов, торговцев, ремесленников и отшельников.',
-    aligment: ALIGMENT_ANY,
+    aligmentId: ALIGMENT_ANY,
     source: 'MM:346',
     speed: {
       [SPEED_WALK]: 30,
@@ -20,22 +23,45 @@ const dndCreatureList = [
       cubeCount: 1,
     },
     armorClass: 10,
+    armorType: 'голая жопа',
     cr: CR_0,
-    size: SIZE_MEDIUM,
-    typeId: CREATURE_TYPE_HUMANOID,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeId: CREATURE_TYPE_HUMANOID,
     params: {
-      str: 10,
-      dex: 10,
-      con: 10,
-      int: 10,
-      wit: 10,
       cha: 10,
+      con: 10,
+      dex: 10,
+      int: 10,
+      str: 10,
+      wit: 10,
     },
-    languageList: ['any_one'],
+    languageList: [
+      LANG_ANY_ONE,
+    ],
     abilityList: [
       {
-        typeId: 'melee_attack',
+        name: 'Тупость',
+        description: 'Обыватель тупит.',
+      },
+    ],
+    actionList: [
+      {
         name: 'Дубина',
+        limit: {
+          count: 1,
+          period: 'ход',
+        },
+        attack: {
+          type: ACTION_M_ATTACK,
+          bonus: 2,
+          range: 5,
+          targetCount: 1,
+          damage: {
+            cubeType: 4,
+            cubeCount: 1,
+          },
+          damageType: DAMAGE_BLUDGEONING,
+        },
         description: 'Рукопашная атака оружием: +2 к попаданию, досягаемость 5 фт., одна цель. Попадание: Дробящий урон 2 (1к4). ',
       },
     ],

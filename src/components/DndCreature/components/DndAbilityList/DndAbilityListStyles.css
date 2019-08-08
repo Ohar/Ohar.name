@@ -1,0 +1,12 @@
+.DndAbilityList {
+    list-style-type: none;
+    padding-left: 0;
+    color: #231F20;
+}
+
+.DndAbilityList_itemHeader {
+    color: #231F20;
+    font-style: italic;
+    font-weight: 700;
+    margin-right: .4em;
+}

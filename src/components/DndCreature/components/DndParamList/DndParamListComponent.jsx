@@ -5,8 +5,8 @@ import DndParam from "./../DndParam"
 
 import "./DndParamListStyles.css"
 
-const DndParamListComponent = ({ params }) => (
-  <section className='DndParamList'>
+const DndParamListComponent = ({ params, className }) => (
+  <section className={`DndParamList ${className}`}>
     {
       Object
         .keys(params)
@@ -25,6 +25,11 @@ const DndParamListComponent = ({ params }) => (
 
 DndParamListComponent.propTypes = {
   params: PropTypes.object.isRequired,
+  className: PropTypes.string,
+}
+
+DndParamListComponent.defaultProps = {
+  className: '',
 }
 
 export default DndParamListComponent

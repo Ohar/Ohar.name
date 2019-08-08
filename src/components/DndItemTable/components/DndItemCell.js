@@ -1,9 +1,10 @@
 import React from "react"
 import ReactMarkdown from "react-markdown"
 
+import generateCube from "@/utils/generateCube"
+
 import BooleanMark from "@/components/BooleanMark"
 import DndAbilityCheck from "@/components/DndAbilityCheck"
-import DndCube from "@/components/DndCube"
 import DndPrice from "@/components/DndPrice"
 import DndPoisonType from "@/components/DndPoisonType"
 import DndDamageType from "@/components/DndDamageType"
@@ -21,7 +22,7 @@ const DndItemCell = ({columnName, item}) => {
     }
 
     case 'damage': {
-      return <DndCube cube={item[columnName]}/>
+      return generateCube(item[columnName])
     }
 
     case 'poisonType': {

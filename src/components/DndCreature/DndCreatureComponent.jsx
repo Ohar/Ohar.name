@@ -6,7 +6,7 @@ import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 import {dndCrCollection} from "@/constants/dnd/dndCrList"
 import {dndSizeCollection} from "@/constants/dnd/dndSizeList"
 
-import DndCube from "@/components/DndCube"
+import generateCube from "@/utils/generateCube"
 import DndSourceInfo from "@/components/DndSourceInfo"
 
 import DndCreatureSpeed from "./components/DndCreatureSpeed"
@@ -80,7 +80,7 @@ const DndCreatureComponent = (
         </p>
         <p className='DndCreature_hitPoint'>
           <b className='DndCreature_blockHeader'>Хиты</b>
-          <DndCube cube={hp}/>
+          {generateCube(hp)}
         </p>
         <p className='DndCreature_hitPoint'>
           <b className='DndCreature_blockHeader'>Скорость</b>

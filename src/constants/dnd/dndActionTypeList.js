@@ -1,26 +1,33 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
+export const ACTION_M_ATTACK = 'melee_attack'
+export const ACTION_R_ATTACK = 'range_attack'
+export const ACTION_REACTION = 'reaction'
+export const ACTION_LEGENDARY = 'legendary_action'
+export const ACTION_LAIR = 'lair_action'
+
 const dndActionTypeList = [
   {
-    id: 'melee_attack',
+    id: ACTION_M_ATTACK,
     name: 'Рукопашная атака',
   },
   {
-    id: 'range_attack',
+    id: ACTION_R_ATTACK,
     name: 'Дальняя атака',
   },
   {
-    id: 'reaction',
+    id: ACTION_REACTION,
     name: 'Реакция',
   },
   {
-    id: 'legendary_action',
+    id: ACTION_LEGENDARY,
     name: 'Легендарное действие',
   },
   {
-    id: 'lair_action',
+    id: ACTION_LAIR,
     name: 'Действие логова',
   },
 ]
 
+export default dndActionTypeList
 export const dndActionTypeCollection = listToCollectionById(dndActionTypeList)

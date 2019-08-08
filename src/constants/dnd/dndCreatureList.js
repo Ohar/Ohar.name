@@ -7,7 +7,7 @@ import {
 } from "@/constants/dnd/dndCreatureTypeList"
 import { ALIGMENT_ANY } from '@/constants/dnd/dndAligmentList'
 import { SPEED_WALK } from '@/constants/dnd/dndSpeedList'
-import { ACTION_M_ATTACK } from '@/constants/dnd/dndActionTypeList'
+import { ACTION_MELEE_WEAPON_ATTACK } from '@/constants/dnd/dndActionTypeList'
 import { LANG_ANY_ONE } from '@/constants/dnd/dndLanguageList'
 import { DAMAGE_BLUDGEONING } from '@/constants/dnd/dndDamageTypeList'
 
@@ -58,7 +58,7 @@ const dndCreatureList = [
           period: 'ход',
         },
         attack: {
-          type: ACTION_M_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 2,
           range: 5,
           targetCount: 1,

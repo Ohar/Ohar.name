@@ -17,6 +17,8 @@ import DndAbilityList from "./components/DndAbilityList"
 
 import "./DndCreatureStyles.css"
 
+const getCreatureTypeName = id => dndCreatureTypeCollection[id].name.singular.nominative
+
 const DndCreatureComponent = (
   {
     creature,
@@ -26,7 +28,7 @@ const DndCreatureComponent = (
       armorClass,
       armorType,
       cr,
-      creatureTypeId,
+      creatureTypeIdList,
       description,
       hp,
       languageList,
@@ -41,8 +43,20 @@ const DndCreatureComponent = (
   },
 ) => {
   const size = dndSizeCollection[sizeType].name
-  const creatureType = dndCreatureTypeCollection[creatureTypeId].name.singular.nominative
   const aligment = dndAligmentCollection[aligmentId].name.nominative
+  const creatureType = [
+    getCreatureTypeName(creatureTypeIdList[0]),
+    creatureTypeIdList.length > 1
+      ? creatureTypeIdList
+        .slice(1)
+        .map(getCreatureTypeName)
+        .join(', ')
+        .replace(/^/, '(')
+        .replace(/$/, ')')
+      : ''
+  ]
+    .filter(e => e)
+    .join(' ')
 
   return (
     <section className='DndCreature'>
@@ -102,9 +116,9 @@ const DndCreatureComponent = (
 
       <DndAbilityList list={abilityList}/>
 
-      <p className='DndCreature_description'>
+      <div className='DndCreature_description'>
         <ReactMarkdown>{description}</ReactMarkdown>
-      </p>
+      </div>
 
       <p>
         {JSON.stringify(creature)}

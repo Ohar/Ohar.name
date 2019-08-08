@@ -1,7 +1,10 @@
 import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
 import {CR_0} from "@/constants/dnd/dndCrList"
 import {SIZE_MEDIUM} from "@/constants/dnd/dndSizeList"
-import {CREATURE_TYPE_HUMANOID} from "@/constants/dnd/dndCreatureTypeList"
+import {
+  CREATURE_TYPE_HUMANOID,
+  CREATURE_TYPE_ANY_RACE,
+} from "@/constants/dnd/dndCreatureTypeList"
 import { ALIGMENT_ANY } from '@/constants/dnd/dndAligmentList'
 import { SPEED_WALK } from '@/constants/dnd/dndSpeedList'
 import { ACTION_M_ATTACK } from '@/constants/dnd/dndActionTypeList'
@@ -26,7 +29,10 @@ const dndCreatureList = [
     armorType: 'голая жопа',
     cr: CR_0,
     sizeType: SIZE_MEDIUM,
-    creatureTypeId: CREATURE_TYPE_HUMANOID,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
     params: {
       cha: 10,
       con: 10,

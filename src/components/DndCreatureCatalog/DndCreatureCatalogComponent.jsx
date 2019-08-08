@@ -31,7 +31,10 @@ const DndCreatureCatalogComponent = (
             {
               filteredCreatureList.map(
                 creature => (
-                  <li className='DndCreatureCatalog_item'>
+                  <li
+                    className='DndCreatureCatalog_item'
+                    key={creature.id}
+                  >
                     <DndCreature
                       creature={creature}
                       id={creature.id}

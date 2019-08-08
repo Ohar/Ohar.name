@@ -20,7 +20,7 @@ const DndParamComponent = ({ id, value }) => (
 
 DndParamComponent.propTypes = {
   id: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 }
 
 export default DndParamComponent

@@ -1,52 +1,52 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
-export const CREATURE_TYPE_ABERRATION = 'aberration'
-export const CREATURE_TYPE_ANY_RACE = 'any_race'
-export const CREATURE_TYPE_BEAST = 'beast'
-export const CREATURE_TYPE_BULLYWUG = 'bullywug'
-export const CREATURE_TYPE_CELESTIAL = 'celestial'
-export const CREATURE_TYPE_CONSTRUCT = 'construct'
-export const CREATURE_TYPE_DEMON = 'demon'
-export const CREATURE_TYPE_DEVIL = 'devil'
-export const CREATURE_TYPE_DRAGON = 'dragon'
-export const CREATURE_TYPE_DWARF = 'dwarf'
-export const CREATURE_TYPE_ELEMENTAL = 'elemental'
-export const CREATURE_TYPE_ELF = 'elf'
-export const CREATURE_TYPE_FEY = 'fey'
-export const CREATURE_TYPE_FIEND = 'fiend'
-export const CREATURE_TYPE_FIRE_GIANT = 'fire_giant'
-export const CREATURE_TYPE_FIRENEWT = 'firenewt'
-export const CREATURE_TYPE_GIANT = 'giant'
-export const CREATURE_TYPE_GITH = 'gith'
-export const CREATURE_TYPE_GNOLL = 'gnoll'
-export const CREATURE_TYPE_GNOME = 'gnome'
-export const CREATURE_TYPE_GOBLINOID = 'goblinoid'
-export const CREATURE_TYPE_GRIMLOCK = 'grimlock'
-export const CREATURE_TYPE_GRUNG = 'grung'
-export const CREATURE_TYPE_HUMAN = 'human'
-export const CREATURE_TYPE_HUMANOID = 'humanoid'
-export const CREATURE_TYPE_JELLY = 'jelly'
-export const CREATURE_TYPE_KENKU = 'kenku'
-export const CREATURE_TYPE_KOBOLD = 'kobold'
-export const CREATURE_TYPE_KUO_TOA = 'kuo_toa'
-export const CREATURE_TYPE_LIZARDFOLK = 'lizardfolk'
-export const CREATURE_TYPE_MONSTER = 'monster'
-export const CREATURE_TYPE_ORC = 'orc'
-export const CREATURE_TYPE_PLANT = 'plant'
-export const CREATURE_TYPE_QUAGGOTH = 'quaggoth'
-export const CREATURE_TYPE_SAHUAGIN = 'sahuagin'
-export const CREATURE_TYPE_SHAPESHIFTER = 'shapeshifter'
-export const CREATURE_TYPE_THRI_KREEN = 'thri_kreen'
-export const CREATURE_TYPE_TITAN = 'titan'
-export const CREATURE_TYPE_TROGLODYTE = 'troglodyte'
-export const CREATURE_TYPE_UNDEAD = 'undead'
-export const CREATURE_TYPE_XVART = 'xvart'
-export const CREATURE_TYPE_YOAN_TI = 'yoan_ti'
-export const CREATURE_TYPE_YUGOLOT = 'yugolot'
+export const CREATURE_ABERRATION = 'aberration'
+export const CREATURE_ANY_RACE = 'any_race'
+export const CREATURE_BEAST = 'beast'
+export const CREATURE_BULLYWUG = 'bullywug'
+export const CREATURE_CELESTIAL = 'celestial'
+export const CREATURE_CONSTRUCT = 'construct'
+export const CREATURE_DEMON = 'demon'
+export const CREATURE_DEVIL = 'devil'
+export const CREATURE_DRAGON = 'dragon'
+export const CREATURE_DWARF = 'dwarf'
+export const CREATURE_ELEMENTAL = 'elemental'
+export const CREATURE_ELF = 'elf'
+export const CREATURE_FEY = 'fey'
+export const CREATURE_FIEND = 'fiend'
+export const CREATURE_FIRE_GIANT = 'fire_giant'
+export const CREATURE_FIRENEWT = 'firenewt'
+export const CREATURE_GIANT = 'giant'
+export const CREATURE_GITH = 'gith'
+export const CREATURE_GNOLL = 'gnoll'
+export const CREATURE_GNOME = 'gnome'
+export const CREATURE_GOBLINOID = 'goblinoid'
+export const CREATURE_GRIMLOCK = 'grimlock'
+export const CREATURE_GRUNG = 'grung'
+export const CREATURE_HUMAN = 'human'
+export const CREATURE_HUMANOID = 'humanoid'
+export const CREATURE_JELLY = 'jelly'
+export const CREATURE_KENKU = 'kenku'
+export const CREATURE_KOBOLD = 'kobold'
+export const CREATURE_KUO_TOA = 'kuo_toa'
+export const CREATURE_LIZARDFOLK = 'lizardfolk'
+export const CREATURE_MONSTER = 'monster'
+export const CREATURE_ORC = 'orc'
+export const CREATURE_PLANT = 'plant'
+export const CREATURE_QUAGGOTH = 'quaggoth'
+export const CREATURE_SAHUAGIN = 'sahuagin'
+export const CREATURE_SHAPESHIFTER = 'shapeshifter'
+export const CREATURE_THRI_KREEN = 'thri_kreen'
+export const CREATURE_TITAN = 'titan'
+export const CREATURE_TROGLODYTE = 'troglodyte'
+export const CREATURE_UNDEAD = 'undead'
+export const CREATURE_XVART = 'xvart'
+export const CREATURE_YOAN_TI = 'yoan_ti'
+export const CREATURE_YUGOLOT = 'yugolot'
 
 const dndCreatureTypeList = [
   {
-    id: CREATURE_TYPE_ANY_RACE,
+    id: CREATURE_ANY_RACE,
     name: {
       singular: {
         nominative: 'любая раса',
@@ -67,7 +67,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_HUMANOID,
+    id: CREATURE_HUMANOID,
     name: {
       singular: {
         nominative: 'гуманоид',
@@ -88,7 +88,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_GOBLINOID,
+    id: CREATURE_GOBLINOID,
     name: {
       singular: {
         nominative: 'гоблиноид',
@@ -109,7 +109,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_SHAPESHIFTER,
+    id: CREATURE_SHAPESHIFTER,
     name: {
       singular: {
         nominative: 'перевёртыш',
@@ -130,7 +130,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_BEAST,
+    id: CREATURE_BEAST,
     name: {
       singular: {
         nominative: 'зверь',
@@ -151,7 +151,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_FIEND,
+    id: CREATURE_FIEND,
     name: {
       singular: {
         nominative: 'исчадие',
@@ -172,7 +172,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_CELESTIAL,
+    id: CREATURE_CELESTIAL,
     name: {
       singular: {
         nominative: 'небожитель',
@@ -193,7 +193,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_MONSTER,
+    id: CREATURE_MONSTER,
     name: {
       singular: {
         nominative: 'чудовище',
@@ -214,7 +214,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_PLANT,
+    id: CREATURE_PLANT,
     name: {
       singular: {
         nominative: 'растение',
@@ -235,7 +235,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_CONSTRUCT,
+    id: CREATURE_CONSTRUCT,
     name: {
       singular: {
         nominative: 'конструкт',
@@ -256,7 +256,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_UNDEAD,
+    id: CREATURE_UNDEAD,
     name: {
       singular: {
         nominative: 'нежить',
@@ -277,7 +277,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_DRAGON,
+    id: CREATURE_DRAGON,
     name: {
       singular: {
         nominative: 'дракон',
@@ -298,7 +298,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_ABERRATION,
+    id: CREATURE_ABERRATION,
     name: {
       singular: {
         nominative: 'аберрация',
@@ -319,7 +319,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_DEVIL,
+    id: CREATURE_DEVIL,
     name: {
       singular: {
         nominative: 'дьявол',
@@ -340,7 +340,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_DEMON,
+    id: CREATURE_DEMON,
     name: {
       singular: {
         nominative: 'демон',
@@ -361,7 +361,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_KOBOLD,
+    id: CREATURE_KOBOLD,
     name: {
       singular: {
         nominative: 'кобольд',
@@ -382,7 +382,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_TITAN,
+    id: CREATURE_TITAN,
     name: {
       singular: {
         nominative: 'титан',
@@ -403,7 +403,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_BULLYWUG,
+    id: CREATURE_BULLYWUG,
     name: {
       singular: {
         nominative: 'жаболюд',
@@ -424,7 +424,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_GNOLL,
+    id: CREATURE_GNOLL,
     name: {
       singular: {
         nominative: 'гнолл',
@@ -445,7 +445,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_GITH,
+    id: CREATURE_GITH,
     name: {
       singular: {
         nominative: 'гит',
@@ -466,7 +466,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_GNOME,
+    id: CREATURE_GNOME,
     name: {
       singular: {
         nominative: 'гном',
@@ -487,7 +487,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_GRIMLOCK,
+    id: CREATURE_GRIMLOCK,
     name: {
       singular: {
         nominative: 'гримлок',
@@ -508,7 +508,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_ORC,
+    id: CREATURE_ORC,
     name: {
       singular: {
         nominative: 'орк',
@@ -529,7 +529,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_GRUNG,
+    id: CREATURE_GRUNG,
     name: {
       singular: {
         nominative: 'грунг',
@@ -550,7 +550,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_YUGOLOT,
+    id: CREATURE_YUGOLOT,
     name: {
       singular: {
         nominative: 'юголот',
@@ -571,7 +571,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_DWARF,
+    id: CREATURE_DWARF,
     name: {
       singular: {
         nominative: 'дварф',
@@ -592,7 +592,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_SAHUAGIN,
+    id: CREATURE_SAHUAGIN,
     name: {
       singular: {
         nominative: 'сахуагин',
@@ -613,7 +613,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_ELF,
+    id: CREATURE_ELF,
     name: {
       singular: {
         nominative: 'эльф',
@@ -634,7 +634,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_QUAGGOTH,
+    id: CREATURE_QUAGGOTH,
     name: {
       singular: {
         nominative: 'кваггот',
@@ -655,7 +655,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_LIZARDFOLK,
+    id: CREATURE_LIZARDFOLK,
     name: {
       singular: {
         nominative: 'людоящер',
@@ -676,7 +676,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_XVART,
+    id: CREATURE_XVART,
     name: {
       singular: {
         nominative: 'ксварт',
@@ -697,7 +697,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_THRI_KREEN,
+    id: CREATURE_THRI_KREEN,
     name: {
       singular: {
         nominative: 'три-крин',
@@ -718,7 +718,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_TROGLODYTE,
+    id: CREATURE_TROGLODYTE,
     name: {
       singular: {
         nominative: 'троглодит',
@@ -739,7 +739,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_GIANT,
+    id: CREATURE_GIANT,
     name: {
       singular: {
         nominative: 'великан',
@@ -760,7 +760,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_FIRE_GIANT,
+    id: CREATURE_FIRE_GIANT,
     name: {
       singular: {
         nominative: 'огненный великан',
@@ -781,7 +781,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_FIRENEWT,
+    id: CREATURE_FIRENEWT,
     name: {
       singular: {
         nominative: 'огненный тритон',
@@ -802,7 +802,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_FEY,
+    id: CREATURE_FEY,
     name: {
       singular: {
         nominative: 'фея',
@@ -823,7 +823,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_HUMAN,
+    id: CREATURE_HUMAN,
     name: {
       singular: {
         nominative: 'человек',
@@ -844,7 +844,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_KUO_TOA,
+    id: CREATURE_KUO_TOA,
     name: {
       singular: {
         nominative: 'куо-тоа',
@@ -865,7 +865,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_KENKU,
+    id: CREATURE_KENKU,
     name: {
       singular: {
         nominative: 'кенку',
@@ -886,7 +886,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_YOAN_TI,
+    id: CREATURE_YOAN_TI,
     name: {
       singular: {
         nominative: 'юань-ти',
@@ -907,7 +907,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_ELEMENTAL,
+    id: CREATURE_ELEMENTAL,
     name: {
       singular: {
         nominative: 'элементаль',
@@ -928,7 +928,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_JELLY,
+    id: CREATURE_JELLY,
     name: {
       singular: {
         nominative: 'слизь',

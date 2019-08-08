@@ -1,58 +1,73 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
+export const DAMAGE_ACID = 'acid'
+export const DAMAGE_BLUDGEONING = 'bludgeoning'
+export const DAMAGE_COLD = 'cold'
+export const DAMAGE_FIRE = 'fire'
+export const DAMAGE_FORCE = 'force'
+export const DAMAGE_LIGHTNING = 'lightning'
+export const DAMAGE_NECROTIC = 'necrotic'
+export const DAMAGE_PIERCING = 'piercing'
+export const DAMAGE_POISON = 'poison'
+export const DAMAGE_PSYCHIC = 'psychic'
+export const DAMAGE_RADIANT = 'radiant'
+export const DAMAGE_SLASHING = 'slashing'
+export const DAMAGE_SONIC = 'sonic'
+
 const dndDamageTypeList = [
   {
-    id: 'bludgeoning',
+    id: DAMAGE_BLUDGEONING,
     name: 'дробящий',
   },
   {
-    id: 'piercing',
+    id: DAMAGE_PIERCING,
     name: 'колющий',
   },
   {
-    id: 'acid',
+    id: DAMAGE_ACID,
     name: 'кислотой',
   },
   {
-    id: 'slashing',
+    id: DAMAGE_SLASHING,
     name: 'рубящий',
   },
   {
-    id: 'fire',
+    id: DAMAGE_FIRE,
     name: 'огнём',
   },
   {
-    id: 'cold',
+    id: DAMAGE_COLD,
     name: 'холодом',
   },
   {
-    id: 'force',
+    id: DAMAGE_FORCE,
     name: 'силовым полем',
   },
   {
-    id: 'necrotic',
+    id: DAMAGE_NECROTIC,
     name: 'некротический',
   },
   {
-    id: 'lightning',
+    id: DAMAGE_LIGHTNING,
     name: 'молнией',
   },
   {
-    id: 'poison',
+    id: DAMAGE_POISON,
     name: 'ядом',
   },
   {
-    id: 'psychic',
+    id: DAMAGE_PSYCHIC,
     name: 'психикой',
   },
   {
-    id: 'radiant',
+    id: DAMAGE_RADIANT,
     name: 'излучением',
   },
   {
-    id: 'sonic',
+    id: DAMAGE_SONIC,
     name: 'звуком',
   },
 ]
 
+export default dndDamageTypeList
 export const dndDamageTypeCollection = listToCollectionById(dndDamageTypeList)

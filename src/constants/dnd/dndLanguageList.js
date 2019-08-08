@@ -1,271 +1,273 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
+export const LANG_ABYSSAL = 'abyssal'
+export const LANG_ALL = 'all'
+export const LANG_ALL_KNOWN_AT_LIFE = 'all_known_at_life'
+export const LANG_ANY_ONE = 'any_one'
+export const LANG_ANY_TWO = 'any_two'
+export const LANG_AQUAN = 'aquan'
+export const LANG_AURAN = 'auran'
+export const LANG_BLINK_DOG = 'blink_dog'
+export const LANG_BULLYWUG = 'bullywug'
+export const LANG_CELESTIAL = 'celestial'
+export const LANG_COMMON = 'common'
+export const LANG_DEEP_SPEECH = 'deep_speech'
+export const LANG_DRACONIC = 'draconic'
+export const LANG_DRUIDIC = 'druidic'
+export const LANG_DWARVISH = 'dwarvish'
+export const LANG_ELVEN = 'elven'
+export const LANG_GIANT = 'giant'
+export const LANG_GIANT_EAGLE = 'giant_eagle'
+export const LANG_GIANT_OWL = 'giant_owl'
+export const LANG_GITH = 'gith'
+export const LANG_GNOLL = 'gnoll'
+export const LANG_GNOMISH = 'gnomish'
+export const LANG_GOBLIN = 'goblin'
+export const LANG_GRELL = 'grell'
+export const LANG_GRUNG = 'grung'
+export const LANG_HALFLING = 'halfling'
+export const LANG_HOOK_HORROR = 'hook_horror'
+export const LANG_ICE_TOAD = 'ice_toad'
+export const LANG_IGNAN = 'ignan'
+export const LANG_INFERNAL = 'infernal'
+export const LANG_ITS_CREATOR = 'its_creator'
+export const LANG_IXITXACHITL = 'ixitxachitl'
+export const LANG_MODRONE = 'modrone'
+export const LANG_ORC = 'orc'
+export const LANG_OTYUGH = 'otyugh'
+export const LANG_PRIMORDIAL = 'primordial'
+export const LANG_SAHUAGIN = 'sahuagin'
+export const LANG_SLAAD = 'slaad'
+export const LANG_SPHINX = 'sphinx'
+export const LANG_SYLVAN = 'sylvan'
+export const LANG_TELEPATY = 'telepaty'
+export const LANG_TERRAN = 'terran'
+export const LANG_THAY = 'thay'
+export const LANG_THRI_KREEN = 'thri_kreen'
+export const LANG_THUG_JARGON = 'thug_jargon'
+export const LANG_TLINCALLI = 'tlincalli'
+export const LANG_TROGLODYTE = 'troglodyte'
+export const LANG_UMBER_HULK = 'umber_hulk'
+export const LANG_UNDERCOMMON = 'undercommon'
+export const LANG_VEGEPYGMY = 'vegepygmy'
+export const LANG_WINTER_WOLF = 'winter_wolf'
+export const LANG_WORGEN = 'worgen'
+export const LANG_YETI = 'yeti'
+
 const dndLanguageList = [
   {
-    id: 'common',
+    id: LANG_COMMON,
     name: 'общий',
-    script: 'common',
   },
   {
-    id: 'any_one',
+    id: LANG_ANY_ONE,
     name: 'любой один язык (обычно — Общий)',
-    script: null,
   },
   {
-    id: 'any_two',
+    id: LANG_ANY_TWO,
     name: 'любые два языка',
-    script: null,
   },
   {
-    id: 'all_known_at_life',
+    id: LANG_ALL_KNOWN_AT_LIFE,
     name: 'все языки, известные при жизни',
-    script: null,
   },
   {
-    id: 'its_creator',
+    id: LANG_ITS_CREATOR,
     name: 'язык своего создателя',
-    script: null,
   },
   {
-    id: 'all',
+    id: LANG_ALL,
     name: 'все',
-    script: 'all',
   },
   {
-    id: 'primordial',
+    id: LANG_PRIMORDIAL,
     name: 'первичный',
-    script: 'dwarvish',
   },
   {
-    id: 'elven',
+    id: LANG_ELVEN,
     name: 'эльфийский',
-    script: 'elven',
   },
   {
-    id: 'sylvan',
+    id: LANG_SYLVAN,
     name: 'сильван',
-    script: 'elven',
   },
   {
-    id: 'abyssal',
+    id: LANG_ABYSSAL,
     name: 'бездны',
-    script: 'infernal',
   },
   {
-    id: 'infernal',
+    id: LANG_INFERNAL,
     name: 'инфернальный',
-    script: 'infernal',
   },
   {
-    id: 'aquan',
+    id: LANG_AQUAN,
     name: 'акван',
-    script: 'elven',
   },
   {
-    id: 'dwarvish',
+    id: LANG_DWARVISH,
     name: 'дварфийский',
-    script: 'dwarvish',
   },
   {
-    id: 'giant',
+    id: LANG_GIANT,
     name: 'великаний',
-    script: 'dwarvish',
   },
   {
-    id: 'auran',
+    id: LANG_AURAN,
     name: 'ауран',
-    script: 'draconic',
   },
   {
-    id: 'celestial',
+    id: LANG_CELESTIAL,
     name: 'небесный',
-    script: 'celestial',
   },
   {
-    id: 'deep_speech',
+    id: LANG_DEEP_SPEECH,
     name: 'глубинная речь',
-    script: null,
   },
   {
-    id: 'undercommon',
+    id: LANG_UNDERCOMMON,
     name: 'подземный',
-    script: 'elven',
   },
   {
-    id: 'draconic',
+    id: LANG_DRACONIC,
     name: 'драконий',
-    script: 'draconic',
   },
   {
-    id: 'druidic',
+    id: LANG_DRUIDIC,
     name: 'друидский',
-    script: 'druidic',
   },
   {
-    id: 'gnomish',
+    id: LANG_GNOMISH,
     name: 'гномий',
-    script: 'dwarvish',
   },
   {
-    id: 'goblin',
+    id: LANG_GOBLIN,
     name: 'гоблинский',
-    script: 'dwarvish',
   },
   {
-    id: 'gnoll',
+    id: LANG_GNOLL,
     name: 'гноллий',
-    script: 'common',
   },
   {
-    id: 'halfling',
+    id: LANG_HALFLING,
     name: 'язык полуросликов',
-    script: 'common',
   },
   {
-    id: 'umber_hulk',
+    id: LANG_UMBER_HULK,
     name: 'язык бурых увальней',
-    script: null,
   },
   {
-    id: 'ignan',
+    id: LANG_IGNAN,
     name: 'игнан',
-    script: 'draconic',
   },
   {
-    id: 'orc',
+    id: LANG_ORC,
     name: 'орочий',
-    script: 'dwarvish',
   },
   {
-    id: 'terran',
+    id: LANG_TERRAN,
     name: 'терран',
-    script: 'dwarvish',
   },
   {
-    id: 'vorovskoi_zhargon',
+    id: LANG_THUG_JARGON,
     name: 'воровской жаргон',
-    script: null,
   },
   {
-    id: 'telepatiia',
+    id: LANG_TELEPATY,
     name: 'телепатия',
-    script: null,
   },
   {
-    id: 'sahuagin',
+    id: LANG_SAHUAGIN,
     name: 'сахуагинский',
-    script: null,
   },
   {
-    id: 'vegepygmy',
+    id: LANG_VEGEPYGMY,
     name: 'вегепигмейский',
-    script: null,
   },
   {
-    id: 'worgen',
+    id: LANG_WORGEN,
     name: 'язык воргов',
-    script: null,
   },
   {
-    id: 'giant_owl',
+    id: LANG_GIANT_OWL,
     name: 'язык гигантских сов',
-    script: null,
   },
   {
-    id: 'giant_eagle',
+    id: LANG_GIANT_EAGLE,
     name: 'язык гигантских орлов',
-    script: null,
   },
   {
-    id: 'sphinx',
+    id: LANG_SPHINX,
     name: 'язык сфинксов',
-    script: null,
   },
   {
-    id: 'gith',
+    id: LANG_GITH,
     name: 'гитский',
-    script: 'gith',
   },
   {
-    id: 'grell',
+    id: LANG_GRELL,
     name: 'грелльский',
-    script: 'grell',
   },
   {
-    id: 'grung',
+    id: LANG_GRUNG,
     name: 'грунгский',
-    script: null,
   },
   {
-    id: 'modrone',
+    id: LANG_MODRONE,
     name: 'модронский',
-    script: null,
   },
   {
-    id: 'bullywug',
+    id: LANG_BULLYWUG,
     name: 'жаболюдский',
-    script: null,
   },
   {
-    id: 'slaad',
+    id: LANG_SLAAD,
     name: 'слаадский',
-    script: null,
   },
   {
-    id: 'yeti',
+    id: LANG_YETI,
     name: 'язык йети',
-    script: null,
   },
   {
-    id: 'hook_horror',
+    id: LANG_HOOK_HORROR,
     name: 'язык крюкастых ужасов',
-    script: null,
   },
   {
-    id: 'ice_toad',
+    id: LANG_ICE_TOAD,
     name: 'язык ледяных жаб',
-    script: null,
   },
   {
-    id: 'blink_dog',
+    id: LANG_BLINK_DOG,
     name: 'язык мерцающих псов',
-    script: null,
   },
   {
-    id: 'otyugh',
+    id: LANG_OTYUGH,
     name: 'отиджский',
-    script: null,
   },
   {
-    id: 'winter_wolf',
+    id: LANG_WINTER_WOLF,
     name: 'язык полярных волков',
-    script: null,
   },
   {
-    id: 'thay',
+    id: LANG_THAY,
     name: 'тэйский',
-    script: ['infernal', 'common'],
   },
   {
-    id: 'tlincalli',
+    id: LANG_TLINCALLI,
     name: 'язык тлинкалли',
-    script: null,
   },
   {
-    id: 'thri_kreen',
+    id: LANG_THRI_KREEN,
     name: 'три-кринский',
-    script: null,
   },
   {
-    id: 'troglodyte',
+    id: LANG_TROGLODYTE,
     name: 'троглодитский',
-    script: null,
   },
   {
-    id: 'ixitxachitl',
+    id: LANG_IXITXACHITL,
     name: 'язык икситксачитлов',
-    script: null,
   },
 ]
 
+export default dndLanguageList
 export const dndLanguageCollection = listToCollectionById(dndLanguageList)

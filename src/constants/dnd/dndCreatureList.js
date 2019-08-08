@@ -62,11 +62,11 @@ const dndCreatureList = [
           bonus: 2,
           range: 5,
           targetCount: 1,
+          damageType: DAMAGE_BLUDGEONING,
           damage: {
             cubeType: 4,
             cubeCount: 1,
           },
-          damageType: DAMAGE_BLUDGEONING,
         },
         description: 'Рукопашная атака оружием: +2 к попаданию, досягаемость 5 фт., одна цель. Попадание: Дробящий урон 2 (1к4). ',
       },

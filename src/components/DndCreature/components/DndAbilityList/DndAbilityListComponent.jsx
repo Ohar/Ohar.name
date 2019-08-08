@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import ReactMarkdown from "react-markdown";
 
 import "./DndAbilityListStyles.css"
 
@@ -20,7 +21,9 @@ const DndAbilityListComponent = ({ list }) => (
               <b className='DndAbilityList_itemHeader'>
                 {name}{limitText}.
               </b>
-              {description}
+              <ReactMarkdown className='DndAbilityList_itemDescription'>
+                {description}
+              </ReactMarkdown>
             </li>
           )
         }

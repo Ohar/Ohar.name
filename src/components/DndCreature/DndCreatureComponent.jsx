@@ -13,6 +13,7 @@ import DndCreatureSpeed from "./components/DndCreatureSpeed"
 import DndLegendaryActionList from "./components/DndLegendaryActionList"
 import DndParamList from "./components/DndParamList"
 import DndAbilityList from "./components/DndAbilityList"
+import DndActionList from "./components/DndActionList"
 import DndLanguageList from "./components/DndLanguageList"
 
 import getCreatureTypeName from "./utils/getCreatureTypeName"
@@ -24,6 +25,7 @@ const DndCreatureComponent = (
     creature,
     creature: {
       abilityList,
+      actionList,
       aligmentId,
       armorClass,
       armorType,
@@ -119,6 +121,7 @@ const DndCreatureComponent = (
       </section>
 
       <DndAbilityList list={abilityList}/>
+      <DndActionList list={actionList}/>
 
       <div className='DndCreature_description'>
         <ReactMarkdown>{description}</ReactMarkdown>

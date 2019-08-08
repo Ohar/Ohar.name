@@ -22,6 +22,11 @@ const dndLanguageList = [
     script: null,
   },
   {
+    id: 'its_creator',
+    name: 'язык своего создателя',
+    script: null,
+  },
+  {
     id: 'all',
     name: 'все',
     script: 'all',

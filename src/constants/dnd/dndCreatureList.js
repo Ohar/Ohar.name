@@ -10,6 +10,7 @@ import { SPEED_WALK } from '@/constants/dnd/dndSpeedList'
 import { ACTION_MELEE_WEAPON_ATTACK } from '@/constants/dnd/dndActionTypeList'
 import { LANG_ANY_ONE } from '@/constants/dnd/dndLanguageList'
 import { DAMAGE_BLUDGEONING } from '@/constants/dnd/dndDamageTypeList'
+import { SENSE_PASSIVE_PERCEPTION } from '@/constants/dnd/dndSenseList'
 
 const dndCreatureList = [
   {
@@ -43,6 +44,12 @@ const dndCreatureList = [
     },
     languageList: [
       LANG_ANY_ONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
     ],
     featureList: [
       {

@@ -16,6 +16,7 @@ import DndAbilityList from "./components/DndAbilityList"
 import DndActionList from "./components/DndActionList"
 import DndFeatureList from "./components/DndFeatureList"
 import DndLanguageList from "./components/DndLanguageList"
+import DndSenseList from "./components/DndSenseList"
 import DndReactionList from "./components/DndReactionList"
 
 import getCreatureTypeName from "./utils/getCreatureTypeName"
@@ -42,6 +43,7 @@ const DndCreatureComponent = (
       nameEn,
       params,
       reactionList,
+      senseList,
       sizeType,
       source,
       speed,
@@ -100,6 +102,10 @@ const DndCreatureComponent = (
       />
 
       <section className='DndCreature_infoBlock'>
+        <p className='DndCreature_senseList'>
+          <b className='DndCreature_blockHeader'>Чувства</b>
+          <DndSenseList list={senseList}/>
+        </p>
         <p className='DndCreature_languageList'>
           <b className='DndCreature_blockHeader'>Языки</b>
           <DndLanguageList list={languageList}/>

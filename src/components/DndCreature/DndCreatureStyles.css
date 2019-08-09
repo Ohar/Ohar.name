@@ -80,7 +80,9 @@
 .DndCreature_description {
     font-family: Georgia, serif;
     color: #231F20;
+    hyphens: auto;
 }
+
 .DndCreature_description p {
     margin-bottom: 1rem;
 }

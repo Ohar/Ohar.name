@@ -2,6 +2,7 @@ import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
 import {
   CR_0,
   CR_1_8,
+  CR_1_4,
 } from "@/constants/dnd/dndCrList"
 import {SIZE_MEDIUM} from "@/constants/dnd/dndSizeList"
 import {
@@ -95,7 +96,6 @@ const dndCreatureList = [
             cubeCount: 1,
           },
         },
-        description: 'Рукопашная атака оружием: +2 к попаданию, досягаемость 5 фт., одна цель. Попадание: Дробящий урон 2 (1к4). ',
       },
     ],
   },
@@ -173,6 +173,62 @@ const dndCreatureList = [
             cubeType: 8,
             cubeCount: 1,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Прислужник',
+    nameEn: 'Acolyte',
+    description: `**Прислужник** это младший представитель духовенства, обычно, помогающий священникам. Он выполняет в храме множество дел и получает от божества незначительные магические способности.`,
+    aligmentId: ALIGMENT_ANY,
+    source: 'MM:346',
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    hp: {
+      cubeType: 8,
+      cubeCount: 2,
+    },
+    armor: {
+      ac: 10,
+    },
+    cr: CR_1_4,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_HUMANOID,
+      CREATURE_ANY_RACE,
+    ],
+    params: {
+      str: 10,
+      dex: 10,
+      con: 10,
+      int: 10,
+      wit: 14,
+      cha: 11,
+    },
+    languageList: [
+      LANG_ANY_ONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Дубина',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          targetCount: 1,
+          damageType: DAMAGE_BLUDGEONING,
+          damage: {
+            cubeType: 4,
+            cubeCount: 1,
           },
         },
       },

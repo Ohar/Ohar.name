@@ -9,10 +9,7 @@ export default ({cr}) => {
 
   return (
     <DndCreatureInfo header='Опасность'>
-      {name}
-      <span className='DndCreatureCr_exp'>
-        ({exp} опыта)
-      </span>
+      {name} ({exp} опыта)
     </DndCreatureInfo>
   )
 }

@@ -7,16 +7,23 @@ import calcParamBonus from "./utils/calcParamBonus"
 
 import "./DndParamStyles.css"
 
-const DndParamComponent = ({ id, value }) => (
-  <span className='DndParam'>
+const DndParamComponent = ({ id, value }) => {
+  const bonus = calcParamBonus(value)
+  const bonusText = bonus < 0
+    ? `−${bonus}`
+    : `+${bonus}`
+
+  return (
+    <span className='DndParam'>
     <b className='DndParam_header'>
       {dndParamCollection[id].shortName}
     </b>
     <span className='DndParam_value'>
-      {value} ({calcParamBonus(value)})
+      {value} ({bonusText})
     </span>
   </span>
-)
+  )
+}
 
 DndParamComponent.propTypes = {
   id: PropTypes.string.isRequired,

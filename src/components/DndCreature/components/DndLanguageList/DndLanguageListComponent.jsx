@@ -2,8 +2,10 @@ import React from "react"
 
 import {dndLanguageCollection} from "@/constants/dnd/dndLanguageList"
 
+import DndCreatureInfo from "./../DndCreatureInfo";
+
 export default ({list}) => (
-  <span className='DndLanguageList'>
+  <DndCreatureInfo header='Языки'>
     {
       list
         .map(
@@ -11,5 +13,5 @@ export default ({list}) => (
         )
         .join(', ')
     }
-  </span>
+  </DndCreatureInfo>
 )

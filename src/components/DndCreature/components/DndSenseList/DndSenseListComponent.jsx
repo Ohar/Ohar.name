@@ -2,8 +2,10 @@ import React from "react"
 
 import {dndSenseCollection} from "@/constants/dnd/dndSenseList"
 
+import DndCreatureInfo from "./../DndCreatureInfo";
+
 export default ({list}) => (
-  <span className='DndSenseList'>
+  <DndCreatureInfo header='Чувства'>
     {
       list
         .map(
@@ -18,5 +20,5 @@ export default ({list}) => (
         )
         .join(', ')
     }
-  </span>
+  </DndCreatureInfo>
 )

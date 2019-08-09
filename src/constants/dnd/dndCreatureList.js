@@ -26,8 +26,10 @@ const dndCreatureList = [
       cubeType: 8,
       cubeCount: 1,
     },
-    armorClass: 10,
-    armorType: 'голая жопа',
+    armor: {
+      ac: 10,
+      type: 'голая жопа',
+    },
     cr: CR_0,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [

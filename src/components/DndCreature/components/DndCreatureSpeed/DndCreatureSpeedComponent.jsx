@@ -10,10 +10,12 @@ import {
   SPEED_WALK,
 } from '@/constants/dnd/dndSpeedList'
 
+import DndCreatureInfo from "./../DndCreatureInfo";
+
 import "./DndCreatureSpeedStyles.css"
 
 const DndCreatureSpeedComponent = ({ speed }) => (
-  <span className='DndCreatureSpeed'>
+  <DndCreatureInfo header='Скорость'>
     {
       Object.keys(speed).map(
         type => (
@@ -23,7 +25,7 @@ const DndCreatureSpeedComponent = ({ speed }) => (
         ),
       )
     }
-  </span>
+  </DndCreatureInfo>
 )
 
 DndCreatureSpeedComponent.propTypes = {

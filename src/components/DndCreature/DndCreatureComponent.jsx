@@ -3,21 +3,19 @@ import PropTypes from "prop-types"
 import ReactMarkdown from "react-markdown";
 
 import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
-import {dndCrCollection} from "@/constants/dnd/dndCrList"
 import {dndSizeCollection} from "@/constants/dnd/dndSizeList"
 
-import generateCube from "@/utils/generateCube"
-import DndSourceInfo from "@/components/DndSourceInfo"
-
-import DndCreatureSpeed from "./components/DndCreatureSpeed"
-import DndLegendaryActionList from "./components/DndLegendaryActionList"
-import DndParamList from "./components/DndParamList"
-import DndAbilityList from "./components/DndAbilityList"
 import DndActionList from "./components/DndActionList"
+import DndCreatureAc from "./components/DndCreatureAc"
+import DndCreatureCr from "./components/DndCreatureCr"
+import DndCreatureHp from "./components/DndCreatureHp"
+import DndCreatureSource from "./components/DndCreatureSource"
+import DndCreatureSpeed from "./components/DndCreatureSpeed"
 import DndFeatureList from "./components/DndFeatureList"
 import DndLanguageList from "./components/DndLanguageList"
-import DndSenseList from "./components/DndSenseList"
+import DndParamList from "./components/DndParamList"
 import DndReactionList from "./components/DndReactionList"
+import DndSenseList from "./components/DndSenseList"
 
 import getCreatureTypeName from "./utils/getCreatureTypeName"
 
@@ -25,20 +23,16 @@ import "./DndCreatureStyles.css"
 
 const DndCreatureComponent = (
   {
-    creature,
     creature: {
-      abilityList,
       actionList,
       aligmentId,
-      armorClass,
-      armorType,
+      armor,
       cr,
       creatureTypeIdList,
       description,
       featureList,
       hp,
       languageList,
-      legendaryPoints,
       name,
       nameEn,
       params,
@@ -77,23 +71,9 @@ const DndCreatureComponent = (
       </p>
 
       <section className='DndCreature_infoBlock'>
-        <p className='DndCreature_armorClass'>
-          <b className='DndCreature_blockHeader'>Класс доспеха</b>
-          {armorClass}
-          {
-            armorType
-              ? ` (${armorType})`
-              : ''
-          }
-        </p>
-        <p className='DndCreature_hitPoint'>
-          <b className='DndCreature_blockHeader'>Хиты</b>
-          {generateCube(hp)}
-        </p>
-        <p className='DndCreature_hitPoint'>
-          <b className='DndCreature_blockHeader'>Скорость</b>
-          <DndCreatureSpeed speed={speed} />
-        </p>
+        <DndCreatureAc armor={armor}/>
+        <DndCreatureHp hp={hp}/>
+        <DndCreatureSpeed speed={speed} />
       </section>
 
       <DndParamList
@@ -102,41 +82,19 @@ const DndCreatureComponent = (
       />
 
       <section className='DndCreature_infoBlock'>
-        <p className='DndCreature_senseList'>
-          <b className='DndCreature_blockHeader'>Чувства</b>
-          <DndSenseList list={senseList}/>
-        </p>
-        <p className='DndCreature_languageList'>
-          <b className='DndCreature_blockHeader'>Языки</b>
-          <DndLanguageList list={languageList}/>
-        </p>
-        <p className='DndCreature_cr'>
-          <b className='DndCreature_blockHeader'>Опасность</b>
-          {dndCrCollection[cr].name}
-          <span className='DndCreature_exp'>
-            ({dndCrCollection[cr].exp} опыта)
-          </span>
-        </p>
-        <p className='DndCreature_source'>
-          <b className='DndCreature_blockHeader'>Источник</b>
-          <DndSourceInfo source={source} useFullName/>
-        </p>
+        <DndSenseList list={senseList}/>
+        <DndLanguageList list={languageList}/>
+        <DndCreatureCr cr={cr}/>
+        <DndCreatureSource source={source}/>
       </section>
-
-      {/*<section className='DndCreature_infoBlock'>*/}
-        {/*<DndLegendaryActionList*/}
-        {/*  name={name}*/}
-        {/*  legendaryPoints={legendaryPoints}*/}
-        {/*/>*/}
-      {/*</section>*/}
 
       <DndFeatureList list={featureList}/>
       <DndActionList list={actionList}/>
       <DndReactionList list={reactionList}/>
 
-      <div className='DndCreature_description'>
-        <ReactMarkdown>{description}</ReactMarkdown>
-      </div>
+      <ReactMarkdown className='DndCreature_description'>
+        {description}
+      </ReactMarkdown>
     </section>
   )
 }

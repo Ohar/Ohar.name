@@ -14,7 +14,9 @@ import DndLegendaryActionList from "./components/DndLegendaryActionList"
 import DndParamList from "./components/DndParamList"
 import DndAbilityList from "./components/DndAbilityList"
 import DndActionList from "./components/DndActionList"
+import DndFeatureList from "./components/DndFeatureList"
 import DndLanguageList from "./components/DndLanguageList"
+import DndReactionList from "./components/DndReactionList"
 
 import getCreatureTypeName from "./utils/getCreatureTypeName"
 
@@ -32,12 +34,14 @@ const DndCreatureComponent = (
       cr,
       creatureTypeIdList,
       description,
+      featureList,
       hp,
       languageList,
       legendaryPoints,
       name,
       nameEn,
       params,
+      reactionList,
       sizeType,
       source,
       speed,
@@ -120,8 +124,9 @@ const DndCreatureComponent = (
         {/*/>*/}
       {/*</section>*/}
 
-      <DndAbilityList list={abilityList}/>
+      <DndFeatureList list={featureList}/>
       <DndActionList list={actionList}/>
+      <DndReactionList list={reactionList}/>
 
       <div className='DndCreature_description'>
         <ReactMarkdown>{description}</ReactMarkdown>

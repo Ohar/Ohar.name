@@ -38,13 +38,19 @@ const dndCreatureList = [
       con: 10,
       dex: 10,
       int: 10,
-      str: 10,
+      str: 9,
       wit: 10,
     },
     languageList: [
       LANG_ANY_ONE,
     ],
-    abilityList: [
+    featureList: [
+      {
+        name: 'Тупость',
+        description: 'Обыватель тупит.',
+      },
+    ],
+    reactionList: [
       {
         name: 'Тупость',
         description: 'Обыватель тупит.',

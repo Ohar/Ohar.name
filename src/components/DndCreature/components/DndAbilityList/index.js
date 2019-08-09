@@ -1,1 +1,1 @@
-export default from './DndAbilityListComponent'
+export default from './DndAbilityListContainer'

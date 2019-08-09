@@ -9,9 +9,10 @@ import "./DndParamStyles.css"
 
 const DndParamComponent = ({ id, value }) => {
   const bonus = calcParamBonus(value)
+  const bonusAbs = Math.abs(bonus)
   const bonusText = bonus < 0
-    ? `−${bonus}`
-    : `+${bonus}`
+    ? `−${bonusAbs}`
+    : `+${bonusAbs}`
 
   return (
     <span className='DndParam'>

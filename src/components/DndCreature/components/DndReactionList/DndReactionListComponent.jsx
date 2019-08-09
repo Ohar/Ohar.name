@@ -4,7 +4,7 @@ import DndAbilityList from './../DndAbilityList'
 
 export default props => (
   <DndAbilityList
-    header='Действия'
+    header='Реакции'
     {...props}
   />
 )

@@ -15,7 +15,7 @@ const dndActionTypeList = [
   },
   {
     id: ACTION_RANGE_WEAPON_ATTACK,
-    name: 'Дальняя атака оружием',
+    name: 'Дальнобойная атака оружием',
   },
   {
     id: ACTION_MELEE_SPELL_ATTACK,
@@ -23,7 +23,7 @@ const dndActionTypeList = [
   },
   {
     id: ACTION_RANGE_SPELL_ATTACK,
-    name: 'Дальняя атака заклинанием',
+    name: 'Дальнобойная атака заклинанием',
   },
   {
     id: ACTION_REACTION,

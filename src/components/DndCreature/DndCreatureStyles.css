@@ -41,25 +41,30 @@
 
 .DndCreature_infoBlock {
     position: relative;
-    padding: 5px 0;
+    padding: 5px 0 10px;
+    margin-top: 5px;
 }
 
-.DndCreature_infoBlock + .DndCreature_infoBlock {
-    margin-top: 1rem;
-}
-
-.DndCreature_infoBlock:before {
+.DndCreature_infoBlock:before,
+.DndCreature_infoBlock:after {
     content: '';
     position: absolute;
     right: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #A02A20;
+}
+
+.DndCreature_infoBlock:after {
+    bottom: 0;
+}
+
+.DndCreature_infoBlock:before {
     top: 0;
-    width: 0;
-    height: 0;
-    border-width: 3px;
-    border-style: solid;
-    border-color: transparent;
-    border-left-color: #A02A20;
-    transform: scaleX(155);
+}
+
+.DndCreature_infoBlock + .DndCreature_infoBlock:before {
+    content: none;
 }
 
 .DndCreature_blockHeader {

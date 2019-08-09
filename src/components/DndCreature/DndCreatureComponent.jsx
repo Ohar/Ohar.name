@@ -113,12 +113,12 @@ const DndCreatureComponent = (
         </p>
       </section>
 
-      <section className='DndCreature_infoBlock'>
+      {/*<section className='DndCreature_infoBlock'>*/}
         {/*<DndLegendaryActionList*/}
         {/*  name={name}*/}
         {/*  legendaryPoints={legendaryPoints}*/}
         {/*/>*/}
-      </section>
+      {/*</section>*/}
 
       <DndAbilityList list={abilityList}/>
       <DndActionList list={actionList}/>

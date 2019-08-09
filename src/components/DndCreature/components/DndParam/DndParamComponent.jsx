@@ -3,12 +3,12 @@ import PropTypes from "prop-types"
 
 import {dndParamCollection} from "@/constants/dnd/dndParamList"
 
-import calcParamBonus from "@/utils/calcParamBonus"
+import formatParamBonus from "@/utils/formatParamBonus"
 
 import "./DndParamStyles.css"
 
 const DndParamComponent = ({ id, value }) => {
-  const bonus = calcParamBonus(value)
+  const bonus = formatParamBonus(value)
 
   return (
     <span className='DndParam'>

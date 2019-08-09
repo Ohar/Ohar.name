@@ -25,6 +25,10 @@ import {
   DAMAGE_SLASHING,
 } from '@/constants/dnd/dndDamageTypeList'
 import { SENSE_PASSIVE_PERCEPTION } from '@/constants/dnd/dndSenseList'
+import {
+  SKILL_MEDICINE,
+  SKILL_RELIGION,
+} from '@/constants/dnd/dndSkillList'
 
 const dndCreatureList = [
   {
@@ -217,6 +221,10 @@ const dndCreatureList = [
         value: 12,
       },
     ],
+    skillCollection: {
+      [SKILL_MEDICINE]: 4,
+      [SKILL_RELIGION]: 2,
+    },
     actionList: [
       {
         name: 'Дубина',

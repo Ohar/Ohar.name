@@ -3,9 +3,7 @@ import PropTypes from "prop-types"
 
 import generateAttackDescription from "./utils/generateAttackDescription"
 
-import DndAbilityList from './../DndAbilityList'
-
-import "./DndActionListStyles.css"
+import DndActionListComponent from './DndActionListComponent'
 
 const DndActionListContainer = ({ list }) => {
   const abilityList = list.map(
@@ -21,7 +19,7 @@ const DndActionListContainer = ({ list }) => {
   )
 
   return (
-    <DndAbilityList list={abilityList}/>
+    <DndActionListComponent list={abilityList}/>
   )
 }
 

@@ -1,6 +1,6 @@
 import proschet from 'proschet';
 
-import {dndActionTypeCollection} from '@/constants/dnd/dndActionTypeList'
+import {ACTION_RANGE_WEAPON_ATTACK, dndActionTypeCollection} from '@/constants/dnd/dndActionTypeList'
 import {dndDamageTypeCollection} from '@/constants/dnd/dndDamageTypeList'
 import numberList from '@/constants/numberList'
 
@@ -25,6 +25,12 @@ export default (
   const bonusText = showDigitSign(bonus)
   const cube = generateCube(damage)
   const targetText = `${numberList[targetCount].female} ${getGoalWord(targetCount)}`
+  const rangeText = type === ACTION_RANGE_WEAPON_ATTACK
+    ? `дистанция ${range.normal} фт./${range.max} фт.`
+    : `досягаемость ${range} фт.`
 
-  return `*${typeText}*: ${bonusText} к попаданию, досягаемость ${range} фт., ${targetText}. *Попадание:* ${dmgText} ${cube}`
+  return `
+  *${typeText}*: ${bonusText} к попаданию, ${rangeText}, ${targetText}.
+  *Попадание:* ${dmgText} ${cube}.
+  `
 }

@@ -1,12 +1,17 @@
-.DndActionList {
-    list-style-type: none;
-    padding-left: 0;
-    color: #231F20;
+.DndActionList_header {
+    position: relative;
+    color: #511815;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    margin-bottom: .5em;
 }
 
-.DndActionList_itemHeader {
-    color: #231F20;
-    font-style: italic;
-    font-weight: 700;
-    margin-right: .4em;
+.DndActionList_header:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #511815;
+    bottom: -.2em;
+    left: 0;
 }

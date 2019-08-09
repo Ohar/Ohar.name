@@ -3,7 +3,7 @@
     position: relative;
     width: 468px;
     box-shadow: 0 0 10px 0 black;
-    padding: 9px;
+    padding: 18px 9px 24px;
     color: #511815;
     font-family: sans-serif;
 }
@@ -70,4 +70,9 @@
 
 .DndCreature_exp {
     padding-left: .4em;
+}
+
+.DndCreature_description {
+    font-family: Georgia, serif;
+    color: #231F20;
 }

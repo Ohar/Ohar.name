@@ -96,16 +96,16 @@ const DndCreatureComponent = (
       />
 
       <section className='DndCreature_infoBlock'>
+        <p className='DndCreature_languageList'>
+          <b className='DndCreature_blockHeader'>Языки</b>
+          <DndLanguageList list={languageList}/>
+        </p>
         <p className='DndCreature_cr'>
           <b className='DndCreature_blockHeader'>Опасность</b>
           {dndCrCollection[cr].name}
           <span className='DndCreature_exp'>
             ({dndCrCollection[cr].exp} опыта)
           </span>
-        </p>
-        <p className='DndCreature_languageList'>
-          <b className='DndCreature_blockHeader'>Языки</b>
-          <DndLanguageList list={languageList}/>
         </p>
         <p className='DndCreature_source'>
           <b className='DndCreature_blockHeader'>Источник</b>
@@ -126,10 +126,6 @@ const DndCreatureComponent = (
       <div className='DndCreature_description'>
         <ReactMarkdown>{description}</ReactMarkdown>
       </div>
-
-      <p>
-        {JSON.stringify(creature)}
-      </p>
     </section>
   )
 }

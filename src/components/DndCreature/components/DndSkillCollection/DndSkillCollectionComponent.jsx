@@ -6,15 +6,14 @@ import formatBonus from "@/utils/formatBonus"
 
 import DndCreatureInfo from "./../DndCreatureInfo";
 
-export default ({collection}) => (
+export default ({list}) => (
   <DndCreatureInfo header='Навыки'>
     {
-      Object
-        .keys(collection)
+      list
         .map(
-          id => {
+          ([id, value]) => {
             const {name} = dndSkillCollection[id]
-            const bonus = formatBonus(collection[id])
+            const bonus = formatBonus(value)
 
             return `${name} ${bonus}`
           }

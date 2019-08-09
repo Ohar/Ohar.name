@@ -1,1 +1,1 @@
-export default from './DndSkillCollectionComponent'
+export default from './DndSkillCollectionContainer'

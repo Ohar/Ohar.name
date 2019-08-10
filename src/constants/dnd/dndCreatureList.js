@@ -6,19 +6,29 @@ import {
 } from "@/constants/dnd/dndCrList"
 import {SIZE_MEDIUM} from "@/constants/dnd/dndSizeList"
 import {
-  CREATURE_HUMANOID,
+  CREATURE_AARAKOCRA,
   CREATURE_ANY_RACE,
+  CREATURE_HUMANOID,
 } from "@/constants/dnd/dndCreatureTypeList"
 import {
   ALIGMENT_ANY,
+  ALIGMENT_NG,
   ALIGMENT_NOT_LAWFUL,
 } from '@/constants/dnd/dndAligmentList'
-import { SPEED_WALK } from '@/constants/dnd/dndSpeedList'
+import {
+  SPEED_FLY,
+  SPEED_WALK,
+} from '@/constants/dnd/dndSpeedList'
 import {
   ACTION_MELEE_WEAPON_ATTACK,
+  ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
   ACTION_RANGE_WEAPON_ATTACK,
 } from '@/constants/dnd/dndActionTypeList'
-import { LANG_ANY_ONE } from '@/constants/dnd/dndLanguageList'
+import {
+  LANG_AARAKOCRA,
+  LANG_ANY_ONE,
+  LANG_AURAN,
+} from '@/constants/dnd/dndLanguageList'
 import {
   DAMAGE_BLUDGEONING,
   DAMAGE_PIERCING,
@@ -27,6 +37,7 @@ import {
 import { SENSE_PASSIVE_PERCEPTION } from '@/constants/dnd/dndSenseList'
 import {
   SKILL_MEDICINE,
+  SKILL_PERCEPTION,
   SKILL_RELIGION,
 } from '@/constants/dnd/dndSkillList'
 import {
@@ -243,6 +254,96 @@ const dndCreatureList = [
       saveThrowDc: 12,
       spellList: [],
     },
+  },
+  {
+    name: 'Ааракокра',
+    nameEn: 'Aarakocra',
+    description: `**Ааракокры** населяют Воющий Вихрь, бесконечный шторм могучих ветров и дождей, который окружает царство Аакуа в Стихийном Плане Воздуха. Осуществляя воздушное патрулирование, эти птицеподобные гуманоиды охраняют воздушные границы своего дома от захватчиков из Стихийного Плана Земли, своих заклятых врагов — горгулий.
+`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_HUMANOID,
+      CREATURE_AARAKOCRA,
+    ],
+    aligmentId: ALIGMENT_NG,
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeType: 8,
+      cubeCount: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 50,
+    },
+    params: {
+      str: 10,
+      dex: 14,
+      con: 10,
+      int: 11,
+      wit: 12,
+      cha: 11,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      LANG_AARAKOCRA,
+      LANG_AURAN,
+    ],
+    cr: CR_1_4,
+    source: 'MM:12',
+    featureList: [
+      {
+        name: 'Пикирующая атака',
+        description: 'Если ааракокра летит и пикирует как минимум на 30 футов по прямой к цели, а затем попадает по ней рукопашной атакой оружием, атака причиняет цели дополнительный урон 3 (1к6).',
+      },
+    ],
+    actionList: [
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          targetCount: 1,
+          damageType: DAMAGE_SLASHING,
+          damage: {
+            cubeType: 4,
+            cubeCount: 1,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            melee: 5,
+            range: {
+              normal: 30,
+              max: 120,
+            },
+          },
+          targetCount: 1,
+          damageType: DAMAGE_PIERCING,
+          damage: {
+            cubeType: 6,
+            cubeCount: 1,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
   },
 ].map(
   creature => ({

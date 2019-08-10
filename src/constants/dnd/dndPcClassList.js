@@ -1,8 +1,21 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
+export const PC_CLASS_BARBARIAN = 'barbarian'
+export const PC_CLASS_BARD = 'bard'
+export const PC_CLASS_DRUID = 'druid'
+export const PC_CLASS_FIGHTER = 'fighter'
+export const PC_CLASS_MONK = 'monk'
+export const PC_CLASS_PALADIN = 'paladin'
+export const PC_CLASS_PRIEST = 'priest'
+export const PC_CLASS_RANGER = 'ranger'
+export const PC_CLASS_ROGUE = 'rogue'
+export const PC_CLASS_SORCERER = 'sorcerer'
+export const PC_CLASS_WARLOCK = 'warlock'
+export const PC_CLASS_WIZARD = 'wizard'
+
 const dndPcClassList = [
   {
-    id: 'barbarian',
+    id: PC_CLASS_BARBARIAN,
     name: {
       singular: {
         nominative: 'варвар',
@@ -23,7 +36,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'bard',
+    id: PC_CLASS_BARD,
     name: {
       singular: {
         nominative: 'бард',
@@ -44,7 +57,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'priest',
+    id: PC_CLASS_PRIEST,
     name: {
       singular: {
         nominative: 'жрец',
@@ -65,7 +78,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'druid',
+    id: PC_CLASS_DRUID,
     name: {
       singular: {
         nominative: 'друид',
@@ -86,7 +99,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'fighter',
+    id: PC_CLASS_FIGHTER,
     name: {
       singular: {
         nominative: 'воин',
@@ -107,7 +120,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'monk',
+    id: PC_CLASS_MONK,
     name: {
       singular: {
         nominative: 'монах',
@@ -128,7 +141,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'paladin',
+    id: PC_CLASS_PALADIN,
     name: {
       singular: {
         nominative: 'паладин',
@@ -149,7 +162,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'ranger',
+    id: PC_CLASS_RANGER,
     name: {
       singular: {
         nominative: 'следопыт',
@@ -170,7 +183,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'rogue',
+    id: PC_CLASS_ROGUE,
     name: {
       singular: {
         nominative: 'плут',
@@ -191,7 +204,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'sorcerer',
+    id: PC_CLASS_SORCERER,
     name: {
       singular: {
         nominative: 'чародей',
@@ -212,7 +225,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'warlock',
+    id: PC_CLASS_WARLOCK,
     name: {
       singular: {
         nominative: 'колдун',
@@ -233,7 +246,7 @@ const dndPcClassList = [
     },
   },
   {
-    id: 'wizard',
+    id: PC_CLASS_WIZARD,
     name: {
       singular: {
         nominative: 'волшебник',

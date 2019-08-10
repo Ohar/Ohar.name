@@ -1,36 +1,44 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
+export const PARAM_STR = 'str'
+export const PARAM_DEX = 'dex'
+export const PARAM_CON = 'con'
+export const PARAM_INT = 'int'
+export const PARAM_WIT = 'wit'
+export const PARAM_CHA = 'cha'
+
 const dndParamList = [
   {
-    id: 'str',
+    id: PARAM_STR,
     name: 'Сила',
     shortName: 'СИЛ',
   },
   {
-    id: 'dex',
+    id: PARAM_DEX,
     name: 'Ловкость',
     shortName: 'ЛОВ',
   },
   {
-    id: 'con',
+    id: PARAM_CON,
     name: 'Телосложение',
     shortName: 'ТЕЛ',
   },
   {
-    id: 'int',
+    id: PARAM_INT,
     name: 'Интеллект',
     shortName: 'ИНТ',
   },
   {
-    id: 'wit',
+    id: PARAM_WIT,
     name: 'Мудрость',
     shortName: 'МУД',
   },
   {
-    id: 'cha',
+    id: PARAM_CHA,
     name: 'Харизма',
     shortName: 'ХАР',
   },
 ]
 
+export default dndParamList
 export const dndParamCollection = listToCollectionById(dndParamList)

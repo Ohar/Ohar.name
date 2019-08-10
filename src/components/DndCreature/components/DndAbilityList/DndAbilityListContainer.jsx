@@ -3,14 +3,24 @@ import PropTypes from "prop-types"
 
 import DndAbilityListComponent from "./DndAbilityListComponent"
 
-const DndAbilityListContainer = ({ list, ...rest }) => list.length
-  ? (
-    <DndAbilityListComponent
-      list={list}
-      {...rest}
-    />
-  )
-  : null
+const DndAbilityListContainer = (
+  {
+    list,
+    spellCast,
+    ...rest,
+  }
+) => {
+  console.log('rest.name', rest);
+  return spellCast || list.length
+    ? (
+      <DndAbilityListComponent
+        spellCast={spellCast}
+        list={list}
+        {...rest}
+      />
+    )
+    : null
+}
 
 DndAbilityListContainer.propTypes = {
   list: PropTypes.array,

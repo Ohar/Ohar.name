@@ -7,19 +7,6 @@
     padding-left: 0;
 }
 
-.DndAbilityList_itemHeader {
-    color: #231F20;
-    font-style: italic;
-    font-weight: 700;
-    margin-right: .4em;
-}
-
-.DndAbilityList_itemDescription,
-.DndAbilityList_itemDescription > p {
-    display: inline;
-    hyphens: auto;
-}
-
 .DndAbilityList_header {
     position: relative;
     color: #511815;

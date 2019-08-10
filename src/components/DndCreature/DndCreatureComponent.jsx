@@ -33,6 +33,7 @@ const DndCreatureComponent = (
       description,
       featureList,
       hp,
+      isFemale,
       languageList,
       name,
       nameEn,
@@ -43,6 +44,7 @@ const DndCreatureComponent = (
       skillCollection,
       source,
       speed,
+      spellCast,
     },
   },
 ) => {
@@ -91,7 +93,12 @@ const DndCreatureComponent = (
         <DndCreatureSource source={source}/>
       </section>
 
-      <DndFeatureList list={featureList}/>
+      <DndFeatureList
+        list={featureList}
+        name={name}
+        isFemale={isFemale}
+        spellCast={spellCast}
+      />
       <DndActionList list={actionList}/>
       <DndReactionList list={reactionList}/>
 

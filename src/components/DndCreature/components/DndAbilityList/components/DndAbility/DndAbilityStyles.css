@@ -1,0 +1,15 @@
+.DndAbility {
+}
+
+.DndAbility_header {
+    color: #231F20;
+    font-style: italic;
+    font-weight: 700;
+    margin-right: .4em;
+}
+
+.DndAbility_description,
+.DndAbility_description > p {
+    display: inline;
+    hyphens: auto;
+}

@@ -29,6 +29,12 @@ import {
   SKILL_MEDICINE,
   SKILL_RELIGION,
 } from '@/constants/dnd/dndSkillList'
+import {
+  PC_CLASS_PRIEST,
+} from '@/constants/dnd/dndPcClassList'
+import {
+  PARAM_WIT,
+} from '@/constants/dnd/dndParamList'
 
 const dndCreatureList = [
   {
@@ -68,18 +74,6 @@ const dndCreatureList = [
       {
         id: SENSE_PASSIVE_PERCEPTION,
         value: 10,
-      },
-    ],
-    featureList: [
-      {
-        name: 'Тупость',
-        description: 'Обыватель тупит.',
-      },
-    ],
-    reactionList: [
-      {
-        name: 'Тупость',
-        description: 'Обыватель тупит.',
       },
     ],
     actionList: [
@@ -241,11 +235,20 @@ const dndCreatureList = [
         },
       },
     ],
+    spellCast: {
+      spellCasterLevel: 1,
+      spellCasterClass: PC_CLASS_PRIEST,
+      baseStat: PARAM_WIT,
+      spellAttackBonus: 4,
+      saveThrowDc: 12,
+      spellList: [],
+    },
   },
 ].map(
   creature => ({
     ...creature,
     id: creature.nameEn,
+    isFemale: Boolean(creature.isFemale),
     [SEARCH_PROP_NAME]: [
       creature.name,
       creature.nameEn,

@@ -14,6 +14,10 @@ class DndCreatureCatalogContainer extends Component {
         isTooMuch: false,
     }
 
+    componentDidMount() {
+        this.onSearch({target: {value: 'Acolyte'}})
+    }
+
     onSearch = ({target: {value}}) => {
         const filteredCreatureList = value
             ? dndCreatureList

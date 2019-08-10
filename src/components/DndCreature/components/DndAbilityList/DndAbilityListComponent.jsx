@@ -1,10 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-import ReactMarkdown from "react-markdown";
+
+import formatSpellCastDescription from './utils/formatSpellCastDescription'
+
+import DndAbility from './components/DndAbility'
 
 import "./DndAbilityListStyles.css"
 
-const DndAbilityListComponent = ({ header, list }) => (
+const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale }) => (
   <section className='DndAbilityList'>
     {
       header && (
@@ -14,26 +17,28 @@ const DndAbilityListComponent = ({ header, list }) => (
 
     <ul className='DndAbilityList_list'>
       {
-        list.map(
-          ({name, description, limit}) => {
-            const itemHeader = limit
-              ? `${name} (${limit.count}/${limit.period}).`
-              : `${name}.`
+        list.length
+          ? list.map(
+            ({name, description, limit}) => {
+              const itemHeader = limit
+                ? `${name} (${limit.count}/${limit.period}).`
+                : `${name}.`
 
-            return (
-              <li
-                key={name}
-                className='DndAbilityList_item'
-              >
-                <b className='DndAbilityList_itemHeader'>
-                  {itemHeader}
-                </b>
-                <ReactMarkdown className='DndAbilityList_itemDescription'>
+              return (
+                <DndAbility header={itemHeader}>
                   {description}
-                </ReactMarkdown>
-              </li>
-            )
-          }
+                </DndAbility>
+              )
+            }
+          )
+          : null
+      }
+
+      {
+        spellCast && (
+          <DndAbility header='Использование заклинаний'>
+            {formatSpellCastDescription({spellCast, isFemale, name})}
+          </DndAbility>
         )
       }
     </ul>

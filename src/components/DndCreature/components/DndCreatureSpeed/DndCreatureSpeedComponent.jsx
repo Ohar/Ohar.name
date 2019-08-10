@@ -17,13 +17,12 @@ import "./DndCreatureSpeedStyles.css"
 const DndCreatureSpeedComponent = ({ speed }) => (
   <DndCreatureInfo header='Скорость'>
     {
-      Object.keys(speed).map(
-        type => (
-          <span key={type}>
-            {dndSpeedCollection[type].name} {speed[type]} фт.
-          </span>
-        ),
-      )
+      Object
+        .keys(speed)
+        .map(
+          type => `${dndSpeedCollection[type].name} ${speed[type]} фт.`,
+        )
+        .join(', ')
     }
   </DndCreatureInfo>
 )

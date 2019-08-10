@@ -1,5 +1,6 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
+export const CREATURE_AARAKOCRA = 'aarakocra'
 export const CREATURE_ABERRATION = 'aberration'
 export const CREATURE_ANY_RACE = 'any_race'
 export const CREATURE_BEAST = 'beast'
@@ -819,6 +820,27 @@ const dndCreatureTypeList = [
         accusative: 'фей',
         instrumental: 'феями',
         prepositional: 'феях',
+      },
+    },
+  },
+  {
+    id: CREATURE_AARAKOCRA,
+    name: {
+      singular: {
+        nominative: 'ааракокра',
+        genitive: 'ааракокры',
+        dative: 'ааракокре',
+        accusative: 'ааракокру',
+        instrumental: 'ааракокрой',
+        prepositional: 'ааракокре',
+      },
+      plural: {
+        nominative: 'ааракокры',
+        genitive: 'ааракокр',
+        dative: 'ааракокрам',
+        accusative: 'ааракокр',
+        instrumental: 'ааракокрами',
+        prepositional: 'ааракокрах',
       },
     },
   },

@@ -15,7 +15,7 @@ import QuotesComponent from './QuotesComponent'
 //   }
 // }
 
-class QuotesComponent extends Component {
+class QuotesContainer extends Component {
   state = {
     quote: quotesList[DEFAULT_QUOTE_ID],
     quoteId: DEFAULT_QUOTE_ID,
@@ -72,4 +72,4 @@ class QuotesComponent extends Component {
   }
 }
 
-export default QuotesComponent
+export default QuotesContainer

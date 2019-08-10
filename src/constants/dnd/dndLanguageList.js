@@ -1,5 +1,6 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
+export const LANG_AARAKOCRA = 'aarakocra'
 export const LANG_ABYSSAL = 'abyssal'
 export const LANG_ALL = 'all'
 export const LANG_ALL_KNOWN_AT_LIFE = 'all_known_at_life'
@@ -266,6 +267,10 @@ const dndLanguageList = [
   {
     id: LANG_IXITXACHITL,
     name: 'язык икситксачитлов',
+  },
+  {
+    id: LANG_AARAKOCRA,
+    name: 'язык Ааракокр',
   },
 ]
 

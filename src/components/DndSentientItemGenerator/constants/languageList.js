@@ -1,4 +1,5 @@
 import {
+  LANG_AARAKOCRA,
   LANG_ABYSSAL,
   LANG_AQUAN,
   LANG_AURAN,
@@ -237,6 +238,10 @@ export const withoutCommonLanguageList = [
   {
     id: LANG_IXITXACHITL,
     probabilityWeight: 1,
+  },
+  {
+    id: LANG_AARAKOCRA,
+    probabilityWeight: 2,
   },
 ]
 

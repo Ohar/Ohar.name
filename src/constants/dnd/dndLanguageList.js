@@ -270,7 +270,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_AARAKOCRA,
-    name: 'язык Ааракокр',
+    name: 'язык ааракокр',
   },
 ]
 

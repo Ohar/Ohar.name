@@ -1,10 +1,11 @@
-import React, {Component} from "react"
+import React, {Component} from 'react'
 
-import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
+import config from 'root/config'
 
-import DndCreatureCatalogComponent from "./DndCreatureCatalogComponent"
+import SEARCH_PROP_NAME from '@/constants/SEARCH_PROP_NAME'
+import dndCreatureList from '@/constants/dnd/dndCreatureList'
 
-import dndCreatureList from "@/constants/dnd/dndCreatureList"
+import DndCreatureCatalogComponent from './DndCreatureCatalogComponent'
 
 const MAX_LEN = 20
 
@@ -14,8 +15,12 @@ class DndCreatureCatalogContainer extends Component {
         isTooMuch: false,
     }
 
+    // TODO: remove after ready
     componentDidMount() {
-        this.onSearch({target: {value: 'Acolyte'}})
+        if (config) {
+            const {creatureCatalogDefaultSearchString = ''} = config
+            this.onSearch({target: {value: creatureCatalogDefaultSearchString}})
+        }
     }
 
     onSearch = ({target: {value}}) => {

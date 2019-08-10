@@ -70,7 +70,7 @@ const dndSkillList = [
   },
   {
     id: SKILL_PERCEPTION,
-    name: 'восприятие',
+    name: 'внимательность',
   },
   {
     id: SKILL_SURVIVAL,

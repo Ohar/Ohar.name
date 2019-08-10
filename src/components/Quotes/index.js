@@ -1,1 +1,1 @@
-export default from './QuotesComponent'
+export default from './QuotesContainer'

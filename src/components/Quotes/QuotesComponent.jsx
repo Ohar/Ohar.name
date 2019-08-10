@@ -1,131 +1,71 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
-
-import quotesList from '@/constants/quotesList'
-import DEFAULT_QUOTE_ID from '@/constants/DEFAULT_QUOTE_ID'
 
 import './QuotesStyles.css'
 
-// TODO
-// $(document).on('keyup', handleArrows);
-// function handleArrows (e) {
-//   if (e.keyCode === 37) { // ←
-//     get_prev_quote();
-//   } else if (e.keyCode === 39) { // →
-//     get_next_quote();
-//   }
-// }
+const QuotesComponent = ({ quote, isNextBtnEnabled, isPrevBtnEnabled, quoteId, getRandomQuoteNum }) => (
+  <section className='QuotesComponent'>
+    <div className='buttons'>
+      {
+        isPrevBtnEnabled
+          ? (
+            <Link
+              to={`/quotes/${quoteId - 1}`}
+              title='Предыдущая цитата'
+            >
+              ←
+            </Link>
+          )
+          : <span>←</span>
+      }
 
-class QuotesComponent extends Component {
-  state = {
-    quote: quotesList[DEFAULT_QUOTE_ID],
-    quoteId: DEFAULT_QUOTE_ID,
-    isNextBtnEnabled: false,
-    isPrevBtnEnabled: false,
-  }
+      <Link to={`/quotes/${getRandomQuoteNum()}`}>
+        Случайная цитата
+      </Link>
 
-  componentDidMount() {
-    const {quoteId} = this.props
+      {
+        isNextBtnEnabled
+          ? (
+            <Link
+              to={`/quotes/${quoteId + 1}`}
+              title='Следующая цитата'
+            >
+              →
+            </Link>
+          )
+          : <span>→</span>
+      }
+    </div>
 
-    this.setQuote(quoteId || DEFAULT_QUOTE_ID)
-  }
-
-  componentDidUpdate(prevProps) {
-    const {quoteId} = this.props
-
-    if (quoteId !== prevProps.quoteId) {
-      this.setQuote(quoteId)
+    {
+      quote
+        ? (
+          <blockquote className='quote'>
+            <a
+              className='quote_link'
+              href={`#${quoteId}`}
+            >
+              №&thinsp;{quoteId}
+            </a>
+            <p
+              className='quote_text'
+              dangerouslySetInnerHTML={{__html: quote.text}}
+            />
+            <cite className='quote_cite'>
+              <a
+                className='quote_origin'
+                target='_blank'
+                href={quote.url}
+                rel='nofollow noopener noreferrer'
+              >
+                {quote.author}
+              </a>
+            </cite>
+          </blockquote>
+        )
+        : null
     }
-  }
-
-  getRandomQuoteNum = () => {
-    const maxNum = quotesList.length - 1
-
-    return Math.round(Math.random() * maxNum)
-  }
-
-  setQuote = num => {
-    const numMax = quotesList.length - 1
-    const numMin = 0
-    const quoteId = Math.min(numMax, Math.max(numMin, num))
-    const quote = quotesList[quoteId]
-
-    this.setState({
-      quote,
-      quoteId,
-      isNextBtnEnabled: quoteId !== numMax,
-      isPrevBtnEnabled: quoteId !== numMin,
-    })
-  }
-
-  render() {
-    const { quote, isNextBtnEnabled, isPrevBtnEnabled, quoteId } = this.state
-
-    return (
-      <section className='QuotesComponent'>
-        <div className='buttons'>
-          {
-            isPrevBtnEnabled
-              ? (
-                <Link
-                  to={`/quotes/${quoteId - 1}`}
-                  title='Предыдущая цитата'
-                >
-                  ←
-                </Link>
-              )
-              : <span>←</span>
-          }
-
-          <Link to={`/quotes/${this.getRandomQuoteNum()}`}>
-            Случайная цитата
-          </Link>
-
-          {
-            isNextBtnEnabled
-              ? (
-                <Link
-                  to={`/quotes/${quoteId + 1}`}
-                  title='Следующая цитата'
-                >
-                  →
-                </Link>
-              )
-              : <span>→</span>
-          }
-        </div>
-
-        {
-          quote
-            ? (
-              <blockquote className='quote'>
-                <a
-                  className='quote_link'
-                  href={`#${quoteId}`}
-                >
-                  №&thinsp;{quoteId}
-                </a>
-                <p
-                  className='quote_text'
-                  dangerouslySetInnerHTML={{__html: quote.text}}
-                />
-                <cite className='quote_cite'>
-                  <a
-                    className='quote_origin'
-                    target='_blank'
-                    href={quote.url}
-                    rel='nofollow noopener noreferrer'
-                  >
-                    {quote.author}
-                  </a>
-                </cite>
-              </blockquote>
-            )
-            : null
-        }
-      </section>
-    )
-  }
-}
+  </section>
+)
 
 export default QuotesComponent

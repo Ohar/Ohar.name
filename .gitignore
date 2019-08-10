@@ -1,6 +1,7 @@
 .idea/*
 node_modules
 /config.json
+shell_scripts/config.json
 dist
 
 # Logs

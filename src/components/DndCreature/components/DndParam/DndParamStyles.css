@@ -5,6 +5,7 @@
 .DndParam_header {
     color: #734439;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .DndParam_header:after {

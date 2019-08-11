@@ -13,6 +13,7 @@ import {
   CREATURE_AARAKOCRA,
   CREATURE_ABERRATION,
   CREATURE_ANY_RACE,
+  CREATURE_FIEND,
   CREATURE_HUMANOID,
 } from "@/constants/dnd/dndCreatureTypeList"
 import {
@@ -57,9 +58,12 @@ import {
   PC_CLASS_PRIEST,
 } from '@/constants/dnd/dndPcClassList'
 import {
+  PARAM_STR,
+  PARAM_DEX,
   PARAM_CON,
   PARAM_INT,
   PARAM_WIT,
+  PARAM_CHA,
 } from '@/constants/dnd/dndParamList'
 import {
   SPELL_LIGHT,
@@ -94,12 +98,12 @@ const dndCreatureList = [
       CREATURE_ANY_RACE,
     ],
     params: {
-      str: 10,
-      dex: 10,
-      con: 10,
-      int: 10,
-      wit: 10,
-      cha: 10,
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 10,
     },
     languageList: [
       LANG_ANY_ONE,
@@ -158,12 +162,12 @@ const dndCreatureList = [
       CREATURE_ANY_RACE,
     ],
     params: {
-      str: 11,
-      dex: 12,
-      con: 12,
-      int: 10,
-      wit: 10,
-      cha: 10,
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 10,
     },
     languageList: [
       LANG_ANY_ONE,
@@ -233,12 +237,12 @@ const dndCreatureList = [
       CREATURE_ANY_RACE,
     ],
     params: {
-      str: 10,
-      dex: 10,
-      con: 10,
-      int: 10,
-      wit: 14,
-      cha: 11,
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 11,
     },
     languageList: [
       LANG_ANY_ONE,
@@ -312,12 +316,12 @@ const dndCreatureList = [
       [SPEED_FLY]: 50,
     },
     params: {
-      str: 10,
-      dex: 14,
-      con: 10,
-      int: 11,
-      wit: 12,
-      cha: 11,
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 11,
     },
     skillCollection: {
       [SKILL_PERCEPTION]: 5,
@@ -404,12 +408,12 @@ const dndCreatureList = [
       [SPEED_SWIM]: 40,
     },
     params: {
-      str: 21,
-      dex: 9,
-      con: 15,
-      int: 18,
-      wit: 15,
-      cha: 18,
+      [PARAM_STR]: 21,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 18,
+      [PARAM_WIT]: 15,
+      [PARAM_CHA]: 18,
     },
     skillCollection: {
       [SKILL_PERCEPTION]: 10,

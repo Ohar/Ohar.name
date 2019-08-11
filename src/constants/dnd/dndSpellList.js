@@ -29,12 +29,15 @@ import {
   CAST_MATERIAL,
 } from '@/constants/dnd/dndCastComponentList'
 
-export const SPELL_LIGHT = 'light'
-export const SPELL_SACRED_FLAME = 'sacred_flame'
-export const SPELL_THAUMATURGY = 'thaumaturgy'
 export const SPELL_BLESS = 'bless'
+export const SPELL_COMMUNE = 'commune'
 export const SPELL_CURE_WOUNDS = 'cure_wounds'
+export const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
+export const SPELL_LIGHT = 'light'
+export const SPELL_RAISE_DEAD = 'raise_dead'
+export const SPELL_SACRED_FLAME = 'sacred_flame'
 export const SPELL_SANCTUARY = 'sanctuary'
+export const SPELL_THAUMATURGY = 'thaumaturgy'
 
 const defaultCastTime = '1 действие'
 const defaultDuration = 'мгновенная'
@@ -140,6 +143,56 @@ const dndSpellList = [
     duration: '1 минута',
     source: 'PHB:285',
     classList: [PC_CLASS_PRIEST, PC_CLASS_MONK],
+  },
+  {
+    id: SPELL_COMMUNE,
+    name: 'Общение',
+    nameEn: 'Commune',
+    description: `Вы связываетесь со своим божеством или божественным посредником и задаёте три вопроса, на которые можно ответить «да» или «нет». Вы должны задать вопросы пока заклинание активно. На каждый вопрос вы получаете правильный ответ.\n
+Божественные создания не всегда всеведущи, поэтому вы можете получить ответ «неясно», если вопрос находится вне компетенции божества. Если односложный ответ может ввести в заблуждение или противоречит интересам божества, Мастер может выдать короткую фразу.\n
+Если вы накладываете это заклинание несколько раз до завершения продолжительного отдыха, существует накопительный шанс 25 процентов за каждое использование, начиная со второго, что вы не получите ответ. Мастер совершает этот бросок скрытно.`,
+    lvl: 5,
+    magicSchool: MAGIC_DIVINATION,
+    castTime: '1 минута',
+    range: -1,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'благовоние и флакон святой или нечестивой воды',
+    duration: '1 минута',
+    ritual: true,
+    source: 'PHB:247',
+    classList: [PC_CLASS_PRIEST],
+  },
+  {
+    id: SPELL_RAISE_DEAD,
+    name: 'Оживление',
+    nameEn: 'Raise dead',
+    description: `Вы возвращаете к жизни мёртвое существо, которого касаетесь, при условии, что оно мертво не более 10 дней. Если душа этого существа может воссоединиться с телом и хочет этого, существо воскрешается с 1 хитом.\n
+Это заклинание также нейтрализует все яды и исцеляет немагические болезни, бывшие у существа в момент смерти. Однако это заклинание не снимает магические болезни, проклятья и подобные эффекты; если их не снять до накладывания этого заклинания, они снова начнут действовать, когда существо оживёт. Это заклинание не может оживить нежить.\n
+Это заклинание исцеляет все раны, но не восстанавливает отсутствующие части тела. Если у существа отсутствуют жизненно важные части тела — например, голова — заклинание автоматически проваливается.\n
+Возвращение к жизни — тяжёлое испытание. Цель получает штраф −4 ко всем броскам атаки, спасброскам и проверкам характеристик. Каждый раз, когда цель заканчивает длительный отдых, штраф уменьшается на 1, пока не исчезнет полностью.`,
+    lvl: 5,
+    magicSchool: MAGIC_NECROMANCY,
+    castTime: '1 час',
+    range: 0,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'бриллиант, стоящий как минимум 500 зм, расходуемый заклинанием',
+    source: 'PHB:250',
+    classList: [PC_CLASS_BARD, PC_CLASS_PRIEST, PC_CLASS_PALADIN],
+  },
+  {
+    id: SPELL_DETECT_EVIL_AND_GOOD,
+    name: 'Обнаружение добра и зла',
+    nameEn: 'Detect evil and good',
+    description: `Пока заклинание активно, вы знаете, есть ли в пределах 30 фт. от вас аберрации, исчадия, небожители, нежить, феи или элементали, а также их местоположение. Кроме того, вы знаете, есть ли в пределах 30 фт. от вас место или предмет, который был магически освящён или осквернён.\n
+Заклинание проницает большую часть барьеров, но блокируется 1 футом камня, 1 дюймом обычного металла, тонким листом свинца или 3 футами дерева или земли.`,
+    lvl: 1,
+    magicSchool: MAGIC_DIVINATION,
+    range: -1,
+    componentList: [CAST_VERBAL, CAST_SOMATIC],
+    duration: 'вплоть до 10 минут',
+    needConcentration: true,
+    source: 'PHB:245',
+    classList: [PC_CLASS_PRIEST, PC_CLASS_PALADIN],
   },
 ].map(
   spell => ({

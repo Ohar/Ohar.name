@@ -130,4 +130,22 @@ DndCreatureComponent.propTypes = {
   spellCast: PropTypes.object,
 }
 
+DndCreatureComponent.defaultProps = {
+  actionList: [],
+  description: '',
+  featureList: [],
+  immunityList: [],
+  isFemale: false,
+  languageList: [],
+  legendaryActionList: [],
+  legendaryPoints: 0,
+  nameEn: '',
+  reactionList: [],
+  saveThrowCollection: null,
+  senseList: [],
+  showTwoColumns: false,
+  skillCollection: null,
+  spellCast: null,
+}
+
 export default DndCreatureComponent

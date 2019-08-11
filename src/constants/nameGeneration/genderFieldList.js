@@ -1,24 +1,31 @@
 import { faGenderless } from '@fortawesome/free-solid-svg-icons'
+import {
+  genderCollection,
+  GENDER_ANY,
+  GENDER_MALE,
+  GENDER_FEMALE,
+  GENDER_MIDDLE,
+} from '@/constants/genderList'
 
 export default [
   {
-    text: 'Любой',
-    value: 'any',
+    text: genderCollection[GENDER_ANY],
+    value: GENDER_ANY,
   },
   {
     icon: 'icon-male',
-    text: 'Мужской',
-    value: 'male',
+    text: genderCollection[GENDER_MALE],
+    value: GENDER_MALE,
   },
   {
     icon: 'icon-female',
-    text: 'Женский',
-    value: 'female',
+    text: genderCollection[GENDER_FEMALE],
+    value: GENDER_FEMALE,
   },
   {
     icon: faGenderless,
-    text: 'Средний',
-    value: 'middle',
+    text: genderCollection[GENDER_MIDDLE],
+    value: GENDER_MIDDLE,
     show: {
       race: 'tabaxi',
     },

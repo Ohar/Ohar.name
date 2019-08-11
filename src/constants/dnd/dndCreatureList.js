@@ -57,6 +57,8 @@ import {
   PC_CLASS_PRIEST,
 } from '@/constants/dnd/dndPcClassList'
 import {
+  PARAM_CON,
+  PARAM_INT,
   PARAM_WIT,
 } from '@/constants/dnd/dndParamList'
 import {
@@ -412,6 +414,11 @@ const dndCreatureList = [
     skillCollection: {
       [SKILL_PERCEPTION]: 10,
       [SKILL_HISTORY]: 12,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 6,
+      [PARAM_INT]: 8,
+      [PARAM_WIT]: 6,
     },
     senseList: [
       {

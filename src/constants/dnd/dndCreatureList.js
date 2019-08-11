@@ -432,7 +432,10 @@ const dndCreatureList = [
     ],
     languageList: [
       LANG_DEEP_SPEECH,
-      LANG_TELEPATHY,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
     ],
     cr: CR_10,
     source: 'MM:13',

@@ -23,7 +23,7 @@ const dndManualList = [
   },
   {
     id: 'ToA',
-    name: 'Гробница Аннигиляции',
+    name: 'Гробница аннигиляции',
     shortName: 'ГА',
   },
   {

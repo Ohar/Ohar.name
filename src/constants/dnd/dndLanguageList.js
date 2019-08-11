@@ -58,219 +58,219 @@ export const LANG_YETI = 'yeti'
 const dndLanguageList = [
   {
     id: LANG_COMMON,
-    name: 'общий',
+    name: 'Общий',
   },
   {
     id: LANG_ANY_ONE,
-    name: 'любой один язык (обычно — Общий)',
+    name: 'Любой один язык (обычно — Общий)',
   },
   {
     id: LANG_ANY_TWO,
-    name: 'любые два языка',
+    name: 'Любые два языка',
   },
   {
     id: LANG_ALL_KNOWN_AT_LIFE,
-    name: 'все языки, известные при жизни',
+    name: 'Все языки, известные при жизни',
   },
   {
     id: LANG_ITS_CREATOR,
-    name: 'язык своего создателя',
+    name: 'Язык своего создателя',
   },
   {
     id: LANG_ALL,
-    name: 'все',
+    name: 'Все',
   },
   {
     id: LANG_PRIMORDIAL,
-    name: 'первичный',
+    name: 'Первичный',
   },
   {
     id: LANG_ELVEN,
-    name: 'эльфийский',
+    name: 'Эльфийский',
   },
   {
     id: LANG_SYLVAN,
-    name: 'сильван',
+    name: 'Сильван',
   },
   {
     id: LANG_ABYSSAL,
-    name: 'бездны',
+    name: 'Бездны',
   },
   {
     id: LANG_INFERNAL,
-    name: 'инфернальный',
+    name: 'Инфернальный',
   },
   {
     id: LANG_AQUAN,
-    name: 'акван',
+    name: 'Акван',
   },
   {
     id: LANG_DWARVISH,
-    name: 'дварфийский',
+    name: 'Дварфийский',
   },
   {
     id: LANG_GIANT,
-    name: 'великаний',
+    name: 'Великаний',
   },
   {
     id: LANG_AURAN,
-    name: 'ауран',
+    name: 'Ауран',
   },
   {
     id: LANG_CELESTIAL,
-    name: 'небесный',
+    name: 'Небесный',
   },
   {
     id: LANG_DEEP_SPEECH,
-    name: 'глубинная речь',
+    name: 'Глубинная речь',
   },
   {
     id: LANG_UNDERCOMMON,
-    name: 'подземный',
+    name: 'Подземный',
   },
   {
     id: LANG_DRACONIC,
-    name: 'драконий',
+    name: 'Драконий',
   },
   {
     id: LANG_DRUIDIC,
-    name: 'друидский',
+    name: 'Друидский',
   },
   {
     id: LANG_GNOMISH,
-    name: 'гномий',
+    name: 'Гномий',
   },
   {
     id: LANG_GOBLIN,
-    name: 'гоблинский',
+    name: 'Гоблинский',
   },
   {
     id: LANG_GNOLL,
-    name: 'гноллий',
+    name: 'Гноллий',
   },
   {
     id: LANG_HALFLING,
-    name: 'язык полуросликов',
+    name: 'Язык полуросликов',
   },
   {
     id: LANG_UMBER_HULK,
-    name: 'язык бурых увальней',
+    name: 'Язык бурых увальней',
   },
   {
     id: LANG_IGNAN,
-    name: 'игнан',
+    name: 'Игнан',
   },
   {
     id: LANG_ORC,
-    name: 'орочий',
+    name: 'Орочий',
   },
   {
     id: LANG_TERRAN,
-    name: 'терран',
+    name: 'Терран',
   },
   {
     id: LANG_THUG_JARGON,
-    name: 'воровской жаргон',
+    name: 'Воровской жаргон',
   },
   {
     id: LANG_TELEPATHY,
-    name: 'телепатия',
+    name: 'Телепатия',
   },
   {
     id: LANG_SAHUAGIN,
-    name: 'сахуагинский',
+    name: 'Сахуагинский',
   },
   {
     id: LANG_VEGEPYGMY,
-    name: 'вегепигмейский',
+    name: 'Вегепигмейский',
   },
   {
     id: LANG_WORGEN,
-    name: 'язык воргов',
+    name: 'Язык воргов',
   },
   {
     id: LANG_GIANT_OWL,
-    name: 'язык гигантских сов',
+    name: 'Язык гигантских сов',
   },
   {
     id: LANG_GIANT_EAGLE,
-    name: 'язык гигантских орлов',
+    name: 'Язык гигантских орлов',
   },
   {
     id: LANG_SPHINX,
-    name: 'язык сфинксов',
+    name: 'Язык сфинксов',
   },
   {
     id: LANG_GITH,
-    name: 'гитский',
+    name: 'Гитский',
   },
   {
     id: LANG_GRELL,
-    name: 'грелльский',
+    name: 'Грелльский',
   },
   {
     id: LANG_GRUNG,
-    name: 'грунгский',
+    name: 'Грунгский',
   },
   {
     id: LANG_MODRONE,
-    name: 'модронский',
+    name: 'Модронский',
   },
   {
     id: LANG_BULLYWUG,
-    name: 'жаболюдский',
+    name: 'Жаболюдский',
   },
   {
     id: LANG_SLAAD,
-    name: 'слаадский',
+    name: 'Слаадский',
   },
   {
     id: LANG_YETI,
-    name: 'язык йети',
+    name: 'Язык йети',
   },
   {
     id: LANG_HOOK_HORROR,
-    name: 'язык крюкастых ужасов',
+    name: 'Язык крюкастых ужасов',
   },
   {
     id: LANG_ICE_TOAD,
-    name: 'язык ледяных жаб',
+    name: 'Язык ледяных жаб',
   },
   {
     id: LANG_BLINK_DOG,
-    name: 'язык мерцающих псов',
+    name: 'Язык мерцающих псов',
   },
   {
     id: LANG_OTYUGH,
-    name: 'отиджский',
+    name: 'Отиджский',
   },
   {
     id: LANG_WINTER_WOLF,
-    name: 'язык полярных волков',
+    name: 'Язык полярных волков',
   },
   {
     id: LANG_THAY,
-    name: 'тэйский',
+    name: 'Тэйский',
   },
   {
     id: LANG_TLINCALLI,
-    name: 'язык тлинкалли',
+    name: 'Язык тлинкалли',
   },
   {
     id: LANG_THRI_KREEN,
-    name: 'три-кринский',
+    name: 'Три-кринский',
   },
   {
     id: LANG_TROGLODYTE,
-    name: 'троглодитский',
+    name: 'Троглодитский',
   },
   {
     id: LANG_IXITXACHITL,
-    name: 'язык икситксачитлов',
+    name: 'Язык икситксачитлов',
   },
   {
     id: LANG_AARAKOCRA,
-    name: 'язык ааракокр',
+    name: 'Язык ааракокр',
   },
 ]
 

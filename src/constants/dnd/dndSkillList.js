@@ -22,75 +22,75 @@ export const SKILL_SURVIVAL = 'survival'
 const dndSkillList = [
   {
     id: SKILL_ATHLETICS,
-    name: 'атлетика',
+    name: 'Атлетика',
   },
   {
     id: SKILL_ACROBATICS,
-    name: 'акробатика',
+    name: 'Акробатика',
   },
   {
     id: SKILL_SLEIGHT_OF_HAND,
-    name: 'наложение рук',
+    name: 'Наложение рук',
   },
   {
     id: SKILL_STEALTH,
-    name: 'скрытность',
+    name: 'Скрытность',
   },
   {
     id: SKILL_ARCANA,
-    name: 'магия',
+    name: 'Магия',
   },
   {
     id: SKILL_HISTORY,
-    name: 'история',
+    name: 'История',
   },
   {
     id: SKILL_INVESTIGATION,
-    name: 'расследование',
+    name: 'Расследование',
   },
   {
     id: SKILL_NATURE,
-    name: 'природа',
+    name: 'Природа',
   },
   {
     id: SKILL_RELIGION,
-    name: 'религия',
+    name: 'Религия',
   },
   {
     id: SKILL_ANIMAL_HANDLING,
-    name: 'обращение с животными',
+    name: 'Обращение с животными',
   },
   {
     id: SKILL_INSIGHT,
-    name: 'проницательность',
+    name: 'Проницательность',
   },
   {
     id: SKILL_MEDICINE,
-    name: 'медицина',
+    name: 'Медицина',
   },
   {
     id: SKILL_PERCEPTION,
-    name: 'внимательность',
+    name: 'Внимательность',
   },
   {
     id: SKILL_SURVIVAL,
-    name: 'выживание',
+    name: 'Выживание',
   },
   {
     id: SKILL_DECEPTION,
-    name: 'обман',
+    name: 'Обман',
   },
   {
     id: SKILL_INTIMIDATION,
-    name: 'запугивание',
+    name: 'Запугивание',
   },
   {
     id: SKILL_PERFORMANCE,
-    name: 'выступление',
+    name: 'Выступление',
   },
   {
     id: SKILL_PERSUASION,
-    name: 'убеждение',
+    name: 'Убеждение',
   },
 ]
 

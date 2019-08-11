@@ -12,43 +12,43 @@ export const MAGIC_TRANSMUTATION = 'transmutation'
 const dndMagicList = [
   {
     id: MAGIC_ABJURATION,
-    name: 'ограждение',
-    nameEn: 'abjuration',
+    name: 'Ограждение',
+    nameEn: 'Abjuration',
   },
   {
     id: MAGIC_CONJURATION,
-    name: 'вызов',
-    nameEn: 'conjuration',
+    name: 'Вызов',
+    nameEn: 'Conjuration',
   },
   {
     id: MAGIC_DIVINATION,
-    name: 'прорицание',
-    nameEn: 'divination',
+    name: 'Прорицание',
+    nameEn: 'Divination',
   },
   {
     id: MAGIC_ENCHANTMENT,
-    name: 'очарование',
-    nameEn: 'enchantment',
+    name: 'Очарование',
+    nameEn: 'Enchantment',
   },
   {
     id: MAGIC_EVOCATION,
-    name: 'воплощение',
-    nameEn: 'evocation',
+    name: 'Воплощение',
+    nameEn: 'Evocation',
   },
   {
     id: MAGIC_ILLUSION,
-    name: 'иллюзия',
-    nameEn: 'illusion',
+    name: 'Иллюзия',
+    nameEn: 'Illusion',
   },
   {
     id: MAGIC_NECROMANCY,
-    name: 'некромантия',
-    nameEn: 'necromancy',
+    name: 'Некромантия',
+    nameEn: 'Necromancy',
   },
   {
     id: MAGIC_TRANSMUTATION,
-    name: 'преобразование',
-    nameEn: 'transmutation',
+    name: 'Преобразование',
+    nameEn: 'Transmutation',
   },
 ]
 

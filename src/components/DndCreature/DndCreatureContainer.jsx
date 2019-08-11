@@ -12,8 +12,11 @@ import DndCreatureComponent from "./DndCreatureComponent"
 const DndCreatureContainer = (
   {
     creature: {
+      actionList,
       aligmentId,
       creatureTypeIdList,
+      featureList,
+      legendaryPoints,
       sizeType,
       ...rest,
     },
@@ -36,10 +39,19 @@ const DndCreatureContainer = (
     .filter(e => e)
     .join(' ')
 
+  const showTwoColumns = legendaryPoints || (
+    (featureList && featureList.length > 1)
+    && (actionList && actionList.length > 2)
+  )
+
   return (
     <DndCreatureComponent
+      actionList={actionList}
       aligment={aligment}
       creatureType={creatureType}
+      featureList={featureList}
+      legendaryPoints={legendaryPoints}
+      showTwoColumns={showTwoColumns}
       size={size}
       {...rest}
     />

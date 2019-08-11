@@ -5,13 +5,15 @@ import DndAbilityListComponent from "./DndAbilityListComponent"
 
 const DndAbilityListContainer = (
   {
+    entry,
     list,
     spellCast,
     ...rest,
   }
-) => spellCast || list.length
+) => entry || spellCast || list.length
   ? (
     <DndAbilityListComponent
+      entry={entry}
       spellCast={spellCast}
       list={list}
       {...rest}

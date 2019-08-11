@@ -1,5 +1,6 @@
 .DndAbilityList {
     color: #231F20;
+    margin-top: .5rem;
 }
 
 .DndAbilityList_list {
@@ -27,4 +28,8 @@
 
 .DndAbilityList_entry {
     hyphens: auto;
+}
+
+.DndAbilityList_entry p {
+    margin-bottom: 1rem;
 }

@@ -6,17 +6,18 @@ import classNames from "classnames";
 import DndActionList from "./components/DndActionList"
 import DndCreatureAc from "./components/DndCreatureAc"
 import DndCreatureCr from "./components/DndCreatureCr"
+import DndCreatureDescription from "./components/DndCreatureDescription"
 import DndCreatureHp from "./components/DndCreatureHp"
 import DndCreatureSource from "./components/DndCreatureSource"
 import DndCreatureSpeed from "./components/DndCreatureSpeed"
 import DndFeatureList from "./components/DndFeatureList"
 import DndLanguageList from "./components/DndLanguageList"
+import DndLegendaryActionList from "./components/DndLegendaryActionList"
 import DndParamList from "./components/DndParamList"
 import DndReactionList from "./components/DndReactionList"
-import DndSenseList from "./components/DndSenseList"
 import DndSaveThrowCollection from "./components/DndSaveThrowCollection"
+import DndSenseList from "./components/DndSenseList"
 import DndSkillCollection from "./components/DndSkillCollection"
-import DndLegendaryActionList from "./components/DndLegendaryActionList"
 
 import "./DndCreatureStyles.css"
 
@@ -94,10 +95,7 @@ const DndCreatureComponent = (
       points={legendaryPoints}
     />
     <DndReactionList list={reactionList}/>
-
-    <ReactMarkdown className='DndCreature_description'>
-      {description}
-    </ReactMarkdown>
+    <DndCreatureDescription description={description}/>
   </section>
 )
 

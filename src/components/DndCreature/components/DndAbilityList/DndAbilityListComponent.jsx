@@ -7,6 +7,7 @@ import formatSpellCastDescription from './utils/formatSpellCastDescription'
 import DndAbility from './components/DndAbility'
 
 import "./DndAbilityListStyles.css"
+import ReactMarkdown from 'react-markdown';
 
 const getActionWord = proschet(['действие', 'действия', 'действий'])
 
@@ -32,7 +33,9 @@ const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale, entr
     }
     {
       entry && (
-        <p className='DndAbilityList_entry'>{entry}</p>
+        <ReactMarkdown className='DndAbilityList_entry'>
+          {entry}
+        </ReactMarkdown>
       )
     }
 

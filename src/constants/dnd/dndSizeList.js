@@ -1,4 +1,9 @@
 import listToCollectionById from '@/utils/listToCollectionById';
+import {
+  GENDER_MALE,
+  GENDER_FEMALE,
+  GENDER_MIDDLE,
+} from '@/constants/genderList'
 
 export const SIZE_TINY = 'tiny';
 export const SIZE_SMALL = 'small';
@@ -11,49 +16,49 @@ const dndSizeList = [
   {
     id: SIZE_TINY,
     name: {
-      male: 'Крошечный',
-      female: 'Крошечная',
-      medium: 'Крошечное',
+      [GENDER_MALE]: 'Крошечный',
+      [GENDER_FEMALE]: 'Крошечная',
+      [GENDER_MIDDLE]: 'Крошечное',
     },
   },
   {
     id: SIZE_SMALL,
     name: {
-      male: 'Маленький',
-      female: 'Маленькая',
-      medium: 'Маленькое',
+      [GENDER_MALE]: 'Маленький',
+      [GENDER_FEMALE]: 'Маленькая',
+      [GENDER_MIDDLE]: 'Маленькое',
     },
   },
   {
     id: SIZE_MEDIUM,
     name: {
-      male: 'Средний',
-      female: 'Средняя',
-      medium: 'Среднее',
+      [GENDER_MALE]: 'Средний',
+      [GENDER_FEMALE]: 'Средняя',
+      [GENDER_MIDDLE]: 'Среднее',
     },
   },
   {
     id: SIZE_LARGE,
     name: {
-      male: 'Большой',
-      female: 'Большая',
-      medium: 'Большое',
+      [GENDER_MALE]: 'Большой',
+      [GENDER_FEMALE]: 'Большая',
+      [GENDER_MIDDLE]: 'Большое',
     },
   },
   {
     id: SIZE_HUGE,
     name: {
-      male: 'Огромный',
-      female: 'Огромная',
-      medium: 'Огромное',
+      [GENDER_MALE]: 'Огромный',
+      [GENDER_FEMALE]: 'Огромная',
+      [GENDER_MIDDLE]: 'Огромное',
     },
   },
   {
     id: SIZE_GARGANTUA,
     name: {
-      male: 'Громадный',
-      female: 'Громадная',
-      medium: 'Громадное',
+      [GENDER_MALE]: 'Громадный',
+      [GENDER_FEMALE]: 'Громадная',
+      [GENDER_MIDDLE]: 'Громадное',
     },
   }
 ];

@@ -11,6 +11,7 @@ import DndCreatureHp from "./components/DndCreatureHp"
 import DndCreatureSource from "./components/DndCreatureSource"
 import DndCreatureSpeed from "./components/DndCreatureSpeed"
 import DndFeatureList from "./components/DndFeatureList"
+import DndImmunityList from "./components/DndImmunityList"
 import DndLanguageList from "./components/DndLanguageList"
 import DndLegendaryActionList from "./components/DndLegendaryActionList"
 import DndParamList from "./components/DndParamList"
@@ -31,6 +32,7 @@ const DndCreatureComponent = (
     description,
     featureList,
     hp,
+    immunityList,
     isFemale,
     languageList,
     legendaryActionList,
@@ -76,6 +78,7 @@ const DndCreatureComponent = (
     <section className='DndCreature_infoBlock'>
       <DndSaveThrowCollection collection={saveThrowCollection}/>
       <DndSkillCollection collection={skillCollection}/>
+      <DndImmunityList list={immunityList}/>
       <DndSenseList list={senseList}/>
       <DndLanguageList list={languageList}/>
       <DndCreatureCr cr={cr}/>
@@ -108,6 +111,7 @@ DndCreatureComponent.propTypes = {
   description: PropTypes.string,
   featureList: PropTypes.array,
   hp: PropTypes.object.isRequired,
+  immunityList: PropTypes.array,
   isFemale: PropTypes.bool,
   languageList: PropTypes.array,
   legendaryActionList: PropTypes.array,

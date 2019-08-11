@@ -11,16 +11,23 @@ import ReactMarkdown from 'react-markdown';
 
 const getActionWord = proschet(['действие', 'действия', 'действий'])
 
-const generateAbilityHeader = ({name, limit, cost}) => {
-  const limitText = limit
-    ? `${limit.count}/${limit.period}`
+const generateAbilityHeader = ({name, limit, cost, restore}) => {
+  const textList = [
+    limit
+      ? `${limit.count}/${limit.period}`
+      : '',
+    cost
+      ? `стоит ${cost} ${getActionWord(cost)}`
+      : '',
+    restore
+      ? `перезарядка ${restore.from}–${restore.to}`
+      : '',
+  ].filter(e => e)
+
+  const additionalText = textList.length
+    ? ` (${textList.join(', ')})`
     : ''
-  const costText = cost
-    ? `стоит ${cost} ${getActionWord(cost)}`
-    : ''
-  const additionalText = limit || cost
-    ? ` (${limitText}${costText})`
-    : ''
+
   return `${name}${additionalText}.`
 }
 

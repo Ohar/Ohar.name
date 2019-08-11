@@ -10,7 +10,7 @@ const DndActionListContainer = ({ list }) => {
     (
       {
         attack,
-        description,
+        description = '',
         ...rest,
       }
     ) => ({

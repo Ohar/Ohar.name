@@ -41,7 +41,7 @@ export const LANG_SAHUAGIN = 'sahuagin'
 export const LANG_SLAAD = 'slaad'
 export const LANG_SPHINX = 'sphinx'
 export const LANG_SYLVAN = 'sylvan'
-export const LANG_TELEPATY = 'telepaty'
+export const LANG_TELEPATHY = 'telepaty'
 export const LANG_TERRAN = 'terran'
 export const LANG_THAY = 'thay'
 export const LANG_THRI_KREEN = 'thri_kreen'
@@ -173,7 +173,7 @@ const dndLanguageList = [
     name: 'воровской жаргон',
   },
   {
-    id: LANG_TELEPATY,
+    id: LANG_TELEPATHY,
     name: 'телепатия',
   },
   {

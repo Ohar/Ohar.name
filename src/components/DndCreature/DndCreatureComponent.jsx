@@ -18,6 +18,7 @@ import DndReactionList from "./components/DndReactionList"
 import DndSenseList from "./components/DndSenseList"
 import DndSaveThrowCollection from "./components/DndSaveThrowCollection"
 import DndSkillCollection from "./components/DndSkillCollection"
+import DndLegendaryActionList from "./components/DndLegendaryActionList"
 
 import getCreatureTypeName from "./utils/getCreatureTypeName"
 
@@ -36,6 +37,8 @@ const DndCreatureComponent = (
       hp,
       isFemale,
       languageList,
+      legendaryActionList,
+      legendaryPoints,
       name,
       nameEn,
       params,
@@ -103,6 +106,11 @@ const DndCreatureComponent = (
         spellCast={spellCast}
       />
       <DndActionList list={actionList}/>
+      <DndLegendaryActionList
+        list={legendaryActionList}
+        name={name}
+        points={legendaryPoints}
+      />
       <DndReactionList list={reactionList}/>
 
       <ReactMarkdown className='DndCreature_description'>

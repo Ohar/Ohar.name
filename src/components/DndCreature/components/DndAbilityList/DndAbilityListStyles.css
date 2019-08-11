@@ -24,3 +24,7 @@
     bottom: -.2em;
     left: 0;
 }
+
+.DndAbilityList_entry {
+    hyphens: auto;
+}

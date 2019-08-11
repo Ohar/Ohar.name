@@ -1,1 +1,1 @@
-export default from './DndCreatureComponent'
+export default from './DndCreatureContainer'

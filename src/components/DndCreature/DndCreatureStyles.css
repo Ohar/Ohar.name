@@ -8,6 +8,11 @@
     font-family: sans-serif;
 }
 
+.DndCreature-twoColumns {
+    width: 936px;
+    columns: 2;
+}
+
 .DndCreature:after,
 .DndCreature:before {
     content: '';

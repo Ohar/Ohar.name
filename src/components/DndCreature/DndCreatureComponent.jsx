@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import ReactMarkdown from "react-markdown";
+import classNames from "classnames";
 
 import DndActionList from "./components/DndActionList"
 import DndCreatureAc from "./components/DndCreatureAc"
@@ -46,7 +47,12 @@ const DndCreatureComponent = (
     spellCast,
   },
 ) => (
-  <section className='DndCreature'>
+  <section className={classNames(
+    'DndCreature',
+    {
+      'DndCreature-twoColumns': legendaryPoints,
+    }
+  )}>
     <header className='DndCreature_name'>
       {name} [{nameEn}]
     </header>

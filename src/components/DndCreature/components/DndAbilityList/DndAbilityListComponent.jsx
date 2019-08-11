@@ -75,11 +75,21 @@ const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale, entr
 )
 
 DndAbilityListComponent.propTypes = {
+  entry: PropTypes.string,
+  header: PropTypes.string,
+  isFemale: PropTypes.bool,
   list: PropTypes.array,
+  name: PropTypes.string,
+  spellCast: PropTypes.object,
 }
 
 DndAbilityListComponent.defaultProps = {
+  entry: '',
+  header: '',
+  isFemale: false,
   list: [],
+  name: '',
+  spellCast: null,
 }
 
 export default DndAbilityListComponent

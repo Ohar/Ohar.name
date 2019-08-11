@@ -126,8 +126,8 @@ const dndCreatureList = [
           bonus: 2,
           range: 5,
           targetCount: 1,
-          damageType: DAMAGE_BLUDGEONING,
           damage: {
+            type: DAMAGE_BLUDGEONING,
             cubeType: 4,
             cubeCount: 1,
           },
@@ -186,8 +186,8 @@ const dndCreatureList = [
           bonus: 3,
           range: 5,
           targetCount: 1,
-          damageType: DAMAGE_SLASHING,
           damage: {
+            type: DAMAGE_SLASHING,
             cubeType: 6,
             cubeCount: 1,
             cubeBonus: 1,
@@ -204,8 +204,8 @@ const dndCreatureList = [
             max: 320,
           },
           targetCount: 1,
-          damageType: DAMAGE_PIERCING,
           damage: {
+            type: DAMAGE_PIERCING,
             cubeType: 8,
             cubeCount: 1,
             cubeBonus: 1,
@@ -265,8 +265,8 @@ const dndCreatureList = [
           bonus: 2,
           range: 5,
           targetCount: 1,
-          damageType: DAMAGE_BLUDGEONING,
           damage: {
+            type: DAMAGE_BLUDGEONING,
             cubeType: 4,
             cubeCount: 1,
           },
@@ -352,8 +352,8 @@ const dndCreatureList = [
           bonus: 4,
           range: 5,
           targetCount: 1,
-          damageType: DAMAGE_SLASHING,
           damage: {
+            type: DAMAGE_SLASHING,
             cubeType: 4,
             cubeCount: 1,
             cubeBonus: 2,
@@ -373,8 +373,8 @@ const dndCreatureList = [
             },
           },
           targetCount: 1,
-          damageType: DAMAGE_PIERCING,
           damage: {
+            type: DAMAGE_PIERCING,
             cubeType: 6,
             cubeCount: 1,
             cubeBonus: 2,
@@ -470,8 +470,8 @@ const dndCreatureList = [
           bonus: 9,
           range: 10,
           targetCount: 1,
-          damageType: DAMAGE_BLUDGEONING,
           damage: {
+            type: DAMAGE_BLUDGEONING,
             cubeType: 6,
             cubeCount: 2,
             cubeBonus: 5,
@@ -485,8 +485,8 @@ const dndCreatureList = [
           bonus: 9,
           range: 10,
           targetCount: 1,
-          damageType: DAMAGE_BLUDGEONING,
           damage: {
+            type: DAMAGE_BLUDGEONING,
             cubeType: 6,
             cubeCount: 3,
             cubeBonus: 5,

@@ -1,13 +1,11 @@
 import proschet from 'proschet';
 
 import {dndActionTypeCollection} from '@/constants/dnd/dndActionTypeList'
-import {dndDamageTypeCollection} from '@/constants/dnd/dndDamageTypeList'
 import numberList from '@/constants/numberList'
 
-import generateCube from '@/utils/generateCube'
-
-import showDigitSign from './showDigitSign'
+import generateDamageText from './generateDamageText'
 import formatRangeText from './formatRangeText'
+import showDigitSign from './showDigitSign'
 
 const getGoalWord = proschet(['цель', 'цели', 'целей'])
 
@@ -16,22 +14,20 @@ export default action => {
     const {
       bonus,
       damage,
-      damageType,
       range,
       targetCount,
       type,
     } = action
 
     const typeText = dndActionTypeCollection[type].name
-    const dmgText = dndDamageTypeCollection[damageType].fullName
+    const dmgText = generateDamageText(damage)
     const bonusText = showDigitSign(bonus)
-    const cube = generateCube(damage)
     const targetText = `${numberList[targetCount].female} ${getGoalWord(targetCount)}`
     const rangeText = formatRangeText({type, range})
 
     return `
 *${typeText}*: ${bonusText} к попаданию, ${rangeText}, ${targetText}.
-*Попадание:* ${dmgText} ${cube}.`
+*Попадание:* ${dmgText}.`
   }
 
   return ''

@@ -1,35 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-import proschet from 'proschet'
+import ReactMarkdown from 'react-markdown';
 
 import formatSpellCastDescription from './utils/formatSpellCastDescription'
+import generateAbilityHeader from './utils/generateAbilityHeader'
 
 import DndAbility from './components/DndAbility'
 
 import "./DndAbilityListStyles.css"
-import ReactMarkdown from 'react-markdown';
-
-const getActionWord = proschet(['действие', 'действия', 'действий'])
-
-const generateAbilityHeader = ({name, limit, cost, restore}) => {
-  const textList = [
-    limit
-      ? `${limit.count}/${limit.period}`
-      : '',
-    cost
-      ? `стоит ${cost} ${getActionWord(cost)}`
-      : '',
-    restore
-      ? `перезарядка ${restore.from}–${restore.to}`
-      : '',
-  ].filter(e => e)
-
-  const additionalText = textList.length
-    ? ` (${textList.join(', ')})`
-    : ''
-
-  return `${name}${additionalText}.`
-}
 
 const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale, entry }) => (
   <section className='DndAbilityList'>

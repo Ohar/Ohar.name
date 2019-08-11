@@ -9,18 +9,15 @@ const DndAbilityListContainer = (
     spellCast,
     ...rest,
   }
-) => {
-  console.log('rest.name', rest);
-  return spellCast || list.length
-    ? (
-      <DndAbilityListComponent
-        spellCast={spellCast}
-        list={list}
-        {...rest}
-      />
-    )
-    : null
-}
+) => spellCast || list.length
+  ? (
+    <DndAbilityListComponent
+      spellCast={spellCast}
+      list={list}
+      {...rest}
+    />
+  )
+  : null
 
 DndAbilityListContainer.propTypes = {
   list: PropTypes.array,

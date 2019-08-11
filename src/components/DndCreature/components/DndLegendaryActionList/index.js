@@ -1,1 +1,1 @@
-export default from './DndLegendaryActionListComponent'
+export default from './DndLegendaryActionListContainer'

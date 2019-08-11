@@ -11,5 +11,9 @@ export default lang => {
     return `${langName} ${lang.range} фт.`
   }
 
+  if (lang.doNotSpeak) {
+    return `понимает ${langName}, но не говорит на нём`
+  }
+
   return langName
 }

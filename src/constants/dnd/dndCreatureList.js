@@ -3,6 +3,7 @@ import {
   CR_0,
   CR_1_8,
   CR_1_4,
+  CR_3,
   CR_10,
 } from "@/constants/dnd/dndCrList"
 import {
@@ -37,10 +38,12 @@ import {
   LANG_ANY_ONE,
   LANG_AURAN,
   LANG_DEEP_SPEECH,
+  LANG_INFERNAL,
   LANG_TELEPATHY,
 } from '@/constants/dnd/dndLanguageList'
 import {
   DAMAGE_BLUDGEONING,
+  DAMAGE_FIRE,
   DAMAGE_PIERCING,
   DAMAGE_SLASHING,
 } from '@/constants/dnd/dndDamageTypeList'
@@ -517,6 +520,102 @@ const dndCreatureList = [
         name: 'Психическое истощение',
         cost: 2,
         description: `Одно очарованное аболетом существо получает урон психическойэнергией 10 (3к6), и аболет восстанавливает хиты, равные урону, который получило существо.`,
+      },
+    ],
+  },
+  {
+    name: 'Адская гончая',
+    nameEn: 'Hell hound',
+    description: `Чудовищные огнедышащие исчадия, принявшие облик сильных псов, адские гончие встречаются на полях Ахерона и на всех Нижних Планах. На Материальном Плане адские гончие чаще всего встречаются в услужении у дьяволов, огненных великанов и других злых существ, которые используют их в качестве сторожевых животных и спутников.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_FIEND,
+    ],
+    aligmentId: ALIGMENT_LE,
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeType: 8,
+      cubeCount: 7,
+      cubeBonus: 14,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_INFERNAL,
+        doNotSpeak: true,
+      },
+    ],
+    immunityList: [
+      DAMAGE_FIRE, // TODO
+    ],
+    cr: CR_3,
+    source: 'MM:15',
+    featureList: [
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: 'Гончая совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.',
+      },
+      {
+        name: 'Тактика стаи',
+        description: 'Гончая совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник гончей.',
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          targetCount: 1,
+          damage: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeType: 8,
+              cubeCount: 1,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeType: 6,
+              cubeCount: 2,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Огненное дыхание',
+        restore: {
+          from: 5,
+          to: 6,
+        },
+        description: `Гончая выдыхает огонь 15-футовым конусом. Все существа в этой области должны совершить спасбросок Ловкости со Сл 12, получая урон огнём 21 (6к6) при провале, или половину этого урона при успехе.`,
       },
     ],
   },

@@ -11,25 +11,28 @@ import formatRangeText from './formatRangeText'
 
 const getGoalWord = proschet(['цель', 'цели', 'целей'])
 
-export default (
-  {
-    bonus,
-    damage,
-    damageType,
-    range,
-    targetCount,
-    type,
-  }
-) => {
-  const typeText = dndActionTypeCollection[type].name
-  const dmgText = dndDamageTypeCollection[damageType].fullName
-  const bonusText = showDigitSign(bonus)
-  const cube = generateCube(damage)
-  const targetText = `${numberList[targetCount].female} ${getGoalWord(targetCount)}`
-  const rangeText = formatRangeText({type, range})
+export default action => {
+  if (action) {
+    const {
+      bonus,
+      damage,
+      damageType,
+      range,
+      targetCount,
+      type,
+    } = action
 
-  return `
-  *${typeText}*: ${bonusText} к попаданию, ${rangeText}, ${targetText}.
-  *Попадание:* ${dmgText} ${cube}.
-  `
+    const typeText = dndActionTypeCollection[type].name
+    const dmgText = dndDamageTypeCollection[damageType].fullName
+    const bonusText = showDigitSign(bonus)
+    const cube = generateCube(damage)
+    const targetText = `${numberList[targetCount].female} ${getGoalWord(targetCount)}`
+    const rangeText = formatRangeText({type, range})
+
+    return `
+*${typeText}*: ${bonusText} к попаданию, ${rangeText}, ${targetText}.
+*Попадание:* ${dmgText} ${cube}.`
+  }
+
+  return ''
 }

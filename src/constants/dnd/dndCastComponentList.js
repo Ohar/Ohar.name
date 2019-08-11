@@ -1,25 +1,25 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
-export const CAST_CMPNNT_VERBAL = 'verbal'
-export const CAST_CMPNNT_SOMATIC = 'somatic'
-export const CAST_CMPNNT_MATERIAL = 'material'
+export const CAST_VERBAL = 'verbal'
+export const CAST_SOMATIC = 'somatic'
+export const CAST_MATERIAL = 'material'
 
 const dndCastComponentList = [
   {
-    id: CAST_CMPNNT_VERBAL,
+    id: CAST_VERBAL,
     name: 'вербальный',
     shortName: 'В',
     description: `Большинство заклинаний требуют произношения таинственных слов. Сами по себе слова не являются источником силы заклинания; просто комбинация звуков с особой тональностью вызывает резонанс в прядях магии, приводя их в движение.
 Таким образом, персонаж с кляпом во рту или в области заклинания тишина, не может активировать заклинания с вербальным компонентом.`,
   },
   {
-    id: CAST_CMPNNT_SOMATIC,
+    id: CAST_SOMATIC,
     name: 'соматический',
     shortName: 'С',
     description: `Заклинание может требовать энергичной жестикуляции или замысловатой последовательности телодвижений. Если у заклинания есть соматический компонент, у заклинателя должна быть свободной хотя бы одна рука для исполнения этих жестов.`,
   },
   {
-    id: CAST_CMPNNT_MATERIAL,
+    id: CAST_MATERIAL,
     name: 'материальный',
     shortName: 'М',
     description: `Накладывание некоторых заклинаний требует наличия особых предметов, указанных в скобках в описании заклинания. Персонаж может использовать мешочек с компонентами или заклинательную фокусировку вместо указанных компонентов. Однако, если для компонента указана цена, у персонажа для накладывания заклинания должен быть именно такой компонент.

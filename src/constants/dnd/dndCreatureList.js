@@ -3,20 +3,27 @@ import {
   CR_0,
   CR_1_8,
   CR_1_4,
+  CR_10,
 } from "@/constants/dnd/dndCrList"
-import {SIZE_MEDIUM} from "@/constants/dnd/dndSizeList"
+import {
+  SIZE_MEDIUM,
+  SIZE_LARGE,
+} from "@/constants/dnd/dndSizeList"
 import {
   CREATURE_AARAKOCRA,
+  CREATURE_ABERRATION,
   CREATURE_ANY_RACE,
   CREATURE_HUMANOID,
 } from "@/constants/dnd/dndCreatureTypeList"
 import {
   ALIGMENT_ANY,
+  ALIGMENT_LE,
   ALIGMENT_NG,
   ALIGMENT_NOT_LAWFUL,
 } from '@/constants/dnd/dndAligmentList'
 import {
   SPEED_FLY,
+  SPEED_SWIM,
   SPEED_WALK,
 } from '@/constants/dnd/dndSpeedList'
 import {
@@ -28,14 +35,20 @@ import {
   LANG_AARAKOCRA,
   LANG_ANY_ONE,
   LANG_AURAN,
+  LANG_DEEP_SPEECH,
+  LANG_TELEPATHY,
 } from '@/constants/dnd/dndLanguageList'
 import {
   DAMAGE_BLUDGEONING,
   DAMAGE_PIERCING,
   DAMAGE_SLASHING,
 } from '@/constants/dnd/dndDamageTypeList'
-import { SENSE_PASSIVE_PERCEPTION } from '@/constants/dnd/dndSenseList'
 import {
+  SENSE_DARK_VISION,
+  SENSE_PASSIVE_PERCEPTION,
+} from '@/constants/dnd/dndSenseList'
+import {
+  SKILL_HISTORY,
   SKILL_MEDICINE,
   SKILL_PERCEPTION,
   SKILL_RELIGION,
@@ -361,6 +374,119 @@ const dndCreatureList = [
             cubeBonus: 2,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Аболет',
+    nameEn: 'Aboleth',
+    description: `До прихода богов **аболеты** скрывались в первичных океанах и подземных озёрах. Они захватили контроль над развивающимися жизненными формами в царстве смертных, превратив их в своих рабов. Их власть уподобила их богам. Затем появились истинные боги, разбили империю аболетов и освободили их рабов.\n
+Но аболеты этого никогда не забывали.
+`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_ABERRATION,
+    ],
+    aligmentId: ALIGMENT_LE,
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeType: 10,
+      cubeCount: 18,
+      cubeBonus: 36,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      str: 21,
+      dex: 9,
+      con: 15,
+      int: 18,
+      wit: 15,
+      cha: 18,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 10,
+      [SKILL_HISTORY]: 12,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 20,
+      },
+    ],
+    languageList: [
+      LANG_DEEP_SPEECH,
+      LANG_TELEPATHY,
+    ],
+    cr: CR_10,
+    source: 'MM:13',
+    featureList: [
+      {
+        name: 'Амфибия',
+        description: 'Аболет может дышать и воздухом и под водой.',
+      },
+      {
+        name: 'Слизистое облако',
+        description: 'Находясь под водой, аболет окружён слизью. Существа, которые касаются аболета или попадают по нему рукопашной атакой, находясь в пределах 5 футов от него, должны совершить спасбросок Телосложения со Сл 14. При провале существо заболевает на 1к4 часа. Больные существа могут дышать только под водой.',
+      },
+      {
+        name: 'Зондирующая телепатия',
+        description: 'Если существо общается телепатически с аболетом, и аболет при этом видит это существо, он может узнать самые потаённые желания существа.',
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: 'Аболет совершает три атаки щупальцем.',
+      },
+      {
+        name: 'Щупальце',
+        description: `Если цель — существо, она должна преуспеть в спасброске Телосложения со Сл 14, иначе станет заболевшей. Заболевание не проявляется в течение 1 минуты, и может быть удалено любой магией, лечащей болезни. Через 1 минуту кожа больного существа становиться прозрачной и склизкой, существо не может восстанавливать хиты кроме как будучи под водой, и болезнь можно удалить только полным исцелением или другим лечащим болезни заклинанием как минимум 6 уровня. Если существо находится вне водоёма, оно получает урон кислотой 6 (1к12) каждые 10 минут, если вода не попала на кожу до истечения 10 минут.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 10,
+          targetCount: 1,
+          damageType: DAMAGE_BLUDGEONING,
+          damage: {
+            cubeType: 6,
+            cubeCount: 2,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Хвост',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 10,
+          targetCount: 1,
+          damageType: DAMAGE_BLUDGEONING,
+          damage: {
+            cubeType: 6,
+            cubeCount: 3,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Порабощение',
+        limit: {
+          count: 3,
+          period: 'день',
+        },
+        description: `Аболет нацеливается на одно существо, которое видит в пределах 30 футов от себя. Цель должна преуспеть в спасброске Мудрости со Сл 14, иначе она станет магическим образом очарованной. Эффект оканчивается со смертью аболета, либо когда он перестанет быть на одном с целью плане. Очарованная цель находится под контролем аболета, и не может совершать реакции. Цель и аболет могут общаться телепатически на любой дистанции.
+Каждый раз, когда очарованная цель получает урон, она может повторить спасбросок. В случае успеха эффект заканчивается. Не более чем один раз в 24 часа цель может также повторить спасбросок, но при этом она должна находиться как минимум в 1 миле от аболета.`,
       },
     ],
   },

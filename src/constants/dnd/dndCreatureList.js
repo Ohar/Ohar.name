@@ -46,6 +46,14 @@ import {
 import {
   PARAM_WIT,
 } from '@/constants/dnd/dndParamList'
+import {
+  SPELL_LIGHT,
+  SPELL_SACRED_FLAME,
+  SPELL_THAUMATURGY,
+  SPELL_BLESS,
+  SPELL_CURE_WOUNDS,
+  SPELL_SANCTUARY,
+} from '@/constants/dnd/dndSpellList'
 
 const dndCreatureList = [
   {
@@ -252,7 +260,18 @@ const dndCreatureList = [
       baseStat: PARAM_WIT,
       spellAttackBonus: 4,
       saveThrowDc: 12,
-      spellList: [],
+      spellIdList: [
+        SPELL_BLESS,
+        SPELL_CURE_WOUNDS,
+        SPELL_LIGHT,
+        SPELL_SACRED_FLAME,
+        SPELL_SANCTUARY,
+        SPELL_THAUMATURGY,
+      ],
+      slotCountList: [
+        Infinity,
+        3,
+      ],
     },
   },
   {

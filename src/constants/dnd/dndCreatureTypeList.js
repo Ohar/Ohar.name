@@ -1,4 +1,9 @@
 import listToCollectionById from '@/utils/listToCollectionById'
+import {
+  GENDER_MALE,
+  GENDER_FEMALE,
+  GENDER_MIDDLE,
+} from '@/constants/genderList'
 
 export const CREATURE_AARAKOCRA = 'aarakocra'
 export const CREATURE_ABERRATION = 'aberration'
@@ -48,6 +53,7 @@ export const CREATURE_YUGOLOT = 'yugolot'
 const dndCreatureTypeList = [
   {
     id: CREATURE_ANY_RACE,
+    genderId: GENDER_MIDDLE,
     name: {
       singular: {
         nominative: 'любая раса',
@@ -69,6 +75,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_HUMANOID,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'гуманоид',
@@ -90,6 +97,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_GOBLINOID,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'гоблиноид',
@@ -111,6 +119,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_SHAPESHIFTER,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'перевёртыш',
@@ -132,6 +141,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_BEAST,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'зверь',
@@ -153,6 +163,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_FIEND,
+    genderId: GENDER_MIDDLE,
     name: {
       singular: {
         nominative: 'исчадие',
@@ -174,6 +185,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_CELESTIAL,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'небожитель',
@@ -195,6 +207,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_MONSTER,
+    genderId: GENDER_MIDDLE,
     name: {
       singular: {
         nominative: 'чудовище',
@@ -216,6 +229,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_PLANT,
+    genderId: GENDER_MIDDLE,
     name: {
       singular: {
         nominative: 'растение',
@@ -237,6 +251,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_CONSTRUCT,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'конструкт',
@@ -258,6 +273,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_UNDEAD,
+    genderId: GENDER_FEMALE,
     name: {
       singular: {
         nominative: 'нежить',
@@ -279,6 +295,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_DRAGON,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'дракон',
@@ -300,6 +317,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_ABERRATION,
+    genderId: GENDER_FEMALE,
     name: {
       singular: {
         nominative: 'аберрация',
@@ -321,6 +339,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_DEVIL,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'дьявол',
@@ -342,6 +361,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_DEMON,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'демон',
@@ -363,6 +383,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_KOBOLD,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'кобольд',
@@ -384,6 +405,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_TITAN,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'титан',
@@ -405,6 +427,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_BULLYWUG,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'жаболюд',
@@ -426,6 +449,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_GNOLL,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'гнолл',
@@ -447,6 +471,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_GITH,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'гит',
@@ -468,6 +493,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_GNOME,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'гном',
@@ -489,6 +515,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_GRIMLOCK,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'гримлок',
@@ -510,6 +537,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_ORC,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'орк',
@@ -531,6 +559,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_GRUNG,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'грунг',
@@ -552,6 +581,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_YUGOLOT,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'юголот',
@@ -573,6 +603,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_DWARF,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'дварф',
@@ -594,6 +625,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_SAHUAGIN,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'сахуагин',
@@ -615,6 +647,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_ELF,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'эльф',
@@ -636,6 +669,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_QUAGGOTH,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'кваггот',
@@ -657,6 +691,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_LIZARDFOLK,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'людоящер',
@@ -678,6 +713,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_XVART,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'ксварт',
@@ -699,6 +735,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_THRI_KREEN,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'три-крин',
@@ -720,6 +757,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_TROGLODYTE,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'троглодит',
@@ -741,6 +779,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_GIANT,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'великан',
@@ -762,6 +801,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_FIRE_GIANT,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'огненный великан',
@@ -783,6 +823,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_FIRENEWT,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'огненный тритон',
@@ -804,6 +845,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_FEY,
+    genderId: GENDER_FEMALE,
     name: {
       singular: {
         nominative: 'фея',
@@ -825,6 +867,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_AARAKOCRA,
+    genderId: GENDER_FEMALE,
     name: {
       singular: {
         nominative: 'ааракокра',
@@ -846,6 +889,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_HUMAN,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'человек',
@@ -867,6 +911,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_KUO_TOA,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'куо-тоа',
@@ -888,6 +933,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_KENKU,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'кенку',
@@ -909,6 +955,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_YOAN_TI,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'юань-ти',
@@ -930,6 +977,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_ELEMENTAL,
+    genderId: GENDER_MALE,
     name: {
       singular: {
         nominative: 'элементаль',
@@ -951,6 +999,7 @@ const dndCreatureTypeList = [
   },
   {
     id: CREATURE_JELLY,
+    genderId: GENDER_FEMALE,
     name: {
       singular: {
         nominative: 'слизь',

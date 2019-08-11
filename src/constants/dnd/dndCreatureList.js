@@ -572,7 +572,7 @@ const dndCreatureList = [
       },
     ],
     immunityList: [
-      DAMAGE_FIRE, // TODO
+      DAMAGE_FIRE,
     ],
     cr: CR_3,
     source: 'MM:15',

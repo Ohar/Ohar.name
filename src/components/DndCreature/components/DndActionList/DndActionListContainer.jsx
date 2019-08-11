@@ -10,11 +10,12 @@ const DndActionListContainer = ({ list }) => {
     (
       {
         attack,
+        description,
         ...rest,
       }
     ) => ({
       ...rest,
-      description: generateAttackDescription(attack),
+      description: `${generateAttackDescription(attack)} ${description}`,
     })
   )
 

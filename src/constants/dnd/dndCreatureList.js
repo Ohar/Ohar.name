@@ -731,22 +731,25 @@ const dndCreatureList = [
     ],
     spellCast: {
       baseStat: PARAM_CHA,
-      isInnerSpellCasting: true,
-      limitByDay: true,
       saveThrowDc: 17,
       componentOnly: CAST_VERBAL,
-      spellIdList: [
-        SPELL_COMMUNE,
-        SPELL_DETECT_EVIL_AND_GOOD,
-        SPELL_RAISE_DEAD,
-      ],
-      slotCountList: [
-        0,
-        Infinity,
-        0,
-        0,
-        0,
-        1,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_EVIL_AND_GOOD,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_COMMUNE,
+            SPELL_RAISE_DEAD,
+          ],
+        },
       ],
     },
     actionList: [
@@ -873,32 +876,39 @@ const dndCreatureList = [
     ],
     spellCast: {
       baseStat: PARAM_CHA,
-      isInnerSpellCasting: true,
-      limitByDay: true,
       saveThrowDc: 20,
       componentExclude: CAST_MATERIAL,
-      spellIdList: [
-        SPELL_BLADE_BARRIER,
-        SPELL_COMMUNE,
-        SPELL_CONTROL_WEATHER,
-        SPELL_DETECT_EVIL_AND_GOOD,
-        SPELL_DISPEL_EVIL_AND_GOOD,
-        SPELL_FLAME_STRIKE,
-        SPELL_INSECT_PLAGUE,
-        SPELL_INVISIBILITY,
-        SPELL_RAISE_DEAD,
-      ],
-      slotCountList: [ // TODO
-        2,
-        Infinity,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        1,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_EVIL_AND_GOOD,
+            SPELL_INVISIBILITY,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_BLADE_BARRIER,
+            SPELL_DISPEL_EVIL_AND_GOOD,
+            SPELL_FLAME_STRIKE,
+            SPELL_RAISE_DEAD,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_COMMUNE,
+            SPELL_CONTROL_WEATHER,
+            SPELL_INSECT_PLAGUE,
+          ],
+        },
       ],
     },
     actionList: [
@@ -943,16 +953,6 @@ const dndCreatureList = [
     ...creature,
     id: creature.nameEn,
     isFemale: Boolean(creature.isFemale),
-    ...(
-      creature.spellCast
-        ? {
-          spellCast: {
-            ...creature.spellCast,
-            isInnerSpellCasting: creature.spellCast.isInnerSpellCasting || false,
-          },
-        }
-        : {}
-    ),
     [SEARCH_PROP_NAME]: [
       creature.name,
       creature.nameEn,

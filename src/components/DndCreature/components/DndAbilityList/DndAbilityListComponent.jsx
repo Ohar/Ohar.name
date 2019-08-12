@@ -44,9 +44,9 @@ const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale, entr
       {
         spellCast && (
           <DndAbility header={
-            spellCast.isInnerSpellCasting
-              ? 'Врождённое колдовство'
-              : 'Использование заклинаний'
+            spellCast.spellCasterLevel
+              ? 'Использование заклинаний'
+              : 'Врождённое колдовство'
           }>
             {formatSpellCastDescription({spellCast, isFemale, name})}
           </DndAbility>

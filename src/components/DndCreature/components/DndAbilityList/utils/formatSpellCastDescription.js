@@ -15,6 +15,7 @@ export default (
     spellCast: {
       baseStat,
       componentOnly,
+      componentExclude,
       isInnerSpellCasting,
       limitByDay,
       saveThrowDc,
@@ -67,8 +68,12 @@ export default (
     )
     .join('\n')
 
-  const spellComponentText = componentOnly
+  const spellComponentOnlyText = componentOnly
     ? `, нуждаясь только в ${dndCastComponentCollection[componentOnly].name.plural.genitive} компонентах`
+    : ``
+
+  const spellComponentExcludeText = componentExclude
+    ? `, не нуждаясь в ${dndCastComponentCollection[componentExclude].name.plural.genitive} компонентах`
     : ``
 
   const introText = spellCasterLevel
@@ -78,7 +83,7 @@ export default (
 
   const spellCastText = spellCasterClass
     ? `У ${isFemale ? 'неё' : 'него'}  приготовлены следующие заклинания ${dndPcClassCollection[spellCasterClass].name.singular.genitive}`
-    : `${name} может накладывать следующие заклинания${spellComponentText}`
+    : `${name} может накладывать следующие заклинания${spellComponentOnlyText}${spellComponentExcludeText}`
 
   return `${introText} ${baseStatText} ${spellAdditionalInfoText}. ${spellCastText}:
 ${spellText}`

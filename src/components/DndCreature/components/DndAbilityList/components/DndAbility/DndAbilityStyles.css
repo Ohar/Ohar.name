@@ -14,6 +14,14 @@
     hyphens: auto;
 }
 
+.DndAbility_description li {
+    margin-bottom: 0;
+}
+
+.DndAbility_description li + li {
+    margin-top: .5rem;
+}
+
 .DndAbility_description li::first-letter {
     text-transform: uppercase;
 }

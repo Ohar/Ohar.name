@@ -48,6 +48,7 @@ import {
 import {
   DAMAGE_BLUDGEONING,
   DAMAGE_FIRE,
+  DAMAGE_NONMAGIC_WEAPON,
   DAMAGE_PIERCING,
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
@@ -692,7 +693,7 @@ const dndCreatureList = [
     },
     resistanceList: [
       DAMAGE_RADIANT,
-      // DAMAGE_NON_MAGIC, // TODO
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityConditionList: [
       CONDITION_CHARMED,
@@ -830,7 +831,7 @@ const dndCreatureList = [
     },
     resistanceList: [
       DAMAGE_RADIANT,
-      // DAMAGE_NON_MAGIC, // TODO
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityConditionList: [
       CONDITION_CHARMED,

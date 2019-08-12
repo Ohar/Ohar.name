@@ -1,19 +1,10 @@
 import React from "react"
 
-import {dndDamageTypeCollection} from '@/constants/dnd/dndDamageTypeList'
+import DndDmgList from "./../DndDmgList";
 
-import DndCreatureInfo from "./../DndCreatureInfo";
-
-export default ({list}) => list && list.length
-  ? (
-    <DndCreatureInfo header='Иммунитет к урону'>
-      {
-        list
-          .map(
-            id => dndDamageTypeCollection[id].name
-          )
-          .join(', ')
-      }
-    </DndCreatureInfo>
-  )
-  : null
+export default ({list}) => (
+  <DndDmgList
+    header='Иммунитет к урону'
+    list={list
+    }/>
+)

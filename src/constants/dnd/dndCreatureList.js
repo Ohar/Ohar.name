@@ -5,6 +5,7 @@ import {
   CR_1_4,
   CR_3,
   CR_10,
+  CR_16,
 } from "@/constants/dnd/dndCrList"
 import {
   SIZE_MEDIUM,
@@ -74,10 +75,16 @@ import {
   PARAM_CHA,
 } from '@/constants/dnd/dndParamList'
 import {
+  SPELL_BLADE_BARRIER,
   SPELL_BLESS,
   SPELL_COMMUNE,
+  SPELL_CONTROL_WEATHER,
   SPELL_CURE_WOUNDS,
   SPELL_DETECT_EVIL_AND_GOOD,
+  SPELL_DISPEL_EVIL_AND_GOOD,
+  SPELL_FLAME_STRIKE,
+  SPELL_INSECT_PLAGUE,
+  SPELL_INVISIBILITY,
   SPELL_LIGHT,
   SPELL_RAISE_DEAD,
   SPELL_SACRED_FLAME,
@@ -104,6 +111,7 @@ import {
   CONDITION_STUNNED,
   CONDITION_UNCONSCIOUS,
 } from '@/constants/dnd/dndConditionList'
+import { CAST_MATERIAL } from "./dndCastComponentList"
 
 const dndCreatureList = [
   {
@@ -779,6 +787,153 @@ const dndCreatureList = [
         name: 'Смена формы',
         description: `Дэв магическим образом превращается в гуманоида или зверя, чей показатель опасности не превышает его собственный, или принимает свой истинный облик. Если дэв умирает, он принимает свой истинный облик. Всё снаряжение, которое он несёт или носит, сливается с новым обликом или используется им (на выбор дэва).\n
 В новом облике дэв сохраняет игровую статистику и способность говорить, но КД, режимы перемещения, Сила, Ловкость и специальные чувства заменяются теми, что есть у нового облика, и он получает все элементы статистики и умения (кроме классовых умений, легендарных действий и действий логова), которые есть у нового облика, но отсутствуют у него.`,
+      },
+    ],
+  },
+  {
+    name: 'Планетар',
+    nameEn: 'Planetar',
+    description: `Планетары это оружие богов, которым они служат, воплощение мощи своих божеств. Они могут вызвать дождь, чтобы облегчить засуху, или наслать насекомых, чтобы уничтожить урожай. Уши этих небожителей слышат любую ложь, а их сияющие глаза видят любой обман.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_CELESTIAL,
+    ],
+    aligmentId: ALIGMENT_LG,
+    armor: {
+      ac: 19,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeType: 10,
+      cubeCount: 16,
+      cubeBonus: 112,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_FLY]: 120,
+    },
+    params: {
+      [PARAM_STR]: 24,
+      [PARAM_DEX]: 20,
+      [PARAM_CON]: 24,
+      [PARAM_INT]: 19,
+      [PARAM_WIT]: 22,
+      [PARAM_CHA]: 25,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 12,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 12,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 11,
+    },
+    resistanceList: [
+      DAMAGE_RADIANT,
+      // DAMAGE_NON_MAGIC, // TODO
+    ],
+    immunityConditionList: [
+      CONDITION_CHARMED,
+      CONDITION_EXHAUSTION,
+      CONDITION_FRIGHTENED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 21,
+      },
+    ],
+    languageList: [
+      LANG_ALL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_16,
+    source: 'MM:18',
+    featureList: [
+      {
+        name: 'Оружие ангела',
+        description: `Атаки оружием планетара являются магическими. Если планетар попадает любым оружием, оно причиняет дополнительный урон излучением 5к8 (уже включено в атаку).`,
+      },
+      {
+        name: 'Божественная осведомлённость',
+        description: `Планетар знает, когда слышит ложь.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Планетар совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      isInnerSpellCasting: true,
+      limitByDay: true,
+      saveThrowDc: 20,
+      componentExclude: CAST_MATERIAL,
+      spellIdList: [
+        SPELL_BLADE_BARRIER,
+        SPELL_COMMUNE,
+        SPELL_CONTROL_WEATHER,
+        SPELL_DETECT_EVIL_AND_GOOD,
+        SPELL_DISPEL_EVIL_AND_GOOD,
+        SPELL_FLAME_STRIKE,
+        SPELL_INSECT_PLAGUE,
+        SPELL_INVISIBILITY,
+        SPELL_RAISE_DEAD,
+      ],
+      slotCountList: [ // TODO
+        2,
+        Infinity,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Планетар совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Двуручный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 12,
+          range: 5,
+          targetCount: 1,
+          damage: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeType: 6,
+              cubeCount: 4,
+              cubeBonus: 7,
+            },
+            {
+              type: DAMAGE_RADIANT,
+              cubeType: 8,
+              cubeCount: 5,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Целебное касание',
+        limit: {
+          count: 4,
+          period: 'день',
+        },
+        description: `Планетар прикасается к другому существу. Цель магическим образом восстанавливает 30 (6к8+3) хитов и избавляется от проклятий, болезней, отравлений, слепоты и глухоты.`,
       },
     ],
   },

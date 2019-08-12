@@ -13,3 +13,7 @@
     display: inline;
     hyphens: auto;
 }
+
+.DndAbility_description li::first-letter {
+    text-transform: uppercase;
+}

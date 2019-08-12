@@ -14,12 +14,14 @@ import {
   CREATURE_AARAKOCRA,
   CREATURE_ABERRATION,
   CREATURE_ANY_RACE,
+  CREATURE_CELESTIAL,
   CREATURE_FIEND,
   CREATURE_HUMANOID,
 } from "@/constants/dnd/dndCreatureTypeList"
 import {
   ALIGMENT_ANY,
   ALIGMENT_LE,
+  ALIGMENT_LG,
   ALIGMENT_NG,
   ALIGMENT_NOT_LAWFUL,
 } from '@/constants/dnd/dndAligmentList'
@@ -35,6 +37,7 @@ import {
 } from '@/constants/dnd/dndActionTypeList'
 import {
   LANG_AARAKOCRA,
+  LANG_ALL,
   LANG_ANY_ONE,
   LANG_AURAN,
   LANG_DEEP_SPEECH,
@@ -45,6 +48,7 @@ import {
   DAMAGE_BLUDGEONING,
   DAMAGE_FIRE,
   DAMAGE_PIERCING,
+  DAMAGE_RADIANT,
   DAMAGE_SLASHING,
 } from '@/constants/dnd/dndDamageTypeList'
 import {
@@ -53,6 +57,7 @@ import {
 } from '@/constants/dnd/dndSenseList'
 import {
   SKILL_HISTORY,
+  SKILL_INSIGHT,
   SKILL_MEDICINE,
   SKILL_PERCEPTION,
   SKILL_RELIGION,
@@ -69,13 +74,36 @@ import {
   PARAM_CHA,
 } from '@/constants/dnd/dndParamList'
 import {
-  SPELL_LIGHT,
-  SPELL_SACRED_FLAME,
-  SPELL_THAUMATURGY,
   SPELL_BLESS,
+  SPELL_COMMUNE,
   SPELL_CURE_WOUNDS,
+  SPELL_DETECT_EVIL_AND_GOOD,
+  SPELL_LIGHT,
+  SPELL_RAISE_DEAD,
+  SPELL_SACRED_FLAME,
   SPELL_SANCTUARY,
+  SPELL_THAUMATURGY,
 } from '@/constants/dnd/dndSpellList'
+import {
+  CAST_VERBAL,
+} from '@/constants/dnd/dndCastComponentList'
+import {
+  CONDITION_BLINDED,
+  CONDITION_CHARMED,
+  CONDITION_DEAFENED,
+  CONDITION_EXHAUSTION,
+  CONDITION_FRIGHTENED,
+  CONDITION_GRAPPLED,
+  CONDITION_INCAPACITATED,
+  CONDITION_INVISIBLE,
+  CONDITION_PARALYZED,
+  CONDITION_PETRIFIED,
+  CONDITION_POISONED,
+  CONDITION_PRONE,
+  CONDITION_RESTRAINED,
+  CONDITION_STUNNED,
+  CONDITION_UNCONSCIOUS,
+} from '@/constants/dnd/dndConditionList'
 
 const dndCreatureList = [
   {
@@ -120,10 +148,6 @@ const dndCreatureList = [
     actionList: [
       {
         name: 'Дубина',
-        limit: {
-          count: 1,
-          period: 'ход',
-        },
         attack: {
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 2,
@@ -618,16 +642,165 @@ const dndCreatureList = [
         description: `Гончая выдыхает огонь 15-футовым конусом. Все существа в этой области должны совершить спасбросок Ловкости со Сл 12, получая урон огнём 21 (6к6) при провале, или половину этого урона при успехе.`,
       },
     ],
+    isFemale: true,
+  },
+  {
+    name: 'Дэв',
+    nameEn: 'Deva',
+    description: `Дэвы это ангелы, которые выступают в роли божественных посланников или агентов на Материальном Плане, в Царстве Теней или Стране Фей. Они могут принимать форму, которая подходит той области, куда они направляются.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_CELESTIAL,
+    ],
+    aligmentId: ALIGMENT_LG,
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeType: 8,
+      cubeCount: 16,
+      cubeBonus: 64,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 90,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 18,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 17,
+      [PARAM_WIT]: 20,
+      [PARAM_CHA]: 20,
+    },
+    saveThrowCollection: {
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 9,
+    },
+    skillCollection: {
+      [SKILL_INSIGHT]: 9,
+      [SKILL_PERCEPTION]: 9,
+    },
+    resistanceList: [
+      DAMAGE_RADIANT,
+      // DAMAGE_NON_MAGIC, // TODO
+    ],
+    immunityConditionList: [
+      CONDITION_CHARMED,
+      CONDITION_EXHAUSTION,
+      CONDITION_FRIGHTENED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 19,
+      },
+    ],
+    languageList: [
+      LANG_ALL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_10,
+    source: 'MM:17',
+    featureList: [
+      {
+        name: 'Оружие ангела',
+        description: `Атаки оружием дэва являются магическими. Если дэв попадает любым оружием, оно причиняет дополнительный урон излучением 4к8 (уже включено в атаку).`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Дэв совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      isInnerSpellCasting: true,
+      limitByDay: true,
+      saveThrowDc: 17,
+      componentOnly: CAST_VERBAL,
+      spellIdList: [
+        SPELL_COMMUNE,
+        SPELL_DETECT_EVIL_AND_GOOD,
+        SPELL_RAISE_DEAD,
+      ],
+      slotCountList: [
+        0,
+        Infinity,
+        0,
+        0,
+        0,
+        1,
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дэв совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Булава',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          targetCount: 1,
+          damage: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeType: 6,
+              cubeCount: 1,
+              cubeBonus: 4,
+            },
+            {
+              type: DAMAGE_RADIANT,
+              cubeType: 8,
+              cubeCount: 4,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Целебное касание',
+        limit: {
+          count: 3,
+          period: 'день',
+        },
+        description: `Дэв прикасается к другому существу. Цель магическим образом восстанавливает 20 (4к8+2) хитов и избавляется от проклятий, болезней, отравлений, слепоты и глухоты.`,
+      },
+      {
+        name: 'Смена формы',
+        description: `Дэв магическим образом превращается в гуманоида или зверя, чей показатель опасности не превышает его собственный, или принимает свой истинный облик. Если дэв умирает, он принимает свой истинный облик. Всё снаряжение, которое он несёт или носит, сливается с новым обликом или используется им (на выбор дэва).\n
+В новом облике дэв сохраняет игровую статистику и способность говорить, но КД, режимы перемещения, Сила, Ловкость и специальные чувства заменяются теми, что есть у нового облика, и он получает все элементы статистики и умения (кроме классовых умений, легендарных действий и действий логова), которые есть у нового облика, но отсутствуют у него.`,
+      },
+    ],
   },
 ].map(
   creature => ({
     ...creature,
     id: creature.nameEn,
     isFemale: Boolean(creature.isFemale),
+    ...(
+      creature.spellCast
+        ? {
+          spellCast: {
+            ...creature.spellCast,
+            isInnerSpellCasting: creature.spellCast.isInnerSpellCasting || false,
+          },
+        }
+        : {}
+    ),
     [SEARCH_PROP_NAME]: [
       creature.name,
       creature.nameEn,
-      creature.description,
+      creature.description || '',
     ]
       .join('\n'),
   })

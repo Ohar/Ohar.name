@@ -15,6 +15,7 @@ import DndLanguageList from "./components/DndLanguageList"
 import DndLegendaryActionList from "./components/DndLegendaryActionList"
 import DndParamList from "./components/DndParamList"
 import DndReactionList from "./components/DndReactionList"
+import DndResistanceList from "./components/DndResistanceList"
 import DndSaveThrowCollection from "./components/DndSaveThrowCollection"
 import DndSenseList from "./components/DndSenseList"
 import DndSkillCollection from "./components/DndSkillCollection"
@@ -39,6 +40,7 @@ const DndCreatureComponent = (
     name,
     nameEn,
     params,
+    resistanceList,
     reactionList,
     saveThrowCollection,
     senseList,
@@ -78,6 +80,7 @@ const DndCreatureComponent = (
     <section className='DndCreature_infoBlock'>
       <DndSaveThrowCollection collection={saveThrowCollection}/>
       <DndSkillCollection collection={skillCollection}/>
+      <DndResistanceList list={resistanceList}/>
       <DndImmunityList list={immunityList}/>
       <DndSenseList list={senseList}/>
       <DndLanguageList list={languageList}/>

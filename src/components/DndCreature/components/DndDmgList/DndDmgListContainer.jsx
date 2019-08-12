@@ -4,24 +4,24 @@ import {dndDamageTypeCollection} from '@/constants/dnd/dndDamageTypeList'
 
 import DndDmgListComponent from "./DndDmgListComponent";
 
-class DndDmgListContainer extends Component {
+export default class DndDmgListContainer extends Component {
   render () {
     const {list, ...rest} = this.props
 
-    const joiner = list.find(item => dndDamageTypeCollection[item].isEnumeration)
-      ? ';'
-      : ','
+    if (list && list.length) {
+      const joiner = list.find(item => dndDamageTypeCollection[item].isEnumeration)
+        ? ';'
+        : ','
 
-    return list && list.length
-      ? (
+      return (
         <DndDmgListComponent
           list={list}
           joiner={joiner}
           {...rest}
         />
       )
-      : null
+    }
+
+    return null
   }
 }
-
-export default DndDmgListContainer

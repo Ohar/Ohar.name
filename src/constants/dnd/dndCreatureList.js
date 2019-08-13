@@ -166,9 +166,7 @@ const dndCreatureList = [
       cubeType: 8,
       cubeCount: 1,
     },
-    armor: {
-      ac: 10,
-    },
+    armor: 10,
     cr: CR_0,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
@@ -301,9 +299,7 @@ const dndCreatureList = [
       cubeType: 8,
       cubeCount: 2,
     },
-    armor: {
-      ac: 10,
-    },
+    armor: 10,
     cr: CR_1_4,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
@@ -378,9 +374,7 @@ const dndCreatureList = [
       CREATURE_AARAKOCRA,
     ],
     aligmentId: ALIGMENT_NG,
-    armor: {
-      ac: 12,
-    },
+    armor: 12,
     hp: {
       cubeType: 8,
       cubeCount: 3,

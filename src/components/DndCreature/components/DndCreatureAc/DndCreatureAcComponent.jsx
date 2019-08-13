@@ -8,9 +8,14 @@ export default ({armor}) => (
     {
       arrify(armor)
         .map(
-        ({ac, type = ''}) => type
-          ? `${ac} (${type})`
-          : ac
+          item => {
+            const ac = item.ac || item
+            const type = item.type || ''
+
+            return type
+              ? `${ac} (${type})`
+              : ac
+          }
         )
         .join(', ')
     }

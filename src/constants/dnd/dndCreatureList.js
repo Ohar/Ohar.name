@@ -80,6 +80,7 @@ import {
 import {
   LANG_AARAKOCRA,
   LANG_ALL,
+  LANG_ALL_KNOWN_AT_LIFE,
   LANG_ANY_ONE,
   LANG_AURAN,
   LANG_COMMON,
@@ -168,6 +169,7 @@ import {
   CONDITION_STUNNED,
   CONDITION_UNCONSCIOUS,
 } from '@/constants/dnd/dndConditionList'
+import { SIZE_TINY } from './dndSizeList';
 
 const dndCreatureList = [
   {
@@ -1536,6 +1538,110 @@ const dndCreatureList = [
         name: 'Проглатывание',
         description: `Бехир совершает одну атаку укусом по существу с размером не больше Среднего, схваченному им. Если эта атака попадает, существо становится проглоченным и перестаёт быть схваченным. Будучи проглоченным, существо ослеплено и опутано, и обладает полным укрытием от атак и прочих эффектов, исходящих снаружи бехира, и получает урон кислотой 21 (6к6) в начале каждого хода бехира. У бехира может быть проглочено только одно существо одновременно.\n
 Если бехир получает за один ход 30 или больше урона от проглоченного существа, бехир должен в конце этого хода преуспеть в спасброске Телосложения со Сл 14, иначе отрыгнёт существо, которое падает ничком в пространстве в пределах 10 футов от бехира. Если бехир умирает, проглоченное существо перестаёт быть опутанным им, и может высвободиться из трупа, потратив 15 футов перемещения, падая при выходе ничком.`,
+      },
+    ],
+  },
+  {
+    name: 'Блуждающий огонёк',
+    nameEn: 'Will-o’-wisp',
+    description: `Блуждающие огоньки являются злобными, похожими на дымку, шарами света, которые обитают в уединённых местах и на полях сражений, связанных с мрачной судьбой или тёмной магией, и питаются страхом и отчаянием.`,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:23',
+    armor: 19,
+    hp: {
+      cubeType: 4,
+      cubeCount: 9,
+    },
+    cr: CR_2,
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_FLY]: {
+        value: 50,
+        comment: 'парит',
+      },
+    },
+    params: {
+      [PARAM_STR]: 1,
+      [PARAM_DEX]: 28,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 11,
+    },
+    immunityList: [
+      DAMAGE_LIGHTNING,
+      DAMAGE_POISON,
+    ],
+    resistanceList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ACID,
+      DAMAGE_NECROTIC,
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_UNCONSCIOUS,
+      CONDITION_GRAPPLED,
+      CONDITION_EXHAUSTION,
+      CONDITION_RESTRAINED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_ALL_KNOWN_AT_LIFE,
+    ],
+    featureList: [
+      {
+        name: 'Истребление жизни',
+        description: `Блуждающий огонёк может бонусным действием нацелиться на одно существо, которое видит в пределах 5 футов, у которого при этом 0 хитов, и которое всё ещё живо. Цель должна преуспеть в спасброске Телосложения со Сл 10 от этой магии, иначе умрёт. Если цель умирает, блуждающий огонёк восстанавливает 10 (3к6) хитов.`,
+      },
+      {
+        name: 'Эфемерность',
+        description: `Блуждающий огонёк не может ничего носить и нести.`,
+      },
+      {
+        name: 'Бестелесное перемещение',
+        description: `Блуждающий огонёк может перемещаться сквозь других существ и предметы, как если бы они были труднопроходимой местностью. Он получает урон силовым полем 5 (1к10), если оканчивает ход внутри предмета.`,
+      },
+      {
+        name: 'Переменное свечение',
+        description: `Блуждающий огонёк испускает яркий свет в радиусе от 5 до 20 футов и тусклый свет в пределах ещё такого же количества футов. Блуждающий огонёк может изменять радиус бонусным действием.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Шок',
+        attack: {
+          type: ACTION_MELEE_SPELL_ATTACK,
+          bonus: 4,
+          range: 5,
+          targetCount: 1,
+          damage: {
+            type: DAMAGE_LIGHTNING,
+            cubeType: 8,
+            cubeCount: 2,
+          },
+        },
+      },
+      {
+        name: 'Невидимость',
+        description: `Блуждающий огонёк и его свет магическим образом становятся невидимыми, пока он не совершит атаку, не использует _Истребление жизни_, или пока не прервётся его концентрация (как при концентрации на заклинании).`,
       },
     ],
   },

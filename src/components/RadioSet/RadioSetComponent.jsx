@@ -56,7 +56,10 @@ const RadioSetComponent = ({title, name, fieldList, chosen, onChange}) => (
 RadioSetComponent.propTypes = {
   chosen: PropTypes.string.isRequired,
   fieldList: PropTypes.arrayOf(PropTypes.shape({
-    icon: PropTypes.string,
+    icon: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ]),
     text: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
   })).isRequired,

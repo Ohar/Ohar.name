@@ -38,11 +38,11 @@ const DndCreatureSpeedComponent = ({ speed }) => (
 
 DndCreatureSpeedComponent.propTypes = {
   speed: PropTypes.shape({
-    [SPEED_CRAWL]: PropTypes.number,
-    [SPEED_DIG]: PropTypes.number,
-    [SPEED_FLY]: PropTypes.number,
-    [SPEED_SWIM]: PropTypes.number,
-    [SPEED_WALK]: PropTypes.number,
+    [SPEED_CRAWL]: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+    [SPEED_DIG]: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+    [SPEED_FLY]: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+    [SPEED_SWIM]: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+    [SPEED_WALK]: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
   }).isRequired,
 }
 

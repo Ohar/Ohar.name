@@ -28,11 +28,14 @@ const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale, entr
       {
         list.length
           ? list.map(
-            ({description, ...rest}) => {
+            ({description, ...rest}, i) => {
               const itemHeader = generateAbilityHeader(rest)
 
               return (
-                <DndAbility header={itemHeader}>
+                <DndAbility
+                  header={itemHeader}
+                  key={i}
+                >
                   {description}
                 </DndAbility>
               )

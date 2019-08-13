@@ -11,6 +11,7 @@ import DndCreatureSource from "./components/DndCreatureSource"
 import DndCreatureSpeed from "./components/DndCreatureSpeed"
 import DndFeatureList from "./components/DndFeatureList"
 import DndImmunityList from "./components/DndImmunityList"
+import DndImmunityConditionList from "./components/DndImmunityConditionList"
 import DndLanguageList from "./components/DndLanguageList"
 import DndLegendaryActionList from "./components/DndLegendaryActionList"
 import DndParamList from "./components/DndParamList"
@@ -33,6 +34,7 @@ const DndCreatureComponent = (
     featureList,
     hp,
     immunityList,
+    immunityConditionList,
     isFemale,
     languageList,
     legendaryActionList,
@@ -82,6 +84,7 @@ const DndCreatureComponent = (
       <DndSkillCollection collection={skillCollection}/>
       <DndResistanceList list={resistanceList}/>
       <DndImmunityList list={immunityList}/>
+      <DndImmunityConditionList list={immunityConditionList}/>
       <DndSenseList list={senseList}/>
       <DndLanguageList list={languageList}/>
       <DndCreatureCr cr={cr}/>

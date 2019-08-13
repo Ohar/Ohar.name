@@ -5,7 +5,7 @@ export const DAMAGE_BLUDGEONING = 'bludgeoning'
 export const DAMAGE_COLD = 'cold'
 export const DAMAGE_FIRE = 'fire'
 export const DAMAGE_FORCE = 'force'
-export const DAMAGE_LIGHTNING = 'lightning'
+export const DAMAGE_ELECTRICITY = 'lightning'
 export const DAMAGE_NECROTIC = 'necrotic'
 export const DAMAGE_NONMAGIC_WEAPON = 'nonmagic_weapon'
 export const DAMAGE_PIERCING = 'piercing'
@@ -63,9 +63,9 @@ const dndDamageTypeList = [
     fullName: 'Некротический урон',
   },
   {
-    id: DAMAGE_LIGHTNING,
-    name: 'Молнией',
-    fullName: 'Урон молнией',
+    id: DAMAGE_ELECTRICITY,
+    name: 'Электричеством',
+    fullName: 'Урон электричеством',
   },
   {
     id: DAMAGE_POISON,

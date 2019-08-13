@@ -95,7 +95,7 @@ import {
   DAMAGE_BLUDGEONING,
   DAMAGE_COLD,
   DAMAGE_FIRE,
-  DAMAGE_LIGHTNING,
+  DAMAGE_ELECTRICITY,
   DAMAGE_NECROTIC,
   DAMAGE_NONMAGIC_WEAPON,
   DAMAGE_PIERCING,
@@ -1355,7 +1355,7 @@ const dndCreatureList = [
     resistanceList: [
       DAMAGE_ACID,
       DAMAGE_FIRE,
-      DAMAGE_LIGHTNING,
+      DAMAGE_ELECTRICITY,
       DAMAGE_THUNDER,
       DAMAGE_NONMAGIC_WEAPON,
     ],
@@ -1466,7 +1466,7 @@ const dndCreatureList = [
       [SKILL_STEALTH]: 7,
     },
     immunityList: [
-      DAMAGE_LIGHTNING,
+      DAMAGE_ELECTRICITY,
     ],
     senseList: [
       {
@@ -1573,7 +1573,7 @@ const dndCreatureList = [
       [PARAM_CHA]: 11,
     },
     immunityList: [
-      DAMAGE_LIGHTNING,
+      DAMAGE_ELECTRICITY,
       DAMAGE_POISON,
     ],
     resistanceList: [
@@ -1633,7 +1633,7 @@ const dndCreatureList = [
           range: 5,
           targetCount: 1,
           damage: {
-            type: DAMAGE_LIGHTNING,
+            type: DAMAGE_ELECTRICITY,
             cubeType: 8,
             cubeCount: 2,
           },

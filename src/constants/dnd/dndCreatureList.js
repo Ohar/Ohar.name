@@ -52,9 +52,11 @@ import {
   ALIGMENT_LE,
   ALIGMENT_LG,
   ALIGMENT_NG,
+  ALIGMENT_NO,
   ALIGMENT_NOT_LAWFUL,
 } from '@/constants/dnd/dndAligmentList'
 import {
+  SPEED_DIG,
   SPEED_FLY,
   SPEED_SWIM,
   SPEED_WALK,
@@ -146,6 +148,9 @@ import {
   CONDITION_STUNNED,
   CONDITION_UNCONSCIOUS,
 } from '@/constants/dnd/dndConditionList'
+import { CREATURE_MONSTER } from './dndCreatureTypeList';
+import { SENSE_VIBRATION_SENSE } from './dndSenseList';
+import { DAMAGE_ACID } from './dndDamageTypeList';
 
 const dndCreatureList = [
   {
@@ -1208,6 +1213,92 @@ const dndCreatureList = [
         name: 'Ослепляющий взор',
         cost: 3,
         description: `Солар нацеливается на одно существо, которое видит в пределах 30 футов отсебя. Если цель видит его, она должна преуспеть в спасброске Телосложения со Сл 15, иначе она станет ослеплённой, пока слепота не будет снята магией, такой как _Малое восстановление_ (lesser restoration).`,
+      },
+    ],
+  },
+  {
+    name: 'Анхег',
+    nameEn: 'Ankheg',
+    description: `Анхег похож на огромное насекомое с множеством лап. Его длинные усики подёргиваются, реагируя на любое движение вокруг. На концах его лап огромные крюки, пригодные как для рытья, так и для того, чтобы хватать добычу. Его мощные челюсти способны перекусить небольшое дерево пополам.`,
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:20',
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_DIG]: 10,
+    },
+    hp: {
+      cubeType: 10,
+      cubeCount: 6,
+      cubeBonus: 6,
+    },
+    armor: [
+      {
+        ac: 14,
+        type: 'природный доспех',
+      },
+      {
+        ac: 11,
+        type: 'когда сбит с ног',
+      },
+    ],
+    cr: CR_2,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_MONSTER,
+    ],
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_VIBRATION_SENSE,
+        value: 60,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: 'Если цель — существо с размером не больше Большого, она становится схваченной (Сл высвобождения 13). Пока цель схвачена, анхег может кусать только её, но зато атаки совершает с преимуществом.',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          targetCount: 1,
+          damage: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeType: 6,
+              cubeCount: 2,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_ACID,
+              cubeType: 6,
+              cubeCount: 1,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Кислотная струя',
+        description: 'Анхег плюёт кислотой линией длиной 30 футов и шириной 5 футов, при условии, что он не держит в захвате существа. Все существа в этой линии должны совершить спасбросок Ловкости со Сл 13, получая урон кислотой 10 (3к6) при провале, или половину этого урона при успехе.',
+        restore: {
+          from: 6,
+          to: 6,
+        },
       },
     ],
   },

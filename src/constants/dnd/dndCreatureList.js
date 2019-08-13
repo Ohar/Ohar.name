@@ -3,9 +3,37 @@ import {
   CR_0,
   CR_1_8,
   CR_1_4,
+  CR_1_2,
+  CR_1,
+  CR_2,
   CR_3,
+  CR_4,
+  CR_5,
+  CR_6,
+  CR_7,
+  CR_8,
+  CR_9,
   CR_10,
+  CR_11,
+  CR_12,
+  CR_13,
+  CR_14,
+  CR_15,
   CR_16,
+  CR_17,
+  CR_18,
+  CR_19,
+  CR_20,
+  CR_21,
+  CR_22,
+  CR_23,
+  CR_24,
+  CR_25,
+  CR_26,
+  CR_27,
+  CR_28,
+  CR_29,
+  CR_30,
 } from "@/constants/dnd/dndCrList"
 import {
   SIZE_MEDIUM,
@@ -48,14 +76,17 @@ import {
 import {
   DAMAGE_BLUDGEONING,
   DAMAGE_FIRE,
+  DAMAGE_NECROTIC,
   DAMAGE_NONMAGIC_WEAPON,
   DAMAGE_PIERCING,
+  DAMAGE_POISON,
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
 } from '@/constants/dnd/dndDamageTypeList'
 import {
   SENSE_DARK_VISION,
   SENSE_PASSIVE_PERCEPTION,
+  SENSE_TRUE_VISION,
 } from '@/constants/dnd/dndSenseList'
 import {
   SKILL_HISTORY,
@@ -93,6 +124,8 @@ import {
   SPELL_THAUMATURGY,
 } from '@/constants/dnd/dndSpellList'
 import {
+  CAST_MATERIAL,
+  CAST_SOMATIC,
   CAST_VERBAL,
 } from '@/constants/dnd/dndCastComponentList'
 import {
@@ -112,7 +145,6 @@ import {
   CONDITION_STUNNED,
   CONDITION_UNCONSCIOUS,
 } from '@/constants/dnd/dndConditionList'
-import { CAST_MATERIAL } from "./dndCastComponentList"
 
 const dndCreatureList = [
   {
@@ -864,6 +896,166 @@ const dndCreatureList = [
       {
         name: 'Оружие ангела',
         description: `Атаки оружием планетара являются магическими. Если планетар попадает любым оружием, оно причиняет дополнительный урон излучением 5к8 (уже включено в атаку).`,
+      },
+      {
+        name: 'Божественная осведомлённость',
+        description: `Планетар знает, когда слышит ложь.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Планетар совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 20,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_EVIL_AND_GOOD,
+            SPELL_INVISIBILITY,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_BLADE_BARRIER,
+            SPELL_DISPEL_EVIL_AND_GOOD,
+            SPELL_FLAME_STRIKE,
+            SPELL_RAISE_DEAD,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_COMMUNE,
+            SPELL_CONTROL_WEATHER,
+            SPELL_INSECT_PLAGUE,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Планетар совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Двуручный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 12,
+          range: 5,
+          targetCount: 1,
+          damage: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeType: 6,
+              cubeCount: 4,
+              cubeBonus: 7,
+            },
+            {
+              type: DAMAGE_RADIANT,
+              cubeType: 8,
+              cubeCount: 5,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Целебное касание',
+        limit: {
+          count: 4,
+          period: 'день',
+        },
+        description: `Планетар прикасается к другому существу. Цель магическим образом восстанавливает 30 (6к8+3) хитов и избавляется от проклятий, болезней, отравлений, слепоты и глухоты.`,
+      },
+    ],
+  },
+  {
+    name: 'Солар',
+    nameEn: 'Solar',
+    description: `Солар подобен богу по своей славе и силе. Меч солара самостоятельно летает по полю боя, а одна-единственная стрела из его лука может запросто убить цель. Настолько велика мощь солара, что даже демонические князья содрогаются от его звучных команд.\n
+Говорят, что существует всего двадцать четыре солара. Известно, что несколько соларов являются верными помощниками некоторых богов. Остальные отдыхают в состоянии созерцания, ожидая, когда их услуги понадобятся для противостояния огромной угрозе силам добра.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_CELESTIAL,
+    ],
+    aligmentId: ALIGMENT_LG,
+    armor: {
+      ac: 21,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeType: 10,
+      cubeCount: 18,
+      cubeBonus: 144,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+      [SPEED_FLY]: 150,
+    },
+    params: {
+      [PARAM_STR]: 26,
+      [PARAM_DEX]: 22,
+      [PARAM_CON]: 26,
+      [PARAM_INT]: 25,
+      [PARAM_WIT]: 25,
+      [PARAM_CHA]: 30,
+    },
+    saveThrowCollection: {
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 17,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 14,
+    },
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_RADIANT,
+    ],
+    immunityList: [
+      DAMAGE_NECROTIC,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_CHARMED,
+      CONDITION_EXHAUSTION,
+      CONDITION_FRIGHTENED,
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 24,
+      },
+    ],
+    languageList: [
+      LANG_ALL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_21,
+    source: 'MM:21',
+    featureList: [
+      {
+        name: 'Оружие ангела',
+        description: `Атаки оружием солара являются магическими. Если солар попадает любым оружием, оно причиняет дополнительный урон излучением 5к8 (уже включено в атаку).`,
       },
       {
         name: 'Божественная осведомлённость',

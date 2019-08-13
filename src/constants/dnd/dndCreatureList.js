@@ -46,9 +46,12 @@ import {
   CREATURE_CELESTIAL,
   CREATURE_FIEND,
   CREATURE_HUMANOID,
+  CREATURE_MONSTER,
+  CREATURE_UNDEAD,
 } from "@/constants/dnd/dndCreatureTypeList"
 import {
   ALIGMENT_ANY,
+  ALIGMENT_CE,
   ALIGMENT_LE,
   ALIGMENT_LG,
   ALIGMENT_NG,
@@ -64,6 +67,7 @@ import {
 import {
   ACTION_MELEE_WEAPON_ATTACK,
   ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+  ACTION_MELEE_SPELL_ATTACK,
   ACTION_RANGE_WEAPON_ATTACK,
 } from '@/constants/dnd/dndActionTypeList'
 import {
@@ -71,24 +75,31 @@ import {
   LANG_ALL,
   LANG_ANY_ONE,
   LANG_AURAN,
+  LANG_COMMON,
   LANG_DEEP_SPEECH,
+  LANG_ELVEN,
   LANG_INFERNAL,
   LANG_TELEPATHY,
 } from '@/constants/dnd/dndLanguageList'
 import {
+  DAMAGE_ACID,
   DAMAGE_BLUDGEONING,
+  DAMAGE_COLD,
   DAMAGE_FIRE,
+  DAMAGE_LIGHTNING,
   DAMAGE_NECROTIC,
   DAMAGE_NONMAGIC_WEAPON,
   DAMAGE_PIERCING,
   DAMAGE_POISON,
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
+  DAMAGE_SONIC,
 } from '@/constants/dnd/dndDamageTypeList'
 import {
   SENSE_DARK_VISION,
   SENSE_PASSIVE_PERCEPTION,
   SENSE_TRUE_VISION,
+  SENSE_VIBRATION_SENSE,
 } from '@/constants/dnd/dndSenseList'
 import {
   SKILL_HISTORY,
@@ -148,9 +159,7 @@ import {
   CONDITION_STUNNED,
   CONDITION_UNCONSCIOUS,
 } from '@/constants/dnd/dndConditionList'
-import { CREATURE_MONSTER } from './dndCreatureTypeList';
-import { SENSE_VIBRATION_SENSE } from './dndSenseList';
-import { DAMAGE_ACID } from './dndDamageTypeList';
+import { ACTION_MELEE_SPELL_ATTACK } from './dndActionTypeList';
 
 const dndCreatureList = [
   {
@@ -1292,6 +1301,120 @@ const dndCreatureList = [
         restore: {
           from: 6,
           to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Баньши',
+    nameEn: 'Banshee',
+    description: `Когда опускается ночь, незадачливый путник может услышать отдалённые крики одинокого мертвеца. Это **баньши**, горестный дух, злобное создание, появившееся из духа эльфийки.\n
+Баньши выглядит как светящаяся, тонкая форма, очертаниями смутно похожая на своё смертное тело. Лицо окутано всклокоченными волосами, а тело одето в просвечивающие лохмотья, которые колышутся вокруг баньши.`,
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:21',
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_FLY]: {
+        value: 40,
+        comment: 'парит',
+      },
+    },
+    hp: {
+      cubeType: 10,
+      cubeCount: 6,
+      cubeBonus: 6,
+    },
+    armor: 12,
+    cr: CR_4,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_UNDEAD,
+    ],
+    params: {
+      [PARAM_STR]: 1,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 17,
+    },
+    saveThrowCollection: {
+      [PARAM_WIT]: 2,
+      [PARAM_CHA]: 5,
+    },
+    resistanceList: [
+      DAMAGE_ACID,
+      DAMAGE_FIRE,
+      DAMAGE_LIGHTNING,
+      DAMAGE_SONIC,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_COLD,
+      DAMAGE_NECROTIC,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_CHARMED,
+      CONDITION_EXHAUSTION,
+      CONDITION_FRIGHTENED,
+      CONDITION_GRAPPLED,
+      CONDITION_PARALYZED,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_PRONE,
+      CONDITION_RESTRAINED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_COMMON,
+      LANG_ELVEN,
+    ],
+    featureList: [
+      {
+        name: 'Обнаружение жизни',
+        description: `Баньши магически чувствует присутствие существ на расстоянии 5 миль, не являющихся ни нежитью, ни конструктами. Она знает общее направление, но не точное местоположение.`,
+      },
+      {
+        name: 'Бестелесное перемещение',
+        description: `Баньши может перемещаться сквозь других существ и предметы, как если бы они были труднопроходимой местностью. Она получает урон силовым полем 5 (1к10), если оканчивает ход внутри предмета.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Разлагающее касание',
+        attack: {
+          type: ACTION_MELEE_SPELL_ATTACK,
+          bonus: 4,
+          range: 5,
+          targetCount: 1,
+          damage: {
+            type: DAMAGE_NECROTIC,
+            cubeType: 6,
+            cubeCount: 3,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Ужасный облик',
+        description: `Все существа, находящиеся в пределах 60 футов от баньши, не являющиеся нежитью и видящие её, должны преуспеть в спасброске Мудрости со Сл 13, иначе они становятся испуганными на 1 минуту. Испуганная цель может повторять этот спасбросок в конце каждого своего хода, с помехой, если баньши находится в пределах её линии обзора, оканчивая эффект на себе при успехе. Если цель успешно совершила спасбросок или действие эффекта закончилось, она получает иммунитет к Ужасному облику этой баньши на следующие 24 часа.`,
+      },
+      {
+        name: 'Вопль',
+        description: `Если баньши не находится на солнечном свете, она может издать скорбный вопль. Этот вопль не оказывает эффект на конструктов и нежить. Все другие существа в пределах 30 футов от неё, услышавшие вопль, должны совершить спасбросок Телосложения со Сл 13. При провале хиты существа снижаются до 0. При успехе существо получает урон психической энергией 10 (3к6).`,
+        limit: {
+          count: 1,
+          period: 'день',
         },
       },
     ],

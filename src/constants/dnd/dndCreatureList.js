@@ -119,6 +119,7 @@ import {
   SPELL_INVISIBILITY,
   SPELL_LIGHT,
   SPELL_RAISE_DEAD,
+  SPELL_RESSURECTION,
   SPELL_SACRED_FLAME,
   SPELL_SANCTUARY,
   SPELL_THAUMATURGY,
@@ -1068,7 +1069,7 @@ const dndCreatureList = [
     ],
     spellCast: {
       baseStat: PARAM_CHA,
-      saveThrowDc: 20,
+      saveThrowDc: 25,
       componentExclude: CAST_MATERIAL,
       spellIdByCountList: [
         {
@@ -1086,8 +1087,7 @@ const dndCreatureList = [
           list: [
             SPELL_BLADE_BARRIER,
             SPELL_DISPEL_EVIL_AND_GOOD,
-            SPELL_FLAME_STRIKE,
-            SPELL_RAISE_DEAD,
+            SPELL_RESSURECTION,
           ],
         },
         {
@@ -1098,7 +1098,6 @@ const dndCreatureList = [
           list: [
             SPELL_COMMUNE,
             SPELL_CONTROL_WEATHER,
-            SPELL_INSECT_PLAGUE,
           ],
         },
       ],

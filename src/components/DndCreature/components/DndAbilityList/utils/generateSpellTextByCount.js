@@ -9,10 +9,16 @@ export default spellIdByCountList => spellIdByCountList
 
       const spellStr = list
         .map(
-          id => {
-            const {name, nameEn} = dndSpellCollection[id]
+          item => {
+            const spell = typeof item === 'string'
+              ? dndSpellCollection[item]
+              : dndSpellCollection[item.id]
+            const {name, nameEn} = spell
+            const commentText = typeof item === 'string'
+              ? ''
+              : ` (${item.comment})`
 
-            return `_${name}_ (${nameEn})`
+            return `_${name}_ (${nameEn})${commentText}`
           }
         )
         .join(', ')

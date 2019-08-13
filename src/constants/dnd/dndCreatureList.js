@@ -93,7 +93,7 @@ import {
   DAMAGE_POISON,
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
-  DAMAGE_SONIC,
+  DAMAGE_THUNDER,
 } from '@/constants/dnd/dndDamageTypeList'
 import {
   SENSE_DARK_VISION,
@@ -1346,7 +1346,7 @@ const dndCreatureList = [
       DAMAGE_ACID,
       DAMAGE_FIRE,
       DAMAGE_LIGHTNING,
-      DAMAGE_SONIC,
+      DAMAGE_THUNDER,
       DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [

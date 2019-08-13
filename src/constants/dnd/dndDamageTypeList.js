@@ -13,7 +13,7 @@ export const DAMAGE_POISON = 'poison'
 export const DAMAGE_PSYCHIC = 'psychic'
 export const DAMAGE_RADIANT = 'radiant'
 export const DAMAGE_SLASHING = 'slashing'
-export const DAMAGE_SONIC = 'sonic'
+export const DAMAGE_THUNDER = 'thunder'
 
 const dndDamageTypeList = [
   {
@@ -83,7 +83,7 @@ const dndDamageTypeList = [
     fullName: 'Урон излучением',
   },
   {
-    id: DAMAGE_SONIC,
+    id: DAMAGE_THUNDER,
     name: 'Звуком',
     fullName: 'Урон звуком',
   },

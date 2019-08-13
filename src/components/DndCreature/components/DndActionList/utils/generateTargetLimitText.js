@@ -38,8 +38,8 @@ export default target => {
 
     if (target.limit.size) {
       if (target.limit.size.max) {
-        const sizeText = dndSizeCollection[target.limit.size.max].name[GENDER_MALE]
-        targetLimitText = ` c размером не больше, чем ${sizeText}`
+        const sizeText = dndSizeCollection[target.limit.size.max].name.single[GENDER_MALE].genitive
+        targetLimitText = ` c размером не больше ${sizeText}`
       }
     }
   }

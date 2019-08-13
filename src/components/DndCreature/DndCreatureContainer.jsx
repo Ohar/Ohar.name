@@ -23,7 +23,7 @@ const DndCreatureContainer = (
   },
 ) => {
   const {genderId} = dndCreatureTypeCollection[creatureTypeIdList[0]]
-  const size = dndSizeCollection[sizeType].name[genderId]
+  const size = dndSizeCollection[sizeType].name.single[genderId].nominative
   const {name: {nominative: aligment}} = dndAligmentCollection[aligmentId]
   const creatureType = [
     getCreatureTypeName(creatureTypeIdList[0]),

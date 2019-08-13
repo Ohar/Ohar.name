@@ -9,7 +9,7 @@ const DndAbility = ({header, children}) => (
     className='DndAbility'
   >
     <b className='DndAbility_header'>
-      {header}
+      {`${header} `}
     </b>
     <ReactMarkdown className='DndAbility_description'>
       {children}

@@ -41,6 +41,7 @@ export const SPELL_INSECT_PLAGUE = 'insect_plague'
 export const SPELL_INVISIBILITY = 'invisibility'
 export const SPELL_LIGHT = 'light'
 export const SPELL_RAISE_DEAD = 'raise_dead'
+export const SPELL_RESSURECTION = 'ressurection'
 export const SPELL_SACRED_FLAME = 'sacred_flame'
 export const SPELL_SANCTUARY = 'sanctuary'
 export const SPELL_THAUMATURGY = 'thaumaturgy'
@@ -318,6 +319,24 @@ const dndSpellList = [
     needConcentration: true,
     source: 'PHB:243',
     classList: [PC_CLASS_PRIEST, PC_CLASS_SORCERER, PC_CLASS_DRUID],
+  },
+  {
+    id: SPELL_RESSURECTION,
+    name: 'Воскрешение',
+    nameEn: 'Ressurection',
+    description: `Вы касаетесь существа, мёртвого не больше ста лет, умершего не от старости, и не являющегося нежитью. Если его душа свободна и согласна, цель возвращается к жизни с полными хитами.\n
+Это заклинание нейтрализует все яды и исцеляет немагические болезни, бывшие у существа в момент смерти. Однако это заклинание не снимает магические болезни, проклятья и подобные эффекты; если их не снять до накладывания этого заклинания, они снова начнут действовать, когда существо оживёт.\n
+Это заклинание исцеляет все раны и восстанавливает отсутствующие части тела.\n
+Возвращение к жизни — тяжёлое испытание. Цель получает штраф −4 ко всем броскам атаки, спасброскам и проверкам характеристик. Каждый раз, когда цель заканчивает длительный отдых, штраф уменьшается на 1, пока не исчезнет полностью.\n
+Накладывание этого заклинания для оживления существа, мёртвого больше года, сильно выматывает вас. Пока вы не окончите продолжительный отдых, вы не можете накладывать заклинания, и совершаете с помехой все броски атаки, проверки характеристик и спасброски.`,
+    lvl: 7,
+    magicSchool: MAGIC_NECROMANCY,
+    castTime: '1 час',
+    range: 0,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'бриллиант, стоящий как минимум 1 000 зм, расходуемый заклинанием',
+    source: 'PHB:218',
+    classList: [PC_CLASS_PRIEST, PC_CLASS_BARD],
   },
 ].map(
   spell => ({

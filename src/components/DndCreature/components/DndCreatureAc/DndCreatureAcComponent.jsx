@@ -2,13 +2,20 @@ import React from "react"
 
 import DndCreatureInfo from "./../DndCreatureInfo";
 
-export default ({armor: {ac, type = ''}}) => (
+export default ({armor}) => (
   <DndCreatureInfo header='Класс доспеха'>
-    {ac}
     {
-      type
-        ? ` (${type})`
-        : ''
+      (
+        Array.isArray(armor)
+          ? armor
+          : [armor]
+      )
+        .map(
+        ({ac, type = ''}) => type
+          ? `${ac} (${type})`
+          : ac
+        )
+        .join(', ')
     }
   </DndCreatureInfo>
 )

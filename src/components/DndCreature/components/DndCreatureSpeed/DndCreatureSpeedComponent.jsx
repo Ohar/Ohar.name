@@ -20,7 +20,16 @@ const DndCreatureSpeedComponent = ({ speed }) => (
       Object
         .keys(speed)
         .map(
-          type => `${dndSpeedCollection[type].name} ${speed[type]} фт.`,
+          type => {
+            const speedObj = dndSpeedCollection[type]
+            const value = speed[type]
+            const range = value.value || value
+            const comment = typeof value === 'object'
+              ? ` (${value.comment})`
+              : ''
+
+            return `${speedObj.name} ${range} фт.${comment}`
+          },
         )
         .join(', ')
     }

@@ -6,9 +6,11 @@ import formatComplexLang from "./utils/formatComplexLang";
 export default ({list}) => (
   <DndCreatureInfo header='Языки'>
     {
-      list
-        .map(formatComplexLang)
-        .join(', ')
+      list && list.length
+        ? list
+          .map(formatComplexLang)
+          .join(', ')
+        : '—'
     }
   </DndCreatureInfo>
 )

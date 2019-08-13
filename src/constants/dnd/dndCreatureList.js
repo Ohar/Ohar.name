@@ -36,6 +36,7 @@ import {
   CR_30,
 } from "@/constants/dnd/dndCrList"
 import {
+  SIZE_HUGE,
   SIZE_MEDIUM,
   SIZE_LARGE,
 } from "@/constants/dnd/dndSizeList"
@@ -52,13 +53,19 @@ import {
 import {
   ALIGMENT_ANY,
   ALIGMENT_CE,
+  ALIGMENT_CG,
+  ALIGMENT_CN,
   ALIGMENT_LE,
   ALIGMENT_LG,
+  ALIGMENT_LN,
+  ALIGMENT_NE,
   ALIGMENT_NG,
+  ALIGMENT_N,
   ALIGMENT_NO,
   ALIGMENT_NOT_LAWFUL,
 } from '@/constants/dnd/dndAligmentList'
 import {
+  SPEED_CRAWL,
   SPEED_DIG,
   SPEED_FLY,
   SPEED_SWIM,
@@ -77,6 +84,7 @@ import {
   LANG_AURAN,
   LANG_COMMON,
   LANG_DEEP_SPEECH,
+  LANG_DRACONIC,
   LANG_ELVEN,
   LANG_INFERNAL,
   LANG_TELEPATHY,
@@ -107,6 +115,7 @@ import {
   SKILL_MEDICINE,
   SKILL_PERCEPTION,
   SKILL_RELIGION,
+  SKILL_STEALTH,
 } from '@/constants/dnd/dndSkillList'
 import {
   PC_CLASS_PRIEST,
@@ -159,7 +168,6 @@ import {
   CONDITION_STUNNED,
   CONDITION_UNCONSCIOUS,
 } from '@/constants/dnd/dndConditionList'
-import { ACTION_MELEE_SPELL_ATTACK } from './dndActionTypeList';
 
 const dndCreatureList = [
   {
@@ -1416,6 +1424,118 @@ const dndCreatureList = [
           count: 1,
           period: 'день',
         },
+      },
+    ],
+  },
+  {
+    name: 'Бехир',
+    nameEn: 'Behir',
+    description: `Змееподобный бехир ползает по полу и лазает по стенам, чтобы схватить свою добычу. Его электрическое дыхание может сжечь большинство существ, а более сильных противников он сжимает, обернувшись вокруг них кольцами, и съедает заживо. Внешне бехир похож на смесь чудовищной многоножки и крокодила. Его чешуйчатая шкура переливается от ультрамарина до тёмно-синего цвета, а на брюхе она голубая.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:22',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeType: 12,
+      cubeCount: 16,
+      cubeBonus: 64,
+    },
+    cr: CR_11,
+    speed: {
+      [SPEED_WALK]: 50,
+      [SPEED_CRAWL]: 40,
+    },
+    params: {
+      [PARAM_STR]: 23,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 12,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 6,
+      [SKILL_STEALTH]: 7,
+    },
+    immunityList: [
+      DAMAGE_LIGHTNING,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 90,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 16,
+      },
+    ],
+    languageList: [
+      LANG_DRACONIC,
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Бехир совершает две атаки: одну укусом, и одну сжиманием.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 10,
+          targetCount: 1,
+          damage: {
+            type: DAMAGE_PIERCING,
+            cubeType: 10,
+            cubeCount: 3,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: 'Сжимание',
+        description: `Цель становится схваченной (Сл высвобождения 16), если бехир пока не сжимает никакое существо. Пока цель схвачена, она опутана.`,
+        description2: `одно существо с размером не больше Большого`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 5,
+          targetCount: 1,
+          damage: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeType: 10,
+              cubeCount: 2,
+              cubeBonus: 6,
+            },
+            {
+              type: DAMAGE_SLASHING,
+              cubeType: 10,
+              cubeCount: 2,
+              cubeBonus: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Электрическое дыхание',
+        description: `Бехир выдыхает молнию длиной 20 футов и шириной 5 футов. Все существа в этой линии должны совершить спасбросок Ловкости со Сл 16, получая урон электричеством 66 (12к10) при провале, или половину этого урона при успехе.`,
+        retore: {
+          min: 5,
+          max: 6,
+        },
+      },
+      {
+        name: 'Проглатывание',
+        description: `Бехир совершает одну атаку укусом по существу с размером не больше Среднего, схваченному им. Если эта атака попадает, существо становится проглоченным и перестаёт быть схваченным. Будучи проглоченным, существо ослеплено и опутано, и обладает полным укрытием от атак и прочих эффектов, исходящих снаружи бехира, и получает урон кислотой 21 (6к6) в начале каждого хода бехира. У бехира может быть проглочено только одно существо одновременно.\n
+Если бехир получает за один ход 30 или больше урона от проглоченного существа, бехир должен в конце этого хода преуспеть в спасброске Телосложения со Сл 14, иначе отрыгнёт существо, которое падает ничком в пространстве в пределах 10 футов от бехира. Если бехир умирает, проглоченное существо перестаёт быть опутанным им, и может высвободиться из трупа, потратив 15 футов перемещения, падая при выходе ничком.`,
       },
     ],
   },

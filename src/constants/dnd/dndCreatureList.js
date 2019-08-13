@@ -39,6 +39,7 @@ import {
   SIZE_HUGE,
   SIZE_MEDIUM,
   SIZE_LARGE,
+  SIZE_TINY,
 } from "@/constants/dnd/dndSizeList"
 import {
   CREATURE_AARAKOCRA,
@@ -169,7 +170,11 @@ import {
   CONDITION_STUNNED,
   CONDITION_UNCONSCIOUS,
 } from '@/constants/dnd/dndConditionList'
-import { SIZE_TINY } from './dndSizeList';
+import {
+  TARGET_CREATURE,
+  TARGET_OBJECT,
+  TARGET_POINT,
+} from '@/constants/dnd/dndTargetList'
 
 const dndCreatureList = [
   {
@@ -216,7 +221,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 2,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
             cubeType: 4,
@@ -276,7 +281,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 3,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_SLASHING,
             cubeType: 6,
@@ -294,7 +299,7 @@ const dndCreatureList = [
             normal: 80,
             max: 320,
           },
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_PIERCING,
             cubeType: 8,
@@ -353,7 +358,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 2,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
             cubeType: 4,
@@ -438,7 +443,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 4,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_SLASHING,
             cubeType: 4,
@@ -459,7 +464,7 @@ const dndCreatureList = [
               max: 120,
             },
           },
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_PIERCING,
             cubeType: 6,
@@ -556,7 +561,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 9,
           range: 10,
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
             cubeType: 6,
@@ -571,7 +576,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 9,
           range: 10,
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
             cubeType: 6,
@@ -677,7 +682,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 5,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: [
             {
               type: DAMAGE_PIERCING,
@@ -814,7 +819,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 8,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: [
             {
               type: DAMAGE_BLUDGEONING,
@@ -973,7 +978,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 12,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: [
             {
               type: DAMAGE_SLASHING,
@@ -1134,7 +1139,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 12,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: [
             {
               type: DAMAGE_SLASHING,
@@ -1156,7 +1161,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 12,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: [
             {
               type: DAMAGE_SLASHING,
@@ -1181,7 +1186,7 @@ const dndCreatureList = [
             normal: 150,
             max: 600,
           },
-          targetCount: 1,
+          target: 1,
           damage: [
             {
               type: DAMAGE_PIERCING,
@@ -1289,7 +1294,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 5,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: [
             {
               type: DAMAGE_SLASHING,
@@ -1406,7 +1411,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_SPELL_ATTACK,
           bonus: 4,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_NECROTIC,
             cubeType: 6,
@@ -1492,7 +1497,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 10,
           range: 10,
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_PIERCING,
             cubeType: 10,
@@ -1504,12 +1509,19 @@ const dndCreatureList = [
       {
         name: 'Сжимание',
         description: `Цель становится схваченной (Сл высвобождения 16), если бехир пока не сжимает никакое существо. Пока цель схвачена, она опутана.`,
-        description2: `одно существо с размером не больше Большого`,
         attack: {
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 10,
           range: 5,
-          targetCount: 1,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              size: {
+                max: SIZE_LARGE,
+              },
+            },
+          },
           damage: [
             {
               type: DAMAGE_BLUDGEONING,
@@ -1631,7 +1643,7 @@ const dndCreatureList = [
           type: ACTION_MELEE_SPELL_ATTACK,
           bonus: 4,
           range: 5,
-          targetCount: 1,
+          target: 1,
           damage: {
             type: DAMAGE_ELECTRICITY,
             cubeType: 8,

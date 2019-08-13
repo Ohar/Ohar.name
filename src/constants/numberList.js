@@ -1,43 +1,59 @@
+import {
+  GENDER_MALE,
+  GENDER_FEMALE,
+  GENDER_MIDDLE,
+} from '@/constants/genderList'
+
 const numberList = [
   {
-    male: 'ноль',
-    female: 'ноль',
+    [GENDER_MALE]: 'ноль',
+    [GENDER_FEMALE]: 'ноль',
+    [GENDER_MIDDLE]: 'ноль',
   },
   {
-    male: 'один',
-    female: 'одна',
+    [GENDER_MALE]: 'один',
+    [GENDER_FEMALE]: 'одна',
+    [GENDER_MIDDLE]: 'одно',
   },
   {
-    male: 'два',
-    female: 'две',
+    [GENDER_MALE]: 'два',
+    [GENDER_FEMALE]: 'две',
+    [GENDER_MIDDLE]: 'два',
   },
   {
-    male: 'три',
-    female: 'три',
+    [GENDER_MALE]: 'три',
+    [GENDER_FEMALE]: 'три',
+    [GENDER_MIDDLE]: 'три',
   },
   {
-    male: 'четыре',
-    female: 'четыре',
+    [GENDER_MALE]: 'четыре',
+    [GENDER_FEMALE]: 'четыре',
+    [GENDER_MIDDLE]: 'четыре',
   },
   {
-    male: 'пять',
-    female: 'пять',
+    [GENDER_MALE]: 'пять',
+    [GENDER_FEMALE]: 'пять',
+    [GENDER_MIDDLE]: 'пять',
   },
   {
-    male: 'шесть',
-    female: 'шесть',
+    [GENDER_MALE]: 'шесть',
+    [GENDER_FEMALE]: 'шесть',
+    [GENDER_MIDDLE]: 'шесть',
   },
   {
-    male: 'семь',
-    female: 'семь',
+    [GENDER_MALE]: 'семь',
+    [GENDER_FEMALE]: 'семь',
+    [GENDER_MIDDLE]: 'семь',
   },
   {
-    male: 'восемь',
-    female: 'восемь',
+    [GENDER_MALE]: 'восемь',
+    [GENDER_FEMALE]: 'восемь',
+    [GENDER_MIDDLE]: 'восемь',
   },
   {
-    male: 'девять',
-    female: 'девять',
+    [GENDER_MALE]: 'девять',
+    [GENDER_FEMALE]: 'девять',
+    [GENDER_MIDDLE]: 'девять',
   },
 ]
 

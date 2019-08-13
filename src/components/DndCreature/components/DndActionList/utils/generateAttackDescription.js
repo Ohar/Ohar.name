@@ -1,13 +1,9 @@
-import proschet from 'proschet';
-
 import {dndActionTypeCollection} from '@/constants/dnd/dndActionTypeList'
-import numberList from '@/constants/numberList'
 
 import generateDamageText from './generateDamageText'
+import generateTargetLimitText from './generateTargetLimitText'
 import formatRangeText from './formatRangeText'
 import showDigitSign from './showDigitSign'
-
-const getGoalWord = proschet(['цель', 'цели', 'целей'])
 
 export default action => {
   if (action) {
@@ -15,14 +11,14 @@ export default action => {
       bonus,
       damage,
       range,
-      targetCount,
+      target,
       type,
     } = action
 
     const typeText = dndActionTypeCollection[type].name
     const dmgText = generateDamageText(damage)
     const bonusText = showDigitSign(bonus)
-    const targetText = `${numberList[targetCount].female} ${getGoalWord(targetCount)}`
+    const targetText = generateTargetLimitText(target)
     const rangeText = formatRangeText({type, range})
 
     return `

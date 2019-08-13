@@ -1,3 +1,4 @@
+import arrify from "arrify"
 import React from "react"
 
 import DndCreatureInfo from "./../DndCreatureInfo";
@@ -5,11 +6,7 @@ import DndCreatureInfo from "./../DndCreatureInfo";
 export default ({armor}) => (
   <DndCreatureInfo header='Класс доспеха'>
     {
-      (
-        Array.isArray(armor)
-          ? armor
-          : [armor]
-      )
+      arrify(armor)
         .map(
         ({ac, type = ''}) => type
           ? `${ac} (${type})`

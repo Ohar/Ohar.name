@@ -1,5 +1,6 @@
 import {
   ACTION_MELEE_WEAPON_ATTACK,
+  ACTION_MELEE_SPELL_ATTACK,
   ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
   ACTION_RANGE_WEAPON_ATTACK,
 } from '@/constants/dnd/dndActionTypeList'
@@ -9,6 +10,7 @@ const formatRange = ({normal, max}) => `дистанция ${normal} фт./${max
 
 export default ({type, range}) => {
   switch (type) {
+    case ACTION_MELEE_SPELL_ATTACK:
     case ACTION_MELEE_WEAPON_ATTACK:
       return formatMelee(range)
 

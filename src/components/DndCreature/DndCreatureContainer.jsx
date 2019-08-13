@@ -39,9 +39,11 @@ const DndCreatureContainer = (
     .filter(e => e)
     .join(' ')
 
+  const featureCount = featureList && featureList.length || 0
+  const actionCount = actionList && actionList.length || 0
+
   const showTwoColumns = legendaryPoints || (
-    (featureList && featureList.length > 1)
-    && (actionList && actionList.length > 2)
+    (featureCount + actionCount) >= 5
   )
 
   return (

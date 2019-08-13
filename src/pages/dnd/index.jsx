@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 
-import { faAngry, faDice, faMagic, faSkull, faUserTag } from '@fortawesome/free-solid-svg-icons'
+import { faAngry, faDice, faMagic, faSkull, faUserTag, faBookOpen } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '@/components/Layout'
 import Icon from '@/components/Icon'
@@ -39,10 +39,11 @@ const dndSubpageList = [
     title: 'Генератор разумных магических предметов',
     url: '/dnd/generator-sentient-items',
   },
-  // {
-  //   title: 'Каталог существ',
-  //   url: '/dnd/creature-catalog',
-  // },
+  {
+    icon: faBookOpen,
+    title: 'Каталог существ (в разработке)',
+    url: '/dnd/creature-catalog',
+  },
 ]
 
 const DndPage = () => (

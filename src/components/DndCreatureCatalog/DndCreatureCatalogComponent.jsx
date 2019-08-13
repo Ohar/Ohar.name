@@ -14,7 +14,7 @@ const DndCreatureCatalogComponent = (
   },
 ) => (
   <section className='DndCreatureCatalog'>
-    <PageTitle>Каталог существ</PageTitle>
+    <PageTitle>Каталог существ (в разработке)</PageTitle>
 
     <input
       className='DndCreatureCatalog_input'

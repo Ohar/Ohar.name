@@ -12,7 +12,11 @@ export default ({name, limit, cost, restore}) => {
       ? `стоит ${cost} ${getActionWord(cost)}`
       : '',
     restore
-      ? `перезарядка ${restore.from}–${restore.to}`
+      ? `перезарядка ${
+        restore.from === restore.to
+          ? restore.from
+          : `${restore.from}–${restore.to}`
+      }`
       : '',
   ].filter(e => e)
 

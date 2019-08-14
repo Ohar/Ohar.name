@@ -8,41 +8,45 @@ import {GENDER_MALE} from '@/constants/genderList'
 const getGoalWord = proschet(['цель', 'цели', 'целей'])
 
 export default target => {
-  const targetCount = typeof target === 'object'
-    ? target.count
-    : target
-  const numberWordObj = numberList[targetCount]
+  if (typeof target !== 'string') {
+    const targetCount = typeof target === 'object'
+      ? target.count
+      : target
+    const numberWordObj = numberList[targetCount]
 
-  let targetLimitText = ''
-  let targetNumberText = `${numberWordObj.female} ${getGoalWord(targetCount)}`
+    let targetLimitText = ''
+    let targetNumberText = `${numberWordObj.female} ${getGoalWord(targetCount)}`
 
-  if (target.limit) {
-    if (target.limit.type) {
-      const {
-        genderId,
-        name: {
-          single: {
-            nominative: singleWord,
-            genitive: dualWord,
+    if (target.limit) {
+      if (target.limit.type) {
+        const {
+          genderId,
+          name: {
+            single: {
+              nominative: singleWord,
+              genitive: dualWord,
+            },
+            plural: {
+              genitive: multipleWord,
+            },
           },
-          plural: {
-            genitive: multipleWord,
-          },
-        },
-      } = dndTargetCollection[target.limit.type]
+        } = dndTargetCollection[target.limit.type]
 
-      const getTargetTypeWord = proschet([singleWord, dualWord, multipleWord])
+        const getTargetTypeWord = proschet([singleWord, dualWord, multipleWord])
 
-      targetNumberText = `${numberWordObj[genderId]} ${getTargetTypeWord(target.count)}`
-    }
+        targetNumberText = `${numberWordObj[genderId]} ${getTargetTypeWord(target.count)}`
+      }
 
-    if (target.limit.size) {
-      if (target.limit.size.max) {
-        const sizeText = dndSizeCollection[target.limit.size.max].name.single[GENDER_MALE].genitive
-        targetLimitText = ` c размером не больше ${sizeText}`
+      if (target.limit.size) {
+        if (target.limit.size.max) {
+          const sizeText = dndSizeCollection[target.limit.size.max].name.single[GENDER_MALE].genitive
+          targetLimitText = ` c размером не больше ${sizeText}`
+        }
       }
     }
+
+    return `${targetNumberText}${targetLimitText}`
   }
 
-  return `${targetNumberText}${targetLimitText}`
+  return target
 }

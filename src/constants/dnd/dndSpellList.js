@@ -40,6 +40,7 @@ export const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
 export const SPELL_CONJURE_ELEMENTAL = 'conjure_elemental'
 export const SPELL_CONTROL_WEATHER = 'control_weather'
 export const SPELL_CREATE_FOOD_AND_WATER = 'create_food_and_water'
+export const SPELL_CREATE_OR_DESTROY_WATER = 'create_or_destroy_water'
 export const SPELL_CREATION = 'creation'
 export const SPELL_CURE_WOUNDS = 'cure_wounds'
 export const SPELL_DANCING_LIGHTS = 'dancing_lights'
@@ -73,6 +74,7 @@ export const SPELL_PHANTASMAL_KILLER = 'phantasmal_killer'
 export const SPELL_PLANE_SHIFT = 'plane_shift'
 export const SPELL_POLYMORPH = 'polymorph'
 export const SPELL_PRESTIDIGITATION = 'prestidigitation'
+export const SPELL_PURIFY_FOOD_AND_DRINK = 'purify_food_and_drink'
 export const SPELL_RAISE_DEAD = 'raise_dead'
 export const SPELL_RAY_OF_FROST = 'ray_of_frost'
 export const SPELL_RESSURECTION = 'ressurection'
@@ -88,6 +90,7 @@ export const SPELL_TONGUES = 'tongues'
 export const SPELL_WALL_OF_FIRE = 'wall_of_fire'
 export const SPELL_WALL_OF_STONE = 'wall_of_stone'
 export const SPELL_WATER_BREATHING = 'water_breathing'
+export const SPELL_WATER_WALK = 'water_walk'
 export const SPELL_WIND_WALK = 'wind_walk'
 
 const defaultCastTime = '1 действие'
@@ -1105,6 +1108,51 @@ const dndSpellList = [
     duration: 'вплоть до 1 минуты',
     source: 'PHB:147',
     classList: [PC_CLASS_DRUID, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_PURIFY_FOOD_AND_DRINK,
+    name: 'Очищение пищи и питья',
+    nameEn: 'Purify food and drink',
+    description: `Вся немагическая еда и питьё в пределах сферы с радиусом 5 фт. с центром на точке, выбранной вами в пределах дистанции, очищается и избавляется от ядов и болезней.`,
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION,
+    ritual: true,
+    range: 10,
+    componentList: [CAST_VERBAL, CAST_SOMATIC],
+    source: 'PHB:254',
+    classList: [PC_CLASS_PRIEST, PC_CLASS_PALADIN, PC_CLASS_DRUID],
+  },
+  {
+    id: SPELL_CREATE_OR_DESTROY_WATER,
+    name: 'Сотворение или уничтожение воды',
+    nameEn: 'Create or destroy water',
+    description: `Вы либо создаёте, либо уничтожаете воду.\n
+**Сотворение воды**. Вы создаёте до 10 галлонов (40 литров) чистой воды в пределах дистанции в открытом контейнере. В качестве альтернативы, вода выпадает дождём в кубе с длиной ребра 30 фт. в пределах дальности, туша открытое пламя.\n
+**Уничтожение воды**. Вы уничтожаете до 10 галлонов (40 литров) воды в открытом контейнере в пределах дистанции. В качестве альтернативы, вы уничтожаете туман в кубе с длиной ребра 30 фт. в пределах дистанции.\n
+На больших уровнях: Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, вы создаёте или уничтожаете 10 дополнительных галлонов (40 литров) воды, и длина ребра куба увеличивается на 5 фт. за каждый уровень ячейки выше первого.`,
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION,
+    range: 30,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'капля воды, если вода создаётся, или несколько песчинок, если вода уничтожается',
+    source: 'PHB:280',
+    classList: [PC_CLASS_PRIEST, PC_CLASS_DRUID],
+  },
+  {
+    id: SPELL_WATER_WALK,
+    name: 'Хождение по воде',
+    nameEn: 'Water walk',
+    description: `Это заклинание дарует способность перемещаться по жидкой поверхности — такой как вода, кислота, грязь, снег, зыбучий песок или лава — как если бы это была безвредная твёрдая поверхность (существа, идущие по жидкой лаве, всё равно получают урон от жара). До десяти согласных существ, видимых вами в пределах дистанции, получают эту же способность на время действия заклинания.\n
+Если вы делаете целью существо, погружённое в жидкость, заклинание поднимает его на поверхность со скоростью 60 фт. в раунд. `,
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION,
+    range: 30,
+    ritual: true,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'кусочек пробки',
+    duration: '1 час',
+    source: 'PHB:288',
+    classList: [PC_CLASS_PRIEST, PC_CLASS_RANGER, PC_CLASS_SORCERER, PC_CLASS_DRUID],
   },
 ].map(
   spell => ({

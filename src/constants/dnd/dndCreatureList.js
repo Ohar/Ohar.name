@@ -153,6 +153,7 @@ import {
   SPELL_COLOR_SPRAY,
   SPELL_COMMUNE,
   SPELL_COMPREHEND_LANGUAGES,
+  SPELL_CONJURE_ELEMENTAL,
   SPELL_CONTROL_WEATHER,
   SPELL_CURE_WOUNDS,
   SPELL_DANCING_LIGHTS,
@@ -178,7 +179,11 @@ import {
   SPELL_MINOR_ILLUSION,
   SPELL_MIRROR_IMAGE,
   SPELL_MISTY_STEP,
+  SPELL_MOVE_EARTH,
   SPELL_NONDETECTION,
+  SPELL_PASSWALL,
+  SPELL_PHANTASMAL_KILLER,
+  SPELL_PLANE_SHIFT,
   SPELL_POLYMORPH,
   SPELL_PRESTIDIGITATION,
   SPELL_RAISE_DEAD,
@@ -187,9 +192,12 @@ import {
   SPELL_SACRED_FLAME,
   SPELL_SANCTUARY,
   SPELL_SLEEP,
+  SPELL_STONE_SHAPE,
   SPELL_SUGGESTION,
   SPELL_TELEKINESIS,
   SPELL_THAUMATURGY,
+  SPELL_TONGUES,
+  SPELL_WALL_OF_STONE,
   SPELL_WATER_BREATHING,
 } from '@/constants/dnd/dndSpellList'
 import {
@@ -230,6 +238,7 @@ const CREATURE_BASILISK = 'basilisk'
 const CREATURE_BEHIR = 'behir'
 const CREATURE_CLOUD_GIANT = 'cloud_giant'
 const CREATURE_COMMONER = 'commoner'
+const CREATURE_DAO = 'dao'
 const CREATURE_DEVA = 'deva'
 const CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue'
 const CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green'
@@ -478,8 +487,7 @@ const dndCreatureRawList = [
     name: 'Ааракокра',
     nameEn: 'Aarakocra',
     id: CREATURE_AARAKOCRA,
-    description: `**Ааракокры** населяют Воющий Вихрь, бесконечный шторм могучих ветров и дождей, который окружает царство Аакуа в Стихийном Плане Воздуха. Осуществляя воздушное патрулирование, эти птицеподобные гуманоиды охраняют воздушные границы своего дома от захватчиков из Стихийного Плана Земли, своих заклятых врагов — горгулий.
-`,
+    description: `**Ааракокры** населяют Воющий Вихрь, бесконечный шторм могучих ветров и дождей, который окружает царство Аакуа в Стихийном Плане Воздуха. Осуществляя воздушное патрулирование, эти птицеподобные гуманоиды охраняют воздушные границы своего дома от захватчиков из Стихийного Плана Земли, своих заклятых врагов — горгулий.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
       CREATURE_TYPE_HUMANOID,
@@ -562,6 +570,7 @@ const dndCreatureRawList = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Аболет',
@@ -1527,6 +1536,7 @@ const dndCreatureRawList = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Бехир',
@@ -3252,6 +3262,7 @@ const dndCreatureRawList = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Водная аномалия',
@@ -3348,6 +3359,7 @@ const dndCreatureRawList = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Водянник',
@@ -3922,6 +3934,159 @@ const dndCreatureRawList = [
 Успешно спасшаяся цель получает иммунитет к песне этой гарпии на следующие 24 часа.`,
       },
     ],
+    isFemale: true,
+  },
+  {
+    name: 'Дао',
+    nameEn: 'Dao',
+    id: CREATURE_DAO,
+    description: `**Дао** — жадные и злобные гении со Стихийного Плана Земли. Они носят ювелирные украшения из драгоценных камней и редких металлов. Во время полёта нижняя часть их тел становится столбом вращающегося песка. Дао не испытывает счастья, если ему не завидуют другие дао.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:48',
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 15,
+      cubeType: 10,
+      cubeBonus: 105,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_DIG]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 23,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 24,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 14,
+    },
+    saveThrowCollection: {
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 5,
+      [PARAM_CHA]: 6,
+    },
+    immunityConditionList: [
+      CONDITION_PETRIFIED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_TERRAN,
+    ],
+    cr: CR_11,
+    featureList: [
+      {
+        name: 'Скольжение сквозь землю',
+        description: `Дао может перемещаться, копая, сквозь немагические и необработанные землю и камень. При этом дао не беспокоит материал, через который перемещается.`,
+      },
+      {
+        name: 'Элементальная гибель',
+        description: `Если дао умирает, его тело распадается на кристаллическую пыль, оставляя только снаряжение, которое дао носил и нёс.`,
+      },
+      {
+        name: 'Устойчивый',
+        description: `Дао совершает с преимуществом спасброски Силы и Ловкости против эффектов, сбивающих его с ног.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 14,
+      spellAttackBonus: 6,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_STONE_SHAPE,
+            SPELL_DETECT_EVIL_AND_GOOD,
+            SPELL_DETECT_MAGIC,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_MOVE_EARTH,
+            SPELL_PASSWALL,
+            SPELL_TONGUES,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_PHANTASMAL_KILLER,
+            SPELL_GASEOUS_FORM,
+            SPELL_WALL_OF_STONE,
+            SPELL_INVISIBILITY,
+            {
+              id: SPELL_CONJURE_ELEMENTAL,
+              comment: 'только земляной элементаль',
+            },
+            SPELL_PLANE_SHIFT,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дао совершает две атаки кулаком, либо две атаки молотом.`,
+      },
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: 'Молот',
+        description: `Если цель — существо с размером не больше Огромного, она должна преуспеть в проверке Силы со Сл 18, иначе будет сбита с ног.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 4,
+            cubeType: 6,
+            cubeBonus: 6,
+          },
+        },
+      },
+    ],
+    isFemale: true,
   },
 ]
 

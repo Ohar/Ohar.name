@@ -7,6 +7,7 @@ import DndCreatureAligment from "./components/DndCreatureAligment"
 import DndCreatureCr from "./components/DndCreatureCr"
 import DndCreatureDescription from "./components/DndCreatureDescription"
 import DndCreatureHp from "./components/DndCreatureHp"
+import DndCreatureSize from "./components/DndCreatureSize"
 import DndCreatureSource from "./components/DndCreatureSource"
 import DndCreatureSpeed from "./components/DndCreatureSpeed"
 import DndCreatureType from "./components/DndCreatureType"
@@ -34,6 +35,7 @@ const DndCreatureComponent = (
     creatureTypeIdList,
     description,
     featureList,
+    genderId,
     hp,
     immunityList,
     immunityConditionList,
@@ -48,7 +50,7 @@ const DndCreatureComponent = (
     reactionList,
     saveThrowCollection,
     senseList,
-    size,
+    sizeType,
     skillCollection,
     source,
     speed,
@@ -61,9 +63,14 @@ const DndCreatureComponent = (
     </header>
 
     <p className='DndCreature_info'>
-      {size}
-      <DndCreatureType list={creatureTypeIdList}/>,
-      <DndCreatureAligment aligmentId={aligmentId}/>
+      <DndCreatureSize
+        genderId={genderId}
+        sizeType={sizeType}
+      /> <DndCreatureType
+      list={creatureTypeIdList}
+    />, <DndCreatureAligment
+      aligmentId={aligmentId}
+    />
     </p>
 
     <section className='DndCreature_infoBlock'>
@@ -118,6 +125,7 @@ DndCreatureComponent.propTypes = {
   creatureTypeIdList: PropTypes.array.isRequired,
   description: PropTypes.string,
   featureList: PropTypes.array,
+  genderId: PropTypes.string.isRequired,
   hp: PropTypes.object.isRequired,
   immunityList: PropTypes.array,
   isFemale: PropTypes.bool,
@@ -130,7 +138,7 @@ DndCreatureComponent.propTypes = {
   reactionList: PropTypes.array,
   saveThrowCollection: PropTypes.object,
   senseList: PropTypes.array,
-  size: PropTypes.string.isRequired,
+  sizeType: PropTypes.string.isRequired,
   skillCollection: PropTypes.object,
   source: PropTypes.string.isRequired,
   speed: PropTypes.object.isRequired,

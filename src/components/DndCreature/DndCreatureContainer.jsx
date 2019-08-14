@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
-import {dndSizeCollection} from "@/constants/dnd/dndSizeList"
 
 import calculateColumnCount from "./utils/calculateColumnCount"
 
@@ -16,14 +15,11 @@ const DndCreatureContainer = (
       featureList,
       legendaryActionList,
       legendaryPoints,
-      sizeType,
       ...rest,
     },
   },
 ) => {
   const {genderId} = dndCreatureTypeCollection[creatureTypeIdList[0]]
-  const size = dndSizeCollection[sizeType].name.single[genderId].nominative
-
   const columnCount = calculateColumnCount({actionList, featureList, legendaryPoints, legendaryActionList})
 
   return (
@@ -31,10 +27,10 @@ const DndCreatureContainer = (
       actionList={actionList}
       creatureTypeIdList={creatureTypeIdList}
       featureList={featureList}
+      genderId={genderId}
       legendaryActionList={legendaryActionList}
       legendaryPoints={legendaryPoints}
       columnCount={columnCount}
-      size={size}
       {...rest}
     />
   )

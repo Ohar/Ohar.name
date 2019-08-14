@@ -155,6 +155,8 @@ import {
   SPELL_COMPREHEND_LANGUAGES,
   SPELL_CONJURE_ELEMENTAL,
   SPELL_CONTROL_WEATHER,
+  SPELL_CREATE_FOOD_AND_WATER,
+  SPELL_CREATION,
   SPELL_CURE_WOUNDS,
   SPELL_DANCING_LIGHTS,
   SPELL_DETECT_EVIL_AND_GOOD,
@@ -196,9 +198,11 @@ import {
   SPELL_SUGGESTION,
   SPELL_TELEKINESIS,
   SPELL_THAUMATURGY,
+  SPELL_THUNDERWAVE,
   SPELL_TONGUES,
   SPELL_WALL_OF_STONE,
   SPELL_WATER_BREATHING,
+  SPELL_WIND_WALK,
 } from '@/constants/dnd/dndSpellList'
 import {
   CAST_MATERIAL,
@@ -240,6 +244,7 @@ const CREATURE_CLOUD_GIANT = 'cloud_giant'
 const CREATURE_COMMONER = 'commoner'
 const CREATURE_DAO = 'dao'
 const CREATURE_DEVA = 'deva'
+const CREATURE_DJINNI = 'djinni'
 const CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue'
 const CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green'
 const CREATURE_FAERIE_DRAGON_LIGHT_BLUE = 'faerie_dragon_light_blue'
@@ -4087,6 +4092,152 @@ const dndCreatureRawList = [
       },
     ],
     isFemale: true,
+  },
+  {
+    name: 'Джинн',
+    nameEn: 'Djinni',
+    id: CREATURE_DJINNI,
+    description: `Гордые, эмоциональные гении со Стихийного Плана Воздуха. **Джинны** — это привлекательные, хорошо сложённые, высокие гуманоиды с синей кожей и тёмными глазами. Они одеваются в невесомые мерцающие шелка, которые не только удобны, но и хорошо подчёркивают их мускулатуру.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_CG,
+    source: 'MM:49',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 14,
+      cubeType: 10,
+      cubeBonus: 84,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 90,
+    },
+    params: {
+      [PARAM_STR]: 21,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 22,
+      [PARAM_INT]: 15,
+      [PARAM_WIT]: 16,
+      [PARAM_CHA]: 20,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 6,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 9,
+    },
+    immunityList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ELECTRICITY,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_AURAN,
+    ],
+    cr: CR_11,
+    featureList: [
+      {
+        name: 'Элементальная гибель',
+        description: `Если джинн умирает, его тело распадается на тёплый ветерок, оставляя только снаряжение, которое джинн носил и нёс.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 17,
+      spellAttackBonus: 9,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_THUNDERWAVE,
+            SPELL_DETECT_EVIL_AND_GOOD,
+            SPELL_DETECT_MAGIC,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            {
+              id: SPELL_CREATE_FOOD_AND_WATER,
+              comment: 'может создавать вино вместо воды',
+            },
+            SPELL_WIND_WALK,
+            SPELL_TONGUES,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_GASEOUS_FORM,
+            SPELL_INVISIBILITY,
+            SPELL_MAJOR_IMAGE,
+            {
+              id: SPELL_CONJURE_ELEMENTAL,
+              comment: 'только воздушный элементаль',
+            },
+            SPELL_CREATION,
+            SPELL_PLANE_SHIFT,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Джинн совершает три атаки скимитаром.`,
+      },
+      {
+        name: 'Скимитар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 5,
+            },
+            {
+              typeList: [
+                DAMAGE_THUNDER,
+                DAMAGE_ELECTRICITY,
+              ],
+              cubeCount: 1,
+              cubeType: 6,
+              comment: 'на выбор джинна',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Создание смерча',
+        description: `В точке, которую джинн видит в пределах 120 футов от себя, магическим образом появляется смерч в виде цилиндра с радиусом 5 футов и высотой 30 футов. Смерч существует, пока джинн поддерживает концентрацию (как при концентрации на заклинании). Все существа кроме джинна, входящие в смерч, должны преуспеть в спасброске Силы со Сл 18, иначе станут опутанными им. Джинн может действием перемещать смерч на расстояние до 60 футов, и существа, опутанные смерчем, перемещаются вместе с ним. Смерч исчезает, если джинн перестаёт его видеть\n
+Существо может действием освободить существо, опутанное смерчем, в том числе и себя, преуспев в проверке Силы со Сл 18. Если проверка успешна, существо перестаёт быть опутанным и перемещается в ближайшее пространство за пределами смерча.`,
+      },
+    ],
   },
 ]
 

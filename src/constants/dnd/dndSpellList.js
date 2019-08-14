@@ -39,6 +39,8 @@ export const SPELL_COMMUNE = 'commune'
 export const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
 export const SPELL_CONJURE_ELEMENTAL = 'conjure_elemental'
 export const SPELL_CONTROL_WEATHER = 'control_weather'
+export const SPELL_CREATE_FOOD_AND_WATER = 'create_food_and_water'
+export const SPELL_CREATION = 'creation'
 export const SPELL_CURE_WOUNDS = 'cure_wounds'
 export const SPELL_DANCING_LIGHTS = 'dancing_lights'
 export const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
@@ -80,9 +82,11 @@ export const SPELL_STONE_SHAPE = 'stone_shape'
 export const SPELL_SUGGESTION = 'suggestion'
 export const SPELL_TELEKINESIS = 'telekinesis'
 export const SPELL_THAUMATURGY = 'thaumaturgy'
+export const SPELL_THUNDERWAVE = 'thunderwave'
 export const SPELL_TONGUES = 'tongues'
 export const SPELL_WALL_OF_STONE = 'wall_of_stone'
 export const SPELL_WATER_BREATHING = 'water_breathing'
+export const SPELL_WIND_WALK = 'wind_walk'
 
 const defaultCastTime = '1 действие'
 const defaultDuration = 'мгновенная'
@@ -996,6 +1000,74 @@ const dndSpellList = [
     materialText: 'раздвоенный металлический прут, стоящий как минимум 250 зм, настроенный на конкретный план существования',
     source: 'PHB:287',
     classList: [PC_CLASS_SORCERER, PC_CLASS_PRIEST, PC_CLASS_WARLOCK, PC_CLASS_WIZARD, PC_CLASS_DRUID],
+  },
+  {
+    id: SPELL_THUNDERWAVE,
+    name: 'Волна грома',
+    nameEn: 'Thunderwave',
+    description: `От вас исходит волна громовой силы. Все существа в кубе с длиной ребра 15 фт., исходящего от вас, должны совершить спасбросок Телосложения. При провале существо получает урон звуком 2к8 и толкается на 10 фт. от вас. При успехе существо получает половину урона и не толкается.\n
+Кроме того, незакрепленные предметы, оказавшиеся полностью в области эффекта, автоматически толкаются на 10 фт. от вас эффектом заклинания, и заклинание издает громовой рокот, слышимый на расстоянии 300 фт.\n
+На больших уровнях: Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, урон увеличивается на 1к8 за каждый уровень ячейки выше первого.`,
+    lvl: 1,
+    magicSchool: MAGIC_EVOCATION,
+    range: 'На себя (15-фт. куб)',
+    componentList: [CAST_VERBAL, CAST_SOMATIC],
+    source: 'PHB:216',
+    classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_MONK, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
+  },
+  {
+    id: SPELL_CREATE_FOOD_AND_WATER,
+    name: 'Сотворение пищи и воды',
+    nameEn: 'Create food and water',
+    description: `Вы создаёте 45 фунтов еды и 30 галлонов (100 литров) воды на земле или в контейнере в пределах дистанции, которых достаточно для питания пятнадцати гуманоидов или пятерых скакунов на 24 часа. Еда безвкусная, но сытная, и портится, если её не съесть за 24 часа. Вода чистая, и она не портится.`,
+    lvl: 3,
+    magicSchool: MAGIC_CONJURATION,
+    range: 30,
+    componentList: [CAST_VERBAL, CAST_SOMATIC],
+    source: 'PHB:280',
+    classList: [PC_CLASS_PRIEST, PC_CLASS_PALADIN],
+  },
+  {
+    id: SPELL_WIND_WALK,
+    name: 'Хождение по ветру',
+    nameEn: 'Wind walk',
+    description: `Вы и до десяти согласных существ, видимых вами в пределах дистанции, на время длительности заклинания принимаете газообразную форму, становясь лёгкими облачками. Находясь в форме облака, существо получает скорость полёта 300 фт. и сопротивление к урону от немагического оружия. Единственное действие, которое существо может совершать в этой форме, это Рывок или возвращение в естественную форму. Возврат занимает 1 минуту, во время которой существо недееспособно и не может перемещаться. Пока заклинание активно, существо может вернуться в форму облака, для чего снова требуется преображение в течение 1 минуты.\n
+Если существо находится в форме облака и летит, когда оканчивается эффект, существо в течение 1 минуты снижается на 60 фт. в раунд, пока не приземлится безопасно. Если через 1 минуту оно не сможет приземлиться, оно падает на оставшуюся дистанцию.`,
+    lvl: 6,
+    magicSchool: MAGIC_TRANSMUTATION,
+    castTime: '1 минута',
+    range: 30,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'огонь и святая вода',
+    source: 'PHB:288',
+    classList: [PC_CLASS_DRUID],
+  },
+  {
+    id: SPELL_CREATION,
+    name: 'Сотворение',
+    nameEn: 'Creation',
+    description: `Вы зачерпываете теневую материю в Царстве Теней и создаёте в пределах дистанции неживой предмет из растительной материи: ткань, верёвку, дерево, или что-то подобное. Вы также можете этим заклинанием создавать минеральную материю, такую как камни, кристаллы и металлы. Создаваемый предмет должен помещаться в куб с длиной ребра 5 фт., и должен иметь форму и материю, которые вы раньше видели.\n
+Длительность зависит от создаваемого материала. Если предмет составлен из нескольких материалов, используется самая короткая длительность.\n
+
+| Материал             | Длительность |
+|----------------------|--------------|
+| Драгоценные камни    | 10 минут     |
+| Адамантин или мифрил | 1 минута     |
+| Растительная материя | 1 день       |
+| Камень или кристалл  | 12 часов     |
+| Драгоценные металлы  | 1 час        |
+
+Использование материи, созданной этим заклинанием, в качестве материального компонента для другого заклинания, вызывает провал того заклинания.
+На больших уровнях: Если вы накладываете это заклинание, используя ячейку 6 уровня или выше, длина ребра куба увеличивается на 5 фт. за каждый уровень ячейки выше пятого. `,
+    lvl: 5,
+    magicSchool: MAGIC_ILLUSION,
+    castTime: '1 минута',
+    range: 30,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'крошечный кусочек материи того же вида, из которого вы планируете создать предмет',
+    duration: 'Особая',
+    source: 'PHB:280',
+    classList: [PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
 ].map(
   spell => ({

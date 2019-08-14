@@ -84,6 +84,7 @@ import {
 } from '@/constants/dnd/dndActionTypeList'
 import {
   LANG_AARAKOCRA,
+  LANG_ABYSSAL,
   LANG_ALL,
   LANG_ALL_KNOWN_AT_LIFE,
   LANG_ANY_ONE,
@@ -3573,6 +3574,117 @@ const dndCreatureList = [
             cubeCount: 3,
             cubeType: 6,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Водянник',
+    nameEn: 'Merrow',
+    description: `Водянники часто посещают прибрежные воды, охотясь на рыбаков, мерфолков и любых других съедобных существ, которые встретятся им на пути. Эти дикие чудовища хватают и пожирают неосторожную жертву, утягивая трупы в свои подводные гроты для пропитания.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:42',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 10,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 8,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 9,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_AQUAN,
+      LANG_ABYSSAL,
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Амфибия',
+        description: `Водянник может дышать и воздухом и под водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Водянник совершает две атаки: одну укусом, и одну либо когтями, либо гарпуном.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Гарпун',
+        description: `Если цель — существо с размером не больше Огромного, она должна преуспеть в состязании Силы с водянником, иначе её подтянет на 20 футов в сторону водянника.`,
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 6,
+          range: {
+            melee: 5,
+            range: {
+              normal: 20,
+              max: 60,
+            },
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
           },
         },
       },

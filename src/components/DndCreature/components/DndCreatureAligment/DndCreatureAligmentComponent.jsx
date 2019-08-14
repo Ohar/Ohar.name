@@ -23,11 +23,14 @@ export default ({aligmentId}) => {
     }
   )
 
-  const aligment = [
-    textList.slice(0, textList.length - 1).join(', '),
-    textList.slice(textList.length - 1),
-  ]
-    .join(' или ')
+  const len = textList.length
+  const aligment = len > 1
+    ? [
+      textList.slice(0, len - 1).join(', '),
+      textList.slice(len - 1),
+    ]
+      .join(' или ')
+    : textList[0]
 
 
   return <span>{aligment}</span>

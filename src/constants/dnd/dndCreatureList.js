@@ -147,11 +147,15 @@ import {
   SPELL_CONTROL_WEATHER,
   SPELL_CURE_WOUNDS,
   SPELL_DETECT_EVIL_AND_GOOD,
+  SPELL_DETECT_MAGIC,
   SPELL_DETECT_THOUGHTS,
   SPELL_DISPEL_EVIL_AND_GOOD,
   SPELL_DOMINATE_PERSON,
+  SPELL_FEATHER_FALL,
   SPELL_FLAME_STRIKE,
+  SPELL_FLY,
   SPELL_FOG_CLOUD,
+  SPELL_GASEOUS_FORM,
   SPELL_GREATER_INVISIBILITY,
   SPELL_GUST_OF_WIND,
   SPELL_INSECT_PLAGUE,
@@ -159,6 +163,7 @@ import {
   SPELL_LIGHT,
   SPELL_MAGE_HAND,
   SPELL_MIRROR_IMAGE,
+  SPELL_MISTY_STEP,
   SPELL_NONDETECTION,
   SPELL_PRESTIDIGITATION,
   SPELL_RAISE_DEAD,
@@ -167,6 +172,7 @@ import {
   SPELL_SACRED_FLAME,
   SPELL_SANCTUARY,
   SPELL_SLEEP,
+  SPELL_TELEKINESIS,
   SPELL_THAUMATURGY,
 } from '@/constants/dnd/dndSpellList'
 import {
@@ -2813,6 +2819,138 @@ const dndCreatureList = [
             cubeType: 10,
             cubeCount: 4,
             cubeBonus: 6,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Облачный великан',
+    nameEn: 'Cloud Giant',
+    description: `Облачные великаны живут расточительной жизнью высоко над землёй, нисколько не заботясь об участи других рас кроме как ради развлечения. Они мускулистые, кожа у них светлая, а волосы серебряного или голубого цвета.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_GIANT,
+    ],
+    aligmentId: ALIGMENT_NG, //TODO
+    source: 'MM:37',
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeType: 12,
+      cubeCount: 16,
+      cubeBonus: 96,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 27,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 22,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 16,
+      [PARAM_CHA]: 16,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 10,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 7,
+      [SKILL_INSIGHT]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 17,
+      },
+    ],
+    languageList: [
+      LANG_GIANT,
+      LANG_COMMON,
+    ],
+    cr: CR_9,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Великан совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_MAGIC,
+            SPELL_LIGHT,
+            SPELL_FOG_CLOUD,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_FEATHER_FALL,
+            SPELL_FLY,
+            SPELL_TELEKINESIS,
+            SPELL_MISTY_STEP,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_CONTROL_WEATHER,
+            SPELL_GASEOUS_FORM,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Великан совершает две атаки моргенштерном.`,
+      },
+      {
+        name: 'Моргенштерн',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 12,
+          range: 10,
+          target: 1,
+          damage: {
+            type: DAMAGE_PIERCING,
+            cubeType: 8,
+            cubeCount: 3,
+            cubeBonus: 8,
+          },
+        },
+      },
+      {
+        name: 'Камень',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 12,
+          range: {
+            normal: 60,
+            max: 240,
+          },
+          target: 1,
+          damage: {
+            type: DAMAGE_BLUDGEONING,
+            cubeType: 10,
+            cubeCount: 4,
+            cubeBonus: 8,
           },
         },
       },

@@ -2956,6 +2956,98 @@ const dndCreatureList = [
       },
     ],
   },
+  {
+    name: 'Огненный великан',
+    nameEn: 'Fire Giant',
+    description: `Умелые ремесленники и организованные бойцы, **огненные великаны** обитают среди вулканов, потоков лавы и скалистых гор. Это безжалостные милитаристские громилы, чьё мастерство в обработке металлов поистине легендарно.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_GIANT,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:37',
+    armor: {
+      ac: 18,
+      type: 'латный доспех',
+    },
+    hp: {
+      cubeType: 12,
+      cubeCount: 13,
+      cubeBonus: 78,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 25,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 23,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 13,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 3,
+      [PARAM_CON]: 10,
+      [PARAM_CHA]: 5,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 11,
+      [SKILL_PERCEPTION]: 6,
+    },
+    immunityList: [
+      DAMAGE_FIRE,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 16,
+      },
+    ],
+    languageList: [
+      LANG_GIANT,
+    ],
+    cr: CR_9,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Великан совершает две атаки двуручным мечом`,
+      },
+      {
+        name: 'Двуручный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 11,
+          range: 10,
+          target: 1,
+          damage: {
+            type: DAMAGE_SLASHING,
+            cubeType: 6,
+            cubeCount: 6,
+            cubeBonus: 7,
+          },
+        },
+      },
+      {
+        name: 'Камень',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 11,
+          range: {
+            normal: 60,
+            max: 240,
+          },
+          target: 1,
+          damage: {
+            type: DAMAGE_BLUDGEONING,
+            cubeType: 10,
+            cubeCount: 4,
+            cubeBonus: 7,
+          },
+        },
+      },
+    ],
+  },
 ]
   .sort(
     ({name: A}, {name: B}) => A > B

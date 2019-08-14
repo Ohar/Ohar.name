@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import classNames from "classnames";
 
 import DndActionList from "./components/DndActionList"
 import DndCreatureAc from "./components/DndCreatureAc"
@@ -10,6 +9,7 @@ import DndCreatureDescription from "./components/DndCreatureDescription"
 import DndCreatureHp from "./components/DndCreatureHp"
 import DndCreatureSource from "./components/DndCreatureSource"
 import DndCreatureSpeed from "./components/DndCreatureSpeed"
+import DndCreatureType from "./components/DndCreatureType"
 import DndFeatureList from "./components/DndFeatureList"
 import DndImmunityList from "./components/DndImmunityList"
 import DndImmunityConditionList from "./components/DndImmunityConditionList"
@@ -31,7 +31,7 @@ const DndCreatureComponent = (
     armor,
     columnCount,
     cr,
-    creatureType,
+    creatureTypeIdList,
     description,
     featureList,
     hp,
@@ -61,7 +61,8 @@ const DndCreatureComponent = (
     </header>
 
     <p className='DndCreature_info'>
-      {size} {creatureType},
+      {size}
+      <DndCreatureType list={creatureTypeIdList}/>,
       <DndCreatureAligment aligmentId={aligmentId}/>
     </p>
 
@@ -114,7 +115,7 @@ DndCreatureComponent.propTypes = {
   ]).isRequired,
   columnCount: PropTypes.number,
   cr: PropTypes.string.isRequired,
-  creatureType: PropTypes.string.isRequired,
+  creatureTypeIdList: PropTypes.array.isRequired,
   description: PropTypes.string,
   featureList: PropTypes.array,
   hp: PropTypes.object.isRequired,

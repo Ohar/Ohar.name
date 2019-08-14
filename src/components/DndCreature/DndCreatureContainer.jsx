@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
 import {dndSizeCollection} from "@/constants/dnd/dndSizeList"
 
-import getCreatureTypeName from "./utils/getCreatureTypeName"
 import calculateColumnCount from "./utils/calculateColumnCount"
 
 import DndCreatureComponent from "./DndCreatureComponent"
@@ -24,26 +23,13 @@ const DndCreatureContainer = (
 ) => {
   const {genderId} = dndCreatureTypeCollection[creatureTypeIdList[0]]
   const size = dndSizeCollection[sizeType].name.single[genderId].nominative
-  const creatureType = [
-    getCreatureTypeName(creatureTypeIdList[0]),
-    creatureTypeIdList.length > 1
-      ? creatureTypeIdList
-        .slice(1)
-        .map(getCreatureTypeName)
-        .join(', ')
-        .replace(/^/, '(')
-        .replace(/$/, ')')
-      : ''
-  ]
-    .filter(e => e)
-    .join(' ')
 
   const columnCount = calculateColumnCount({actionList, featureList, legendaryPoints, legendaryActionList})
 
   return (
     <DndCreatureComponent
       actionList={actionList}
-      creatureType={creatureType}
+      creatureTypeIdList={creatureTypeIdList}
       featureList={featureList}
       legendaryActionList={legendaryActionList}
       legendaryPoints={legendaryPoints}

@@ -47,6 +47,7 @@ import {
   CREATURE_ANY_RACE,
   CREATURE_CELESTIAL,
   CREATURE_FIEND,
+  CREATURE_GIANT,
   CREATURE_HUMANOID,
   CREATURE_MONSTER,
   CREATURE_SHAPESHIFTER,
@@ -89,6 +90,7 @@ import {
   LANG_DEEP_SPEECH,
   LANG_DRACONIC,
   LANG_ELVEN,
+  LANG_GIANT,
   LANG_INFERNAL,
   LANG_TELEPATHY,
   LANG_UMBER_HULK,
@@ -114,6 +116,7 @@ import {
   SENSE_VIBRATION_SENSE,
 } from '@/constants/dnd/dndSenseList'
 import {
+  SKILL_ATHLETICS,
   SKILL_HISTORY,
   SKILL_INSIGHT,
   SKILL_MEDICINE,
@@ -525,14 +528,14 @@ const dndCreatureList = [
       [PARAM_WIT]: 15,
       [PARAM_CHA]: 18,
     },
-    skillCollection: {
-      [SKILL_PERCEPTION]: 10,
-      [SKILL_HISTORY]: 12,
-    },
     saveThrowCollection: {
       [PARAM_CON]: 6,
       [PARAM_INT]: 8,
       [PARAM_WIT]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 10,
+      [SKILL_HISTORY]: 12,
     },
     senseList: [
       {
@@ -2617,6 +2620,112 @@ const dndCreatureList = [
             },
           ],
         },
+      },
+    ],
+  },
+  {
+    name: 'Каменный великан',
+    nameEn: 'Stone Giant',
+    description: `Каменные великаны — затворники, тихие и мирные, пока их не беспокоят. Их гранитно-серая кожа, измождённые черты лица и чёрные, запавшие глаза придают каменным великанам суровое выражение. Они любят уединение, скрывая свои жизни и искусство от мира. `,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_GIANT,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:36',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeType: 12,
+      cubeCount: 11,
+      cubeBonus: 55,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 23,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 9,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 5,
+      [PARAM_CON]: 8,
+      [PARAM_WIT]: 4,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 12,
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_GIANT,
+    ],
+    cr: CR_7,
+    featureList: [
+      {
+        name: 'Каменный камуфляж',
+        description: `Великан совершает с преимуществом проверки Ловкости (Скрытность), когда пытается спрятаться на каменистой местности.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Великан совершает две атаки палицей.`,
+      },
+      {
+        name: 'Палица',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 15,
+          target: 1,
+          damage: {
+            type: DAMAGE_BLUDGEONING,
+            cubeType: 8,
+            cubeCount: 3,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: 'Камень',
+        description: `Если цель — существо, она должны преуспеть в спасброске Телосложения со Сл 17, иначе будет сбита с ног.`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 9,
+          range: {
+            normal: 60,
+            max: 240,
+          },
+          target: 1,
+          damage: {
+            type: DAMAGE_BLUDGEONING,
+            cubeType: 10,
+            cubeCount: 4,
+            cubeBonus: 6,
+          },
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Ловля камней',
+        description: `Если в великана метнут камень или подобный предмет, великан может, если совершит успешный спасбросок Ловкости со Сл 10, поймать снаряд и не получить от него дробящий урон.`,
       },
     ],
   },

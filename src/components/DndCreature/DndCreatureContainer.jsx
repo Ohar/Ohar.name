@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
 import {dndSizeCollection} from "@/constants/dnd/dndSizeList"
 
@@ -14,7 +13,6 @@ const DndCreatureContainer = (
   {
     creature: {
       actionList,
-      aligmentId,
       creatureTypeIdList,
       featureList,
       legendaryActionList,
@@ -26,7 +24,6 @@ const DndCreatureContainer = (
 ) => {
   const {genderId} = dndCreatureTypeCollection[creatureTypeIdList[0]]
   const size = dndSizeCollection[sizeType].name.single[genderId].nominative
-  const {name: {nominative: aligment}} = dndAligmentCollection[aligmentId]
   const creatureType = [
     getCreatureTypeName(creatureTypeIdList[0]),
     creatureTypeIdList.length > 1
@@ -46,7 +43,6 @@ const DndCreatureContainer = (
   return (
     <DndCreatureComponent
       actionList={actionList}
-      aligment={aligment}
       creatureType={creatureType}
       featureList={featureList}
       legendaryActionList={legendaryActionList}

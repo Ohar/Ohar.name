@@ -4,6 +4,7 @@ import classNames from "classnames";
 
 import DndActionList from "./components/DndActionList"
 import DndCreatureAc from "./components/DndCreatureAc"
+import DndCreatureAligment from "./components/DndCreatureAligment"
 import DndCreatureCr from "./components/DndCreatureCr"
 import DndCreatureDescription from "./components/DndCreatureDescription"
 import DndCreatureHp from "./components/DndCreatureHp"
@@ -26,7 +27,7 @@ import "./DndCreatureStyles.css"
 const DndCreatureComponent = (
   {
     actionList,
-    aligment,
+    aligmentId,
     armor,
     columnCount,
     cr,
@@ -60,7 +61,8 @@ const DndCreatureComponent = (
     </header>
 
     <p className='DndCreature_info'>
-      {size} {creatureType}, {aligment}
+      {size} {creatureType},
+      <DndCreatureAligment aligmentId={aligmentId}/>
     </p>
 
     <section className='DndCreature_infoBlock'>
@@ -105,7 +107,7 @@ const DndCreatureComponent = (
 
 DndCreatureComponent.propTypes = {
   actionList: PropTypes.array,
-  aligment: PropTypes.string.isRequired,
+  aligmentId: PropTypes.string.isRequired,
   armor: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.object,

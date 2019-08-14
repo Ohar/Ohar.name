@@ -2729,7 +2729,11 @@ const dndCreatureList = [
       },
     ],
   },
-].map(
+]
+  .sort(
+    ({name: A}, {name: B}) => A > B
+  )
+  .map(
   creature => ({
     ...creature,
     id: creature.nameEn,

@@ -96,6 +96,7 @@ import {
   LANG_ELVEN,
   LANG_GIANT,
   LANG_INFERNAL,
+  LANG_SYLVAN,
   LANG_TELEPATHY,
   LANG_UMBER_HULK,
 } from '@/constants/dnd/dndLanguageList'
@@ -3690,6 +3691,125 @@ const dndCreatureList = [
       },
     ],
   },
+  {
+    name: 'Волшебный дракончик',
+    nameEn: 'Faerie dragon',
+    description: `**Волшебный дракончик** — дракон размером с кошку с крыльями бабочки. У него острые зубы, а восторг он выражает подёргиванием хвоста. Его игривое настроение исчезает только если на него напасть.`,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_DRAGON,
+    ],
+    aligmentId: ALIGMENT_CG,
+    source: 'MM:43',
+    armor: 15,
+    hp: {
+      cubeCount: 4,
+      cubeType: 4,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 3,
+      [PARAM_DEX]: 20,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 16,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_ARCANA]: 4,
+      [SKILL_STEALTH]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_DRACONIC,
+      LANG_SYLVAN,
+    ],
+    cr: CR_1, // TODO
+    featureList: [
+      {
+        name: 'Превосходная невидимость',
+        description: `Дракон может бонусным действием магическим образом стать невидимым, пока концентрируется (как при концентрации на заклинании). Всё снаряжение, которое дракон несёт или носит, становится невидимым вместе с ним.`,
+      },
+      {
+        name: 'Ограниченная телепатия',
+        description: `При помощи телепатии дракон может магическим образом общаться со всеми другими волшебными дракончиками в пределах 60 футов.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Дракон совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 13,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [ // TODO
+            SPELL_MAGE_HAND,
+            // SPELL_MINOR_ILLUSION,
+            // SPELL_DANCING_LIGHTS,
+            // SPELL_COLOR_SPRAY,
+            SPELL_MIRROR_IMAGE,
+            // SPELL_SUGGESTION,
+            // SPELL_MAJOR_IMAGE,
+            // SPELL_HALLUCINATORY_TERRAIN,
+            // SPELL_POLYMORPH,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Благодушное дыхание',
+        description: `Дракон выдыхает облако газа, вызывающего эйфорию, на одно существо, находящееся в пределах 5 футов от него. Цель должна преуспеть в спасброске Мудрости со Сл 11, иначе в течение 1 минуты не сможет совершать реакции, и в начале каждого своего хода должна будет бросать к6, чтобы определить своё поведение в этом ходу:
+* **1–4**. Цель не совершает ни действия, ни бонусные действия, и всё своё перемещение тратит на перемещение в случайным образом выбранном направлении.
+* **5–6**. Цель не перемещается, и единственное, что может делать в этом ходу, это совершение спасброска Мудрости со Сл 11, оканчивая эффект на себе при успехе.`,
+        restore: {
+          from: 5,
+          to: 6,
+        },
+      },
+    ],
+  },
 ]
   .sort(
     ({name: A}, {name: B}) => A > B
@@ -3697,7 +3817,7 @@ const dndCreatureList = [
   .map(
   creature => ({
     ...creature,
-    id: creature.nameEn,
+    id: creature.nameEn.toLowerCase().replace(/ /g, '_'),
     isFemale: Boolean(creature.isFemale),
     [SEARCH_PROP_NAME]: [
       creature.name,

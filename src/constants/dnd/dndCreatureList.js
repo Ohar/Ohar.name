@@ -47,6 +47,7 @@ import {
   CREATURE_ANY_RACE,
   CREATURE_CELESTIAL,
   CREATURE_DRAGON,
+  CREATURE_ELEMENTAL,
   CREATURE_FIEND,
   CREATURE_GIANT,
   CREATURE_HUMANOID,
@@ -86,6 +87,7 @@ import {
   LANG_ALL,
   LANG_ALL_KNOWN_AT_LIFE,
   LANG_ANY_ONE,
+  LANG_AQUAN,
   LANG_AURAN,
   LANG_COMMON,
   LANG_DEEP_SPEECH,
@@ -111,12 +113,14 @@ import {
   DAMAGE_THUNDER,
 } from '@/constants/dnd/dndDamageTypeList'
 import {
+  SENSE_BLIND_VISION,
   SENSE_DARK_VISION,
   SENSE_PASSIVE_PERCEPTION,
   SENSE_TRUE_VISION,
   SENSE_VIBRATION_SENSE,
 } from '@/constants/dnd/dndSenseList'
 import {
+  SKILL_ARCANA,
   SKILL_ATHLETICS,
   SKILL_HISTORY,
   SKILL_INSIGHT,
@@ -205,7 +209,6 @@ import {
   TARGET_OBJECT,
   TARGET_POINT,
 } from '@/constants/dnd/dndTargetList'
-import { SKILL_ARCANA } from './dndSkillList';
 
 const dndCreatureList = [
   {
@@ -3475,6 +3478,101 @@ const dndCreatureList = [
             cubeCount: 2,
             cubeType: 6,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Водная аномалия',
+    nameEn: 'Water weird',
+    description: `**Водная аномалия** является элементалем-защитником, связанным с определённым местом, заполненным водой, таким как бассейн или фонтан. Её змеевидное тело, невидимое, пока погружено в воду, становится заметным только когда она появляется, чтобы напасть, обвиваясь вокруг любого существа, кроме её призывателя и тех, кому разрешит находиться призыватель. Когда водная аномалия повержена, она становится неживой лужей воды.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:41',
+    armor: 13,
+    hp: {
+      cubeCount: 9,
+      cubeType: 10,
+      cubeBonus: 9,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_SWIM]: 60,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 10,
+    },
+    resistanceList: [
+      DAMAGE_FIRE,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_UNCONSCIOUS,
+      CONDITION_GRAPPLED,
+      CONDITION_EXHAUSTION,
+      CONDITION_RESTRAINED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_AQUAN,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Невидимость в воде',
+        description: `Водная аномалия невидима, если полностью погружена в воду.`,
+      },
+      {
+        name: 'Привязка к воде',
+        description: `Водная аномалия умирает, если покидает воду, к которой привязана, или если эта вода уничтожается.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Сжимание',
+        description: `Если размер цели не больше Среднего, она становится схваченной (Сл высвобождения 13) и подтягивается на 5 футов к водной аномалии. Пока цель схвачена, она опутана, водная аномалия пытается её утопить, и аномалия не может сжимать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 10,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 6,
+            cubeBonus: 3,
           },
         },
       },

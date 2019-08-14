@@ -3057,6 +3057,90 @@ const dndCreatureList = [
       },
     ],
   },
+  {
+    name: 'Холмовой великан',
+    nameEn: 'Hill Giant',
+    description: `**Холмовые великаны** — эгоистичные и недалёкие громилы, охотящиеся ради пищи и совершающие набеги в постоянном поиске еды. Они бездумно бродят по холмам и лесам, поглощая всё, что могут, и заставляя меньших существ кормить их. Лень и тупость давно
+бы положила им конец, если бы не огромный размер и сила.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_GIANT,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:38',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeType: 12,
+      cubeCount: 10,
+      cubeBonus: 40,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 21,
+      [PARAM_DEX]: 8,
+      [PARAM_CON]: 19,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_GIANT,
+    ],
+    cr: CR_5,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Великан совершает две атаки палицей`,
+      },
+      {
+        name: 'Палица',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 10,
+          target: 1,
+          damage: {
+            type: DAMAGE_BLUDGEONING,
+            cubeType: 8,
+            cubeCount: 3,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Камень',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 8,
+          range: {
+            normal: 60,
+            max: 240,
+          },
+          target: 1,
+          damage: {
+            type: DAMAGE_BLUDGEONING,
+            cubeType: 10,
+            cubeCount: 3,
+            cubeBonus: 5,
+          },
+        },
+      },
+    ],
+  },
 ]
   .sort(
     ({name: A}, {name: B}) => A > B

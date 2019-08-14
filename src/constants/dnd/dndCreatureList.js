@@ -2729,6 +2729,95 @@ const dndCreatureList = [
       },
     ],
   },
+  {
+    name: 'Ледяной великан',
+    nameEn: 'Frost Giant',
+    description: `Ледяные великаны — громадные грабители с морозных земель, что лежат за гранью цивилизации — это жестокие, выносливые воины, живущие за счёт добычи с набегов и грабежей. Они уважают лишь грубую силу и боевые навыки, демонстрируя их шрамами и отвратительными трофеями, полученными от врагов.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_GIANT,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:36',
+    armor: {
+      ac: 15,
+      type: 'лоскутный доспех',
+    },
+    hp: {
+      cubeType: 12,
+      cubeCount: 12,
+      cubeBonus: 60,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 23,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 21,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 12,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 8,
+      [PARAM_WIT]: 3,
+      [PARAM_CHA]: 4,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 9,
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_GIANT,
+    ],
+    cr: CR_8,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Великан совершает две атаки секирой.`,
+      },
+      {
+        name: 'Секира',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 10,
+          target: 1,
+          damage: {
+            type: DAMAGE_SLASHING,
+            cubeType: 12,
+            cubeCount: 3,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: 'Камень',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 9,
+          range: {
+            normal: 60,
+            max: 240,
+          },
+          target: 1,
+          damage: {
+            type: DAMAGE_BLUDGEONING,
+            cubeType: 10,
+            cubeCount: 4,
+            cubeBonus: 6,
+          },
+        },
+      },
+    ],
+  },
 ]
   .sort(
     ({name: A}, {name: B}) => A > B

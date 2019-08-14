@@ -98,6 +98,7 @@ import {
   LANG_INFERNAL,
   LANG_SYLVAN,
   LANG_TELEPATHY,
+  LANG_TERRAN,
   LANG_UMBER_HULK,
 } from '@/constants/dnd/dndLanguageList'
 import {
@@ -239,6 +240,7 @@ const CREATURE_FAERIE_DRAGON_VIOLET = 'faerie_dragon_violet'
 const CREATURE_FAERIE_DRAGON_YELLOW = 'faerie_dragon_yellow'
 const CREATURE_FIRE_GIANT = 'fire_giant'
 const CREATURE_FROST_GIANT = 'frost_giant'
+const CREATURE_GALEB_DUHR = 'galeb_duhr'
 const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
@@ -3737,6 +3739,106 @@ const dndCreatureRawList = [
         },
       ],
     },
+  },
+  {
+    name: 'Галеб дур',
+    nameEn: 'Galeb duhr',
+    id: CREATURE_GALEB_DUHR,
+    description: `**Галеб дур** — существо, похожее на валун с массивными выступами, которые используются как руки и ноги. Он способен оживлять находящиеся рядом с ним камни, и обычно встречается в горной местности.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:44',
+    armor: {
+      ac: 16,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 8,
+      cubeBonus: 45,
+    },
+    speed: {
+      [SPEED_WALK]: {
+        value: 15,
+        comment: '30 фт. когда катится, 60 фт. когда катится по склону',
+      },
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 11,
+    },
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_VIBRATION_SENSE,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_TERRAN,
+    ],
+    cr: CR_6,
+    featureList: [
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока галеб дур остаётся без движения, он неотличим от обычного валуна.`,
+      },
+      {
+        name: 'Катящаяся атака в броске',
+        description: `Если галеб дур прокатится как минимум 20 футов по направлению к цели, а затем в том же ходу попадёт по ней атакой размашистым ударом, цель получает от атаки дополнительный дробящий урон 7 (2к6). Если цель — существо, она должна преуспеть в спасброске Силы со Сл 16, иначе будет сбита с ног.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Размашистый удар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Оживление валунов',
+        description: `Галеб дур магическим образом оживляет до двух валунов, которые видит в пределах 60 футов от себя. Валун обладает статистикой галеб дура, за исключением того, что у него Интеллект 1 и Харизма 1, его нельзя очаровать и испугать, и у него нет этого варианта действия. Валун остаётся живым, пока галеб дур сохраняет концентрацию, вплоть до 1 минуты (как при концентрации на заклинании).`,
+        limit: {
+          count: 1,
+          period: 'день',
+        },
+      },
+    ],
   },
 ]
 

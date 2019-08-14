@@ -48,6 +48,7 @@ export const SPELL_DETECT_MAGIC = 'detect_magic'
 export const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
 export const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
 export const SPELL_DOMINATE_PERSON = 'dominate_person'
+export const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 export const SPELL_FEATHER_FALL = 'feather_fall'
 export const SPELL_FLAME_STRIKE = 'flame_strike'
 export const SPELL_FLY = 'fly'
@@ -84,6 +85,7 @@ export const SPELL_TELEKINESIS = 'telekinesis'
 export const SPELL_THAUMATURGY = 'thaumaturgy'
 export const SPELL_THUNDERWAVE = 'thunderwave'
 export const SPELL_TONGUES = 'tongues'
+export const SPELL_WALL_OF_FIRE = 'wall_of_fire'
 export const SPELL_WALL_OF_STONE = 'wall_of_stone'
 export const SPELL_WATER_BREATHING = 'water_breathing'
 export const SPELL_WIND_WALK = 'wind_walk'
@@ -1068,6 +1070,41 @@ const dndSpellList = [
     duration: 'Особая',
     source: 'PHB:280',
     classList: [PC_CLASS_SORCERER, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_ENLARGE_REDUCE,
+    name: 'Увеличение/уменьшение',
+    nameEn: 'Enlarge reduce',
+    description: `Вы увеличиваете или уменьшаете существо или предмет, видимый вами в пределах дистанции, на время действия заклинания. Выберите или существо или предмет, который никто не несет и не носит. Если цель хочет, она может совершить спасбросок Телосложения. В случае успеха заклинание не оказывает на нее никакого влияния. Если цель — существо, все, что она носит и несет, изменяет размер вместе с ней. Все, что это существо бросит, тут же обретает свой естественный размер.\n
+**Увеличение.** Размеры цели удваиваются по всем измерениям, а вес увеличивается в восемь раз. Это увеличивает размер на одну категорию — от Среднего до Большого, например. Если для цели не хватает пространства, она приобретает максимально возможный размер. Пока заклинание активно, цель совершает с преимуществом проверки и спасброски Силы. Оружие цели тоже увеличивается. Атаки увеличенным оружием причиняют дополнительный урон 1к4.\n
+**Уменьшение.** Размеры цели уменьшаются вдвое по всем измерениям, а вес уменьшается до одной восьмой от обычного. Это уменьшает размер на одну категорию — от Среднего до Маленького, например. Пока заклинание активно, цель совершает с помехой проверки и спасброски Силы. Оружие цели тоже уменьшается. Атаки уменьшенным оружием причиняют на 1к4 меньше урона (урон не может быть меньше 1).`,
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION,
+    range: 30,
+    needConcentration: true,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'щепотка толченого железа',
+    duration: 'вплоть до 1 минуты',
+    source: 'PHB:285',
+    classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_WALL_OF_FIRE,
+    name: 'Огненная стена',
+    nameEn: 'Wall of fire',
+    description: `Вы создаёте стену из огня на твёрдой поверхности в пределах дистанции. Вы можете создать стену до 60 футов в длину, 20 футов в высоту и 1 фут толщиной, или замкнутой кольцом стеной до 20 футов диаметром, 20 футов высотой и толщиной 1 фут. Стена непрозрачная и существует, пока активно заклинание.\n
+Когда стена появляется, все существа в её области должны совершить спасбросок Ловкости. При провале они получают урон огнём 5к8 или половину этого урона при успехе.\n
+Одна сторона стены, выбранная при накладывании заклинания, причиняет урон огнём 5к8 всем существам, оканчивающим ход в пределах 10 футов от этой стороны или внутри стены. Существа получают такой же урон когда впервые за ход входят в стену или оканчивают там ход. Другая сторона стены не причиняет урон.\n
+На больших уровнях: Если вы накладываете это заклинание, используя ячейку 5 уровня или выше, урон увеличивается на 1к8 за каждый уровень ячейки выше четвёртого.`,
+    lvl: 4,
+    magicSchool: MAGIC_EVOCATION,
+    range: 120,
+    needConcentration: true,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'небольшой кусочек фосфора',
+    duration: 'вплоть до 1 минуты',
+    source: 'PHB:147',
+    classList: [PC_CLASS_DRUID, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
 ].map(
   spell => ({

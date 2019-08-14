@@ -95,6 +95,7 @@ import {
   LANG_DRACONIC,
   LANG_ELVEN,
   LANG_GIANT,
+  LANG_IGNAN,
   LANG_INFERNAL,
   LANG_SYLVAN,
   LANG_TELEPATHY,
@@ -164,6 +165,7 @@ import {
   SPELL_DETECT_THOUGHTS,
   SPELL_DISPEL_EVIL_AND_GOOD,
   SPELL_DOMINATE_PERSON,
+  SPELL_ENLARGE_REDUCE,
   SPELL_FEATHER_FALL,
   SPELL_FLAME_STRIKE,
   SPELL_FLY,
@@ -200,6 +202,7 @@ import {
   SPELL_THAUMATURGY,
   SPELL_THUNDERWAVE,
   SPELL_TONGUES,
+  SPELL_WALL_OF_FIRE,
   SPELL_WALL_OF_STONE,
   SPELL_WATER_BREATHING,
   SPELL_WIND_WALK,
@@ -231,6 +234,7 @@ import {
   TARGET_OBJECT,
   TARGET_POINT,
 } from '@/constants/dnd/dndTargetList'
+import { ACTION_RANGE_SPELL_ATTACK } from './dndActionTypeList';
 
 const CREATURE_AARAKOCRA = 'aarakocra'
 const CREATURE_ABOLETH = 'aboleth'
@@ -245,6 +249,7 @@ const CREATURE_COMMONER = 'commoner'
 const CREATURE_DAO = 'dao'
 const CREATURE_DEVA = 'deva'
 const CREATURE_DJINNI = 'djinni'
+const CREATURE_EFREETI = 'efreeti'
 const CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue'
 const CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green'
 const CREATURE_FAERIE_DRAGON_LIGHT_BLUE = 'faerie_dragon_light_blue'
@@ -4236,6 +4241,150 @@ const dndCreatureRawList = [
         name: 'Создание смерча',
         description: `В точке, которую джинн видит в пределах 120 футов от себя, магическим образом появляется смерч в виде цилиндра с радиусом 5 футов и высотой 30 футов. Смерч существует, пока джинн поддерживает концентрацию (как при концентрации на заклинании). Все существа кроме джинна, входящие в смерч, должны преуспеть в спасброске Силы со Сл 18, иначе станут опутанными им. Джинн может действием перемещать смерч на расстояние до 60 футов, и существа, опутанные смерчем, перемещаются вместе с ним. Смерч исчезает, если джинн перестаёт его видеть\n
 Существо может действием освободить существо, опутанное смерчем, в том числе и себя, преуспев в проверке Силы со Сл 18. Если проверка успешна, существо перестаёт быть опутанным и перемещается в ближайшее пространство за пределами смерча.`,
+      },
+    ],
+  },
+  {
+    name: 'Ифрит',
+    nameEn: 'Efreeti',
+    id: CREATURE_EFREETI,
+    description: `**Ифриты** — громадные гении со Стихийного Плана Огня — повелевают пламенем, обладают иммунитетом к огню и способны создавать его по своему желанию. Тонкие шёлковые кафтаны и узорчатые одеяния покрывают их красную, как лава, или чёрную, как уголь, кожу. Ифриты украшают себя сверкающими ожерельями, цепями и кольцами с драгоценными камнями. Во время полёта нижняя часть тела ифрита выглядит как столб дыма и тлеющих углей.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:50',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 16,
+      cubeType: 10,
+      cubeBonus: 112,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 22,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 24,
+      [PARAM_INT]: 16,
+      [PARAM_WIT]: 15,
+      [PARAM_CHA]: 16,
+    },
+    saveThrowCollection: {
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 6,
+      [PARAM_CHA]: 7,
+    },
+    immunityList: [
+      DAMAGE_FIRE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_IGNAN,
+    ],
+    cr: CR_11,
+    featureList: [
+      {
+        name: 'Элементальная гибель',
+        description: `Если ифрит умирает, его тело распадается во вспышке огня и клубах дыма, оставляя только снаряжение, которое ифрит носил и нёс.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 15,
+      spellAttackBonus: 7,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_MAGIC,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_ENLARGE_REDUCE,
+            SPELL_TONGUES,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_GASEOUS_FORM,
+            SPELL_INVISIBILITY,
+            SPELL_MAJOR_IMAGE,
+            SPELL_WALL_OF_FIRE,
+            {
+              id: SPELL_CONJURE_ELEMENTAL,
+              comment: 'только огненный элементаль',
+            },
+            SPELL_PLANE_SHIFT,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Ифрит совершает две атаки скимитаром, либо два раза использует **Метание пламени**.`,
+      },
+      {
+        name: 'Скимитар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 6,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 2,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Метание пламени',
+        attack: {
+          type: ACTION_RANGE_SPELL_ATTACK,
+          bonus: 7,
+          range: 120,
+          target: 1,
+          hit: {
+            type: DAMAGE_FIRE,
+            cubeCount: 5,
+            cubeType: 6,
+          },
+        },
       },
     ],
   },

@@ -53,6 +53,6 @@ export default (
     ? `У ${isFemale ? 'неё' : 'него'}  приготовлены следующие заклинания ${dndPcClassCollection[spellCasterClass].name.singular.genitive}`
     : `${name} может накладывать следующие заклинания${spellComponentOnlyText}${spellComponentExcludeText}`
 
-  return `${introText} ${baseStatText} ${spellAdditionalInfoText}. ${spellCastText}:
+  return `${introText} ${baseStatText}${spellAdditionalInfoText}. ${spellCastText}:
 ${spellText}`
 }

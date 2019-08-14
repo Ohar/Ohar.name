@@ -242,6 +242,7 @@ const CREATURE_FIRE_GIANT = 'fire_giant'
 const CREATURE_FROST_GIANT = 'frost_giant'
 const CREATURE_GALEB_DUHR = 'galeb_duhr'
 const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
+const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
 const CREATURE_MERROW = 'merrow'
@@ -3837,6 +3838,88 @@ const dndCreatureRawList = [
           count: 1,
           period: 'день',
         },
+      },
+    ],
+  },
+  {
+    name: 'Гарпия',
+    nameEn: 'Harpy',
+    id: CREATURE_HARPY,
+    description: `Находя удовольствие в страданиях и смерти, **гарпии**, обладающие садистскими вкусами, постоянно ищут себе новые жертвы. Их сладкие песни привели к смерти бесчисленное множество искателей приключений, приманивая их гарпиям на съедение.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:45',
+    armor: 11,
+    hp: {
+      cubeCount: 7,
+      cubeType: 8,
+      cubeBonus: 7,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 40,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 13,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_COMMON,
+    ],
+    cr: CR_1,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гарпия совершает две атаки: одну когтями, и одну дубиной.`,
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Дубина',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Манящая песня',
+        description: `Гарпия начинает петь магическую мелодию. Все гуманоиды и великаны в пределах 300 футов от гарпии, слышащие песню, должны преуспеть в спасброске Мудрости со Сл 11, иначе они станут очарованными до окончания песни. Гарпия может продолжать петь в следующих раундах бонусным действием. Она может прекратить петь в любое время. Песня оканчивается, если гарпия становится недееспособной.
+Будучи очарованной гарпией, цель недееспособна и игнорирует песни других гарпий. Если очарованная цель находится более чем в 5 футах от гарпии, цель должна в свой ход переместиться к гарпии кратчайшим маршрутом. Она не избегает провоцированных атак, но перед вхождением в опасную местность, такую как лава или яма, а также при получении урона из любого источника кроме этой гарпии цель может повторять спасбросок. Существо также может повторять спасбросок в конце каждого своего хода. Если спасбросок существа был успешным, эффект на нём прекращается.
+Успешно спасшаяся цель получает иммунитет к песне этой гарпии на следующие 24 часа.`,
       },
     ],
   },

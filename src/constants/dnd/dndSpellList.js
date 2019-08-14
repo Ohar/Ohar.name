@@ -39,11 +39,15 @@ export const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
 export const SPELL_CONTROL_WEATHER = 'control_weather'
 export const SPELL_CURE_WOUNDS = 'cure_wounds'
 export const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
+export const SPELL_DETECT_MAGIC = 'detect_magic'
 export const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
 export const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
 export const SPELL_DOMINATE_PERSON = 'dominate_person'
+export const SPELL_FEATHER_FALL = 'feather_fall'
 export const SPELL_FLAME_STRIKE = 'flame_strike'
+export const SPELL_FLY = 'fly'
 export const SPELL_FOG_CLOUD = 'fog_cloud'
+export const SPELL_GASEOUS_FORM = 'gaseous_form'
 export const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
 export const SPELL_GUST_OF_WIND = 'gust_of_wind'
 export const SPELL_INSECT_PLAGUE = 'insect_plague'
@@ -51,6 +55,7 @@ export const SPELL_INVISIBILITY = 'invisibility'
 export const SPELL_LIGHT = 'light'
 export const SPELL_MAGE_HAND = 'mage_hand'
 export const SPELL_MIRROR_IMAGE = 'mirror_image'
+export const SPELL_MISTY_STEP = 'misty_step'
 export const SPELL_NONDETECTION = 'nondetection'
 export const SPELL_PRESTIDIGITATION = 'prestidigitation'
 export const SPELL_RAISE_DEAD = 'raise_dead'
@@ -59,6 +64,7 @@ export const SPELL_RESSURECTION = 'ressurection'
 export const SPELL_SACRED_FLAME = 'sacred_flame'
 export const SPELL_SANCTUARY = 'sanctuary'
 export const SPELL_SLEEP = 'sleep'
+export const SPELL_TELEKINESIS = 'telekinesis'
 export const SPELL_THAUMATURGY = 'thaumaturgy'
 
 const defaultCastTime = '1 действие'
@@ -599,6 +605,102 @@ const dndSpellList = [
     duration: 'вплоть до 1 минуты',
     source: 'PHB:260',
     classList: [PC_CLASS_BARD, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_DETECT_MAGIC,
+    name: 'Обнаружение магии',
+    nameEn: 'Detect magic',
+    description: `Пока заклинание активно, вы чувствуете присутствие магии в пределах 30 фт. Если вы почувствовали за счет этого заклинания присутствие магии, вы можете действием увидеть слабую ауру вокруг видимого существа или предмета, несущего на себе магию, а также узнать школу этой магии, если она есть.\n
+Заклинание проницает большую часть барьеров, но блокируется 1 футом камня, 1 дюймом обычного металла, тонким листом свинца или 3 футами дерева или земли.`,
+    lvl: 1,
+    magicSchool: MAGIC_DIVINATION,
+    ritual: true,
+    needConcentration: true,
+    range: -1,
+    componentList: [CAST_VERBAL, CAST_SOMATIC],
+    duration: 'вплоть до 10 минут',
+    source: 'PHB:245',
+    classList: [PC_CLASS_BARD, PC_CLASS_PRIEST, PC_CLASS_FIGHTER, PC_CLASS_PALADIN, PC_CLASS_RANGER, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
+  },
+  {
+    id: SPELL_FEATHER_FALL,
+    name: 'Падение пёрышком',
+    nameEn: 'Feather fall',
+    description: `Выберите до пяти падающих существ в пределах дистанции. До окончания действия заклинания их скорость падения уменьшается на 60 фт. в раунд. Если такое существо приземлится до окончания заклинания, оно не получает урон от падения и может приземлиться на ноги, и тогда заклинание оканчивает действие на него.`,
+    castTime: `1 реакция, совершаемая вами, когда вы или существо в пределах 60 фт. от вас начинаете падать`,
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION,
+    range: 60,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'небольшое перо или кусочек пуха',
+    duration: '1 минута',
+    source: 'PHB:254',
+    classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_FLY,
+    name: 'Полёт',
+    nameEn: 'Fly',
+    description: `Вы касаетесь согласного существа. Цель получает на время длительности заклинания скорость полета 60 фт. Когда заклинание оканчивается, цель падает, если все еще находится в полете и ничем не может остановить падение.\n
+На больших уровнях: Если вы накладываете это заклинание, используя ячейку 4 уровня или выше, вы можете сделать целью одно дополнительное существо за каждый уровень ячейки выше 3.`,
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION,
+    needConcentration: true,
+    range: 0,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'перо из крыла любой птицы',
+    duration: 'вплоть до 10 минут',
+    source: 'PHB:262',
+    classList: [PC_CLASS_FIGHTER, PC_CLASS_MONK, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_TELEKINESIS,
+    name: 'Телекинез',
+    nameEn: 'Telekinesis',
+    description: `Вы получаете способность перемещать силой мысли существ и предметы, а также манипулировать ими. Когда вы накладываете это заклинание, а также в каждом последующем раунде, новым действием, вы можете воздействовать на одно существо или предмет, видимый в пределах дистанции, вызывая один из описанных ниже эффектов. Вы можете действовать на одну и ту же цель, а можете каждый раз выбирать новую. Если вы меняете цель, предыдущая перестаёт быть под действием этого заклинания.\n
+**Предмет.** Вы можете попытаться переместить предмет, весящий до 1 000 фунтов. Если предмет не несут и не носят, вы автоматически перемещаете его на 30 фт. в любом направлении, но не за пределы дистанции заклинания.\n
+Если предмет несёт или носит существо, вы должны совершить проверку базовой характеристики, противопоставив её проверке Силы существа. Если вы выиграете проверку, вы вырываете предмет у этого существа, и можете переместить его на 30 фт. в любом направлении, но не за пределы дистанции заклинания.\n
+Вы очень хорошо контролируете предмет телекинетической хваткой, так что можете манипулировать простыми инструментами, открывать двери и контейнеры, доставать и убирать предметы из открытых контейнеров, а также выливать содержимое сосудов.\n
+**Существо.** Вы можете попытаться переместить существо с размером не больше Огромного. Совершите проверку своей базовой характеристики, противопоставив её проверке Силы существа. Если вы выиграете проверку, вы перемещаете существо на 30 фт. в любом направлении, включая вверх, но не за пределы дистанции заклинания. До конца вашего следующего хода существо становится опутанным телекинетической хваткой. Существо, поднятое вверх, висит в воздухе.\n
+В последующих раундах вы можете действием пытаться поддерживать телекинетический захват существа, повторяя встречную проверку.`,
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION,
+    needConcentration: true,
+    range: 60,
+    componentList: [CAST_VERBAL, CAST_SOMATIC],
+    duration: 'вплоть до 10 минут',
+    source: 'PHB:282',
+    classList: [PC_CLASS_SORCERER, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_MISTY_STEP,
+    name: 'Туманный шаг',
+    nameEn: 'Misty step',
+    description: `Окутавшись серебристым туманом, вы телепортируетесь на 30 футов в свободное пространство, видимое вами.`,
+    lvl: 2,
+    magicSchool: MAGIC_CONJURATION,
+    castTime: '1 бонусное действие',
+    range: -1,
+    componentList: [CAST_VERBAL],
+    source: 'PHB:285',
+    classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_GASEOUS_FORM,
+    name: 'Газообразная форма',
+    nameEn: 'Gaseous form',
+    description: `Вы превращаете на время действия заклинания согласное существо, которого касаетесь, а также все, что оно носит и несет, в туманное облако. Заклинание оканчивается, если хиты существа опускаются до 0. Бестелесные существа не попадают под действие этого заклинания.\n
+Пока цель находится в этой форме, единственной ее скоростью перемещения становится скорость полета 10 фт. Цель может входить в пространство других существ и оставаться там. Существо получает сопротивление к немагическому урону, и совершает с преимуществом спасброски Силы, Ловкости и Телосложения. Цель может проходить через небольшие отверстия, узкие щели, но жидкости для нее считаются твердыми поверхностями. Цель не может упасть и остается парить, даже если становится ошеломленной или недееспособной.\n
+Находясь в форме туманного облака, цель не может говорить и манипулировать предметами, и все предметы, которые она несет или носит, нельзя ронять, использовать и вообще как-либо с ними взаимодействовать. Цель не может атаковать и накладывать заклинания.`,
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION,
+    needConcentration: true,
+    range: 0,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'кусок марли и клуб дыма',
+    duration: 'вплоть до 1 часа',
+    source: 'PHB:220',
+    classList: [PC_CLASS_FIGHTER, PC_CLASS_MONK, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
 ].map(
   spell => ({

@@ -34,10 +34,12 @@ export const SPELL_BESTOW_CURSE = 'bestow_curse'
 export const SPELL_BLADE_BARRIER = 'blade_barrier'
 export const SPELL_BLESS = 'bless'
 export const SPELL_BLIGHT = 'blight'
+export const SPELL_COLOR_SPRAY = 'color_spray'
 export const SPELL_COMMUNE = 'commune'
 export const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
 export const SPELL_CONTROL_WEATHER = 'control_weather'
 export const SPELL_CURE_WOUNDS = 'cure_wounds'
+export const SPELL_DANCING_LIGHTS = 'dancing_lights'
 export const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
 export const SPELL_DETECT_MAGIC = 'detect_magic'
 export const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
@@ -50,14 +52,18 @@ export const SPELL_FOG_CLOUD = 'fog_cloud'
 export const SPELL_GASEOUS_FORM = 'gaseous_form'
 export const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
 export const SPELL_GUST_OF_WIND = 'gust_of_wind'
+export const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
 export const SPELL_INSECT_PLAGUE = 'insect_plague'
 export const SPELL_INVISIBILITY = 'invisibility'
 export const SPELL_LEVITATE = 'levitate'
 export const SPELL_LIGHT = 'light'
 export const SPELL_MAGE_HAND = 'mage_hand'
+export const SPELL_MAJOR_IMAGE = 'major_image'
+export const SPELL_MINOR_ILLUSION = 'minor_illusion'
 export const SPELL_MIRROR_IMAGE = 'mirror_image'
 export const SPELL_MISTY_STEP = 'misty_step'
 export const SPELL_NONDETECTION = 'nondetection'
+export const SPELL_POLYMORPH = 'polymorph'
 export const SPELL_PRESTIDIGITATION = 'prestidigitation'
 export const SPELL_RAISE_DEAD = 'raise_dead'
 export const SPELL_RAY_OF_FROST = 'ray_of_frost'
@@ -65,6 +71,7 @@ export const SPELL_RESSURECTION = 'ressurection'
 export const SPELL_SACRED_FLAME = 'sacred_flame'
 export const SPELL_SANCTUARY = 'sanctuary'
 export const SPELL_SLEEP = 'sleep'
+export const SPELL_SUGGESTION = 'suggestion'
 export const SPELL_TELEKINESIS = 'telekinesis'
 export const SPELL_THAUMATURGY = 'thaumaturgy'
 export const SPELL_WATER_BREATHING = 'water_breathing'
@@ -735,6 +742,121 @@ const dndSpellList = [
     duration: '24 часа',
     source: 'PHB:258',
     classList: [PC_CLASS_FIGHTER, PC_CLASS_RANGER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
+  },
+  {
+    id: SPELL_MINOR_ILLUSION,
+    name: 'Малая иллюзия',
+    nameEn: 'Minor illusion',
+    description: `Вы создаете звук или образ предмета в пределах дистанции, существующий, пока активно заклинание. Иллюзия также оканчивается, если вы отпустите ее действием или используете это заклинание еще раз.\n
+Если вы создаете звук, его громкость может быть как шепотом, так и криком. Это может быть ваш голос, чей-то другой голос, львиный рык, бой барабанов или любой другой звук. Звук звучит всю длительность заклинания, или вы можете создавать отдельные звуки в разное время, пока заклинание активно.\n
+Если вы создаете образ предмета — например, стул, отпечаток в грязи, или небольшой сундук — он должен помещаться в куб с длиной ребра 5 фт. Образ не может издавать звуки, свет, запах или прочие сенсорные эффекты. Физическое взаимодействие с образом дает понять, что это иллюзия, потому что сквозь него все проходит.\n
+Если существо действием исследует звук или образ, оно может понять, что это иллюзия, совершив успешную проверку Интеллекта (Анализ) против Сл ваших заклинаний. Если существо распознает иллюзию, она для него становится нечеткой.`,
+    lvl: 0,
+    magicSchool: MAGIC_ILLUSION,
+    range: 30,
+    componentList: [CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'кусок овечьей шерсти',
+    duration: '1 минута',
+    source: 'PHB:238',
+    classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_MONK, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_DANCING_LIGHTS,
+    name: 'Пляшущие огоньки',
+    nameEn: 'Dancing lights',
+    description: `Вы создаете до четырех огоньков размером с факел в пределах дистанции, делая их похожими на факелы, фонари или светящиеся сферы, парящие в воздухе. Вы можете также объединить четыре огонька в одну светящуюся человекоподобную фигуру Среднего размера. Какую бы форму вы не выбрали, каждый огонек излучает тусклый свет в радиусе 10 фт.\n
+Вы можете бонусным действием в свой ход переместить огоньки на 60 фт. в новое место в пределах дистанции. Каждый огонек должен находиться в пределах 20 фт. от другого огонька, созданного этим заклинанием, и огонек тухнет, если оказывается за пределами дистанции заклинания.`,
+    lvl: 0,
+    magicSchool: MAGIC_EVOCATION,
+    needConcentration: true,
+    range: 120,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'кусочек фосфора, гнилушка или светлячок',
+    duration: 'вплоть до 1 минуты',
+    source: 'PHB:258',
+    classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_COLOR_SPRAY,
+    name: 'Сверкающие брызги',
+    nameEn: 'Color spray',
+    description: `Из вашей руки вылетают яркие разноцветные лучи. Бросьте 6к10; результат покажет, сколько хитов существ попадает под эффект. Существа в 15-футовом конусе, исходящем от вас, попадают под эффект в порядке увеличения текущих хитов (игнорируя тех, кто без сознания и не может видеть). Начиная с существа с наименьшим числом текущих хитов, все существа, попавшие под действие заклинания, становятся ослепленными до конца действия заклинания. Вычитайте из остатка хиты уже ослепленных существ и переходите к следующим. Хиты существа не должны превышать остаток, чтобы это существо попало под действие заклинания.\n
+На больших уровнях: Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, бросайте дополнительно 2к10 за каждый уровень ячейки выше первого.`,
+    lvl: 1,
+    magicSchool: MAGIC_ILLUSION,
+    range: 'На себя (15-футовый конус)',
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'щепотка порошка или песка, окрашенного в красный, желтый и синий цвет',
+    duration: '1 раунд',
+    source: 'PHB:275',
+    classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_SUGGESTION,
+    name: 'Внушение',
+    nameEn: 'Suggestion',
+    description: `Вы внушаете определенный курс действий (ограниченный одной-двумя фразами) существу, видимому в пределах дистанции, способному слышать и понимать вас. Существа, которые не могут быть очарованы, обладают иммунитетом к этому эффекту. Внушение должно быть сформировано так, чтобы действие звучало разумным. Просьбы ударить себя мечом, броситься на копье, сжечь себя, или как-то иначе причинить себе вред оканчивают заклинание. Цель должна совершить спасбросок Мудрости. При провале она следует заданному курсу действий. Внушенные действия могут продолжаться всю длительность заклинания. Если внушенную деятельность можно выполнить за меньший срок, заклинание оканчивается, когда субъект оканчивает порученную задачу. Вы можете также указать условие, которое запустит особое действие во время действия заклинания. Например, вы можете внушить рыцарю, чтобы он отдал своего боевого коня первому встреченному нищему. Если до окончания действия условие не будет выполнено, деятельность не совершается. Если вы или кто-то из ваших спутников причиняете урон цели, заклинание оканчивается.`,
+    lvl: 2,
+    magicSchool: MAGIC_ENCHANTMENT,
+    needConcentration: true,
+    range: 30,
+    componentList: [CAST_VERBAL, CAST_MATERIAL],
+    materialText: 'язык змеи и либо кусочек медовых сот, либо капля сладкого масла',
+    duration: 'вплоть до 8 часов',
+    source: 'PHB:216',
+    classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_MAJOR_IMAGE,
+    name: 'Образ',
+    nameEn: 'Major image',
+    description: `Вы создаете образ предмета, существа или другого видимого явления, помещающийся в объеме в куб с длиной ребра 20 фт. Образ появляется в точке, которую вы видите в пределах дистанции, и существует, пока активно заклинание. Он выглядит абсолютно реальным, включая звук, запах и температуру, соответствующую этому предмету. Вы не можете создать жар или холод, достаточный для получения урона, звук, громкость которого может причинить урон звуком или оглушить существо, или запах, способный вызвать тошноту (такую как вонь троглодита).\n
+Пока вы находитесь в пределах дистанции от иллюзии, вы можете действием заставить образ переместиться в любое место в пределах дистанции. Пока образ меняет местоположение, вы можете изменять его внешность, чтобы перемещение выглядело естественным. Например, если вы создаете образ существа и перемещаете его, вы можете изменить образ, чтобы казалось, что оно идет. Точно так же, вы можете заставить иллюзию издавать в разное время разные звуки, и даже заставлять ее принимать участие в беседе, например.\n
+Физическое взаимодействие с образом дает понять, что это иллюзия, потому что сквозь него все проходит. Существа, исследующие образ действием, могут определить, что это иллюзия, совершив успешную проверку Интеллекта (Анализ) против Сл ваших заклинаний. Если существо распознает иллюзию, оно может видеть сквозь нее, и все прочие сенсорные эффекты иллюзии тоже притупляются.\n
+На больших уровнях: Если вы накладываете это заклинание, используя ячейку 6 уровня или выше, оно длится, пока не рассеется, не требуя от вас концентрацию`,
+    lvl: 3,
+    magicSchool: MAGIC_ILLUSION,
+    needConcentration: true,
+    range: 120,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'кусок овечьей шерсти',
+    duration: 'вплоть до 10 минут',
+    source: 'PHB:246',
+    classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_HALLUCINATORY_TERRAIN,
+    name: 'Мираж',
+    nameEn: 'Hallucinatory terrain',
+    description: `Вы заставляете природную местность в пределах куба с длиной ребра 150 фт., находящегося в пределах дистанции, выглядеть, звучать и пахнуть как другая природная местность. Таким образом, поле или дорогу можно сделать похожей на болото, холм, расселину или другую труднопроходимую или непроходимую местность. Пруд можно сделать похожим на травяную лужайку, пропасть сделать пологим спуском, а каменистый овраг — широкой и ровной дорогой. Рукотворные строения, снаряжение и существа в области не меняют облик.\n
+Тактильные ощущения местности не меняются, поэтому существа, входящие в нее, скорее всего, поймут обман. Если на прикосновение разница не очевидна, существо, тщательно исследующее иллюзию, может предпринять проверку Интеллекта (Анализ) против Сл ваших заклинаний, чтобы не поверить. Существо, способное распознавать иллюзии, видит полупрозрачный образ, наложенный на местность.`,
+    lvl: 4,
+    magicSchool: MAGIC_ILLUSION,
+    range: 300,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'камень, ветка, и кусочек зеленого растения',
+    duration: '24 часа',
+    source: 'PHB:240',
+    classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_WARLOCK, PC_CLASS_WIZARD, PC_CLASS_DRUID],
+  },
+  {
+    id: SPELL_POLYMORPH,
+    name: 'Превращение',
+    nameEn: 'Polymorph',
+    description: `Это заклинание придает новый облик существу, которое вы видите в пределах дистанции. Несогласное существо должно совершить спасбросок Мудрости, чтобы избежать эффекта. Перевертыши автоматически преуспевают в этом спасброске. Это заклинание не может подействовать на цель, у которой 0 хитов.\n
+Превращение длится, пока активно заклинание, или пока хиты цели не опустятся до 0, или она не умрет. Новый облик может принадлежать зверю, чей ПО не превышает ПО цели (или уровень цели, если у нее нет показателя опасности). Игровые характеристики цели, включая значения ментальных характеристик, заменяются характеристиками выбранного зверя. У цели остается мировоззрение и характер.\n
+Цель принимает хиты нового облика. При возвращении в естественный облик количество ее хитов будет как до превращения. Если она возвращается в свой облик от того, что хиты опустились до 0, весь излишний урон перенесется на естественный облик. Если излишний урон не опускает хиты естественного облика существа до 0, оно не теряет сознание. \n
+Действия существа в новом облике ограничены теми, что доступны ей, и она не может говорить, накладывать заклинания и совершать другие действия, требующие рук или речи.\n
+Снаряжение цели сливается с ее новым обликом. Существо не может активировать, использовать, надевать или получать какие-то иные преимущества от своего снаряжения.`,
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION,
+    needConcentration: true,
+    range: 60,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'кокон гусеницы',
+    duration: 'вплоть до 1 часа',
+    source: 'PHB:264',
+    classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
 ].map(
   spell => ({

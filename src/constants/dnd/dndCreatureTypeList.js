@@ -5,54 +5,54 @@ import {
   GENDER_MIDDLE,
 } from '@/constants/genderList'
 
-export const CREATURE_AARAKOCRA = 'aarakocra'
-export const CREATURE_ABERRATION = 'aberration'
-export const CREATURE_ANY_RACE = 'any_race'
-export const CREATURE_BEAST = 'beast'
-export const CREATURE_BULLYWUG = 'bullywug'
-export const CREATURE_CELESTIAL = 'celestial'
-export const CREATURE_CONSTRUCT = 'construct'
-export const CREATURE_DEMON = 'demon'
-export const CREATURE_DEVIL = 'devil'
-export const CREATURE_DRAGON = 'dragon'
-export const CREATURE_DWARF = 'dwarf'
-export const CREATURE_ELEMENTAL = 'elemental'
-export const CREATURE_ELF = 'elf'
-export const CREATURE_FEY = 'fey'
-export const CREATURE_FIEND = 'fiend'
-export const CREATURE_FIRE_GIANT = 'fire_giant'
-export const CREATURE_FIRENEWT = 'firenewt'
-export const CREATURE_GIANT = 'giant'
-export const CREATURE_GITH = 'gith'
-export const CREATURE_GNOLL = 'gnoll'
-export const CREATURE_GNOME = 'gnome'
-export const CREATURE_GOBLINOID = 'goblinoid'
-export const CREATURE_GRIMLOCK = 'grimlock'
-export const CREATURE_GRUNG = 'grung'
-export const CREATURE_HUMAN = 'human'
-export const CREATURE_HUMANOID = 'humanoid'
-export const CREATURE_JELLY = 'jelly'
-export const CREATURE_KENKU = 'kenku'
-export const CREATURE_KOBOLD = 'kobold'
-export const CREATURE_KUO_TOA = 'kuo_toa'
-export const CREATURE_LIZARDFOLK = 'lizardfolk'
-export const CREATURE_MONSTER = 'monster'
-export const CREATURE_ORC = 'orc'
-export const CREATURE_PLANT = 'plant'
-export const CREATURE_QUAGGOTH = 'quaggoth'
-export const CREATURE_SAHUAGIN = 'sahuagin'
-export const CREATURE_SHAPESHIFTER = 'shapeshifter'
-export const CREATURE_THRI_KREEN = 'thri_kreen'
-export const CREATURE_TITAN = 'titan'
-export const CREATURE_TROGLODYTE = 'troglodyte'
-export const CREATURE_UNDEAD = 'undead'
-export const CREATURE_XVART = 'xvart'
-export const CREATURE_YOAN_TI = 'yoan_ti'
-export const CREATURE_YUGOLOT = 'yugolot'
+export const CREATURE_TYPE_AARAKOCRA = 'aarakocra'
+export const CREATURE_TYPE_ABERRATION = 'aberration'
+export const CREATURE_TYPE_ANY_RACE = 'any_race'
+export const CREATURE_TYPE_BEAST = 'beast'
+export const CREATURE_TYPE_BULLYWUG = 'bullywug'
+export const CREATURE_TYPE_CELESTIAL = 'celestial'
+export const CREATURE_TYPE_CONSTRUCT = 'construct'
+export const CREATURE_TYPE_DEMON = 'demon'
+export const CREATURE_TYPE_DEVIL = 'devil'
+export const CREATURE_TYPE_DRAGON = 'dragon'
+export const CREATURE_TYPE_DWARF = 'dwarf'
+export const CREATURE_TYPE_ELEMENTAL = 'elemental'
+export const CREATURE_TYPE_ELF = 'elf'
+export const CREATURE_TYPE_FEY = 'fey'
+export const CREATURE_TYPE_FIEND = 'fiend'
+export const CREATURE_TYPE_FIRE_GIANT = 'fire_giant'
+export const CREATURE_TYPE_FIRENEWT = 'firenewt'
+export const CREATURE_TYPE_GIANT = 'giant'
+export const CREATURE_TYPE_GITH = 'gith'
+export const CREATURE_TYPE_GNOLL = 'gnoll'
+export const CREATURE_TYPE_GNOME = 'gnome'
+export const CREATURE_TYPE_GOBLINOID = 'goblinoid'
+export const CREATURE_TYPE_GRIMLOCK = 'grimlock'
+export const CREATURE_TYPE_GRUNG = 'grung'
+export const CREATURE_TYPE_HUMAN = 'human'
+export const CREATURE_TYPE_HUMANOID = 'humanoid'
+export const CREATURE_TYPE_JELLY = 'jelly'
+export const CREATURE_TYPE_KENKU = 'kenku'
+export const CREATURE_TYPE_KOBOLD = 'kobold'
+export const CREATURE_TYPE_KUO_TOA = 'kuo_toa'
+export const CREATURE_TYPE_LIZARDFOLK = 'lizardfolk'
+export const CREATURE_TYPE_MONSTER = 'monster'
+export const CREATURE_TYPE_ORC = 'orc'
+export const CREATURE_TYPE_PLANT = 'plant'
+export const CREATURE_TYPE_QUAGGOTH = 'quaggoth'
+export const CREATURE_TYPE_SAHUAGIN = 'sahuagin'
+export const CREATURE_TYPE_SHAPESHIFTER = 'shapeshifter'
+export const CREATURE_TYPE_THRI_KREEN = 'thri_kreen'
+export const CREATURE_TYPE_TITAN = 'titan'
+export const CREATURE_TYPE_TROGLODYTE = 'troglodyte'
+export const CREATURE_TYPE_UNDEAD = 'undead'
+export const CREATURE_TYPE_XVART = 'xvart'
+export const CREATURE_TYPE_YOAN_TI = 'yoan_ti'
+export const CREATURE_TYPE_YUGOLOT = 'yugolot'
 
 const dndCreatureTypeList = [
   {
-    id: CREATURE_ANY_RACE,
+    id: CREATURE_TYPE_ANY_RACE,
     genderId: GENDER_MIDDLE,
     name: {
       singular: {
@@ -74,7 +74,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_HUMANOID,
+    id: CREATURE_TYPE_HUMANOID,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -96,7 +96,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_GOBLINOID,
+    id: CREATURE_TYPE_GOBLINOID,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -118,7 +118,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_SHAPESHIFTER,
+    id: CREATURE_TYPE_SHAPESHIFTER,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -140,7 +140,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_BEAST,
+    id: CREATURE_TYPE_BEAST,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -162,7 +162,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_FIEND,
+    id: CREATURE_TYPE_FIEND,
     genderId: GENDER_MIDDLE,
     name: {
       singular: {
@@ -184,7 +184,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_CELESTIAL,
+    id: CREATURE_TYPE_CELESTIAL,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -206,7 +206,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_MONSTER,
+    id: CREATURE_TYPE_MONSTER,
     genderId: GENDER_MIDDLE,
     name: {
       singular: {
@@ -228,7 +228,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_PLANT,
+    id: CREATURE_TYPE_PLANT,
     genderId: GENDER_MIDDLE,
     name: {
       singular: {
@@ -250,7 +250,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_CONSTRUCT,
+    id: CREATURE_TYPE_CONSTRUCT,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -272,7 +272,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_UNDEAD,
+    id: CREATURE_TYPE_UNDEAD,
     genderId: GENDER_FEMALE,
     name: {
       singular: {
@@ -294,7 +294,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_DRAGON,
+    id: CREATURE_TYPE_DRAGON,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -316,7 +316,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_ABERRATION,
+    id: CREATURE_TYPE_ABERRATION,
     genderId: GENDER_FEMALE,
     name: {
       singular: {
@@ -338,7 +338,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_DEVIL,
+    id: CREATURE_TYPE_DEVIL,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -360,7 +360,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_DEMON,
+    id: CREATURE_TYPE_DEMON,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -382,7 +382,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_KOBOLD,
+    id: CREATURE_TYPE_KOBOLD,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -404,7 +404,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TITAN,
+    id: CREATURE_TYPE_TITAN,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -426,7 +426,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_BULLYWUG,
+    id: CREATURE_TYPE_BULLYWUG,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -448,7 +448,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_GNOLL,
+    id: CREATURE_TYPE_GNOLL,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -470,7 +470,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_GITH,
+    id: CREATURE_TYPE_GITH,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -492,7 +492,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_GNOME,
+    id: CREATURE_TYPE_GNOME,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -514,7 +514,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_GRIMLOCK,
+    id: CREATURE_TYPE_GRIMLOCK,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -536,7 +536,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_ORC,
+    id: CREATURE_TYPE_ORC,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -558,7 +558,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_GRUNG,
+    id: CREATURE_TYPE_GRUNG,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -580,7 +580,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_YUGOLOT,
+    id: CREATURE_TYPE_YUGOLOT,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -602,7 +602,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_DWARF,
+    id: CREATURE_TYPE_DWARF,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -624,7 +624,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_SAHUAGIN,
+    id: CREATURE_TYPE_SAHUAGIN,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -646,7 +646,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_ELF,
+    id: CREATURE_TYPE_ELF,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -668,7 +668,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_QUAGGOTH,
+    id: CREATURE_TYPE_QUAGGOTH,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -690,7 +690,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_LIZARDFOLK,
+    id: CREATURE_TYPE_LIZARDFOLK,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -712,7 +712,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_XVART,
+    id: CREATURE_TYPE_XVART,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -734,7 +734,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_THRI_KREEN,
+    id: CREATURE_TYPE_THRI_KREEN,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -756,7 +756,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TROGLODYTE,
+    id: CREATURE_TYPE_TROGLODYTE,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -778,7 +778,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_GIANT,
+    id: CREATURE_TYPE_GIANT,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -800,7 +800,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_FIRE_GIANT,
+    id: CREATURE_TYPE_FIRE_GIANT,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -822,7 +822,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_FIRENEWT,
+    id: CREATURE_TYPE_FIRENEWT,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -844,7 +844,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_FEY,
+    id: CREATURE_TYPE_FEY,
     genderId: GENDER_FEMALE,
     name: {
       singular: {
@@ -866,7 +866,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_AARAKOCRA,
+    id: CREATURE_TYPE_AARAKOCRA,
     genderId: GENDER_FEMALE,
     name: {
       singular: {
@@ -888,7 +888,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_HUMAN,
+    id: CREATURE_TYPE_HUMAN,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -910,7 +910,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_KUO_TOA,
+    id: CREATURE_TYPE_KUO_TOA,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -932,7 +932,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_KENKU,
+    id: CREATURE_TYPE_KENKU,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -954,7 +954,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_YOAN_TI,
+    id: CREATURE_TYPE_YOAN_TI,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -976,7 +976,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_ELEMENTAL,
+    id: CREATURE_TYPE_ELEMENTAL,
     genderId: GENDER_MALE,
     name: {
       singular: {
@@ -998,7 +998,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_JELLY,
+    id: CREATURE_TYPE_JELLY,
     genderId: GENDER_FEMALE,
     name: {
       singular: {

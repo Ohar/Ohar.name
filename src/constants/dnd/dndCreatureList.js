@@ -42,18 +42,18 @@ import {
   SIZE_TINY,
 } from "@/constants/dnd/dndSizeList"
 import {
-  CREATURE_AARAKOCRA,
-  CREATURE_ABERRATION,
-  CREATURE_ANY_RACE,
-  CREATURE_CELESTIAL,
-  CREATURE_DRAGON,
-  CREATURE_ELEMENTAL,
-  CREATURE_FIEND,
-  CREATURE_GIANT,
-  CREATURE_HUMANOID,
-  CREATURE_MONSTER,
-  CREATURE_SHAPESHIFTER,
-  CREATURE_UNDEAD,
+  CREATURE_TYPE_AARAKOCRA,
+  CREATURE_TYPE_ABERRATION,
+  CREATURE_TYPE_ANY_RACE,
+  CREATURE_TYPE_CELESTIAL,
+  CREATURE_TYPE_DRAGON,
+  CREATURE_TYPE_ELEMENTAL,
+  CREATURE_TYPE_FIEND,
+  CREATURE_TYPE_GIANT,
+  CREATURE_TYPE_HUMANOID,
+  CREATURE_TYPE_MONSTER,
+  CREATURE_TYPE_SHAPESHIFTER,
+  CREATURE_TYPE_UNDEAD,
 } from "@/constants/dnd/dndCreatureTypeList"
 import {
   ALIGMENT_ANY,
@@ -230,8 +230,8 @@ const dndCreatureList = [
     cr: CR_0,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_HUMANOID,
-      CREATURE_ANY_RACE,
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
     ],
     params: {
       [PARAM_STR]: 10,
@@ -290,8 +290,8 @@ const dndCreatureList = [
     cr: CR_1_8,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_HUMANOID,
-      CREATURE_ANY_RACE,
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
     ],
     params: {
       [PARAM_STR]: 11,
@@ -363,8 +363,8 @@ const dndCreatureList = [
     cr: CR_1_4,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_HUMANOID,
-      CREATURE_ANY_RACE,
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
     ],
     params: {
       [PARAM_STR]: 10,
@@ -430,8 +430,8 @@ const dndCreatureList = [
 `,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_HUMANOID,
-      CREATURE_AARAKOCRA,
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_AARAKOCRA,
     ],
     aligmentId: ALIGMENT_NG,
     armor: 12,
@@ -519,7 +519,7 @@ const dndCreatureList = [
 `,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
-      CREATURE_ABERRATION,
+      CREATURE_TYPE_ABERRATION,
     ],
     aligmentId: ALIGMENT_LE,
     armor: {
@@ -654,7 +654,7 @@ const dndCreatureList = [
     description: `Чудовищные огнедышащие исчадия, принявшие облик сильных псов, **адские гончие** встречаются на полях Ахерона и на всех Нижних Планах. На Материальном Плане адские гончие чаще всего встречаются в услужении у дьяволов, огненных великанов и других злых существ, которые используют их в качестве сторожевых животных и спутников.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_FIEND,
+      CREATURE_TYPE_FIEND,
     ],
     aligmentId: ALIGMENT_LE,
     armor: {
@@ -751,7 +751,7 @@ const dndCreatureList = [
     description: `**Дэвы** это ангелы, которые выступают в роли божественных посланников или агентов на Материальном Плане, в Царстве Теней или Стране Фей. Они могут принимать форму, которая подходит той области, куда они направляются.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_CELESTIAL,
+      CREATURE_TYPE_CELESTIAL,
     ],
     aligmentId: ALIGMENT_LG,
     armor: {
@@ -892,7 +892,7 @@ const dndCreatureList = [
     description: `**Планетары** это оружие богов, которым они служат, воплощение мощи своих божеств. Они могут вызвать дождь, чтобы облегчить засуху, или наслать насекомых, чтобы уничтожить урожай. Уши этих небожителей слышат любую ложь, а их сияющие глаза видят любой обман.`,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
-      CREATURE_CELESTIAL,
+      CREATURE_TYPE_CELESTIAL,
     ],
     aligmentId: ALIGMENT_LG,
     armor: {
@@ -1047,7 +1047,7 @@ const dndCreatureList = [
 Говорят, что существует всего двадцать четыре солара. Известно, что несколько соларов являются верными помощниками некоторых богов. Остальные отдыхают в состоянии созерцания, ожидая, когда их услуги понадобятся для противостояния огромной угрозе силам добра.`,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
-      CREATURE_CELESTIAL,
+      CREATURE_TYPE_CELESTIAL,
     ],
     aligmentId: ALIGMENT_LG,
     armor: {
@@ -1298,7 +1298,7 @@ const dndCreatureList = [
     cr: CR_2,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
-      CREATURE_MONSTER,
+      CREATURE_TYPE_MONSTER,
     ],
     params: {
       [PARAM_STR]: 17,
@@ -1379,7 +1379,7 @@ const dndCreatureList = [
     cr: CR_4,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_UNDEAD,
+      CREATURE_TYPE_UNDEAD,
     ],
     params: {
       [PARAM_STR]: 1,
@@ -1476,7 +1476,7 @@ const dndCreatureList = [
     description: `Змееподобный **бехир** ползает по полу и лазает по стенам, чтобы схватить свою добычу. Его электрическое дыхание может сжечь большинство существ, а более сильных противников он сжимает, обернувшись вокруг них кольцами, и съедает заживо. Внешне бехир похож на смесь чудовищной многоножки и крокодила. Его чешуйчатая шкура переливается от ультрамарина до тёмно-синего цвета, а на брюхе она голубая.`,
     sizeType: SIZE_HUGE,
     creatureTypeIdList: [
-      CREATURE_MONSTER,
+      CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NE,
     source: 'MM:22',
@@ -1595,7 +1595,7 @@ const dndCreatureList = [
     description: `**Блуждающие огоньки** являются злобными, похожими на дымку, шарами света, которые обитают в уединённых местах и на полях сражений, связанных с мрачной судьбой или тёмной магией, и питаются страхом и отчаянием.`,
     sizeType: SIZE_TINY,
     creatureTypeIdList: [
-      CREATURE_UNDEAD,
+      CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_CE,
     source: 'MM:23',
@@ -1699,7 +1699,7 @@ const dndCreatureList = [
     description: `Из всех ужасов, созданных отвратительным колдовством, **бормочущие ротовики** — одни из самых ужасных и порочных порождений. Это существо состоит из глаз, ртов и сжиженных тел его прежних жертв. Впавшие в безумие из-за разрушения их тел и поглощения ротовиком, эти жертвы бессвязно бормочут, пожирая всё, до чего смогут добраться.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_ABERRATION,
+      CREATURE_TYPE_ABERRATION,
     ],
     aligmentId: ALIGMENT_N,
     source: 'MM:24',
@@ -1784,7 +1784,7 @@ const dndCreatureList = [
     description: `Отвратительные и ужасные **бурые увальни** из глубин земли роются в пещерных комплексах, подземельях или поселениях Подземья в поисках еды. Счастливчики, пережившие нападение бурого увальня, часто помнят слишком мало о произошедшем из-за заглушающего разум взгляда бурого увальня.`,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
-      CREATURE_MONSTER,
+      CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
     source: 'MM:25',
@@ -1886,8 +1886,8 @@ const dndCreatureList = [
     description: `Пробуждённые в бесконечной ночи **вампиры** жаждут жизни, которую они потеряли, и утоляют эту жажду, выпивая кровь живых. Вампиры ненавидят солнечный свет, поскольку его прикосновение жжёт их. Они не отбрасывают ни теней, ни отражений, и всякий вампир, желающий ходить незамеченным среди живых, вынужден держаться в темноте и подальше от отражающих поверхностей.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_UNDEAD,
-      CREATURE_SHAPESHIFTER,
+      CREATURE_TYPE_UNDEAD,
+      CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_LE,
     source: 'MM:28',
@@ -2062,8 +2062,8 @@ const dndCreatureList = [
     description: `Пробуждённые в бесконечной ночи **вампиры** жаждут жизни, которую они потеряли, и утоляют эту жажду, выпивая кровь живых. Вампиры ненавидят солнечный свет, поскольку его прикосновение жжёт их. Они не отбрасывают ни теней, ни отражений, и всякий вампир, желающий ходить незамеченным среди живых, вынужден держаться в темноте и подальше от отражающих поверхностей.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_UNDEAD,
-      CREATURE_SHAPESHIFTER,
+      CREATURE_TYPE_UNDEAD,
+      CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_LE,
     source: 'MM:29',
@@ -2237,8 +2237,8 @@ const dndCreatureList = [
     description: `Пробуждённые в бесконечной ночи **вампиры** жаждут жизни, которую они потеряли, и утоляют эту жажду, выпивая кровь живых. Вампиры ненавидят солнечный свет, поскольку его прикосновение жжёт их. Они не отбрасывают ни теней, ни отражений, и всякий вампир, желающий ходить незамеченным среди живых, вынужден держаться в темноте и подальше от отражающих поверхностей.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_UNDEAD,
-      CREATURE_SHAPESHIFTER,
+      CREATURE_TYPE_UNDEAD,
+      CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_LE,
     source: 'MM:28',
@@ -2445,7 +2445,7 @@ const dndCreatureList = [
     description: `Большинство жертв вампира становятся **порождениями вампира** — хищными созданиями с вампирским голодом к крови, но находящимися под контролем вампира, который их создал. Если истинный вампир позволит порождению выпить кровь из своего тела, порождение превратится в истинного вампира, не подконтрольного своему хозяину. Немногие вампиры готовы отказаться от этого влияния. Порождение вампира обретает собственную волю, когда его создатель погибает. `,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_UNDEAD,
+      CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_NE,
     source: 'MM:29',
@@ -2570,7 +2570,7 @@ const dndCreatureList = [
     description: `Путешественники иногда натыкаются в диких местах на объекты, которые выглядят как куски удивительно реалистичной резьбы по камню. Недостающие куски кажутся откушенными. Бывалые путешественники считают такие реликвии предупреждением о том, что где-то рядом находится **василиск**.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
-      CREATURE_MONSTER,
+      CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NO,
     source: 'MM:30',
@@ -2644,7 +2644,7 @@ const dndCreatureList = [
     description: `**Каменные великаны** — затворники, тихие и мирные, пока их не беспокоят. Их гранитно-серая кожа, измождённые черты лица и чёрные, запавшие глаза придают каменным великанам суровое выражение. Они любят уединение, скрывая свои жизни и искусство от мира. `,
     sizeType: SIZE_HUGE,
     creatureTypeIdList: [
-      CREATURE_GIANT,
+      CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_N,
     source: 'MM:36',
@@ -2750,7 +2750,7 @@ const dndCreatureList = [
     description: `Ледяные великаны — громадные грабители с морозных земель, что лежат за гранью цивилизации — это жестокие, выносливые воины, живущие за счёт добычи с набегов и грабежей. Они уважают лишь грубую силу и боевые навыки, демонстрируя их шрамами и отвратительными трофеями, полученными от врагов.`,
     sizeType: SIZE_HUGE,
     creatureTypeIdList: [
-      CREATURE_GIANT,
+      CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_NE,
     source: 'MM:36',
@@ -2839,7 +2839,7 @@ const dndCreatureList = [
     description: `**Облачные великаны** живут расточительной жизнью высоко над землёй, нисколько не заботясь об участи других рас кроме как ради развлечения. Они мускулистые, кожа у них светлая, а волосы серебряного или голубого цвета.`,
     sizeType: SIZE_HUGE,
     creatureTypeIdList: [
-      CREATURE_GIANT,
+      CREATURE_TYPE_GIANT,
     ],
     aligmentId: [
       {
@@ -2980,7 +2980,7 @@ const dndCreatureList = [
     description: `Умелые ремесленники и организованные бойцы, **огненные великаны** обитают среди вулканов, потоков лавы и скалистых гор. Это безжалостные милитаристские громилы, чьё мастерство в обработке металлов поистине легендарно.`,
     sizeType: SIZE_HUGE,
     creatureTypeIdList: [
-      CREATURE_GIANT,
+      CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_LE,
     source: 'MM:37',
@@ -3073,7 +3073,7 @@ const dndCreatureList = [
 бы положила им конец, если бы не огромный размер и сила.`,
     sizeType: SIZE_HUGE,
     creatureTypeIdList: [
-      CREATURE_GIANT,
+      CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_CE,
     source: 'MM:38',
@@ -3156,7 +3156,7 @@ const dndCreatureList = [
     description: `**Штормовые великаны** это задумчивые провидцы, живущие в местах, далёких от цивилизации смертных. У большинства бледный, серо-фиолетовый цвет кожи и волос, а также блестящие изумрудные глаза. Редко встречаются и штормовые великаны с фиолетовой кожей, тёмно-фиолетовыми или тёмно-синими волосами, а также серебристо-серыми или фиолетовыми глазами. Они доброжелательны и мудры, но если разозлить штормового великана, то судьбы тысяч окажутся во власти его ярости.`,
     sizeType: SIZE_HUGE,
     creatureTypeIdList: [
-      CREATURE_GIANT,
+      CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_CG,
     source: 'MM:38',
@@ -3297,7 +3297,7 @@ const dndCreatureList = [
     description: `Живущие в пещерах по всему Подземью ненасытные **верёвочники** рады всему, что могут поймать и сожрать. Верёвочники едят любых существ, от зверей Подземья до искателей приключений вместе с их снаряжением.`,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
-      CREATURE_MONSTER,
+      CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NE,
     source: 'MM:39',
@@ -3393,7 +3393,7 @@ const dndCreatureList = [
     description: `Путешественники порой видят в небесах тёмную крылатую фигуру **виверны**, несущей добычу. Это родственники великих драконов, и охотятся они в тех же дремучих лесах и пещерах. Их появление вызывает всплески тревоги на границах цивилизации.`,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
-      CREATURE_DRAGON,
+      CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_NO,
     source: 'MM:40',
@@ -3491,7 +3491,7 @@ const dndCreatureList = [
     description: `**Водная аномалия** является элементалем-защитником, связанным с определённым местом, заполненным водой, таким как бассейн или фонтан. Её змеевидное тело, невидимое, пока погружено в воду, становится заметным только когда она появляется, чтобы напасть, обвиваясь вокруг любого существа, кроме её призывателя и тех, кому разрешит находиться призыватель. Когда водная аномалия повержена, она становится неживой лужей воды.`,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
-      CREATURE_ELEMENTAL,
+      CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_N,
     source: 'MM:41',
@@ -3586,7 +3586,7 @@ const dndCreatureList = [
     description: `Водянники часто посещают прибрежные воды, охотясь на рыбаков, мерфолков и любых других съедобных существ, которые встретятся им на пути. Эти дикие чудовища хватают и пожирают неосторожную жертву, утягивая трупы в свои подводные гроты для пропитания.`,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
-      CREATURE_MONSTER,
+      CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
     source: 'MM:42',
@@ -3697,7 +3697,7 @@ const dndCreatureList = [
     description: `**Волшебный дракончик** — дракон размером с кошку с крыльями бабочки. У него острые зубы, а восторг он выражает подёргиванием хвоста. Его игривое настроение исчезает только если на него напасть.`,
     sizeType: SIZE_TINY,
     creatureTypeIdList: [
-      CREATURE_DRAGON,
+      CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CG,
     source: 'MM:43',

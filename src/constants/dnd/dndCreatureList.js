@@ -2832,7 +2832,16 @@ const dndCreatureList = [
     creatureTypeIdList: [
       CREATURE_GIANT,
     ],
-    aligmentId: ALIGMENT_NG, //TODO
+    aligmentId: [
+      {
+        id: ALIGMENT_NG,
+        comment: '50%',
+      },
+      {
+        id: ALIGMENT_NE,
+        comment: '50%',
+      },
+    ],
     source: 'MM:37',
     armor: {
       ac: 14,

@@ -28,6 +28,7 @@ const DndCreatureComponent = (
     actionList,
     aligment,
     armor,
+    columnCount,
     cr,
     creatureType,
     description,
@@ -46,7 +47,6 @@ const DndCreatureComponent = (
     reactionList,
     saveThrowCollection,
     senseList,
-    showTwoColumns,
     size,
     skillCollection,
     source,
@@ -54,12 +54,7 @@ const DndCreatureComponent = (
     spellCast,
   },
 ) => (
-  <section className={classNames(
-    'DndCreature',
-    {
-      'DndCreature-twoColumns': showTwoColumns,
-    }
-  )}>
+  <section className={`DndCreature DndCreature-columnCount_${columnCount}`}>
     <header className='DndCreature_name'>
       {name} [{nameEn}]
     </header>
@@ -115,6 +110,7 @@ DndCreatureComponent.propTypes = {
     PropTypes.number,
     PropTypes.object,
   ]).isRequired,
+  columnCount: PropTypes.number,
   cr: PropTypes.string.isRequired,
   creatureType: PropTypes.string.isRequired,
   description: PropTypes.string,
@@ -131,7 +127,6 @@ DndCreatureComponent.propTypes = {
   reactionList: PropTypes.array,
   saveThrowCollection: PropTypes.object,
   senseList: PropTypes.array,
-  showTwoColumns: PropTypes.bool,
   size: PropTypes.string.isRequired,
   skillCollection: PropTypes.object,
   source: PropTypes.string.isRequired,
@@ -141,6 +136,7 @@ DndCreatureComponent.propTypes = {
 
 DndCreatureComponent.defaultProps = {
   actionList: [],
+  columnCount: 1,
   description: '',
   featureList: [],
   immunityList: [],
@@ -152,7 +148,6 @@ DndCreatureComponent.defaultProps = {
   reactionList: [],
   saveThrowCollection: null,
   senseList: [],
-  showTwoColumns: false,
   skillCollection: null,
   spellCast: null,
 }

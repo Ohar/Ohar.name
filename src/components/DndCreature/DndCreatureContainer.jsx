@@ -6,6 +6,7 @@ import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
 import {dndSizeCollection} from "@/constants/dnd/dndSizeList"
 
 import getCreatureTypeName from "./utils/getCreatureTypeName"
+import calculateColumnCount from "./utils/calculateColumnCount"
 
 import DndCreatureComponent from "./DndCreatureComponent"
 
@@ -16,6 +17,7 @@ const DndCreatureContainer = (
       aligmentId,
       creatureTypeIdList,
       featureList,
+      legendaryActionList,
       legendaryPoints,
       sizeType,
       ...rest,
@@ -39,12 +41,7 @@ const DndCreatureContainer = (
     .filter(e => e)
     .join(' ')
 
-  const featureCount = featureList && featureList.length || 0
-  const actionCount = actionList && actionList.length || 0
-
-  const showTwoColumns = legendaryPoints || (
-    (featureCount + actionCount) >= 5
-  )
+  const columnCount = calculateColumnCount({actionList, featureList, legendaryPoints, legendaryActionList})
 
   return (
     <DndCreatureComponent
@@ -52,8 +49,9 @@ const DndCreatureContainer = (
       aligment={aligment}
       creatureType={creatureType}
       featureList={featureList}
+      legendaryActionList={legendaryActionList}
       legendaryPoints={legendaryPoints}
-      showTwoColumns={showTwoColumns}
+      columnCount={columnCount}
       size={size}
       {...rest}
     />

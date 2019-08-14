@@ -52,6 +52,7 @@ export const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
 export const SPELL_GUST_OF_WIND = 'gust_of_wind'
 export const SPELL_INSECT_PLAGUE = 'insect_plague'
 export const SPELL_INVISIBILITY = 'invisibility'
+export const SPELL_LEVITATE = 'levitate'
 export const SPELL_LIGHT = 'light'
 export const SPELL_MAGE_HAND = 'mage_hand'
 export const SPELL_MIRROR_IMAGE = 'mirror_image'
@@ -66,6 +67,7 @@ export const SPELL_SANCTUARY = 'sanctuary'
 export const SPELL_SLEEP = 'sleep'
 export const SPELL_TELEKINESIS = 'telekinesis'
 export const SPELL_THAUMATURGY = 'thaumaturgy'
+export const SPELL_WATER_BREATHING = 'water_breathing'
 
 const defaultCastTime = '1 действие'
 const defaultDuration = 'мгновенная'
@@ -701,6 +703,38 @@ const dndSpellList = [
     duration: 'вплоть до 1 часа',
     source: 'PHB:220',
     classList: [PC_CLASS_FIGHTER, PC_CLASS_MONK, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_LEVITATE,
+    name: 'Левитация',
+    nameEn: 'Levitate',
+    description: `Одно выбранное вами существо или предмет, видимые в пределах дистанции, поднимается вертикально на расстояние до 20 фт., и остается висеть там на время действия заклинания. Заклинание может заставить левитировать цель, весящую до 500 фунтов. Несогласное существо, преуспевшее в спасброске Телосложения, не попадает под действие этого заклинания.\n
+Цель может перемещаться только отталкиваясь от твердых предметов и поверхностей (таких как стены и потолок), а также подтягиваясь за них, что позволяет перемещаться так, как если бы они лазали. В свой ход вы можете изменить высоту цели на 20 фт. в любом направлении. Если целью являетесь вы сами, вы можете частью перемещения двигаться вверх или вниз. В противном случае, вы можете действием переместить цель, которая должна оставаться при этом в пределах досягаемости заклинания.\n
+Когда заклинание оканчивается, если цель все еще находится в воздухе, она плавно опускается на землю.`,
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION,
+    needConcentration: true,
+    range: 60,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'либо маленькая кожаная петля, либо кусочек золотой проволоки, согнутый в форме кубка с длинной ножкой',
+    duration: 'вплоть до 10 минут',
+    source: 'PHB:235',
+    classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
+  },
+  {
+    id: SPELL_WATER_BREATHING,
+    name: 'Подводное дыхание',
+    nameEn: 'Water breathing',
+    description: `Это заклинание дарует на время своего действия до десяти существам, видимым вами в пределах дистанции, способность дышать под водой. Эти существа сохраняют и обычное дыхание.`,
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION,
+    ritual: true,
+    range: 30,
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
+    materialText: 'камыш или соломинка',
+    duration: '24 часа',
+    source: 'PHB:258',
+    classList: [PC_CLASS_FIGHTER, PC_CLASS_RANGER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
 ].map(
   spell => ({

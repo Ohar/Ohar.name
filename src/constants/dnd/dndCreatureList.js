@@ -160,6 +160,7 @@ import {
   SPELL_GUST_OF_WIND,
   SPELL_INSECT_PLAGUE,
   SPELL_INVISIBILITY,
+  SPELL_LEVITATE,
   SPELL_LIGHT,
   SPELL_MAGE_HAND,
   SPELL_MIRROR_IMAGE,
@@ -174,6 +175,7 @@ import {
   SPELL_SLEEP,
   SPELL_TELEKINESIS,
   SPELL_THAUMATURGY,
+  SPELL_WATER_BREATHING,
 } from '@/constants/dnd/dndSpellList'
 import {
   CAST_MATERIAL,
@@ -202,6 +204,7 @@ import {
   TARGET_OBJECT,
   TARGET_POINT,
 } from '@/constants/dnd/dndTargetList'
+import { SKILL_ARCANA } from './dndSkillList';
 
 const dndCreatureList = [
   {
@@ -3137,6 +3140,147 @@ const dndCreatureList = [
             cubeCount: 3,
             cubeBonus: 5,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Штормовой великан',
+    nameEn: 'Storm Giant',
+    description: `**Штормовые великаны** это задумчивые провидцы, живущие в местах, далёких от цивилизации смертных. У большинства бледный, серо-фиолетовый цвет кожи и волос, а также блестящие изумрудные глаза. Редко встречаются и штормовые великаны с фиолетовой кожей, тёмно-фиолетовыми или тёмно-синими волосами, а также серебристо-серыми или фиолетовыми глазами. Они доброжелательны и мудры, но если разозлить штормового великана, то судьбы тысяч окажутся во власти его ярости.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_GIANT,
+    ],
+    aligmentId: ALIGMENT_CG,
+    source: 'MM:38',
+    armor: {
+      ac: 16,
+      type: 'чешуйчатый доспех',
+    },
+    hp: {
+      cubeType: 12,
+      cubeCount: 20,
+      cubeBonus: 100,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+      [SPEED_SWIM]: 50,
+    },
+    params: {
+      [PARAM_STR]: 29,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 16,
+      [PARAM_WIT]: 18,
+      [PARAM_CHA]: 18,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 9,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 14,
+      [SKILL_PERCEPTION]: 9,
+      [SKILL_HISTORY]: 8,
+      [SKILL_ARCANA]: 8,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+    ],
+    immunityList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ELECTRICITY,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 19,
+      },
+    ],
+    languageList: [
+      LANG_GIANT,
+      LANG_COMMON,
+    ],
+    cr: CR_13,
+    featureList: [
+      {
+        name: 'Амфибия',
+        description: `Великан может дышать и воздухом и под водой.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 17,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_LEVITATE,
+            SPELL_DETECT_MAGIC,
+            SPELL_FEATHER_FALL,
+            SPELL_LIGHT,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_CONTROL_WEATHER,
+            SPELL_WATER_BREATHING,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Великан совершает две атаки двуручным мечом.`,
+      },
+      {
+        name: 'Двуручный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 14,
+          range: 10,
+          target: 1,
+          damage: {
+            type: DAMAGE_SLASHING,
+            cubeType: 6,
+            cubeCount: 6,
+            cubeBonus: 9,
+          },
+        },
+      },
+      {
+        name: 'Камень',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 14,
+          range: {
+            normal: 60,
+            max: 240,
+          },
+          target: 1,
+          damage: {
+            type: DAMAGE_BLUDGEONING,
+            cubeType: 12,
+            cubeCount: 4,
+            cubeBonus: 9,
+          },
+        },
+      },
+      {
+        name: 'Удар молнии',
+        description: `Великан вызывает магическую молнию в точку, которую он видит в пределах 500 футов от себя. Все существа в пределах 10 футов от этой точки должны совершить спасбросок Ловкости со Сл 17, получая урон электричеством 54 (12к8) при провале, или половину этого урона при успехе.`,
+        restore: {
+          from: 5,
+          to: 6,
         },
       },
     ],

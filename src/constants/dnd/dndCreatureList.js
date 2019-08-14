@@ -217,8 +217,8 @@ const dndCreatureList = [
       [SPEED_WALK]: 30,
     },
     hp: {
-      cubeType: 8,
       cubeCount: 1,
+      cubeType: 8,
     },
     armor: 10,
     cr: CR_0,
@@ -254,8 +254,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 4,
             cubeCount: 1,
+            cubeType: 4,
           },
         },
       },
@@ -273,8 +273,8 @@ const dndCreatureList = [
       [SPEED_WALK]: 30,
     },
     hp: {
-      cubeType: 8,
       cubeCount: 2,
+      cubeType: 8,
       cubeBonus: 2,
     },
     armor: {
@@ -314,8 +314,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_SLASHING,
-            cubeType: 6,
             cubeCount: 1,
+            cubeType: 6,
             cubeBonus: 1,
           },
         },
@@ -332,8 +332,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_PIERCING,
-            cubeType: 8,
             cubeCount: 1,
+            cubeType: 8,
             cubeBonus: 1,
           },
         },
@@ -350,8 +350,8 @@ const dndCreatureList = [
       [SPEED_WALK]: 30,
     },
     hp: {
-      cubeType: 8,
       cubeCount: 2,
+      cubeType: 8,
     },
     armor: 10,
     cr: CR_1_4,
@@ -391,8 +391,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 4,
             cubeCount: 1,
+            cubeType: 4,
           },
         },
       },
@@ -430,8 +430,8 @@ const dndCreatureList = [
     aligmentId: ALIGMENT_NG,
     armor: 12,
     hp: {
-      cubeType: 8,
       cubeCount: 3,
+      cubeType: 8,
     },
     speed: {
       [SPEED_WALK]: 20,
@@ -476,8 +476,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_SLASHING,
-            cubeType: 4,
             cubeCount: 1,
+            cubeType: 4,
             cubeBonus: 2,
           },
         },
@@ -497,8 +497,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_PIERCING,
-            cubeType: 6,
             cubeCount: 1,
+            cubeType: 6,
             cubeBonus: 2,
           },
         },
@@ -521,8 +521,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 10,
       cubeCount: 18,
+      cubeType: 10,
       cubeBonus: 36,
     },
     speed: {
@@ -594,8 +594,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 6,
             cubeCount: 2,
+            cubeType: 6,
             cubeBonus: 5,
           },
         },
@@ -609,8 +609,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 6,
             cubeCount: 3,
+            cubeType: 6,
             cubeBonus: 5,
           },
         },
@@ -656,8 +656,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 8,
       cubeCount: 7,
+      cubeType: 8,
       cubeBonus: 14,
     },
     speed: {
@@ -716,14 +716,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_PIERCING,
-              cubeType: 8,
               cubeCount: 1,
+              cubeType: 8,
               cubeBonus: 3,
             },
             {
               type: DAMAGE_FIRE,
-              cubeType: 6,
               cubeCount: 2,
+              cubeType: 6,
             },
           ],
         },
@@ -753,8 +753,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 8,
       cubeCount: 16,
+      cubeType: 8,
       cubeBonus: 64,
     },
     speed: {
@@ -853,14 +853,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_BLUDGEONING,
-              cubeType: 6,
               cubeCount: 1,
+              cubeType: 6,
               cubeBonus: 4,
             },
             {
               type: DAMAGE_RADIANT,
-              cubeType: 8,
               cubeCount: 4,
+              cubeType: 8,
             },
           ],
         },
@@ -894,8 +894,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 10,
       cubeCount: 16,
+      cubeType: 10,
       cubeBonus: 112,
     },
     speed: {
@@ -1012,14 +1012,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_SLASHING,
-              cubeType: 6,
               cubeCount: 4,
+              cubeType: 6,
               cubeBonus: 7,
             },
             {
               type: DAMAGE_RADIANT,
-              cubeType: 8,
               cubeCount: 5,
+              cubeType: 8,
             },
           ],
         },
@@ -1049,8 +1049,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 10,
       cubeCount: 18,
+      cubeType: 10,
       cubeBonus: 144,
     },
     speed: {
@@ -1173,14 +1173,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_SLASHING,
-              cubeType: 6,
               cubeCount: 4,
+              cubeType: 6,
               cubeBonus: 7,
             },
             {
               type: DAMAGE_RADIANT,
-              cubeType: 8,
               cubeCount: 5,
+              cubeType: 8,
             },
           ],
         },
@@ -1195,14 +1195,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_SLASHING,
-              cubeType: 6,
               cubeCount: 4,
+              cubeType: 6,
               cubeBonus: 7,
             },
             {
               type: DAMAGE_RADIANT,
-              cubeType: 8,
               cubeCount: 5,
+              cubeType: 8,
             },
           ],
         },
@@ -1220,14 +1220,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_PIERCING,
-              cubeType: 8,
               cubeCount: 2,
+              cubeType: 8,
               cubeBonus: 6,
             },
             {
               type: DAMAGE_RADIANT,
-              cubeType: 8,
               cubeCount: 6,
+              cubeType: 8,
             },
           ],
         },
@@ -1275,8 +1275,8 @@ const dndCreatureList = [
       [SPEED_DIG]: 10,
     },
     hp: {
-      cubeType: 10,
       cubeCount: 6,
+      cubeType: 10,
       cubeBonus: 6,
     },
     armor: [
@@ -1328,14 +1328,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_SLASHING,
-              cubeType: 6,
               cubeCount: 2,
+              cubeType: 6,
               cubeBonus: 3,
             },
             {
               type: DAMAGE_ACID,
-              cubeType: 6,
               cubeCount: 1,
+              cubeType: 6,
             },
           ],
         },
@@ -1365,8 +1365,8 @@ const dndCreatureList = [
       },
     },
     hp: {
-      cubeType: 10,
       cubeCount: 6,
+      cubeType: 10,
       cubeBonus: 6,
     },
     armor: 12,
@@ -1444,8 +1444,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_NECROTIC,
-            cubeType: 6,
             cubeCount: 3,
+            cubeType: 6,
             cubeBonus: 2,
           },
         },
@@ -1479,8 +1479,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 12,
       cubeCount: 16,
+      cubeType: 12,
       cubeBonus: 64,
     },
     cr: CR_11,
@@ -1530,8 +1530,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_PIERCING,
-            cubeType: 10,
             cubeCount: 3,
+            cubeType: 10,
             cubeBonus: 6,
           },
         },
@@ -1555,14 +1555,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_BLUDGEONING,
-              cubeType: 10,
               cubeCount: 2,
+              cubeType: 10,
               cubeBonus: 6,
             },
             {
               type: DAMAGE_SLASHING,
-              cubeType: 10,
               cubeCount: 2,
+              cubeType: 10,
               cubeBonus: 6,
             },
           ],
@@ -1595,8 +1595,8 @@ const dndCreatureList = [
     source: 'MM:23',
     armor: 19,
     hp: {
-      cubeType: 4,
       cubeCount: 9,
+      cubeType: 4,
     },
     cr: CR_2,
     speed: {
@@ -1676,8 +1676,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_ELECTRICITY,
-            cubeType: 8,
             cubeCount: 2,
+            cubeType: 8,
           },
         },
       },
@@ -1699,8 +1699,8 @@ const dndCreatureList = [
     source: 'MM:24',
     armor: 9,
     hp: {
-      cubeType: 8,
       cubeCount: 9,
+      cubeType: 8,
       cubeBonus: 27,
     },
     cr: CR_2,
@@ -1757,8 +1757,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_PIERCING,
-            cubeType: 6,
             cubeCount: 5,
+            cubeType: 6,
           },
         },
       },
@@ -1787,8 +1787,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 10,
       cubeCount: 11,
+      cubeType: 10,
       cubeBonus: 33,
     },
     cr: CR_5,
@@ -1851,8 +1851,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_SLASHING,
-            cubeType: 8,
             cubeCount: 1,
+            cubeType: 8,
             cubeBonus: 5,
           },
         },
@@ -1866,8 +1866,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_SLASHING,
-            cubeType: 8,
             cubeCount: 2,
+            cubeType: 8,
             cubeBonus: 5,
           },
         },
@@ -1890,8 +1890,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 8,
       cubeCount: 17,
+      cubeType: 8,
       cubeBonus: 68,
     },
     cr: CR_13,
@@ -1990,8 +1990,8 @@ const dndCreatureList = [
           },
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 8,
             cubeCount: 1,
+            cubeType: 8,
             cubeBonus: 4,
           },
         },
@@ -2007,14 +2007,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_PIERCING,
-              cubeType: 6,
               cubeCount: 1,
+              cubeType: 6,
               cubeBonus: 4,
             },
             {
               type: DAMAGE_NECROTIC,
-              cubeType: 6,
               cubeCount: 3,
+              cubeType: 6,
             },
           ],
         },
@@ -2066,8 +2066,8 @@ const dndCreatureList = [
       type: 'латы',
     },
     hp: {
-      cubeType: 8,
       cubeCount: 17,
+      cubeType: 8,
       cubeBonus: 68,
     },
     cr: CR_15,
@@ -2165,8 +2165,8 @@ const dndCreatureList = [
           },
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 6,
             cubeCount: 2,
+            cubeType: 6,
             cubeBonus: 4,
           },
         },
@@ -2182,14 +2182,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_PIERCING,
-              cubeType: 6,
               cubeCount: 1,
+              cubeType: 6,
               cubeBonus: 4,
             },
             {
               type: DAMAGE_NECROTIC,
-              cubeType: 6,
               cubeCount: 3,
+              cubeType: 6,
             },
           ],
         },
@@ -2241,8 +2241,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 8,
       cubeCount: 17,
+      cubeType: 8,
       cubeBonus: 68,
     },
     cr: CR_15,
@@ -2373,8 +2373,8 @@ const dndCreatureList = [
           },
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 8,
             cubeCount: 1,
+            cubeType: 8,
             cubeBonus: 4,
           },
         },
@@ -2390,14 +2390,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_PIERCING,
-              cubeType: 6,
               cubeCount: 1,
+              cubeType: 6,
               cubeBonus: 4,
             },
             {
               type: DAMAGE_NECROTIC,
-              cubeType: 6,
               cubeCount: 3,
+              cubeType: 6,
             },
           ],
         },
@@ -2448,8 +2448,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 8,
       cubeCount: 11,
+      cubeType: 8,
       cubeBonus: 33,
     },
     cr: CR_5,
@@ -2527,8 +2527,8 @@ const dndCreatureList = [
           },
           damage: {
             type: DAMAGE_SLASHING,
-            cubeType: 4,
             cubeCount: 2,
+            cubeType: 4,
             cubeBonus: 3,
           },
         },
@@ -2544,14 +2544,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_PIERCING,
-              cubeType: 6,
               cubeCount: 1,
+              cubeType: 6,
               cubeBonus: 3,
             },
             {
               type: DAMAGE_NECROTIC,
-              cubeType: 6,
               cubeCount: 2,
+              cubeType: 6,
             },
           ],
         },
@@ -2573,8 +2573,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 8,
       cubeCount: 8,
+      cubeType: 8,
       cubeBonus: 16,
     },
     cr: CR_3,
@@ -2618,14 +2618,14 @@ const dndCreatureList = [
           damage: [
             {
               type: DAMAGE_PIERCING,
-              cubeType: 6,
               cubeCount: 2,
+              cubeType: 6,
               cubeBonus: 3,
             },
             {
               type: DAMAGE_POISON,
-              cubeType: 6,
               cubeCount: 2,
+              cubeType: 6,
             },
           ],
         },
@@ -2647,8 +2647,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 12,
       cubeCount: 11,
+      cubeType: 12,
       cubeBonus: 55,
     },
     speed: {
@@ -2705,8 +2705,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 8,
             cubeCount: 3,
+            cubeType: 8,
             cubeBonus: 6,
           },
         },
@@ -2724,8 +2724,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 10,
             cubeCount: 4,
+            cubeType: 10,
             cubeBonus: 6,
           },
         },
@@ -2753,8 +2753,8 @@ const dndCreatureList = [
       type: 'лоскутный доспех',
     },
     hp: {
-      cubeType: 12,
       cubeCount: 12,
+      cubeType: 12,
       cubeBonus: 60,
     },
     speed: {
@@ -2801,8 +2801,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_SLASHING,
-            cubeType: 12,
             cubeCount: 3,
+            cubeType: 12,
             cubeBonus: 6,
           },
         },
@@ -2819,8 +2819,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 10,
             cubeCount: 4,
+            cubeType: 10,
             cubeBonus: 6,
           },
         },
@@ -2851,8 +2851,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 12,
       cubeCount: 16,
+      cubeType: 12,
       cubeBonus: 96,
     },
     speed: {
@@ -2942,8 +2942,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_PIERCING,
-            cubeType: 8,
             cubeCount: 3,
+            cubeType: 8,
             cubeBonus: 8,
           },
         },
@@ -2960,8 +2960,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 10,
             cubeCount: 4,
+            cubeType: 10,
             cubeBonus: 8,
           },
         },
@@ -2983,8 +2983,8 @@ const dndCreatureList = [
       type: 'латный доспех',
     },
     hp: {
-      cubeType: 12,
       cubeCount: 13,
+      cubeType: 12,
       cubeBonus: 78,
     },
     speed: {
@@ -3034,8 +3034,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_SLASHING,
-            cubeType: 6,
             cubeCount: 6,
+            cubeType: 6,
             cubeBonus: 7,
           },
         },
@@ -3052,8 +3052,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 10,
             cubeCount: 4,
+            cubeType: 10,
             cubeBonus: 7,
           },
         },
@@ -3076,8 +3076,8 @@ const dndCreatureList = [
       type: 'природный доспех',
     },
     hp: {
-      cubeType: 12,
       cubeCount: 10,
+      cubeType: 12,
       cubeBonus: 40,
     },
     speed: {
@@ -3118,8 +3118,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 8,
             cubeCount: 3,
+            cubeType: 8,
             cubeBonus: 5,
           },
         },
@@ -3136,8 +3136,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 10,
             cubeCount: 3,
+            cubeType: 10,
             cubeBonus: 5,
           },
         },
@@ -3159,8 +3159,8 @@ const dndCreatureList = [
       type: 'чешуйчатый доспех',
     },
     hp: {
-      cubeType: 12,
       cubeCount: 20,
+      cubeType: 12,
       cubeBonus: 100,
     },
     speed: {
@@ -3251,8 +3251,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_SLASHING,
-            cubeType: 6,
             cubeCount: 6,
+            cubeType: 6,
             cubeBonus: 9,
           },
         },
@@ -3269,8 +3269,8 @@ const dndCreatureList = [
           target: 1,
           damage: {
             type: DAMAGE_BLUDGEONING,
-            cubeType: 12,
             cubeCount: 4,
+            cubeType: 12,
             cubeBonus: 9,
           },
         },

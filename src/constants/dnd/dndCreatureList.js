@@ -68,7 +68,7 @@ import {
   ALIGMENT_NOT_LAWFUL,
 } from '@/constants/dnd/dndAligmentList'
 import {
-  SPEED_CRAWL,
+  SPEED_CLIMB,
   SPEED_DIG,
   SPEED_FLY,
   SPEED_SWIM,
@@ -1486,7 +1486,7 @@ const dndCreatureList = [
     cr: CR_11,
     speed: {
       [SPEED_WALK]: 50,
-      [SPEED_CRAWL]: 40,
+      [SPEED_CLIMB]: 40,
     },
     params: {
       [PARAM_STR]: 23,

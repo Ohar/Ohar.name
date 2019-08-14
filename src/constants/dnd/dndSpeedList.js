@@ -1,6 +1,6 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
-export const SPEED_CRAWL = 'crawl'
+export const SPEED_CLIMB = 'climb'
 export const SPEED_DIG = 'dig'
 export const SPEED_FLY = 'fly'
 export const SPEED_SWIM = 'swim'
@@ -8,7 +8,7 @@ export const SPEED_WALK = 'walk'
 
 const dndSpeedList = [
   {
-    id: SPEED_CRAWL,
+    id: SPEED_CLIMB,
     name: 'лазая',
   },
   {

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import { dndSpeedCollection } from "@/constants/dnd/dndSpeedList"
 import {
-  SPEED_CRAWL,
+  SPEED_CLIMB,
   SPEED_DIG,
   SPEED_FLY,
   SPEED_SWIM,
@@ -38,7 +38,7 @@ const DndCreatureSpeedComponent = ({ speed }) => (
 
 DndCreatureSpeedComponent.propTypes = {
   speed: PropTypes.shape({
-    [SPEED_CRAWL]: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+    [SPEED_CLIMB]: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
     [SPEED_DIG]: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
     [SPEED_FLY]: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
     [SPEED_SWIM]: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),

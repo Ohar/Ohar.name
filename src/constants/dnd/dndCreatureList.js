@@ -3584,11 +3584,7 @@ const dndCreatureList = dndCreatureRawList
         : {}
 
       return {
-        ...(
-          creature.parentId
-            ? parent
-            : {}
-        ),
+        ...parent,
         ...(
           creature.actionList && parent && parent.actionList
             ? {

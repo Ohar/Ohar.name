@@ -1,6 +1,6 @@
 import React from "react"
 
-import {dndAligmentCollection} from "@/constants/dnd/dndAligment"
+import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 
 export default ({aligmentId}) => {
   const {name: {nominative: aligment}} = dndAligmentCollection[aligmentId]

@@ -230,7 +230,13 @@ const CREATURE_BEHIR = 'behir'
 const CREATURE_CLOUD_GIANT = 'cloud_giant'
 const CREATURE_COMMONER = 'commoner'
 const CREATURE_DEVA = 'deva'
-const CREATURE_FAERIE_DRAGON = 'faerie_dragon'
+const CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue'
+const CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green'
+const CREATURE_FAERIE_DRAGON_LIGHT_BLUE = 'faerie_dragon_light_blue'
+const CREATURE_FAERIE_DRAGON_ORANGE = 'faerie_dragon_orange'
+const CREATURE_FAERIE_DRAGON_RED = 'faerie_dragon_red'
+const CREATURE_FAERIE_DRAGON_VIOLET = 'faerie_dragon_violet'
+const CREATURE_FAERIE_DRAGON_YELLOW = 'faerie_dragon_yellow'
 const CREATURE_FIRE_GIANT = 'fire_giant'
 const CREATURE_FROST_GIANT = 'frost_giant'
 const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
@@ -559,8 +565,7 @@ const dndCreatureRawList = [
     nameEn: 'Aboleth',
     id: CREATURE_ABOLETH,
     description: `До прихода богов **аболеты** скрывались в первичных океанах и подземных озёрах. Они захватили контроль над развивающимися жизненными формами в царстве смертных, превратив их в своих рабов. Их власть уподобила их богам. Затем появились истинные боги, разбили империю аболетов и освободили их рабов.\n
-Но аболеты этого никогда не забывали.
-`,
+Но аболеты этого никогда не забывали.`,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
       CREATURE_TYPE_ABERRATION,
@@ -3454,9 +3459,9 @@ const dndCreatureRawList = [
     ],
   },
   {
-    name: 'Волшебный дракончик',
-    nameEn: 'Faerie dragon',
-    id: CREATURE_FAERIE_DRAGON,
+    name: 'Красный волшебный дракончик',
+    nameEn: 'Red faerie dragon',
+    id: CREATURE_FAERIE_DRAGON_RED,
     description: `**Волшебный дракончик** — дракон размером с кошку с крыльями бабочки. У него острые зубы, а восторг он выражает подёргиванием хвоста. Его игривое настроение исчезает только если на него напасть.`,
     sizeType: SIZE_TINY,
     creatureTypeIdList: [
@@ -3501,7 +3506,7 @@ const dndCreatureRawList = [
       LANG_DRACONIC,
       LANG_SYLVAN,
     ],
-    cr: CR_1, // TODO
+    cr: CR_1,
     featureList: [
       {
         name: 'Превосходная невидимость',
@@ -3526,16 +3531,10 @@ const dndCreatureRawList = [
             count: 1,
             period: 'день',
           },
-          list: [ // TODO
+          list: [
             SPELL_MAGE_HAND,
             SPELL_MINOR_ILLUSION,
             SPELL_DANCING_LIGHTS,
-            SPELL_COLOR_SPRAY,
-            SPELL_MIRROR_IMAGE,
-            SPELL_SUGGESTION,
-            SPELL_MAJOR_IMAGE,
-            SPELL_HALLUCINATORY_TERRAIN,
-            SPELL_POLYMORPH,
           ],
         },
       ],
@@ -3573,6 +3572,172 @@ const dndCreatureRawList = [
       },
     ],
   },
+  {
+    name: 'Оранжевый волшебный дракончик',
+    nameEn: 'Orange faerie dragon',
+    id: CREATURE_FAERIE_DRAGON_ORANGE,
+    parentId: CREATURE_FAERIE_DRAGON_RED,
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 13,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_MAGE_HAND,
+            SPELL_MINOR_ILLUSION,
+            SPELL_DANCING_LIGHTS,
+            SPELL_COLOR_SPRAY,
+          ],
+        },
+      ],
+    },
+  },
+  {
+    name: 'Жёлтый волшебный дракончик',
+    nameEn: 'Yellow faerie dragon',
+    id: CREATURE_FAERIE_DRAGON_YELLOW,
+    parentId: CREATURE_FAERIE_DRAGON_ORANGE,
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 13,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_MAGE_HAND,
+            SPELL_MINOR_ILLUSION,
+            SPELL_DANCING_LIGHTS,
+            SPELL_COLOR_SPRAY,
+            SPELL_MIRROR_IMAGE,
+          ],
+        },
+      ],
+    },
+  },
+  {
+    name: 'Зелёный волшебный дракончик',
+    nameEn: 'Green faerie dragon',
+    id: CREATURE_FAERIE_DRAGON_GREEN,
+    parentId: CREATURE_FAERIE_DRAGON_YELLOW,
+    cr: CR_2,
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 13,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_MAGE_HAND,
+            SPELL_MINOR_ILLUSION,
+            SPELL_DANCING_LIGHTS,
+            SPELL_COLOR_SPRAY,
+            SPELL_MIRROR_IMAGE,
+            SPELL_SUGGESTION,
+          ],
+        },
+      ],
+    },
+  },
+  {
+    name: 'Голубой волшебный дракончик',
+    nameEn: 'Light blue faerie dragon',
+    id: CREATURE_FAERIE_DRAGON_LIGHT_BLUE,
+    parentId: CREATURE_FAERIE_DRAGON_GREEN,
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 13,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_MAGE_HAND,
+            SPELL_MINOR_ILLUSION,
+            SPELL_DANCING_LIGHTS,
+            SPELL_COLOR_SPRAY,
+            SPELL_MIRROR_IMAGE,
+            SPELL_SUGGESTION,
+            SPELL_MAJOR_IMAGE,
+          ],
+        },
+      ],
+    },
+  },
+  {
+    name: 'Синий волшебный дракончик',
+    nameEn: 'Blue faerie dragon',
+    id: CREATURE_FAERIE_DRAGON_BLUE,
+    parentId: CREATURE_FAERIE_DRAGON_LIGHT_BLUE,
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 13,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_MAGE_HAND,
+            SPELL_MINOR_ILLUSION,
+            SPELL_DANCING_LIGHTS,
+            SPELL_COLOR_SPRAY,
+            SPELL_MIRROR_IMAGE,
+            SPELL_SUGGESTION,
+            SPELL_MAJOR_IMAGE,
+            SPELL_HALLUCINATORY_TERRAIN,
+          ],
+        },
+      ],
+    },
+  },
+  {
+    name: 'Фиолетовый волшебный дракончик',
+    nameEn: 'Violet faerie dragon',
+    id: CREATURE_FAERIE_DRAGON_VIOLET,
+    parentId: CREATURE_FAERIE_DRAGON_BLUE,
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 13,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_MAGE_HAND,
+            SPELL_MINOR_ILLUSION,
+            SPELL_DANCING_LIGHTS,
+            SPELL_COLOR_SPRAY,
+            SPELL_MIRROR_IMAGE,
+            SPELL_SUGGESTION,
+            SPELL_MAJOR_IMAGE,
+            SPELL_HALLUCINATORY_TERRAIN,
+            SPELL_POLYMORPH,
+          ],
+        },
+      ],
+    },
+  },
 ]
 
 const dndCreatureRawCollection = dndCreatureRawList.reduce(
@@ -3590,10 +3755,10 @@ const dndCreatureList = dndCreatureRawList
         ? dndCreatureRawCollection[creature.parentId]
         : {}
 
-      return {
+      const creatureFilled = {
         ...parent,
         ...(
-          creature.actionList && parent && parent.actionList
+          creature.actionList && parent.actionList
             ? {
               ...creature,
               actionList: [
@@ -3604,6 +3769,12 @@ const dndCreatureList = dndCreatureRawList
             : creature
         ),
       }
+
+      if (creature.parentId) {
+        dndCreatureRawCollection[creature.id] = creatureFilled
+      }
+
+      return creatureFilled
     }
   )
   .sort(

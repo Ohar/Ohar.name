@@ -1,6 +1,6 @@
 import {dndActionTypeCollection} from '@/constants/dnd/dndActionTypeList'
 
-import generateDamageText from './generateDamageText'
+import generateHitText from './generateHitText'
 import generateTargetLimitText from './generateTargetLimitText'
 import formatRangeText from './formatRangeText'
 import showDigitSign from './showDigitSign'
@@ -9,21 +9,21 @@ export default action => {
   if (action) {
     const {
       bonus,
-      damage,
+      hit,
       range,
       target,
       type,
     } = action
 
     const typeText = dndActionTypeCollection[type].name
-    const dmgText = generateDamageText(damage)
+    const hitText = generateHitText(hit)
     const bonusText = showDigitSign(bonus)
     const targetText = generateTargetLimitText(target)
     const rangeText = formatRangeText({type, range})
 
     return `
 *${typeText}*: ${bonusText} к попаданию, ${rangeText}, ${targetText}.
-*Попадание:* ${dmgText}.`
+*Попадание:* ${hitText}.`
   }
 
   return ''

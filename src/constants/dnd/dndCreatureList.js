@@ -252,7 +252,7 @@ const dndCreatureList = [
           bonus: 2,
           range: 5,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 1,
             cubeType: 4,
@@ -312,7 +312,7 @@ const dndCreatureList = [
           bonus: 3,
           range: 5,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_SLASHING,
             cubeCount: 1,
             cubeType: 6,
@@ -330,7 +330,7 @@ const dndCreatureList = [
             max: 320,
           },
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_PIERCING,
             cubeCount: 1,
             cubeType: 8,
@@ -389,7 +389,7 @@ const dndCreatureList = [
           bonus: 2,
           range: 5,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 1,
             cubeType: 4,
@@ -474,7 +474,7 @@ const dndCreatureList = [
           bonus: 4,
           range: 5,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_SLASHING,
             cubeCount: 1,
             cubeType: 4,
@@ -495,7 +495,7 @@ const dndCreatureList = [
             },
           },
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_PIERCING,
             cubeCount: 1,
             cubeType: 6,
@@ -592,7 +592,7 @@ const dndCreatureList = [
           bonus: 9,
           range: 10,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 2,
             cubeType: 6,
@@ -607,7 +607,7 @@ const dndCreatureList = [
           bonus: 9,
           range: 10,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 3,
             cubeType: 6,
@@ -713,7 +713,7 @@ const dndCreatureList = [
           bonus: 5,
           range: 5,
           target: 1,
-          damage: [
+          hit: [
             {
               type: DAMAGE_PIERCING,
               cubeCount: 1,
@@ -850,7 +850,7 @@ const dndCreatureList = [
           bonus: 8,
           range: 5,
           target: 1,
-          damage: [
+          hit: [
             {
               type: DAMAGE_BLUDGEONING,
               cubeCount: 1,
@@ -1009,7 +1009,7 @@ const dndCreatureList = [
           bonus: 12,
           range: 5,
           target: 1,
-          damage: [
+          hit: [
             {
               type: DAMAGE_SLASHING,
               cubeCount: 4,
@@ -1170,7 +1170,7 @@ const dndCreatureList = [
           bonus: 12,
           range: 5,
           target: 1,
-          damage: [
+          hit: [
             {
               type: DAMAGE_SLASHING,
               cubeCount: 4,
@@ -1192,7 +1192,7 @@ const dndCreatureList = [
           bonus: 12,
           range: 5,
           target: 1,
-          damage: [
+          hit: [
             {
               type: DAMAGE_SLASHING,
               cubeCount: 4,
@@ -1217,7 +1217,7 @@ const dndCreatureList = [
             max: 600,
           },
           target: 1,
-          damage: [
+          hit: [
             {
               type: DAMAGE_PIERCING,
               cubeCount: 2,
@@ -1325,7 +1325,7 @@ const dndCreatureList = [
           bonus: 5,
           range: 5,
           target: 1,
-          damage: [
+          hit: [
             {
               type: DAMAGE_SLASHING,
               cubeCount: 2,
@@ -1442,7 +1442,7 @@ const dndCreatureList = [
           bonus: 4,
           range: 5,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_NECROTIC,
             cubeCount: 3,
             cubeType: 6,
@@ -1528,7 +1528,7 @@ const dndCreatureList = [
           bonus: 10,
           range: 10,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_PIERCING,
             cubeCount: 3,
             cubeType: 10,
@@ -1552,7 +1552,7 @@ const dndCreatureList = [
               },
             },
           },
-          damage: [
+          hit: [
             {
               type: DAMAGE_BLUDGEONING,
               cubeCount: 2,
@@ -1674,7 +1674,7 @@ const dndCreatureList = [
           bonus: 4,
           range: 5,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_ELECTRICITY,
             cubeCount: 2,
             cubeType: 8,
@@ -1755,7 +1755,7 @@ const dndCreatureList = [
           bonus: 2,
           range: 5,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_PIERCING,
             cubeCount: 5,
             cubeType: 6,
@@ -1849,7 +1849,7 @@ const dndCreatureList = [
           bonus: 8,
           range: 5,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_SLASHING,
             cubeCount: 1,
             cubeType: 8,
@@ -1864,7 +1864,7 @@ const dndCreatureList = [
           bonus: 8,
           range: 5,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_SLASHING,
             cubeCount: 2,
             cubeType: 8,
@@ -1988,7 +1988,7 @@ const dndCreatureList = [
               type: TARGET_CREATURE,
             },
           },
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 1,
             cubeType: 8,
@@ -2004,7 +2004,7 @@ const dndCreatureList = [
           bonus: 9,
           range: 5,
           target: 'одно согласное существо или существо, схваченное вампиром, недееспособное или опутанное',
-          damage: [
+          hit: [
             {
               type: DAMAGE_PIERCING,
               cubeCount: 1,
@@ -2163,7 +2163,7 @@ const dndCreatureList = [
               type: TARGET_CREATURE,
             },
           },
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 2,
             cubeType: 6,
@@ -2179,7 +2179,7 @@ const dndCreatureList = [
           bonus: 9,
           range: 5,
           target: 'одно согласное существо или существо, схваченное вампиром, недееспособное или опутанное',
-          damage: [
+          hit: [
             {
               type: DAMAGE_PIERCING,
               cubeCount: 1,
@@ -2371,7 +2371,7 @@ const dndCreatureList = [
               type: TARGET_CREATURE,
             },
           },
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 1,
             cubeType: 8,
@@ -2387,7 +2387,7 @@ const dndCreatureList = [
           bonus: 9,
           range: 5,
           target: 'одно согласное существо или существо, схваченное вампиром, недееспособное или опутанное',
-          damage: [
+          hit: [
             {
               type: DAMAGE_PIERCING,
               cubeCount: 1,
@@ -2525,7 +2525,7 @@ const dndCreatureList = [
               type: TARGET_CREATURE,
             },
           },
-          damage: {
+          hit: {
             type: DAMAGE_SLASHING,
             cubeCount: 2,
             cubeType: 4,
@@ -2541,7 +2541,7 @@ const dndCreatureList = [
           bonus: 6,
           range: 5,
           target: 'одно согласное существо или существо, схваченное вампиром, недееспособное или опутанное',
-          damage: [
+          hit: [
             {
               type: DAMAGE_PIERCING,
               cubeCount: 1,
@@ -2615,7 +2615,7 @@ const dndCreatureList = [
           bonus: 5,
           range: 5,
           target: 1,
-          damage: [
+          hit: [
             {
               type: DAMAGE_PIERCING,
               cubeCount: 2,
@@ -2703,7 +2703,7 @@ const dndCreatureList = [
           bonus: 9,
           range: 15,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 3,
             cubeType: 8,
@@ -2722,7 +2722,7 @@ const dndCreatureList = [
             max: 240,
           },
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 4,
             cubeType: 10,
@@ -2799,7 +2799,7 @@ const dndCreatureList = [
           bonus: 9,
           range: 10,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_SLASHING,
             cubeCount: 3,
             cubeType: 12,
@@ -2817,7 +2817,7 @@ const dndCreatureList = [
             max: 240,
           },
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 4,
             cubeType: 10,
@@ -2940,7 +2940,7 @@ const dndCreatureList = [
           bonus: 12,
           range: 10,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_PIERCING,
             cubeCount: 3,
             cubeType: 8,
@@ -2958,7 +2958,7 @@ const dndCreatureList = [
             max: 240,
           },
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 4,
             cubeType: 10,
@@ -3032,7 +3032,7 @@ const dndCreatureList = [
           bonus: 11,
           range: 10,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_SLASHING,
             cubeCount: 6,
             cubeType: 6,
@@ -3050,7 +3050,7 @@ const dndCreatureList = [
             max: 240,
           },
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 4,
             cubeType: 10,
@@ -3116,7 +3116,7 @@ const dndCreatureList = [
           bonus: 8,
           range: 10,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 3,
             cubeType: 8,
@@ -3134,7 +3134,7 @@ const dndCreatureList = [
             max: 240,
           },
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 3,
             cubeType: 10,
@@ -3249,7 +3249,7 @@ const dndCreatureList = [
           bonus: 14,
           range: 10,
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_SLASHING,
             cubeCount: 6,
             cubeType: 6,
@@ -3267,7 +3267,7 @@ const dndCreatureList = [
             max: 240,
           },
           target: 1,
-          damage: {
+          hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 4,
             cubeType: 12,

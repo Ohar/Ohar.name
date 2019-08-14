@@ -46,6 +46,7 @@ import {
   CREATURE_ABERRATION,
   CREATURE_ANY_RACE,
   CREATURE_CELESTIAL,
+  CREATURE_DRAGON,
   CREATURE_FIEND,
   CREATURE_GIANT,
   CREATURE_HUMANOID,
@@ -3378,6 +3379,104 @@ const dndCreatureList = [
       {
         name: 'Подтаскивание',
         description: `Верёвочник подтаскивает всех схваченных существ на расстояние до 25 футов к себе.`,
+      },
+    ],
+  },
+  {
+    name: 'Виверна',
+    nameEn: 'Wyvern',
+    description: `Путешественники порой видят в небесах тёмную крылатую фигуру **виверны**, несущей добычу. Это родственники великих драконов, и охотятся они в тех же дремучих лесах и пещерах. Их появление вызывает всплески тревоги на границах цивилизации.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_DRAGON,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:40',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 10,
+      cubeBonus: 39,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 80,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    cr: CR_6,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Виверна совершает две атаки: одну укусом, и одну жалом. Во время полёта она может использовать когти вместо одной другой атаки.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Жало',
+        description: `Цель должна совершить спасбросок Телосложения со Сл 15, получая урон ядом 24 (7к6) при провале, или половину этого урона при успехе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
       },
     ],
   },

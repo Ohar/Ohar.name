@@ -1,11 +1,11 @@
 const path = require("path")
 
-// const generateCreaturePageUrlById = require("./src/utils/generateCreaturePageUrlById")
+const generateCreaturePageUrlById = require("./src/utils/generateCreaturePageUrlById")
 
-// const dndCreatureList = require("./src/constants/dnd/dndCreatureList")
+const dndCreatureList = require("./src/constants/dnd/dndCreatureList")
 const quotesList = require("./src/constants/quotesList")
 
-// const DndCreaturePageTemplate = path.resolve(`./src/templates/DndCreaturePageTemplate.jsx`)
+const DndCreaturePageTemplate = path.resolve(`./src/templates/DndCreaturePageTemplate.jsx`)
 const QuotePageTemplate = path.resolve(`./src/templates/QuotePageTemplate.jsx`)
 
 exports.createPages = ({ actions }) => {

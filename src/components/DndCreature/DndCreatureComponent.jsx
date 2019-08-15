@@ -1,5 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Link } from 'gatsby'
+
+import generateCreaturePageUrlById from "@/utils/generateCreaturePageUrlById"
 
 import DndActionList from "./components/DndActionList"
 import DndCreatureAc from "./components/DndCreatureAc"
@@ -37,6 +40,7 @@ const DndCreatureComponent = (
     featureList,
     genderId,
     hp,
+    id,
     immunityList,
     immunityConditionList,
     isFemale,
@@ -61,7 +65,9 @@ const DndCreatureComponent = (
 ) => (
   <section className={`DndCreature DndCreature-columnCount_${columnCount}`}>
     <header className='DndCreature_name'>
-      {name} {nameAlt ? `(${nameAlt}) ` : ''}[{nameEn}{nameEnAlt ? ` (${nameEnAlt})` : ''}]
+      <Link to={generateCreaturePageUrlById(id)}>
+        {name} {nameAlt ? `(${nameAlt}) ` : ''}[{nameEn}{nameEnAlt ? ` (${nameEnAlt})` : ''}]
+      </Link>
     </header>
 
     <p className='DndCreature_info'>

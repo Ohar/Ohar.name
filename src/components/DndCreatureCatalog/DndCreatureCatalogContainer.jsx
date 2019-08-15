@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import config from 'root/config';
-
 import SEARCH_PROP_NAME from '@/constants/SEARCH_PROP_NAME';
 import dndCreatureList from '@/constants/dnd/dndCreatureList';
 
@@ -16,14 +14,6 @@ class DndCreatureCatalogContainer extends Component {
     filteredCreatureList: [],
     isTooMuch: false
   };
-
-  // TODO: remove after ready
-  componentDidMount() {
-    if (config) {
-      const { creatureCatalogDefaultSearchString = '' } = config;
-      this.onSearch({ target: { value: creatureCatalogDefaultSearchString } });
-    }
-  }
 
   onSearch = ({ target: { value } }) => {
     const filteredCreatureList = value

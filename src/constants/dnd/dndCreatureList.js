@@ -286,6 +286,7 @@ const CREATURE_FAERIE_DRAGON_RED = 'faerie_dragon_red'
 const CREATURE_FAERIE_DRAGON_VIOLET = 'faerie_dragon_violet'
 const CREATURE_FAERIE_DRAGON_YELLOW = 'faerie_dragon_yellow'
 const CREATURE_FIRE_GIANT = 'fire_giant'
+const CREATURE_FLESH_GOLEM = 'flesh_golem'
 const CREATURE_FROST_GIANT = 'frost_giant'
 const CREATURE_GALEB_DUHR = 'galeb_duhr'
 const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
@@ -6236,6 +6237,114 @@ const dndCreatureRawList = [
         restore: {
           from: 5,
           to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Мясной голем',
+    nameAlt: 'Голем из плоти',
+    nameEn: 'Flesh golem',
+    id: CREATURE_FLESH_GOLEM,
+    description: `**Мясной голем** — ужасный набор гуманоидных частей тел, сшитых и скреплённых вместе в мускулистого громилу, наполненного внушительной силой. Его мозг способен к простым рассуждениям, хотя его мысли редко бывают более сложными, чем у малого ребёнка. Слои мышц голема реагируют со скоростью молнии, даруя существу ловкостью и силу. Мощные чары защищают его кожу, отражая заклинания и всё оружие, кроме самого мощного.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:68',
+    armor: 9,
+    hp: {
+      cubeCount: 11,
+      cubeType: 8,
+      cubeBonus: 44,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 5,
+    },
+    immunityList: [
+      DAMAGE_ELECTRICITY,
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Берсерк',
+        description: `Каждый раз, когда голем начинает ход с 40 или меньше хитами, бросайте к6. Если выпадет «6», голем становится берсерком. Будучи берсерком, он в каждом своём ходу атакует ближайшее видимое существо. Если поблизости нет существ, к которым можно подойти и атаковать, голем атакует предмет, предпочитая предметы с размером меньше своего. Став берсерком, голем остаётся им, пока его не уничтожат или пока он не восстановит все свои хиты.\n
+Создатель голема, находящийся в пределах 60 футов от ставшего берсерком голема, может попытаться успокоить его, отдавая чёткие команды убедительным голосом. Голем должен слышать создателя, который действием совершает проверку Харизмы (Убеждение) со Сл 15. При успехе голем перестаёт быть берсерком. Если голем получает урон, когда у него 40 или меньше хитов, он может снова стать берсерком.`,
+      },
+      {
+        name: 'Боязнь огня',
+        description: `Если голем получает урон огнём, он до конца своего следующего хода совершает с помехой броски атаки и проверки характеристик.`,
+      },
+      {
+        name: 'Неизменяемая форма',
+        description: `Голем обладает иммунитетом ко всем заклинаниям и эффектам, изменяющим его форму.`,
+      },
+      {
+        name: 'Поглощение электричества',
+        description: `Каждый раз, когда голем должен получить урон электричеством, он не получает урон, и вместо этого восстанавливает число хитов, равное причиняемому урону электричеством.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Голем совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием голема являются магическими.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Голем совершает два размашистых удара.`,
+      },
+      {
+        name: 'Размашистый удар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
         },
       },
     ],

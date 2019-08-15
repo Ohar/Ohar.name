@@ -51,6 +51,7 @@ import {
   CREATURE_TYPE_FIEND,
   CREATURE_TYPE_GIANT,
   CREATURE_TYPE_GITH,
+  CREATURE_TYPE_GNOLL,
   CREATURE_TYPE_HUMANOID,
   CREATURE_TYPE_MONSTER,
   CREATURE_TYPE_SHAPESHIFTER,
@@ -98,6 +99,7 @@ import {
   LANG_ELVEN,
   LANG_GIANT,
   LANG_GITH,
+  LANG_GNOLL,
   LANG_IGNAN,
   LANG_INFERNAL,
   LANG_SYLVAN,
@@ -275,6 +277,7 @@ const CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth'
 const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
 const CREATURE_GITHYANKI_KNIGHT = 'githyanki_knight'
 const CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior'
+const CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
@@ -5190,6 +5193,126 @@ const dndCreatureRawList = [
               cubeType: 6,
             },
           ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Вожак стаи гноллов',
+    nameEn: 'Gnoll pack lord',
+    id: CREATURE_GNOLL_PACK_LORD,
+    description: `Стая гноллов возглавляется **вожаком**, правящим силой и хитростью. Лучшее из награбленного отходит к нему, будь то еда, ценные безделушки или магические предметы. В надеждах получить от Йеногу неуязвимость, он покрывает своё тело пирсингом, нелепыми трофеями и наносит на шерсть демонические печати.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GNOLL,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:61',
+    armor: {
+      ac: 15,
+      type: 'кольчужная рубаха',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 8,
+      cubeBonus: 9,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 8,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 9,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_GNOLL,
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Буйство',
+        description: `Если гнолл в свой ход опускает рукопашной атакой хиты существа до 0, он может бонусным действием переместиться на расстояние до половины своей скорости и совершить атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гнолл совершает две атаки, либо глефой, либо длинным луком, и использует Разжигание буйства, если может.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Глефа',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Длинный лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Разжигание буйства',
+        description: `Одно существо, которое гнолл видит в пределах 30 футов от себя, может реакцией совершить рукопашную атаку, если оно слышит гнолла и обладает особенностью Буйство.`,
+        restore: {
+          from: 5,
+          to: 6,
         },
       },
     ],

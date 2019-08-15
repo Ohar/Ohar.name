@@ -49,6 +49,7 @@ import {
   CREATURE_TYPE_ABERRATION,
   CREATURE_TYPE_ANY_RACE,
   CREATURE_TYPE_CELESTIAL,
+  CREATURE_TYPE_CONSTRUCT,
   CREATURE_TYPE_DRAGON,
   CREATURE_TYPE_ELEMENTAL,
   CREATURE_TYPE_FIEND,
@@ -123,6 +124,7 @@ import {
   DAMAGE_ELECTRICITY,
   DAMAGE_NECROTIC,
   DAMAGE_NONMAGIC_WEAPON,
+  DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
   DAMAGE_PIERCING,
   DAMAGE_POISON,
   DAMAGE_PSYCHIC,
@@ -259,6 +261,7 @@ import {
   TARGET_OBJECT,
   TARGET_POINT,
 } from '@/constants/dnd/dndTargetList'
+import { LANG_ITS_CREATOR } from './dndLanguageList';
 
 const CREATURE_AARAKOCRA = 'aarakocra'
 const CREATURE_ABOLETH = 'aboleth'
@@ -270,6 +273,7 @@ const CREATURE_BASILISK = 'basilisk'
 const CREATURE_BEHIR = 'behir'
 const CREATURE_CLOUD_GIANT = 'cloud_giant'
 const CREATURE_COMMONER = 'commoner'
+const CREATURE_CLAY_GOLEM = 'clay_golem'
 const CREATURE_DAO = 'dao'
 const CREATURE_DEVA = 'deva'
 const CREATURE_DJINNI = 'djinni'
@@ -5884,6 +5888,118 @@ const dndCreatureRawList = [
             cubeType: 6,
             cubeBonus: 2,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Глиняный голем',
+    nameEn: 'Clay golem',
+    id: CREATURE_CLAY_GOLEM,
+    description: `Этот громоздкий, изваянный из глины голем ростом выше обычного человека. Он сделан в форме человека, но пропорции не соблюдены.\n
+**Глиняные големы** часто одарены священной целью жрецами. Однако, глина — слабый сосуд для жизненной силы. Если голем повреждён, стихийный дух, привязанный к нему, может вырваться на свободу. Такие големы приходят в ярость, круша всё вокруг себя до тех пор, пока не будут уничтожены или полностью восстановлены.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:66',
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 14,
+      cubeType: 10,
+      cubeBonus: 56,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 1,
+    },
+    immunityList: [
+      DAMAGE_ACID,
+      DAMAGE_PSYCHIC,
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_9,
+    featureList: [
+      {
+        name: 'Поглощение кислоты',
+        description: `Каждый раз, когда голем должен получить урон кислотой, он не получает урон, и вместо этого восстанавливает число хитов, равное причиняемому урону кислотой.`,
+      },
+      {
+        name: 'Берсерк',
+        description: `Каждый раз, когда голем начинает ход с 60 или меньше хитами, бросайте к6. Если выпадет «6», голем становится берсерком. Будучи берсерком, он в каждом своём ходу атакует ближайшее видимое существо. Если поблизости нет существ, к которым можно подойти и атаковать, голем атакует предмет, предпочитая предметы с размером меньше своего. Став берсерком, голем остаётся им, пока его не уничтожат или пока он не восстановит все свои хиты.`,
+      },
+      {
+        name: 'Неизменяемая форма',
+        description: `Голем обладает иммунитетом ко всем заклинаниям и эффектам, изменяющим его форму.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Голем совершает с преимуществом спасброски от заклинаний и прочих магических эффектов. Магическое оружие. Атаки оружием голема являются магическими.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Голем совершает два размашистых удара.`,
+      },
+      {
+        name: 'Размашистый удар',
+        description: `Если цель — существо, она должна преуспеть в спасброске Телосложения со Сл 15, иначе максимум её хитов уменьшится на количество, равное полученному урону. Цель умирает, если эта атака уменьшает максимум хитов до 0. Уменьшение длится до тех пор, пока не будет устранено заклинанием _Высшее восстановление_ (Greater restoration) или подобной магией.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Спешка',
+        description: `До конца своего следующего хода голем магическим образом получает бонус +2 к КД, совершает с преимуществом спасброски Ловкости, и может использовать атаку размашистым ударом бонусным действием.`,
+        restore: {
+          from: 5,
+          to: 6,
         },
       },
     ],

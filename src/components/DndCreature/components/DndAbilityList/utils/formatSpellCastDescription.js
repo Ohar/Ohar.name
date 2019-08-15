@@ -1,10 +1,24 @@
 import formatBonus from '@/utils/formatBonus'
 
-import { dndCastComponentCollection } from '@/constants/dnd/dndCastComponentList'
+import { dndCastComponentCollection, CAST_NONE } from '@/constants/dnd/dndCastComponentList'
 import { dndParamCollection } from '@/constants/dnd/dndParamList'
 import { dndPcClassCollection } from '@/constants/dnd/dndPcClassList'
 
 import generateSpellText from './generateSpellText'
+
+const generateExcludeComponentText = componentExclude => {
+  if (componentExclude) {
+    if (componentExclude === CAST_NONE) {
+      return `, не нуждаясь ни в каких компонентах`
+    }
+
+    const componentName = dndCastComponentCollection[componentExclude].name.plural.genitive
+
+    return `, не нуждаясь в ${componentName} компонентах`
+  }
+
+  return ''
+}
 
 export default (
   {
@@ -40,9 +54,7 @@ export default (
     ? `, нуждаясь только в ${dndCastComponentCollection[componentOnly].name.plural.genitive} компонентах`
     : ``
 
-  const spellComponentExcludeText = componentExclude
-    ? `, не нуждаясь в ${dndCastComponentCollection[componentExclude].name.plural.genitive} компонентах`
-    : ``
+  const spellComponentExcludeText = generateExcludeComponentText(componentExclude)
 
   const introText = spellCasterLevel
     ? `${name} является заклинателем ${spellCasterLevel} уровня.`

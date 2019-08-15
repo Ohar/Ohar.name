@@ -60,6 +60,7 @@ export const SPELL_GUST_OF_WIND = 'gust_of_wind'
 export const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
 export const SPELL_INSECT_PLAGUE = 'insect_plague'
 export const SPELL_INVISIBILITY = 'invisibility'
+export const SPELL_JUMP = 'jump'
 export const SPELL_LEVITATE = 'levitate'
 export const SPELL_LIGHT = 'light'
 export const SPELL_MAGE_HAND = 'mage_hand'
@@ -80,6 +81,8 @@ export const SPELL_RAY_OF_FROST = 'ray_of_frost'
 export const SPELL_RESSURECTION = 'ressurection'
 export const SPELL_SACRED_FLAME = 'sacred_flame'
 export const SPELL_SANCTUARY = 'sanctuary'
+export const SPELL_SEE_INVISIBILITY = 'see_invisibility'
+export const SPELL_SHIELD = 'shield'
 export const SPELL_SLEEP = 'sleep'
 export const SPELL_STONE_SHAPE = 'stone_shape'
 export const SPELL_SUGGESTION = 'suggestion'
@@ -1153,6 +1156,48 @@ const dndSpellList = [
     duration: '1 час',
     source: 'PHB:288',
     classList: [PC_CLASS_PRIEST, PC_CLASS_RANGER, PC_CLASS_SORCERER, PC_CLASS_DRUID],
+  },
+  {
+    id: SPELL_SEE_INVISIBILITY,
+    name: 'Видеть невидимое',
+    nameEn: 'See invisibility',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_JUMP,
+    name: 'Прыжок',
+    nameEn: 'Jump',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_SHIELD,
+    name: 'Щит',
+    nameEn: 'Shield',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
   },
 ].map(
   spell => ({

@@ -3,6 +3,7 @@ import listToCollectionById from '@/utils/listToCollectionById'
 export const CAST_VERBAL = 'verbal'
 export const CAST_SOMATIC = 'somatic'
 export const CAST_MATERIAL = 'material'
+export const CAST_NONE = 'none'
 
 const dndCastComponentList = [
   {

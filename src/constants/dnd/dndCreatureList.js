@@ -273,6 +273,7 @@ const CREATURE_GALEB_DUHR = 'galeb_duhr'
 const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
 const CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth'
 const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
+const CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
@@ -4960,6 +4961,112 @@ const dndCreatureRawList = [
               type: DAMAGE_PSYCHIC,
               cubeCount: 2,
               cubeType: 8,
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гитъянки воитель',
+    nameEn: 'Githyanki warrior',
+    id: CREATURE_GITHYANKI_WARRIOR,
+    description: `**Гитъянки** грабят бесчисленные миры с палуб своих астральных кораблей и спин красных драконов. Перья, бисер, драгоценные камни и металлы украшают их доспехи и оружие — легендарные серебряные мечи с которыми они прорубаются с боем через своих врагов. Вырвав свободу у свежевателей разума, гитъянки стали безжалостными завоевателями под руководством ужасной королевы-лича Влаакит.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GITH,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:59',
+    armor: {
+      ac: 17,
+      type: 'полулаты',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 8,
+      cubeBonus: 9,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 10,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 3,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_GITH,
+    ],
+    cr: CR_3,
+    spellCast: {
+      comment: 'псионика',
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_NONE,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_MAGE_HAND,
+              comment: 'рука невидима',
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            {
+              id: SPELL_NONDETECTION,
+              comment: 'только на себя',
+            },
+            SPELL_JUMP,
+            SPELL_MISTY_STEP,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гитъянки совершает две атаки двуручным мечом.`,
+      },
+      {
+        name: 'Двуручный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_PSYCHIC,
+              cubeCount: 2,
+              cubeType: 6,
             },
           ],
         },

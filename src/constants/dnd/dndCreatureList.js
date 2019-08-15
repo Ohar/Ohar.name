@@ -273,6 +273,7 @@ const CREATURE_GALEB_DUHR = 'galeb_duhr'
 const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
 const CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth'
 const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
+const CREATURE_GITHYANKI_KNIGHT = 'githyanki_knight'
 const CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
@@ -5066,6 +5067,126 @@ const dndCreatureRawList = [
             {
               type: DAMAGE_PSYCHIC,
               cubeCount: 2,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гитъянки рыцарь',
+    nameEn: 'Githyanki knight',
+    id: CREATURE_GITHYANKI_KNIGHT,
+    description: `**Гитъянки** грабят бесчисленные миры с палуб своих астральных кораблей и спин красных драконов. Перья, бисер, драгоценные камни и металлы украшают их доспехи и оружие — легендарные серебряные мечи с которыми они прорубаются с боем через своих врагов. Вырвав свободу у свежевателей разума, гитъянки стали безжалостными завоевателями под руководством ужасной королевы-лича Влаакит.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GITH,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:59',
+    armor: {
+      ac: 18,
+      type: 'латный доспех',
+    },
+    hp: {
+      cubeCount: 14,
+      cubeType: 8,
+      cubeBonus: 28,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 15,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 5,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_GITH,
+    ],
+    cr: CR_8,
+    spellCast: {
+      comment: 'псионика',
+      baseStat: PARAM_INT,
+      componentExclude: CAST_NONE,
+      saveThrowDc: 13,
+      spellAttackBonus: 5,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_MAGE_HAND,
+              comment: 'рука невидима',
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            {
+              id: SPELL_NONDETECTION,
+              comment: 'только на себя',
+            },
+            SPELL_JUMP,
+            SPELL_MISTY_STEP,
+            SPELL_TONGUES,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_TELEKINESIS,
+            SPELL_PLANE_SHIFT,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гитъянки совершает две атаки серебряным двуручным мечом.`,
+      },
+      {
+        name: 'Серебряный двуручный меч',
+        description: `Это атака магическим оружием. При критическом попадании по цели, находящейся в астральном теле (как при использовании заклинания _Проекция в астрал_ (Astral projection)), гитъянки может перерезать серебряную нить, соединяющую цель с материальным телом, вместо причинения урона.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 6,
+            },
+            {
+              type: DAMAGE_PSYCHIC,
+              cubeCount: 3,
               cubeType: 6,
             },
           ],

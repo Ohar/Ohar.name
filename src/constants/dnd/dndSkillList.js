@@ -46,7 +46,7 @@ const dndSkillList = [
   },
   {
     id: SKILL_INVESTIGATION,
-    name: 'Расследование',
+    name: 'Анализ',
   },
   {
     id: SKILL_NATURE,

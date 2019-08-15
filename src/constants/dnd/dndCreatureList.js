@@ -56,6 +56,7 @@ import {
   CREATURE_TYPE_GITH,
   CREATURE_TYPE_GNOLL,
   CREATURE_TYPE_GNOME,
+  CREATURE_TYPE_GOBLINOID,
   CREATURE_TYPE_HUMANOID,
   CREATURE_TYPE_MONSTER,
   CREATURE_TYPE_SHAPESHIFTER,
@@ -105,6 +106,7 @@ import {
   LANG_GITH,
   LANG_GNOLL,
   LANG_GNOMISH,
+  LANG_GOBLIN,
   LANG_IGNAN,
   LANG_INFERNAL,
   LANG_SYLVAN,
@@ -291,6 +293,7 @@ const CREATURE_GNOLL = 'gnoll'
 const CREATURE_GNOLL_FANG_OF_YEENOGHU = 'gnoll_fang_of_yeenoghu'
 const CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord'
 const CREATURE_GNOME_DEEP = 'gnome_deep'
+const CREATURE_GOBLIN_BOSS = 'goblin_boss'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
@@ -5687,6 +5690,109 @@ const dndCreatureRawList = [
             comment: ` и цель должна преуспеть в спасброске Телосложения со Сл 12, иначе станет отравленной на 1 минуту. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе`,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Босс гоблинов',
+    nameEn: 'Goblin boss',
+    id: CREATURE_GOBLIN_BOSS,
+    description: `Гоблинами правят самые сильные и умные среди них. **Гоблинский босс** может командовать отдельным логовом, тогда как гоблинский король или королева (которые являются не более чем теми же прославленными гоблинскими боссами) управляет сотнями гоблинов, живущих во множестве логовищ, что гарантирует выживание племени. Гоблинские боссы часто меняются, а племена захватываются хобгоблинскими воеводами или вождями медвежатников.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GOBLINOID,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:64',
+    armor: {
+      ac: 17,
+      type: 'кольчужная рубаха, щит',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      LANG_GOBLIN,
+      LANG_COMMON,
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Ловкий побег',
+        description: `Гоблин может в каждом своём ходу бонусным действием совершать действие Засада или Отход.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гоблин совершает две атаки скимитаром. Вторая атака совершается с помехой.`
+      },
+      {
+        name: 'Скимитар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 2,
+          range: {
+            melee: 5,
+            range: {
+              normal: 30,
+              max: 120,
+            },
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+          },
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Перенаправление атаки',
+        description: `Если существо, видимое гоблином, нацеливается на него атакой, гоблин выбирает другого гоблина в пределах 5 футов от себя. Эти два гоблина меняются местами, и целью становится выбранный гоблин.`
       },
     ],
   },

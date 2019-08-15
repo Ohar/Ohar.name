@@ -4909,6 +4909,7 @@ const dndCreatureRawList = [
       },
     ],
     spellCast: {
+      comment: 'псионика',
       baseStat: PARAM_WIT,
       componentExclude: CAST_NONE,
       spellIdByCountList: [

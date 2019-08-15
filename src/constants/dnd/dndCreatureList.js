@@ -268,6 +268,7 @@ const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
 const CREATURE_HYDRA = 'hydra'
+const CREATURE_HIPPOGRIFF = 'hippogriff'
 const CREATURE_MARID = 'marid'
 const CREATURE_MERROW = 'merrow'
 const CREATURE_PLANETAR = 'planetar'
@@ -4630,6 +4631,88 @@ const dndCreatureRawList = [
             cubeCount: 1,
             cubeType: 10,
             cubeBonus: 5,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гиппогриф',
+    nameEn: 'Hippogriff',
+    id: CREATURE_HIPPOGRIFF,
+    description: `**Гиппогриф** — это существо, тайна происхождения которого затерялась в древности. У него крылья и передние лапы орла, задняя часть лошади, и голова, сочетающая черты обоих животных.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:55',
+    armor: 11,
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 15,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Острое зрение',
+        description: `Гиппогриф совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гиппогриф совершает две атаки: одну клювом, и одну когтями.`,
+      },
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
           },
         },
       },

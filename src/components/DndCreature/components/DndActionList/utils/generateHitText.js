@@ -4,17 +4,25 @@ import generateCube from '@/utils/generateCube'
 
 import generateTextByType from './generateTextByType'
 
+const generateHitItemText = hit => {
+  const text = generateTextByType(hit)
+  const cube = generateCube(hit)
+  const comment = hit.comment || ''
+
+  return `${text} ${cube}${comment}`
+}
+
 export default hit => arrify(hit)
   .map(
     hitItem => {
-      if (typeof hitItem === 'object') {
-        const text = generateTextByType(hitItem)
-        const cube = generateCube(hitItem)
-        const comment = hitItem.comment
-          ? ` (${hitItem.comment})`
-          : ''
+      if (Array.isArray(hitItem)) {
+        return hitItem
+          .map(generateHitItemText)
+          .join(' или ')
+      }
 
-        return `${text} ${cube}${comment}`
+      if (typeof hitItem === 'object') {
+        return generateHitItemText(hitItem)
       }
 
       if (typeof hitItem === 'string') {

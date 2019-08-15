@@ -7,7 +7,7 @@ import {
 } from '@/constants/dnd/dndActionTypeList'
 
 const formatMelee = range => `досягаемость ${range} фт.`
-const formatRange = ({normal, max}) => `дистанция ${normal} фт./${max} фт.`
+const formatRange = ({normal, max}) => `дистанция ${normal}/${max} фт.`
 const formatRangeSpell = range => `дистанция ${range} фт.`
 
 export default ({type, range}) => {

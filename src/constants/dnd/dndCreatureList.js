@@ -157,6 +157,7 @@ import {
   SPELL_CONJURE_ELEMENTAL,
   SPELL_CONTROL_WEATHER,
   SPELL_CREATE_FOOD_AND_WATER,
+  SPELL_CREATE_OR_DESTROY_WATER,
   SPELL_CREATION,
   SPELL_CURE_WOUNDS,
   SPELL_DANCING_LIGHTS,
@@ -190,6 +191,7 @@ import {
   SPELL_PLANE_SHIFT,
   SPELL_POLYMORPH,
   SPELL_PRESTIDIGITATION,
+  SPELL_PURIFY_FOOD_AND_DRINK,
   SPELL_RAISE_DEAD,
   SPELL_RAY_OF_FROST,
   SPELL_RESSURECTION,
@@ -205,6 +207,7 @@ import {
   SPELL_WALL_OF_FIRE,
   SPELL_WALL_OF_STONE,
   SPELL_WATER_BREATHING,
+  SPELL_WATER_WALK,
   SPELL_WIND_WALK,
 } from '@/constants/dnd/dndSpellList'
 import {
@@ -264,6 +267,7 @@ const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
+const CREATURE_MARID = 'marid'
 const CREATURE_MERROW = 'merrow'
 const CREATURE_PLANETAR = 'planetar'
 const CREATURE_ROPER = 'roper'
@@ -4232,7 +4236,7 @@ const dndCreatureRawList = [
               ],
               cubeCount: 1,
               cubeType: 6,
-              comment: 'на выбор джинна',
+              comment: ' (на выбор джинна)',
             },
           ],
         },
@@ -4385,6 +4389,165 @@ const dndCreatureRawList = [
             cubeType: 6,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Марид',
+    nameEn: 'Marid',
+    id: CREATURE_MARID,
+    description: `Живущие на Стихийном Плане Воды **мариды** — наиболее удивительные из гениев. Несмотря на то, что все гении обладают великой силой, даже слабейший из маридов считает себя сильнее ветреного джинна, приземлённого дао и дымящегося ифрита.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_CN,
+    source: 'MM:51',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 17,
+      cubeType: 10,
+      cubeBonus: 136,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 60,
+      [SPEED_SWIM]: 90,
+    },
+    params: {
+      [PARAM_STR]: 22,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 26,
+      [PARAM_INT]: 18,
+      [PARAM_WIT]: 17,
+      [PARAM_CHA]: 18,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 5,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 8,
+    },
+    resistanceList: [
+      DAMAGE_ACID,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_AQUAN,
+    ],
+    cr: CR_11,
+    featureList: [
+      {
+        name: 'Амфибия',
+        description: `Марид может дышать и воздухом и под водой.`,
+      },
+      {
+        name: 'Элементальная гибель',
+        description: `Если марид умирает, его тело распадается во взрыве воды и пены, оставляя только снаряжение, которое марид носил и нёс.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 16,
+      spellAttackBonus: 8,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_EVIL_AND_GOOD,
+            SPELL_DETECT_MAGIC,
+            SPELL_PURIFY_FOOD_AND_DRINK,
+            SPELL_CREATE_OR_DESTROY_WATER,
+            SPELL_FOG_CLOUD,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_WATER_BREATHING,
+            SPELL_WATER_WALK,
+            SPELL_TONGUES,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_CONTROL_WEATHER,
+            SPELL_GASEOUS_FORM,
+            SPELL_INVISIBILITY,
+            {
+              id: SPELL_CONJURE_ELEMENTAL,
+              comment: 'только водный элементаль',
+            },
+            SPELL_PLANE_SHIFT,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Марид совершает две атаки трезубцем.`,
+      },
+      {
+        name: 'Трезубец',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 10,
+          range: {
+            melee: 5,
+            range: {
+              normal: 20,
+              max: 60,
+            },
+          },
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 6,
+                cubeBonus: 6,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 8,
+                cubeBonus: 6,
+                comment: ', если используется двумя руками для совершения рукопашной атаки',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Струя воды',
+        description: `Марид магическим образом испускает струю воды 60-футовой линией шириной 5 футов. Все существа в этой линии должны совершить спасбросок Ловкости со Сл 16. При провале цель получает дробящий урон 21 (6к6) и, если её размер не больше Огромного, толкается на расстояние до 20 футов от марида и сбивается с ног. При успехе цель получает половину дробящего урона, но не толкается и не сбивается с ног.`,
       },
     ],
   },

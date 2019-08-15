@@ -267,6 +267,7 @@ const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
+const CREATURE_HYDRA = 'hydra'
 const CREATURE_MARID = 'marid'
 const CREATURE_MERROW = 'merrow'
 const CREATURE_PLANETAR = 'planetar'
@@ -4548,6 +4549,89 @@ const dndCreatureRawList = [
       {
         name: 'Струя воды',
         description: `Марид магическим образом испускает струю воды 60-футовой линией шириной 5 футов. Все существа в этой линии должны совершить спасбросок Ловкости со Сл 16. При провале цель получает дробящий урон 21 (6к6) и, если её размер не больше Огромного, толкается на расстояние до 20 футов от марида и сбивается с ног. При успехе цель получает половину дробящего урона, но не толкается и не сбивается с ног.`,
+      },
+    ],
+  },
+  {
+    name: 'Гидра',
+    nameEn: 'Hydra',
+    id: CREATURE_HYDRA,
+    description: `**Гидра** это ужасная рептилия с телом крокодила и несколькими головами на длинных змеиных шеях. Хоть головы и можно отрубить, гидра магическим образом их очень быстро отращивает. У типичного представителя этого вида пять голов.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:54',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 15,
+      cubeType: 12,
+      cubeBonus: 75,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 16,
+      },
+    ],
+    cr: CR_8,
+    featureList: [
+      {
+        name: 'Задержка дыхания',
+        description: `Гидра может задержать дыхание на 1 час.`,
+      },
+      {
+        name: 'Многочисленные головы',
+        description: `У гидры пять голов. Пока у гидры больше одной головы, она совершает с преимуществом спасброски от испуга, глухоты, лишения сознания, ослепления, очарования и ошеломления. Если гидра за один ход получает урон 25 или больше, одна из её голов умирает. Если умрут все головы, умирает и гидра. В конце своего хода она отращивает по две головы за каждую умершую голову с конца её предыдущего хода, если только она не получала за этот период урон огнём. За каждую отращённую голову гидра восстанавливает по 10 хитов.`,
+      },
+      {
+        name: 'Реагирующие головы',
+        description: `За каждую голову после первой гидра получает дополнительную реакцию, которую можно использовать только для совершения провоцированных атак.`,
+      },
+      {
+        name: 'Неусыпный',
+        description: `Пока гидра спит, как минимум одна её голова бодрствует`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гидра совершает столько атак укусом, сколько у неё есть голов.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 5,
+          },
+        },
       },
     ],
   },

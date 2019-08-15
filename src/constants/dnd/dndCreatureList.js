@@ -278,6 +278,7 @@ const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
 const CREATURE_GITHYANKI_KNIGHT = 'githyanki_knight'
 const CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior'
 const CREATURE_GNOLL = 'gnoll'
+const CREATURE_GNOLL_FANG_OF_YEENOGHU = 'gnoll_fang_of_yeenoghu'
 const CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
@@ -5437,6 +5438,107 @@ const dndCreatureRawList = [
             cubeCount: 1,
             cubeType: 8,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гнолл клык Йеногу',
+    nameEn: 'Gnoll fang of Yeenoghu',
+    id: CREATURE_GNOLL_FANG_OF_YEENOGHU,
+    description: `Празднование побед у гноллов сопровождается демоническими ритуалами и кровавыми приношениями Йеногу. Иногда демонический повелитель награждает своих последователей, делая одного из них одержимым демоном. Помеченный Йеногу счастливчик становится **«клыком Йеногу»** — избранным Властелина Гноллов. Гиена, пирующая врагом, которого поразил клык, подвергается ужасным трансформациям, становясь взрослым гноллом. Именно так Йеногу сотворил первых гноллов. Клык Йеногу может значительно увеличить популяцию гноллов в зависимости от количества гиен в округе. Единственный способ это предотвратить — убить клыка.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_GNOLL,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:61',
+    armor: {
+      ac: 14,
+      type: 'шкурный доспех',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 8,
+      cubeBonus: 20,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 13,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 4,
+      [PARAM_WIT]: 2,
+      [PARAM_CHA]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_COMMON,
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: 'Буйство',
+        description: `Если гнолл в свой ход опускает рукопашной атакой хиты существа до 0, он может бонусным действием переместиться на расстояние до половины своей скорости и совершить атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гнолл совершает три атаки: одну укусом, и две когтями.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+            comment: `, и цель должна преуспеть в спасброске Телосложения со Сл 12, иначе получит урон ядом 7 (2к6)`,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 3,
           },
         },
       },

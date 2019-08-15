@@ -277,6 +277,7 @@ const CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth'
 const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
 const CREATURE_GITHYANKI_KNIGHT = 'githyanki_knight'
 const CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior'
+const CREATURE_GNOLL = 'gnoll'
 const CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
@@ -5313,6 +5314,130 @@ const dndCreatureRawList = [
         restore: {
           from: 5,
           to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гнолл',
+    nameEn: 'Gnoll',
+    id: CREATURE_GNOLL,
+    description: `Происхождение **гноллов** восходит ко времени, когда демонический повелитель Йеногу проник в Материальный План и устроил в нём буйство. Стаи обычных гиен следовали по его следу, подъедая убитых им жертв. Эти гиены были превращены в первых гноллов, и они продолжали следовать за Йеногу, пока его не изгнали обратно в Бездну. Гноллы же распространились по всему мира, став тяжелейшим напоминанием о демонической силе.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GNOLL,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:61',
+    armor: {
+      ac: 15,
+      type: 'шкурный доспех, щит',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_GNOLL,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Буйство',
+        description: `Если гнолл в свой ход опускает рукопашной атакой хиты существа до 0, он может бонусным действием переместиться на расстояние до половины своей скорости и совершить атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            melee: 5,
+            range: {
+              normal: 20,
+              max: 60,
+            },
+          },
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 2,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 2,
+                comment: ', если используется двумя руками для совершения рукопашной атаки',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Длинный лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 1,
+          },
         },
       },
     ],

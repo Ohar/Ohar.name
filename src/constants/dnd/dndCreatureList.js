@@ -4762,6 +4762,11 @@ const dndCreatureRawList = [
       [PARAM_INT]: 6,
       [PARAM_WIT]: 6,
     },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 6,
+      [SKILL_ARCANA]: 6,
+      [SKILL_INSIGHT]: 6,
+    },
     senseList: [
       {
         id: SENSE_PASSIVE_PERCEPTION,

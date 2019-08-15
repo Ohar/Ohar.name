@@ -6094,7 +6094,7 @@ const dndCreatureRawList = [
     actionList: [
       {
         name: 'Мультиатака',
-        description: `Голем совершает два размашистых удара.`,
+        description: `Голем совершает две рукопашные атаки.`,
       },
       {
         name: 'Размашистый удар',

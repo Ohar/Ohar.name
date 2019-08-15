@@ -42,7 +42,7 @@
     .DndCreature-columnCount_2,
     .DndCreature-columnCount_3,
     .DndCreature-columnCount_4 {
-        width: calc(100vw - 2rem);
+        width: calc(96vw - 2rem);
         columns: 1;
     }
 }

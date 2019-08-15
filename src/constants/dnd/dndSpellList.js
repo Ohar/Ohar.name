@@ -34,6 +34,8 @@ export const SPELL_BESTOW_CURSE = 'bestow_curse'
 export const SPELL_BLADE_BARRIER = 'blade_barrier'
 export const SPELL_BLESS = 'bless'
 export const SPELL_BLIGHT = 'blight'
+export const SPELL_BLINDNESS_DEAFNESS = 'blindness_deafness'
+export const SPELL_BLUR = 'blur'
 export const SPELL_COLOR_SPRAY = 'color_spray'
 export const SPELL_COMMUNE = 'commune'
 export const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
@@ -47,6 +49,7 @@ export const SPELL_DANCING_LIGHTS = 'dancing_lights'
 export const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
 export const SPELL_DETECT_MAGIC = 'detect_magic'
 export const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
+export const SPELL_DISGUISE_SELF = 'disguise_self'
 export const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
 export const SPELL_DOMINATE_PERSON = 'dominate_person'
 export const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
@@ -1189,6 +1192,48 @@ const dndSpellList = [
     id: SPELL_SHIELD,
     name: 'Щит',
     nameEn: 'Shield',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_BLINDNESS_DEAFNESS,
+    name: 'Глухота/Слепота',
+    nameEn: 'Blindness/Deafness',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_DISGUISE_SELF,
+    name: 'Маскировка',
+    nameEn: 'Disguise self',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_BLUR,
+    name: 'Размытый образ',
+    nameEn: 'Blur',
     description: ``, // TODO
     lvl: 0, // TODO
     magicSchool: MAGIC_TRANSMUTATION, // TODO

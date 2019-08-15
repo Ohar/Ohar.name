@@ -41,6 +41,7 @@ import {
   SIZE_HUGE,
   SIZE_MEDIUM,
   SIZE_LARGE,
+  SIZE_SMALL,
   SIZE_TINY,
 } from "@/constants/dnd/dndSizeList"
 import {
@@ -54,6 +55,7 @@ import {
   CREATURE_TYPE_GIANT,
   CREATURE_TYPE_GITH,
   CREATURE_TYPE_GNOLL,
+  CREATURE_TYPE_GNOME,
   CREATURE_TYPE_HUMANOID,
   CREATURE_TYPE_MONSTER,
   CREATURE_TYPE_SHAPESHIFTER,
@@ -102,12 +104,14 @@ import {
   LANG_GIANT,
   LANG_GITH,
   LANG_GNOLL,
+  LANG_GNOMISH,
   LANG_IGNAN,
   LANG_INFERNAL,
   LANG_SYLVAN,
   LANG_TELEPATHY,
   LANG_TERRAN,
   LANG_UMBER_HULK,
+  LANG_UNDERCOMMON
 } from '@/constants/dnd/dndLanguageList'
 import {
   DAMAGE_ACID,
@@ -119,6 +123,7 @@ import {
   DAMAGE_NONMAGIC_WEAPON,
   DAMAGE_PIERCING,
   DAMAGE_POISON,
+  DAMAGE_PSYCHIC,
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
   DAMAGE_THUNDER,
@@ -135,6 +140,7 @@ import {
   SKILL_ATHLETICS,
   SKILL_HISTORY,
   SKILL_INSIGHT,
+  SKILL_INVESTIGATION,
   SKILL_MEDICINE,
   SKILL_PERCEPTION,
   SKILL_RELIGION,
@@ -158,6 +164,8 @@ import {
   SPELL_BLADE_BARRIER,
   SPELL_BLESS,
   SPELL_BLIGHT,
+  SPELL_BLINDNESS_DEAFNESS,
+  SPELL_BLUR,
   SPELL_COLOR_SPRAY,
   SPELL_COMMUNE,
   SPELL_COMPREHEND_LANGUAGES,
@@ -171,6 +179,7 @@ import {
   SPELL_DETECT_EVIL_AND_GOOD,
   SPELL_DETECT_MAGIC,
   SPELL_DETECT_THOUGHTS,
+  SPELL_DISGUISE_SELF,
   SPELL_DISPEL_EVIL_AND_GOOD,
   SPELL_DOMINATE_PERSON,
   SPELL_ENLARGE_REDUCE,
@@ -248,7 +257,6 @@ import {
   TARGET_OBJECT,
   TARGET_POINT,
 } from '@/constants/dnd/dndTargetList'
-import { DAMAGE_PSYCHIC } from './dndDamageTypeList'
 
 const CREATURE_AARAKOCRA = 'aarakocra'
 const CREATURE_ABOLETH = 'aboleth'
@@ -282,6 +290,7 @@ const CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior'
 const CREATURE_GNOLL = 'gnoll'
 const CREATURE_GNOLL_FANG_OF_YEENOGHU = 'gnoll_fang_of_yeenoghu'
 const CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord'
+const CREATURE_GNOME_DEEP = 'gnome_deep'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
@@ -5542,6 +5551,140 @@ const dndCreatureRawList = [
             cubeCount: 1,
             cubeType: 8,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Глубинный гном',
+    nameAlt: 'Свирфнеблин',
+    nameEn: 'Gnome, deep',
+    nameEnAlt: 'Svirfneblin',
+    id: CREATURE_GNOME_DEEP,
+    description: `**Глубинные гномы**, или свирфнеблины, живут глубоко под поверхностью земли в запутанных подземных проходах и искусственных пещерах. Они выживают благодаря скрытности, уму и упорству. Их серая кожа позволяет сливаться с окружающим камнем. Для своего размера свирфнеблины удивительно сильны и тяжелы. В среднем, взрослый глубинный гном весит от 100 до 120 фунтов, а в высоту достигает 3 футов.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GNOME,
+    ],
+    aligmentId: ALIGMENT_NG,
+    source: 'MM:62',
+    armor: {
+      ac: 15,
+      type: 'кольчужная рубаха',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 6,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 9,
+    },
+    skillCollection: {
+      [SKILL_INVESTIGATION]: 3,
+      [SKILL_PERCEPTION]: 2,
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_GNOMISH,
+      LANG_UNDERCOMMON,
+      LANG_TERRAN,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Каменный камуфляж',
+        description: `Гном совершает с преимуществом проверки Ловкости (Скрытность), когда пытается спрятаться на каменистой местности.`,
+      },
+      {
+        name: 'Гномья хитрость',
+        description: `Гном совершает с преимуществом спасброски Интеллекта, Мудрости и Харизмы от магии.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_INT,
+      componentExclude: CAST_MATERIAL,
+      saveThrowDc: 11,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_NONDETECTION,
+              comment: 'только на себя',
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_BLINDNESS_DEAFNESS,
+            SPELL_DISGUISE_SELF,
+            SPELL_BLUR,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Боевая кирка',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Отравленный дротик',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+            comment: ` и цель должна преуспеть в спасброске Телосложения со Сл 12, иначе станет отравленной на 1 минуту. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе`,
           },
         },
       },

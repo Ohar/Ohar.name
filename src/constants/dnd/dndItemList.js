@@ -12,6 +12,7 @@ import {
 } from '@/constants/dnd/dndDamageTypeList'
 
 import listToCollectionById from '@/utils/listToCollectionById'
+import prepareForSearch from "@/utils/prepareForSearch"
 
 const dndItemList = [
   {
@@ -3373,20 +3374,22 @@ const itemListPreparedForFullTextSearch = _.sortBy(
   dndItemList.map(
     item => ({
       ...item,
-      [SEARCH_PROP_NAME]: [
-        item.name,
-        item.nameEn,
-        item.description,
-        item.category,
-        item.subcategory,
-      ]
-        .filter(
-          e => e,
-        )
-        .map(
-          e => String(e).toLowerCase(),
-        )
-        .join(' '),
+      [SEARCH_PROP_NAME]: prepareForSearch(
+        [
+          item.name,
+          item.nameEn,
+          item.description,
+          item.category,
+          item.subcategory,
+        ]
+          .filter(
+            e => e,
+          )
+          .map(
+            e => String(e).toLowerCase(),
+          )
+          .join(' ')
+      ),
     }),
   ),
   [

@@ -1,3 +1,5 @@
+import prepareForSearch from "@/utils/prepareForSearch";
+
 import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
 import {
   CR_0,
@@ -5591,13 +5593,16 @@ const dndCreatureList = dndCreatureRawList
   creature => ({
     ...creature,
     isFemale: Boolean(creature.isFemale),
-    [SEARCH_PROP_NAME]: [
-      creature.name,
-      creature.nameEn,
-      creature.description || '',
-    ]
-      .filter(e => e)
-      .join('\n'),
+    [SEARCH_PROP_NAME]: prepareForSearch(
+      [
+        creature.name,
+        creature.nameAlt || '',
+        creature.nameEn,
+        creature.description || '',
+      ]
+        .filter(e => e)
+        .join('\n')
+    ),
   })
 )
 

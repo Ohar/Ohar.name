@@ -1,7 +1,9 @@
 import React, {Component} from "react"
 
 import dndItemList from "@/constants/dnd/dndItemList"
-import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
+import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME"
+
+import prepareForSearch from "@/utils/prepareForSearch"
 
 import DndItemCatalogComponent from "./DndItemCatalogComponent"
 
@@ -16,7 +18,7 @@ class DndItemCatalogContainer extends Component {
         const goodsFilteredList = value
             ? dndItemList
                 .filter(
-                    good => good[SEARCH_PROP_NAME].includes(value.toLowerCase())
+                    good => good[SEARCH_PROP_NAME].includes(prepareForSearch(value))
                 )
             : []
 

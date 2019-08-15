@@ -311,6 +311,7 @@ const CREATURE_PLANETAR = 'planetar'
 const CREATURE_ROPER = 'roper'
 const CREATURE_SOLAR = 'solar'
 const CREATURE_STONE_GIANT = 'stone_giant'
+const CREATURE_STONE_GOLEM = 'stone_golem'
 const CREATURE_STORM_GIANT = 'storm_giant'
 const CREATURE_UMBER_HULK = 'umber_hulk'
 const CREATURE_VAMPIRE = 'vampire'
@@ -6129,6 +6130,111 @@ const dndCreatureRawList = [
         description: `Голем выдыхает ядовитый газ 15-футовым конусом. Все существа в этой области должны совершить спасбросок Телосложения со Сл 19, получая урон ядом 45 (10к8) при провале, или половину этого урона при успехе.`,
         restore: {
           from: 6,
+          to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Каменный голем',
+    nameEn: 'Stone golem',
+    id: CREATURE_STONE_GOLEM,
+    description: `Вырезанные и выдолбленные из камня в виде впечатляющих высоких статуй, **каменные големы** сильно различаются размером и формами. Хотя многие имеют черты гуманоидов, каменные големы могут быть вырезаны в любой форме, которую может представить скульптор. Древние каменные големы, найденные в закрытых гробницах или у ворот затерянных городов, иногда имеют форму гигантских зверей.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:67',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 17,
+      cubeType: 10,
+      cubeBonus: 85,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 22,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 1,
+    },
+    immunityList: [
+      DAMAGE_PSYCHIC,
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_10,
+    featureList: [
+      {
+        name: 'Неизменяемая форма',
+        description: `Голем обладает иммунитетом ко всем заклинаниям и эффектам, изменяющим его форму.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Голем совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием голема являются магическими.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Голем совершает два размашистых удара.`,
+      },
+      {
+        name: 'Размашистый удар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 8,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: 'Замедление',
+        description: `Голем нацеливается на одно или несколько существ, видимых в пределах 10 футов от себя. Все цели должны совершить спасбросок Мудрости со Сл 17 от этой магии. При провале цель не может совершать реакции, её скорость уменьшается вдвое, и она не может совершать более одной атаки за свой ход. Кроме того, цель может в свой ход совершать либо действие, либо бонусное действие, но не то и другое. Эти эффекты длятся 1 минуту. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
+        restore: {
+          from: 5,
           to: 6,
         },
       },

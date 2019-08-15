@@ -4851,20 +4851,6 @@ const dndCreatureRawList = [
           ],
         },
       },
-      {
-        name: 'Метание пламени',
-        attack: {
-          type: ACTION_RANGE_SPELL_ATTACK,
-          bonus: 7,
-          range: 120,
-          target: 1,
-          hit: {
-            type: DAMAGE_FIRE,
-            cubeCount: 5,
-            cubeType: 6,
-          },
-        },
-      },
     ],
   },
   {
@@ -4879,39 +4865,43 @@ const dndCreatureRawList = [
     ],
     aligmentId: ALIGMENT_LN,
     source: 'MM:58',
-    armor: 17,
+    armor: 14,
     hp: {
-      cubeCount: 13,
+      cubeCount: 7,
       cubeType: 8,
-      cubeBonus: 26,
+      cubeBonus: 7,
     },
     speed: {
       [SPEED_WALK]: 30,
     },
     params: {
-      [PARAM_STR]: 13,
-      [PARAM_DEX]: 18,
-      [PARAM_CON]: 15,
-      [PARAM_INT]: 16,
-      [PARAM_WIT]: 17,
-      [PARAM_CHA]: 12,
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 10,
     },
     saveThrowCollection: {
-      [PARAM_STR]: 4,
-      [PARAM_DEX]: 7,
-      [PARAM_INT]: 6,
-      [PARAM_WIT]: 6,
+      [PARAM_STR]: 3,
+      [PARAM_DEX]: 4,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 4,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_INSIGHT]: 4,
     },
     senseList: [
       {
         id: SENSE_PASSIVE_PERCEPTION,
-        value: 16,
+        value: 14,
       },
     ],
     languageList: [
       LANG_GITH,
     ],
-    cr: CR_6,
+    cr: CR_2,
     featureList: [
       {
         name: 'Психическая защита',
@@ -4920,8 +4910,6 @@ const dndCreatureRawList = [
     ],
     spellCast: {
       baseStat: PARAM_WIT,
-      saveThrowDc: 14,
-      spellAttackBonus: 6,
       componentExclude: CAST_NONE,
       spellIdByCountList: [
         {
@@ -4945,16 +4933,6 @@ const dndCreatureRawList = [
             SPELL_SHIELD,
           ],
         },
-        {
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-          list: [
-            SPELL_PHANTASMAL_KILLER,
-            SPELL_PLANE_SHIFT,
-          ],
-        },
       ],
     },
     actionList: [
@@ -4967,36 +4945,22 @@ const dndCreatureRawList = [
         description: `Это считается атакой магическим оружием.`,
         attack: {
           type: ACTION_MELEE_WEAPON_ATTACK,
-          bonus: 7,
+          bonus: 4,
           range: 5,
           target: 1,
           hit: [
             {
               type: DAMAGE_BLUDGEONING,
-              cubeCount: 2,
-              cubeType: 6,
-              cubeBonus: 4,
+              cubeCount: 1,
+              cubeType: 8,
+              cubeBonus: 2,
             },
             {
               type: DAMAGE_PSYCHIC,
-              cubeCount: 3,
+              cubeCount: 2,
               cubeType: 8,
             },
           ],
-        },
-      },
-      {
-        name: 'Метание пламени',
-        attack: {
-          type: ACTION_RANGE_SPELL_ATTACK,
-          bonus: 7,
-          range: 120,
-          target: 1,
-          hit: {
-            type: DAMAGE_FIRE,
-            cubeCount: 5,
-            cubeType: 6,
-          },
         },
       },
     ],

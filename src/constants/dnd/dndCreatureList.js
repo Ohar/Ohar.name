@@ -5598,6 +5598,7 @@ const dndCreatureList = dndCreatureRawList
         creature.name,
         creature.nameAlt || '',
         creature.nameEn,
+        creature.nameEnAlt || '',
         creature.description || '',
       ]
         .filter(e => e)

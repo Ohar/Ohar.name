@@ -2,23 +2,22 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
+import {dndCreatureCollection} from "@/constants/dnd/dndCreatureList"
 
 import calculateColumnCount from "./utils/calculateColumnCount"
 
 import DndCreatureComponent from "./DndCreatureComponent"
 
-const DndCreatureContainer = (
-  {
-    creature: {
-      actionList,
-      creatureTypeIdList,
-      featureList,
-      legendaryActionList,
-      legendaryPoints,
-      ...rest,
-    },
-  },
-) => {
+const DndCreatureContainer = ({id}) => {
+  const {
+    actionList,
+    creatureTypeIdList,
+    featureList,
+    legendaryActionList,
+    legendaryPoints,
+    ...rest
+  } = dndCreatureCollection[id]
+
   const {genderId} = dndCreatureTypeCollection[creatureTypeIdList[0]]
   const columnCount = calculateColumnCount({actionList, featureList, legendaryPoints, legendaryActionList})
 
@@ -37,7 +36,7 @@ const DndCreatureContainer = (
 }
 
 DndCreatureContainer.propTypes = {
-  creature: PropTypes.object.isRequired,
+  id: PropTypes.string.isRequired,
 }
 
 export default DndCreatureContainer

@@ -9,7 +9,6 @@ import "./DndCreatureCatalogStyles.css"
 const DndCreatureCatalogComponent = (
   {
     filteredCreatureList,
-    isTooMuch,
     onSearch,
   },
 ) => (
@@ -51,14 +50,12 @@ const DndCreatureCatalogComponent = (
 )
 
 DndCreatureCatalogComponent.defaultProps = {
-  isTooMuch: false,
   filteredCreatureList: [],
 }
 
 DndCreatureCatalogComponent.propTypes = {
   filteredCreatureList: PropTypes.array,
   onSearch: PropTypes.func.isRequired,
-  isTooMuch: PropTypes.bool,
 }
 
 export default DndCreatureCatalogComponent

@@ -272,6 +272,7 @@ const CREATURE_FROST_GIANT = 'frost_giant'
 const CREATURE_GALEB_DUHR = 'galeb_duhr'
 const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
 const CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth'
+const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
@@ -4731,6 +4732,141 @@ const dndCreatureRawList = [
     nameEn: 'Githzerai zerth',
     id: CREATURE_GITHZERAI_ZERTH,
     description: `Опытных монахов гитцераев, лучше всего воплощающих учения и принципы Зертимона, зовут **зертами**. Эти могущественные и дисциплинированные монахи могут перемещать свои тела с одного плана на другой, используя лишь силу разума.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GITH,
+    ],
+    aligmentId: ALIGMENT_LN,
+    source: 'MM:58',
+    armor: 17,
+    hp: {
+      cubeCount: 13,
+      cubeType: 8,
+      cubeBonus: 26,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 18,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 16,
+      [PARAM_WIT]: 17,
+      [PARAM_CHA]: 12,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 4,
+      [PARAM_DEX]: 7,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 16,
+      },
+    ],
+    languageList: [
+      LANG_GITH,
+    ],
+    cr: CR_6,
+    featureList: [
+      {
+        name: 'Психическая защита',
+        description: `Пока гитцерай не носит доспех и не использует щит, к его КД добавляется модификатор Мудрости.`,
+      },
+    ],
+    spellCast: {
+      comment: 'псионика',
+      baseStat: PARAM_WIT,
+      saveThrowDc: 14,
+      spellAttackBonus: 6,
+      componentExclude: CAST_NONE,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_MAGE_HAND,
+              comment: 'рука невидима',
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_SEE_INVISIBILITY,
+            SPELL_FEATHER_FALL,
+            SPELL_JUMP,
+            SPELL_SHIELD,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_PHANTASMAL_KILLER,
+            SPELL_PLANE_SHIFT,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гитцерай совершает две атаки безоружным ударом.`,
+      },
+      {
+        name: 'Безоружный удар',
+        description: `Это считается атакой магическим оружием.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 4,
+            },
+            {
+              type: DAMAGE_PSYCHIC,
+              cubeCount: 3,
+              cubeType: 8,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Метание пламени',
+        attack: {
+          type: ACTION_RANGE_SPELL_ATTACK,
+          bonus: 7,
+          range: 120,
+          target: 1,
+          hit: {
+            type: DAMAGE_FIRE,
+            cubeCount: 5,
+            cubeType: 6,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гитцерай монах',
+    nameEn: 'Githzerai monk',
+    id: CREATURE_GITHZERAI_MONK,
+    description: `Сосредоточенные философы и строгие аскеты, гитцераи следуют жёсткому жизненному укладу. Худощавые и жилистые, они носят одежду без изысков, держа своё мнение при себе и доверяя единицам чужаков. Отвернувшиеся от своих воинственных собратьев гитъянок, гитцераи придерживаются монашеского уклада, проживая на островах порядка, что находятся в бескрайнем море хаоса на плане Лимбо.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
       CREATURE_TYPE_HUMANOID,

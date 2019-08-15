@@ -293,6 +293,7 @@ const CREATURE_GNOLL = 'gnoll'
 const CREATURE_GNOLL_FANG_OF_YEENOGHU = 'gnoll_fang_of_yeenoghu'
 const CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord'
 const CREATURE_GNOME_DEEP = 'gnome_deep'
+const CREATURE_GOBLIN = 'goblin'
 const CREATURE_GOBLIN_BOSS = 'goblin_boss'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
@@ -5793,6 +5794,97 @@ const dndCreatureRawList = [
       {
         name: 'Перенаправление атаки',
         description: `Если существо, видимое гоблином, нацеливается на него атакой, гоблин выбирает другого гоблина в пределах 5 футов от себя. Эти два гоблина меняются местами, и целью становится выбранный гоблин.`
+      },
+    ],
+  },
+  {
+    name: 'Гоблин',
+    nameEn: 'Goblin',
+    id: CREATURE_GOBLIN,
+    description: `Гоблины — это маленькие, эгоистичные существа с чёрными сердцами, живущие в пещерах, брошенных рудниках, разграбленных подземельях и прочих неприглядных местах. Слабые по отдельности, гоблины собираются в большие — зачастую несметные — группы. Они жадны до власти и часто злоупотребляют теми полномочиями, которые у них уже есть.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GOBLINOID,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:64',
+    armor: {
+      ac: 15,
+      type: 'кожаный доспех, щит',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 8,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      LANG_GOBLIN,
+      LANG_COMMON,
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Ловкий побег',
+        description: `Гоблин может в каждом своём ходу бонусным действием совершать действие Засада или Отход.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Скимитар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Короткий лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 80,
+            max: 320,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
       },
     ],
   },

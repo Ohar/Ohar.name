@@ -51,9 +51,11 @@ const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale, entr
               spellCast.spellCasterLevel
                 ? 'Использование заклинаний'
                 : 'Врождённое колдовство'
-            ) + spellCast.comment
-              ? ` (${spellCast.comment})`
-              : ''
+            ) + (
+              spellCast.comment
+                ? ` (${spellCast.comment})`
+                : ''
+            )
           }>
             {formatSpellCastDescription({spellCast, isFemale, name})}
           </DndAbility>

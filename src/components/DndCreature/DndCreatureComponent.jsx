@@ -44,6 +44,7 @@ const DndCreatureComponent = (
     legendaryActionList,
     legendaryPoints,
     name,
+    nameAlt,
     nameEn,
     params,
     resistanceList,
@@ -59,7 +60,7 @@ const DndCreatureComponent = (
 ) => (
   <section className={`DndCreature DndCreature-columnCount_${columnCount}`}>
     <header className='DndCreature_name'>
-      {name} [{nameEn}]
+      {name} {nameAlt ? `(${nameAlt}) ` : ''}[{nameEn}]
     </header>
 
     <p className='DndCreature_info'>
@@ -133,6 +134,7 @@ DndCreatureComponent.propTypes = {
   legendaryActionList: PropTypes.array,
   legendaryPoints: PropTypes.number,
   name: PropTypes.string.isRequired,
+  nameAlt: PropTypes.string,
   nameEn: PropTypes.string,
   params: PropTypes.object.isRequired,
   reactionList: PropTypes.array,
@@ -155,6 +157,7 @@ DndCreatureComponent.defaultProps = {
   languageList: [],
   legendaryActionList: [],
   legendaryPoints: 0,
+  nameAlt: '',
   nameEn: '',
   reactionList: [],
   saveThrowCollection: null,

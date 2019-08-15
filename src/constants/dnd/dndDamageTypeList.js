@@ -8,6 +8,7 @@ export const DAMAGE_FORCE = 'force'
 export const DAMAGE_ELECTRICITY = 'lightning'
 export const DAMAGE_NECROTIC = 'necrotic'
 export const DAMAGE_NONMAGIC_WEAPON = 'nonmagic_weapon'
+export const DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON = 'nonmagic_nonadamantine_weapon'
 export const DAMAGE_PIERCING = 'piercing'
 export const DAMAGE_POISON = 'poison'
 export const DAMAGE_PSYCHIC = 'psychic'
@@ -30,6 +31,12 @@ const dndDamageTypeList = [
     id: DAMAGE_NONMAGIC_WEAPON,
     name: 'Дробящий, колющий и рубящий урон от немагических атак',
     fullName: 'Дробящий, колющий и рубящий урон от немагических атак',
+    isEnumeration: true,
+  },
+  {
+    id: DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    name: 'Дробящий, колющий и рубящий урон от немагических атак, а также от немагического оружия, которое при этом не изготовлено из адамантина',
+    fullName: 'Дробящий, колющий и рубящий урон от немагических атак, а также от немагического оружия, которое при этом не изготовлено из адамантина',
     isEnumeration: true,
   },
   {

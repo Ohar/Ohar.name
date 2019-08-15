@@ -47,6 +47,7 @@ class NotFoundPage extends Component {
                   height={height}
                   src={url}
                   width={width}
+                  style={{maxWidth: '100vw', maxHeight: '100vh'}}
                 />
               </>
             )

@@ -304,6 +304,7 @@ const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
 const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
+const CREATURE_IRON_GOLEM = 'iron_golem'
 const CREATURE_MARID = 'marid'
 const CREATURE_MERROW = 'merrow'
 const CREATURE_PLANETAR = 'planetar'
@@ -6003,6 +6004,131 @@ const dndCreatureRawList = [
         description: `До конца своего следующего хода голем магическим образом получает бонус +2 к КД, совершает с преимуществом спасброски Ловкости, и может использовать атаку размашистым ударом бонусным действием.`,
         restore: {
           from: 5,
+          to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Железный голем',
+    nameEn: 'Iron golem',
+    id: CREATURE_IRON_GOLEM,
+    description: `**Железный голем** — сильнейший из големов, массивный высокий великан из тяжёлого металла. Форма железного голема может быть любой, но большинство сделано в виде огромных живых доспехов. Его кулаки могут убить существо одним ударом, а его лязгающая походка сотрясает землю под ногами. Железные големы носят огромные мечи для увеличения досягаемости и могут изрыгать облака смертельного яда.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:67',
+    armor: {
+      ac: 20,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 20,
+      cubeType: 10,
+      cubeBonus: 100,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 24,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 1,
+    },
+    immunityList: [
+      DAMAGE_FIRE,
+      DAMAGE_PSYCHIC,
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_16,
+    featureList: [
+      {
+        name: 'Поглощение огня',
+        description: `Каждый раз, когда голем должен получить урон огнём, он не получает урон, и вместо этого восстанавливает число хитов, равное причиняемому урону огнём.`,
+      },
+      {
+        name: 'Неизменяемая форма',
+        description: `Голем обладает иммунитетом ко всем заклинаниям и эффектам, изменяющим его форму.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Голем совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием голема являются магическими.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Голем совершает два размашистых удара.`,
+      },
+      {
+        name: 'Размашистый удар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 13,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 10,
+            cubeBonus: 7,
+          },
+        },
+      },
+      {
+        name: 'Меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 13,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 3,
+            cubeType: 10,
+            cubeBonus: 7,
+          },
+        },
+      },
+      {
+        name: 'Ядовитое дыхание',
+        description: `Голем выдыхает ядовитый газ 15-футовым конусом. Все существа в этой области должны совершить спасбросок Телосложения со Сл 19, получая урон ядом 45 (10к8) при провале, или половину этого урона при успехе.`,
+        restore: {
+          from: 6,
           to: 6,
         },
       },

@@ -1,8 +1,8 @@
 const path = require("path")
 
-const generateCreaturePageUrlById = require("./src/utils/generateCreaturePageUrlById")
+const generateCreaturePageUrlById = path.resolve("./src/utils/generateCreaturePageUrlById")
 
-const dndCreatureList = require("./src/constants/dnd/dndCreatureList")
+const dndCreatureList = path.resolve("./src/constants/dnd/dndCreatureList")
 const quotesList = require("./src/constants/quotesList")
 
 const DndCreaturePageTemplate = path.resolve(`./src/templates/DndCreaturePageTemplate.jsx`)
@@ -14,19 +14,6 @@ exports.createPages = ({ actions }) => {
   return new Promise(
     resolve => {
       resolve(
-        // dndCreatureList.forEach(
-        //   ({id}) => {
-        //     createPage(
-        //       {
-        //         path: generateCreaturePageUrlById(id),
-        //         component: DndCreaturePageTemplate,
-        //         context: {
-        //           slug: id,
-        //         },
-        //       },
-        //     )
-        //   },
-        // ),
         quotesList.forEach(
           (quote, id) => {
             createPage(
@@ -40,39 +27,26 @@ exports.createPages = ({ actions }) => {
             )
           },
         ),
-      // resolve(
-      //   [
-      //     () => dndCreatureList.forEach(
-      //       ({id}) => {
-      //         createPage(
-      //           {
-      //             path: generateCreaturePageUrlById(id),
-      //             component: DndCreaturePageTemplate,
-      //             context: {
-      //               slug: id,
-      //             },
-      //           },
-      //         )
-      //       },
-      //     ),
-      //     () => quotesList.forEach(
-      //       (quote, id) => {
-      //         createPage(
-      //           {
-      //             path: `/quotes/${id}`,
-      //             component: QuotePageTemplate,
-      //             context: {
-      //               slug: id,
-      //             },
-      //           },
-      //         )
-      //       },
-      //     ),
-      //   ]
-      //     .forEach(e => e()),
       )
     },
   )
+    .then(
+      () => {
+        dndCreatureList.forEach(
+          creature => {
+            createPage(
+              {
+                path: generateCreaturePageUrlById(creature.id),
+                component: DndCreaturePageTemplate,
+                context: {
+                  slug: creature.id,
+                },
+              },
+            )
+          },
+        )
+      }
+    )
     .catch(
       e => console.error("Fail createPages", e),
     )

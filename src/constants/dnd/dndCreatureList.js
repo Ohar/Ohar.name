@@ -300,6 +300,7 @@ const CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord'
 const CREATURE_GNOME_DEEP = 'gnome_deep'
 const CREATURE_GOBLIN = 'goblin'
 const CREATURE_GOBLIN_BOSS = 'goblin_boss'
+const CREATURE_GORGON = 'gorgon'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
@@ -6433,6 +6434,101 @@ const dndCreatureRawList = [
             type: DAMAGE_PIERCING,
             cubeBonus: 1,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Горгона',
+    nameEn: 'Gorgon',
+    id: CREATURE_GORGON,
+    description: `Немногие остаются в живых после встречи с горгоной и могут рассказать об этом. Тело этого существа покрыто металлическими пластинами, а из ноздрей валит зелёный пар.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:70',
+    armor: {
+      ac: 19,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 10,
+      cubeBonus: 48,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      SKILL_PERCEPTION: 4,
+    },
+    immunityConditionList: [
+      CONDITION_PETRIFIED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Растаптывающий рывок',
+        description: `Если горгона переместится как минимум на 20 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой бодания, эта цель должна преуспеть в спасброске Силы со Сл 16, иначе будет сбита с ног. Если цель сбита с ног, горгона может бонусным действием совершить по ней одну атаку копытами.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Бодание',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 12,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Копыта',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Окаменяющее дыхание',
+        description: `Горгона выдыхает окаменяющий газ 30-футовым конусом. Все существа в этой области должны преуспеть в спасброске Телосложения со Сл 13. При провале цель начинает превращаться в камень и становится опутанной. Опутанная цель должна повторить спасбросок в конце своего следующего хода. При успехе эффект на этой цели оканчивается. При провале цель становится окаменевшей, пока не будет вылечена заклинанием _Высшее восстановление_ (Greater restoration) или подобной магией.`,
+        restore: {
+          from: 5,
+          to: 6,
         },
       },
     ],

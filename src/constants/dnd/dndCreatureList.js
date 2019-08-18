@@ -59,10 +59,10 @@ import {
   CREATURE_TYPE_GNOME,
   CREATURE_TYPE_GOBLINOID,
   CREATURE_TYPE_HUMANOID,
-  CREATURE_TYPE_MONSTER,
+  CREATURE_TYPE_MONSTER, CREATURE_TYPE_PLANT,
   CREATURE_TYPE_SHAPESHIFTER,
-  CREATURE_TYPE_UNDEAD,
-} from "@/constants/dnd/dndCreatureTypeList"
+  CREATURE_TYPE_UNDEAD
+} from '@/constants/dnd/dndCreatureTypeList';
 import {
   ALIGMENT_ANY,
   ALIGMENT_CE,
@@ -314,6 +314,7 @@ const CREATURE_MARID = 'marid'
 const CREATURE_MERROW = 'merrow'
 const CREATURE_PLANETAR = 'planetar'
 const CREATURE_ROPER = 'roper'
+const CREATURE_SHRIEKER = 'shrieker'
 const CREATURE_SOLAR = 'solar'
 const CREATURE_STONE_GIANT = 'stone_giant'
 const CREATURE_STONE_GOLEM = 'stone_golem'
@@ -6733,6 +6734,61 @@ const dndCreatureRawList = [
             cubeBonus: 2,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Визгун',
+    nameEn: 'Shrieker',
+    id: CREATURE_SHRIEKER,
+    description: `**Визгуны** — это грибы размером с человека, которые издают пронзительные вопли, отпугивая потревоживших их существ. Другие существа могут использовать их как сигнал о приближении потенциальной жертвы, а различные разумные расы Подземья разводят визгунов на окраинах своих поселений, чтобы отвадить непрошенных гостей.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_PLANT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:74',
+    armor: 5,
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+    },
+    params: {
+      [PARAM_STR]: 1,
+      [PARAM_DEX]: 1,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 3,
+      [PARAM_CHA]: 1,
+    },
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_BLINDED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+        comment: 'слеп за пределами этого радиуса',
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 6,
+      },
+    ],
+    cr: CR_0,
+    actionList: [
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока визгун остаётся без движения, он неотличим от обычного гриба.`,
+      },
+      {
+        name: 'Визг',
+        description: `Если в пределах 30 футов от визгуна появляется яркий свет или существо, визгун испускает визг, слышимый на расстоянии 300 футов. Визгун продолжает кричать, пока не пройдёт 1к4 раунда после того, как источник беспокойства окажется за пределами его восприятия.`,
       },
     ],
   },

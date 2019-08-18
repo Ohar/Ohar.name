@@ -16,7 +16,9 @@ export default cube => {
     const bonusSignText = cubeCount && cubeBonus
       ? bonusSign
       : ''
-    const bonus = cubeBonus || ''
+    const bonus = cubeBonus
+      ? Math.abs(cubeBonus)
+      : ''
 
     return `${average} (${count}${bonusSignText}${bonus})`
   }

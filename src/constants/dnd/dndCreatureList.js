@@ -303,6 +303,7 @@ const CREATURE_GOBLIN_BOSS = 'goblin_boss'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
+const CREATURE_HOMUNCULUS = 'homunculus'
 const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
 const CREATURE_IRON_GOLEM = 'iron_golem'
@@ -6344,6 +6345,93 @@ const dndCreatureRawList = [
             cubeCount: 2,
             cubeType: 8,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гомункул',
+    nameEn: 'Homunculus',
+    id: CREATURE_HOMUNCULUS,
+    description: `Смешав глину, пепел, корень мандрагоры и кровь, можно с помощью специального ритуала создать верного компаньона размером с белку.\n
+**Гомункул** это конструкт, действующий как продолжение своего создателя с двусторонним обменом мыслей, чувств и языков через мистическую связь. У хозяина может быть только один гомункул одновременно (попытка создать ещё одного всегда проваливается), и когда умирает хозяин, умирает и гомункул.`,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:69',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 40,
+    },
+    params: {
+      [PARAM_STR]: 4,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 7,
+    },
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Телепатическая связь',
+        description: `Если гомункул и его хозяин находятся на одном плане существования, гомункул может магическим образом передавать всё, что ощущает, своему хозяину, и они могут общаться между собой телепатически.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 10, иначе станет отравленной на 1 минуту. Если спасбросок провален на 5 или больше единиц, цель вместо этого становится отравленной на 5 (1к10) минут, и пока отравлена таким образом, она лишена сознания.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              size: {
+                max: SIZE_LARGE,
+              },
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeBonus: 1,
           },
         },
       },

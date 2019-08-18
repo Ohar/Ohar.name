@@ -6471,7 +6471,7 @@ const dndCreatureRawList = [
       [PARAM_CHA]: 7,
     },
     skillCollection: {
-      SKILL_PERCEPTION: 4,
+      [SKILL_PERCEPTION]: 4,
     },
     immunityConditionList: [
       CONDITION_PETRIFIED,

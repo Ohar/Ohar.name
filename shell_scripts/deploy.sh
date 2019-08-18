@@ -18,7 +18,7 @@ scp ./../dist/$FILE_NAME $URL:~
 ssh -tt $URL <<DEPLOY
     cd $FOLDER
 
-    sudo rm -rf ./*
+    find . -name "*" -print0 | xargs -0 rm
     sudo mv ~/$FILE_NAME $FOLDER
 
     sudo unzip -u $FILE_NAME

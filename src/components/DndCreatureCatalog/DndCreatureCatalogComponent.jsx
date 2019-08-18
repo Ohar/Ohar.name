@@ -9,7 +9,6 @@ import "./DndCreatureCatalogStyles.css"
 const DndCreatureCatalogComponent = (
   {
     filteredCreatureList,
-    isTooMuch,
     onSearch,
   },
 ) => (
@@ -30,15 +29,12 @@ const DndCreatureCatalogComponent = (
           <ul className='DndCreatureCatalog_list'>
             {
               filteredCreatureList.map(
-                creature => (
+                ({id}) => (
                   <li
                     className='DndCreatureCatalog_item'
-                    key={creature.id}
+                    key={id}
                   >
-                    <DndCreature
-                      creature={creature}
-                      id={creature.id}
-                    />
+                    <DndCreature id={id}/>
                   </li>
                 )
               )
@@ -51,14 +47,12 @@ const DndCreatureCatalogComponent = (
 )
 
 DndCreatureCatalogComponent.defaultProps = {
-  isTooMuch: false,
   filteredCreatureList: [],
 }
 
 DndCreatureCatalogComponent.propTypes = {
   filteredCreatureList: PropTypes.array,
   onSearch: PropTypes.func.isRequired,
-  isTooMuch: PropTypes.bool,
 }
 
 export default DndCreatureCatalogComponent

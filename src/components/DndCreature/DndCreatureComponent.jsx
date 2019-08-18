@@ -1,5 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Link } from 'gatsby'
+
+import generateCreaturePageUrlById from "@/utils/generateCreaturePageUrlById"
 
 import DndActionList from "./components/DndActionList"
 import DndCreatureAc from "./components/DndCreatureAc"
@@ -37,6 +40,7 @@ const DndCreatureComponent = (
     featureList,
     genderId,
     hp,
+    id,
     immunityList,
     immunityConditionList,
     isFemale,
@@ -44,7 +48,9 @@ const DndCreatureComponent = (
     legendaryActionList,
     legendaryPoints,
     name,
+    nameAlt,
     nameEn,
+    nameEnAlt,
     params,
     resistanceList,
     reactionList,
@@ -59,7 +65,9 @@ const DndCreatureComponent = (
 ) => (
   <section className={`DndCreature DndCreature-columnCount_${columnCount}`}>
     <header className='DndCreature_name'>
-      {name} [{nameEn}]
+      {/*<Link to={generateCreaturePageUrlById(id)}>*/}
+        {name} {nameAlt ? `(${nameAlt}) ` : ''}[{nameEn}{nameEnAlt ? ` (${nameEnAlt})` : ''}]
+      {/*</Link>*/}
     </header>
 
     <p className='DndCreature_info'>
@@ -133,7 +141,9 @@ DndCreatureComponent.propTypes = {
   legendaryActionList: PropTypes.array,
   legendaryPoints: PropTypes.number,
   name: PropTypes.string.isRequired,
+  nameAlt: PropTypes.string,
   nameEn: PropTypes.string,
+  nameEnAlt: PropTypes.string,
   params: PropTypes.object.isRequired,
   reactionList: PropTypes.array,
   saveThrowCollection: PropTypes.object,
@@ -155,7 +165,9 @@ DndCreatureComponent.defaultProps = {
   languageList: [],
   legendaryActionList: [],
   legendaryPoints: 0,
+  nameAlt: '',
   nameEn: '',
+  nameEnAlt: '',
   reactionList: [],
   saveThrowCollection: null,
   senseList: [],

@@ -1,3 +1,5 @@
+import prepareForSearch from "@/utils/prepareForSearch";
+
 import SEARCH_PROP_NAME from "@/constants/SEARCH_PROP_NAME";
 import {
   CR_0,
@@ -39,6 +41,7 @@ import {
   SIZE_HUGE,
   SIZE_MEDIUM,
   SIZE_LARGE,
+  SIZE_SMALL,
   SIZE_TINY,
 } from "@/constants/dnd/dndSizeList"
 import {
@@ -46,11 +49,15 @@ import {
   CREATURE_TYPE_ABERRATION,
   CREATURE_TYPE_ANY_RACE,
   CREATURE_TYPE_CELESTIAL,
+  CREATURE_TYPE_CONSTRUCT,
   CREATURE_TYPE_DRAGON,
   CREATURE_TYPE_ELEMENTAL,
   CREATURE_TYPE_FIEND,
   CREATURE_TYPE_GIANT,
   CREATURE_TYPE_GITH,
+  CREATURE_TYPE_GNOLL,
+  CREATURE_TYPE_GNOME,
+  CREATURE_TYPE_GOBLINOID,
   CREATURE_TYPE_HUMANOID,
   CREATURE_TYPE_MONSTER,
   CREATURE_TYPE_SHAPESHIFTER,
@@ -98,12 +105,16 @@ import {
   LANG_ELVEN,
   LANG_GIANT,
   LANG_GITH,
+  LANG_GNOLL,
+  LANG_GNOMISH,
+  LANG_GOBLIN,
   LANG_IGNAN,
   LANG_INFERNAL,
   LANG_SYLVAN,
   LANG_TELEPATHY,
   LANG_TERRAN,
   LANG_UMBER_HULK,
+  LANG_UNDERCOMMON
 } from '@/constants/dnd/dndLanguageList'
 import {
   DAMAGE_ACID,
@@ -113,8 +124,10 @@ import {
   DAMAGE_ELECTRICITY,
   DAMAGE_NECROTIC,
   DAMAGE_NONMAGIC_WEAPON,
+  DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
   DAMAGE_PIERCING,
   DAMAGE_POISON,
+  DAMAGE_PSYCHIC,
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
   DAMAGE_THUNDER,
@@ -131,6 +144,7 @@ import {
   SKILL_ATHLETICS,
   SKILL_HISTORY,
   SKILL_INSIGHT,
+  SKILL_INVESTIGATION,
   SKILL_MEDICINE,
   SKILL_PERCEPTION,
   SKILL_RELIGION,
@@ -154,6 +168,8 @@ import {
   SPELL_BLADE_BARRIER,
   SPELL_BLESS,
   SPELL_BLIGHT,
+  SPELL_BLINDNESS_DEAFNESS,
+  SPELL_BLUR,
   SPELL_COLOR_SPRAY,
   SPELL_COMMUNE,
   SPELL_COMPREHEND_LANGUAGES,
@@ -167,6 +183,7 @@ import {
   SPELL_DETECT_EVIL_AND_GOOD,
   SPELL_DETECT_MAGIC,
   SPELL_DETECT_THOUGHTS,
+  SPELL_DISGUISE_SELF,
   SPELL_DISPEL_EVIL_AND_GOOD,
   SPELL_DOMINATE_PERSON,
   SPELL_ENLARGE_REDUCE,
@@ -244,7 +261,7 @@ import {
   TARGET_OBJECT,
   TARGET_POINT,
 } from '@/constants/dnd/dndTargetList'
-import { DAMAGE_PSYCHIC } from './dndDamageTypeList'
+import { LANG_ITS_CREATOR } from './dndLanguageList';
 
 const CREATURE_AARAKOCRA = 'aarakocra'
 const CREATURE_ABOLETH = 'aboleth'
@@ -256,6 +273,7 @@ const CREATURE_BASILISK = 'basilisk'
 const CREATURE_BEHIR = 'behir'
 const CREATURE_CLOUD_GIANT = 'cloud_giant'
 const CREATURE_COMMONER = 'commoner'
+const CREATURE_CLAY_GOLEM = 'clay_golem'
 const CREATURE_DAO = 'dao'
 const CREATURE_DEVA = 'deva'
 const CREATURE_DJINNI = 'djinni'
@@ -268,22 +286,33 @@ const CREATURE_FAERIE_DRAGON_RED = 'faerie_dragon_red'
 const CREATURE_FAERIE_DRAGON_VIOLET = 'faerie_dragon_violet'
 const CREATURE_FAERIE_DRAGON_YELLOW = 'faerie_dragon_yellow'
 const CREATURE_FIRE_GIANT = 'fire_giant'
+const CREATURE_FLESH_GOLEM = 'flesh_golem'
 const CREATURE_FROST_GIANT = 'frost_giant'
 const CREATURE_GALEB_DUHR = 'galeb_duhr'
 const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
 const CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth'
 const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
+const CREATURE_GITHYANKI_KNIGHT = 'githyanki_knight'
+const CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior'
+const CREATURE_GNOLL = 'gnoll'
+const CREATURE_GNOLL_FANG_OF_YEENOGHU = 'gnoll_fang_of_yeenoghu'
+const CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord'
+const CREATURE_GNOME_DEEP = 'gnome_deep'
+const CREATURE_GOBLIN = 'goblin'
+const CREATURE_GOBLIN_BOSS = 'goblin_boss'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
 const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
+const CREATURE_IRON_GOLEM = 'iron_golem'
 const CREATURE_MARID = 'marid'
 const CREATURE_MERROW = 'merrow'
 const CREATURE_PLANETAR = 'planetar'
 const CREATURE_ROPER = 'roper'
 const CREATURE_SOLAR = 'solar'
 const CREATURE_STONE_GIANT = 'stone_giant'
+const CREATURE_STONE_GOLEM = 'stone_golem'
 const CREATURE_STORM_GIANT = 'storm_giant'
 const CREATURE_UMBER_HULK = 'umber_hulk'
 const CREATURE_VAMPIRE = 'vampire'
@@ -2542,6 +2571,7 @@ const dndCreatureRawList = [
   },
   {
     name: 'Ледяной великан',
+    nameAlt: 'Морозный гигант',
     nameEn: 'Frost Giant',
     id: CREATURE_FROST_GIANT,
     description: `Ледяные великаны — громадные грабители с морозных земель, что лежат за гранью цивилизации — это жестокие, выносливые воины, живущие за счёт добычи с набегов и грабежей. Они уважают лишь грубую силу и боевые навыки, демонстрируя их шрамами и отвратительными трофеями, полученными от врагов.`,
@@ -4857,7 +4887,7 @@ const dndCreatureRawList = [
     name: 'Гитцерай монах',
     nameEn: 'Githzerai monk',
     id: CREATURE_GITHZERAI_MONK,
-    description: `Сосредоточенные философы и строгие аскеты, гитцераи следуют жёсткому жизненному укладу. Худощавые и жилистые, они носят одежду без изысков, держа своё мнение при себе и доверяя единицам чужаков. Отвернувшиеся от своих воинственных собратьев гитъянок, гитцераи придерживаются монашеского уклада, проживая на островах порядка, что находятся в бескрайнем море хаоса на плане Лимбо.`,
+    description: `Сосредоточенные философы и строгие аскеты, **гитцераи** следуют жёсткому жизненному укладу. Худощавые и жилистые, они носят одежду без изысков, держа своё мнение при себе и доверяя единицам чужаков. Отвернувшиеся от своих воинственных собратьев гитъянок, гитцераи придерживаются монашеского уклада, проживая на островах порядка, что находятся в бескрайнем море хаоса на плане Лимбо.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
       CREATURE_TYPE_HUMANOID,
@@ -4909,6 +4939,7 @@ const dndCreatureRawList = [
       },
     ],
     spellCast: {
+      comment: 'псионика',
       baseStat: PARAM_WIT,
       componentExclude: CAST_NONE,
       spellIdByCountList: [
@@ -4965,6 +4996,1359 @@ const dndCreatureRawList = [
       },
     ],
   },
+  {
+    name: 'Гитъянки воитель',
+    nameEn: 'Githyanki warrior',
+    id: CREATURE_GITHYANKI_WARRIOR,
+    description: `**Гитъянки** грабят бесчисленные миры с палуб своих астральных кораблей и спин красных драконов. Перья, бисер, драгоценные камни и металлы украшают их доспехи и оружие — легендарные серебряные мечи с которыми они прорубаются с боем через своих врагов. Вырвав свободу у свежевателей разума, гитъянки стали безжалостными завоевателями под руководством ужасной королевы-лича Влаакит.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GITH,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:59',
+    armor: {
+      ac: 17,
+      type: 'полулаты',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 8,
+      cubeBonus: 9,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 10,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 3,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_GITH,
+    ],
+    cr: CR_3,
+    spellCast: {
+      comment: 'псионика',
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_NONE,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_MAGE_HAND,
+              comment: 'рука невидима',
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            {
+              id: SPELL_NONDETECTION,
+              comment: 'только на себя',
+            },
+            SPELL_JUMP,
+            SPELL_MISTY_STEP,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гитъянки совершает две атаки двуручным мечом.`,
+      },
+      {
+        name: 'Двуручный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_PSYCHIC,
+              cubeCount: 2,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гитъянки рыцарь',
+    nameEn: 'Githyanki knight',
+    id: CREATURE_GITHYANKI_KNIGHT,
+    description: `**Гитъянки** грабят бесчисленные миры с палуб своих астральных кораблей и спин красных драконов. Перья, бисер, драгоценные камни и металлы украшают их доспехи и оружие — легендарные серебряные мечи с которыми они прорубаются с боем через своих врагов. Вырвав свободу у свежевателей разума, гитъянки стали безжалостными завоевателями под руководством ужасной королевы-лича Влаакит.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GITH,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:59',
+    armor: {
+      ac: 18,
+      type: 'латный доспех',
+    },
+    hp: {
+      cubeCount: 14,
+      cubeType: 8,
+      cubeBonus: 28,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 15,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 5,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_GITH,
+    ],
+    cr: CR_8,
+    spellCast: {
+      comment: 'псионика',
+      baseStat: PARAM_INT,
+      componentExclude: CAST_NONE,
+      saveThrowDc: 13,
+      spellAttackBonus: 5,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_MAGE_HAND,
+              comment: 'рука невидима',
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            {
+              id: SPELL_NONDETECTION,
+              comment: 'только на себя',
+            },
+            SPELL_JUMP,
+            SPELL_MISTY_STEP,
+            SPELL_TONGUES,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_TELEKINESIS,
+            SPELL_PLANE_SHIFT,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гитъянки совершает две атаки серебряным двуручным мечом.`,
+      },
+      {
+        name: 'Серебряный двуручный меч',
+        description: `Это атака магическим оружием. При критическом попадании по цели, находящейся в астральном теле (как при использовании заклинания _Проекция в астрал_ (Astral projection)), гитъянки может перерезать серебряную нить, соединяющую цель с материальным телом, вместо причинения урона.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 6,
+            },
+            {
+              type: DAMAGE_PSYCHIC,
+              cubeCount: 3,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Вожак стаи гноллов',
+    nameEn: 'Gnoll pack lord',
+    id: CREATURE_GNOLL_PACK_LORD,
+    description: `Стая гноллов возглавляется **вожаком**, правящим силой и хитростью. Лучшее из награбленного отходит к нему, будь то еда, ценные безделушки или магические предметы. В надеждах получить от Йеногу неуязвимость, он покрывает своё тело пирсингом, нелепыми трофеями и наносит на шерсть демонические печати.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GNOLL,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:61',
+    armor: {
+      ac: 15,
+      type: 'кольчужная рубаха',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 8,
+      cubeBonus: 9,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 8,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 9,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_GNOLL,
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Буйство',
+        description: `Если гнолл в свой ход опускает рукопашной атакой хиты существа до 0, он может бонусным действием переместиться на расстояние до половины своей скорости и совершить атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гнолл совершает две атаки, либо глефой, либо длинным луком, и использует Разжигание буйства, если может.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Глефа',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Длинный лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Разжигание буйства',
+        description: `Одно существо, которое гнолл видит в пределах 30 футов от себя, может реакцией совершить рукопашную атаку, если оно слышит гнолла и обладает особенностью Буйство.`,
+        restore: {
+          from: 5,
+          to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гнолл',
+    nameEn: 'Gnoll',
+    id: CREATURE_GNOLL,
+    description: `Происхождение **гноллов** восходит ко времени, когда демонический повелитель Йеногу проник в Материальный План и устроил в нём буйство. Стаи обычных гиен следовали по его следу, подъедая убитых им жертв. Эти гиены были превращены в первых гноллов, и они продолжали следовать за Йеногу, пока его не изгнали обратно в Бездну. Гноллы же распространились по всему мира, став тяжелейшим напоминанием о демонической силе.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GNOLL,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:61',
+    armor: {
+      ac: 15,
+      type: 'шкурный доспех, щит',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_GNOLL,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Буйство',
+        description: `Если гнолл в свой ход опускает рукопашной атакой хиты существа до 0, он может бонусным действием переместиться на расстояние до половины своей скорости и совершить атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            melee: 5,
+            range: {
+              normal: 20,
+              max: 60,
+            },
+          },
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 2,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 2,
+                comment: ', если используется двумя руками для совершения рукопашной атаки',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Длинный лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гнолл клык Йеногу',
+    nameEn: 'Gnoll fang of Yeenoghu',
+    id: CREATURE_GNOLL_FANG_OF_YEENOGHU,
+    description: `Празднование побед у гноллов сопровождается демоническими ритуалами и кровавыми приношениями Йеногу. Иногда демонический повелитель награждает своих последователей, делая одного из них одержимым демоном. Помеченный Йеногу счастливчик становится **«клыком Йеногу»** — избранным Властелина Гноллов. Гиена, пирующая врагом, которого поразил клык, подвергается ужасным трансформациям, становясь взрослым гноллом. Именно так Йеногу сотворил первых гноллов. Клык Йеногу может значительно увеличить популяцию гноллов в зависимости от количества гиен в округе. Единственный способ это предотвратить — убить клыка.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_GNOLL,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:61',
+    armor: {
+      ac: 14,
+      type: 'шкурный доспех',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 8,
+      cubeBonus: 20,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 13,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 4,
+      [PARAM_WIT]: 2,
+      [PARAM_CHA]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_COMMON,
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: 'Буйство',
+        description: `Если гнолл в свой ход опускает рукопашной атакой хиты существа до 0, он может бонусным действием переместиться на расстояние до половины своей скорости и совершить атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гнолл совершает три атаки: одну укусом, и две когтями.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+            comment: `, и цель должна преуспеть в спасброске Телосложения со Сл 12, иначе получит урон ядом 7 (2к6)`,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Глубинный гном',
+    nameAlt: 'Свирфнеблин',
+    nameEn: 'Gnome, deep',
+    nameEnAlt: 'Svirfneblin',
+    id: CREATURE_GNOME_DEEP,
+    description: `**Глубинные гномы**, или свирфнеблины, живут глубоко под поверхностью земли в запутанных подземных проходах и искусственных пещерах. Они выживают благодаря скрытности, уму и упорству. Их серая кожа позволяет сливаться с окружающим камнем. Для своего размера свирфнеблины удивительно сильны и тяжелы. В среднем, взрослый глубинный гном весит от 100 до 120 фунтов, а в высоту достигает 3 футов.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GNOME,
+    ],
+    aligmentId: ALIGMENT_NG,
+    source: 'MM:62',
+    armor: {
+      ac: 15,
+      type: 'кольчужная рубаха',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 6,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 9,
+    },
+    skillCollection: {
+      [SKILL_INVESTIGATION]: 3,
+      [SKILL_PERCEPTION]: 2,
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_GNOMISH,
+      LANG_UNDERCOMMON,
+      LANG_TERRAN,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Каменный камуфляж',
+        description: `Гном совершает с преимуществом проверки Ловкости (Скрытность), когда пытается спрятаться на каменистой местности.`,
+      },
+      {
+        name: 'Гномья хитрость',
+        description: `Гном совершает с преимуществом спасброски Интеллекта, Мудрости и Харизмы от магии.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_INT,
+      componentExclude: CAST_MATERIAL,
+      saveThrowDc: 11,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_NONDETECTION,
+              comment: 'только на себя',
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_BLINDNESS_DEAFNESS,
+            SPELL_DISGUISE_SELF,
+            SPELL_BLUR,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Боевая кирка',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Отравленный дротик',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+            comment: ` и цель должна преуспеть в спасброске Телосложения со Сл 12, иначе станет отравленной на 1 минуту. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе`,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Босс гоблинов',
+    nameEn: 'Goblin boss',
+    id: CREATURE_GOBLIN_BOSS,
+    description: `Гоблинами правят самые сильные и умные среди них. **Гоблинский босс** может командовать отдельным логовом, тогда как гоблинский король или королева (которые являются не более чем теми же прославленными гоблинскими боссами) управляет сотнями гоблинов, живущих во множестве логовищ, что гарантирует выживание племени. Гоблинские боссы часто меняются, а племена захватываются хобгоблинскими воеводами или вождями медвежатников.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GOBLINOID,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:64',
+    armor: {
+      ac: 17,
+      type: 'кольчужная рубаха, щит',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      LANG_GOBLIN,
+      LANG_COMMON,
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Ловкий побег',
+        description: `Гоблин может в каждом своём ходу бонусным действием совершать действие Засада или Отход.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гоблин совершает две атаки скимитаром. Вторая атака совершается с помехой.`
+      },
+      {
+        name: 'Скимитар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 2,
+          range: {
+            melee: 5,
+            range: {
+              normal: 30,
+              max: 120,
+            },
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+          },
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Перенаправление атаки',
+        description: `Если существо, видимое гоблином, нацеливается на него атакой, гоблин выбирает другого гоблина в пределах 5 футов от себя. Эти два гоблина меняются местами, и целью становится выбранный гоблин.`
+      },
+    ],
+  },
+  {
+    name: 'Гоблин',
+    nameEn: 'Goblin',
+    id: CREATURE_GOBLIN,
+    description: `**Гоблины** — это маленькие, эгоистичные существа с чёрными сердцами, живущие в пещерах, брошенных рудниках, разграбленных подземельях и прочих неприглядных местах. Слабые по отдельности, гоблины собираются в большие — зачастую несметные — группы. Они жадны до власти и часто злоупотребляют теми полномочиями, которые у них уже есть.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GOBLINOID,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:64',
+    armor: {
+      ac: 15,
+      type: 'кожаный доспех, щит',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 8,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      LANG_GOBLIN,
+      LANG_COMMON,
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Ловкий побег',
+        description: `Гоблин может в каждом своём ходу бонусным действием совершать действие Засада или Отход.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Скимитар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Короткий лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 80,
+            max: 320,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Глиняный голем',
+    nameEn: 'Clay golem',
+    id: CREATURE_CLAY_GOLEM,
+    description: `Этот громоздкий, изваянный из глины голем ростом выше обычного человека. Он сделан в форме человека, но пропорции не соблюдены.\n
+**Глиняные големы** часто одарены священной целью жрецами. Однако, глина — слабый сосуд для жизненной силы. Если голем повреждён, стихийный дух, привязанный к нему, может вырваться на свободу. Такие големы приходят в ярость, круша всё вокруг себя до тех пор, пока не будут уничтожены или полностью восстановлены.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:66',
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 14,
+      cubeType: 10,
+      cubeBonus: 56,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 1,
+    },
+    immunityList: [
+      DAMAGE_ACID,
+      DAMAGE_PSYCHIC,
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_9,
+    featureList: [
+      {
+        name: 'Поглощение кислоты',
+        description: `Каждый раз, когда голем должен получить урон кислотой, он не получает урон, и вместо этого восстанавливает число хитов, равное причиняемому урону кислотой.`,
+      },
+      {
+        name: 'Берсерк',
+        description: `Каждый раз, когда голем начинает ход с 60 или меньше хитами, бросайте к6. Если выпадет «6», голем становится берсерком. Будучи берсерком, он в каждом своём ходу атакует ближайшее видимое существо. Если поблизости нет существ, к которым можно подойти и атаковать, голем атакует предмет, предпочитая предметы с размером меньше своего. Став берсерком, голем остаётся им, пока его не уничтожат или пока он не восстановит все свои хиты.`,
+      },
+      {
+        name: 'Неизменяемая форма',
+        description: `Голем обладает иммунитетом ко всем заклинаниям и эффектам, изменяющим его форму.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Голем совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием голема являются магическими.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Голем совершает два размашистых удара.`,
+      },
+      {
+        name: 'Размашистый удар',
+        description: `Если цель — существо, она должна преуспеть в спасброске Телосложения со Сл 15, иначе максимум её хитов уменьшится на количество, равное полученному урону. Цель умирает, если эта атака уменьшает максимум хитов до 0. Уменьшение длится до тех пор, пока не будет устранено заклинанием _Высшее восстановление_ (Greater restoration) или подобной магией.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Спешка',
+        description: `До конца своего следующего хода голем магическим образом получает бонус +2 к КД, совершает с преимуществом спасброски Ловкости, и может использовать атаку размашистым ударом бонусным действием.`,
+        restore: {
+          from: 5,
+          to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Железный голем',
+    nameEn: 'Iron golem',
+    id: CREATURE_IRON_GOLEM,
+    description: `**Железный голем** — сильнейший из големов, массивный высокий великан из тяжёлого металла. Форма железного голема может быть любой, но большинство сделано в виде огромных живых доспехов. Его кулаки могут убить существо одним ударом, а его лязгающая походка сотрясает землю под ногами. Железные големы носят огромные мечи для увеличения досягаемости и могут изрыгать облака смертельного яда.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:67',
+    armor: {
+      ac: 20,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 20,
+      cubeType: 10,
+      cubeBonus: 100,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 24,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 1,
+    },
+    immunityList: [
+      DAMAGE_FIRE,
+      DAMAGE_PSYCHIC,
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_16,
+    featureList: [
+      {
+        name: 'Поглощение огня',
+        description: `Каждый раз, когда голем должен получить урон огнём, он не получает урон, и вместо этого восстанавливает число хитов, равное причиняемому урону огнём.`,
+      },
+      {
+        name: 'Неизменяемая форма',
+        description: `Голем обладает иммунитетом ко всем заклинаниям и эффектам, изменяющим его форму.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Голем совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием голема являются магическими.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Голем совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Размашистый удар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 13,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 10,
+            cubeBonus: 7,
+          },
+        },
+      },
+      {
+        name: 'Меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 13,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 3,
+            cubeType: 10,
+            cubeBonus: 7,
+          },
+        },
+      },
+      {
+        name: 'Ядовитое дыхание',
+        description: `Голем выдыхает ядовитый газ 15-футовым конусом. Все существа в этой области должны совершить спасбросок Телосложения со Сл 19, получая урон ядом 45 (10к8) при провале, или половину этого урона при успехе.`,
+        restore: {
+          from: 6,
+          to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Каменный голем',
+    nameEn: 'Stone golem',
+    id: CREATURE_STONE_GOLEM,
+    description: `Вырезанные и выдолбленные из камня в виде впечатляющих высоких статуй, **каменные големы** сильно различаются размером и формами. Хотя многие имеют черты гуманоидов, каменные големы могут быть вырезаны в любой форме, которую может представить скульптор. Древние каменные големы, найденные в закрытых гробницах или у ворот затерянных городов, иногда имеют форму гигантских зверей.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:67',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 17,
+      cubeType: 10,
+      cubeBonus: 85,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 22,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 1,
+    },
+    immunityList: [
+      DAMAGE_PSYCHIC,
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_10,
+    featureList: [
+      {
+        name: 'Неизменяемая форма',
+        description: `Голем обладает иммунитетом ко всем заклинаниям и эффектам, изменяющим его форму.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Голем совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием голема являются магическими.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Голем совершает два размашистых удара.`,
+      },
+      {
+        name: 'Размашистый удар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 8,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: 'Замедление',
+        description: `Голем нацеливается на одно или несколько существ, видимых в пределах 10 футов от себя. Все цели должны совершить спасбросок Мудрости со Сл 17 от этой магии. При провале цель не может совершать реакции, её скорость уменьшается вдвое, и она не может совершать более одной атаки за свой ход. Кроме того, цель может в свой ход совершать либо действие, либо бонусное действие, но не то и другое. Эти эффекты длятся 1 минуту. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
+        restore: {
+          from: 5,
+          to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Мясной голем',
+    nameAlt: 'Голем из плоти',
+    nameEn: 'Flesh golem',
+    id: CREATURE_FLESH_GOLEM,
+    description: `**Мясной голем** — ужасный набор гуманоидных частей тел, сшитых и скреплённых вместе в мускулистого громилу, наполненного внушительной силой. Его мозг способен к простым рассуждениям, хотя его мысли редко бывают более сложными, чем у малого ребёнка. Слои мышц голема реагируют со скоростью молнии, даруя существу ловкостью и силу. Мощные чары защищают его кожу, отражая заклинания и всё оружие, кроме самого мощного.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:68',
+    armor: 9,
+    hp: {
+      cubeCount: 11,
+      cubeType: 8,
+      cubeBonus: 44,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 5,
+    },
+    immunityList: [
+      DAMAGE_ELECTRICITY,
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Берсерк',
+        description: `Каждый раз, когда голем начинает ход с 40 или меньше хитами, бросайте к6. Если выпадет «6», голем становится берсерком. Будучи берсерком, он в каждом своём ходу атакует ближайшее видимое существо. Если поблизости нет существ, к которым можно подойти и атаковать, голем атакует предмет, предпочитая предметы с размером меньше своего. Став берсерком, голем остаётся им, пока его не уничтожат или пока он не восстановит все свои хиты.\n
+Создатель голема, находящийся в пределах 60 футов от ставшего берсерком голема, может попытаться успокоить его, отдавая чёткие команды убедительным голосом. Голем должен слышать создателя, который действием совершает проверку Харизмы (Убеждение) со Сл 15. При успехе голем перестаёт быть берсерком. Если голем получает урон, когда у него 40 или меньше хитов, он может снова стать берсерком.`,
+      },
+      {
+        name: 'Боязнь огня',
+        description: `Если голем получает урон огнём, он до конца своего следующего хода совершает с помехой броски атаки и проверки характеристик.`,
+      },
+      {
+        name: 'Неизменяемая форма',
+        description: `Голем обладает иммунитетом ко всем заклинаниям и эффектам, изменяющим его форму.`,
+      },
+      {
+        name: 'Поглощение электричества',
+        description: `Каждый раз, когда голем должен получить урон электричеством, он не получает урон, и вместо этого восстанавливает число хитов, равное причиняемому урону электричеством.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Голем совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием голема являются магическими.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Голем совершает два размашистых удара.`,
+      },
+      {
+        name: 'Размашистый удар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
 ]
 
 const dndCreatureRawCollection = dndCreatureRawList.reduce(
@@ -5011,13 +6395,17 @@ const dndCreatureList = dndCreatureRawList
   creature => ({
     ...creature,
     isFemale: Boolean(creature.isFemale),
-    [SEARCH_PROP_NAME]: [
-      creature.name,
-      creature.nameEn,
-      creature.description || '',
-    ]
-      .filter(e => e)
-      .join('\n'),
+    [SEARCH_PROP_NAME]: prepareForSearch(
+      [
+        creature.name,
+        creature.nameAlt || '',
+        creature.nameEn,
+        creature.nameEnAlt || '',
+        creature.description || '',
+      ]
+        .filter(e => e)
+        .join('\n')
+    ),
   })
 )
 

@@ -1,6 +1,7 @@
 const path = require('path')
 
 const {author, description, version} = require('./package')
+const {resolve: aliasOptions} = require('./webpack.config')
 
 module.exports = {
   siteMetadata: {
@@ -35,17 +36,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-alias-imports`,
-      options: {
-        alias: {
-          '@': path.resolve(__dirname, 'src'),
-          'root': path.resolve(__dirname),
-        },
-        extensions: [
-          'js',
-          'json',
-          'jsx',
-        ]
-      }
+      options: aliasOptions
     },
   ],
 }

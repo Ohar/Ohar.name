@@ -289,6 +289,7 @@ const CREATURE_FIRE_GIANT = 'fire_giant'
 const CREATURE_FLESH_GOLEM = 'flesh_golem'
 const CREATURE_FROST_GIANT = 'frost_giant'
 const CREATURE_GALEB_DUHR = 'galeb_duhr'
+const CREATURE_GARGOYLE = 'gargoyle'
 const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
 const CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth'
 const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
@@ -6529,6 +6530,103 @@ const dndCreatureRawList = [
         restore: {
           from: 5,
           to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Горгулья',
+    nameEn: 'Gargoyle',
+    id: CREATURE_GARGOYLE,
+    description: `Облик безжизненных **горгулий**, украшающих вершины величественных зданий, навеян этими злобными существами стихии земли, похожими на гротескные дьявольские статуи. Горгулья таится среди каменных стен и руин, неподвижная, подобно каменным скульптурам, и наслаждается тем ужасом, который она вселяет, когда оживает, и той болью, которую причиняет своим жертвам.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:71',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 7,
+      cubeType: 8,
+      cubeBonus: 21,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 7,
+    },
+    resistanceList: [
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока горгулья остаётся без движения, она неотличима от неживой статуи.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Горгулья совершает две атаки: одну укусом и одну когтями.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
         },
       },
     ],

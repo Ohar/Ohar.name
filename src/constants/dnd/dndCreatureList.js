@@ -6426,9 +6426,6 @@ const dndCreatureRawList = [
             count: 1,
             limit: {
               type: TARGET_CREATURE,
-              size: {
-                max: SIZE_LARGE,
-              },
             },
           },
           hit: {

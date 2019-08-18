@@ -9,13 +9,16 @@ export default ({list}) => (
     {
       list
         .map(
-          ({id, value}) => {
+          ({id, value, comment = ''}) => {
             const {name, noUnits = false} = dndSenseCollection[id]
             const units = noUnits
               ? ''
               : ' фт.'
+            const commentText = comment
+              ? ` (${comment})`
+              : ''
 
-            return `${name} ${value}${units}`
+            return `${name} ${value}${units}${commentText}`
           }
         )
         .join(', ')

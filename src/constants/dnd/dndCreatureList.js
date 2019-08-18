@@ -107,15 +107,16 @@ import {
   LANG_GITH,
   LANG_GNOLL,
   LANG_GNOMISH,
-  LANG_GOBLIN,
+  LANG_GOBLIN, LANG_GRELL,
   LANG_IGNAN,
   LANG_INFERNAL,
+  LANG_ITS_CREATOR,
   LANG_SYLVAN,
   LANG_TELEPATHY,
   LANG_TERRAN,
   LANG_UMBER_HULK,
   LANG_UNDERCOMMON
-} from '@/constants/dnd/dndLanguageList'
+} from '@/constants/dnd/dndLanguageList';
 import {
   DAMAGE_ACID,
   DAMAGE_BLUDGEONING,
@@ -261,7 +262,6 @@ import {
   TARGET_OBJECT,
   TARGET_POINT,
 } from '@/constants/dnd/dndTargetList'
-import { LANG_ITS_CREATOR } from './dndLanguageList';
 
 const CREATURE_AARAKOCRA = 'aarakocra'
 const CREATURE_ABOLETH = 'aboleth'
@@ -302,6 +302,7 @@ const CREATURE_GNOME_DEEP = 'gnome_deep'
 const CREATURE_GOBLIN = 'goblin'
 const CREATURE_GOBLIN_BOSS = 'goblin_boss'
 const CREATURE_GORGON = 'gorgon'
+const CREATURE_GRELL = 'grell'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
@@ -6622,6 +6623,112 @@ const dndCreatureRawList = [
             type: DAMAGE_SLASHING,
             cubeCount: 1,
             cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Грелл',
+    nameEn: 'Grell',
+    id: CREATURE_GRELL,
+    description: `**Грелл** походит на летающий мозг с узким острым клювом. Под толстой волокнистой шкурой его трёхметровых щупалец скрываются сотни кольцевых мышц. Острые шипы на концах щупальцев впрыскивают парализующий яд. Грелл может частично скрывать эти шипы в щупальцах, чтобы взаимодействовать с объектами, которые не хочет проткнуть или разорвать.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ABERRATION,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:72',
+    armor: 12,
+    hp: {
+      cubeCount: 10,
+      cubeType: 8,
+      cubeBonus: 10,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: {
+        value: 30,
+        comment: 'парит',
+      },
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 9,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_STEALTH]: 6,
+    },
+    immunityList: [
+      DAMAGE_ELECTRICITY,
+    ],
+    immunityConditionList: [
+      CONDITION_BLINDED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        comment: 'слеп за пределами этого радиуса',
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_GRELL,
+    ],
+    cr: CR_3,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Грелл совершает две атаки: одну щупальцами, и одну клювом.`,
+      },
+      {
+        name: 'Щупальца',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 11, иначе станет отравленной на 1 минуту. Отравленная цель парализована, и может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект при успехе. Цель также становится схваченной (Сл высвобождения равна 15). Если размер цели не больше Среднего, она также становится опутанной, пока не перестанет быть схваченной. Держа цель в захвате, грелл совершает с преимуществом броски атаки по ней, и не может использовать эту атаку против других целей. Когда грелл перемещается, все существа с размером не больше Среднего, схваченные им, перемещаются вместе с ним.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 10,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 4,
             cubeBonus: 2,
           },
         },

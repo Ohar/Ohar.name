@@ -6,6 +6,7 @@ export const DAMAGE_COLD = 'cold'
 export const DAMAGE_FIRE = 'fire'
 export const DAMAGE_FORCE = 'force'
 export const DAMAGE_ELECTRICITY = 'lightning'
+export const DAMAGE_MAGIC_WEAPON = 'magic_weapon'
 export const DAMAGE_NECROTIC = 'necrotic'
 export const DAMAGE_NONMAGIC_WEAPON = 'nonmagic_weapon'
 export const DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON = 'nonmagic_nonadamantine_weapon'
@@ -26,6 +27,12 @@ const dndDamageTypeList = [
     id: DAMAGE_PIERCING,
     name: 'Колющий',
     fullName: 'Колющий урон',
+  },
+  {
+    id: DAMAGE_MAGIC_WEAPON,
+    name: 'Дробящий, колющий и рубящий урон от магического оружия',
+    fullName: 'Дробящий, колющий и рубящий урон от магического оружия',
+    isEnumeration: true,
   },
   {
     id: DAMAGE_NONMAGIC_WEAPON,

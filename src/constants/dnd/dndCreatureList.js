@@ -290,6 +290,7 @@ const CREATURE_FLESH_GOLEM = 'flesh_golem'
 const CREATURE_FROST_GIANT = 'frost_giant'
 const CREATURE_GALEB_DUHR = 'galeb_duhr'
 const CREATURE_GARGOYLE = 'gargoyle'
+const CREATURE_GAS_SPORE = 'gas_spore'
 const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
 const CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth'
 const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
@@ -6789,6 +6790,94 @@ const dndCreatureRawList = [
       {
         name: 'Визг',
         description: `Если в пределах 30 футов от визгуна появляется яркий свет или существо, визгун испускает визг, слышимый на расстоянии 300 футов. Визгун продолжает кричать, пока не пройдёт 1к4 раунда после того, как источник беспокойства окажется за пределами его восприятия.`,
+      },
+    ],
+  },
+  {
+    name: 'Газовая спора',
+    nameEn: 'Gas spore',
+    id: CREATURE_GAS_SPORE,
+    description: `Первые **газовые споры**, как считается, появились из мёртвых злобоглазов, чьи гниющие трупы напитали грибы-паразиты искажённой магией. Прошло много времени, и газовые споры превратились в отдельное растение, быстро и целеустремлённо растущее уже безо всяких трупов, создавая злобно выглядящую насмешку над самым страшным обитателем Подземья.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_PLANT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:74',
+    armor: 5,
+    hp: {
+      cubeCount: 1,
+      cubeType: 10,
+      cubeBonus: -4,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_FLY]: {
+        value: 10,
+        comment: 'парит',
+      },
+    },
+    params: {
+      [PARAM_STR]: 5,
+      [PARAM_DEX]: 1,
+      [PARAM_CON]: 3,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 1,
+      [PARAM_CHA]: 1,
+    },
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_BLINDED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+        comment: 'слепа за пределами этого радиуса',
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 5,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Предсмертный взрыв',
+        description: `Газовая спора взрывается, когда её хиты опускаются до 0. Все существа в пределах 20 футов от неё должны преуспеть в спасброске Телосложения со Сл 15, иначе получат урон ядом 10 (3к6) и заболеют при провале. Существа, обладающие иммунитетом к отравленному состоянию, обладают и иммунитетом к болезни.\n
+Споры населяют организм существа, и убивают его через количество часов, равное 1к12 + значение Телосложения существа, если болезнь до этого времени не будет вылечена. Когда пройдёт половина этого срока, существо станет отравленным до конца длительности болезни. После того, как существо умирает, из него вылетают 2к4 Крохотные газовые споры, которые вырастают до полного размера за 7 дней.`,
+      },
+      {
+        name: 'Жуткое сходство',
+        description: `Газовая спора выглядят как злобоглазы. Существо, видящее газовую спору, может понять её истинную природу, если совершит успешную проверку Интеллекта (Природа) со Сл 15.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Касание',
+        description: `Существо должно преуспеть в спасброске Телосложения со Сл 10, иначе будет поражено болезнью, описанной в тексте **Предсмертного взрыва**.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 0,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_POISON,
+            cubeBonus: 1,
+          },
+        },
       },
     ],
   },

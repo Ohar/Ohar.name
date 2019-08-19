@@ -319,6 +319,7 @@ const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
 const CREATURE_IRON_GOLEM = 'iron_golem'
 const CREATURE_MARID = 'marid'
+const CREATURE_MARILITH = 'marilith'
 const CREATURE_MERROW = 'merrow'
 const CREATURE_PLANETAR = 'planetar'
 const CREATURE_QUASIT = 'quasit'
@@ -8579,6 +8580,142 @@ export default [
       {
         name: 'Фамильяр',
         description: `Квазит может служить другому существу фамильяром, создав телепатическую связь с желающим того хозяином. Пока они связаны, хозяин может ощущать то же, что и квазит, пока они находятся в пределах мили друг от друга. Пока квазит находится в пределах 10 футов от хозяина, на хозяина распространяется особенность квазита Сопротивление магии. В любое время и по любой причине квазит может прекратить службу, оборвав телепатическую связь.`,
+      },
+    ],
+  },
+  {
+    name: 'Марилит',
+    nameEn: 'Marilith',
+    id: CREATURE_MARILITH,
+    description: `**Марилит** выглядит пугающе — шестирукая женщина, нижняя часть тела которой заменена на хвост гигантской змеи.\n
+Используя мечи в каждой из своих шести рук, марилит является опаснейшим врагом, с которым немногие могут сравниться. Эти демоны обладают острым умом и великолепным тактическим чутьём, и благодаря этому могут объединить других демонов. Марилит часто встречают в качестве офицеров во главе демонической орды, где они используют любую возможность ринуться в бой.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:92',
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 18,
+      cubeType: 10,
+      cubeBonus: 90,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 20,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 18,
+      [PARAM_WIT]: 16,
+      [PARAM_CHA]: 20,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 9,
+      [PARAM_CON]: 10,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 10,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_16,
+    featureList: [
+      {
+        name: 'Сопротивление магии',
+        description: `Марилит совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием марилит являются магическими.`,
+      },
+      {
+        name: 'Быстрая реакция',
+        description: `Марилит может совершать по одной реакции в каждом ходу сражения.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Марилит совершает семь атак: шесть длинными мечами, и одну хвостом.`,
+      },
+      {
+        name: 'Длинный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Хвост',
+        description: 'Если размер цели не больше Среднего, она становится схваченной (Сл высвобождения 19). Пока цель схвачена, она опутана, марилит может автоматически попадать по цели хвостом, и марилит не может совершать атаки хвостом по другим целям.',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 10,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Телепортация',
+        description: 'Марилит магическим образом телепортируется вместе со всем несомым и носимым снаряжением, на расстояние до 120 футов в свободное пространство, которое она видит.',
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Парирование',
+        description: `Марилит добавляет 5 к КД против одной рукопашной атаки, которая должна попасть по ней. Для этого марилит должна видеть атакующего, и должна использовать рукопашное оружие.`,
       },
     ],
   },

@@ -280,6 +280,7 @@ const CREATURE_DAO = 'dao'
 const CREATURE_DEMILICH = 'demilich'
 const CREATURE_DEVA = 'deva'
 const CREATURE_DJINNI = 'djinni'
+const CREATURE_DRETCH = 'dretch'
 const CREATURE_EFREETI = 'efreeti'
 const CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue'
 const CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green'
@@ -7881,6 +7882,112 @@ const dndCreatureRawList = [
       {
         name: 'Ошеломляющий вопль',
         description: `Врок испускает жуткий вопль. Все существа в пределах 20 футов от него, слышащие его, и не являющиеся демонами, должны преуспеть в спасброске Телосложения со Сл 14, иначе станут ошеломлёнными до конца следующего хода врока.`,
+        limit: {
+          count: 1,
+          period: 'день',
+        },
+      },
+    ],
+  },
+  {
+    name: 'Дретч',
+    nameEn: 'Dretch',
+    id: CREATURE_DRETCH,
+    description: `**Дретчи**, одни из самых слабых демонов, — отталкивающие, поглощённые ненавистью к себе существа, обречённые на вечность разочарования. Низкий интеллект позволяет дретчам выполнять только самые простые задачи. Однако нехватку потенциала они компенсируют злобой. Дретчи сбиваются в толпу, выражая своё недовольство тревожным галдежом и ворчанием.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:87',
+    armor: {
+      ac: 11,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 6,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 3,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+        comment: 'работает только с существами, понимающими язык Бездны',
+      },
+    ],
+    cr: CR_1_4,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дретч совершает две атаки: одну укусом, и
+одну когтями.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 4,
+          },
+        },
+      },
+      {
+        name: 'Зловонное облако',
+        description: `От дретча исходит облако отвратительного зелёного газа с радиусом 10 футов. Этот газ огибает углы, и его пространство является слабо заслонённой местностью. Облако существует 1 минуту, или пока сильный ветер его не развеет. Все существа, начинающие ход в этой области, должны преуспеть в спасброске Телосложения со Сл 11, иначе станут отравленными до начала своего следующего хода. Будучи отравленной таким образом, цель может в свой ход совершать либо действие, либо бонусное действие, но не то и другое, и не может совершать реакции.`,
         limit: {
           count: 1,
           period: 'день',

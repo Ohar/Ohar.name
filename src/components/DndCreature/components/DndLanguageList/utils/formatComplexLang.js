@@ -7,13 +7,18 @@ export default lang => {
 
   const langName = dndLanguageCollection[langId].name
 
-  if (lang.range) {
-    return `${langName} ${lang.range} фт.`
-  }
+  const rangeText = lang.range
+    ? ` ${lang.range} фт.`
+    : ''
+  const doNotSpeakText1st = lang.doNotSpeak
+    ? `понимает `
+    : ''
+  const doNotSpeakText2nd = lang.doNotSpeak
+    ? `, но не говорит на нём`
+    : ''
+  const commentText = lang.comment
+    ? ` (${lang.comment})`
+    : ''
 
-  if (lang.doNotSpeak) {
-    return `понимает ${langName}, но не говорит на нём`
-  }
-
-  return langName
+  return `${doNotSpeakText1st}${langName}${rangeText}${doNotSpeakText2nd}${commentText}`
 }

@@ -49,7 +49,7 @@ import {
   CREATURE_TYPE_ABERRATION,
   CREATURE_TYPE_ANY_RACE,
   CREATURE_TYPE_CELESTIAL,
-  CREATURE_TYPE_CONSTRUCT,
+  CREATURE_TYPE_CONSTRUCT, CREATURE_TYPE_DEMON,
   CREATURE_TYPE_DRAGON,
   CREATURE_TYPE_ELEMENTAL,
   CREATURE_TYPE_FIEND,
@@ -267,6 +267,7 @@ const CREATURE_AARAKOCRA = 'aarakocra'
 const CREATURE_ABOLETH = 'aboleth'
 const CREATURE_ACOLYTE = 'acolyte'
 const CREATURE_ANKHEG = 'ankheg'
+const CREATURE_BALOR = 'balor'
 const CREATURE_BANDIT = 'bandit'
 const CREATURE_BANSHEE = 'banshee'
 const CREATURE_BASILISK = 'basilisk'
@@ -7458,6 +7459,151 @@ const dndCreatureRawList = [
         name: 'Подлое проклятье',
         cost: 3,
         description: `Демилич нацеливается наодно существо, которое видит в пределах 30 футов от себя. Цель должна преуспеть в спасброске Мудрости со Сл 15, иначе она станет магическим образом проклятой. Пока проклятье действует, цель совершает с помехой броски атаки и спасброски. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая проклятье при успехе.`,
+      },
+    ],
+  },
+  {
+    name: 'Балор',
+    nameEn: 'Balor',
+    id: CREATURE_BALOR,
+    description: `Часть древнего и ужасного зла, **балоры** командуют демоническими армиями, стремятся получить власть и уничтожают любого, кто встанет у них на пути.\n
+Орудуя пламенным кнутом и мечом, наполненным силой шторма, балоры питают свой боевой дух ненавистью и яростью. В предсмертной агонии поток демонической ярости низвергается огненным взрывом, который может уничтожить даже самых крепких врагов.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:85',
+    armor: {
+      ac: 19,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 21,
+      cubeType: 12,
+      cubeBonus: 126,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_FLY]: 80,
+    },
+    params: {
+      [PARAM_STR]: 26,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 22,
+      [PARAM_INT]: 20,
+      [PARAM_WIT]: 16,
+      [PARAM_CHA]: 22,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 12,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+      DAMAGE_FIRE,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_19,
+    featureList: [
+      {
+        name: 'Предсмертная агония',
+        description: `Когда балор умирает, он взрывается, и все существа в пределах 30 футов от него должны совершить спасброски Ловкости со Сл 20, получая урон огнём 70 (20к6) при провале, или половину этого урона при успехе. Взрыв воспламеняет горючие предметы в этой области, которые никто не несёт и не носит, и уничтожает оружие балора.`,
+      },
+      {
+        name: 'Огненная аура',
+        description: `В начале каждого хода балора все существа в пределах 5 футов от него получают урон огнём 10 (3к6), а горючие предметы в ауре, которые никто не несёт и не носит, воспламеняются. Существо, касающееся балора или попадающее по нему рукопашной атакой, находясь в пределах 5 футов от него, получает урон огнём 10 (3к6).`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Балор совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием балора являются магическими.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Балор совершает две атаки: одну длинным мечом, и одну кнутом.`,
+      },
+      {
+        name: 'Длинный меч',
+        description: `Если балор совершает критическое попадание, он бросает кости урона три раза, а не два.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 14,
+          range: 10,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 3,
+              cubeType: 8,
+              cubeBonus: 8,
+            },
+            {
+              type: DAMAGE_ELECTRICITY,
+              cubeCount: 3,
+              cubeType: 8,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Кнут',
+        description: `Цель должна преуспеть в спасброске Силы со Сл 20, иначе её подтянет на 25 футов к балору.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 14,
+          range: 30,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 8,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 3,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Телепортация',
+        description: `Балор магическим образом телепортируется вместе со всем несомым и носимым снаряжением, на расстояние до 120 футов в свободное пространство, которое он видит.`,
       },
     ],
   },

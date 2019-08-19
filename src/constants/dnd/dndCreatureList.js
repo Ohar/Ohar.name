@@ -304,6 +304,7 @@ const CREATURE_GOBLIN = 'goblin'
 const CREATURE_GOBLIN_BOSS = 'goblin_boss'
 const CREATURE_GORGON = 'gorgon'
 const CREATURE_GRELL = 'grell'
+const CREATURE_GRICK = 'grick'
 const CREATURE_GRICK_ALPHA = 'grick_alpha'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
@@ -7058,6 +7059,94 @@ const dndCreatureRawList = [
             cubeCount: 2,
             cubeType: 8,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Грик',
+    nameEn: 'Grick',
+    id: CREATURE_GRICK,
+    description: `Похожий на червя **грик** остаётся невидимым, сливаясь с камнями пещер и туннелей, в которых обитает. Лишь при приближении жертвы он вскакивает, а четыре его колючих щупальца открывают голодный щёлкающий клюв.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:75',
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 5,
+    },
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Каменный камуфляж',
+        description: `Грик совершает с преимуществом проверки Ловкости (Скрытность), когда пытается спрятаться на каменистой местности.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Грик совершает одну атаку щупальцами. Если эта атака попадает, грик может совершить одну атаку клювом по той же самой цели.`,
+      },
+      {
+        name: 'Щупальца',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
           },
         },
       },

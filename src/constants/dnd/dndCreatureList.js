@@ -325,6 +325,7 @@ const CREATURE_VAMPIRE = 'vampire'
 const CREATURE_VAMPIRE_SPAWN = 'vampire_spawn'
 const CREATURE_VAMPIRE_SPELLCASTER = 'vampire_spellcaster'
 const CREATURE_VAMPIRE_WARRIOR = 'vampire_warrior'
+const CREATURE_VIOLET_FUNGUS = 'violet_fungus'
 const CREATURE_WATER_WEIRD = 'water_weird'
 const CREATURE_WILL_O_WISP = 'will_o_wisp'
 const CREATURE_WYVERN = 'wyvern'
@@ -6876,6 +6877,82 @@ const dndCreatureRawList = [
           hit: {
             type: DAMAGE_POISON,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Лиловый гриб',
+    nameEn: 'Violet fungus',
+    id: CREATURE_VIOLET_FUNGUS,
+    description: `Этот гриб фиолетового оттенка использует корнеобразные отростки в своём основании, чтобы передвигаться по поверхности пещеры. Четыре побега в середине ствола гриба используются, чтобы хлестать жертву, вызывая гниение при малейшем прикосновении. Любое убитое лиловым грибом существо очень быстро разлагается. Из трупа вырастает новый фиолетовый гриб, который достигает зрелости через 2к6 дней.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_PLANT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:74',
+    armor: 5,
+    hp: {
+      cubeCount: 4,
+      cubeType: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 5,
+    },
+    params: {
+      [PARAM_STR]: 3,
+      [PARAM_DEX]: 1,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 3,
+      [PARAM_CHA]: 1,
+    },
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_BLINDED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+        comment: 'слеп за пределами этого радиуса',
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 6,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока лиловый гриб остаётся без движения, он неотличим от обычного гриба.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гриб совершает 1к4 атаки Разлагающим касанием.`,
+      },
+      {
+        name: 'Разлагающее касание',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 10,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_NECROTIC,
+            cubeCount: 1,
+            cubeType: 8,
           },
         },
       },

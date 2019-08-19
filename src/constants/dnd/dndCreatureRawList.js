@@ -139,15 +139,15 @@ import {
 } from '@/constants/dnd/dndSenseList'
 import {
   SKILL_ARCANA,
-  SKILL_ATHLETICS,
+  SKILL_ATHLETICS, SKILL_DECEPTION,
   SKILL_HISTORY,
   SKILL_INSIGHT,
   SKILL_INVESTIGATION,
   SKILL_MEDICINE,
   SKILL_PERCEPTION,
   SKILL_RELIGION,
-  SKILL_STEALTH,
-} from '@/constants/dnd/dndSkillList'
+  SKILL_STEALTH
+} from '@/constants/dnd/dndSkillList';
 import {
   PC_CLASS_PRIEST,
   PC_CLASS_WIZARD,
@@ -228,7 +228,7 @@ import {
   SPELL_WALL_OF_FIRE,
   SPELL_WALL_OF_STONE,
   SPELL_WATER_BREATHING,
-  SPELL_WATER_WALK,
+  SPELL_WATER_WALK, SPELL_WEB,
   SPELL_WIND_WALK
 } from '@/constants/dnd/dndSpellList';
 import {
@@ -337,6 +337,7 @@ const CREATURE_VROCK = 'vrock'
 const CREATURE_WATER_WEIRD = 'water_weird'
 const CREATURE_WILL_O_WISP = 'will_o_wisp'
 const CREATURE_WYVERN = 'wyvern'
+const CREATURE_YOCHLOL = 'yochlol'
 
 export default [
   {
@@ -8268,6 +8269,199 @@ export default [
             cubeBonus: 7,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Йоклол',
+    nameEn: 'Yochlol',
+    id: CREATURE_YOCHLOL,
+    description: `**Йоклол**, Прислужницы Лолс, действующие по воле Королевы Пауков, это её шпионы, надсмотрщики и агенты зла. Они всегда подле неё в Ямах Демонической Паутины, но иногда Лолс отправляет их на Материальный План для защиты храмов и помощи особо привилегированным жрицам. Йоклол не рождаются вне царства Лолс, и не служат никаким демоническим повелителям кроме своей королевы.\n
+Вне Бездны, чтобы скрыть демоническую натуру, йоклол может принять вид женщины дроу или чудовищного паука. Истинный её облик — столб жёлтой слизи с единственным злобным глазом. В истинном облике и в облике дроу касание йоклол жалит ядом так же, как и укус её паучьего облика.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+      CREATURE_TYPE_SHAPESHIFTER,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:90',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 16,
+      cubeType: 8,
+      cubeBonus: 64,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 15,
+      [PARAM_CHA]: 15,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 6,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 6,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_DECEPTION]: 10,
+      [SKILL_INSIGHT]: 6,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_UNDERCOMMON,
+      LANG_ELVEN,
+    ],
+    cr: CR_10,
+    featureList: [
+      {
+        name: 'Перевёртыш',
+        description: `Йоклол может действием принять облик, напоминающий женщину дроу или громадного паука, или принять свой истинный облик. Во всех обликах её статистика остаётся той же самой. Всё несомое и носимое ей снаряжение не превращается. Она принимает свой истинный облик, если умирает.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Йоклол совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Паучье лазание',
+        description: `Йоклол может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`,
+      },
+      {
+        name: 'Хождение по паутине',
+        description: `Йоклол игнорирует ограничения перемещения, вызванные паутиной.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 14,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_THOUGHTS,
+            SPELL_WEB,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_DOMINATE_PERSON,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Йоклол совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Размашистый удар (в облике демона)',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 10,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 6,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Размашистый удар (в облике дроу)',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 6,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Укус (в облике паука)',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 6,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Туманный облик',
+        description: `Йоклол становится токсичным туманом или возвращается в свой истинный облик. Всё снаряжение, которое она несёт и носит, превращается вместе с ней. Она принимает свой истинный облик, если умирает.\n
+Находясь в туманном облике, йоклол недееспособна, и не может говорить. Она обладает скоростью полёта 30 футов, может парить, и может проходить сквозь любое пространство, если оно не герметично. Она совершает с преимуществом спасброски Силы, Ловкости и Телосложения, и обладает иммунитетом к немагическому урону.\n
+Находясь в туманном облике, йоклол может входить в пространство существ и останавливаться там. Каждый раз, когда существо начинает ход, разделяя с йоклол пространство, оно должны преуспеть в спасброске Телосложения со Сл 14, иначе станет отравленным до начала своего следующего хода. Будучи отравленной таким образом, цель является недееспособной.`,
       },
     ],
   },

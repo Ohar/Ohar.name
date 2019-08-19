@@ -306,6 +306,7 @@ const CREATURE_GORGON = 'gorgon'
 const CREATURE_GRELL = 'grell'
 const CREATURE_GRICK = 'grick'
 const CREATURE_GRICK_ALPHA = 'grick_alpha'
+const CREATURE_GRIFFON = 'griffon'
 const CREATURE_GRIMLOCK = 'grimlock'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
@@ -7240,6 +7241,92 @@ const dndCreatureRawList = [
               cubeType: 4,
             },
           ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Грифон',
+    nameEn: 'Griffon',
+    id: CREATURE_GRIFFON,
+    description: `**Грифоны** — свирепые крылатые хищники с мускулистыми телами львов и головами, передними лапами и крыльями орлов. Когда они нападают, грифоны смертоносны и быстры, как орлы, несмотря на то, что удары их мощны и грациозны, как у львов.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:77',
+    armor: 12,
+    hp: {
+      cubeCount: 7,
+      cubeType: 10,
+      cubeBonus: 21,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 80,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Острое зрение',
+        description: `Грифон совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Грифон совершает две атаки: одну клювом, и одну когтями.`,
+      },
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
         },
       },
     ],

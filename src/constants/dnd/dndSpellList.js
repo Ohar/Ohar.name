@@ -39,6 +39,7 @@ export const SPELL_BLUR = 'blur'
 export const SPELL_COLOR_SPRAY = 'color_spray'
 export const SPELL_COMMUNE = 'commune'
 export const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
+export const SPELL_CONFUSION = 'confusion'
 export const SPELL_CONJURE_ELEMENTAL = 'conjure_elemental'
 export const SPELL_CONTROL_WEATHER = 'control_weather'
 export const SPELL_CREATE_FOOD_AND_WATER = 'create_food_and_water'
@@ -46,11 +47,13 @@ export const SPELL_CREATE_OR_DESTROY_WATER = 'create_or_destroy_water'
 export const SPELL_CREATION = 'creation'
 export const SPELL_CURE_WOUNDS = 'cure_wounds'
 export const SPELL_DANCING_LIGHTS = 'dancing_lights'
+export const SPELL_DARKNESS = 'darkness'
 export const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
 export const SPELL_DETECT_MAGIC = 'detect_magic'
 export const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
 export const SPELL_DISGUISE_SELF = 'disguise_self'
 export const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
+export const SPELL_DISPEL_MAGIC = 'dispel_magic'
 export const SPELL_DOMINATE_PERSON = 'dominate_person'
 export const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 export const SPELL_ENTANGLE = 'entangle'
@@ -79,6 +82,7 @@ export const SPELL_PHANTASMAL_FORCE = 'phantasmal_force'
 export const SPELL_PHANTASMAL_KILLER = 'phantasmal_killer'
 export const SPELL_PLANE_SHIFT = 'plane_shift'
 export const SPELL_POLYMORPH = 'polymorph'
+export const SPELL_POWER_WORD_STUN = 'power_word_stun'
 export const SPELL_PRESTIDIGITATION = 'prestidigitation'
 export const SPELL_PURIFY_FOOD_AND_DRINK = 'purify_food_and_drink'
 export const SPELL_RAISE_DEAD = 'raise_dead'
@@ -1264,6 +1268,62 @@ const dndSpellList = [
     id: SPELL_ENTANGLE,
     name: 'Опутывание',
     nameEn: 'Entangle',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_DISPEL_MAGIC,
+    name: 'Рассеивание магии',
+    nameEn: 'Dispel magic',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_DARKNESS,
+    name: 'Тьма',
+    nameEn: 'Darkness',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_POWER_WORD_STUN,
+    name: 'Слово силы: оглушение',
+    nameEn: 'Power word stun',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_CONFUSION,
+    name: 'Смятение',
+    nameEn: 'Confusion',
     description: ``, // TODO
     lvl: 0, // TODO
     magicSchool: MAGIC_TRANSMUTATION, // TODO

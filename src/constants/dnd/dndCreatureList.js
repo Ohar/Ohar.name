@@ -173,19 +173,19 @@ import {
   SPELL_BLUR,
   SPELL_COLOR_SPRAY,
   SPELL_COMMUNE,
-  SPELL_COMPREHEND_LANGUAGES,
+  SPELL_COMPREHEND_LANGUAGES, SPELL_CONFUSION,
   SPELL_CONJURE_ELEMENTAL,
   SPELL_CONTROL_WEATHER,
   SPELL_CREATE_FOOD_AND_WATER,
   SPELL_CREATE_OR_DESTROY_WATER,
   SPELL_CREATION,
   SPELL_CURE_WOUNDS,
-  SPELL_DANCING_LIGHTS,
+  SPELL_DANCING_LIGHTS, SPELL_DARKNESS,
   SPELL_DETECT_EVIL_AND_GOOD,
   SPELL_DETECT_MAGIC,
   SPELL_DETECT_THOUGHTS,
   SPELL_DISGUISE_SELF,
-  SPELL_DISPEL_EVIL_AND_GOOD,
+  SPELL_DISPEL_EVIL_AND_GOOD, SPELL_DISPEL_MAGIC,
   SPELL_DOMINATE_PERSON,
   SPELL_ENLARGE_REDUCE, SPELL_ENTANGLE,
   SPELL_FEATHER_FALL,
@@ -211,7 +211,7 @@ import {
   SPELL_PASSWALL, SPELL_PHANTASMAL_FORCE,
   SPELL_PHANTASMAL_KILLER,
   SPELL_PLANE_SHIFT,
-  SPELL_POLYMORPH,
+  SPELL_POLYMORPH, SPELL_POWER_WORD_STUN,
   SPELL_PRESTIDIGITATION,
   SPELL_PURIFY_FOOD_AND_DRINK,
   SPELL_RAISE_DEAD,
@@ -300,6 +300,7 @@ const CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth'
 const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
 const CREATURE_GITHYANKI_KNIGHT = 'githyanki_knight'
 const CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior'
+const CREATURE_GLABREZU = 'glabrezu'
 const CREATURE_GNOLL = 'gnoll'
 const CREATURE_GNOLL_FANG_OF_YEENOGHU = 'gnoll_fang_of_yeenoghu'
 const CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord'
@@ -7990,6 +7991,145 @@ const dndCreatureRawList = [
         limit: {
           count: 1,
           period: 'день',
+        },
+      },
+    ],
+  },
+  {
+    name: 'Глабрезу',
+    nameEn: 'Glabrezu',
+    id: CREATURE_GLABREZU,
+    description: `Глабрезу наслаждается, искушая смертных, и они одни из немногих демонов, готовы предложить свои услуги тому глупцу, что осмелился призвать их.\n
+Глабрезу страшны в бою, но предпочитают уничтожать соблазном, используя как приманку власть и богатство. Заключая коварные, хитрые сделки, они копят богатства, которые, как и обещали, отдают недальновидным призывателям и глупым смертным. Если же жертва не поддалась соблазну и обману, они применят силу, чтобы одержать победу.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:88',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 15,
+      cubeType: 10,
+      cubeBonus: 75,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 21,
+      [PARAM_INT]: 19,
+      [PARAM_WIT]: 17,
+      [PARAM_CHA]: 16,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 9,
+      [PARAM_CON]: 9,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 7,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_9,
+    featureList: [
+      {
+        name: 'Сопротивление магии',
+        description: `Глабрезу совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_INT,
+      saveThrowDc: 16,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_MAGIC,
+            SPELL_DISPEL_MAGIC,
+            SPELL_DARKNESS,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_FLY,
+            SPELL_POWER_WORD_STUN,
+            SPELL_CONFUSION,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Глабрезу совершает четыре атаки: две клешнями, и две кулаками. В качестве альтернативы, он совершает две атаки клешнями и накладывает одно заклинание.`,
+      },
+      {
+        name: 'Клешня',
+        description: `Если цель — существо с размером не больше Среднего, оно становится схваченным (Сл высвобождения равна 15). У глабрезу есть две клешни, и каждая может держать по одной цели.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
         },
       },
     ],

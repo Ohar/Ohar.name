@@ -305,6 +305,7 @@ const CREATURE_GNOME_DEEP = 'gnome_deep'
 const CREATURE_GOBLIN = 'goblin'
 const CREATURE_GOBLIN_BOSS = 'goblin_boss'
 const CREATURE_GORGON = 'gorgon'
+const CREATURE_GORISTRO = 'goristro'
 const CREATURE_GRELL = 'grell'
 const CREATURE_GRICK = 'grick'
 const CREATURE_GRICK_ALPHA = 'grick_alpha'
@@ -8126,6 +8127,145 @@ export default [
             cubeCount: 2,
             cubeType: 4,
             cubeBonus: 2,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гористро',
+    nameEn: 'Goristro',
+    id: CREATURE_GORISTRO,
+    description: `Гористро выглядит как изуверский минотавр двадцати футов ростом. Под началом демонических повелителей гористро становятся грозными осадными орудиями и ценными питомцами. Преследуя добычу, они сверхъестественным образом выбираются из лабиринтов и запутанных проходов.\n
+Громадные гористро иногда носят на плечах паланкины для меньших размерами демонов, перевозя их, как слоны на своих спинах.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:89',
+    armor: {
+      ac: 19,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 23,
+      cubeType: 12,
+      cubeBonus: 161,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 25,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 25,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 14,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 6,
+      [PARAM_CON]: 13,
+      [PARAM_WIT]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 7,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 17,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+    ],
+    cr: CR_17,
+    featureList: [
+      {
+        name: 'Атака в броске',
+        description: `Если гористро переместится как минимум на 15 футов по прямой к цели, а затем в том же ходу попадёт по ней атакой бодания, цель получает дополнительный колющий урон 38 (7к10). Если цель — существо, она должна преуспеть в спасброске Силы со Сл 21, иначе её оттолкнёт на 20 футов и собьёт с ног.`,
+      },
+      {
+        name: 'Запоминание пути',
+        description: `Гористро может с лёгкостью вспомнить любой пройдённый путь.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Гористро совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Осадное чудовище',
+        description: `Гористро причиняет двойной урон предметам и строениям.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гористро совершает три атаки: две кулаками и одну копытом.`,
+      },
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 13,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 8,
+            cubeBonus: 7,
+          },
+        },
+      },
+      {
+        name: 'Копыто',
+        description: `Если цель — существо, она должна преуспеть в спасброске Силы со Сл 21, иначе её собьёт с ног.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 13,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 10,
+            cubeBonus: 7,
+          },
+        },
+      },
+      {
+        name: 'Бодание',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 13,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 7,
+            cubeType: 10,
+            cubeBonus: 7,
           },
         },
       },

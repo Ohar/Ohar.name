@@ -3,11 +3,12 @@ import proschet from 'proschet'
 
 const getActionWord = proschet(['действие', 'действия', 'действий'])
 
-export default ({name, limit, cost, restore}) => {
+export default ({name, limit, comment, cost, restore}) => {
   const textList = [
     limit
       ? `${limit.count}/${limit.period}`
       : '',
+    comment || '',
     cost
       ? `стоит ${cost} ${getActionWord(cost)}`
       : '',

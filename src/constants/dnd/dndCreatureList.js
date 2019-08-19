@@ -4685,6 +4685,7 @@ const dndCreatureRawList = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Гиппогриф',
@@ -6538,6 +6539,7 @@ const dndCreatureRawList = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Горгулья',
@@ -6635,6 +6637,7 @@ const dndCreatureRawList = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Грелл',
@@ -6885,6 +6888,7 @@ const dndCreatureRawList = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Лиловый гриб',

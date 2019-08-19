@@ -131,8 +131,8 @@ import {
   DAMAGE_PSYCHIC,
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
-  DAMAGE_THUNDER,
-} from '@/constants/dnd/dndDamageTypeList'
+  DAMAGE_THUNDER, DAMAGE_MAGIC_WEAPON
+} from '@/constants/dnd/dndDamageTypeList';
 import {
   SENSE_BLIND_VISION,
   SENSE_DARK_VISION,
@@ -275,6 +275,7 @@ const CREATURE_CLOUD_GIANT = 'cloud_giant'
 const CREATURE_COMMONER = 'commoner'
 const CREATURE_CLAY_GOLEM = 'clay_golem'
 const CREATURE_DAO = 'dao'
+const CREATURE_DEMILICH = 'demilich'
 const CREATURE_DEVA = 'deva'
 const CREATURE_DJINNI = 'djinni'
 const CREATURE_EFREETI = 'efreeti'
@@ -7332,6 +7333,131 @@ const dndCreatureRawList = [
             cubeBonus: 4,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Демилич',
+    nameEn: 'Demilich',
+    id: CREATURE_DEMILICH,
+    description: `Бессмертие лича длится, пока он скармливает своему филактерию души смертных. Если этого не происходит, его кости рассыпаются пылью, оставляя только череп. В таком **«демиличе»** осталась только часть злой жизненной силы лича, но и этого достаточно, чтобы при угрозе останки поднялись в воздух, окутанные призрачной формой. Череп испускает страшный рёв, убивающий слабых сердцем, а остальных заставляющий трястись от ужаса. Оставшись один, он падает и вновь погружается в пустоту своего существования.`,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:78',
+    armor: {
+      ac: 20,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 20,
+      cubeType: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_FLY]: {
+        value: 30,
+        comment: 'парит',
+      },
+    },
+    params: {
+      [PARAM_STR]: 1,
+      [PARAM_DEX]: 20,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 20,
+      [PARAM_WIT]: 17,
+      [PARAM_CHA]: 20,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 6,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 11,
+    },
+    resistanceList: [
+      DAMAGE_MAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_NECROTIC,
+      DAMAGE_PSYCHIC,
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_STUNNED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 173,
+      },
+    ],
+    cr: CR_18,
+    featureList: [
+      {
+        name: 'Избегание',
+        description: `Если демилич подвергается эффекту, позволяющему совершить спасбросок, чтобы получить только половину урона, он вообще не получает урон, если преуспеет, и получает лишь половину урона при провале.`,
+      },
+      {
+        name: 'Легендарное сопротивление',
+        description: `Если демилич проваливает спасбросок, он может вместо этого сделать спасбросок успешным.`,
+        limit: {
+          count: 3,
+          period: 'день',
+        },
+      },
+      {
+        name: 'Иммунитет к изгнанию',
+        description: `Демилич обладает иммунитетом к эффектам, изгоняющим нежить.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Вой',
+        description: `Демилич испускает душераздирающий вопль. Все существа в пределах 30 футов от демилича, слышащие вой, должны преуспеть в спасброске Телосложения со Сл 15, иначе их хиты опускаются до 0. При успешном спасброске существо становится испуганным до конца своего следующего хода.`,
+        restore: {
+          from: 5,
+          to: 6,
+        },
+      },
+      {
+        name: 'Вытягивание жизни',
+        description: `Демилич выбирает до трёх существ, которых видит в пределах 10 футов от себя. Каждая цель должна преуспеть в спасброске Телосложения со Сл 19, иначе получит урон некротической энергией 21 (6к6), а демилич восстановит количество хитов, равное сумме урона, причинённого всем целям.`,
+      },
+    ],
+    legendaryPoints: 3,
+    legendaryActionList: [
+      {
+        name: 'Полёт',
+        description: `Демилич пролетает расстояние, не превышающее половину скорости полёта.`,
+      },
+      {
+        name: 'Облако пыли',
+        description: `Демилич магическим образом превращается в облако праха. Все существа в пределах 10 футов от демилича, включая тех, что стоят за углом, должны преуспеть в спасброске Телосложения со Сл 15, иначе станут ослеплёнными до конца следующего хода демилича. Преуспевшее в спасброске существо получает иммунитет к этому эффекту до конца следующего хода демилича.`,
+      },
+      {
+        name: 'Вытягивание энергии',
+        cost: 2,
+        description: `Все существа в пределах 30 футов от демилича должны совершить спасбросок Телосложения со Сл 15. При провале максимум хитов существа магическим образом уменьшается на 10 (3к6). Если максимум хитов из-за этого уменьшился до 0, существо умирает. Максимум хитов восстанавливается заклинанием _Высшее восстановление_ (greater restoration) и подобной магией.`,
+      },
+      {
+        name: 'Подлое проклятье',
+        cost: 3,
+        description: `Демилич нацеливается наодно существо, которое видит в пределах 30 футов от себя. Цель должна преуспеть в спасброске Мудрости со Сл 15, иначе она станет магическим образом проклятой. Пока проклятье действует, цель совершает с помехой броски атаки и спасброски. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая проклятье при успехе.`,
       },
     ],
   },

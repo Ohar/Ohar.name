@@ -304,6 +304,7 @@ const CREATURE_GOBLIN = 'goblin'
 const CREATURE_GOBLIN_BOSS = 'goblin_boss'
 const CREATURE_GORGON = 'gorgon'
 const CREATURE_GRELL = 'grell'
+const CREATURE_GRICK_ALPHA = 'grick_alpha'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
@@ -6953,6 +6954,110 @@ const dndCreatureRawList = [
             type: DAMAGE_NECROTIC,
             cubeCount: 1,
             cubeType: 8,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Альфа грик',
+    nameEn: 'Grick alpha',
+    id: CREATURE_GRICK_ALPHA,
+    description: `Похожий на червя грик остаётся невидимым, сливаясь с камнями пещер и туннелей, в которых обитает. Лишь при приближении жертвы он вскакивает, а четыре его колючих щупальца открывают голодный щёлкающий клюв. Стаю гриков чаще всего возглавляет крупный откормленный **альфа-самец**, вокруг которого собираются остальные.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:75',
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 10,
+      cubeBonus: 20,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 4,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 9,
+    },
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    cr: CR_7,
+    featureList: [
+      {
+        name: 'Каменный камуфляж',
+        description: `Грик совершает с преимуществом проверки Ловкости (Скрытность), когда пытается спрятаться на каменистой местности.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Грик совершает две атаки: одну хвостом, и одну щупальцами. Если грик попадает щупальцами, он может совершить одну атаку клювом по той же самой цели.`,
+      },
+      {
+        name: 'Хвост',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Щупальца',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 4,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
           },
         },
       },

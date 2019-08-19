@@ -53,6 +53,7 @@ export const SPELL_DISGUISE_SELF = 'disguise_self'
 export const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
 export const SPELL_DOMINATE_PERSON = 'dominate_person'
 export const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
+export const SPELL_ENTANGLE = 'entangle'
 export const SPELL_FEATHER_FALL = 'feather_fall'
 export const SPELL_FLAME_STRIKE = 'flame_strike'
 export const SPELL_FLY = 'fly'
@@ -74,6 +75,7 @@ export const SPELL_MISTY_STEP = 'misty_step'
 export const SPELL_MOVE_EARTH = 'move_earth'
 export const SPELL_NONDETECTION = 'nondetection'
 export const SPELL_PASSWALL = 'passwall'
+export const SPELL_PHANTASMAL_FORCE = 'phantasmal_force'
 export const SPELL_PHANTASMAL_KILLER = 'phantasmal_killer'
 export const SPELL_PLANE_SHIFT = 'plane_shift'
 export const SPELL_POLYMORPH = 'polymorph'
@@ -1234,6 +1236,34 @@ const dndSpellList = [
     id: SPELL_BLUR,
     name: 'Размытый образ',
     nameEn: 'Blur',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_PHANTASMAL_FORCE,
+    name: 'Воображаемая сила',
+    nameEn: 'Phantasmal force',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_ENTANGLE,
+    name: 'Опутывание',
+    nameEn: 'Entangle',
     description: ``, // TODO
     lvl: 0, // TODO
     magicSchool: MAGIC_TRANSMUTATION, // TODO

@@ -103,6 +103,7 @@ export const SPELL_WALL_OF_FIRE = 'wall_of_fire'
 export const SPELL_WALL_OF_STONE = 'wall_of_stone'
 export const SPELL_WATER_BREATHING = 'water_breathing'
 export const SPELL_WATER_WALK = 'water_walk'
+export const SPELL_WEB = 'web'
 export const SPELL_WIND_WALK = 'wind_walk'
 
 const defaultCastTime = '1 действие'
@@ -1324,6 +1325,20 @@ const dndSpellList = [
     id: SPELL_CONFUSION,
     name: 'Смятение',
     nameEn: 'Confusion',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_WEB,
+    name: 'Паутина',
+    nameEn: 'Web',
     description: ``, // TODO
     lvl: 0, // TODO
     magicSchool: MAGIC_TRANSMUTATION, // TODO

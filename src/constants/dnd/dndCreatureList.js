@@ -57,7 +57,7 @@ import {
   CREATURE_TYPE_GITH,
   CREATURE_TYPE_GNOLL,
   CREATURE_TYPE_GNOME,
-  CREATURE_TYPE_GOBLINOID,
+  CREATURE_TYPE_GOBLINOID, CREATURE_TYPE_GRIMLOCK,
   CREATURE_TYPE_HUMANOID,
   CREATURE_TYPE_MONSTER, CREATURE_TYPE_PLANT,
   CREATURE_TYPE_SHAPESHIFTER,
@@ -306,6 +306,7 @@ const CREATURE_GORGON = 'gorgon'
 const CREATURE_GRELL = 'grell'
 const CREATURE_GRICK = 'grick'
 const CREATURE_GRICK_ALPHA = 'grick_alpha'
+const CREATURE_GRIMLOCK = 'grimlock'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HILL_GIANT = 'hill_giant'
@@ -7148,6 +7149,97 @@ const dndCreatureRawList = [
             cubeType: 6,
             cubeBonus: 2,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Гримлок',
+    nameEn: 'Grimlock',
+    id: CREATURE_GRIMLOCK,
+    description: `Деградирующие подземные **гримлоки** когда-то были людьми, но поклонение свежевателям разума, наряду со столетиями бродяжничества по Подземью, давным-давно превратили их в слепых чудовищных каннибалов.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GRIMLOCK,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:76',
+    armor: 11,
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 5,
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 3,
+    },
+    immunityConditionList: [
+      CONDITION_BLINDED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+        comment: 'или 10 фт., когда глух (слеп за пределами этого радиуса)',
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_1_4,
+    languageList: [
+      LANG_UNDERCOMMON,
+    ],
+    featureList: [
+      {
+        name: 'Компенсация слепоты',
+        description: `Гримлок не может использовать слепое зрение, будучи оглохшим и лишённым обоняния.`,
+      },
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: `Гримлок совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+      {
+        name: 'Каменный камуфляж',
+        description: `Гримлок совершает с преимуществом проверки Ловкости (Скрытность), когда пытается спрятаться на каменистой местности.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Костяная дубина с шипами',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 1,
+              cubeType: 4,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 4,
+            },
+          ],
         },
       },
     ],

@@ -333,6 +333,7 @@ const CREATURE_VAMPIRE_SPAWN = 'vampire_spawn'
 const CREATURE_VAMPIRE_SPELLCASTER = 'vampire_spellcaster'
 const CREATURE_VAMPIRE_WARRIOR = 'vampire_warrior'
 const CREATURE_VIOLET_FUNGUS = 'violet_fungus'
+const CREATURE_VROCK = 'vrock'
 const CREATURE_WATER_WEIRD = 'water_weird'
 const CREATURE_WILL_O_WISP = 'will_o_wisp'
 const CREATURE_WYVERN = 'wyvern'
@@ -7756,6 +7757,133 @@ const dndCreatureRawList = [
             cubeType: 10,
             cubeBonus: 4,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Врок',
+    nameEn: 'Vrock',
+    id: CREATURE_VROCK,
+    description: `**Вроки** — тупые, капризные исчадия, живущие только ради боли и резни. Врок напоминает гигантскую помесь гуманоида и стервятника, он скрючен, его чудовищное тело и огромные крылья воняют падалью.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:87',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 11,
+      cubeType: 10,
+      cubeBonus: 44,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 8,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 8,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 5,
+      [PARAM_WIT]: 4,
+      [PARAM_CHA]: 2,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_6,
+    featureList: [
+      {
+        name: 'Сопротивление магии',
+        description: `Врок совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Врок совершает две атаки: одну клювом, и одну когтями.`,
+      },
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Споры',
+        description: `Из врока исходит облако токсичных спор с радиусом 15 футов. Споры огибают углы. Все существа в этой области должны преуспеть в спасброске Телосложения со Сл 14, иначе станут отравленными. Будучи отравленной таким образом, цель получает урон ядом 5 (1к10) в начале каждого своего хода. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе. Если на цель вылить флакон святой воды, эффект на ней тоже закончится. `,
+        restore: {
+          from: 6,
+          to: 6,
+        },
+      },
+      {
+        name: 'Ошеломляющий вопль',
+        description: `Врок испускает жуткий вопль. Все существа в пределах 20 футов от него, слышащие его, и не являющиеся демонами, должны преуспеть в спасброске Телосложения со Сл 14, иначе станут ошеломлёнными до конца следующего хода врока.`,
+        limit: {
+          count: 1,
+          period: 'день',
         },
       },
     ],

@@ -187,7 +187,7 @@ import {
   SPELL_DISGUISE_SELF,
   SPELL_DISPEL_EVIL_AND_GOOD,
   SPELL_DOMINATE_PERSON,
-  SPELL_ENLARGE_REDUCE,
+  SPELL_ENLARGE_REDUCE, SPELL_ENTANGLE,
   SPELL_FEATHER_FALL,
   SPELL_FLAME_STRIKE,
   SPELL_FLY,
@@ -208,7 +208,7 @@ import {
   SPELL_MISTY_STEP,
   SPELL_MOVE_EARTH,
   SPELL_NONDETECTION,
-  SPELL_PASSWALL,
+  SPELL_PASSWALL, SPELL_PHANTASMAL_FORCE,
   SPELL_PHANTASMAL_KILLER,
   SPELL_PLANE_SHIFT,
   SPELL_POLYMORPH,
@@ -232,8 +232,8 @@ import {
   SPELL_WALL_OF_STONE,
   SPELL_WATER_BREATHING,
   SPELL_WATER_WALK,
-  SPELL_WIND_WALK,
-} from '@/constants/dnd/dndSpellList'
+  SPELL_WIND_WALK
+} from '@/constants/dnd/dndSpellList';
 import {
   CAST_MATERIAL,
   CAST_NONE,
@@ -270,6 +270,7 @@ const CREATURE_ANKHEG = 'ankheg'
 const CREATURE_BALOR = 'balor'
 const CREATURE_BANDIT = 'bandit'
 const CREATURE_BANSHEE = 'banshee'
+const CREATURE_BARLGURA = 'barlgura'
 const CREATURE_BASILISK = 'basilisk'
 const CREATURE_BEHIR = 'behir'
 const CREATURE_CLOUD_GIANT = 'cloud_giant'
@@ -7604,6 +7605,158 @@ const dndCreatureRawList = [
       {
         name: 'Телепортация',
         description: `Балор магическим образом телепортируется вместе со всем несомым и носимым снаряжением, на расстояние до 120 футов в свободное пространство, которое он видит.`,
+      },
+    ],
+  },
+  {
+    name: 'Барлгура',
+    nameEn: 'Barlgura',
+    id: CREATURE_BARLGURA,
+    description: `Барлгура представляет дикость и жестокость Бездны. Барлгуры сбиваются в стаи, чтобы одолеть противника, который сильнее их, захватить ужасные трофеи и развесить их на своей территории.\n
+Барлгура выглядит как огромный орангутанг с ужасной, набрякшей мордой и клыками, торчащими из пасти. Ростом барлгура чуть менее 8 футов, у него широкие плечи и весит он 650 фунтов. Передвигается по земле как обезьяна, ловко и быстро лазает.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:86',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 10,
+      cubeBonus: 24,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_CLIMB]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 9,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 5,
+      [PARAM_CON]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+      [SKILL_STEALTH]: 6,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Безрассудство',
+        description: `В начале своего хода барлгура может решить, что в этом ходу все рукопашные атаки оружием будет совершать с преимуществом, но в этом случае до начала его следующего хода все броски атаки по нему тоже будут совершаться с преимуществом.`,
+      },
+      {
+        name: 'Прыжок с разбега',
+        description: `Если барлгура совершает прыжок с разбега, он прыгает в длину на расстояние до 40 футов и в высоту на расстояние до 20 футов.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_WIT,
+      saveThrowDc: 13,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_PHANTASMAL_FORCE,
+            SPELL_ENTANGLE,
+          ],
+        },
+        {
+          limit: {
+            count: 2,
+            period: 'день',
+          },
+          list: [
+            SPELL_DISGUISE_SELF,
+            {
+              id: SPELL_INVISIBILITY,
+              comment: 'только на себя',
+            },
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Барлгура совершает три атаки: одну укусом, и две кулаками.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 4,
+          },
+        },
       },
     ],
   },

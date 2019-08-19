@@ -7403,7 +7403,7 @@ const dndCreatureRawList = [
       },
       {
         id: SENSE_PASSIVE_PERCEPTION,
-        value: 173,
+        value: 13,
       },
     ],
     cr: CR_18,

@@ -8,11 +8,11 @@ export default (
   item => {
     const hasName = Boolean(item.name)
     const {
-      single,
-      single: {
-        [GENDER_FEMALE]: singleFemale,
-        [GENDER_MALE]: singleMale,
-        [GENDER_MIDDLE]: singleMiddle,
+      singular,
+      singular: {
+        [GENDER_FEMALE]: singularFemale,
+        [GENDER_MALE]: singularMale,
+        [GENDER_MIDDLE]: singularMiddle,
       },
       dualFemale,
       dualFemale: {
@@ -23,16 +23,16 @@ export default (
       : item
 
     const result = {
-      single: {
-        ...single,
+      singular: {
+        ...singular,
         [GENDER_FEMALE]: {
-          ...singleFemale,
-          prepositional: singleFemale.genitive,
+          ...singularFemale,
+          prepositional: singularFemale.genitive,
         },
         [GENDER_MIDDLE]: {
-          ...singleMiddle,
-          genitive: singleMale.genitive,
-          prepositional: singleMale.prepositional,
+          ...singularMiddle,
+          genitive: singularMale.genitive,
+          prepositional: singularMale.prepositional,
         },
       },
       dual: {

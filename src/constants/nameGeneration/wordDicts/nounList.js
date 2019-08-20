@@ -9,11 +9,11 @@ const nounList = [
   ...nounMaleList.map(mapGender('male')),
   ...nounMiddleList.map(mapGender('middle')),
 ].map(
-  ({ single, plural, isLocation, ...rest }) => ({
+  ({ singular, plural, isLocation, ...rest }) => ({
     ...rest,
-    single,
+    singular,
     dual: {
-      nominative: single.genitive,
+      nominative: singular.genitive,
       genitive: plural.genitive,
       prepositional: plural.prepositional,
     },

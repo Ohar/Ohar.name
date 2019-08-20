@@ -15,7 +15,7 @@ const dndTargetList = [
     id: TARGET_CREATURE,
     genderId: GENDER_MIDDLE,
     name: {
-      single: {
+      singular: {
         nominative: 'существо',
         genitive: 'существа',
         dative: 'существу',
@@ -37,7 +37,7 @@ const dndTargetList = [
     id: TARGET_OBJECT,
     genderId: GENDER_MALE,
     name: {
-      single: {
+      singular: {
         nominative: 'предмет',
         genitive: 'предмета',
         dative: 'предмету',
@@ -59,7 +59,7 @@ const dndTargetList = [
     id: TARGET_POINT,
     genderId: GENDER_FEMALE,
     name: {
-      single: {
+      singular: {
         nominative: 'точка в пространстве',
         genitive: 'точки в пространстве',
         dative: 'точке в пространстве',

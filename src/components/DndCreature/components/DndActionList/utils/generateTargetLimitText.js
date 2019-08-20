@@ -22,8 +22,8 @@ export default target => {
         const {
           genderId,
           name: {
-            single: {
-              nominative: singleWord,
+            singular: {
+              nominative: singularWord,
               genitive: dualWord,
             },
             plural: {
@@ -32,14 +32,14 @@ export default target => {
           },
         } = dndTargetCollection[target.limit.type]
 
-        const getTargetTypeWord = proschet([singleWord, dualWord, multipleWord])
+        const getTargetTypeWord = proschet([singularWord, dualWord, multipleWord])
 
         targetNumberText = `${numberWordObj[genderId]} ${getTargetTypeWord(target.count)}`
       }
 
       if (target.limit.size) {
         if (target.limit.size.max) {
-          const sizeText = dndSizeCollection[target.limit.size.max].name.single[GENDER_MALE].genitive
+          const sizeText = dndSizeCollection[target.limit.size.max].name.singular[GENDER_MALE].genitive
           targetLimitText = ` c размером не больше ${sizeText}`
         }
       }

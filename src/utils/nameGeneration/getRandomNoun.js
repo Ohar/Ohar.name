@@ -2,7 +2,7 @@ import _ from "lodash"
 
 import nounList, {nounLocationList} from "@/constants/nameGeneration/wordDicts/nounList"
 
-import {SINGLE_NUMBER_TYPE} from "@/constants/nameGeneration/numberTypeList"
+import {SINGULAR_NUMBER_TYPE} from "@/constants/nameGeneration/numberTypeList"
 
 export default (
   {
@@ -10,7 +10,7 @@ export default (
     genderToUse,
     pickOnlyLocation = false,
     nounToFilter = null,
-    numberType = SINGLE_NUMBER_TYPE,
+    numberType = SINGULAR_NUMBER_TYPE,
   }
 ) => {
   const list = pickOnlyLocation

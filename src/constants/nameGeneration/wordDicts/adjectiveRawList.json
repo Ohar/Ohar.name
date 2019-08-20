@@ -1,6 +1,6 @@
 [
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Красная",
         "genitive": "Красной"
@@ -20,7 +20,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Жёлтая",
         "genitive": "Жёлтой"
@@ -40,7 +40,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Розовая",
         "genitive": "Розовой"
@@ -60,7 +60,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Белая",
         "genitive": "Белой"
@@ -80,7 +80,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Чёрная",
         "genitive": "Чёрной"
@@ -100,7 +100,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Зелёная",
         "genitive": "Зелёной"
@@ -120,7 +120,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Синяя",
         "genitive": "Синей"
@@ -140,7 +140,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Вечерняя",
         "genitive": "Вечерней"
@@ -160,7 +160,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Верхняя",
         "genitive": "Верхней"
@@ -180,7 +180,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Нижняя",
         "genitive": "Нижней"
@@ -200,7 +200,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Весенняя",
         "genitive": "Весенней"
@@ -220,7 +220,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Зимняя",
         "genitive": "Зимней"
@@ -240,7 +240,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бескрайняя",
         "genitive": "Бескрайней"
@@ -260,7 +260,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Кривая",
         "genitive": "Кривой"
@@ -280,7 +280,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Седая",
         "genitive": "Седой"
@@ -300,7 +300,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Земная",
         "genitive": "Земной"
@@ -320,7 +320,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ночная",
         "genitive": "Ночной"
@@ -340,7 +340,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Смешная",
         "genitive": "Смешной"
@@ -360,7 +360,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Смертельная",
         "genitive": "Смертельной"
@@ -380,7 +380,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Смертоносная",
         "genitive": "Смертоносной"
@@ -400,7 +400,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сплошная",
         "genitive": "Сплошной"
@@ -420,7 +420,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дорогая",
         "genitive": "Дорогой"
@@ -440,7 +440,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дорожная",
         "genitive": "Дорожной"
@@ -460,7 +460,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тугая",
         "genitive": "Тугой"
@@ -480,7 +480,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Худая",
         "genitive": "Худой"
@@ -500,7 +500,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Последняя",
         "genitive": "Последней"
@@ -520,7 +520,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Осенняя",
         "genitive": "Осенней"
@@ -540,7 +540,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Высокая",
         "genitive": "Высокой"
@@ -560,7 +560,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Слепая",
         "genitive": "Слепой"
@@ -580,7 +580,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Потеряная",
         "genitive": "Потеряной"
@@ -600,7 +600,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тупая",
         "genitive": "Тупой"
@@ -620,7 +620,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Упавшая",
         "genitive": "Упавшей"
@@ -640,7 +640,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ловкая",
         "genitive": "Ловкой"
@@ -660,7 +660,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Жёсткая",
         "genitive": "Жёсткой"
@@ -680,7 +680,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Кипучая",
         "genitive": "Кипучей"
@@ -700,7 +700,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сияющая",
         "genitive": "Сияющей"
@@ -720,7 +720,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Настоящая",
         "genitive": "Настоящей"
@@ -740,7 +740,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мигающая",
         "genitive": "Мигающей"
@@ -760,7 +760,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сизая",
         "genitive": "Сизой"
@@ -780,7 +780,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Твёрдая",
         "genitive": "Твёрдой"
@@ -800,7 +800,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Забавная",
         "genitive": "Забавной"
@@ -820,7 +820,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Серебряная",
         "genitive": "Серебряной"
@@ -840,7 +840,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сердечная",
         "genitive": "Сердечной"
@@ -860,7 +860,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Искренняя",
         "genitive": "Искренней"
@@ -880,7 +880,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Нервная",
         "genitive": "Нервной"
@@ -900,7 +900,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Надутая",
         "genitive": "Надутой"
@@ -920,7 +920,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дутая",
         "genitive": "Дутой"
@@ -940,7 +940,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Забытая",
         "genitive": "Забытой"
@@ -960,7 +960,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Добрая",
         "genitive": "Доброй"
@@ -980,7 +980,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Острая",
         "genitive": "Острой"
@@ -1000,7 +1000,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Брошенная",
         "genitive": "Брошенной"
@@ -1020,7 +1020,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Злая",
         "genitive": "Злой"
@@ -1040,7 +1040,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Двойная",
         "genitive": "Двойной"
@@ -1060,7 +1060,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Высшая",
         "genitive": "Высшей"
@@ -1080,7 +1080,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Широкая",
         "genitive": "Широкой"
@@ -1100,7 +1100,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Косая",
         "genitive": "Косой"
@@ -1120,7 +1120,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Чистая",
         "genitive": "Чистой"
@@ -1140,7 +1140,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Старая",
         "genitive": "Старой"
@@ -1160,7 +1160,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Искусная",
         "genitive": "Искусной"
@@ -1180,7 +1180,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Путаная",
         "genitive": "Путаной"
@@ -1200,7 +1200,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Странная",
         "genitive": "Странной"
@@ -1220,7 +1220,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Страстная",
         "genitive": "Страстной"
@@ -1240,7 +1240,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сильная",
         "genitive": "Сильной"
@@ -1260,7 +1260,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Волшебная",
         "genitive": "Волшебной"
@@ -1280,7 +1280,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Вольная",
         "genitive": "Вольной"
@@ -1300,7 +1300,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Пахучая",
         "genitive": "Пахучей"
@@ -1320,7 +1320,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Узкая",
         "genitive": "Узкой"
@@ -1340,7 +1340,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Яркая",
         "genitive": "Яркой"
@@ -1360,7 +1360,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Стойкая",
         "genitive": "Стойкой"
@@ -1380,7 +1380,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Далёкая",
         "genitive": "Далёкой"
@@ -1400,7 +1400,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дальняя",
         "genitive": "Дальней"
@@ -1420,7 +1420,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Утренняя",
         "genitive": "Утренней"
@@ -1440,7 +1440,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Горная",
         "genitive": "Горной"
@@ -1460,7 +1460,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Гордая",
         "genitive": "Гордой"
@@ -1480,7 +1480,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Горькая",
         "genitive": "Горькой"
@@ -1500,7 +1500,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Яростная",
         "genitive": "Яростной"
@@ -1520,7 +1520,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Шумная",
         "genitive": "Шумной"
@@ -1540,7 +1540,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Умная",
         "genitive": "Умной"
@@ -1560,7 +1560,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мятая",
         "genitive": "Мятой"
@@ -1580,7 +1580,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Томная",
         "genitive": "Томной"
@@ -1600,7 +1600,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тёмная",
         "genitive": "Тёмной"
@@ -1620,7 +1620,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Гулкая",
         "genitive": "Гулкой"
@@ -1640,7 +1640,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Кручёная",
         "genitive": "Кручёной"
@@ -1660,7 +1660,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Крутая",
         "genitive": "Крутой"
@@ -1680,7 +1680,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Крупная",
         "genitive": "Крупной"
@@ -1700,7 +1700,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Загадочная",
         "genitive": "Загадочной"
@@ -1720,7 +1720,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Очаровательная",
         "genitive": "Очаровательной"
@@ -1740,7 +1740,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Теневая",
         "genitive": "Теневой"
@@ -1760,7 +1760,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Терпеливая",
         "genitive": "Терпеливой"
@@ -1780,7 +1780,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Захватывающая",
         "genitive": "Захватывающей"
@@ -1800,7 +1800,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Храпящая",
         "genitive": "Храпящей"
@@ -1820,7 +1820,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Хрупкая",
         "genitive": "Хрупкой"
@@ -1840,7 +1840,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ломкая",
         "genitive": "Ломкой"
@@ -1860,7 +1860,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Растущая",
         "genitive": "Растущей"
@@ -1880,7 +1880,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Главная",
         "genitive": "Главной"
@@ -1900,7 +1900,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Распутная",
         "genitive": "Распутной"
@@ -1920,7 +1920,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тусклая",
         "genitive": "Тусклой"
@@ -1940,7 +1940,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Смелая",
         "genitive": "Смелой"
@@ -1960,7 +1960,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Склочная",
         "genitive": "Склочной"
@@ -1980,7 +1980,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Отражающая",
         "genitive": "Отражающей"
@@ -2000,7 +2000,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Отражённая",
         "genitive": "Отражённой"
@@ -2020,7 +2020,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Отважная",
         "genitive": "Отважной"
@@ -2040,7 +2040,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мерцающая",
         "genitive": "Мерцающей"
@@ -2060,7 +2060,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Цветная",
         "genitive": "Цветной"
@@ -2080,7 +2080,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Везучая",
         "genitive": "Везучей"
@@ -2100,7 +2100,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Красочная",
         "genitive": "Красочной"
@@ -2120,7 +2120,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мелкая",
         "genitive": "Мелкой"
@@ -2140,7 +2140,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мерзкая",
         "genitive": "Мерзкой"
@@ -2160,7 +2160,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Туманная",
         "genitive": "Туманной"
@@ -2180,7 +2180,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ясная",
         "genitive": "Ясной"
@@ -2200,7 +2200,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Закрытая",
         "genitive": "Закрытой"
@@ -2220,7 +2220,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Закатная",
         "genitive": "Закатной"
@@ -2240,7 +2240,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Защитная",
         "genitive": "Защитной"
@@ -2260,7 +2260,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Медная",
         "genitive": "Медной"
@@ -2280,7 +2280,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Медленная",
         "genitive": "Медленной"
@@ -2300,7 +2300,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Стальная",
         "genitive": "Стальной"
@@ -2320,7 +2320,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бумажная",
         "genitive": "Бумажной"
@@ -2340,7 +2340,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Спокойная",
         "genitive": "Спокойной"
@@ -2360,7 +2360,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Покорная",
         "genitive": "Покорной"
@@ -2380,7 +2380,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Покинутая",
         "genitive": "Покинутой"
@@ -2400,7 +2400,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Полная",
         "genitive": "Полной"
@@ -2420,7 +2420,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Полезная",
         "genitive": "Полезной"
@@ -2440,7 +2440,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Пустая",
         "genitive": "Пустой"
@@ -2460,7 +2460,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Блестящая",
         "genitive": "Блестящей"
@@ -2480,7 +2480,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Очищающая",
         "genitive": "Очищающей"
@@ -2500,7 +2500,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Зябкая",
         "genitive": "Зябкой"
@@ -2520,7 +2520,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тихая",
         "genitive": "Тихой"
@@ -2540,7 +2540,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Добрая",
         "genitive": "Доброй"
@@ -2560,7 +2560,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Холодная",
         "genitive": "Холодной"
@@ -2580,7 +2580,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Чопорная",
         "genitive": "Чопорной"
@@ -2600,7 +2600,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Порваная",
         "genitive": "Порваной"
@@ -2620,7 +2620,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Заветная",
         "genitive": "Заветной"
@@ -2640,7 +2640,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ветренная",
         "genitive": "Ветренной"
@@ -2660,7 +2660,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Переменчивая",
         "genitive": "Переменчивой"
@@ -2680,7 +2680,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Круглая",
         "genitive": "Круглой"
@@ -2700,7 +2700,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Квадратная",
         "genitive": "Квадратной"
@@ -2720,7 +2720,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Рассветная",
         "genitive": "Рассветной"
@@ -2740,7 +2740,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Горячая",
         "genitive": "Горячей"
@@ -2760,7 +2760,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Невозмутимая",
         "genitive": "Невозмутимой"
@@ -2780,7 +2780,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Воздушная",
         "genitive": "Воздушной"
@@ -2800,7 +2800,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дурная",
         "genitive": "Дурной"
@@ -2820,7 +2820,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Танцующая",
         "genitive": "Танцующей"
@@ -2840,7 +2840,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ползущая",
         "genitive": "Ползущей"
@@ -2860,7 +2860,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мутная",
         "genitive": "Мутной"
@@ -2880,7 +2880,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бледная",
         "genitive": "Бледной"
@@ -2900,7 +2900,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Блеклая",
         "genitive": "Блеклой"
@@ -2920,7 +2920,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Нежная",
         "genitive": "Нежной"
@@ -2940,7 +2940,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Быстрая",
         "genitive": "Быстрой"
@@ -2960,7 +2960,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Храбрая",
         "genitive": "Храброй"
@@ -2980,7 +2980,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бравая",
         "genitive": "Бравой"
@@ -3000,7 +3000,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Трусливая",
         "genitive": "Трусливой"
@@ -3020,7 +3020,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Лиловая",
         "genitive": "Лиловой"
@@ -3040,7 +3040,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Фиолетовая",
         "genitive": "Фиолетовой"
@@ -3060,7 +3060,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Голубая",
         "genitive": "Голубой"
@@ -3080,7 +3080,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Лучшая",
         "genitive": "Лучшей"
@@ -3100,7 +3100,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Опаловая",
         "genitive": "Опаловой"
@@ -3120,7 +3120,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Хитрая",
         "genitive": "Хитрой"
@@ -3140,7 +3140,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Защитная",
         "genitive": "Защитной"
@@ -3160,7 +3160,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ценная",
         "genitive": "Ценной"
@@ -3180,7 +3180,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Цепная",
         "genitive": "Цепной"
@@ -3200,7 +3200,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Целебная",
         "genitive": "Целебной"
@@ -3220,7 +3220,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Целая",
         "genitive": "Целой"
@@ -3240,7 +3240,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Лечебная",
         "genitive": "Лечебной"
@@ -3260,7 +3260,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Любимая",
         "genitive": "Любимой"
@@ -3280,7 +3280,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Любезная",
         "genitive": "Любезной"
@@ -3300,7 +3300,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Любопытная",
         "genitive": "Любопытной"
@@ -3320,7 +3320,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Боковая",
         "genitive": "Боковой"
@@ -3340,7 +3340,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Морская",
         "genitive": "Морской"
@@ -3360,7 +3360,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Любящая",
         "genitive": "Любящой"
@@ -3380,7 +3380,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Стеклянная",
         "genitive": "Стеклянной"
@@ -3400,7 +3400,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Кожаная",
         "genitive": "Кожаной"
@@ -3420,7 +3420,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Спрятаная",
         "genitive": "Спрятаной"
@@ -3440,7 +3440,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Горная",
         "genitive": "Горной"
@@ -3460,7 +3460,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Нефритовая",
         "genitive": "Нефритовой"
@@ -3480,7 +3480,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Трезвая",
         "genitive": "Трезвой"
@@ -3500,7 +3500,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тревожная",
         "genitive": "Тревожной"
@@ -3520,7 +3520,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дешёвая",
         "genitive": "Дешёвой"
@@ -3540,7 +3540,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Вонючая",
         "genitive": "Вонючей"
@@ -3560,7 +3560,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дерзкая",
         "genitive": "Дерзкой"
@@ -3580,7 +3580,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тягучая",
         "genitive": "Тягучей"
@@ -3600,7 +3600,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Звонкая",
         "genitive": "Звонкой"
@@ -3620,7 +3620,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Лесная",
         "genitive": "Лесной"
@@ -3640,7 +3640,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дикая",
         "genitive": "Дикой"
@@ -3660,7 +3660,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Волнительная",
         "genitive": "Волнительной"
@@ -3680,7 +3680,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Снежная",
         "genitive": "Снежной"
@@ -3700,7 +3700,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Укромная",
         "genitive": "Укромной"
@@ -3720,7 +3720,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Безумная",
         "genitive": "Безумной"
@@ -3740,7 +3740,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бедная",
         "genitive": "Бедной"
@@ -3760,7 +3760,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бесшумная",
         "genitive": "Бесшумной"
@@ -3780,7 +3780,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бесполезная",
         "genitive": "Бесполезной"
@@ -3800,7 +3800,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Чернильная",
         "genitive": "Чернильной"
@@ -3820,7 +3820,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Задумчивая",
         "genitive": "Задумчивой"
@@ -3840,7 +3840,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Свистящая",
         "genitive": "Свистящей"
@@ -3860,7 +3860,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Гремящая",
         "genitive": "Гремящей"
@@ -3880,7 +3880,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Звенящая",
         "genitive": "Звенящей"
@@ -3900,7 +3900,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Свисающая",
         "genitive": "Свисающей"
@@ -3920,7 +3920,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Светлая",
         "genitive": "Светлой"
@@ -3940,7 +3940,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Связаная",
         "genitive": "Связаной"
@@ -3960,7 +3960,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Занятная",
         "genitive": "Занятной"
@@ -3980,7 +3980,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Свободная",
         "genitive": "Свободной"
@@ -4000,7 +4000,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Обманчивая",
         "genitive": "Обманчивой"
@@ -4020,7 +4020,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бодрая",
         "genitive": "Бодрой"
@@ -4040,7 +4040,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Обычная",
         "genitive": "Обычной"
@@ -4060,7 +4060,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Обильная",
         "genitive": "Обильной"
@@ -4080,7 +4080,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Щедрая",
         "genitive": "Щедрой"
@@ -4100,7 +4100,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ароматная",
         "genitive": "Ароматной"
@@ -4120,7 +4120,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Душистая",
         "genitive": "Душистой"
@@ -4140,7 +4140,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Висящая",
         "genitive": "Висящей"
@@ -4160,7 +4160,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Светящая",
         "genitive": "Светящей"
@@ -4180,7 +4180,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Светящаяся",
         "genitive": "Светящейся"
@@ -4200,7 +4200,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Шепчущая",
         "genitive": "Шепчущей"
@@ -4220,7 +4220,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Чуткая",
         "genitive": "Чуткой"
@@ -4240,7 +4240,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Великая",
         "genitive": "Великой"
@@ -4260,7 +4260,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Низкая",
         "genitive": "Низкой"
@@ -4280,7 +4280,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Изумрудная",
         "genitive": "Изумрудной"
@@ -4300,7 +4300,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Плачущая",
         "genitive": "Плачущей"
@@ -4320,7 +4320,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дрожащая",
         "genitive": "Дрожащей"
@@ -4340,7 +4340,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Журчащая",
         "genitive": "Журчащей"
@@ -4360,7 +4360,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мурчащая",
         "genitive": "Мурчащей"
@@ -4380,7 +4380,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бормочущая",
         "genitive": "Бормочущей"
@@ -4400,7 +4400,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дремлющая",
         "genitive": "Дремлющей"
@@ -4420,7 +4420,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Древняя",
         "genitive": "Древней"
@@ -4440,7 +4440,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Летняя",
         "genitive": "Летней"
@@ -4460,7 +4460,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Лишняя",
         "genitive": "Лишней"
@@ -4480,7 +4480,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Резкая",
         "genitive": "Резкой"
@@ -4500,7 +4500,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Крайняя",
         "genitive": "Крайней"
@@ -4520,7 +4520,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Плакучая",
         "genitive": "Плакучей"
@@ -4540,7 +4540,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Плавная",
         "genitive": "Плавной"
@@ -4560,7 +4560,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Потная",
         "genitive": "Потной"
@@ -4580,7 +4580,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Понятная",
         "genitive": "Понятной"
@@ -4600,7 +4600,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Потёртая",
         "genitive": "Потёртой"
@@ -4620,7 +4620,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Поцарапанная",
         "genitive": "Поцарапанной"
@@ -4640,7 +4640,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Таинственная",
         "genitive": "Таинственной"
@@ -4660,7 +4660,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Новая",
         "genitive": "Новой"
@@ -4680,7 +4680,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тёплая",
         "genitive": "Тёплой"
@@ -4700,7 +4700,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Плохая",
         "genitive": "Плохой"
@@ -4720,7 +4720,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Прохладная",
         "genitive": "Прохладной"
@@ -4740,7 +4740,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Вечная",
         "genitive": "Вечной"
@@ -4760,7 +4760,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дневная",
         "genitive": "Дневной"
@@ -4780,7 +4780,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Изящная",
         "genitive": "Изящной"
@@ -4800,7 +4800,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Чудесная",
         "genitive": "Чудесной"
@@ -4820,7 +4820,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Деловая",
         "genitive": "Деловой"
@@ -4840,7 +4840,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Отличная",
         "genitive": "Отличной"
@@ -4860,7 +4860,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Огромная",
         "genitive": "Огромной"
@@ -4880,7 +4880,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ледяная",
         "genitive": "Ледяной"
@@ -4900,7 +4900,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Радостная",
         "genitive": "Радостной"
@@ -4920,7 +4920,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Довольная",
         "genitive": "Довольной"
@@ -4940,7 +4940,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Плотная",
         "genitive": "Плотной"
@@ -4960,7 +4960,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Горная",
         "genitive": "Горной"
@@ -4980,7 +4980,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Туманная",
         "genitive": "Туманной"
@@ -5000,7 +5000,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Пасмурная",
         "genitive": "Пасмурной"
@@ -5020,7 +5020,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Смутная",
         "genitive": "Смутной"
@@ -5040,7 +5040,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Смуглая",
         "genitive": "Смуглой"
@@ -5060,7 +5060,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Гладкая",
         "genitive": "Гладкой"
@@ -5080,7 +5080,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Угрюмая",
         "genitive": "Угрюмой"
@@ -5100,7 +5100,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Смирная",
         "genitive": "Смирной"
@@ -5120,7 +5120,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мрачная",
         "genitive": "Мрачной"
@@ -5140,7 +5140,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Усталая",
         "genitive": "Усталой"
@@ -5160,7 +5160,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тайная",
         "genitive": "Тайной"
@@ -5180,7 +5180,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Активная",
         "genitive": "Активной"
@@ -5200,7 +5200,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сонная",
         "genitive": "Сонной"
@@ -5220,7 +5220,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Солёная",
         "genitive": "Солёной"
@@ -5240,7 +5240,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Соломенная",
         "genitive": "Соломенной"
@@ -5260,7 +5260,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сочная",
         "genitive": "Сочной"
@@ -5280,7 +5280,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Рыхлая",
         "genitive": "Рыхлой"
@@ -5300,7 +5300,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Спелая",
         "genitive": "Спелой"
@@ -5320,7 +5320,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Печальная",
         "genitive": "Печальной"
@@ -5340,7 +5340,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Пьяная",
         "genitive": "Пьяной"
@@ -5360,7 +5360,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Зрелая",
         "genitive": "Зрелой"
@@ -5380,7 +5380,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Жирная",
         "genitive": "Жирной"
@@ -5400,7 +5400,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Заспанная",
         "genitive": "Заспанной"
@@ -5420,7 +5420,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Засохшая",
         "genitive": "Засохшей"
@@ -5440,7 +5440,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Намокшая",
         "genitive": "Намокшей"
@@ -5460,7 +5460,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Немая",
         "genitive": "Немой"
@@ -5480,7 +5480,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Неуловимая",
         "genitive": "Неуловимой"
@@ -5500,7 +5500,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Утомлённая",
         "genitive": "Утомлённой"
@@ -5520,7 +5520,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Усталая",
         "genitive": "Усталой"
@@ -5540,7 +5540,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Дохлая",
         "genitive": "Дохлой"
@@ -5560,7 +5560,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Прозрачная",
         "genitive": "Прозрачной"
@@ -5580,7 +5580,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ржавая",
         "genitive": "Ржавой"
@@ -5600,7 +5600,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Желанная",
         "genitive": "Желанной"
@@ -5620,7 +5620,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Приятная",
         "genitive": "Приятной"
@@ -5640,7 +5640,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бархатная",
         "genitive": "Бархатной"
@@ -5660,7 +5660,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мягкая",
         "genitive": "Мягкой"
@@ -5680,7 +5680,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Лёгкая",
         "genitive": "Лёгкой"
@@ -5700,7 +5700,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Кроткая",
         "genitive": "Кроткой"
@@ -5720,7 +5720,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Открытая",
         "genitive": "Открытой"
@@ -5740,7 +5740,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Урчащая",
         "genitive": "Урчащей"
@@ -5760,7 +5760,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Греющая",
         "genitive": "Греющей"
@@ -5780,7 +5780,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Горящая",
         "genitive": "Горящей"
@@ -5800,7 +5800,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Летящая",
         "genitive": "Летящей"
@@ -5820,7 +5820,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Летающая",
         "genitive": "Летающей"
@@ -5840,7 +5840,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Живая",
         "genitive": "Живой"
@@ -5860,7 +5860,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Световая",
         "genitive": "Световой"
@@ -5880,7 +5880,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Шатающаяся",
         "genitive": "Шатающейся"
@@ -5900,7 +5900,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ведущая",
         "genitive": "Ведущей"
@@ -5920,7 +5920,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Начинающаяся",
         "genitive": "Начинающейся"
@@ -5940,7 +5940,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Поднимающаяся",
         "genitive": "Поднимающейся"
@@ -5960,7 +5960,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Свежая",
         "genitive": "Свежей"
@@ -5980,7 +5980,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Птичья",
         "genitive": "Птичьей"
@@ -6000,7 +6000,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бурчащая",
         "genitive": "Бурчащей"
@@ -6020,7 +6020,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Удачная",
         "genitive": "Удачной"
@@ -6040,7 +6040,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ударная",
         "genitive": "Ударной"
@@ -6060,7 +6060,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Подземная",
         "genitive": "Подземной"
@@ -6080,7 +6080,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Зеркальная",
         "genitive": "Зеркальной"
@@ -6100,7 +6100,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Подводная",
         "genitive": "Подводной"
@@ -6120,7 +6120,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Подвижная",
         "genitive": "Подвижной"
@@ -6140,7 +6140,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Удачливая",
         "genitive": "Удачливой"
@@ -6160,7 +6160,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Случайная",
         "genitive": "Случайной"
@@ -6180,7 +6180,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тяжёлая",
         "genitive": "Тяжёлой"
@@ -6200,7 +6200,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Крохотная",
         "genitive": "Крохотной"
@@ -6220,7 +6220,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Слабая",
         "genitive": "Слабой"
@@ -6240,7 +6240,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Боевая",
         "genitive": "Боевой"
@@ -6260,7 +6260,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сладкая",
         "genitive": "Сладкой"
@@ -6280,7 +6280,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мокрая",
         "genitive": "Мокрой"
@@ -6300,7 +6300,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Рыбная",
         "genitive": "Рыбной"
@@ -6320,7 +6320,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Молчаливая",
         "genitive": "Молчаливой"
@@ -6340,7 +6340,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Важная",
         "genitive": "Важной"
@@ -6360,7 +6360,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Влажная",
         "genitive": "Влажной"
@@ -6380,7 +6380,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ленивая",
         "genitive": "Ленивой"
@@ -6400,7 +6400,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Вялая",
         "genitive": "Вялой"
@@ -6420,7 +6420,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Весёлая",
         "genitive": "Весёлой"
@@ -6440,7 +6440,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Внимательная",
         "genitive": "Внимательной"
@@ -6460,7 +6460,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Малая",
         "genitive": "Малой"
@@ -6480,7 +6480,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Пугливая",
         "genitive": "Пугливой"
@@ -6500,7 +6500,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ужасная",
         "genitive": "Ужасной"
@@ -6520,7 +6520,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Глухая",
         "genitive": "Глухой"
@@ -6540,7 +6540,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сухая",
         "genitive": "Сухой"
@@ -6560,7 +6560,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Зоркая",
         "genitive": "Зоркой"
@@ -6580,7 +6580,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Золотая",
         "genitive": "Золотой"
@@ -6600,7 +6600,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Маленькая",
         "genitive": "Маленькой"
@@ -6620,7 +6620,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Короткая",
         "genitive": "Короткой"
@@ -6640,7 +6640,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Громкая",
         "genitive": "Громкой"
@@ -6660,7 +6660,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Громовая",
         "genitive": "Громовой"
@@ -6680,7 +6680,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Громадная",
         "genitive": "Громадной"
@@ -6700,7 +6700,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Грустная",
         "genitive": "Грустной"
@@ -6720,7 +6720,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Грубая",
         "genitive": "Грубой"
@@ -6740,7 +6740,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Скорбная",
         "genitive": "Скорбной"
@@ -6760,7 +6760,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Скорая",
         "genitive": "Скорой"
@@ -6780,7 +6780,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Наглая",
         "genitive": "Наглой"
@@ -6800,7 +6800,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Грязная",
         "genitive": "Грязной"
@@ -6820,7 +6820,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Пыльная",
         "genitive": "Пыльной"
@@ -6840,7 +6840,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Пышная",
         "genitive": "Пышной"
@@ -6860,7 +6860,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Грозная",
         "genitive": "Грозной"
@@ -6880,7 +6880,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Милая",
         "genitive": "Милой"
@@ -6900,7 +6900,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мирная",
         "genitive": "Мирной"
@@ -6920,7 +6920,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Пушистая",
         "genitive": "Пушистой"
@@ -6940,7 +6940,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Тонкая",
         "genitive": "Тонкой"
@@ -6960,7 +6960,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ласковая",
         "genitive": "Ласковой"
@@ -6980,7 +6980,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Толстая",
         "genitive": "Толстой"
@@ -7000,7 +7000,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Суровая",
         "genitive": "Суровой"
@@ -7020,7 +7020,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ровная",
         "genitive": "Ровной"
@@ -7040,7 +7040,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Скудная",
         "genitive": "Скудной"
@@ -7060,7 +7060,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Скучная",
         "genitive": "Скучной"
@@ -7080,7 +7080,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Скрытая",
         "genitive": "Скрытой"
@@ -7100,7 +7100,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Проворная",
         "genitive": "Проворной"
@@ -7120,7 +7120,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Прыгучая",
         "genitive": "Прыгучей"
@@ -7140,7 +7140,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Простая",
         "genitive": "Простой"
@@ -7160,7 +7160,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Густая",
         "genitive": "Густой"
@@ -7180,7 +7180,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сложная",
         "genitive": "Сложной"
@@ -7200,7 +7200,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Оживлённая",
         "genitive": "Оживлённой"
@@ -7220,7 +7220,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Сломаная",
         "genitive": "Сломаной"
@@ -7240,7 +7240,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Ломаная",
         "genitive": "Ломаной"
@@ -7260,7 +7260,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Прекрасная",
         "genitive": "Прекрасной"
@@ -7280,7 +7280,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Редкая",
         "genitive": "Редкой"
@@ -7300,7 +7300,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Разбитая",
         "genitive": "Разбитой"
@@ -7320,7 +7320,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Прочная",
         "genitive": "Прочной"
@@ -7340,7 +7340,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бесконечная",
         "genitive": "Бесконечной"
@@ -7360,7 +7360,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Скрытная",
         "genitive": "Скрытной"
@@ -7380,7 +7380,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Скромная",
         "genitive": "Скромной"
@@ -7400,7 +7400,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Длинная",
         "genitive": "Длинной"
@@ -7420,7 +7420,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Осознанная",
         "genitive": "Осознанной"
@@ -7440,7 +7440,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Гибкая",
         "genitive": "Гибкой"
@@ -7460,7 +7460,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Юркая",
         "genitive": "Юркой"
@@ -7480,7 +7480,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Робкая",
         "genitive": "Робкой"
@@ -7500,7 +7500,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Крепкая",
         "genitive": "Крепкой"
@@ -7520,7 +7520,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Долгая",
         "genitive": "Долгой"
@@ -7540,7 +7540,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Строгая",
         "genitive": "Строгой"
@@ -7560,7 +7560,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бродячая",
         "genitive": "Бродячей"
@@ -7580,7 +7580,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Шипучая",
         "genitive": "Шипучей"
@@ -7600,7 +7600,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Одинокая",
         "genitive": "Одинокой"
@@ -7620,7 +7620,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бешеная",
         "genitive": "Бешеной"
@@ -7640,7 +7640,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Беглая",
         "genitive": "Беглой"
@@ -7660,7 +7660,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бегущая",
         "genitive": "Бегущей"
@@ -7680,7 +7680,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Цветущая",
         "genitive": "Цветущей"
@@ -7700,7 +7700,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Вёрткая",
         "genitive": "Вёрткой"
@@ -7720,7 +7720,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Вежливая",
         "genitive": "Вежливой"
@@ -7740,7 +7740,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бронзовая",
         "genitive": "Бронзовой"
@@ -7760,7 +7760,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Мордатая",
         "genitive": "Мордатой"
@@ -7780,7 +7780,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Безмолвная",
         "genitive": "Безмолвной"
@@ -7800,7 +7800,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Эфирная",
         "genitive": "Эфирной"
@@ -7820,7 +7820,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Элегантная",
         "genitive": "Элегантной"
@@ -7840,7 +7840,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Вертлявая",
         "genitive": "Вертлявой"
@@ -7860,7 +7860,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Верная",
         "genitive": "Верной"
@@ -7880,7 +7880,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Коварная",
         "genitive": "Коварной"
@@ -7900,7 +7900,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Безупречная",
         "genitive": "Безупречной"
@@ -7920,7 +7920,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Насыщенная",
         "genitive": "Насыщенной"
@@ -7940,7 +7940,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Настороженная",
         "genitive": "Настороженной"
@@ -7960,7 +7960,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Точная",
         "genitive": "Точной"
@@ -7980,7 +7980,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Явная",
         "genitive": "Явной"
@@ -8000,7 +8000,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Болотная",
         "genitive": "Болотной"
@@ -8020,7 +8020,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Большая",
         "genitive": "Большой"
@@ -8040,7 +8040,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Высшая",
         "genitive": "Высшей"
@@ -8060,7 +8060,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Замершая",
         "genitive": "Замершей"
@@ -8080,7 +8080,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Замёрзшая",
         "genitive": "Замёрзшей"
@@ -8100,7 +8100,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Низшая",
         "genitive": "Низшей"
@@ -8120,7 +8120,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Небольшая",
         "genitive": "Небольшой"
@@ -8140,7 +8140,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Затопленая",
         "genitive": "Затопленой"
@@ -8160,7 +8160,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Опасная",
         "genitive": "Опасной"
@@ -8180,7 +8180,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Опытная",
         "genitive": "Опытной"
@@ -8200,7 +8200,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Небесная",
         "genitive": "Небесной"
@@ -8220,7 +8220,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бесцветная",
         "genitive": "Бесцветной"
@@ -8240,7 +8240,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бессмысленная",
         "genitive": "Бессмысленной"
@@ -8260,7 +8260,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Бурная",
         "genitive": "Бурной"
@@ -8280,7 +8280,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Буйная",
         "genitive": "Буйной"
@@ -8300,7 +8300,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Шальная",
         "genitive": "Шальной"
@@ -8320,7 +8320,7 @@
     }
   },
   {
-    "single": {
+    "singular": {
       "female": {
         "nominative": "Грозовая",
         "genitive": "Грозовой"

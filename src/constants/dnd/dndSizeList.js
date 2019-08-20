@@ -16,7 +16,7 @@ const dndSizeList = [
   {
     id: SIZE_TINY,
     name: {
-      single: {
+      singular: {
         [GENDER_FEMALE]: {
           nominative: 'Крошечная',
           genitive: 'Крошечной'
@@ -39,7 +39,7 @@ const dndSizeList = [
   {
     id: SIZE_SMALL,
     name: {
-      single: {
+      singular: {
         [GENDER_FEMALE]: {
           nominative: 'Маленькая',
           genitive: 'Маленькой'
@@ -62,7 +62,7 @@ const dndSizeList = [
   {
     id: SIZE_MEDIUM,
     name: {
-      single: {
+      singular: {
         [GENDER_FEMALE]: {
           nominative: 'Средняя',
           genitive: 'Средней'
@@ -85,7 +85,7 @@ const dndSizeList = [
   {
     id: SIZE_LARGE,
     name: {
-      single: {
+      singular: {
         [GENDER_FEMALE]: {
           nominative: 'Большая',
           genitive: 'Большой'
@@ -108,7 +108,7 @@ const dndSizeList = [
   {
     id: SIZE_HUGE,
     name: {
-      single: {
+      singular: {
         [GENDER_FEMALE]: {
           nominative: 'Огромная',
           genitive: 'Огромной'
@@ -131,7 +131,7 @@ const dndSizeList = [
   {
     id: SIZE_GARGANTUA,
     name: {
-      single: {
+      singular: {
         [GENDER_FEMALE]: {
           nominative: 'Громадная',
           genitive: 'Громадной'

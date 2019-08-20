@@ -76,9 +76,18 @@
     }
 }
 
-.DndCreature_name {
+/* Fcking hack*/
+a.DndCreature_name {
     font-size: 2em;
     font-family: serif;
+    color: #511815;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
 }
 
 .DndCreature_info {

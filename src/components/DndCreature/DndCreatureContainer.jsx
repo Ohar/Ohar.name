@@ -15,11 +15,26 @@ const DndCreatureContainer = ({id}) => {
     featureList,
     legendaryActionList,
     legendaryPoints,
+    name,
+    nameAlt,
+    nameEn,
+    nameEnAlt,
+    description,
     ...rest
   } = dndCreatureCollection[id]
 
   const {genderId} = dndCreatureTypeCollection[creatureTypeIdList[0]]
   const columnCount = calculateColumnCount({actionList, featureList, legendaryPoints, legendaryActionList})
+
+  const nameEnAltText = nameEnAlt
+    ? ` (${nameEnAlt})`
+    : ''
+  const nameAltText = nameAlt
+    ? ` (${nameAlt})`
+    : ''
+  const headerRus = `${name}${nameAltText}`
+  const headerFull = `${headerRus} [${nameEn}${nameEnAltText}]`
+  const title = `${headerFull}\n\n${description}`
 
   return (
     <DndCreatureComponent
@@ -30,6 +45,10 @@ const DndCreatureContainer = ({id}) => {
       legendaryActionList={legendaryActionList}
       legendaryPoints={legendaryPoints}
       columnCount={columnCount}
+      description={description}
+      header={headerRus}
+      name={name}
+      title={title}
       {...rest}
     />
   )

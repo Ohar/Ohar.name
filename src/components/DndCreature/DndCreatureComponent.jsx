@@ -48,9 +48,8 @@ const DndCreatureComponent = (
     legendaryActionList,
     legendaryPoints,
     name,
-    nameAlt,
-    nameEn,
-    nameEnAlt,
+    header,
+    title,
     params,
     resistanceList,
     reactionList,
@@ -67,8 +66,9 @@ const DndCreatureComponent = (
     <Link
       to={generateCreaturePageUrlById(id)}
       className='DndCreature_name'
+      title={title}
     >
-      {name} {nameAlt ? `(${nameAlt}) ` : ''}[{nameEn}{nameEnAlt ? ` (${nameEnAlt})` : ''}]
+      {header}
     </Link>
 
     <p className='DndCreature_info'>

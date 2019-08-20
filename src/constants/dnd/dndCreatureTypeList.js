@@ -20,7 +20,6 @@ const CREATURE_TYPE_ELEMENTAL = 'elemental'
 const CREATURE_TYPE_ELF = 'elf'
 const CREATURE_TYPE_FEY = 'fey'
 const CREATURE_TYPE_FIEND = 'fiend'
-const CREATURE_TYPE_FIRE_GIANT = 'fire_giant'
 const CREATURE_TYPE_FIRENEWT = 'firenewt'
 const CREATURE_TYPE_GIANT = 'giant'
 const CREATURE_TYPE_GITH = 'gith'
@@ -800,28 +799,6 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_FIRE_GIANT,
-    genderId: GENDER_MALE,
-    name: {
-      singular: {
-        nominative: 'огненный великан',
-        genitive: 'огненного великана',
-        dative: 'огненному великану',
-        accusative: 'огненного великана',
-        instrumental: 'огненным великаном',
-        prepositional: 'огненном великане',
-      },
-      plural: {
-        nominative: 'огненные великаны',
-        genitive: 'огненных великанов',
-        dative: 'огненным великанам',
-        accusative: 'огненных великанов',
-        instrumental: 'огненными великанами',
-        prepositional: 'огненных великанах',
-      },
-    },
-  },
-  {
     id: CREATURE_TYPE_FIRENEWT,
     genderId: GENDER_MALE,
     name: {
@@ -1058,7 +1035,6 @@ module.exports.CREATURE_TYPE_ELEMENTAL = CREATURE_TYPE_ELEMENTAL
 module.exports.CREATURE_TYPE_ELF = CREATURE_TYPE_ELF
 module.exports.CREATURE_TYPE_FEY = CREATURE_TYPE_FEY
 module.exports.CREATURE_TYPE_FIEND = CREATURE_TYPE_FIEND
-module.exports.CREATURE_TYPE_FIRE_GIANT = CREATURE_TYPE_FIRE_GIANT
 module.exports.CREATURE_TYPE_FIRENEWT = CREATURE_TYPE_FIRENEWT
 module.exports.CREATURE_TYPE_GIANT = CREATURE_TYPE_GIANT
 module.exports.CREATURE_TYPE_GITH = CREATURE_TYPE_GITH

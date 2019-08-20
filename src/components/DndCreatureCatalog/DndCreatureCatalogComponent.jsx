@@ -3,8 +3,22 @@ import PropTypes from "prop-types"
 
 import PageTitle from "@/components/PageTitle"
 import DndCreature from "@/components/DndCreature"
+import dndCreatureTypeList from '@/constants/dnd/dndCreatureTypeList';
 
 import "./DndCreatureCatalogStyles.less"
+
+const filterList = [
+  {
+    header: 'Тип',
+    name: 'type',
+    optionList: dndCreatureTypeList.map(
+      ({id, name: {singular: {nominative: text}}}) => ({
+        text,
+        id,
+      })
+    )
+  },
+]
 
 const DndCreatureCatalogComponent = (
   {
@@ -14,6 +28,37 @@ const DndCreatureCatalogComponent = (
 ) => (
   <section className='DndCreatureCatalog'>
     <PageTitle>Каталог существ (в разработке)</PageTitle>
+
+    <section>
+      Фильтры
+      <ul>
+        {
+          filterList.map(
+            ({header, name, optionList}) => (
+              <li key={name}>
+                <label>
+                  {header}
+                  <select name={name}>
+                    {
+                      optionList.map(
+                        ({text, id}) => (
+                          <option
+                            value={id}
+                            key={id}
+                          >
+                            {text}
+                          </option>
+                        )
+                      )
+                    }
+                  </select>
+                </label>
+              </li>
+            )
+          )
+        }
+      </ul>
+    </section>
 
     <input
       className='DndCreatureCatalog_input'

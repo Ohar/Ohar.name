@@ -121,10 +121,17 @@ const DndCreatureComponent = (
 
 DndCreatureComponent.propTypes = {
   actionList: PropTypes.array,
-  aligmentId: PropTypes.string.isRequired,
+  aligmentId: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]).isRequired,
   armor: PropTypes.oneOfType([
     PropTypes.number,
-    PropTypes.object,
+    PropTypes.array,
+    PropTypes.shape({
+      ac: PropTypes.number,
+      type: PropTypes.string,
+    }),
   ]).isRequired,
   columnCount: PropTypes.number,
   cr: PropTypes.string.isRequired,

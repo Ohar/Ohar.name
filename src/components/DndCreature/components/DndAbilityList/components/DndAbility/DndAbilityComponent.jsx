@@ -1,7 +1,7 @@
 import React from "react"
 import ReactMarkdown from "react-markdown";
 
-import "./DndAbilityStyles.css"
+import "./DndAbilityStyles.less"
 
 const DndAbility = ({header, children}) => (
   <li

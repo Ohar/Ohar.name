@@ -7,7 +7,7 @@ import generateAbilityHeader from './utils/generateAbilityHeader'
 
 import DndAbility from './components/DndAbility'
 
-import "./DndAbilityListStyles.css"
+import "./DndAbilityListStyles.less"
 
 const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale, entry }) => (
   <section className='DndAbilityList'>

@@ -26,7 +26,7 @@ import DndSaveThrowCollection from "./components/DndSaveThrowCollection"
 import DndSenseList from "./components/DndSenseList"
 import DndSkillCollection from "./components/DndSkillCollection"
 
-import "./DndCreatureStyles.css"
+import "./DndCreatureStyles.less"
 
 const DndCreatureComponent = (
   {
@@ -64,11 +64,12 @@ const DndCreatureComponent = (
   },
 ) => (
   <section className={`DndCreature DndCreature-columnCount_${columnCount}`}>
-    <header className='DndCreature_name'>
-      <Link to={generateCreaturePageUrlById(id)}>
-        {name} {nameAlt ? `(${nameAlt}) ` : ''}[{nameEn}{nameEnAlt ? ` (${nameEnAlt})` : ''}]
-      </Link>
-    </header>
+    <Link
+      to={generateCreaturePageUrlById(id)}
+      className='DndCreature_name'
+    >
+      {name} {nameAlt ? `(${nameAlt}) ` : ''}[{nameEn}{nameEnAlt ? ` (${nameEnAlt})` : ''}]
+    </Link>
 
     <p className='DndCreature_info'>
       <DndCreatureSize

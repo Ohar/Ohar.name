@@ -1,0 +1,135 @@
+@baseWidth: 23vw;
+
+.calcWidth (@colCount) {
+    width: calc(~'@{baseWidth} * @{colCount} - 2rem');
+}
+
+.calcColumns (@colCount) {
+    .calcWidth(@colCount);
+    columns: @colCount;
+}
+
+.DndCreature {
+    background-color: #FCF5C7;
+    position: relative;
+    .calcWidth(1);
+    box-shadow: 0 0 10px 0 black;
+    padding: 18px 9px 24px;
+    color: #511815;
+    font-family: sans-serif;
+    box-sizing: border-box;
+
+    &-columnCount_2 {
+        .calcColumns(2);
+    }
+
+    &-columnCount_3 {
+        .calcColumns(3);
+    }
+
+    &-columnCount_4 {
+        .calcColumns(4);
+    }
+
+    &:after,
+    &:before {
+        content: '';
+        position: absolute;
+        left: -8px;
+        width: calc(~'100% + 16px');
+        height: 9px;
+        background-color: #E1A039;
+        border: 2px solid #68493F;
+        box-shadow: 0 0 1px 0 black;
+        box-sizing: border-box;
+    }
+
+    &:before {
+        top: 0;
+    }
+
+    &:after {
+        bottom: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .DndCreature {
+        .calcWidth(2);
+    }
+
+    .DndCreature-columnCount_2,
+    .DndCreature-columnCount_3,
+    .DndCreature-columnCount_4 {
+        .calcWidth(4.173913043478261);
+        columns: 2;
+    }
+}
+
+@media (max-width: 900px) {
+    .DndCreature,
+    .DndCreature-columnCount_2,
+    .DndCreature-columnCount_3,
+    .DndCreature-columnCount_4 {
+        .calcWidth(4);
+        columns: 1;
+    }
+}
+
+.DndCreature_name {
+    font-size: 2em;
+    font-family: serif;
+}
+
+.DndCreature_info {
+    font-style: italic;
+    color: #262322;
+}
+
+.DndCreature_infoBlock {
+    position: relative;
+    padding: 5px 0 10px;
+    margin-top: 5px;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #A02A20;
+    }
+
+    &:after {
+        bottom: 0;
+    }
+
+    &:before {
+        top: 0;
+    }
+
+    & + &:before {
+        content: none;
+    }
+}
+
+.DndCreature_blockHeader {
+    color: #734439;
+    padding-right: .4em;
+    font-weight: 700;
+}
+
+.DndCreature_exp {
+    padding-left: .4em;
+}
+
+.DndCreature_description {
+    font-family: Georgia, serif;
+    color: #231F20;
+    hyphens: auto;
+
+    & p {
+        margin-bottom: 1rem;
+    }
+}

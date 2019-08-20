@@ -1020,6 +1020,24 @@ const dndCreatureTypeList = [
     },
   },
 ]
+  .sort(
+    (
+      {
+        name: {
+          singular: {
+            nominative: A,
+          },
+        },
+      },
+      {
+        name: {
+          singular: {
+            nominative: B,
+          },
+        },
+      },
+    ) => A > B
+  )
 
 module.exports = dndCreatureTypeList
 

@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import PageTitle from "@/components/PageTitle"
 import DndCreature from "@/components/DndCreature"
 
-import "./DndCreatureCatalogStyles.css"
+import "./DndCreatureCatalogStyles.less"
 
 const DndCreatureCatalogComponent = (
   {

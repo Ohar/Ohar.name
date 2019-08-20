@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import PageTitle from '@/components/PageTitle'
 import DndItemTable from '@/components/DndItemTable'
 
-import './DndItemCatalogStyles.css'
+import './DndItemCatalogStyles.less'
 
 const DndItemCatalogComponent = (
     {

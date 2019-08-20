@@ -38,5 +38,6 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: aliasOptions
     },
+    `gatsby-plugin-less`,
   ],
 }

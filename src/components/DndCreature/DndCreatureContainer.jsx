@@ -45,7 +45,6 @@ const DndCreatureContainer = ({id}) => {
       legendaryActionList={legendaryActionList}
       legendaryPoints={legendaryPoints}
       columnCount={columnCount}
-      description={description}
       header={headerRus}
       name={name}
       title={title}

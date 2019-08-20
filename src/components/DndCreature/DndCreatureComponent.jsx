@@ -8,7 +8,6 @@ import DndActionList from "./components/DndActionList"
 import DndCreatureAc from "./components/DndCreatureAc"
 import DndCreatureAligment from "./components/DndCreatureAligment"
 import DndCreatureCr from "./components/DndCreatureCr"
-import DndCreatureDescription from "./components/DndCreatureDescription"
 import DndCreatureHp from "./components/DndCreatureHp"
 import DndCreatureSize from "./components/DndCreatureSize"
 import DndCreatureSource from "./components/DndCreatureSource"
@@ -36,7 +35,6 @@ const DndCreatureComponent = (
     columnCount,
     cr,
     creatureTypeIdList,
-    description,
     featureList,
     genderId,
     hp,
@@ -118,7 +116,6 @@ const DndCreatureComponent = (
       points={legendaryPoints}
     />
     <DndReactionList list={reactionList}/>
-    <DndCreatureDescription description={description}/>
   </section>
 )
 

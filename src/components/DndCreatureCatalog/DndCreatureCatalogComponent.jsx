@@ -17,7 +17,7 @@ const DndCreatureCatalogComponent = (
 
     <input
       className='DndCreatureCatalog_input'
-      onChange={onSearch}
+      onChange={({ target: { value } }) => onSearch(value)}
       type='search'
       placeholder='Введите строку поиска'
       autoFocus

@@ -5,6 +5,7 @@ const {
   GENDER_MIDDLE,
 } = require('./../genderList')
 
+const SIZE_ANY = 'any'
 const SIZE_TINY = 'tiny'
 const SIZE_SMALL = 'small'
 const SIZE_MEDIUM = 'medium'
@@ -13,6 +14,29 @@ const SIZE_HUGE = 'huge'
 const SIZE_GARGANTUA = 'gargantua'
 
 const dndSizeList = [
+  {
+    id: SIZE_ANY,
+    name: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'Любая',
+          genitive: 'Любой'
+        },
+        [GENDER_MALE]: {
+          nominative: 'Любой',
+          genitive: 'Любого',
+          prepositional: 'Любом'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'Любое'
+        }
+      },
+      dualFemale: {
+        nominative: 'Любые',
+        genitive: 'Любых'
+      }
+    },
+  },
   {
     id: SIZE_TINY,
     name: {
@@ -157,6 +181,7 @@ module.exports = dndSizeList
 
 module.exports.dndSizeCollection = listToCollectionById(dndSizeList)
 
+module.exports.SIZE_ANY = SIZE_ANY
 module.exports.SIZE_TINY = SIZE_TINY
 module.exports.SIZE_SMALL = SIZE_SMALL
 module.exports.SIZE_MEDIUM = SIZE_MEDIUM

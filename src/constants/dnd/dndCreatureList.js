@@ -67,7 +67,6 @@ const dndCreatureList = dndCreatureRawList
         creature.nameAlt || '',
         creature.nameEn,
         creature.nameEnAlt || '',
-        creature.description || '',
       ]
         .filter(e => e)
         .join('\n')

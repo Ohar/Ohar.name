@@ -1,13 +1,14 @@
-import listToCollectionById from '@/utils/listToCollectionById'
-import {
+const listToCollectionById = require('./../../utils/listToCollectionById')
+
+const {
   GENDER_MALE,
   GENDER_FEMALE,
   GENDER_MIDDLE,
-} from '@/constants/genderList'
+} = require('./../genderList')
 
-export const TARGET_CREATURE = 'creature'
-export const TARGET_OBJECT = 'object'
-export const TARGET_POINT = 'point'
+const TARGET_CREATURE = 'creature'
+const TARGET_OBJECT = 'object'
+const TARGET_POINT = 'point'
 
 const dndTargetList = [
   {
@@ -78,5 +79,10 @@ const dndTargetList = [
   },
 ]
 
-export default dndTargetList
-export const dndTargetCollection = listToCollectionById(dndTargetList)
+module.exports = dndTargetList
+
+module.exports.dndTargetCollection = listToCollectionById(dndTargetList)
+
+module.exports.TARGET_CREATURE = TARGET_CREATURE
+module.exports.TARGET_OBJECT = TARGET_OBJECT
+module.exports.TARGET_POINT = TARGET_POINT

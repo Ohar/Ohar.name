@@ -1,21 +1,21 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const DAMAGE_ACID = 'acid'
-export const DAMAGE_BLUDGEONING = 'bludgeoning'
-export const DAMAGE_COLD = 'cold'
-export const DAMAGE_FIRE = 'fire'
-export const DAMAGE_FORCE = 'force'
-export const DAMAGE_ELECTRICITY = 'lightning'
-export const DAMAGE_MAGIC_WEAPON = 'magic_weapon'
-export const DAMAGE_NECROTIC = 'necrotic'
-export const DAMAGE_NONMAGIC_WEAPON = 'nonmagic_weapon'
-export const DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON = 'nonmagic_nonadamantine_weapon'
-export const DAMAGE_PIERCING = 'piercing'
-export const DAMAGE_POISON = 'poison'
-export const DAMAGE_PSYCHIC = 'psychic'
-export const DAMAGE_RADIANT = 'radiant'
-export const DAMAGE_SLASHING = 'slashing'
-export const DAMAGE_THUNDER = 'thunder'
+const DAMAGE_ACID = 'acid'
+const DAMAGE_BLUDGEONING = 'bludgeoning'
+const DAMAGE_COLD = 'cold'
+const DAMAGE_ELECTRICITY = 'lightning'
+const DAMAGE_FIRE = 'fire'
+const DAMAGE_FORCE = 'force'
+const DAMAGE_MAGIC_WEAPON = 'magic_weapon'
+const DAMAGE_NECROTIC = 'necrotic'
+const DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON = 'nonmagic_nonadamantine_weapon'
+const DAMAGE_NONMAGIC_WEAPON = 'nonmagic_weapon'
+const DAMAGE_PIERCING = 'piercing'
+const DAMAGE_POISON = 'poison'
+const DAMAGE_PSYCHIC = 'psychic'
+const DAMAGE_RADIANT = 'radiant'
+const DAMAGE_SLASHING = 'slashing'
+const DAMAGE_THUNDER = 'thunder'
 
 const dndDamageTypeList = [
   {
@@ -103,5 +103,23 @@ const dndDamageTypeList = [
   },
 ]
 
-export default dndDamageTypeList
-export const dndDamageTypeCollection = listToCollectionById(dndDamageTypeList)
+module.exports = dndDamageTypeList
+
+module.exports.dndDamageTypeCollection = listToCollectionById(dndDamageTypeList)
+
+module.exports.DAMAGE_ACID = DAMAGE_ACID
+module.exports.DAMAGE_BLUDGEONING = DAMAGE_BLUDGEONING
+module.exports.DAMAGE_COLD = DAMAGE_COLD
+module.exports.DAMAGE_ELECTRICITY = DAMAGE_ELECTRICITY
+module.exports.DAMAGE_FIRE = DAMAGE_FIRE
+module.exports.DAMAGE_FORCE = DAMAGE_FORCE
+module.exports.DAMAGE_MAGIC_WEAPON = DAMAGE_MAGIC_WEAPON
+module.exports.DAMAGE_NECROTIC = DAMAGE_NECROTIC
+module.exports.DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON = DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON
+module.exports.DAMAGE_NONMAGIC_WEAPON = DAMAGE_NONMAGIC_WEAPON
+module.exports.DAMAGE_PIERCING = DAMAGE_PIERCING
+module.exports.DAMAGE_POISON = DAMAGE_POISON
+module.exports.DAMAGE_PSYCHIC = DAMAGE_PSYCHIC
+module.exports.DAMAGE_RADIANT = DAMAGE_RADIANT
+module.exports.DAMAGE_SLASHING = DAMAGE_SLASHING
+module.exports.DAMAGE_THUNDER = DAMAGE_THUNDER

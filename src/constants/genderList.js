@@ -1,9 +1,9 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../utils/listToCollectionById')
 
-export const GENDER_ANY = 'any'
-export const GENDER_MALE = 'male'
-export const GENDER_FEMALE = 'female'
-export const GENDER_MIDDLE = 'middle'
+const GENDER_ANY = 'any'
+const GENDER_MALE = 'male'
+const GENDER_FEMALE = 'female'
+const GENDER_MIDDLE = 'middle'
 
 const genderList = [
   {
@@ -24,6 +24,11 @@ const genderList = [
   },
 ]
 
-export default genderList
+module.exports = genderList
 
-export const genderCollection = listToCollectionById(genderList)
+module.exports.genderCollection = listToCollectionById(genderList)
+
+module.exports.GENDER_ANY = GENDER_ANY
+module.exports.GENDER_MALE = GENDER_MALE
+module.exports.GENDER_FEMALE = GENDER_FEMALE
+module.exports.GENDER_MIDDLE = GENDER_MIDDLE

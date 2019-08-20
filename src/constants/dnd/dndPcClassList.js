@@ -1,17 +1,17 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const PC_CLASS_BARBARIAN = 'barbarian'
-export const PC_CLASS_BARD = 'bard'
-export const PC_CLASS_DRUID = 'druid'
-export const PC_CLASS_FIGHTER = 'fighter'
-export const PC_CLASS_MONK = 'monk'
-export const PC_CLASS_PALADIN = 'paladin'
-export const PC_CLASS_PRIEST = 'priest'
-export const PC_CLASS_RANGER = 'ranger'
-export const PC_CLASS_ROGUE = 'rogue'
-export const PC_CLASS_SORCERER = 'sorcerer'
-export const PC_CLASS_WARLOCK = 'warlock'
-export const PC_CLASS_WIZARD = 'wizard'
+const PC_CLASS_BARBARIAN = 'barbarian'
+const PC_CLASS_BARD = 'bard'
+const PC_CLASS_DRUID = 'druid'
+const PC_CLASS_FIGHTER = 'fighter'
+const PC_CLASS_MONK = 'monk'
+const PC_CLASS_PALADIN = 'paladin'
+const PC_CLASS_PRIEST = 'priest'
+const PC_CLASS_RANGER = 'ranger'
+const PC_CLASS_ROGUE = 'rogue'
+const PC_CLASS_SORCERER = 'sorcerer'
+const PC_CLASS_WARLOCK = 'warlock'
+const PC_CLASS_WIZARD = 'wizard'
 
 const dndPcClassList = [
   {
@@ -268,6 +268,19 @@ const dndPcClassList = [
   },
 ]
 
-export default dndPcClassList
+module.exports = dndPcClassList
 
-export const dndPcClassCollection = listToCollectionById(dndPcClassList)
+module.exports.dndPcClassCollection = listToCollectionById(dndPcClassList)
+
+module.exports.PC_CLASS_BARBARIAN = PC_CLASS_BARBARIAN
+module.exports.PC_CLASS_BARD = PC_CLASS_BARD
+module.exports.PC_CLASS_DRUID = PC_CLASS_DRUID
+module.exports.PC_CLASS_FIGHTER = PC_CLASS_FIGHTER
+module.exports.PC_CLASS_MONK = PC_CLASS_MONK
+module.exports.PC_CLASS_PALADIN = PC_CLASS_PALADIN
+module.exports.PC_CLASS_PRIEST = PC_CLASS_PRIEST
+module.exports.PC_CLASS_RANGER = PC_CLASS_RANGER
+module.exports.PC_CLASS_ROGUE = PC_CLASS_ROGUE
+module.exports.PC_CLASS_SORCERER = PC_CLASS_SORCERER
+module.exports.PC_CLASS_WARLOCK = PC_CLASS_WARLOCK
+module.exports.PC_CLASS_WIZARD = PC_CLASS_WIZARD

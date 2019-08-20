@@ -1,5 +1,6 @@
-import listToCollectionById from '@/utils/listToCollectionById'
-import {
+const listToCollectionById = require('./../../utils/listToCollectionById')
+
+const {
   MAGIC_ABJURATION,
   MAGIC_CONJURATION,
   MAGIC_DIVINATION,
@@ -8,8 +9,8 @@ import {
   MAGIC_ILLUSION,
   MAGIC_NECROMANCY,
   MAGIC_TRANSMUTATION,
-} from '@/constants/dnd/dndMagicList'
-import {
+} = require( './dndMagicList')
+const {
   PC_CLASS_BARBARIAN,
   PC_CLASS_BARD,
   PC_CLASS_DRUID,
@@ -22,89 +23,89 @@ import {
   PC_CLASS_SORCERER,
   PC_CLASS_WARLOCK,
   PC_CLASS_WIZARD,
-} from '@/constants/dnd/dndPcClassList'
-import {
+} = require( './dndPcClassList')
+const {
   CAST_VERBAL,
   CAST_SOMATIC,
   CAST_MATERIAL,
-} from '@/constants/dnd/dndCastComponentList'
+} = require( './dndCastComponentList')
 
-export const SPELL_ANIMATE_DEAD = 'animate_dead'
-export const SPELL_BESTOW_CURSE = 'bestow_curse'
-export const SPELL_BLADE_BARRIER = 'blade_barrier'
-export const SPELL_BLESS = 'bless'
-export const SPELL_BLIGHT = 'blight'
-export const SPELL_BLINDNESS_DEAFNESS = 'blindness_deafness'
-export const SPELL_BLUR = 'blur'
-export const SPELL_COLOR_SPRAY = 'color_spray'
-export const SPELL_COMMUNE = 'commune'
-export const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
-export const SPELL_CONFUSION = 'confusion'
-export const SPELL_CONJURE_ELEMENTAL = 'conjure_elemental'
-export const SPELL_CONTROL_WEATHER = 'control_weather'
-export const SPELL_CREATE_FOOD_AND_WATER = 'create_food_and_water'
-export const SPELL_CREATE_OR_DESTROY_WATER = 'create_or_destroy_water'
-export const SPELL_CREATION = 'creation'
-export const SPELL_CURE_WOUNDS = 'cure_wounds'
-export const SPELL_DANCING_LIGHTS = 'dancing_lights'
-export const SPELL_DARKNESS = 'darkness'
-export const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
-export const SPELL_DETECT_MAGIC = 'detect_magic'
-export const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
-export const SPELL_DISGUISE_SELF = 'disguise_self'
-export const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
-export const SPELL_DISPEL_MAGIC = 'dispel_magic'
-export const SPELL_DOMINATE_PERSON = 'dominate_person'
-export const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
-export const SPELL_ENTANGLE = 'entangle'
-export const SPELL_FEATHER_FALL = 'feather_fall'
-export const SPELL_FLAME_STRIKE = 'flame_strike'
-export const SPELL_FLY = 'fly'
-export const SPELL_FOG_CLOUD = 'fog_cloud'
-export const SPELL_GASEOUS_FORM = 'gaseous_form'
-export const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
-export const SPELL_GUST_OF_WIND = 'gust_of_wind'
-export const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
-export const SPELL_INSECT_PLAGUE = 'insect_plague'
-export const SPELL_INVISIBILITY = 'invisibility'
-export const SPELL_JUMP = 'jump'
-export const SPELL_LEVITATE = 'levitate'
-export const SPELL_LIGHT = 'light'
-export const SPELL_MAGE_HAND = 'mage_hand'
-export const SPELL_MAJOR_IMAGE = 'major_image'
-export const SPELL_MINOR_ILLUSION = 'minor_illusion'
-export const SPELL_MIRROR_IMAGE = 'mirror_image'
-export const SPELL_MISTY_STEP = 'misty_step'
-export const SPELL_MOVE_EARTH = 'move_earth'
-export const SPELL_NONDETECTION = 'nondetection'
-export const SPELL_PASSWALL = 'passwall'
-export const SPELL_PHANTASMAL_FORCE = 'phantasmal_force'
-export const SPELL_PHANTASMAL_KILLER = 'phantasmal_killer'
-export const SPELL_PLANE_SHIFT = 'plane_shift'
-export const SPELL_POLYMORPH = 'polymorph'
-export const SPELL_POWER_WORD_STUN = 'power_word_stun'
-export const SPELL_PRESTIDIGITATION = 'prestidigitation'
-export const SPELL_PURIFY_FOOD_AND_DRINK = 'purify_food_and_drink'
-export const SPELL_RAISE_DEAD = 'raise_dead'
-export const SPELL_RAY_OF_FROST = 'ray_of_frost'
-export const SPELL_RESSURECTION = 'ressurection'
-export const SPELL_SACRED_FLAME = 'sacred_flame'
-export const SPELL_SANCTUARY = 'sanctuary'
-export const SPELL_SEE_INVISIBILITY = 'see_invisibility'
-export const SPELL_SHIELD = 'shield'
-export const SPELL_SLEEP = 'sleep'
-export const SPELL_STONE_SHAPE = 'stone_shape'
-export const SPELL_SUGGESTION = 'suggestion'
-export const SPELL_TELEKINESIS = 'telekinesis'
-export const SPELL_THAUMATURGY = 'thaumaturgy'
-export const SPELL_THUNDERWAVE = 'thunderwave'
-export const SPELL_TONGUES = 'tongues'
-export const SPELL_WALL_OF_FIRE = 'wall_of_fire'
-export const SPELL_WALL_OF_STONE = 'wall_of_stone'
-export const SPELL_WATER_BREATHING = 'water_breathing'
-export const SPELL_WATER_WALK = 'water_walk'
-export const SPELL_WEB = 'web'
-export const SPELL_WIND_WALK = 'wind_walk'
+const SPELL_ANIMATE_DEAD = 'animate_dead'
+const SPELL_BESTOW_CURSE = 'bestow_curse'
+const SPELL_BLADE_BARRIER = 'blade_barrier'
+const SPELL_BLESS = 'bless'
+const SPELL_BLIGHT = 'blight'
+const SPELL_BLINDNESS_DEAFNESS = 'blindness_deafness'
+const SPELL_BLUR = 'blur'
+const SPELL_COLOR_SPRAY = 'color_spray'
+const SPELL_COMMUNE = 'commune'
+const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
+const SPELL_CONFUSION = 'confusion'
+const SPELL_CONJURE_ELEMENTAL = 'conjure_elemental'
+const SPELL_CONTROL_WEATHER = 'control_weather'
+const SPELL_CREATE_FOOD_AND_WATER = 'create_food_and_water'
+const SPELL_CREATE_OR_DESTROY_WATER = 'create_or_destroy_water'
+const SPELL_CREATION = 'creation'
+const SPELL_CURE_WOUNDS = 'cure_wounds'
+const SPELL_DANCING_LIGHTS = 'dancing_lights'
+const SPELL_DARKNESS = 'darkness'
+const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
+const SPELL_DETECT_MAGIC = 'detect_magic'
+const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
+const SPELL_DISGUISE_SELF = 'disguise_self'
+const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
+const SPELL_DISPEL_MAGIC = 'dispel_magic'
+const SPELL_DOMINATE_PERSON = 'dominate_person'
+const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
+const SPELL_ENTANGLE = 'entangle'
+const SPELL_FEATHER_FALL = 'feather_fall'
+const SPELL_FLAME_STRIKE = 'flame_strike'
+const SPELL_FLY = 'fly'
+const SPELL_FOG_CLOUD = 'fog_cloud'
+const SPELL_GASEOUS_FORM = 'gaseous_form'
+const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
+const SPELL_GUST_OF_WIND = 'gust_of_wind'
+const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
+const SPELL_INSECT_PLAGUE = 'insect_plague'
+const SPELL_INVISIBILITY = 'invisibility'
+const SPELL_JUMP = 'jump'
+const SPELL_LEVITATE = 'levitate'
+const SPELL_LIGHT = 'light'
+const SPELL_MAGE_HAND = 'mage_hand'
+const SPELL_MAJOR_IMAGE = 'major_image'
+const SPELL_MINOR_ILLUSION = 'minor_illusion'
+const SPELL_MIRROR_IMAGE = 'mirror_image'
+const SPELL_MISTY_STEP = 'misty_step'
+const SPELL_MOVE_EARTH = 'move_earth'
+const SPELL_NONDETECTION = 'nondetection'
+const SPELL_PASSWALL = 'passwall'
+const SPELL_PHANTASMAL_FORCE = 'phantasmal_force'
+const SPELL_PHANTASMAL_KILLER = 'phantasmal_killer'
+const SPELL_PLANE_SHIFT = 'plane_shift'
+const SPELL_POLYMORPH = 'polymorph'
+const SPELL_POWER_WORD_STUN = 'power_word_stun'
+const SPELL_PRESTIDIGITATION = 'prestidigitation'
+const SPELL_PURIFY_FOOD_AND_DRINK = 'purify_food_and_drink'
+const SPELL_RAISE_DEAD = 'raise_dead'
+const SPELL_RAY_OF_FROST = 'ray_of_frost'
+const SPELL_RESSURECTION = 'ressurection'
+const SPELL_SACRED_FLAME = 'sacred_flame'
+const SPELL_SANCTUARY = 'sanctuary'
+const SPELL_SEE_INVISIBILITY = 'see_invisibility'
+const SPELL_SHIELD = 'shield'
+const SPELL_SLEEP = 'sleep'
+const SPELL_STONE_SHAPE = 'stone_shape'
+const SPELL_SUGGESTION = 'suggestion'
+const SPELL_TELEKINESIS = 'telekinesis'
+const SPELL_THAUMATURGY = 'thaumaturgy'
+const SPELL_THUNDERWAVE = 'thunderwave'
+const SPELL_TONGUES = 'tongues'
+const SPELL_WALL_OF_FIRE = 'wall_of_fire'
+const SPELL_WALL_OF_STONE = 'wall_of_stone'
+const SPELL_WATER_BREATHING = 'water_breathing'
+const SPELL_WATER_WALK = 'water_walk'
+const SPELL_WEB = 'web'
+const SPELL_WIND_WALK = 'wind_walk'
 
 const defaultCastTime = '1 действие'
 const defaultDuration = 'мгновенная'
@@ -1359,5 +1360,83 @@ const dndSpellList = [
   })
 )
 
-export default dndSpellList
-export const dndSpellCollection = listToCollectionById(dndSpellList)
+module.exports = dndSpellList
+
+module.exports.dndSpellCollection = listToCollectionById(dndSpellList)
+
+module.exports.SPELL_ANIMATE_DEAD = SPELL_ANIMATE_DEAD
+module.exports.SPELL_BESTOW_CURSE = SPELL_BESTOW_CURSE
+module.exports.SPELL_BLADE_BARRIER = SPELL_BLADE_BARRIER
+module.exports.SPELL_BLESS = SPELL_BLESS
+module.exports.SPELL_BLIGHT = SPELL_BLIGHT
+module.exports.SPELL_BLINDNESS_DEAFNESS = SPELL_BLINDNESS_DEAFNESS
+module.exports.SPELL_BLUR = SPELL_BLUR
+module.exports.SPELL_COLOR_SPRAY = SPELL_COLOR_SPRAY
+module.exports.SPELL_COMMUNE = SPELL_COMMUNE
+module.exports.SPELL_COMPREHEND_LANGUAGES = SPELL_COMPREHEND_LANGUAGES
+module.exports.SPELL_CONFUSION = SPELL_CONFUSION
+module.exports.SPELL_CONJURE_ELEMENTAL = SPELL_CONJURE_ELEMENTAL
+module.exports.SPELL_CONTROL_WEATHER = SPELL_CONTROL_WEATHER
+module.exports.SPELL_CREATE_FOOD_AND_WATER = SPELL_CREATE_FOOD_AND_WATER
+module.exports.SPELL_CREATE_OR_DESTROY_WATER = SPELL_CREATE_OR_DESTROY_WATER
+module.exports.SPELL_CREATION = SPELL_CREATION
+module.exports.SPELL_CURE_WOUNDS = SPELL_CURE_WOUNDS
+module.exports.SPELL_DANCING_LIGHTS = SPELL_DANCING_LIGHTS
+module.exports.SPELL_DARKNESS = SPELL_DARKNESS
+module.exports.SPELL_DETECT_EVIL_AND_GOOD = SPELL_DETECT_EVIL_AND_GOOD
+module.exports.SPELL_DETECT_MAGIC = SPELL_DETECT_MAGIC
+module.exports.SPELL_DETECT_THOUGHTS = SPELL_DETECT_THOUGHTS
+module.exports.SPELL_DISGUISE_SELF = SPELL_DISGUISE_SELF
+module.exports.SPELL_DISPEL_EVIL_AND_GOOD = SPELL_DISPEL_EVIL_AND_GOOD
+module.exports.SPELL_DISPEL_MAGIC = SPELL_DISPEL_MAGIC
+module.exports.SPELL_DOMINATE_PERSON = SPELL_DOMINATE_PERSON
+module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
+module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
+module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
+module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE
+module.exports.SPELL_FLY = SPELL_FLY
+module.exports.SPELL_FOG_CLOUD = SPELL_FOG_CLOUD
+module.exports.SPELL_GASEOUS_FORM = SPELL_GASEOUS_FORM
+module.exports.SPELL_GREATER_INVISIBILITY = SPELL_GREATER_INVISIBILITY
+module.exports.SPELL_GUST_OF_WIND = SPELL_GUST_OF_WIND
+module.exports.SPELL_HALLUCINATORY_TERRAIN = SPELL_HALLUCINATORY_TERRAIN
+module.exports.SPELL_INSECT_PLAGUE = SPELL_INSECT_PLAGUE
+module.exports.SPELL_INVISIBILITY = SPELL_INVISIBILITY
+module.exports.SPELL_JUMP = SPELL_JUMP
+module.exports.SPELL_LEVITATE = SPELL_LEVITATE
+module.exports.SPELL_LIGHT = SPELL_LIGHT
+module.exports.SPELL_MAGE_HAND = SPELL_MAGE_HAND
+module.exports.SPELL_MAJOR_IMAGE = SPELL_MAJOR_IMAGE
+module.exports.SPELL_MINOR_ILLUSION = SPELL_MINOR_ILLUSION
+module.exports.SPELL_MIRROR_IMAGE = SPELL_MIRROR_IMAGE
+module.exports.SPELL_MISTY_STEP = SPELL_MISTY_STEP
+module.exports.SPELL_MOVE_EARTH = SPELL_MOVE_EARTH
+module.exports.SPELL_NONDETECTION = SPELL_NONDETECTION
+module.exports.SPELL_PASSWALL = SPELL_PASSWALL
+module.exports.SPELL_PHANTASMAL_FORCE = SPELL_PHANTASMAL_FORCE
+module.exports.SPELL_PHANTASMAL_KILLER = SPELL_PHANTASMAL_KILLER
+module.exports.SPELL_PLANE_SHIFT = SPELL_PLANE_SHIFT
+module.exports.SPELL_POLYMORPH = SPELL_POLYMORPH
+module.exports.SPELL_POWER_WORD_STUN = SPELL_POWER_WORD_STUN
+module.exports.SPELL_PRESTIDIGITATION = SPELL_PRESTIDIGITATION
+module.exports.SPELL_PURIFY_FOOD_AND_DRINK = SPELL_PURIFY_FOOD_AND_DRINK
+module.exports.SPELL_RAISE_DEAD = SPELL_RAISE_DEAD
+module.exports.SPELL_RAY_OF_FROST = SPELL_RAY_OF_FROST
+module.exports.SPELL_RESSURECTION = SPELL_RESSURECTION
+module.exports.SPELL_SACRED_FLAME = SPELL_SACRED_FLAME
+module.exports.SPELL_SANCTUARY = SPELL_SANCTUARY
+module.exports.SPELL_SEE_INVISIBILITY = SPELL_SEE_INVISIBILITY
+module.exports.SPELL_SHIELD = SPELL_SHIELD
+module.exports.SPELL_SLEEP = SPELL_SLEEP
+module.exports.SPELL_STONE_SHAPE = SPELL_STONE_SHAPE
+module.exports.SPELL_SUGGESTION = SPELL_SUGGESTION
+module.exports.SPELL_TELEKINESIS = SPELL_TELEKINESIS
+module.exports.SPELL_THAUMATURGY = SPELL_THAUMATURGY
+module.exports.SPELL_THUNDERWAVE = SPELL_THUNDERWAVE
+module.exports.SPELL_TONGUES = SPELL_TONGUES
+module.exports.SPELL_WALL_OF_FIRE = SPELL_WALL_OF_FIRE
+module.exports.SPELL_WALL_OF_STONE = SPELL_WALL_OF_STONE
+module.exports.SPELL_WATER_BREATHING = SPELL_WATER_BREATHING
+module.exports.SPELL_WATER_WALK = SPELL_WATER_WALK
+module.exports.SPELL_WEB = SPELL_WEB
+module.exports.SPELL_WIND_WALK = SPELL_WIND_WALK

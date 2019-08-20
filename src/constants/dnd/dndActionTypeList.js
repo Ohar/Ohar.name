@@ -1,13 +1,13 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const ACTION_MELEE_WEAPON_ATTACK = 'melee_weapon_attack'
-export const ACTION_MELEE_OR_RANGE_WEAPON_ATTACK = 'melee_or_range_weapon_attack'
-export const ACTION_RANGE_WEAPON_ATTACK = 'range_weapon_attack'
-export const ACTION_MELEE_SPELL_ATTACK = 'melee_spell_attack'
-export const ACTION_RANGE_SPELL_ATTACK = 'range_spell_attack'
-export const ACTION_REACTION = 'reaction'
-export const ACTION_LEGENDARY = 'legendary_action'
-export const ACTION_LAIR = 'lair_action'
+const ACTION_MELEE_WEAPON_ATTACK = 'melee_weapon_attack'
+const ACTION_MELEE_OR_RANGE_WEAPON_ATTACK = 'melee_or_range_weapon_attack'
+const ACTION_RANGE_WEAPON_ATTACK = 'range_weapon_attack'
+const ACTION_MELEE_SPELL_ATTACK = 'melee_spell_attack'
+const ACTION_RANGE_SPELL_ATTACK = 'range_spell_attack'
+const ACTION_REACTION = 'reaction'
+const ACTION_LEGENDARY = 'legendary_action'
+const ACTION_LAIR = 'lair_action'
 
 const dndActionTypeList = [
   {
@@ -44,5 +44,15 @@ const dndActionTypeList = [
   },
 ]
 
-export default dndActionTypeList
-export const dndActionTypeCollection = listToCollectionById(dndActionTypeList)
+module.exports = dndActionTypeList
+
+module.exports.dndActionTypeCollection = listToCollectionById(dndActionTypeList)
+
+module.exports.ACTION_MELEE_WEAPON_ATTACK = ACTION_MELEE_WEAPON_ATTACK
+module.exports.ACTION_MELEE_OR_RANGE_WEAPON_ATTACK = ACTION_MELEE_OR_RANGE_WEAPON_ATTACK
+module.exports.ACTION_RANGE_WEAPON_ATTACK = ACTION_RANGE_WEAPON_ATTACK
+module.exports.ACTION_MELEE_SPELL_ATTACK = ACTION_MELEE_SPELL_ATTACK
+module.exports.ACTION_RANGE_SPELL_ATTACK = ACTION_RANGE_SPELL_ATTACK
+module.exports.ACTION_REACTION = ACTION_REACTION
+module.exports.ACTION_LEGENDARY = ACTION_LEGENDARY
+module.exports.ACTION_LAIR = ACTION_LAIR

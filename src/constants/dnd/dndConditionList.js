@@ -1,20 +1,20 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const CONDITION_BLINDED = 'blinded'
-export const CONDITION_CHARMED = 'charmed'
-export const CONDITION_DEAFENED = 'deafened'
-export const CONDITION_EXHAUSTION = 'exhaustion'
-export const CONDITION_FRIGHTENED = 'frightened'
-export const CONDITION_GRAPPLED = 'grappled'
-export const CONDITION_INCAPACITATED = 'incapacitated'
-export const CONDITION_INVISIBLE = 'invisible'
-export const CONDITION_PARALYZED = 'paralyzed'
-export const CONDITION_PETRIFIED = 'petrified'
-export const CONDITION_POISONED = 'poisoned'
-export const CONDITION_PRONE = 'prone'
-export const CONDITION_RESTRAINED = 'restrained'
-export const CONDITION_STUNNED = 'stunned'
-export const CONDITION_UNCONSCIOUS = 'unconscious'
+const CONDITION_BLINDED = 'blinded'
+const CONDITION_CHARMED = 'charmed'
+const CONDITION_DEAFENED = 'deafened'
+const CONDITION_EXHAUSTION = 'exhaustion'
+const CONDITION_FRIGHTENED = 'frightened'
+const CONDITION_GRAPPLED = 'grappled'
+const CONDITION_INCAPACITATED = 'incapacitated'
+const CONDITION_INVISIBLE = 'invisible'
+const CONDITION_PARALYZED = 'paralyzed'
+const CONDITION_PETRIFIED = 'petrified'
+const CONDITION_POISONED = 'poisoned'
+const CONDITION_PRONE = 'prone'
+const CONDITION_RESTRAINED = 'restrained'
+const CONDITION_STUNNED = 'stunned'
+const CONDITION_UNCONSCIOUS = 'unconscious'
 
 const dndConditionList = [
   {
@@ -165,5 +165,22 @@ const dndConditionList = [
   },
 ]
 
-export default dndConditionList
-export const dndConditionCollection = listToCollectionById(dndConditionList)
+module.exports = dndConditionList
+
+module.exports.dndConditionCollection = listToCollectionById(dndConditionList)
+
+module.exports.CONDITION_BLINDED = CONDITION_BLINDED
+module.exports.CONDITION_CHARMED = CONDITION_CHARMED
+module.exports.CONDITION_DEAFENED = CONDITION_DEAFENED
+module.exports.CONDITION_EXHAUSTION = CONDITION_EXHAUSTION
+module.exports.CONDITION_FRIGHTENED = CONDITION_FRIGHTENED
+module.exports.CONDITION_GRAPPLED = CONDITION_GRAPPLED
+module.exports.CONDITION_INCAPACITATED = CONDITION_INCAPACITATED
+module.exports.CONDITION_INVISIBLE = CONDITION_INVISIBLE
+module.exports.CONDITION_PARALYZED = CONDITION_PARALYZED
+module.exports.CONDITION_PETRIFIED = CONDITION_PETRIFIED
+module.exports.CONDITION_POISONED = CONDITION_POISONED
+module.exports.CONDITION_PRONE = CONDITION_PRONE
+module.exports.CONDITION_RESTRAINED = CONDITION_RESTRAINED
+module.exports.CONDITION_STUNNED = CONDITION_STUNNED
+module.exports.CONDITION_UNCONSCIOUS = CONDITION_UNCONSCIOUS

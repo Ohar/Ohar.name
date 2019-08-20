@@ -1,23 +1,23 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const SKILL_ACROBATICS = 'acrobatics'
-export const SKILL_ANIMAL_HANDLING = 'animal_handling'
-export const SKILL_ARCANA = 'arcana'
-export const SKILL_ATHLETICS = 'athletics'
-export const SKILL_DECEPTION = 'deception'
-export const SKILL_HISTORY = 'history'
-export const SKILL_INSIGHT = 'insight'
-export const SKILL_INTIMIDATION = 'intimidation'
-export const SKILL_INVESTIGATION = 'investigation'
-export const SKILL_MEDICINE = 'medicine'
-export const SKILL_NATURE = 'nature'
-export const SKILL_PERCEPTION = 'perception'
-export const SKILL_PERFORMANCE = 'performance'
-export const SKILL_PERSUASION = 'persuasion'
-export const SKILL_RELIGION = 'religion'
-export const SKILL_SLEIGHT_OF_HAND = 'sleight_of_hand'
-export const SKILL_STEALTH = 'stealth'
-export const SKILL_SURVIVAL = 'survival'
+const SKILL_ACROBATICS = 'acrobatics'
+const SKILL_ANIMAL_HANDLING = 'animal_handling'
+const SKILL_ARCANA = 'arcana'
+const SKILL_ATHLETICS = 'athletics'
+const SKILL_DECEPTION = 'deception'
+const SKILL_HISTORY = 'history'
+const SKILL_INSIGHT = 'insight'
+const SKILL_INTIMIDATION = 'intimidation'
+const SKILL_INVESTIGATION = 'investigation'
+const SKILL_MEDICINE = 'medicine'
+const SKILL_NATURE = 'nature'
+const SKILL_PERCEPTION = 'perception'
+const SKILL_PERFORMANCE = 'performance'
+const SKILL_PERSUASION = 'persuasion'
+const SKILL_RELIGION = 'religion'
+const SKILL_SLEIGHT_OF_HAND = 'sleight_of_hand'
+const SKILL_STEALTH = 'stealth'
+const SKILL_SURVIVAL = 'survival'
 
 const dndSkillList = [
   {
@@ -94,6 +94,25 @@ const dndSkillList = [
   },
 ]
 
-export default dndSkillList
+module.exports = dndSkillList
 
-export const dndSkillCollection = listToCollectionById(dndSkillList)
+module.exports.dndSkillCollection = listToCollectionById(dndSkillList)
+
+module.exports.SKILL_ACROBATICS = SKILL_ACROBATICS
+module.exports.SKILL_ANIMAL_HANDLING = SKILL_ANIMAL_HANDLING
+module.exports.SKILL_ARCANA = SKILL_ARCANA
+module.exports.SKILL_ATHLETICS = SKILL_ATHLETICS
+module.exports.SKILL_DECEPTION = SKILL_DECEPTION
+module.exports.SKILL_HISTORY = SKILL_HISTORY
+module.exports.SKILL_INSIGHT = SKILL_INSIGHT
+module.exports.SKILL_INTIMIDATION = SKILL_INTIMIDATION
+module.exports.SKILL_INVESTIGATION = SKILL_INVESTIGATION
+module.exports.SKILL_MEDICINE = SKILL_MEDICINE
+module.exports.SKILL_NATURE = SKILL_NATURE
+module.exports.SKILL_PERCEPTION = SKILL_PERCEPTION
+module.exports.SKILL_PERFORMANCE = SKILL_PERFORMANCE
+module.exports.SKILL_PERSUASION = SKILL_PERSUASION
+module.exports.SKILL_RELIGION = SKILL_RELIGION
+module.exports.SKILL_SLEIGHT_OF_HAND = SKILL_SLEIGHT_OF_HAND
+module.exports.SKILL_STEALTH = SKILL_STEALTH
+module.exports.SKILL_SURVIVAL = SKILL_SURVIVAL

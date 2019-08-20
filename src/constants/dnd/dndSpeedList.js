@@ -1,10 +1,10 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const SPEED_CLIMB = 'climb'
-export const SPEED_DIG = 'dig'
-export const SPEED_FLY = 'fly'
-export const SPEED_SWIM = 'swim'
-export const SPEED_WALK = 'walk'
+const SPEED_CLIMB = 'climb'
+const SPEED_DIG = 'dig'
+const SPEED_FLY = 'fly'
+const SPEED_SWIM = 'swim'
+const SPEED_WALK = 'walk'
 
 const dndSpeedList = [
   {
@@ -29,6 +29,12 @@ const dndSpeedList = [
   },
 ]
 
-export default dndSpeedList
+module.exports = dndSpeedList
 
-export const dndSpeedCollection = listToCollectionById(dndSpeedList)
+module.exports.dndSpeedCollection = listToCollectionById(dndSpeedList)
+
+module.exports.SPEED_CLIMB = SPEED_CLIMB
+module.exports.SPEED_DIG = SPEED_DIG
+module.exports.SPEED_FLY = SPEED_FLY
+module.exports.SPEED_SWIM = SPEED_SWIM
+module.exports.SPEED_WALK = SPEED_WALK

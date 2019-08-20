@@ -1,13 +1,13 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const MAGIC_ABJURATION = 'abjuration'
-export const MAGIC_CONJURATION = 'conjuration'
-export const MAGIC_DIVINATION = 'divination'
-export const MAGIC_ENCHANTMENT = 'enchantment'
-export const MAGIC_EVOCATION = 'evocation'
-export const MAGIC_ILLUSION = 'illusion'
-export const MAGIC_NECROMANCY = 'necromancy'
-export const MAGIC_TRANSMUTATION = 'transmutation'
+const MAGIC_ABJURATION = 'abjuration'
+const MAGIC_CONJURATION = 'conjuration'
+const MAGIC_DIVINATION = 'divination'
+const MAGIC_ENCHANTMENT = 'enchantment'
+const MAGIC_EVOCATION = 'evocation'
+const MAGIC_ILLUSION = 'illusion'
+const MAGIC_NECROMANCY = 'necromancy'
+const MAGIC_TRANSMUTATION = 'transmutation'
 
 const dndMagicList = [
   {
@@ -52,5 +52,15 @@ const dndMagicList = [
   },
 ]
 
-export default dndMagicList
-export const dndMagicCollection = listToCollectionById(dndMagicList)
+module.exports = dndMagicList
+
+module.exports.dndMagicCollection = listToCollectionById(dndMagicList)
+
+module.exports.MAGIC_ABJURATION = MAGIC_ABJURATION
+module.exports.MAGIC_CONJURATION = MAGIC_CONJURATION
+module.exports.MAGIC_DIVINATION = MAGIC_DIVINATION
+module.exports.MAGIC_ENCHANTMENT = MAGIC_ENCHANTMENT
+module.exports.MAGIC_EVOCATION = MAGIC_EVOCATION
+module.exports.MAGIC_ILLUSION = MAGIC_ILLUSION
+module.exports.MAGIC_NECROMANCY = MAGIC_NECROMANCY
+module.exports.MAGIC_TRANSMUTATION = MAGIC_TRANSMUTATION

@@ -1,7 +1,7 @@
-import prepareForSearch from '@/utils/prepareForSearch'
+const prepareForSearch = require('./../../utils/prepareForSearch')
 
-import SEARCH_PROP_NAME from '@/constants/SEARCH_PROP_NAME'
-import dndCreatureRawList from '@/constants/dnd/dndCreatureRawList'
+const SEARCH_PROP_NAME = require('./../SEARCH_PROP_NAME')
+const dndCreatureRawList = require('./dndCreatureRawList')
 
 const dndCreatureRawCollection = dndCreatureRawList.reduce(
   (collection, creature) => ({
@@ -75,9 +75,9 @@ const dndCreatureList = dndCreatureRawList
   })
 )
 
-export default dndCreatureList
+module.exports = dndCreatureList
 
-export const dndCreatureCollection = dndCreatureList.reduce(
+module.exports.dndCreatureCollection = dndCreatureList.reduce(
   (collection, creature) => ({
     ...collection,
     [creature.id]: creature,
@@ -85,7 +85,7 @@ export const dndCreatureCollection = dndCreatureList.reduce(
   {}
 )
 
-export const dndCreatureNameList = dndCreatureList.map(
+module.exports.dndCreatureNameList = dndCreatureList.map(
   ({id, name}) => ({
     id,
     name

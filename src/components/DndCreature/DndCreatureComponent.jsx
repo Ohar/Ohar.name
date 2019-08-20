@@ -65,9 +65,9 @@ const DndCreatureComponent = (
 ) => (
   <section className={`DndCreature DndCreature-columnCount_${columnCount}`}>
     <header className='DndCreature_name'>
-      {/*<Link to={generateCreaturePageUrlById(id)}>*/}
+      <Link to={generateCreaturePageUrlById(id)}>
         {name} {nameAlt ? `(${nameAlt}) ` : ''}[{nameEn}{nameEnAlt ? ` (${nameEnAlt})` : ''}]
-      {/*</Link>*/}
+      </Link>
     </header>
 
     <p className='DndCreature_info'>

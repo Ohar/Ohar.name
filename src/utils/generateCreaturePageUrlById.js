@@ -1,1 +1,1 @@
-export default id => `/dnd/creature-catalog/${id}`
+module.exports = id => `/dnd/creature-catalog/${id}`

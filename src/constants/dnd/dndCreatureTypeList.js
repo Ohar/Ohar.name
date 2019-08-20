@@ -1,54 +1,54 @@
-import listToCollectionById from '@/utils/listToCollectionById'
-import {
+const listToCollectionById = require('./../../utils/listToCollectionById')
+const {
   GENDER_MALE,
   GENDER_FEMALE,
   GENDER_MIDDLE,
-} from '@/constants/genderList'
+} = require('./../genderList')
 
-export const CREATURE_TYPE_AARAKOCRA = 'aarakocra'
-export const CREATURE_TYPE_ABERRATION = 'aberration'
-export const CREATURE_TYPE_ANY_RACE = 'any_race'
-export const CREATURE_TYPE_BEAST = 'beast'
-export const CREATURE_TYPE_BULLYWUG = 'bullywug'
-export const CREATURE_TYPE_CELESTIAL = 'celestial'
-export const CREATURE_TYPE_CONSTRUCT = 'construct'
-export const CREATURE_TYPE_DEMON = 'demon'
-export const CREATURE_TYPE_DEVIL = 'devil'
-export const CREATURE_TYPE_DRAGON = 'dragon'
-export const CREATURE_TYPE_DWARF = 'dwarf'
-export const CREATURE_TYPE_ELEMENTAL = 'elemental'
-export const CREATURE_TYPE_ELF = 'elf'
-export const CREATURE_TYPE_FEY = 'fey'
-export const CREATURE_TYPE_FIEND = 'fiend'
-export const CREATURE_TYPE_FIRE_GIANT = 'fire_giant'
-export const CREATURE_TYPE_FIRENEWT = 'firenewt'
-export const CREATURE_TYPE_GIANT = 'giant'
-export const CREATURE_TYPE_GITH = 'gith'
-export const CREATURE_TYPE_GNOLL = 'gnoll'
-export const CREATURE_TYPE_GNOME = 'gnome'
-export const CREATURE_TYPE_GOBLINOID = 'goblinoid'
-export const CREATURE_TYPE_GRIMLOCK = 'grimlock'
-export const CREATURE_TYPE_GRUNG = 'grung'
-export const CREATURE_TYPE_HUMAN = 'human'
-export const CREATURE_TYPE_HUMANOID = 'humanoid'
-export const CREATURE_TYPE_JELLY = 'jelly'
-export const CREATURE_TYPE_KENKU = 'kenku'
-export const CREATURE_TYPE_KOBOLD = 'kobold'
-export const CREATURE_TYPE_KUO_TOA = 'kuo_toa'
-export const CREATURE_TYPE_LIZARDFOLK = 'lizardfolk'
-export const CREATURE_TYPE_MONSTER = 'monster'
-export const CREATURE_TYPE_ORC = 'orc'
-export const CREATURE_TYPE_PLANT = 'plant'
-export const CREATURE_TYPE_QUAGGOTH = 'quaggoth'
-export const CREATURE_TYPE_SAHUAGIN = 'sahuagin'
-export const CREATURE_TYPE_SHAPESHIFTER = 'shapeshifter'
-export const CREATURE_TYPE_THRI_KREEN = 'thri_kreen'
-export const CREATURE_TYPE_TITAN = 'titan'
-export const CREATURE_TYPE_TROGLODYTE = 'troglodyte'
-export const CREATURE_TYPE_UNDEAD = 'undead'
-export const CREATURE_TYPE_XVART = 'xvart'
-export const CREATURE_TYPE_YOAN_TI = 'yoan_ti'
-export const CREATURE_TYPE_YUGOLOT = 'yugolot'
+const CREATURE_TYPE_AARAKOCRA = 'aarakocra'
+const CREATURE_TYPE_ABERRATION = 'aberration'
+const CREATURE_TYPE_ANY_RACE = 'any_race'
+const CREATURE_TYPE_BEAST = 'beast'
+const CREATURE_TYPE_BULLYWUG = 'bullywug'
+const CREATURE_TYPE_CELESTIAL = 'celestial'
+const CREATURE_TYPE_CONSTRUCT = 'construct'
+const CREATURE_TYPE_DEMON = 'demon'
+const CREATURE_TYPE_DEVIL = 'devil'
+const CREATURE_TYPE_DRAGON = 'dragon'
+const CREATURE_TYPE_DWARF = 'dwarf'
+const CREATURE_TYPE_ELEMENTAL = 'elemental'
+const CREATURE_TYPE_ELF = 'elf'
+const CREATURE_TYPE_FEY = 'fey'
+const CREATURE_TYPE_FIEND = 'fiend'
+const CREATURE_TYPE_FIRE_GIANT = 'fire_giant'
+const CREATURE_TYPE_FIRENEWT = 'firenewt'
+const CREATURE_TYPE_GIANT = 'giant'
+const CREATURE_TYPE_GITH = 'gith'
+const CREATURE_TYPE_GNOLL = 'gnoll'
+const CREATURE_TYPE_GNOME = 'gnome'
+const CREATURE_TYPE_GOBLINOID = 'goblinoid'
+const CREATURE_TYPE_GRIMLOCK = 'grimlock'
+const CREATURE_TYPE_GRUNG = 'grung'
+const CREATURE_TYPE_HUMAN = 'human'
+const CREATURE_TYPE_HUMANOID = 'humanoid'
+const CREATURE_TYPE_JELLY = 'jelly'
+const CREATURE_TYPE_KENKU = 'kenku'
+const CREATURE_TYPE_KOBOLD = 'kobold'
+const CREATURE_TYPE_KUO_TOA = 'kuo_toa'
+const CREATURE_TYPE_LIZARDFOLK = 'lizardfolk'
+const CREATURE_TYPE_MONSTER = 'monster'
+const CREATURE_TYPE_ORC = 'orc'
+const CREATURE_TYPE_PLANT = 'plant'
+const CREATURE_TYPE_QUAGGOTH = 'quaggoth'
+const CREATURE_TYPE_SAHUAGIN = 'sahuagin'
+const CREATURE_TYPE_SHAPESHIFTER = 'shapeshifter'
+const CREATURE_TYPE_THRI_KREEN = 'thri_kreen'
+const CREATURE_TYPE_TITAN = 'titan'
+const CREATURE_TYPE_TROGLODYTE = 'troglodyte'
+const CREATURE_TYPE_UNDEAD = 'undead'
+const CREATURE_TYPE_XVART = 'xvart'
+const CREATURE_TYPE_YOAN_TI = 'yoan_ti'
+const CREATURE_TYPE_YUGOLOT = 'yugolot'
 
 const dndCreatureTypeList = [
   {
@@ -1021,6 +1021,51 @@ const dndCreatureTypeList = [
   },
 ]
 
-export default dndCreatureTypeList
+module.exports = dndCreatureTypeList
 
-export const dndCreatureTypeCollection = listToCollectionById(dndCreatureTypeList)
+module.exports.dndCreatureTypeCollection = listToCollectionById(dndCreatureTypeList)
+
+module.exports.CREATURE_TYPE_AARAKOCRA = CREATURE_TYPE_AARAKOCRA
+module.exports.CREATURE_TYPE_ABERRATION = CREATURE_TYPE_ABERRATION
+module.exports.CREATURE_TYPE_ANY_RACE = CREATURE_TYPE_ANY_RACE
+module.exports.CREATURE_TYPE_BEAST = CREATURE_TYPE_BEAST
+module.exports.CREATURE_TYPE_BULLYWUG = CREATURE_TYPE_BULLYWUG
+module.exports.CREATURE_TYPE_CELESTIAL = CREATURE_TYPE_CELESTIAL
+module.exports.CREATURE_TYPE_CONSTRUCT = CREATURE_TYPE_CONSTRUCT
+module.exports.CREATURE_TYPE_DEMON = CREATURE_TYPE_DEMON
+module.exports.CREATURE_TYPE_DEVIL = CREATURE_TYPE_DEVIL
+module.exports.CREATURE_TYPE_DRAGON = CREATURE_TYPE_DRAGON
+module.exports.CREATURE_TYPE_DWARF = CREATURE_TYPE_DWARF
+module.exports.CREATURE_TYPE_ELEMENTAL = CREATURE_TYPE_ELEMENTAL
+module.exports.CREATURE_TYPE_ELF = CREATURE_TYPE_ELF
+module.exports.CREATURE_TYPE_FEY = CREATURE_TYPE_FEY
+module.exports.CREATURE_TYPE_FIEND = CREATURE_TYPE_FIEND
+module.exports.CREATURE_TYPE_FIRE_GIANT = CREATURE_TYPE_FIRE_GIANT
+module.exports.CREATURE_TYPE_FIRENEWT = CREATURE_TYPE_FIRENEWT
+module.exports.CREATURE_TYPE_GIANT = CREATURE_TYPE_GIANT
+module.exports.CREATURE_TYPE_GITH = CREATURE_TYPE_GITH
+module.exports.CREATURE_TYPE_GNOLL = CREATURE_TYPE_GNOLL
+module.exports.CREATURE_TYPE_GNOME = CREATURE_TYPE_GNOME
+module.exports.CREATURE_TYPE_GOBLINOID = CREATURE_TYPE_GOBLINOID
+module.exports.CREATURE_TYPE_GRIMLOCK = CREATURE_TYPE_GRIMLOCK
+module.exports.CREATURE_TYPE_GRUNG = CREATURE_TYPE_GRUNG
+module.exports.CREATURE_TYPE_HUMAN = CREATURE_TYPE_HUMAN
+module.exports.CREATURE_TYPE_HUMANOID = CREATURE_TYPE_HUMANOID
+module.exports.CREATURE_TYPE_JELLY = CREATURE_TYPE_JELLY
+module.exports.CREATURE_TYPE_KENKU = CREATURE_TYPE_KENKU
+module.exports.CREATURE_TYPE_KOBOLD = CREATURE_TYPE_KOBOLD
+module.exports.CREATURE_TYPE_KUO_TOA = CREATURE_TYPE_KUO_TOA
+module.exports.CREATURE_TYPE_LIZARDFOLK = CREATURE_TYPE_LIZARDFOLK
+module.exports.CREATURE_TYPE_MONSTER = CREATURE_TYPE_MONSTER
+module.exports.CREATURE_TYPE_ORC = CREATURE_TYPE_ORC
+module.exports.CREATURE_TYPE_PLANT = CREATURE_TYPE_PLANT
+module.exports.CREATURE_TYPE_QUAGGOTH = CREATURE_TYPE_QUAGGOTH
+module.exports.CREATURE_TYPE_SAHUAGIN = CREATURE_TYPE_SAHUAGIN
+module.exports.CREATURE_TYPE_SHAPESHIFTER = CREATURE_TYPE_SHAPESHIFTER
+module.exports.CREATURE_TYPE_THRI_KREEN = CREATURE_TYPE_THRI_KREEN
+module.exports.CREATURE_TYPE_TITAN = CREATURE_TYPE_TITAN
+module.exports.CREATURE_TYPE_TROGLODYTE = CREATURE_TYPE_TROGLODYTE
+module.exports.CREATURE_TYPE_UNDEAD = CREATURE_TYPE_UNDEAD
+module.exports.CREATURE_TYPE_XVART = CREATURE_TYPE_XVART
+module.exports.CREATURE_TYPE_YOAN_TI = CREATURE_TYPE_YOAN_TI
+module.exports.CREATURE_TYPE_YUGOLOT = CREATURE_TYPE_YUGOLOT

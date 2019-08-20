@@ -1,16 +1,16 @@
-import listToCollectionById from '@/utils/listToCollectionById';
-import {
+const listToCollectionById = require('./../../utils/listToCollectionById')
+const {
   GENDER_MALE,
   GENDER_FEMALE,
   GENDER_MIDDLE,
-} from '@/constants/genderList'
+} = require('./../genderList')
 
-export const SIZE_TINY = 'tiny';
-export const SIZE_SMALL = 'small';
-export const SIZE_MEDIUM = 'medium';
-export const SIZE_LARGE = 'large';
-export const SIZE_HUGE = 'huge';
-export const SIZE_GARGANTUA = 'gargantua';
+const SIZE_TINY = 'tiny'
+const SIZE_SMALL = 'small'
+const SIZE_MEDIUM = 'medium'
+const SIZE_LARGE = 'large'
+const SIZE_HUGE = 'huge'
+const SIZE_GARGANTUA = 'gargantua'
 
 const dndSizeList = [
   {
@@ -151,8 +151,15 @@ const dndSizeList = [
       }
     },
   }
-];
+]
 
-export default dndSizeList;
+module.exports = dndSizeList
 
-export const dndSizeCollection = listToCollectionById(dndSizeList);
+module.exports.dndSizeCollection = listToCollectionById(dndSizeList)
+
+module.exports.SIZE_TINY = SIZE_TINY
+module.exports.SIZE_SMALL = SIZE_SMALL
+module.exports.SIZE_MEDIUM = SIZE_MEDIUM
+module.exports.SIZE_LARGE = SIZE_LARGE
+module.exports.SIZE_HUGE = SIZE_HUGE
+module.exports.SIZE_GARGANTUA = SIZE_GARGANTUA

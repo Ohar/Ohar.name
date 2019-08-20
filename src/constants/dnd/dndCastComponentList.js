@@ -1,9 +1,9 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const CAST_VERBAL = 'verbal'
-export const CAST_SOMATIC = 'somatic'
-export const CAST_MATERIAL = 'material'
-export const CAST_NONE = 'none'
+const CAST_VERBAL = 'verbal'
+const CAST_SOMATIC = 'somatic'
+const CAST_MATERIAL = 'material'
+const CAST_NONE = 'none'
 
 const dndCastComponentList = [
   {
@@ -80,5 +80,11 @@ const dndCastComponentList = [
   }
 ]
 
-export default dndCastComponentList
-export const dndCastComponentCollection = listToCollectionById(dndCastComponentList)
+module.exports = dndCastComponentList
+
+module.exports.dndCastComponentCollection = listToCollectionById(dndCastComponentList)
+
+module.exports.CAST_VERBAL = CAST_VERBAL
+module.exports.CAST_SOMATIC = CAST_SOMATIC
+module.exports.CAST_MATERIAL = CAST_MATERIAL
+module.exports.CAST_NONE = CAST_NONE

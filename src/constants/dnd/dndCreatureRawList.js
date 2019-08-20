@@ -1,4 +1,4 @@
-import {
+const {
   CR_0,
   CR_1_8,
   CR_1_4,
@@ -33,15 +33,15 @@ import {
   CR_28,
   CR_29,
   CR_30,
-} from "@/constants/dnd/dndCrList"
-import {
+} = require('./dndCrList')
+const {
   SIZE_HUGE,
   SIZE_MEDIUM,
   SIZE_LARGE,
   SIZE_SMALL,
   SIZE_TINY,
-} from "@/constants/dnd/dndSizeList"
-import {
+} = require('./dndSizeList')
+const {
   CREATURE_TYPE_AARAKOCRA,
   CREATURE_TYPE_ABERRATION,
   CREATURE_TYPE_ANY_RACE,
@@ -59,8 +59,8 @@ import {
   CREATURE_TYPE_MONSTER, CREATURE_TYPE_PLANT,
   CREATURE_TYPE_SHAPESHIFTER,
   CREATURE_TYPE_UNDEAD
-} from '@/constants/dnd/dndCreatureTypeList';
-import {
+} = require('./dndCreatureTypeList')
+const {
   ALIGMENT_ANY,
   ALIGMENT_CE,
   ALIGMENT_CG,
@@ -73,22 +73,22 @@ import {
   ALIGMENT_N,
   ALIGMENT_NO,
   ALIGMENT_NOT_LAWFUL,
-} from '@/constants/dnd/dndAligmentList'
-import {
+} = require('./dndAligmentList')
+const {
   SPEED_CLIMB,
   SPEED_DIG,
   SPEED_FLY,
   SPEED_SWIM,
   SPEED_WALK,
-} from '@/constants/dnd/dndSpeedList'
-import {
+} = require('./dndSpeedList')
+const {
   ACTION_MELEE_WEAPON_ATTACK,
   ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
   ACTION_MELEE_SPELL_ATTACK,
   ACTION_RANGE_WEAPON_ATTACK,
   ACTION_RANGE_SPELL_ATTACK,
-} from '@/constants/dnd/dndActionTypeList'
-import {
+} = require('./dndActionTypeList')
+const {
   LANG_AARAKOCRA,
   LANG_ABYSSAL,
   LANG_ALL,
@@ -113,8 +113,8 @@ import {
   LANG_TERRAN,
   LANG_UMBER_HULK,
   LANG_UNDERCOMMON
-} from '@/constants/dnd/dndLanguageList';
-import {
+} = require('./dndLanguageList')
+const {
   DAMAGE_ACID,
   DAMAGE_BLUDGEONING,
   DAMAGE_COLD,
@@ -129,15 +129,15 @@ import {
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
   DAMAGE_THUNDER, DAMAGE_MAGIC_WEAPON
-} from '@/constants/dnd/dndDamageTypeList';
-import {
+} = require('./dndDamageTypeList')
+const {
   SENSE_BLIND_VISION,
   SENSE_DARK_VISION,
   SENSE_PASSIVE_PERCEPTION,
   SENSE_TRUE_VISION,
   SENSE_VIBRATION_SENSE,
-} from '@/constants/dnd/dndSenseList'
-import {
+} = require('./dndSenseList')
+const {
   SKILL_ARCANA,
   SKILL_ATHLETICS, SKILL_DECEPTION,
   SKILL_HISTORY,
@@ -147,20 +147,20 @@ import {
   SKILL_PERCEPTION,
   SKILL_RELIGION,
   SKILL_STEALTH
-} from '@/constants/dnd/dndSkillList';
-import {
+} = require('./dndSkillList')
+const {
   PC_CLASS_PRIEST,
   PC_CLASS_WIZARD,
-} from '@/constants/dnd/dndPcClassList'
-import {
+} = require('./dndPcClassList')
+const {
   PARAM_STR,
   PARAM_DEX,
   PARAM_CON,
   PARAM_INT,
   PARAM_WIT,
   PARAM_CHA,
-} from '@/constants/dnd/dndParamList'
-import {
+} = require('./dndParamList')
+const {
   SPELL_ANIMATE_DEAD,
   SPELL_BESTOW_CURSE,
   SPELL_BLADE_BARRIER,
@@ -230,14 +230,14 @@ import {
   SPELL_WATER_BREATHING,
   SPELL_WATER_WALK, SPELL_WEB,
   SPELL_WIND_WALK
-} from '@/constants/dnd/dndSpellList';
-import {
+} = require('./dndSpellList')
+const {
   CAST_MATERIAL,
   CAST_NONE,
   CAST_SOMATIC,
   CAST_VERBAL,
-} from '@/constants/dnd/dndCastComponentList'
-import {
+} = require('./dndCastComponentList')
+const {
   CONDITION_BLINDED,
   CONDITION_CHARMED,
   CONDITION_DEAFENED,
@@ -253,12 +253,12 @@ import {
   CONDITION_RESTRAINED,
   CONDITION_STUNNED,
   CONDITION_UNCONSCIOUS,
-} from '@/constants/dnd/dndConditionList'
-import {
+} = require('./dndConditionList')
+const {
   TARGET_CREATURE,
   TARGET_OBJECT,
   TARGET_POINT,
-} from '@/constants/dnd/dndTargetList'
+} = require('./dndTargetList')
 
 const CREATURE_AARAKOCRA = 'aarakocra'
 const CREATURE_ABOLETH = 'aboleth'
@@ -342,7 +342,7 @@ const CREATURE_WILL_O_WISP = 'will_o_wisp'
 const CREATURE_WYVERN = 'wyvern'
 const CREATURE_YOCHLOL = 'yochlol'
 
-export default [
+module.exports = [
   {
     name: 'Обыватель',
     nameEn: 'Commoner',

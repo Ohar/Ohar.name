@@ -1,11 +1,11 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const PARAM_STR = 'str'
-export const PARAM_DEX = 'dex'
-export const PARAM_CON = 'con'
-export const PARAM_INT = 'int'
-export const PARAM_WIT = 'wit'
-export const PARAM_CHA = 'cha'
+const PARAM_STR = 'str'
+const PARAM_DEX = 'dex'
+const PARAM_CON = 'con'
+const PARAM_INT = 'int'
+const PARAM_WIT = 'wit'
+const PARAM_CHA = 'cha'
 
 const dndParamList = [
   {
@@ -40,5 +40,13 @@ const dndParamList = [
   },
 ]
 
-export default dndParamList
-export const dndParamCollection = listToCollectionById(dndParamList)
+module.exports = dndParamList
+
+module.exports.dndParamCollection = listToCollectionById(dndParamList)
+
+module.exports.PARAM_STR = PARAM_STR
+module.exports.PARAM_DEX = PARAM_DEX
+module.exports.PARAM_CON = PARAM_CON
+module.exports.PARAM_INT = PARAM_INT
+module.exports.PARAM_WIT = PARAM_WIT
+module.exports.PARAM_CHA = PARAM_CHA

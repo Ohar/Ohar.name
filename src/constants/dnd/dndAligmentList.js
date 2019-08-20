@@ -1,26 +1,26 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const ALIGMENT_NO = 'no'
-export const ALIGMENT_ANY = 'any'
-export const ALIGMENT_ANY_GOOD = 'any_good'
-export const ALIGMENT_ANY_EVIL = 'any_evil'
-export const ALIGMENT_ANY_LAWFUL = 'any_lawful'
-export const ALIGMENT_ANY_CHAOTIC = 'any_chaotic'
-export const ALIGMENT_NOT_NEUTRAL = 'not_neutral'
-export const ALIGMENT_NOT_GOOD = 'not_good'
-export const ALIGMENT_NOT_EVIL = 'not_evil'
-export const ALIGMENT_NOT_LAWFUL = 'not_lawful'
-export const ALIGMENT_NOT_CHAOTIC = 'not_chaotic'
-export const ALIGMENT_ANY_NEUTRAL = 'any_neutral'
-export const ALIGMENT_LG = 'lg'
-export const ALIGMENT_NG = 'ng'
-export const ALIGMENT_CG = 'cg'
-export const ALIGMENT_LN = 'ln'
-export const ALIGMENT_N = 'n'
-export const ALIGMENT_CN = 'cn'
-export const ALIGMENT_LE = 'le'
-export const ALIGMENT_NE = 'ne'
-export const ALIGMENT_CE = 'ce'
+const ALIGMENT_NO = 'no'
+const ALIGMENT_ANY = 'any'
+const ALIGMENT_ANY_GOOD = 'any_good'
+const ALIGMENT_ANY_EVIL = 'any_evil'
+const ALIGMENT_ANY_LAWFUL = 'any_lawful'
+const ALIGMENT_ANY_CHAOTIC = 'any_chaotic'
+const ALIGMENT_NOT_NEUTRAL = 'not_neutral'
+const ALIGMENT_NOT_GOOD = 'not_good'
+const ALIGMENT_NOT_EVIL = 'not_evil'
+const ALIGMENT_NOT_LAWFUL = 'not_lawful'
+const ALIGMENT_NOT_CHAOTIC = 'not_chaotic'
+const ALIGMENT_ANY_NEUTRAL = 'any_neutral'
+const ALIGMENT_LG = 'lg'
+const ALIGMENT_NG = 'ng'
+const ALIGMENT_CG = 'cg'
+const ALIGMENT_LN = 'ln'
+const ALIGMENT_N = 'n'
+const ALIGMENT_CN = 'cn'
+const ALIGMENT_LE = 'le'
+const ALIGMENT_NE = 'ne'
+const ALIGMENT_CE = 'ce'
 
 const dndAligmentList = [
   {
@@ -341,4 +341,28 @@ const dndAligmentList = [
   },
 ]
 
-export const dndAligmentCollection = listToCollectionById(dndAligmentList)
+module.exports = dndAligmentList
+
+module.exports.dndAligmentCollection = listToCollectionById(dndAligmentList)
+
+module.exports.ALIGMENT_NO = ALIGMENT_NO
+module.exports.ALIGMENT_ANY = ALIGMENT_ANY
+module.exports.ALIGMENT_ANY_GOOD = ALIGMENT_ANY_GOOD
+module.exports.ALIGMENT_ANY_EVIL = ALIGMENT_ANY_EVIL
+module.exports.ALIGMENT_ANY_LAWFUL = ALIGMENT_ANY_LAWFUL
+module.exports.ALIGMENT_ANY_CHAOTIC = ALIGMENT_ANY_CHAOTIC
+module.exports.ALIGMENT_NOT_NEUTRAL = ALIGMENT_NOT_NEUTRAL
+module.exports.ALIGMENT_NOT_GOOD = ALIGMENT_NOT_GOOD
+module.exports.ALIGMENT_NOT_EVIL = ALIGMENT_NOT_EVIL
+module.exports.ALIGMENT_NOT_LAWFUL = ALIGMENT_NOT_LAWFUL
+module.exports.ALIGMENT_NOT_CHAOTIC = ALIGMENT_NOT_CHAOTIC
+module.exports.ALIGMENT_ANY_NEUTRAL = ALIGMENT_ANY_NEUTRAL
+module.exports.ALIGMENT_LG = ALIGMENT_LG
+module.exports.ALIGMENT_NG = ALIGMENT_NG
+module.exports.ALIGMENT_CG = ALIGMENT_CG
+module.exports.ALIGMENT_LN = ALIGMENT_LN
+module.exports.ALIGMENT_N = ALIGMENT_N
+module.exports.ALIGMENT_CN = ALIGMENT_CN
+module.exports.ALIGMENT_LE = ALIGMENT_LE
+module.exports.ALIGMENT_NE = ALIGMENT_NE
+module.exports.ALIGMENT_CE = ALIGMENT_CE

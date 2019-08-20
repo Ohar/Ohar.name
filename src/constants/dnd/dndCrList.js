@@ -1,34 +1,34 @@
-import listToCollectionById from '@/utils/listToCollectionById'
+const listToCollectionById = require('./../../utils/listToCollectionById')
 
-export const CR_0 = '0'
-export const CR_1_8 = '1/8'
-export const CR_1_4 = '1/4'
-export const CR_1_2 = '1/2'
-export const CR_1 = '1'
-export const CR_2 = '2'
-export const CR_3 = '3'
-export const CR_4 = '4'
-export const CR_5 = '5'
-export const CR_6 = '6'
-export const CR_7 = '7'
-export const CR_8 = '8'
-export const CR_9 = '9'
-export const CR_10 = '10'
-export const CR_11 = '11'
-export const CR_12 = '12'
-export const CR_13 = '13'
-export const CR_14 = '14'
-export const CR_15 = '15'
-export const CR_16 = '16'
-export const CR_17 = '17'
-export const CR_18 = '18'
-export const CR_19 = '19'
-export const CR_20 = '20'
-export const CR_21 = '21'
-export const CR_22 = '22'
-export const CR_23 = '23'
-export const CR_24 = '24'
-export const CR_30 = '30'
+const CR_0 = '0'
+const CR_1_8 = '1/8'
+const CR_1_4 = '1/4'
+const CR_1_2 = '1/2'
+const CR_1 = '1'
+const CR_2 = '2'
+const CR_3 = '3'
+const CR_4 = '4'
+const CR_5 = '5'
+const CR_6 = '6'
+const CR_7 = '7'
+const CR_8 = '8'
+const CR_9 = '9'
+const CR_10 = '10'
+const CR_11 = '11'
+const CR_12 = '12'
+const CR_13 = '13'
+const CR_14 = '14'
+const CR_15 = '15'
+const CR_16 = '16'
+const CR_17 = '17'
+const CR_18 = '18'
+const CR_19 = '19'
+const CR_20 = '20'
+const CR_21 = '21'
+const CR_22 = '22'
+const CR_23 = '23'
+const CR_24 = '24'
+const CR_30 = '30'
 
 const dndCrList = [
   {
@@ -178,6 +178,36 @@ const dndCrList = [
   },
 ]
 
-export default dndCrList
+module.exports = dndCrList
 
-export const dndCrCollection = listToCollectionById(dndCrList)
+module.exports.dndCrCollection = listToCollectionById(dndCrList)
+
+module.exports.CR_0 = CR_0
+module.exports.CR_1_8 = CR_1_8
+module.exports.CR_1_4 = CR_1_4
+module.exports.CR_1_2 = CR_1_2
+module.exports.CR_1 = CR_1
+module.exports.CR_2 = CR_2
+module.exports.CR_3 = CR_3
+module.exports.CR_4 = CR_4
+module.exports.CR_5 = CR_5
+module.exports.CR_6 = CR_6
+module.exports.CR_7 = CR_7
+module.exports.CR_8 = CR_8
+module.exports.CR_9 = CR_9
+module.exports.CR_10 = CR_10
+module.exports.CR_11 = CR_11
+module.exports.CR_12 = CR_12
+module.exports.CR_13 = CR_13
+module.exports.CR_14 = CR_14
+module.exports.CR_15 = CR_15
+module.exports.CR_16 = CR_16
+module.exports.CR_17 = CR_17
+module.exports.CR_18 = CR_18
+module.exports.CR_19 = CR_19
+module.exports.CR_20 = CR_20
+module.exports.CR_21 = CR_21
+module.exports.CR_22 = CR_22
+module.exports.CR_23 = CR_23
+module.exports.CR_24 = CR_24
+module.exports.CR_30 = CR_30

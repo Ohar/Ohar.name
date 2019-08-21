@@ -4,6 +4,7 @@
 
 @size: 2rem;
 @sizeBig: @size * 1.5;
+@halfSize: @size / 2;
 
 .SplitByColumns (@columnCount) {
     @media (max-width: (@columnWidth * @columnCount * .75)) {
@@ -15,6 +16,8 @@
     margin-top: @size;
     columns: 7;
 
+    .SplitByColumns(10);
+    .SplitByColumns(9);
     .SplitByColumns(8);
     .SplitByColumns(7);
     .SplitByColumns(6);
@@ -27,24 +30,27 @@
 
 .DndCreatureCatalog_creatureList {
     list-style-type: none;
-    margin-bottom: @size;
+    margin-bottom: @halfSize;
 }
 
 .DndCreatureCatalog_creatureItem {
-    @halfSize: @size / 2;
 
     position: relative;
 
-    &:first-child:before {
+    &:first-child {
+      padding-top: @sizeBig;
+
+      &:before {
         content: attr(data-letter);
         display: block;
         width: @size;
         height: @size;
         position: absolute;
-        bottom: 0;
+        top: @halfSize;
         left: -@sizeBig;
         font-size: @size;
         text-align: center;
+      }
     }
 }
 

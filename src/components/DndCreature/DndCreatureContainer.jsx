@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
 import {dndCreatureCollection} from "@/constants/dnd/dndCreatureList"
 
+import generateCreatureNameStr from "@/utils/generateCreatureNameStr"
+
 import calculateColumnCount from "./utils/calculateColumnCount"
 
 import DndCreatureComponent from "./DndCreatureComponent"
@@ -25,16 +27,7 @@ const DndCreatureContainer = ({id}) => {
 
   const {genderId} = dndCreatureTypeCollection[creatureTypeIdList[0]]
   const columnCount = calculateColumnCount({actionList, featureList, legendaryPoints, legendaryActionList})
-
-  const nameEnAltText = nameEnAlt
-    ? ` (${nameEnAlt})`
-    : ''
-  const nameAltText = nameAlt
-    ? ` (${nameAlt})`
-    : ''
-  const headerRus = `${name}${nameAltText}`
-  const headerFull = `${headerRus} [${nameEn}${nameEnAltText}]`
-  const title = `${headerFull}\n\n${description}`
+  const { header, title } = generateCreatureNameStr({ name, nameAlt, nameEn, nameEnAlt, description })
 
   return (
     <DndCreatureComponent
@@ -45,7 +38,7 @@ const DndCreatureContainer = ({id}) => {
       legendaryActionList={legendaryActionList}
       legendaryPoints={legendaryPoints}
       columnCount={columnCount}
-      header={headerRus}
+      header={header}
       name={name}
       title={title}
       {...rest}

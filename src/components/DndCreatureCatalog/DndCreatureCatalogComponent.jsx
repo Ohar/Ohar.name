@@ -40,8 +40,9 @@ const DndCreatureCatalogComponent = (
                       className='DndCreatureCatalog_letterItem'
                       key={letter}
                     >
-                      <header className='DndCreatureCatalog_letterHeader'>{letter}</header>
-                      <ul className='DndCreatureCatalog_creatureList'>
+                      <ul
+                        className='DndCreatureCatalog_creatureList'
+                      >
                         {
                           creatureCollection[letter].map(
                             ({id, ...rest }) => {
@@ -50,6 +51,7 @@ const DndCreatureCatalogComponent = (
                                 <li
                                   className='DndCreatureCatalog_creatureItem'
                                   key={id}
+                                  data-letter={letter}
                                 >
                                   <Link
                                     title={title}

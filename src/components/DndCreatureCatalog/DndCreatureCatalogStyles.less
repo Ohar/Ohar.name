@@ -2,17 +2,21 @@
 
 @columnWidth: 400px;
 
+@size: 2rem;
+@sizeBig: @size * 1.5;
+
 .SplitByColumns (@columnCount) {
-    @media (max-width: (@columnWidth * @columnCount)) {
+    @media (max-width: (@columnWidth * @columnCount * .75)) {
         columns: @columnCount;
     }
 }
 
 .DndCreatureCatalog_letterList {
-    margin-top: 1rem;
-    padding-left: 0;
+    margin-top: @size;
     columns: 7;
 
+    .SplitByColumns(8);
+    .SplitByColumns(7);
     .SplitByColumns(6);
     .SplitByColumns(5);
     .SplitByColumns(4);
@@ -21,8 +25,26 @@
     .SplitByColumns(1);
 }
 
-.DndCreatureCatalog_letterHeader {
-    font-size: 2rem;
+.DndCreatureCatalog_creatureList {
+    list-style-type: none;
+    margin-bottom: @size;
+}
+
+.DndCreatureCatalog_creatureItem {
+    @halfSize: @size / 2;
+
+    position: relative;
+
+    &:first-child:before {
+        content: attr(data-letter);
+        display: block;
+        width: @size;
+        height: @size;
+        position: absolute;
+        bottom: 0;
+        left: -@sizeBig;
+        font-size: @size;
+    }
 }
 
 .DndCreatureCatalog_letterItem {

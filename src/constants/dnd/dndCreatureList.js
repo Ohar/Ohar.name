@@ -85,8 +85,13 @@ module.exports.dndCreatureCollection = dndCreatureList.reduce(
 )
 
 module.exports.dndCreatureNameList = dndCreatureList.map(
-  ({id, name}) => ({
+  ({id, name, nameAlt, nameEn, nameEnAlt, description, ...rest}) => ({
     id,
-    name
+    name,
+    nameAlt,
+    nameEn,
+    nameEnAlt,
+    description,
+    [SEARCH_PROP_NAME]: rest[SEARCH_PROP_NAME],
   })
 )

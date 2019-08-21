@@ -13,32 +13,41 @@ const DEFAULT_CREATURE_ID = null
 const DndCreaturePageTemplate = ({creatureId: creatureIdInput, pageContext: {slug}}) => {
   const creatureId = creatureIdInput || slug || DEFAULT_CREATURE_ID
 
+  let seoData = {
+    title: 'Каталог существ для D&D',
+    description: 'Каталог всех существ в Dungeons & Dragons',
+    keywords: [
+      'Подземелья и драконы', 'Dungeons & Dragons', 'D&D', 'DnD', 'dnd',
+      'Dungeons & Dragons tools', 'D&D tools', 'DnD tools', 'dnd tools',
+      'Каталог существ', 'Creature catalog'
+    ],
+  }
+
   if (creatureId) {
     const {description, name} = dndCreatureCollection[creatureId]
 
-    return (
-      <Layout>
-        <Seo
-          title={name}
-          description={description}
-        />
-        <DndCreature id={creatureId}/>
-      </Layout>
-    )
+    seoData = {
+      title: name,
+      description,
+      keywords: [],
+    }
   }
+
+  const { title, description, keywords } = seoData
 
   return (
     <Layout>
       <Seo
-        title='Каталог существ для D&D'
-        description='Каталог всех существ в Dungeons & Dragons'
-        keywords={[
-          'Подземелья и драконы', 'Dungeons & Dragons', 'D&D', 'DnD', 'dnd',
-          'Dungeons & Dragons tools', 'D&D tools', 'DnD tools', 'dnd tools',
-          'Каталог существ', 'Creature catalog'
-        ]}
+        title={title}
+        description={description}
+        keywords={keywords}
       />
       <DndCreatureCatalog/>
+      {
+        creatureId
+          ? <DndCreature id={creatureId}/>
+          : null
+      }
     </Layout>
   )
 }

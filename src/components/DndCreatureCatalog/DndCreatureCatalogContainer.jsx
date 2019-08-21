@@ -15,10 +15,16 @@ const groupListByName = list => _.groupBy(list, ({name}) => name[0])
 class DndCreatureCatalogContainer extends Component {
   state = {
     filteredCreatureCollection: {},
-    isTooMuch: false
+    isTooMuch: false,
+    searchStr: '',
   };
 
-  onSearch = _.debounce(
+  onSearch = searchStr => {
+    this.setState({searchStr});
+    this.filterList(searchStr);
+  }
+
+  filterList = _.debounce(
     value => {
       const filteredCreatureCollection = value
         ? groupListByName(
@@ -34,10 +40,11 @@ class DndCreatureCatalogContainer extends Component {
   );
 
   render() {
-    const { filteredCreatureCollection } = this.state;
+    const { filteredCreatureCollection, searchStr } = this.state;
 
     return (
       <DndCreatureCatalogComponent
+        searchStr={searchStr}
         onSearch={this.onSearch}
         creatureCollection={filteredCreatureCollection}
       />

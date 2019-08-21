@@ -1,13 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from 'gatsby'
-
-import generateCreaturePageUrlById from "@/utils/generateCreaturePageUrlById"
 
 import DndActionList from "./components/DndActionList"
 import DndCreatureAc from "./components/DndCreatureAc"
 import DndCreatureAligment from "./components/DndCreatureAligment"
 import DndCreatureCr from "./components/DndCreatureCr"
+import DndCreatureHeader from "./components/DndCreatureHeader"
 import DndCreatureHp from "./components/DndCreatureHp"
 import DndCreatureSize from "./components/DndCreatureSize"
 import DndCreatureSource from "./components/DndCreatureSource"
@@ -61,13 +59,11 @@ const DndCreatureComponent = (
   },
 ) => (
   <section className={`DndCreature DndCreature-columnCount_${columnCount}`}>
-    <Link
-      to={generateCreaturePageUrlById(id)}
-      className='DndCreature_name'
+    <DndCreatureHeader
+      id={id}
+      header={header}
       title={title}
-    >
-      {header}
-    </Link>
+    />
 
     <p className='DndCreature_info'>
       <DndCreatureSize

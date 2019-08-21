@@ -13,19 +13,21 @@ const DndCreatureCatalogComponent = (
   {
     creatureCollection,
     onSearch,
+    searchStr,
   },
 ) => {
   const creatureCollectionKeysList = Object.keys(creatureCollection)
 
   return (
-    <section className='DndCreatureCatalog'>
+    <section className={`DndCreatureCatalog DndCreatureCatalog-lettersCount_${creatureCollectionKeysList.length}`}>
       <PageTitle>Каталог существ (в разработке)</PageTitle>
 
       <input
         className='DndCreatureCatalog_input'
         onChange={({ target: { value } }) => onSearch(value)}
         type='search'
-        placeholder='Введите строку поиска'
+        placeholder='Введите имя существа на русском или английском'
+        value={searchStr}
         autoFocus
       />
 
@@ -47,6 +49,7 @@ const DndCreatureCatalogComponent = (
                           creatureCollection[letter].map(
                             ({id, ...rest }) => {
                               const { header, title } = generateCreatureNameStr(rest)
+
                               return (
                                 <li
                                   className='DndCreatureCatalog_creatureItem'
@@ -71,7 +74,13 @@ const DndCreatureCatalogComponent = (
               }
             </ul>
           )
-          : <p className='DndCreatureCatalog_result'>Ничего не найдено</p>
+          : null
+      }
+
+      {
+        searchStr && !creatureCollectionKeysList.length
+          ? <p className='DndCreatureCatalog_result'>Ничего не найдено</p>
+          : null
       }
     </section>
   )
@@ -79,11 +88,13 @@ const DndCreatureCatalogComponent = (
 
 DndCreatureCatalogComponent.defaultProps = {
   creatureCollection: {},
+  searchStr: '',
 }
 
 DndCreatureCatalogComponent.propTypes = {
   creatureCollection: PropTypes.object,
   onSearch: PropTypes.func.isRequired,
+  searchStr: PropTypes.string,
 }
 
 export default DndCreatureCatalogComponent

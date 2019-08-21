@@ -1,57 +1,86 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Link } from "gatsby"
 
 import PageTitle from "@/components/PageTitle"
-import DndCreature from "@/components/DndCreature"
+
+import generateCreatureNameStr from "@/utils/generateCreatureNameStr"
+import generateCreaturePageUrlById from "@/utils/generateCreaturePageUrlById"
 
 import "./DndCreatureCatalogStyles.less"
 
 const DndCreatureCatalogComponent = (
   {
-    filteredCreatureList,
+    creatureCollection,
     onSearch,
   },
-) => (
-  <section className='DndCreatureCatalog'>
-    <PageTitle>Каталог существ (в разработке)</PageTitle>
+) => {
+  const creatureCollectionKeysList = Object.keys(creatureCollection)
 
-    <input
-      className='DndCreatureCatalog_input'
-      onChange={({ target: { value } }) => onSearch(value)}
-      type='search'
-      placeholder='Введите строку поиска'
-      autoFocus
-    />
+  return (
+    <section className='DndCreatureCatalog'>
+      <PageTitle>Каталог существ (в разработке)</PageTitle>
 
-    {
-      filteredCreatureList.length
-        ? (
-          <ul className='DndCreatureCatalog_list'>
-            {
-              filteredCreatureList.map(
-                ({id}) => (
-                  <li
-                    className='DndCreatureCatalog_item'
-                    key={id}
-                  >
-                    <DndCreature id={id}/>
-                  </li>
+      <input
+        className='DndCreatureCatalog_input'
+        onChange={({ target: { value } }) => onSearch(value)}
+        type='search'
+        placeholder='Введите строку поиска'
+        autoFocus
+      />
+
+      {
+        creatureCollectionKeysList.length
+          ? (
+            <ul className='DndCreatureCatalog_letterList'>
+              {
+                creatureCollectionKeysList.map(
+                  letter => (
+                    <li
+                      className='DndCreatureCatalog_letterItem'
+                      key={letter}
+                    >
+                      <header className='DndCreatureCatalog_letterHeader'>{letter}</header>
+                      <ul className='DndCreatureCatalog_creatureList'>
+                        {
+                          creatureCollection[letter].map(
+                            ({id, ...rest }) => {
+                              const { header, title } = generateCreatureNameStr(rest)
+                              return (
+                                <li
+                                  className='DndCreatureCatalog_creatureItem'
+                                  key={id}
+                                >
+                                  <Link
+                                    title={title}
+                                    to={generateCreaturePageUrlById(id)}
+                                  >
+                                    {header}
+                                  </Link>
+                                </li>
+                              )
+                            }
+                          )
+                        }
+                      </ul>
+                    </li>
+                  )
                 )
-              )
-            }
-          </ul>
-        )
-        : <p className='DndCreatureCatalog_result'>Ничего не найдено</p>
-    }
-  </section>
-)
+              }
+            </ul>
+          )
+          : <p className='DndCreatureCatalog_result'>Ничего не найдено</p>
+      }
+    </section>
+  )
+}
 
 DndCreatureCatalogComponent.defaultProps = {
-  filteredCreatureList: [],
+  creatureCollection: {},
 }
 
 DndCreatureCatalogComponent.propTypes = {
-  filteredCreatureList: PropTypes.array,
+  creatureCollection: PropTypes.object,
   onSearch: PropTypes.func.isRequired,
 }
 

@@ -1,14 +1,32 @@
 @import './../../styles/mixin';
 
-.DndCreatureCatalog_list {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
+@columnWidth: 400px;
+
+.SplitByColumns (@columnCount) {
+    @media (max-width: (@columnWidth * @columnCount)) {
+        columns: @columnCount;
+    }
 }
 
-.DndCreatureCatalog_item {
+.DndCreatureCatalog_letterList {
+    margin-top: 1rem;
+    padding-left: 0;
+    columns: 7;
+
+    .SplitByColumns(6);
+    .SplitByColumns(5);
+    .SplitByColumns(4);
+    .SplitByColumns(3);
+    .SplitByColumns(2);
+    .SplitByColumns(1);
+}
+
+.DndCreatureCatalog_letterHeader {
+    font-size: 2rem;
+}
+
+.DndCreatureCatalog_letterItem {
     list-style-type: none;
-    margin: 1rem;
 }
 
 .DndCreatureCatalog_input {

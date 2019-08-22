@@ -345,6 +345,7 @@ const CREATURE_SOLAR = 'solar'
 const CREATURE_STONE_GIANT = 'stone_giant'
 const CREATURE_STONE_GOLEM = 'stone_golem'
 const CREATURE_STORM_GIANT = 'storm_giant'
+const CREATURE_TRICERATOPS = 'triceratops'
 const CREATURE_TYRANNOSAURUS_REX = 'tyrannosaurus_rex'
 const CREATURE_UMBER_HULK = 'umber_hulk'
 const CREATURE_VAMPIRE = 'vampire'
@@ -9795,6 +9796,86 @@ module.exports = [
     hp: {
       cubeCount: 13,
       cubeType: 12,
+      cubeBonus: 52,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 25,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 19,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 9,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    cr: CR_8,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: 'Тираннозавр совершает две атаки: одну укусом, и одну хвостом. Он не может совершить обе атаки по одной и той же цели.',
+      },
+      {
+        name: 'Укус',
+        description: 'Если цель — существо с размером не больше Среднего, она становится схваченной (Сл высвобождения 17). Пока цель схвачена, она опутана, и тираннозавр не может кусать другую цель.',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 4,
+            cubeType: 12,
+            cubeBonus: 7,
+          },
+        },
+      },
+      {
+        name: 'Хвост',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 8,
+            cubeBonus: 7,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Трицератопс',
+    nameEn: 'Triceratops',
+    id: CREATURE_TRICERATOPS,
+    description: ``,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:97',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 12,
+      cubeBonus: 12,
     },
     speed: {
       [SPEED_WALK]: 50,

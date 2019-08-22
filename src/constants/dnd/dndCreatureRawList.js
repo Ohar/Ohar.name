@@ -318,6 +318,7 @@ const CREATURE_HOMUNCULUS = 'homunculus'
 const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
 const CREATURE_IRON_GOLEM = 'iron_golem'
+const CREATURE_MANES = 'manes'
 const CREATURE_MARID = 'marid'
 const CREATURE_MARILITH = 'marilith'
 const CREATURE_MERROW = 'merrow'
@@ -9055,6 +9056,83 @@ module.exports = [
       {
         name: 'Телепортация',
         description: `Нальфешни магическим образом телепортируется вместе со всем несомым и носимым снаряжением, на расстояние до 120 футов в свободное пространство, которое он видит.`,
+      },
+    ],
+  },
+  {
+    name: 'Мэйн',
+    nameEn: 'Manes',
+    id: CREATURE_MANES,
+    description: `Души злых существ, попадающих на Нижние Планы, превращаются в мэйнов — низшую форму демонов. Эти жалкие исчадия нападают на всех кроме демонов, а на Материальный План их призывают те, кто хотят сеять смерть и хаос.\n
+Оркус, Повелитель Нежити, может преобразовывать мэйнов в нежить, чаще всего в упырей и тени. Другие демонические повелители просто поедают мэйнов, полностью их уничтожая. В иных случаях умирающий мэйн превращается в зловонное облако, которое через сутки трансформируется в другого мэйна. `,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:94',
+    armor: 9,
+    hp: {
+      cubeCount: 2,
+      cubeType: 6,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 4,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+      CONDITION_FRIGHTENED,
+      CONDITION_CHARMED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ABYSSAL,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1_8,
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 4,
+          },
+        },
       },
     ],
   },

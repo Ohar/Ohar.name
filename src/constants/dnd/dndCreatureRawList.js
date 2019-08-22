@@ -313,6 +313,7 @@ const CREATURE_GRIFFON = 'griffon'
 const CREATURE_GRIMLOCK = 'grimlock'
 const CREATURE_HARPY = 'harpy'
 const CREATURE_HELL_HOUND = 'hell_hound'
+const CREATURE_HEZROU = 'hezrou'
 const CREATURE_HILL_GIANT = 'hill_giant'
 const CREATURE_HOMUNCULUS = 'homunculus'
 const CREATURE_HYDRA = 'hydra'
@@ -9258,6 +9259,120 @@ module.exports = [
               },
             ],
           ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Хезроу',
+    nameEn: 'Hezrou',
+    id: CREATURE_HEZROU,
+    description: `Хезроу — пехота демонических орд Бездны. Они сильные, но глупые, их часто заставляют жертвовать собой более мощные демоны. Они нападают в скопление вражеских сил, и от их зловония тошнит даже самых стойких противников.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:94',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 10,
+      cubeBonus: 65,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 13,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 7,
+      [PARAM_CON]: 8,
+      [PARAM_WIT]: 4,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_8,
+    featureList: [
+      {
+        name: 'Сопротивление магии',
+        description: `Хезроу совершает с преимуществом Сопротивление магии. Чазм совершает с преимуществом спасброски от заклинаний и прочих магических эффектов. спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Вонь',
+        description: `Все существа, начинающие ход в пределах 10 футов от хезроу, должны преуспеть в спасброске Телосложения со Сл 14, иначе становятся отравленными до начала своего следующего хода. При успешном спасброске существо получает иммунитет к вони этого хезроу на 24 часа.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Хезроу совершает три атаки: одну укусом, и две когтями.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
         },
       },
     ],

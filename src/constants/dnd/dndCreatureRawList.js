@@ -271,6 +271,7 @@ const CREATURE_ABOLETH = 'aboleth'
 const CREATURE_ACOLYTE = 'acolyte'
 const CREATURE_ALLOSAURUS = 'allosaurus'
 const CREATURE_ANKHEG = 'ankheg'
+const CREATURE_ANKYLOSAURUS = 'ankylosaurus'
 const CREATURE_BALOR = 'balor'
 const CREATURE_BANDIT = 'bandit'
 const CREATURE_BANSHEE = 'banshee'
@@ -9584,6 +9585,63 @@ module.exports = [
             type: DAMAGE_SLASHING,
             cubeCount: 1,
             cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Анкилозавр',
+    nameEn: 'Ankylosaurus',
+    id: CREATURE_ANKYLOSAURUS,
+    description: ``,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:96',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 12,
+      cubeBonus: 16,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_3,
+    actionList: [
+      {
+        name: 'Хвост',
+        description: 'Если цель — существо, она должна преуспеть в спасброске Силы со Сл 14, иначе будет сбита с ног.',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 4,
+            cubeType: 6,
             cubeBonus: 4,
           },
         },

@@ -337,6 +337,7 @@ const CREATURE_PLANETAR = 'planetar'
 const CREATURE_QUASIT = 'quasit'
 const CREATURE_QUASIT_FAMILIAR = 'quasit_familiar'
 const CREATURE_PLESIOSAURUS = 'plesiosaurus'
+const CREATURE_PTERANODON = 'pteranodon'
 const CREATURE_ROPER = 'roper'
 const CREATURE_SHADOW_DEMON = 'shadow_demon'
 const CREATURE_SHRIEKER = 'shrieker'
@@ -9705,6 +9706,71 @@ module.exports = [
             cubeCount: 3,
             cubeType: 6,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Птеранодон',
+    nameEn: 'Pteranodon',
+    id: CREATURE_PTERANODON,
+    description: `Эти крылатые рептилии с размахом крыльев 15–20 футов обычно ныряют в воду за мелкой добычей, но не гнушаются возможностью атаковать любое подходящее существо. У птеранодона нет зубов, однако есть острый клюв для той добычи, которую он не может проглотить за один раз.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:97',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 5,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 1,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Облёт',
+        description: 'Птеранодон не провоцирует атаки, когда вылетает из досягаемости врага.',
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 1,
           },
         },
       },

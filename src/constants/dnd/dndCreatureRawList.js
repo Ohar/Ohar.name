@@ -9861,7 +9861,7 @@ module.exports = [
     name: 'Трицератопс',
     nameEn: 'Triceratops',
     id: CREATURE_TRICERATOPS,
-    description: ``,
+    description: `Один из самых агрессивных травоядных динозавров. Череп трицератопса имеет костяной воротник, служащий для защиты. С внушительными рогами и впечатляющей скоростью трицератопс может без проблем нанизать хищника на рога или растоптать.`,
     sizeType: SIZE_HUGE,
     creatureTypeIdList: [
       CREATURE_TYPE_BEAST,
@@ -9875,62 +9875,66 @@ module.exports = [
     hp: {
       cubeCount: 10,
       cubeType: 12,
-      cubeBonus: 12,
+      cubeBonus: 30,
     },
     speed: {
       [SPEED_WALK]: 50,
     },
     params: {
-      [PARAM_STR]: 25,
-      [PARAM_DEX]: 10,
-      [PARAM_CON]: 19,
+      [PARAM_STR]: 22,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 17,
       [PARAM_INT]: 2,
-      [PARAM_WIT]: 12,
-      [PARAM_CHA]: 9,
-    },
-    skillCollection: {
-      [SKILL_PERCEPTION]: 4,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 5,
     },
     senseList: [
       {
         id: SENSE_PASSIVE_PERCEPTION,
-        value: 14,
+        value: 10,
       },
     ],
-    cr: CR_8,
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Растаптывающий рывок',
+        description: `Если трицератопс переместится как минимум на 20 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой бодания, эта цель должна преуспеть в спасброске Силы со Сл 13, иначе будет сбита с ног. Если цель сбита с ног, трицератопс может бонусным действием совершить по ней одну атаку растаптыванием. `,
+      },
+    ],
     actionList: [
       {
-        name: 'Мультиатака',
-        description: 'Тираннозавр совершает две атаки: одну укусом, и одну хвостом. Он не может совершить обе атаки по одной и той же цели.',
-      },
-      {
-        name: 'Укус',
-        description: 'Если цель — существо с размером не больше Среднего, она становится схваченной (Сл высвобождения 17). Пока цель схвачена, она опутана, и тираннозавр не может кусать другую цель.',
+        name: 'Бодание',
         attack: {
           type: ACTION_MELEE_WEAPON_ATTACK,
-          bonus: 10,
-          range: 10,
+          bonus: 9,
+          range: 5,
           target: 1,
           hit: {
             type: DAMAGE_PIERCING,
             cubeCount: 4,
-            cubeType: 12,
-            cubeBonus: 7,
+            cubeType: 8,
+            cubeBonus: 6,
           },
         },
       },
       {
-        name: 'Хвост',
+        name: 'Растаптывание',
         attack: {
           type: ACTION_MELEE_WEAPON_ATTACK,
-          bonus: 10,
-          range: 10,
-          target: 1,
+          bonus: 9,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              condition: CONDITION_PRONE,
+            },
+          },
           hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 3,
-            cubeType: 8,
-            cubeBonus: 7,
+            cubeType: 10,
+            cubeBonus: 6,
           },
         },
       },

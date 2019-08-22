@@ -327,6 +327,7 @@ const CREATURE_PLANETAR = 'planetar'
 const CREATURE_QUASIT = 'quasit'
 const CREATURE_QUASIT_FAMILIAR = 'quasit_familiar'
 const CREATURE_ROPER = 'roper'
+const CREATURE_SHADOW_DEMON = 'shadow_demon'
 const CREATURE_SHRIEKER = 'shrieker'
 const CREATURE_SOLAR = 'solar'
 const CREATURE_STONE_GIANT = 'stone_giant'
@@ -9132,6 +9133,131 @@ module.exports = [
             cubeCount: 2,
             cubeType: 4,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Теневой демон',
+    nameEn: 'Shadow demon',
+    id: CREATURE_SHADOW_DEMON,
+    description: `Если тело демона уничтожено, но исчадие не смогло заново воплотиться в Бездне, его сущность может принять частично бесплотную форму. Теневые демоны существуют вне привычной демонической иерархии, так как их появление зачастую идёт от магии смертных, а не посредством превращения или роста. Теневые демоны исчезают во тьме и двигаются, не издавая ни звука. Бесплотными когтями они вырывают и пожирают страхи жертв, пробуют на вкус воспоминания и упиваются сомненьями. Яркий свет — их враг, он являет их настоящую форму, рассеивая размытую тьму и освещая крылатого гуманоида, нижняя часть которого рассеивается дымом, и чьи страшные когти рвут разум жертвы.\n
+**Теневая натура.** Теневому демону не нужен воздух, еда, питьё и сон. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:94',
+    armor: 13,
+    hp: {
+      cubeCount: 12,
+      cubeType: 8,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 1,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 14,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 5,
+      [PARAM_CHA]: 4,
+    },
+    vulnerabilityList: [
+      DAMAGE_RADIANT,
+    ],
+    resistanceList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ACID,
+      DAMAGE_NECROTIC,
+      DAMAGE_FIRE,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_GRAPPLED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: 'Бестелесное перемещение',
+        description: `Демон может перемещаться сквозь других существ и предметы, как если бы они были труднопроходимой местностью. Он получает урон силовым полем 5 (1к10), если оканчивает ход внутри предмета.`,
+      },
+      {
+        name: 'Чувствительность к свету',
+        description: `Находясь на ярком свету, демон совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+      {
+        name: 'Скрытность в тени',
+        description: `Находясь в области тусклого света или тьмы, демон может совершать действие Засада бонусным действием.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            [
+              {
+                type: DAMAGE_PSYCHIC,
+                cubeCount: 2,
+                cubeType: 6,
+                cubeBonus: 3,
+              },
+              {
+                preText: ' если демон совершал бросок атаки с преимуществом ',
+                type: DAMAGE_PSYCHIC,
+                cubeCount: 4,
+                cubeType: 6,
+                cubeBonus: 3,
+              },
+            ],
+          ],
         },
       },
     ],

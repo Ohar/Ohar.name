@@ -321,6 +321,7 @@ const CREATURE_IRON_GOLEM = 'iron_golem'
 const CREATURE_MARID = 'marid'
 const CREATURE_MARILITH = 'marilith'
 const CREATURE_MERROW = 'merrow'
+const CREATURE_NALFESHNEE = 'nalfeshnee'
 const CREATURE_PLANETAR = 'planetar'
 const CREATURE_QUASIT = 'quasit'
 const CREATURE_QUASIT_FAMILIAR = 'quasit_familiar'
@@ -8931,6 +8932,129 @@ module.exports = [
       {
         name: 'Парирование',
         description: `Марилит добавляет 5 к КД против одной рукопашной атаки, которая должна попасть по ней. Для этого марилит должна видеть атакующего, и должна использовать рукопашное оружие.`,
+      },
+    ],
+    isFemale: true,
+  },
+  {
+    name: 'Нальфешни',
+    nameEn: 'Nalfeshnee',
+    id: CREATURE_NALFESHNEE,
+    description: `Нальфешни является одним из самых гротескных демонов — это тучная пародия на обезьяну и кабана, в два раза выше человеческого роста, с перистыми крыльями, которые кажутся слишком маленькими для его раздутого тела. Эти звериные черты скрывают выдающийся интеллект и хитрость.\n
+Нальфешни разрушительны в бою, они с помощью крыльев летят над первыми рядами своего войска и ищут уязвимых противников, которые могут быть уничтожены с небольшим усилием. Из гущи боя, они телепатическим рёвом командуют меньшими демонами, вместе с тем заставляя врагов бежать и рассеиваться.\n
+Нальфешни могут питаться ненавистью и отчаянием, но они предпочитают плоть гуманоидов. Они держат свои кладовые заполненными гуманоидами, похищенными из Материального Плана, чтобы пировать ещё живыми существами. Думая о себе как о развитых и культурных, нальфешни используют запятнанные ржавчиной столовые приборы во время своих трапез.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:93',
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 16,
+      cubeType: 10,
+      cubeBonus: 96,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 40,
+    },
+    params: {
+      [PARAM_STR]: 21,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 22,
+      [PARAM_INT]: 19,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 15,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 6,
+      [PARAM_CHA]: 7,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_13,
+    featureList: [
+      {
+        name: 'Сопротивление магии',
+        description: `Нальфешни совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Нальфешни использует _Ореол ужаса_, если может. Затем он совершает три атаки: одну укусом, и две когтями.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 5,
+            cubeType: 10,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 3,
+            cubeType: 6,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Ореол ужаса',
+        description: 'Нальфешни магическим образом излучает разноцветную ауру. Все существа в пределах 15 футов от нальфешни, видящие этот свет, должны преуспеть в спасброске Мудрости со Сл 15, иначе станут испуганными на 1 минуту. Существо может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе. Если спасбросок существа был успешным, или эффект на нём окончился, оно получает иммунитет к Ореолу ужаса этого нальфешни на следующие 24 часа.',
+      },
+      {
+        name: 'Телепортация',
+        description: `Нальфешни магическим образом телепортируется вместе со всем несомым и носимым снаряжением, на расстояние до 120 футов в свободное пространство, которое он видит.`,
       },
     ],
   },

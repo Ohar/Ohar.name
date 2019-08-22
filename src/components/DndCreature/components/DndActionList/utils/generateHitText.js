@@ -5,11 +5,12 @@ import generateCube from '@/utils/generateCube'
 import generateTextByType from './generateTextByType'
 
 const generateHitItemText = hit => {
+  const preText = hit.preText || ''
   const text = generateTextByType(hit)
   const cube = generateCube(hit)
   const comment = hit.comment || ''
 
-  return `${text} ${cube}${comment}`
+  return `${preText}${text} ${cube}${comment}`
 }
 
 export default hit => arrify(hit)

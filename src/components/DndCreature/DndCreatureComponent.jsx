@@ -22,6 +22,7 @@ import DndResistanceList from "./components/DndResistanceList"
 import DndSaveThrowCollection from "./components/DndSaveThrowCollection"
 import DndSenseList from "./components/DndSenseList"
 import DndSkillCollection from "./components/DndSkillCollection"
+import DndVulnerabilityList from "./components/DndVulnerabilityList"
 
 import "./DndCreatureStyles.less"
 
@@ -56,6 +57,7 @@ const DndCreatureComponent = (
     speed,
     spellCast,
     title,
+    vulnerabilityList,
   },
 ) => (
   <section className={`DndCreature DndCreature-columnCount_${columnCount}`}>
@@ -90,6 +92,7 @@ const DndCreatureComponent = (
     <section className='DndCreature_infoBlock'>
       <DndSaveThrowCollection collection={saveThrowCollection}/>
       <DndSkillCollection collection={skillCollection}/>
+      <DndVulnerabilityList list={vulnerabilityList}/>
       <DndResistanceList list={resistanceList}/>
       <DndImmunityList list={immunityList}/>
       <DndImmunityConditionList list={immunityConditionList}/>
@@ -153,6 +156,7 @@ DndCreatureComponent.propTypes = {
   source: PropTypes.string.isRequired,
   speed: PropTypes.object.isRequired,
   spellCast: PropTypes.object,
+  vulnerabilityList: PropTypes.array,
 }
 
 DndCreatureComponent.defaultProps = {
@@ -170,6 +174,7 @@ DndCreatureComponent.defaultProps = {
   senseList: [],
   skillCollection: null,
   spellCast: null,
+  vulnerabilityList: [],
 }
 
 export default DndCreatureComponent

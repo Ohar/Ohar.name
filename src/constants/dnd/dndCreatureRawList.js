@@ -45,8 +45,10 @@ const {
   CREATURE_TYPE_AARAKOCRA,
   CREATURE_TYPE_ABERRATION,
   CREATURE_TYPE_ANY_RACE,
+  CREATURE_TYPE_BEAST,
   CREATURE_TYPE_CELESTIAL,
-  CREATURE_TYPE_CONSTRUCT, CREATURE_TYPE_DEMON,
+  CREATURE_TYPE_CONSTRUCT,
+  CREATURE_TYPE_DEMON,
   CREATURE_TYPE_DRAGON,
   CREATURE_TYPE_ELEMENTAL,
   CREATURE_TYPE_FIEND,
@@ -54,9 +56,11 @@ const {
   CREATURE_TYPE_GITH,
   CREATURE_TYPE_GNOLL,
   CREATURE_TYPE_GNOME,
-  CREATURE_TYPE_GOBLINOID, CREATURE_TYPE_GRIMLOCK,
+  CREATURE_TYPE_GOBLINOID,
+  CREATURE_TYPE_GRIMLOCK,
   CREATURE_TYPE_HUMANOID,
-  CREATURE_TYPE_MONSTER, CREATURE_TYPE_PLANT,
+  CREATURE_TYPE_MONSTER,
+  CREATURE_TYPE_PLANT,
   CREATURE_TYPE_SHAPESHIFTER,
   CREATURE_TYPE_UNDEAD
 } = require('./dndCreatureTypeList')
@@ -104,7 +108,8 @@ const {
   LANG_GITH,
   LANG_GNOLL,
   LANG_GNOMISH,
-  LANG_GOBLIN, LANG_GRELL,
+  LANG_GOBLIN,
+  LANG_GRELL,
   LANG_IGNAN,
   LANG_INFERNAL,
   LANG_ITS_CREATOR,
@@ -118,17 +123,18 @@ const {
   DAMAGE_ACID,
   DAMAGE_BLUDGEONING,
   DAMAGE_COLD,
-  DAMAGE_FIRE,
   DAMAGE_ELECTRICITY,
+  DAMAGE_FIRE,
+  DAMAGE_MAGIC_WEAPON,
   DAMAGE_NECROTIC,
-  DAMAGE_NONMAGIC_WEAPON,
   DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+  DAMAGE_NONMAGIC_WEAPON,
   DAMAGE_PIERCING,
   DAMAGE_POISON,
   DAMAGE_PSYCHIC,
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
-  DAMAGE_THUNDER, DAMAGE_MAGIC_WEAPON
+  DAMAGE_THUNDER,
 } = require('./dndDamageTypeList')
 const {
   SENSE_BLIND_VISION,
@@ -263,6 +269,7 @@ const {
 const CREATURE_AARAKOCRA = 'aarakocra'
 const CREATURE_ABOLETH = 'aboleth'
 const CREATURE_ACOLYTE = 'acolyte'
+const CREATURE_ALLOSAURUS = 'allosaurus'
 const CREATURE_ANKHEG = 'ankheg'
 const CREATURE_BALOR = 'balor'
 const CREATURE_BANDIT = 'bandit'
@@ -9499,6 +9506,86 @@ module.exports = [
               cubeType: 6,
             },
           ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Аллозавр',
+    nameEn: 'Allosaurus',
+    id: CREATURE_ALLOSAURUS,
+    description: `Аллозавр — хищник, обладающий громадным размером, силой и скоростью. Он может догнать и повалить почти любую добычу на открытой местности, вцепивших в жертву своими опасными когтями.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:96',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 10,
+      cubeBonus: 18,
+    },
+    speed: {
+      [SPEED_WALK]: 60,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 17,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 5,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Наскок',
+        description: `Если аллозавр переместится как минимум на 30 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой когтём, эта цель должна преуспеть в спасброске Силы со Сл 13, иначе будет сбита с ног. Если цель сбита с ног, аллозавр может бонусным действием совершить по ней одну атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
         },
       },
     ],

@@ -1,18 +1,23 @@
-export default ({actionList, featureList, legendaryPoints, legendaryActionList}) => {
+const COEF_ITEM_PER_COLUMN = 4
+const MAX_COLUMN = 4
+
+export default (
+  {
+    actionList,
+    featureList,
+    legendaryPoints,
+    legendaryActionList,
+  }) => {
   const featureCount = featureList && featureList.length || 0
   const actionCount = actionList && actionList.length || 0
   const legendaryActionCount = legendaryActionList && legendaryActionList.length || 0
 
   const total = featureCount + actionCount + legendaryActionCount
 
-  if (total > 12) {
-    return 4
-  }
-  if (total > 8) {
-    return 3
-  }
-  if (total > 4) {
-    return 2
+  for (let i = MAX_COLUMN; i > 1; i--) {
+    if (total > (i - 1) * COEF_ITEM_PER_COLUMN) {
+      return i
+    }
   }
 
   if (legendaryPoints) {

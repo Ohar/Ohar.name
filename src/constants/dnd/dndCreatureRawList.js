@@ -270,6 +270,7 @@ const CREATURE_BANSHEE = 'banshee'
 const CREATURE_BARLGURA = 'barlgura'
 const CREATURE_BASILISK = 'basilisk'
 const CREATURE_BEHIR = 'behir'
+const CREATURE_CHASME = 'chasme'
 const CREATURE_CLOUD_GIANT = 'cloud_giant'
 const CREATURE_COMMONER = 'commoner'
 const CREATURE_CLAY_GOLEM = 'clay_golem'
@@ -9274,7 +9275,7 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:94',
+    source: 'MM:95',
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -9373,6 +9374,131 @@ module.exports = [
             cubeType: 6,
             cubeBonus: 4,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Чазм',
+    nameEn: 'Chasme',
+    id: CREATURE_CHASME,
+    description: `Этот отвратительный демон выглядит как ужасающая помесь человека и мухи. Он перемешается на четырёх ногах, способных цепляться за стены и потолок. Прилёт чазма предвещает жужжание, вгоняющее жертву в ступор, не позволяющий защититься.\n
+Слабые чазмы служат более могущественным хозяевам информаторами или надсмотрщиками. Они предпочитают в качестве наказаний пытки, и прекрасно выслеживают демонов-дезертиров, бежавших от своих владык. Ловля предателей даёт чазмам возможность пытать жертву, не опасаясь наказания.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEMON,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:95',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 10,
+      cubeBonus: 13,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 10,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 5,
+      [PARAM_WIT]: 5,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_FIRE,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 10,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_6,
+    featureList: [
+      {
+        name: 'Гул',
+        description: `Чазм издаёт ужасающий гудящий звук, к которому демоны
+обладают иммунитетом. Все остальные существа, начинаю-
+щие ход в пределах 30 футов от чазма, должны преуспеть в
+спасброске Телосложения со Сл 12, иначе они потеряют созна-
+ние на 10 минут. Существо, не слышащее гул, автоматически
+преуспевает в спасброске. Эффект на существе оканчивается,
+если оно получает урон или другое существо действием обо-
+льёт его святой водой. Если спасбросок существа был успеш-
+ным, или эффект на нём окончился, оно получает иммунитет к
+этому гулу на следующие 24 часа.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Чазм совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Паучье лазание',
+        description: `Чазм может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Хоботок',
+        description: `Максимум хитов цели уменьшается на количество полученного урона некротической энергией. Если этот эффект уменьшает максимум хитов существа до 0, это существо умирает. Максимум хитов снижен, пока существо не окончит продолжительный отдых, или пока существо не получит эффект заклинания, такого как _Высшее восстановление_.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 4,
+              cubeType: 6,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_NECROTIC,
+              cubeCount: 7,
+              cubeType: 6,
+            },
+          ],
         },
       },
     ],

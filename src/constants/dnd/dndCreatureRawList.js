@@ -336,6 +336,7 @@ const CREATURE_NALFESHNEE = 'nalfeshnee'
 const CREATURE_PLANETAR = 'planetar'
 const CREATURE_QUASIT = 'quasit'
 const CREATURE_QUASIT_FAMILIAR = 'quasit_familiar'
+const CREATURE_PLESIOSAURUS = 'plesiosaurus'
 const CREATURE_ROPER = 'roper'
 const CREATURE_SHADOW_DEMON = 'shadow_demon'
 const CREATURE_SHRIEKER = 'shrieker'
@@ -9641,6 +9642,67 @@ module.exports = [
           hit: {
             type: DAMAGE_BLUDGEONING,
             cubeCount: 4,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Плезиозавр',
+    nameEn: 'Plesiosaurus',
+    id: CREATURE_PLESIOSAURUS,
+    description: `Плезиозавр это водный динозавр с компактным телом и мощными плавниками. Хищный и агрессивный, он нападает на любое встреченное им существо. Его гибкая шея, составляющая треть от общей длины, извивается во все стороны и позволяет совершать мощные укусы.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:97',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 10,
+      cubeBonus: 24,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 5,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_2,
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 3,
             cubeType: 6,
             cubeBonus: 4,
           },

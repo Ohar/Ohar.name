@@ -1,4 +1,7 @@
 const listToCollectionById = require('./../../utils/listToCollectionById')
+const generateFullAdjectiveList = require('./../../utils/generateFullAdjectiveList')
+
+const {GENDER_FEMALE, GENDER_MALE, GENDER_MIDDLE} = require('./../../constants/genderList')
 
 const CONDITION_BLINDED = 'blinded'
 const CONDITION_CHARMED = 'charmed'
@@ -21,6 +24,26 @@ const dndConditionList = [
     id: CONDITION_UNCONSCIOUS,
     name: 'Бессознательность',
     nameEn: 'Unconscious',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'бессознательная',
+          genitive: 'бессознательной'
+        },
+        [GENDER_MALE]: {
+          nominative: 'бессознательный',
+          genitive: 'бессознательного',
+          prepositional: 'бессознательном'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'бессознательное'
+        }
+      },
+      dualFemale: {
+        nominative: 'бессознательные',
+        genitive: 'бессознательных'
+      }
+    },
     description: `
 * Находящееся без сознания существо «недееспособно» (см. состояние), не способно перемещаться и говорить, а также не осознаёт своё окружение.
 * Существо роняет всё, что держит, и падает ничком.
@@ -32,6 +55,26 @@ const dndConditionList = [
     id: CONDITION_FRIGHTENED,
     name: 'Испуг',
     nameEn: 'Frightened',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'испуганная',
+          genitive: 'испуганной'
+        },
+        [GENDER_MALE]: {
+          nominative: 'испуганный',
+          genitive: 'испуганного',
+          prepositional: 'испуганном'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'испуганное'
+        }
+      },
+      dualFemale: {
+        nominative: 'испуганные',
+        genitive: 'испуганных'
+      }
+    },
     description: `
 * Испуганное существо совершает с помехой проверки характеристик и броски атаки, пока источник его страха находится в пределах его линии обзора.
 * Существо не способно добровольно приблизиться к источнику своего страха.
@@ -41,6 +84,26 @@ const dndConditionList = [
     id: CONDITION_INVISIBLE,
     name: 'Невидимость',
     nameEn: 'Invisible',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'невидимая',
+          genitive: 'невидимой'
+        },
+        [GENDER_MALE]: {
+          nominative: 'невидимый',
+          genitive: 'невидимого',
+          prepositional: 'невидимом'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'невидимое'
+        }
+      },
+      dualFemale: {
+        nominative: 'невидимые',
+        genitive: 'невидимых'
+      }
+    },
     description: `
 * Невидимое существо невозможно увидеть без помощи магии или особого чувства. С точки зрения скрытности существо считается сильно заслонённым. Местонахождение существа можно определить по шуму, который оно издаёт, или по оставленным им следам.
 * Броски атаки по невидимому существу совершаются с помехой, а его броски атаки — с преимуществом.`,
@@ -49,18 +112,78 @@ const dndConditionList = [
     id: CONDITION_INCAPACITATED,
     name: 'Недееспособность',
     nameEn: 'Incapacitated',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'недееспособная',
+          genitive: 'недееспособной'
+        },
+        [GENDER_MALE]: {
+          nominative: 'недееспособный',
+          genitive: 'недееспособного',
+          prepositional: 'недееспособном'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'недееспособное'
+        }
+      },
+      dualFemale: {
+        nominative: 'недееспособные',
+        genitive: 'недееспособных'
+      }
+    },
     description: `* Недееспособное существо не может совершать действия и реакции.`,
   },
   {
     id: CONDITION_DEAFENED,
     name: 'Глухота',
     nameEn: 'Deafened',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'глухая',
+          genitive: 'глухой'
+        },
+        [GENDER_MALE]: {
+          nominative: 'глухой',
+          genitive: 'глухого',
+          prepositional: 'глухом'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'глухое'
+        }
+      },
+      dualFemale: {
+        nominative: 'глухие',
+        genitive: 'глухих'
+      }
+    },
     description: `* Оглохшее существо ничего не слышит и автоматически проваливает все проверки характеристик, связанные со слухом.`,
   },
   {
     id: CONDITION_PETRIFIED,
     name: 'Окаменение',
     nameEn: 'Petrified',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'окаменевшая',
+          genitive: 'окаменевшей'
+        },
+        [GENDER_MALE]: {
+          nominative: 'окаменевший',
+          genitive: 'окаменевшего',
+          prepositional: 'окаменевшем'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'окаменевшее'
+        }
+      },
+      dualFemale: {
+        nominative: 'окаменевшие',
+        genitive: 'окаменевших'
+      }
+    },
     description: `
 * Окаменевшее существо, а также все немагические предметы, которые оно несёт или носит, трансформируется в твёрдое инертное вещество (как правило, в камень). Его вес увеличивается в 10 раз, и оно перестаёт стареть.
 * Существо «недееспособно» (см. состояние), не способно двигаться и говорить, а также не осознаёт своё окружение.
@@ -74,6 +197,26 @@ const dndConditionList = [
     id: CONDITION_RESTRAINED,
     name: 'Опутывание',
     nameEn: 'Restrained',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'опутанная',
+          genitive: 'опутанной'
+        },
+        [GENDER_MALE]: {
+          nominative: 'опутанный',
+          genitive: 'опутанного',
+          prepositional: 'опутанном'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'опутанное'
+        }
+      },
+      dualFemale: {
+        nominative: 'опутанные',
+        genitive: 'опутанных'
+      }
+    },
     description: `
 * Скорость опутанного существа равна 0, и оно не получает выгоды ни от каких бонусов к скорости.
 * Броски атаки по такому существу совершаются с преимуществом, а его броски атаки — с помехой.
@@ -84,6 +227,26 @@ const dndConditionList = [
     id: CONDITION_BLINDED,
     name: 'Слепота',
     nameEn: 'Blinded',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'слепая',
+          genitive: 'слепой'
+        },
+        [GENDER_MALE]: {
+          nominative: 'слепой',
+          genitive: 'слепого',
+          prepositional: 'слепом'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'слепое'
+        }
+      },
+      dualFemale: {
+        nominative: 'слепые',
+        genitive: 'слепых'
+      }
+    },
     description: `
 * Ослеплённое существо ничего не видит и автоматически проваливает все проверки характеристик, связанные со зрением.
 * Броски атаки по такому существу совершаются с преимуществом, а его броски атаки совершаются с помехой.
@@ -93,12 +256,52 @@ const dndConditionList = [
     id: CONDITION_POISONED,
     name: 'Отравление',
     nameEn: 'Poisoned',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'отравленая',
+          genitive: 'отравленой'
+        },
+        [GENDER_MALE]: {
+          nominative: 'отравленый',
+          genitive: 'отравленого',
+          prepositional: 'отравленом'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'отравленое'
+        }
+      },
+      dualFemale: {
+        nominative: 'отравленые',
+        genitive: 'отравленых'
+      }
+    },
     description: `* Отравленное существо совершает с помехой броски атаки и проверки характеристик.`,
   },
   {
     id: CONDITION_EXHAUSTION,
     name: 'Истощение',
     nameEn: 'Exhaustion',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'истощенная',
+          genitive: 'истощенной'
+        },
+        [GENDER_MALE]: {
+          nominative: 'истощенный',
+          genitive: 'истощенного',
+          prepositional: 'истощенном'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'истощенное'
+        }
+      },
+      dualFemale: {
+        nominative: 'истощенные',
+        genitive: 'истощенных'
+      }
+    },
     description: `Некоторые особые способности и опасности окружающей среды, такие как недоедание и длительное воздействие очень низких или высоких температур, могут стать причиной состояния, называемого истощением.\n
 Истощение делится на шесть степеней. Эффект даёт существу ту или иную степень истощения, согласно описанию.
 
@@ -119,6 +322,26 @@ const dndConditionList = [
     id: CONDITION_CHARMED,
     name: 'Очарование',
     nameEn: 'Charmed',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'очарованная',
+          genitive: 'очарованной'
+        },
+        [GENDER_MALE]: {
+          nominative: 'очарованный',
+          genitive: 'очарованного',
+          prepositional: 'очарованном'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'очарованное'
+        }
+      },
+      dualFemale: {
+        nominative: 'очарованные',
+        genitive: 'очарованных'
+      }
+    },
     description: `
 * Очарованное существо не может атаковать того, кто его очаровал, а также делать его целью умения или магического эффекта, причиняющего вред.
 * Искуситель совершает с преимуществом все проверки характеристик при социальном взаимодействии с очарованным существом.`,
@@ -127,6 +350,26 @@ const dndConditionList = [
     id: CONDITION_STUNNED,
     name: 'Ошеломлёние',
     nameEn: 'Stunned',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'ошеломлённая',
+          genitive: 'ошеломлённой'
+        },
+        [GENDER_MALE]: {
+          nominative: 'ошеломлённый',
+          genitive: 'ошеломлённого',
+          prepositional: 'ошеломлённом'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'ошеломлённое'
+        }
+      },
+      dualFemale: {
+        nominative: 'ошеломлённые',
+        genitive: 'ошеломлённых'
+      }
+    },
     description: `
 * Ошеломлённое существо «недееспособно» (см. состояние), не способно перемещаться и говорит, запинаясь.
 * Существо автоматически проваливает спасброски Силы и Ловкости.
@@ -137,6 +380,26 @@ const dndConditionList = [
     id: CONDITION_PARALYZED,
     name: 'Паралич',
     nameEn: 'Paralyzed',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'парализованная',
+          genitive: 'парализованной'
+        },
+        [GENDER_MALE]: {
+          nominative: 'парализованный',
+          genitive: 'парализованного',
+          prepositional: 'парализованном'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'парализованное'
+        }
+      },
+      dualFemale: {
+        nominative: 'парализованные',
+        genitive: 'парализованных'
+      }
+    },
     description: `
 * Парализованное существо «недееспособно» (см. состояние) и не способно перемещаться и говорить.
 * Существо автоматически проваливает спасброски Силы и Ловкости.
@@ -147,6 +410,26 @@ const dndConditionList = [
     id: CONDITION_PRONE,
     name: 'Сбивание с ног',
     nameEn: 'Prone',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'лежащая',
+          genitive: 'лежащей',
+        },
+        [GENDER_MALE]: {
+          nominative: 'лежащий',
+          genitive: 'лежащего',
+          prepositional: 'лежащем',
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'лежащее',
+        }
+      },
+      dualFemale: {
+        nominative: 'лежащие',
+        genitive: 'лежащих',
+      }
+    },
     description: `
 * Сбитое с ног существо способно перемещаться только ползком, пока не встанет, прервав тем самым это состояние.
 * Существо совершает с помехой броски атаки.
@@ -157,13 +440,38 @@ const dndConditionList = [
     id: CONDITION_GRAPPLED,
     name: 'Захват',
     nameEn: 'Grappled',
+    targetName: {
+      singular: {
+        [GENDER_FEMALE]: {
+          nominative: 'захваченная',
+          genitive: 'захваченной'
+        },
+        [GENDER_MALE]: {
+          nominative: 'захваченный',
+          genitive: 'захваченного',
+          prepositional: 'захваченном'
+        },
+        [GENDER_MIDDLE]: {
+          nominative: 'захваченное'
+        }
+      },
+      dualFemale: {
+        nominative: 'захваченные',
+        genitive: 'захваченных'
+      }
+    },
     description: `
 * Скорость схваченного существа равна 0, и оно не получает выгоды ни от каких бонусов к скорости.
 * Состояние оканчивается, если схвативший становится недееспособен (см. состояние).
 * Это состояние также оканчивается, если какой-либо эффект выводит схваченное существо из зоны досягаемости того, кто его удерживает, или из зоны удерживающего эффекта. Например, когда существо отбрасывается заклинанием _Волна грома_.
 `,
   },
-]
+].map(
+  item => ({
+    ...item,
+    targetName: generateFullAdjectiveList(item.targetName),
+  })
+)
 
 module.exports = dndConditionList
 

@@ -3,7 +3,8 @@ import proschet from 'proschet';
 import numberList from '@/constants/numberList'
 import {dndTargetCollection} from '@/constants/dnd/dndTargetList'
 import {dndSizeCollection} from '@/constants/dnd/dndSizeList'
-import {GENDER_MALE} from '@/constants/genderList'
+import {dndConditionCollection} from '@/constants/dnd/dndConditionList'
+import {GENDER_FEMALE, GENDER_MALE} from '@/constants/genderList'
 
 const getGoalWord = proschet(['цель', 'цели', 'целей'])
 
@@ -14,38 +15,56 @@ export default target => {
       : target
     const numberWordObj = numberList[targetCount]
 
-    let targetLimitText = ''
-    let targetNumberText = `${numberWordObj.female} ${getGoalWord(targetCount)}`
+    let conditionText = ''
+    let limitText = ''
+    let numberText = numberWordObj[GENDER_FEMALE]
+    let targetText = getGoalWord(targetCount)
 
     if (target.limit) {
-      if (target.limit.type) {
-        const {
-          genderId,
-          name: {
-            singular: {
-              nominative: singularWord,
-              genitive: dualWord,
-            },
-            plural: {
-              genitive: multipleWord,
-            },
+      const {
+        genderId,
+        name: {
+          singular: {
+            nominative: singularTypeWord,
+            genitive: dualTypeWord,
           },
-        } = dndTargetCollection[target.limit.type]
+          plural: {
+            genitive: multipleTypeWord,
+          },
+        },
+      } = dndTargetCollection[target.limit.type]
 
-        const getTargetTypeWord = proschet([singularWord, dualWord, multipleWord])
+      const getTargetTypeWord = proschet([singularTypeWord, dualTypeWord, multipleTypeWord])
 
-        targetNumberText = `${numberWordObj[genderId]} ${getTargetTypeWord(target.count)}`
-      }
+      numberText = numberWordObj[genderId]
+      targetText = getTargetTypeWord(target.count)
 
       if (target.limit.size) {
         if (target.limit.size.max) {
           const sizeText = dndSizeCollection[target.limit.size.max].name.singular[GENDER_MALE].genitive
-          targetLimitText = ` c размером не больше ${sizeText}`
+          limitText = ` c размером не больше ${sizeText}`
         }
+      }
+
+      if (target.limit.condition) {
+        const {
+          singular,
+          plural,
+        } = dndConditionCollection[target.limit.condition].targetName
+        const {
+          nominative: singularConditionWord,
+          genitive: dualConditionWord,
+        } = singular[genderId]
+        const {
+          genitive: multipleConditionWord,
+        } = plural
+
+        const getConditionWord = proschet([singularConditionWord, dualConditionWord, multipleConditionWord])
+        conditionText = getConditionWord(target.count)
       }
     }
 
-    return `${targetNumberText}${targetLimitText}`
+    return `${numberText} ${conditionText} ${targetText}${limitText}`
   }
 
   return target

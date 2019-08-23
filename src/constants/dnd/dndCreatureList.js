@@ -55,7 +55,7 @@ const dndCreatureList = dndCreatureRawList
     }
   )
   .sort(
-    ({name: A}, {name: B}) => A > B
+    ({name: A}, {name: B}) => A > B ? 1 : -1
   )
   .map(
   creature => ({

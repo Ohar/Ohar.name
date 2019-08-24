@@ -289,6 +289,7 @@ const CREATURE_BANSHEE = 'banshee'
 const CREATURE_BARLGURA = 'barlgura'
 const CREATURE_BASILISK = 'basilisk'
 const CREATURE_BEHIR = 'behir'
+const CREATURE_BLUE_DRAGON_WYRMLING = 'blue_dragon_wyrmling'
 const CREATURE_CHASME = 'chasme'
 const CREATURE_CLOUD_GIANT = 'cloud_giant'
 const CREATURE_COMMONER = 'commoner'
@@ -12306,7 +12307,7 @@ module.exports = [
     ],
   },
   {
-    name: 'Вирмлинг синего дракон',
+    name: 'Вирмлинг синего дракона',
     nameEn: 'Blue dragon wyrmling',
     id: CREATURE_BLUE_DRAGON_WYRMLING,
     description: `Тщеславные и территориальные, синие драконы парят в небесах над пустынями, охотясь на караваны, разоряя стада и поселения в плодородных землях за границами пустыни. Эти драконы также живут в сухих степях, раскалённых пустошах и на каменистых побережьях, и ревностно охраняют свои границы от возможных соперников, особенно от латунных драконов.\n

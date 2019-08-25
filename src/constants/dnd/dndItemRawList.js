@@ -7,6 +7,37 @@ import {
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
 } from '@/constants/dnd/dndDamageTypeList'
+import {
+  CAT_AMMO,
+  CAT_ANIMALS,
+  CAT_ARMOR,
+  CAT_ARTISAN_TOOLS,
+  CAT_CLOTHES,
+  CAT_CONSUMABLES,
+  CAT_DRUID_FOCUS,
+  CAT_EQUIPMENT,
+  CAT_FOOD,
+  CAT_GAME_SET,
+  CAT_GOODS,
+  CAT_HEAVY_ARMOR,
+  CAT_HOLY_SYMBOL,
+  CAT_KIT,
+  CAT_LIGHT_ARMOR,
+  CAT_MAGIC_FOCUS,
+  CAT_MARTIAL_MELEE_WEAPON,
+  CAT_MARTIAL_RANGE_WEAPON,
+  CAT_MEDIUM_ARMOR,
+  CAT_MUSIC_TOOLS,
+  CAT_POISONS,
+  CAT_SADDLES,
+  CAT_SHIELDS,
+  CAT_SIMPLE_MELEE_WEAPON,
+  CAT_SIMPLE_RANGE_WEAPON,
+  CAT_TOOLS,
+  CAT_TRANSPORT,
+  CAT_TRANSPORT_WATER,
+  CAT_WEAPON,
+} from '@/constants/dnd/dndItemCategoryList';
 
 export const ITEM_BREASTPLATE = 'breastplate'
 export const ITEM_CHAIN_MAIL = 'chain⁠_mail'
@@ -34,8 +65,8 @@ const dndItemRawList = [
     acChangeTo: 11,
     acUseDexMod: true,
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Лёгкие доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_LIGHT_ARMOR,
   },
   {
     id: ITEM_LEATHER_ARMOR,
@@ -47,8 +78,8 @@ const dndItemRawList = [
     acChangeTo: 11,
     acUseDexMod: true,
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Лёгкие доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_LIGHT_ARMOR,
   },
   {
     id: ITEM_STUDDED_LEATHER_ARMOR,
@@ -60,8 +91,8 @@ const dndItemRawList = [
     acChangeTo: 12,
     acUseDexMod: true,
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Лёгкие доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_LIGHT_ARMOR,
   },
   {
     id: ITEM_HIDE_ARMOR,
@@ -74,8 +105,8 @@ const dndItemRawList = [
     acUseDexMod: true,
     acDexModMax: 2,
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Средние доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_MEDIUM_ARMOR,
   },
   {
     id: ITEM_CHAIN_SHIRT,
@@ -88,8 +119,8 @@ const dndItemRawList = [
     acUseDexMod: true,
     acDexModMax: 2,
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Средние доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_MEDIUM_ARMOR,
   },
   {
     id: ITEM_SCALE_MAIL,
@@ -103,8 +134,8 @@ const dndItemRawList = [
     acUseDexMod: true,
     acDexModMax: 2,
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Средние доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_MEDIUM_ARMOR,
   },
   {
     id: ITEM_BREASTPLATE,
@@ -117,8 +148,8 @@ const dndItemRawList = [
     acUseDexMod: true,
     acDexModMax: 2,
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Средние доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_MEDIUM_ARMOR,
   },
   {
     id: ITEM_HALF_PLATE,
@@ -132,8 +163,8 @@ const dndItemRawList = [
     acUseDexMod: true,
     acDexModMax: 2,
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Средние доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_MEDIUM_ARMOR,
   },
   {
     id: ITEM_RING_MAIL,
@@ -145,8 +176,8 @@ const dndItemRawList = [
     blockHiding: true,
     acChangeTo: 14,
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Тяжёлые доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_HEAVY_ARMOR,
   },
   {
     id: ITEM_CHAIN_MAIL,
@@ -165,8 +196,8 @@ const dndItemRawList = [
       },
     ],
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Тяжёлые доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_HEAVY_ARMOR,
   },
   {
     id: ITEM_SPLINT_ARMOR,
@@ -185,8 +216,8 @@ const dndItemRawList = [
       },
     ],
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Тяжёлые доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_HEAVY_ARMOR,
   },
   {
     id: ITEM_PLATE_ARMOR,
@@ -205,20 +236,20 @@ const dndItemRawList = [
       },
     ],
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Тяжёлые доспехи',
+    category: CAT_ARMOR,
+    subcategory: CAT_HEAVY_ARMOR,
   },
   {
     id: ITEM_SHIELD,
     name: 'Щит',
     nameEn: 'Shield',
-    description: '',
+    description: `Щит изготавливается из дерева или металла, и несётся одной рукой. Использование щита увеличивает КД на 2. Вы получаете преимущество только от одного щита одновременно.`,
     cost: 1000,
     weight: 6,
     acBonus: 2,
     source: 'PHB:145',
-    category: 'Доспехи',
-    subcategory: 'Щиты',
+    category: CAT_ARMOR,
+    subcategory: CAT_SHIELDS,
   },
   {
     id: 'boevoi` posokh',
@@ -233,8 +264,8 @@ const dndItemRawList = [
     damageType: DAMAGE_BLUDGEONING,
     weight: 4,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'bulava',
@@ -249,8 +280,8 @@ const dndItemRawList = [
     damageType: DAMAGE_BLUDGEONING,
     weight: 4,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'dubinka',
@@ -266,8 +297,8 @@ const dndItemRawList = [
     weight: 2,
     isLight: true,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'kinzhal',
@@ -289,8 +320,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 1,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'kop`yo',
@@ -310,8 +341,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 3,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'lyogkii` molot',
@@ -332,8 +363,8 @@ const dndItemRawList = [
     damageType: DAMAGE_BLUDGEONING,
     weight: 2,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'metatel`noe kop`yo',
@@ -353,8 +384,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'palitca',
@@ -370,8 +401,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 10,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'ruchnoi` topor',
@@ -392,8 +423,8 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 10,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'serp',
@@ -409,8 +440,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 2,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'ilkva',
@@ -429,8 +460,8 @@ const dndItemRawList = [
     cost: 100,
     damageType: DAMAGE_PIERCING,
     source: 'ToA:32',
-    category: 'Оружие',
-    subcategory: 'Простое рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
     id: 'arbalet, lyogkii',
@@ -452,8 +483,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 5,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое дальнобойное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
   {
     id: 'drotik',
@@ -474,8 +505,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: '0.25',
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое дальнобойное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
   {
     id: 'korotkii` luk',
@@ -496,8 +527,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое дальнобойное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
   {
     id: 'prashcha',
@@ -517,8 +548,8 @@ const dndItemRawList = [
     damageType: DAMAGE_BLUDGEONING,
     weight: 0,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Простое дальнобойное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
   {
     id: 'alebarda',
@@ -536,8 +567,8 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 6,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'boevaia kirka',
@@ -552,8 +583,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'boevoi` molot',
@@ -568,8 +599,8 @@ const dndItemRawList = [
     damageType: DAMAGE_BLUDGEONING,
     weight: 2,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'boevoi` topor',
@@ -584,8 +615,8 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 4,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'glefa',
@@ -603,8 +634,8 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 6,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'dvuruchny`i` mech',
@@ -621,8 +652,8 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 6,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'dlinnoe kop`yo',
@@ -639,8 +670,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 6,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'dlinny`i` mech',
@@ -655,8 +686,8 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 3,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'knut',
@@ -673,8 +704,8 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 3,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'korotkii` mech',
@@ -691,8 +722,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'molot',
@@ -709,8 +740,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 10,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'morgenshtern',
@@ -725,8 +756,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 4,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'pika',
@@ -744,8 +775,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 18,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'rapira',
@@ -761,8 +792,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'sekira',
@@ -779,8 +810,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 7,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'skimitar',
@@ -797,8 +828,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 3,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'trezubetc',
@@ -818,8 +849,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 4,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'tsep',
@@ -834,8 +865,8 @@ const dndItemRawList = [
     damageType: DAMAGE_BLUDGEONING,
     weight: 2,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское рукопашное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: 'arbalet, ruchnoi',
@@ -857,8 +888,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 3,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское дальнобойное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
   {
     id: 'arbalet, tiazhyoly`i',
@@ -881,8 +912,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 18,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское дальнобойное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
   {
     id: 'dlinny`i` luk',
@@ -904,8 +935,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское дальнобойное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
   {
     id: 'duhovaia trubka',
@@ -927,8 +958,8 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 1,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское дальнобойное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
   {
     id: 'set',
@@ -944,8 +975,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 3,
     source: 'PHB:149',
-    category: 'Оружие',
-    subcategory: 'Воинское дальнобойное оружие',
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
   {
     id: 'abak',
@@ -954,7 +985,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'alhimicheskii` ogon',
@@ -977,8 +1008,8 @@ const dndItemRawList = [
     },
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Расходники',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_CONSUMABLES,
   },
   {
     id: 'blok i lebyodka',
@@ -988,7 +1019,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'arbaletny`e bolty',
@@ -998,8 +1029,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 1.5,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Боеприпасы',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_AMMO,
   },
   {
     id: 'igly` dlia trubki',
@@ -1009,8 +1040,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Боеприпасы',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_AMMO,
   },
   {
     id: 'snariady` dlia prashchi',
@@ -1020,8 +1051,8 @@ const dndItemRawList = [
     cost: 4,
     weight: 1.5,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Боеприпасы',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_AMMO,
   },
   {
     id: 'strely',
@@ -1031,8 +1062,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Боеприпасы',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_AMMO,
   },
   {
     id: 'bochka',
@@ -1042,7 +1073,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 70,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'bumaga',
@@ -1052,7 +1083,7 @@ const dndItemRawList = [
     cost: 20,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'burdiuk',
@@ -1062,7 +1093,7 @@ const dndItemRawList = [
     cost: 20,
     weight: 5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'buty`lka, stecliannaia',
@@ -1072,7 +1103,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'vedro',
@@ -1082,7 +1113,7 @@ const dndItemRawList = [
     cost: 5,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'veryovka pen`kovaia',
@@ -1092,7 +1123,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 10,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'veryovka shyolkovaia',
@@ -1102,7 +1133,7 @@ const dndItemRawList = [
     cost: 1000,
     weight: 5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'vesy`, torgovy`e',
@@ -1112,7 +1143,7 @@ const dndItemRawList = [
     cost: 500,
     weight: 3,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'vosk',
@@ -1121,7 +1152,7 @@ const dndItemRawList = [
     cost: 50,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'gorshok, zhelezny`i',
@@ -1131,7 +1162,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 10,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'grafin',
@@ -1141,7 +1172,7 @@ const dndItemRawList = [
     cost: 2,
     weight: 4,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'duhi',
@@ -1151,7 +1182,7 @@ const dndItemRawList = [
     cost: 500,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'zamok',
@@ -1161,7 +1192,7 @@ const dndItemRawList = [
     cost: 1000,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'zel`e lecheniia',
@@ -1171,7 +1202,7 @@ const dndItemRawList = [
     cost: 5000,
     weight: 0.5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'zerkalo, stal`noe',
@@ -1180,7 +1211,7 @@ const dndItemRawList = [
     cost: 500,
     weight: 0.5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kaltropy',
@@ -1191,7 +1222,7 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kandaly',
@@ -1201,7 +1232,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 6,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kislota',
@@ -1220,7 +1251,7 @@ const dndItemRawList = [
     damageType: DAMAGE_ACID,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kniga',
@@ -1230,7 +1261,7 @@ const dndItemRawList = [
     cost: 2500,
     weight: 5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kniga zaclinanii',
@@ -1240,7 +1271,7 @@ const dndItemRawList = [
     cost: 5000,
     weight: 3,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kolokol`chik',
@@ -1249,7 +1280,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kolchan',
@@ -1259,7 +1290,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kol`tco-pechatka',
@@ -1268,7 +1299,7 @@ const dndItemRawList = [
     cost: 500,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'komplekt dlia lazaniia',
@@ -1278,7 +1309,7 @@ const dndItemRawList = [
     cost: 2500,
     weight: 12,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'komplekt dlia ry`balki',
@@ -1288,7 +1319,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 4,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'komplekt tcelitelia',
@@ -1298,7 +1329,7 @@ const dndItemRawList = [
     cost: 500,
     weight: 3,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kontei`ner dlia arbaletny`kh boltov',
@@ -1308,7 +1339,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kontei`ner dlia kart i svitkov',
@@ -1318,7 +1349,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'korzina',
@@ -1328,7 +1359,7 @@ const dndItemRawList = [
     cost: 40,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'koshel',
@@ -1338,7 +1369,7 @@ const dndItemRawList = [
     cost: 50,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kriuk-koshka',
@@ -1347,7 +1378,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 4,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'kuvshin',
@@ -1357,7 +1388,7 @@ const dndItemRawList = [
     cost: 2,
     weight: 4,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'lampa',
@@ -1371,7 +1402,7 @@ const dndItemRawList = [
     cost: 50,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'lestneytca',
@@ -1381,7 +1412,7 @@ const dndItemRawList = [
     cost: 10,
     weight: 25,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'lomik',
@@ -1391,7 +1422,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'lopata',
@@ -1401,7 +1432,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'volshebnaia palochka',
@@ -1411,8 +1442,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Магическая фокусировка',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_MAGIC_FOCUS,
   },
   {
     id: 'zhezl',
@@ -1422,8 +1453,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Магическая фокусировка',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_MAGIC_FOCUS,
   },
   {
     id: 'kristal',
@@ -1433,8 +1464,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Магическая фокусировка',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_MAGIC_FOCUS,
   },
   {
     id: 'posokh',
@@ -1444,8 +1475,8 @@ const dndItemRawList = [
     cost: 500,
     weight: 4,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Магическая фокусировка',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_MAGIC_FOCUS,
   },
   {
     id: 'sfera',
@@ -1455,8 +1486,8 @@ const dndItemRawList = [
     cost: 2000,
     weight: 3,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Магическая фокусировка',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_MAGIC_FOCUS,
   },
   {
     id: 'maslo',
@@ -1474,7 +1505,7 @@ const dndItemRawList = [
     damageType: DAMAGE_FIRE,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'mel',
@@ -1484,7 +1515,7 @@ const dndItemRawList = [
     cost: 1,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'metallicheskie shariki',
@@ -1494,7 +1525,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'meshok',
@@ -1504,7 +1535,7 @@ const dndItemRawList = [
     cost: 1,
     weight: 0.5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'meshochek s komponentami',
@@ -1514,7 +1545,7 @@ const dndItemRawList = [
     cost: 2500,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'molot, kuznechny`i',
@@ -1523,7 +1554,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 10,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'molotok',
@@ -1532,7 +1563,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 3,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'my`lo',
@@ -1541,7 +1572,7 @@ const dndItemRawList = [
     cost: 2,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'dorozhnaia odezhda',
@@ -1550,8 +1581,8 @@ const dndItemRawList = [
     cost: 200,
     weight: 4,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Одежда',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_CLOTHES,
   },
   {
     id: 'kostium',
@@ -1560,8 +1591,8 @@ const dndItemRawList = [
     cost: 500,
     weight: 4,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Одежда',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_CLOTHES,
   },
   {
     id: 'oby`chnaia odezhda',
@@ -1570,8 +1601,8 @@ const dndItemRawList = [
     cost: 50,
     weight: 3,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Одежда',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_CLOTHES,
   },
   {
     id: 'otlichnaia odezhda',
@@ -1580,8 +1611,8 @@ const dndItemRawList = [
     cost: 1500,
     weight: 6,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Одежда',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_CLOTHES,
   },
   {
     id: 'odeialo',
@@ -1590,7 +1621,7 @@ const dndItemRawList = [
     cost: 50,
     weight: 3,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'ohotneychii` kapkan',
@@ -1605,7 +1636,7 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 25,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'palatka',
@@ -1615,7 +1646,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 20,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'pergament',
@@ -1625,7 +1656,7 @@ const dndItemRawList = [
     cost: 10,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'pesochny`e chasy',
@@ -1634,7 +1665,7 @@ const dndItemRawList = [
     cost: 2500,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'pischee pero',
@@ -1643,7 +1674,7 @@ const dndItemRawList = [
     cost: 2,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'podzornaia truba',
@@ -1653,7 +1684,7 @@ const dndItemRawList = [
     cost: 100000,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'protivoiadie',
@@ -1663,7 +1694,7 @@ const dndItemRawList = [
     cost: 5000,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'ratcion',
@@ -1673,7 +1704,7 @@ const dndItemRawList = [
     cost: 50,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'riukzak',
@@ -1683,7 +1714,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'riasa',
@@ -1692,7 +1723,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 4,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'svecha',
@@ -1706,7 +1737,7 @@ const dndItemRawList = [
     cost: 1,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'sviataia voda',
@@ -1725,7 +1756,7 @@ const dndItemRawList = [
     damageType: DAMAGE_RADIANT,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'amulet',
@@ -1735,8 +1766,8 @@ const dndItemRawList = [
     cost: 500,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Священный символ',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_HOLY_SYMBOL,
   },
   {
     id: 'relikvarii',
@@ -1746,8 +1777,8 @@ const dndItemRawList = [
     cost: 500,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Священный символ',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_HOLY_SYMBOL,
   },
   {
     id: 'e`mblema',
@@ -1757,8 +1788,8 @@ const dndItemRawList = [
     cost: 500,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Священный символ',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_HOLY_SYMBOL,
   },
   {
     id: 'signal`ny`i` svistok',
@@ -1767,7 +1798,7 @@ const dndItemRawList = [
     cost: 5,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'spal`nik',
@@ -1776,7 +1807,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 7,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'stolovy`i` nabor',
@@ -1786,7 +1817,7 @@ const dndItemRawList = [
     cost: 20,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'sunduk',
@@ -1796,7 +1827,7 @@ const dndItemRawList = [
     cost: 500,
     weight: 25,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'taran, portativny`i',
@@ -1806,7 +1837,7 @@ const dndItemRawList = [
     cost: 400,
     weight: 35,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'tochil`ny`i` kamen',
@@ -1815,7 +1846,7 @@ const dndItemRawList = [
     cost: 1,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'trutneytca',
@@ -1825,7 +1856,7 @@ const dndItemRawList = [
     cost: 50,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'uvelichitel`noe steclo',
@@ -1835,7 +1866,7 @@ const dndItemRawList = [
     cost: 10000,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'fakel',
@@ -1853,7 +1884,7 @@ const dndItemRawList = [
     damageType: DAMAGE_FIRE,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'flakon',
@@ -1863,7 +1894,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'bol`shaia kruzhka',
@@ -1873,7 +1904,7 @@ const dndItemRawList = [
     cost: 2,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'fliaga',
@@ -1883,7 +1914,7 @@ const dndItemRawList = [
     cost: 2,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'vetochka omely',
@@ -1893,8 +1924,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Фокусировка друидов',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_DRUID_FOCUS,
   },
   {
     id: 'vetochka paduba',
@@ -1904,8 +1935,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Фокусировка друидов',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_DRUID_FOCUS,
   },
   {
     id: 'dereviannaia palochka',
@@ -1915,8 +1946,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Фокусировка друидов',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_DRUID_FOCUS,
   },
   {
     id: 'derevianny`i` skipetr',
@@ -1926,8 +1957,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 1,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Фокусировка друидов',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_DRUID_FOCUS,
   },
   {
     id: 'derevianny`i` posokh',
@@ -1937,8 +1968,8 @@ const dndItemRawList = [
     cost: 500,
     weight: 4,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Фокусировка друидов',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_DRUID_FOCUS,
   },
   {
     id: 'totem',
@@ -1948,8 +1979,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Фокусировка друидов',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_DRUID_FOCUS,
   },
   {
     id: 'fonar`, zakry`ty`i',
@@ -1963,7 +1994,7 @@ const dndItemRawList = [
     cost: 500,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'fonar`, napravlenny`i',
@@ -1977,7 +2008,7 @@ const dndItemRawList = [
     cost: 1000,
     weight: 2,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'chain',
@@ -1993,7 +2024,7 @@ const dndItemRawList = [
     },
     weight: 10,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'chernila',
@@ -2003,7 +2034,7 @@ const dndItemRawList = [
     cost: 1000,
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'shest',
@@ -2013,7 +2044,7 @@ const dndItemRawList = [
     cost: 5,
     weight: 7,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'shipy` zhelezny`e',
@@ -2023,7 +2054,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 5,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'shliambur',
@@ -2032,7 +2063,7 @@ const dndItemRawList = [
     cost: 5,
     weight: 0.25,
     source: 'PHB:150',
-    category: 'Снаряжение',
+    category: CAT_EQUIPMENT,
   },
   {
     id: 'iad, prostoi',
@@ -2052,8 +2083,8 @@ const dndItemRawList = [
     poisonType: 'injury',
     weight: 0,
     source: 'PHB:150',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'nabor artista',
@@ -2063,8 +2094,8 @@ const dndItemRawList = [
     cost: 4000,
     weight: 35,
     source: 'PHB:151',
-    category: 'Снаряжение',
-    subcategory: 'Набор',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_KIT,
   },
   {
     id: 'nabor vzlomshchika',
@@ -2074,8 +2105,8 @@ const dndItemRawList = [
     cost: 1600,
     weight: 39,
     source: 'PHB:151',
-    category: 'Снаряжение',
-    subcategory: 'Набор',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_KIT,
   },
   {
     id: 'nabor diplomata',
@@ -2085,8 +2116,8 @@ const dndItemRawList = [
     cost: 3900,
     weight: 36,
     source: 'PHB:151',
-    category: 'Снаряжение',
-    subcategory: 'Набор',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_KIT,
   },
   {
     id: 'nabor issledovatelia podzemelii',
@@ -2096,8 +2127,8 @@ const dndItemRawList = [
     cost: 1200,
     weight: 43,
     source: 'PHB:151',
-    category: 'Снаряжение',
-    subcategory: 'Набор',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_KIT,
   },
   {
     id: 'nabor puteshestvennika',
@@ -2107,8 +2138,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 59,
     source: 'PHB:151',
-    category: 'Снаряжение',
-    subcategory: 'Набор',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_KIT,
   },
   {
     id: 'nabor sviashchennika',
@@ -2118,8 +2149,8 @@ const dndItemRawList = [
     cost: 1900,
     weight: 22,
     source: 'PHB:151',
-    category: 'Снаряжение',
-    subcategory: 'Набор',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_KIT,
   },
   {
     id: 'nabor uchyonogo',
@@ -2129,8 +2160,8 @@ const dndItemRawList = [
     cost: 4000,
     weight: 11,
     source: 'PHB:151',
-    category: 'Снаряжение',
-    subcategory: 'Набор',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_KIT,
   },
   {
     id: 'vorovskie instrumenty',
@@ -2140,7 +2171,7 @@ const dndItemRawList = [
     cost: 2500,
     weight: 1,
     source: 'PHB:154',
-    category: 'Инструменты',
+    category: CAT_TOOLS,
   },
   {
     id: 'drakon`i shakhmaty',
@@ -2150,8 +2181,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 0.5,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Игровой набор',
+    category: CAT_TOOLS,
+    subcategory: CAT_GAME_SET,
   },
   {
     id: 'karty',
@@ -2161,8 +2192,8 @@ const dndItemRawList = [
     cost: 50,
     weight: 0,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Игровой набор',
+    category: CAT_TOOLS,
+    subcategory: CAT_GAME_SET,
   },
   {
     id: 'kosti',
@@ -2172,8 +2203,8 @@ const dndItemRawList = [
     cost: 10,
     weight: 0,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Игровой набор',
+    category: CAT_TOOLS,
+    subcategory: CAT_GAME_SET,
   },
   {
     id: 'stavka tryokh drakonov',
@@ -2183,8 +2214,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 0,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Игровой набор',
+    category: CAT_TOOLS,
+    subcategory: CAT_GAME_SET,
   },
   {
     id: 'instrumenty` navigatora',
@@ -2194,7 +2225,7 @@ const dndItemRawList = [
     cost: 2500,
     weight: 2,
     source: 'PHB:154',
-    category: 'Инструменты',
+    category: CAT_TOOLS,
   },
   {
     id: 'instrumenty` otravitelia',
@@ -2204,7 +2235,7 @@ const dndItemRawList = [
     cost: 5000,
     weight: 2,
     source: 'PHB:154',
-    category: 'Инструменты',
+    category: CAT_TOOLS,
   },
   {
     id: 'instrumenty` alhimika',
@@ -2214,8 +2245,8 @@ const dndItemRawList = [
     cost: 5000,
     weight: 8,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` gonchara',
@@ -2225,8 +2256,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 3,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` zhestianshchika',
@@ -2236,8 +2267,8 @@ const dndItemRawList = [
     cost: 5000,
     weight: 10,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` kalligrafa',
@@ -2247,8 +2278,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 5,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` kamenshchika',
@@ -2258,8 +2289,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 8,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` kartografa',
@@ -2269,8 +2300,8 @@ const dndItemRawList = [
     cost: 1500,
     weight: 6,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` kozhevnika',
@@ -2280,8 +2311,8 @@ const dndItemRawList = [
     cost: 500,
     weight: 5,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` kuznetca',
@@ -2291,8 +2322,8 @@ const dndItemRawList = [
     cost: 2000,
     weight: 8,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` pivovara',
@@ -2302,8 +2333,8 @@ const dndItemRawList = [
     cost: 2000,
     weight: 9,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` plotneyka',
@@ -2313,8 +2344,8 @@ const dndItemRawList = [
     cost: 800,
     weight: 6,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` povara',
@@ -2324,8 +2355,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 8,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` rezchika po derevu',
@@ -2335,8 +2366,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 5,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` sapozhnika',
@@ -2346,8 +2377,8 @@ const dndItemRawList = [
     cost: 500,
     weight: 5,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` stecloduva',
@@ -2357,8 +2388,8 @@ const dndItemRawList = [
     cost: 3000,
     weight: 5,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` tkacha',
@@ -2368,8 +2399,8 @@ const dndItemRawList = [
     cost: 100,
     weight: 5,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` hudozhnika',
@@ -2379,8 +2410,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 5,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'instrumenty` iuvelira',
@@ -2390,8 +2421,8 @@ const dndItemRawList = [
     cost: 2500,
     weight: 2,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Инструменты ремесленников',
+    category: CAT_TOOLS,
+    subcategory: CAT_ARTISAN_TOOLS,
   },
   {
     id: 'baraban',
@@ -2401,8 +2432,8 @@ const dndItemRawList = [
     cost: 600,
     weight: 3,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Музыкальные инструменты',
+    category: CAT_TOOLS,
+    subcategory: CAT_MUSIC_TOOLS,
   },
   {
     id: 'viola',
@@ -2412,8 +2443,8 @@ const dndItemRawList = [
     cost: 3000,
     weight: 1,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Музыкальные инструменты',
+    category: CAT_TOOLS,
+    subcategory: CAT_MUSIC_TOOLS,
   },
   {
     id: 'voly`nka',
@@ -2423,8 +2454,8 @@ const dndItemRawList = [
     cost: 3000,
     weight: 6,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Музыкальные инструменты',
+    category: CAT_TOOLS,
+    subcategory: CAT_MUSIC_TOOLS,
   },
   {
     id: 'leera',
@@ -2434,8 +2465,8 @@ const dndItemRawList = [
     cost: 3000,
     weight: 2,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Музыкальные инструменты',
+    category: CAT_TOOLS,
+    subcategory: CAT_MUSIC_TOOLS,
   },
   {
     id: 'liutnia',
@@ -2445,8 +2476,8 @@ const dndItemRawList = [
     cost: 3500,
     weight: 2,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Музыкальные инструменты',
+    category: CAT_TOOLS,
+    subcategory: CAT_MUSIC_TOOLS,
   },
   {
     id: 'rozhok',
@@ -2456,8 +2487,8 @@ const dndItemRawList = [
     cost: 300,
     weight: 2,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Музыкальные инструменты',
+    category: CAT_TOOLS,
+    subcategory: CAT_MUSIC_TOOLS,
   },
   {
     id: 'svirel',
@@ -2467,8 +2498,8 @@ const dndItemRawList = [
     cost: 1200,
     weight: 2,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Музыкальные инструменты',
+    category: CAT_TOOLS,
+    subcategory: CAT_MUSIC_TOOLS,
   },
   {
     id: 'flei`ta',
@@ -2478,8 +2509,8 @@ const dndItemRawList = [
     cost: 200,
     weight: 1,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Музыкальные инструменты',
+    category: CAT_TOOLS,
+    subcategory: CAT_MUSIC_TOOLS,
   },
   {
     id: 'tcimbaly',
@@ -2489,8 +2520,8 @@ const dndItemRawList = [
     cost: 2500,
     weight: 10,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Музыкальные инструменты',
+    category: CAT_TOOLS,
+    subcategory: CAT_MUSIC_TOOLS,
   },
   {
     id: 'shalmei',
@@ -2500,8 +2531,8 @@ const dndItemRawList = [
     cost: 200,
     weight: 1,
     source: 'PHB:154',
-    category: 'Инструменты',
-    subcategory: 'Музыкальные инструменты',
+    category: CAT_TOOLS,
+    subcategory: CAT_MUSIC_TOOLS,
   },
   {
     id: 'nabor dlia grima',
@@ -2511,7 +2542,7 @@ const dndItemRawList = [
     cost: 2500,
     weight: 3,
     source: 'PHB:154',
-    category: 'Инструменты',
+    category: CAT_TOOLS,
   },
   {
     id: 'nabor dlia fal`sifikatcii',
@@ -2521,7 +2552,7 @@ const dndItemRawList = [
     cost: 1500,
     weight: 5,
     source: 'PHB:154',
-    category: 'Инструменты',
+    category: CAT_TOOLS,
   },
   {
     id: 'nabor travnika',
@@ -2531,7 +2562,7 @@ const dndItemRawList = [
     cost: 500,
     weight: 3,
     source: 'PHB:154',
-    category: 'Инструменты',
+    category: CAT_TOOLS,
   },
   {
     id: 'boevoi` kon',
@@ -2540,7 +2571,7 @@ const dndItemRawList = [
     description: 'Скорость 60 фт. Грузоподъёмность 540 фунтов.',
     cost: 40000,
     source: 'PHB:157',
-    category: 'Скакуны и другие животные',
+    category: CAT_ANIMALS,
   },
   {
     id: 'verbliud',
@@ -2549,7 +2580,7 @@ const dndItemRawList = [
     description: 'Скорость 50 фт. Грузоподъёмность 480 фунтов.',
     cost: 5000,
     source: 'PHB:157',
-    category: 'Скакуны и другие животные',
+    category: CAT_ANIMALS,
   },
   {
     id: 'loshad`, ezdovaia',
@@ -2558,7 +2589,7 @@ const dndItemRawList = [
     description: 'Скорость 60 фт. Грузоподъёмность 480 фунтов.',
     cost: 7500,
     source: 'PHB:157',
-    category: 'Скакуны и другие животные',
+    category: CAT_ANIMALS,
   },
   {
     id: 'loshad`, tiaglovaia',
@@ -2567,7 +2598,7 @@ const dndItemRawList = [
     description: 'Скорость 40 фт. Грузоподъёмность 540 фунтов.',
     cost: 5000,
     source: 'PHB:157',
-    category: 'Скакуны и другие животные',
+    category: CAT_ANIMALS,
   },
   {
     id: 'mastiff',
@@ -2576,7 +2607,7 @@ const dndItemRawList = [
     description: 'Скорость 40 фт. Грузоподъёмность 195 фунтов.',
     cost: 2500,
     source: 'PHB:157',
-    category: 'Скакуны и другие животные',
+    category: CAT_ANIMALS,
   },
   {
     id: 'mul',
@@ -2585,7 +2616,7 @@ const dndItemRawList = [
     description: 'Скорость 40 фт. Грузоподъёмность 420 фунтов.',
     cost: 800,
     source: 'PHB:157',
-    category: 'Скакуны и другие животные',
+    category: CAT_ANIMALS,
   },
   {
     id: 'osyol',
@@ -2594,7 +2625,7 @@ const dndItemRawList = [
     description: 'Скорость 40 фт. Грузоподъёмность 420 фунтов.',
     cost: 800,
     source: 'PHB:157',
-    category: 'Скакуны и другие животные',
+    category: CAT_ANIMALS,
   },
   {
     id: 'poni',
@@ -2603,7 +2634,7 @@ const dndItemRawList = [
     description: 'Скорость 40 фт. Грузоподъёмность 225 фунтов.',
     cost: 3000,
     source: 'PHB:157',
-    category: 'Скакуны и другие животные',
+    category: CAT_ANIMALS,
   },
   {
     id: 'slon',
@@ -2612,7 +2643,7 @@ const dndItemRawList = [
     description: 'Скорость: 40 фт. Грузоподъёмность 1320 фунтов.',
     cost: 20000,
     source: 'PHB:157',
-    category: 'Скакуны и другие животные',
+    category: CAT_ANIMALS,
   },
   {
     id: 'tritceratops',
@@ -2621,7 +2652,7 @@ const dndItemRawList = [
     description: 'Скорость: 50 фт. Грузоподъёмность 1320 фунтов.',
     cost: 50000,
     source: 'PHB:157',
-    category: 'Скакуны и другие животные',
+    category: CAT_ANIMALS,
   },
   {
     id: 'kareta',
@@ -2630,7 +2661,7 @@ const dndItemRawList = [
     cost: 25000,
     weight: 100,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
+    category: CAT_TRANSPORT,
   },
   {
     id: 'koliaska',
@@ -2639,7 +2670,7 @@ const dndItemRawList = [
     cost: 10000,
     weight: 600,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
+    category: CAT_TRANSPORT,
   },
   {
     id: 'koniushnia',
@@ -2648,7 +2679,7 @@ const dndItemRawList = [
     description: 'В день',
     cost: 50,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
+    category: CAT_TRANSPORT,
   },
   {
     id: 'korm',
@@ -2658,7 +2689,7 @@ const dndItemRawList = [
     cost: 5,
     weight: 10,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
+    category: CAT_TRANSPORT,
   },
   {
     id: 'sani',
@@ -2667,7 +2698,7 @@ const dndItemRawList = [
     cost: 2000,
     weight: 300,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
+    category: CAT_TRANSPORT,
   },
   {
     id: 'sedel`ny`e sumki',
@@ -2676,7 +2707,7 @@ const dndItemRawList = [
     cost: 400,
     weight: 8,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
+    category: CAT_TRANSPORT,
   },
   {
     id: 'voennoe sedlo',
@@ -2685,8 +2716,8 @@ const dndItemRawList = [
     cost: 2000,
     weight: 30,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
-    subcategory: 'Сёдла',
+    category: CAT_TRANSPORT,
+    subcategory: CAT_SADDLES,
   },
   {
     id: 'gruzovoe sedlo',
@@ -2695,8 +2726,8 @@ const dndItemRawList = [
     cost: 500,
     weight: 15,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
-    subcategory: 'Сёдла',
+    category: CAT_TRANSPORT,
+    subcategory: CAT_SADDLES,
   },
   {
     id: 'ezdovoe sedlo',
@@ -2705,8 +2736,8 @@ const dndItemRawList = [
     cost: 1000,
     weight: 25,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
-    subcategory: 'Сёдла',
+    category: CAT_TRANSPORT,
+    subcategory: CAT_SADDLES,
   },
   {
     id: 'e`kzoticheskoe sedlo',
@@ -2715,8 +2746,8 @@ const dndItemRawList = [
     cost: 6000,
     weight: 40,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
-    subcategory: 'Сёдла',
+    category: CAT_TRANSPORT,
+    subcategory: CAT_SADDLES,
   },
   {
     id: 'telega',
@@ -2725,7 +2756,7 @@ const dndItemRawList = [
     cost: 1500,
     weight: 200,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
+    category: CAT_TRANSPORT,
   },
   {
     id: 'upriazh` i uzdechka',
@@ -2734,7 +2765,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 1,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
+    category: CAT_TRANSPORT,
   },
   {
     id: 'furgon',
@@ -2743,7 +2774,7 @@ const dndItemRawList = [
     cost: 3500,
     weight: 400,
     source: 'PHB:157',
-    category: 'Сёдла, упряжь и транспорт',
+    category: CAT_TRANSPORT,
   },
   {
     id: 'voenny`i` korabl',
@@ -2752,7 +2783,7 @@ const dndItemRawList = [
     description: 'Скорость: 2,5 узла',
     cost: 2500000,
     source: 'PHB:157',
-    category: 'Водный транспорт',
+    category: CAT_TRANSPORT_WATER,
   },
   {
     id: 'galera',
@@ -2761,7 +2792,7 @@ const dndItemRawList = [
     description: 'Скорость: 4 узла',
     cost: 3000000,
     source: 'PHB:157',
-    category: 'Водный транспорт',
+    category: CAT_TRANSPORT_WATER,
   },
   {
     id: 'kilevaia lodka',
@@ -2770,7 +2801,7 @@ const dndItemRawList = [
     description: 'Скорость: 1 узел',
     cost: 300000,
     source: 'PHB:157',
-    category: 'Водный транспорт',
+    category: CAT_TRANSPORT_WATER,
   },
   {
     id: 'lad`ia',
@@ -2779,7 +2810,7 @@ const dndItemRawList = [
     description: 'Скорость: 3 узла',
     cost: 1000000,
     source: 'PHB:157',
-    category: 'Водный транспорт',
+    category: CAT_TRANSPORT_WATER,
   },
   {
     id: 'parusny`i` korabl',
@@ -2788,7 +2819,7 @@ const dndItemRawList = [
     description: 'Скорость: 2 узла',
     cost: 1000000,
     source: 'PHB:157',
-    category: 'Водный транспорт',
+    category: CAT_TRANSPORT_WATER,
   },
   {
     id: 'shliupka (vyosel`naia lodka)',
@@ -2798,7 +2829,7 @@ const dndItemRawList = [
     cost: 50,
     weight: 100,
     source: 'PHB:157',
-    category: 'Водный транспорт',
+    category: CAT_TRANSPORT_WATER,
   },
   {
     id: 'kanoe',
@@ -2808,7 +2839,7 @@ const dndItemRawList = [
     cost: 5000,
     weight: 100,
     source: 'ToA:32',
-    category: 'Водный транспорт',
+    category: CAT_TRANSPORT_WATER,
   },
   {
     id: 'pshenitca',
@@ -2817,7 +2848,7 @@ const dndItemRawList = [
     cost: 1,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'muka',
@@ -2826,7 +2857,7 @@ const dndItemRawList = [
     cost: 2,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'kuritca',
@@ -2834,7 +2865,7 @@ const dndItemRawList = [
     nameEn: '',
     cost: 2,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'sol',
@@ -2843,7 +2874,7 @@ const dndItemRawList = [
     cost: 5,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'zhelezo',
@@ -2853,7 +2884,7 @@ const dndItemRawList = [
     cost: 10,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'holst',
@@ -2862,7 +2893,7 @@ const dndItemRawList = [
     description: '10 фт²',
     cost: 10,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'med',
@@ -2871,7 +2902,7 @@ const dndItemRawList = [
     cost: 50,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'kHlopchatobumazhnaia tkan',
@@ -2880,7 +2911,7 @@ const dndItemRawList = [
     description: '10 фт²',
     cost: 50,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'imbir',
@@ -2889,7 +2920,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'koza',
@@ -2897,7 +2928,7 @@ const dndItemRawList = [
     nameEn: '',
     cost: 100,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'koritca',
@@ -2906,7 +2937,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'peretc',
@@ -2915,7 +2946,7 @@ const dndItemRawList = [
     cost: 200,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'ovtca',
@@ -2923,7 +2954,7 @@ const dndItemRawList = [
     nameEn: '',
     cost: 200,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'gvozdika',
@@ -2932,7 +2963,7 @@ const dndItemRawList = [
     cost: 300,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'svin`ia',
@@ -2940,7 +2971,7 @@ const dndItemRawList = [
     nameEn: '',
     cost: 300,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'serebro',
@@ -2949,7 +2980,7 @@ const dndItemRawList = [
     cost: 500,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'l`nianaia tkan',
@@ -2958,7 +2989,7 @@ const dndItemRawList = [
     description: '10 фт²',
     cost: 300,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'shafran',
@@ -2967,7 +2998,7 @@ const dndItemRawList = [
     cost: 1500,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'vol',
@@ -2975,7 +3006,7 @@ const dndItemRawList = [
     nameEn: '',
     cost: 1500,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'zoloto',
@@ -2984,7 +3015,7 @@ const dndItemRawList = [
     cost: 5000,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'platina',
@@ -2993,7 +3024,7 @@ const dndItemRawList = [
     cost: 50000,
     weight: 1,
     source: 'PHB:157',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'sredstvo dlia otpugivaniia nasekomy`kh: maz',
@@ -3002,7 +3033,7 @@ const dndItemRawList = [
     description: 'Бутыль из тыквы или флакон мази содержит 20 порций мази. Одна порция защищает носителя от обычных насекомых в течение 24 часов. Средство водостойкое, так что оно не смывается дождём.',
     cost: 100,
     source: 'ToA:32',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'sredstvo dlia otpugivaniia nasekomy`kh: aromaticheskaia svecha',
@@ -3011,7 +3042,7 @@ const dndItemRawList = [
     description: 'Свеча горит в течение 8 часов и отгоняет насекомых в радиусе 20 фт вокруг себя.',
     cost: 10,
     source: 'ToA:32',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'dozhdesbornik',
@@ -3021,7 +3052,7 @@ const dndItemRawList = [
     cost: 100,
     weight: 5,
     source: 'ToA:32',
-    category: 'Товары',
+    category: CAT_GOODS,
   },
   {
     id: 'vino, oby`chnoe',
@@ -3030,7 +3061,7 @@ const dndItemRawList = [
     description: 'кружка',
     cost: 20,
     source: 'PHB:158',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'tezh: kruzhka',
@@ -3039,7 +3070,7 @@ const dndItemRawList = [
     description: 'Перебродивший напиток янтарного цвета на основе мёда. В Чульте он куда более распространён и популярен, чем пиво или эль.',
     cost: 4,
     source: 'ToA:32',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'tezh: bochonok v 1 gallon',
@@ -3048,7 +3079,7 @@ const dndItemRawList = [
     description: 'Перебродивший напиток янтарного цвета на основе мёда. В Чульте он куда более распространён и популярен, чем пиво или эль.',
     cost: 20,
     source: 'ToA:32',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'vino, oby`chnoe',
@@ -3057,7 +3088,7 @@ const dndItemRawList = [
     description: 'бутылка',
     cost: 50,
     source: 'PHB:158',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'vino, otlichnoe',
@@ -3066,7 +3097,7 @@ const dndItemRawList = [
     description: 'кружка',
     cost: 400,
     source: 'PHB:158',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'vino, otlichnoe',
@@ -3075,7 +3106,7 @@ const dndItemRawList = [
     description: 'бутылка',
     cost: 1000,
     source: 'PHB:158',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'miaso',
@@ -3084,7 +3115,7 @@ const dndItemRawList = [
     description: 'кусок',
     cost: 300,
     source: 'PHB:158',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'pivo',
@@ -3093,7 +3124,7 @@ const dndItemRawList = [
     description: 'кружка',
     cost: 4,
     source: 'PHB:158',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'pivo',
@@ -3102,7 +3133,7 @@ const dndItemRawList = [
     description: 'галлон',
     cost: 20,
     source: 'PHB:158',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'sy`r',
@@ -3111,7 +3142,7 @@ const dndItemRawList = [
     description: 'кусок',
     cost: 10,
     source: 'PHB:158',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'torzhestvenny`i` obed',
@@ -3120,7 +3151,7 @@ const dndItemRawList = [
     description: 'на 1 едока',
     cost: 1000,
     source: 'PHB:158',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'kHleb',
@@ -3129,7 +3160,7 @@ const dndItemRawList = [
     description: 'ломоть',
     cost: 2,
     source: 'PHB:158',
-    category: 'Еда и напитки',
+    category: CAT_FOOD,
   },
   {
     id: 'krov` assasina',
@@ -3148,8 +3179,8 @@ const dndItemRawList = [
     damageType: DAMAGE_POISON,
     poisonType: 'ingested',
     source: 'DMG 257',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'dy`m zhzhyonnogo otura',
@@ -3168,8 +3199,8 @@ const dndItemRawList = [
     damageType: DAMAGE_POISON,
     poisonType: 'inhaled',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'sliz` polzaiushchego padal`shchika',
@@ -3183,8 +3214,8 @@ const dndItemRawList = [
     cost: 20000,
     poisonType: 'contact',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'iad drou',
@@ -3198,8 +3229,8 @@ const dndItemRawList = [
     cost: 20000,
     poisonType: 'injury',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'e`ssentciia e`fira',
@@ -3213,8 +3244,8 @@ const dndItemRawList = [
     cost: 30000,
     poisonType: 'inhaled',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'zloba',
@@ -3228,8 +3259,8 @@ const dndItemRawList = [
     cost: 25000,
     poisonType: 'inhaled',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'polunochny`e slyozy',
@@ -3248,8 +3279,8 @@ const dndItemRawList = [
     damageType: DAMAGE_POISON,
     poisonType: 'ingested',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'maslo taggita',
@@ -3263,8 +3294,8 @@ const dndItemRawList = [
     cost: 40000,
     poisonType: 'contact',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'blednaia nastoi`ka',
@@ -3283,8 +3314,8 @@ const dndItemRawList = [
     damageType: DAMAGE_POISON,
     poisonType: 'ingested',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'iad lilovogo chervia',
@@ -3303,8 +3334,8 @@ const dndItemRawList = [
     damageType: DAMAGE_POISON,
     poisonType: 'injury',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'zmeiny`i` iad',
@@ -3323,8 +3354,8 @@ const dndItemRawList = [
     damageType: DAMAGE_POISON,
     poisonType: 'injury',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'stupor',
@@ -3338,8 +3369,8 @@ const dndItemRawList = [
     cost: 60000,
     poisonType: 'ingested',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'sy`vorotka pravdy',
@@ -3353,8 +3384,8 @@ const dndItemRawList = [
     cost: 15000,
     poisonType: 'ingested',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
   {
     id: 'iad viverny',
@@ -3373,8 +3404,8 @@ const dndItemRawList = [
     damageType: DAMAGE_POISON,
     poisonType: 'injury',
     source: 'DMG:258',
-    category: 'Снаряжение',
-    subcategory: 'Яды',
+    category: CAT_EQUIPMENT,
+    subcategory: CAT_POISONS,
   },
 ]
 

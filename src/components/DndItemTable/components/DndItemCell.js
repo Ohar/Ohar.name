@@ -12,6 +12,7 @@ import DndSourceInfo from "@/components/DndSourceInfo"
 import DndRange from "@/components/DndRange"
 import DndAc from "@/components/DndAc"
 import DndRequirementList from "@/components/DndRequirementList"
+import DndItemCategory from "./DndItemCategory"
 
 const DndItemCell = ({columnName, item}) => {
   switch (columnName) {
@@ -47,6 +48,11 @@ const DndItemCell = ({columnName, item}) => {
 
     case 'acChangeTo': {
       return <DndAc item={item}/>
+    }
+
+    case 'category':
+    case 'subcategory': {
+      return <DndItemCategory catId={item[columnName]}/>
     }
 
     case 'blockHiding':

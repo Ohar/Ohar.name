@@ -2,9 +2,14 @@ import _ from 'lodash'
 
 import SEARCH_PROP_NAME from '@/constants/SEARCH_PROP_NAME'
 import dndItemRawList from '@/constants/dnd/dndItemRawList'
+import {dndItemCategoryCollection} from '@/constants/dnd/dndItemCategoryList'
 
 import listToCollectionById from '@/utils/listToCollectionById'
 import prepareForSearch from "@/utils/prepareForSearch"
+
+const getCatName = catId => catId
+  ? dndItemCategoryCollection[catId].name
+  : ''
 
 const dndItemList = _.sortBy(
   dndItemRawList.map(
@@ -15,8 +20,8 @@ const dndItemList = _.sortBy(
           item.name,
           item.nameEn,
           item.description,
-          item.category,
-          item.subcategory,
+          getCatName(item.category),
+          getCatName(item.subcategory),
         ]
           .filter(
             e => e,

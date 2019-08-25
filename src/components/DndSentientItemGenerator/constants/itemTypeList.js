@@ -1,54 +1,70 @@
+import {
+  ITEM_BREASTPLATE,
+  ITEM_CHAIN_MAIL,
+  ITEM_CHAIN_SHIRT,
+  ITEM_HALF_PLATE,
+  ITEM_HIDE_ARMOR,
+  ITEM_LEATHER_ARMOR,
+  ITEM_PADDED_ARMOR,
+  ITEM_PLATE_ARMOR,
+  ITEM_RING_MAIL,
+  ITEM_SCALE_MAIL,
+  ITEM_SHIELD,
+  ITEM_SPLINT_ARMOR,
+  ITEM_STUDDED_LEATHER_ARMOR,
+} from '@/constants/dnd/dndItemRawList';
+
 export default [
   {
-    id: 'styoganny`i` dospekh',
+    id: ITEM_PADDED_ARMOR,
     probabilityWeight: 500,
   },
   {
-    id: 'kozhany`i` dospekh',
+    id: ITEM_LEATHER_ARMOR,
     probabilityWeight: 500,
   },
   {
-    id: 'dospekh iz proclyopannoi` kozhi',
+    id: ITEM_STUDDED_LEATHER_ARMOR,
     probabilityWeight: 500,
   },
   {
-    id: 'shkurny`i` dospekh',
+    id: ITEM_HIDE_ARMOR,
     probabilityWeight: 500,
   },
   {
-    id: 'kol`chuzhnaia rubaha',
+    id: ITEM_CHAIN_SHIRT,
     probabilityWeight: 500,
   },
   {
-    id: 'cheshui`chaty`i` dospekh',
+    id: ITEM_SCALE_MAIL,
     probabilityWeight: 500,
   },
   {
-    id: 'kirasa',
+    id: ITEM_BREASTPLATE,
     probabilityWeight: 500,
   },
   {
-    id: 'polulaty',
+    id: ITEM_HALF_PLATE,
     probabilityWeight: 500,
   },
   {
-    id: 'kolechny`i` dospekh',
+    id: ITEM_RING_MAIL,
     probabilityWeight: 500,
   },
   {
-    id: 'kol`chuga',
+    id: ITEM_CHAIN_MAIL,
     probabilityWeight: 500,
   },
   {
-    id: 'naborny`i` dospekh',
+    id: ITEM_SPLINT_ARMOR,
     probabilityWeight: 500,
   },
   {
-    id: 'laty',
+    id: ITEM_PLATE_ARMOR,
     probabilityWeight: 500,
   },
   {
-    id: 'shchit',
+    id: ITEM_SHIELD,
     probabilityWeight: 500,
   },
   {

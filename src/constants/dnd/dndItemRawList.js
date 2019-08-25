@@ -8,11 +8,25 @@ import {
   DAMAGE_SLASHING,
 } from '@/constants/dnd/dndDamageTypeList'
 
+export const ITEM_BREASTPLATE = 'breastplate'
+export const ITEM_CHAIN_MAIL = 'chain⁠_mail'
+export const ITEM_CHAIN_SHIRT = 'chain⁠_s⁠hirt'
+export const ITEM_HALF_PLATE = 'half_plate'
+export const ITEM_HIDE_ARMOR = 'hide_armor'
+export const ITEM_LEATHER_ARMOR = 'leather_armor'
+export const ITEM_PADDED_ARMOR = 'padded_armor'
+export const ITEM_PLATE_ARMOR = 'plate_armor'
+export const ITEM_RING_MAIL = 'ring_mail'
+export const ITEM_SCALE_MAIL = 'scale_m⁠ail'
+export const ITEM_SHIELD = 'shield'
+export const ITEM_SPLINT_ARMOR = 'splint_armor'
+export const ITEM_STUDDED_LEATHER_ARMOR = 'studded_leather_armor'
+
 const dndItemRawList = [
   {
-    id: 'styoganny`i` dospekh',
+    id: ITEM_PADDED_ARMOR,
     name: 'Стёганный доспех',
-    nameEn: '',
+    nameEn: 'Padded Armor',
     description: 'Стёганый доспех состоит из прошитых слоёв ткани и ватина.',
     cost: 500,
     weight: 8,
@@ -24,9 +38,9 @@ const dndItemRawList = [
     subcategory: 'Лёгкие доспехи',
   },
   {
-    id: 'kozhany`i` dospekh',
+    id: ITEM_LEATHER_ARMOR,
     name: 'Кожаный доспех',
-    nameEn: '',
+    nameEn: 'Leather Armor',
     description: 'Нагрудник и плечи этого доспеха изготовлены из кожи, вываренной в масле. Остальные части доспеха сделаны из более мягких и гибких материалов.',
     cost: 1000,
     weight: 10,
@@ -37,9 +51,9 @@ const dndItemRawList = [
     subcategory: 'Лёгкие доспехи',
   },
   {
-    id: 'dospekh iz proclyopannoi` kozhi',
+    id: ITEM_STUDDED_LEATHER_ARMOR,
     name: 'Доспех из проклёпанной кожи',
-    nameEn: '',
+    nameEn: 'Studded Leather Armor',
     description: 'Изготовленный из крепкой, но гибкой кожи проклёпанный доспех усилен тесно расположенными шипами или заклёпками.',
     cost: 4500,
     weight: 13,
@@ -50,9 +64,9 @@ const dndItemRawList = [
     subcategory: 'Лёгкие доспехи',
   },
   {
-    id: 'shkurny`i` dospekh',
+    id: ITEM_HIDE_ARMOR,
     name: 'Шкурный доспех',
-    nameEn: '',
+    nameEn: 'Hide Armor',
     description: 'Этот грубый доспех состоит из толстых мехов и шкур. Обычно их носят племена варваров, злые гуманоиды и прочие народы, у которых нет инструментов и материалов для создания более качественных доспехов.',
     cost: 1000,
     weight: 12,
@@ -64,9 +78,9 @@ const dndItemRawList = [
     subcategory: 'Средние доспехи',
   },
   {
-    id: 'kol`chuzhnaia rubaha',
+    id: ITEM_CHAIN_SHIRT,
     name: 'Кольчужная рубаха',
-    nameEn: '',
+    nameEn: 'Chain⁠ S⁠hirt',
     description: 'Сделанная из переплетённых металлических колец кольчужная рубаха носится между слоями одежды или кожи. Этот доспех предоставляет умеренную защиту торса и заглушает звон колец внешним покрытием.',
     cost: 5000,
     weight: 20,
@@ -78,9 +92,9 @@ const dndItemRawList = [
     subcategory: 'Средние доспехи',
   },
   {
-    id: 'cheshui`chaty`i` dospekh',
+    id: ITEM_SCALE_MAIL,
     name: 'Чешуйчатый доспех',
-    nameEn: '',
+    nameEn: 'Scale M⁠ail',
     description: 'Этот доспех состоит из кожаных куртки и поножей (а также, возможно, отдельной юбки), покрытых перекрывающимися кусочками металла, похожими на рыбную чешую. В комплект входят рукавицы.',
     cost: 5000,
     weight: 45,
@@ -93,9 +107,9 @@ const dndItemRawList = [
     subcategory: 'Средние доспехи',
   },
   {
-    id: 'kirasa',
+    id: ITEM_BREASTPLATE,
     name: 'Кираса',
-    nameEn: '',
+    nameEn: 'Breastplate',
     description: 'Этот доспех состоит из подогнанного металлического панциря, носимого с подкладкой из кожи. Несмотря на то, что руки и ноги остаются практически без защиты, этот доспех хорошо защищает жизненно важные органы, оставляя владельцу относительную подвижность.',
     cost: 40000,
     weight: 20,
@@ -107,9 +121,9 @@ const dndItemRawList = [
     subcategory: 'Средние доспехи',
   },
   {
-    id: 'polulaty',
+    id: ITEM_HALF_PLATE,
     name: 'Полулаты',
-    nameEn: '',
+    nameEn: 'Half Plate',
     description: 'Полулаты состоят из сформированных металлических пластин, покрывающих большую часть тела владельца. В них не входит защита для ног кроме простых поножей, закреплённых кожаными ремнями.',
     cost: 75000,
     weight: 40,
@@ -122,9 +136,9 @@ const dndItemRawList = [
     subcategory: 'Средние доспехи',
   },
   {
-    id: 'kolechny`i` dospekh',
+    id: ITEM_RING_MAIL,
     name: 'Колечный доспех',
-    nameEn: '',
+    nameEn: 'Ring⁠ Mail',
     description: 'Это кожаный доспех с нашитыми на него толстыми кольцами. Эти кольца усиливают доспех от ударов мечей и топоров. Колечный доспех хуже кольчуги, и обычно его носят только те, кто не могут позволить себе доспех получше.',
     cost: 3000,
     weight: 40,
@@ -135,7 +149,7 @@ const dndItemRawList = [
     subcategory: 'Тяжёлые доспехи',
   },
   {
-    id: 'kol`chuga',
+    id: ITEM_CHAIN_MAIL,
     name: 'Кольчуга',
     nameEn: 'Chain mail',
     description: 'Изготовленная из переплетающихся металлических колец кольчуга включает также слой стёганой ткани, надеваемой под низ, дабы предотвратить натирание и смягчать удары. В комплект входят рукавицы.',
@@ -155,9 +169,9 @@ const dndItemRawList = [
     subcategory: 'Тяжёлые доспехи',
   },
   {
-    id: 'naborny`i` dospekh',
+    id: ITEM_SPLINT_ARMOR,
     name: 'Наборный доспех',
-    nameEn: '',
+    nameEn: 'Splint',
     description: 'Этот доспех состоит из узких вертикальных металлических пластин, приклёпанных к кожаной подложке, носимой поверх слоя ватина. Соединения защищаются кольчужным полотном.',
     cost: 20000,
     weight: 60,
@@ -175,9 +189,9 @@ const dndItemRawList = [
     subcategory: 'Тяжёлые доспехи',
   },
   {
-    id: 'laty',
+    id: ITEM_PLATE_ARMOR,
     name: 'Латы',
-    nameEn: '',
+    nameEn: 'Plate ',
     description: 'Латы состоят из сформированных металлических пластин, покрывающих всё тело. В комплект лат входят рукавицы, тяжёлые кожаные сапоги, шлем с забралом, и толстый слой ватина. Ремешки и пряжки распределяют вес по всему телу.',
     cost: 150000,
     weight: 65,
@@ -195,9 +209,9 @@ const dndItemRawList = [
     subcategory: 'Тяжёлые доспехи',
   },
   {
-    id: 'shchit',
+    id: ITEM_SHIELD,
     name: 'Щит',
-    nameEn: '',
+    nameEn: 'Shield',
     description: '',
     cost: 1000,
     weight: 6,

@@ -13,7 +13,6 @@ import {
   CAT_ARMOR,
   CAT_ARTISAN_TOOLS,
   CAT_CLOTHES,
-  CAT_CONSUMABLES,
   CAT_DRUID_FOCUS,
   CAT_EQUIPMENT,
   CAT_FOOD,
@@ -21,7 +20,7 @@ import {
   CAT_GOODS,
   CAT_HEAVY_ARMOR,
   CAT_HOLY_SYMBOL,
-  CAT_KIT,
+  CAT_EQUIPMENT_KIT,
   CAT_LIGHT_ARMOR,
   CAT_MAGIC_FOCUS,
   CAT_MARTIAL_MELEE_WEAPON,
@@ -1009,7 +1008,6 @@ const dndItemRawList = [
     weight: 1,
     source: 'PHB:150',
     category: CAT_EQUIPMENT,
-    subcategory: CAT_CONSUMABLES,
   },
   {
     id: 'blok i lebyodka',
@@ -2095,7 +2093,7 @@ const dndItemRawList = [
     weight: 35,
     source: 'PHB:151',
     category: CAT_EQUIPMENT,
-    subcategory: CAT_KIT,
+    subcategory: CAT_EQUIPMENT_KIT,
   },
   {
     id: 'nabor vzlomshchika',
@@ -2106,7 +2104,7 @@ const dndItemRawList = [
     weight: 39,
     source: 'PHB:151',
     category: CAT_EQUIPMENT,
-    subcategory: CAT_KIT,
+    subcategory: CAT_EQUIPMENT_KIT,
   },
   {
     id: 'nabor diplomata',
@@ -2117,7 +2115,7 @@ const dndItemRawList = [
     weight: 36,
     source: 'PHB:151',
     category: CAT_EQUIPMENT,
-    subcategory: CAT_KIT,
+    subcategory: CAT_EQUIPMENT_KIT,
   },
   {
     id: 'nabor issledovatelia podzemelii',
@@ -2128,7 +2126,7 @@ const dndItemRawList = [
     weight: 43,
     source: 'PHB:151',
     category: CAT_EQUIPMENT,
-    subcategory: CAT_KIT,
+    subcategory: CAT_EQUIPMENT_KIT,
   },
   {
     id: 'nabor puteshestvennika',
@@ -2139,7 +2137,7 @@ const dndItemRawList = [
     weight: 59,
     source: 'PHB:151',
     category: CAT_EQUIPMENT,
-    subcategory: CAT_KIT,
+    subcategory: CAT_EQUIPMENT_KIT,
   },
   {
     id: 'nabor sviashchennika',
@@ -2150,7 +2148,7 @@ const dndItemRawList = [
     weight: 22,
     source: 'PHB:151',
     category: CAT_EQUIPMENT,
-    subcategory: CAT_KIT,
+    subcategory: CAT_EQUIPMENT_KIT,
   },
   {
     id: 'nabor uchyonogo',
@@ -2161,7 +2159,7 @@ const dndItemRawList = [
     weight: 11,
     source: 'PHB:151',
     category: CAT_EQUIPMENT,
-    subcategory: CAT_KIT,
+    subcategory: CAT_EQUIPMENT_KIT,
   },
   {
     id: 'vorovskie instrumenty',

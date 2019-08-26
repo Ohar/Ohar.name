@@ -17,9 +17,7 @@ import DndItemCategory from "./DndItemCategory"
 const DndItemCell = ({columnName, item}) => {
   switch (columnName) {
     case 'cost': {
-      return (
-        <DndPrice price={item[columnName]}/>
-      )
+      return <DndPrice price={item[columnName]}/>
     }
 
     case 'damage': {
@@ -74,7 +72,9 @@ const DndItemCell = ({columnName, item}) => {
 
     default: {
       return (
-        <ReactMarkdown>{String(item[columnName] || '')}</ReactMarkdown>
+        <ReactMarkdown>
+          {String(item[columnName] || '')}
+        </ReactMarkdown>
       )
     }
   }

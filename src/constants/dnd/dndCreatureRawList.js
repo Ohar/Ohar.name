@@ -14181,7 +14181,7 @@ module.exports = [
     creatureTypeIdList: [
       CREATURE_TYPE_DRAGON,
     ],
-    aligmentId: ALIGMENT_LG,
+    aligmentId: ALIGMENT_CG,
     source: 'MM:127',
     armor: {
       ac: 20,
@@ -14350,7 +14350,7 @@ module.exports = [
     creatureTypeIdList: [
       CREATURE_TYPE_DRAGON,
     ],
-    aligmentId: ALIGMENT_LG,
+    aligmentId: ALIGMENT_CG,
     source: 'MM:128',
     armor: {
       ac: 18,
@@ -14514,7 +14514,7 @@ module.exports = [
     creatureTypeIdList: [
       CREATURE_TYPE_DRAGON,
     ],
-    aligmentId: ALIGMENT_LG,
+    aligmentId: ALIGMENT_CG,
     source: 'MM:128',
     armor: {
       ac: 17,

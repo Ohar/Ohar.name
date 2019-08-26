@@ -14,6 +14,7 @@ import DndRequirementList from "@/components/DndRequirementList"
 import DndSourceInfo from "@/components/DndSourceInfo"
 
 import DndItemCategory from "./DndItemCategory"
+import DndWeaponPropList from "./DndWeaponPropList"
 
 const DndItemCell = ({columnName, item}) => {
   switch (columnName) {
@@ -54,21 +55,21 @@ const DndItemCell = ({columnName, item}) => {
       return <DndItemCategory catId={item[columnName]}/>
     }
 
-    case 'blockHiding':
-    case 'isFinesse':
-    case 'isHeavy':
-    case 'isLight':
-    case 'isReach':
-    case 'isReloading':
-    case 'isSpecial':
-    case 'isThrown':
-    case 'isTwoHanded':
-    case 'needAmmo': {
+    case 'blockHiding': {
       return <BooleanMark val={item[columnName]}/>
     }
 
     case 'requirementList': {
       return <DndRequirementList list={item[columnName]}/>
+    }
+
+    case 'description': {
+      return (
+        <>
+          <DndWeaponPropList item={item} />
+          {item[columnName]}
+        </>
+      )
     }
 
     default: {

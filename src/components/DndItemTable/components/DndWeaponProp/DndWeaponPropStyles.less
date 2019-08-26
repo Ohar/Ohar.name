@@ -1,0 +1,13 @@
+.DndWeaponProp {
+    border-bottom: 1px dashed goldenrod;
+    word-break: keep-all;
+    white-space: nowrap;
+
+    & + & {
+        margin-left: .4em;
+    }
+
+    &:not(:last-child):after {
+        content: ',';
+    }
+}

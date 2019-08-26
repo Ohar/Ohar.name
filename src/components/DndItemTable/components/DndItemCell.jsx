@@ -1,6 +1,7 @@
 import React from "react"
 import ReactMarkdown from "react-markdown"
 
+import formatRange from "@/utils/formatRange"
 import generateCube from "@/utils/generateCube"
 
 import BooleanMark from "@/components/BooleanMark"
@@ -9,7 +10,6 @@ import DndAc from "@/components/DndAc"
 import DndDamageType from "@/components/DndDamageType"
 import DndPoisonType from "@/components/DndPoisonType"
 import DndPrice from "@/components/DndPrice"
-import DndRange from "@/components/DndRange"
 import DndRequirementList from "@/components/DndRequirementList"
 import DndSourceInfo from "@/components/DndSourceInfo"
 
@@ -42,7 +42,7 @@ const DndItemCell = ({columnName, item}) => {
     }
 
     case 'range': {
-      return <DndRange range={item[columnName]}/>
+      return formatRange(item[columnName])
     }
 
     case 'acChangeTo': {

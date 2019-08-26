@@ -51,19 +51,57 @@ import {
   WEAPON_VERSATILE,
 } from '@/constants/dnd/dndWeaponPropList';
 
+export const ITEM_BATTLEAXE = 'battleaxe'
+export const ITEM_BLOWGUN = 'blowgun'
 export const ITEM_BREASTPLATE = 'breastplate'
 export const ITEM_CHAIN_MAIL = 'chain⁠_mail'
 export const ITEM_CHAIN_SHIRT = 'chain⁠_s⁠hirt'
+export const ITEM_CLUB = 'club'
+export const ITEM_CROSSBOW_HAND = 'crossbow_hand'
+export const ITEM_CROSSBOW_HEAVY = 'crossbow_heavy'
+export const ITEM_CROSSBOW_LIGHT = 'crossbow_light'
+export const ITEM_DAGGER = 'dagger'
+export const ITEM_DART = 'dart'
+export const ITEM_FLAIL = 'flail'
+export const ITEM_GLAIVE = 'glaive'
+export const ITEM_GREATAXE = 'greataxe'
+export const ITEM_GREATCLUB = 'greatclub'
+export const ITEM_GREATSWORD = 'greatsword'
+export const ITEM_HALBERD = 'halberd'
 export const ITEM_HALF_PLATE = 'half_plate'
+export const ITEM_HANDAXE = 'handaxe'
 export const ITEM_HIDE_ARMOR = 'hide_armor'
+export const ITEM_JAVELIN = 'javelin'
+export const ITEM_LANCE = 'lance'
 export const ITEM_LEATHER_ARMOR = 'leather_armor'
+export const ITEM_LIGHT_HAMMER = 'light_hammer'
+export const ITEM_LONGBOW = 'longbow'
+export const ITEM_LONGSWORD = 'longsword'
+export const ITEM_MACE = 'mace'
+export const ITEM_MAUL = 'maul'
+export const ITEM_MORNINGSTAR = 'morningstar'
+export const ITEM_NET = 'net'
 export const ITEM_PADDED_ARMOR = 'padded_armor'
+export const ITEM_PIKE = 'pike'
 export const ITEM_PLATE_ARMOR = 'plate_armor'
+export const ITEM_QUARTERSTAFF = 'quarterstaff'
+export const ITEM_RAPIER = 'rapier'
 export const ITEM_RING_MAIL = 'ring_mail'
 export const ITEM_SCALE_MAIL = 'scale_m⁠ail'
+export const ITEM_SCIMITAR = 'scimitar'
 export const ITEM_SHIELD = 'shield'
+export const ITEM_SHORTBOW = 'shortbow'
+export const ITEM_SHORTSWORD = 'shortsword'
+export const ITEM_SICKLE = 'sickle'
+export const ITEM_SLING = 'sling'
+export const ITEM_SPEAR = 'spear'
 export const ITEM_SPLINT_ARMOR = 'splint_armor'
 export const ITEM_STUDDED_LEATHER_ARMOR = 'studded_leather_armor'
+export const ITEM_TRIDENT = 'trident'
+export const ITEM_WAR_PICK = 'war_pick'
+export const ITEM_WARHAMMER = 'warhammer'
+export const ITEM_WHIP = 'whip'
+export const ITEM_YKLWA = 'yklwa'
 
 const dndItemRawList = [
   {
@@ -264,9 +302,9 @@ const dndItemRawList = [
     subcategory: CAT_SHIELDS,
   },
   {
-    id: 'boevoi` posokh',
+    id: ITEM_QUARTERSTAFF,
     name: 'Боевой посох',
-    nameEn: '',
+    nameEn: 'Quarterstaff',
     description: 'Урон 1к6 дробящий. Универсальное (1к8)',
     damage: {
       cubeType: 6,
@@ -289,9 +327,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'bulava',
+    id: ITEM_MACE,
     name: 'Булава',
-    nameEn: '',
+    nameEn: 'Mace',
     description: 'Урон 1к6 дробящий',
     damage: {
       cubeType: 6,
@@ -305,9 +343,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'dubinka',
+    id: ITEM_CLUB,
     name: 'Дубинка',
-    nameEn: '',
+    nameEn: 'Club',
     damage: {
       cubeType: 4,
       cubeCount: 1,
@@ -325,9 +363,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'kinzhal',
+    id: ITEM_DAGGER,
     name: 'Кинжал',
-    nameEn: '',
+    nameEn: 'Dagger',
     description: 'Урон 1к4 колющий. Лёгкое, метательное (дис. 20/60), фехтовальное',
     damage: {
       cubeType: 4,
@@ -360,9 +398,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'kop`yo',
+    id: ITEM_SPEAR,
     name: 'Копьё',
-    nameEn: '',
+    nameEn: 'Spear',
     description: 'Урон 1к6 колющий. Метательное (дис. 20/60), универсальное (1к8)',
     damage: {
       cubeType: 6,
@@ -398,9 +436,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'lyogkii` molot',
+    id: ITEM_LIGHT_HAMMER,
     name: 'Лёгкий молот',
-    nameEn: '',
+    nameEn: 'Light Hammer',
     description: 'Урон 1к4 дробящий. Лёгкое, метательное (дис. 20/60)',
     damage: {
       cubeType: 4,
@@ -431,9 +469,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'metatel`noe kop`yo',
+    id: ITEM_JAVELIN,
     name: 'Метательное копьё',
-    nameEn: '',
+    nameEn: 'Javelin',
     description: 'Урон 1к6 колющий. Метательное (дис. 30/120)',
     damage: {
       cubeType: 6,
@@ -462,9 +500,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'palitca',
+    id: ITEM_GREATCLUB,
     name: 'Палица',
-    nameEn: '',
+    nameEn: 'Greatclub',
     description: 'Урон 1к8 колющий. Двуручное',
     damage: {
       cubeType: 8,
@@ -472,7 +510,7 @@ const dndItemRawList = [
     },
     isTwoHanded: true,
     cost: 20,
-    damageType: DAMAGE_PIERCING,
+    damageType: DAMAGE_BLUDGEONING,
     weight: 10,
     source: 'PHB:149',
     weaponPropList: [
@@ -482,9 +520,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'ruchnoi` topor',
+    id: ITEM_HANDAXE,
     name: 'Ручной топор',
-    nameEn: '',
+    nameEn: 'Handaxe',
     description: 'Урон 1к6 рубящий. Лёгкое, метательное (дис. 20/60)',
     damage: {
       cubeType: 6,
@@ -515,9 +553,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'serp',
+    id: ITEM_SICKLE,
     name: 'Серп',
-    nameEn: '',
+    nameEn: 'Sickle',
     description: 'Урон 1к4 рубящий. Лёгкое',
     damage: {
       cubeType: 4,
@@ -535,8 +573,8 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'ilkva',
-    name: 'Илква',
+    id: ITEM_YKLWA,
+    name: 'Иклва',
     nameEn: 'Yklwa',
     description: 'Урон 1к8 колющий; Метательное (дис. 10/30). Иклва — это традиционное оружие ближнего боя чультских воинов. Иклва состоит из 3-футой деревянной рукояти со стальным или каменным лезвием длиной до 18 дюймов.',
     damage: {
@@ -565,9 +603,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
   {
-    id: 'arbalet, lyogkii',
+    id: ITEM_CROSSBOW_LIGHT,
     name: 'Арбалет, лёгкий',
-    nameEn: '',
+    nameEn: 'Crossbow, light',
     description: 'Урон 1к8 колющий. Боеприпас (дис. 80/320), двуручное, перезарядка',
     damage: {
       cubeType: 8,
@@ -600,9 +638,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
   {
-    id: 'drotik',
+    id: ITEM_DART,
     name: 'Дротик',
-    nameEn: '',
+    nameEn: 'Dart',
     description: 'Урон 1к4 колющий. Метательное (дис. 20/60), фехтовальное',
     damage: {
       cubeType: 4,
@@ -633,7 +671,7 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
   {
-    id: 'korotkii` luk',
+    id: ITEM_SHORTBOW,
     name: 'Короткий лук',
     nameEn: 'Shortbow',
     description: 'Урон 1к6 колющий. Боеприпас (дис. 80/320), двуручное',
@@ -666,9 +704,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
   {
-    id: 'prashcha',
+    id: ITEM_SLING,
     name: 'Праща',
-    nameEn: '',
+    nameEn: 'Sling',
     description: 'Урон 1к4 дробящий. Боеприпас (дис. 30/120)',
     damage: {
       cubeType: 4,
@@ -697,9 +735,9 @@ const dndItemRawList = [
     subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
   {
-    id: 'alebarda',
+    id: ITEM_HALBERD,
     name: 'Алебарда',
-    nameEn: '',
+    nameEn: 'Halberd',
     description: 'Урон 1к10 рубящий. Двуручное, досягаемость, тяжёлое',
     damage: {
       cubeType: 10,
@@ -721,9 +759,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'boevaia kirka',
+    id: ITEM_WAR_PICK,
     name: 'Боевая кирка',
-    nameEn: '',
+    nameEn: 'War Pick',
     description: 'Урон 1к8 колющий',
     damage: {
       cubeType: 8,
@@ -737,9 +775,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'boevoi` molot',
+    id: ITEM_WARHAMMER,
     name: 'Боевой молот',
-    nameEn: '',
+    nameEn: 'Warhammer',
     description: 'Урон 1к8 дробящий; Универсальное (1к10)',
     damage: {
       cubeType: 8,
@@ -762,9 +800,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'boevoi` topor',
+    id: ITEM_BATTLEAXE,
     name: 'Боевой топор',
-    nameEn: '',
+    nameEn: 'Battleaxe',
     description: 'Урон 1к8 рубящий; Универсальное (1к10)',
     damage: {
       cubeType: 8,
@@ -787,9 +825,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'glefa',
+    id: ITEM_GLAIVE,
     name: 'Глефа',
-    nameEn: '',
+    nameEn: 'Glaive',
     description: 'Урон 1к10 рубящий; Двуручное, досягаемость, тяжёлое',
     damage: {
       cubeType: 10,
@@ -811,9 +849,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'dvuruchny`i` mech',
+    id: ITEM_GREATSWORD,
     name: 'Двуручный меч',
-    nameEn: '',
+    nameEn: 'Greatsword',
     description: 'Урон 2к6 рубящий; Двуручное, тяжёлое',
     damage: {
       cubeType: 6,
@@ -833,9 +871,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'dlinnoe kop`yo',
+    id: ITEM_LANCE,
     name: 'Длинное копьё',
-    nameEn: '',
+    nameEn: 'Lance',
     description: 'Урон 1к12 колющий; Досягаемость, особое. Вы совершаете с помехой атаки длинным копьём по существам, находящимся в пределах 5 футов от вас. Кроме того, если вы не находитесь верхом, длинное копьё используется двумя руками.',
     damage: {
       cubeType: 12,
@@ -859,9 +897,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'dlinny`i` mech',
+    id: ITEM_LONGSWORD,
     name: 'Длинный меч',
-    nameEn: '',
+    nameEn: 'Longsword',
     description: 'Урон 1к8 рубящий; Универсальное (1к10)',
     damage: {
       cubeType: 8,
@@ -884,9 +922,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'knut',
+    id: ITEM_WHIP,
     name: 'Кнут',
-    nameEn: '',
+    nameEn: 'Whip',
     description: 'Урон 1к4 рубящий; Досягаемость, фехтовальное',
     damage: {
       cubeType: 4,
@@ -906,7 +944,7 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'korotkii` mech',
+    id: ITEM_SHORTSWORD,
     name: 'Короткий меч',
     nameEn: 'Shortsword',
     description: 'Урон 1к6 колющий; Лёгкое, фехтовальное',
@@ -928,9 +966,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'molot',
+    id: ITEM_MAUL,
     name: 'Молот',
-    nameEn: '',
+    nameEn: 'Maul',
     description: 'Урон 2к6 колющий; Двуручное, тяжёлое',
     damage: {
       cubeType: 6,
@@ -950,9 +988,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'morgenshtern',
+    id: ITEM_MORNINGSTAR,
     name: 'Моргенштерн',
-    nameEn: '',
+    nameEn: 'Morningstar',
     description: 'Урон 1к8 колющий',
     damage: {
       cubeType: 8,
@@ -966,9 +1004,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'pika',
+    id: ITEM_PIKE,
     name: 'Пика',
-    nameEn: '',
+    nameEn: 'Pike',
     description: 'Урон 1к10 колющий; Двуручное, досягаемость, тяжёлое',
     damage: {
       cubeType: 10,
@@ -990,9 +1028,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'rapira',
+    id: ITEM_RAPIER,
     name: 'Рапира',
-    nameEn: '',
+    nameEn: 'Rapier',
     description: 'Урон 1к8 колющий; Фехтовальное',
     damage: {
       cubeType: 8,
@@ -1010,9 +1048,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'sekira',
+    id: ITEM_GREATAXE,
     name: 'Секира',
-    nameEn: '',
+    nameEn: 'Greataxe',
     description: 'Урон 1к12 колющий; Двуручное, тяжёлое',
     damage: {
       cubeType: 12,
@@ -1032,9 +1070,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'skimitar',
+    id: ITEM_SCIMITAR,
     name: 'Скимитар',
-    nameEn: '',
+    nameEn: 'Scimitar',
     description: 'Урон 1к6 колющий; Лёгкое, фехтовальное',
     damage: {
       cubeType: 6,
@@ -1054,9 +1092,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'trezubetc',
+    id: ITEM_TRIDENT,
     name: 'Трезубец',
-    nameEn: '',
+    nameEn: 'Trident',
     description: 'Урон 1к6 колющий; Метательное (дис. 20/60), универсальное (1к8)',
     damage: {
       cubeType: 6,
@@ -1092,9 +1130,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'tsep',
+    id: ITEM_FLAIL,
     name: 'Цеп',
-    nameEn: '',
+    nameEn: 'Flail',
     description: 'Урон 1к8 дробящий',
     damage: {
       cubeType: 8,
@@ -1108,9 +1146,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
-    id: 'arbalet, ruchnoi',
+    id: ITEM_CROSSBOW_HAND,
     name: 'Арбалет, ручной',
-    nameEn: '',
+    nameEn: 'Crossbow, hand',
     description: 'Урон 1к6 колющий; Боеприпас (дис. 30/120), лёгкое, перезарядка',
     damage: {
       cubeType: 6,
@@ -1143,9 +1181,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
   {
-    id: 'arbalet, tiazhyoly`i',
+    id: ITEM_CROSSBOW_HEAVY,
     name: 'Арбалет, тяжёлый',
-    nameEn: '',
+    nameEn: 'Crossbow, heavy',
     description: 'Урон 1к10 колющий; Боеприпас (дис. 100/400), двуручное, перезарядка, тяжёлое',
     damage: {
       cubeType: 10,
@@ -1180,7 +1218,7 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
   {
-    id: 'dlinny`i` luk',
+    id: ITEM_LONGBOW,
     name: 'Длинный лук',
     nameEn: 'Longbow',
     description: 'Урон 1к8 колющий; Боеприпас (дис. 150/600), двуручное, тяжёлое',
@@ -1215,9 +1253,9 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
   {
-    id: 'duhovaia trubka',
+    id: ITEM_BLOWGUN,
     name: 'Духовая трубка',
-    nameEn: '',
+    nameEn: 'Blowgun',
     description: 'Урон 1 колющий; Боеприпас (дис. 25/100), перезарядка',
     damage: {
       cubeType: 0,
@@ -1249,7 +1287,7 @@ const dndItemRawList = [
     subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
   {
-    id: 'set',
+    id: ITEM_NET,
     name: 'Сеть',
     nameEn: 'Net',
     description: 'Метательное (дис. 5/15), особое. Существа Большого и меньшего размеров, по которым попала атака сетью, становятся опутанными, пока не высвободятся. Сеть не оказывает эффекта на бесформенных существ и тех, чей размер Огромный или ещё больше. Существо может действием совершить проверку Силы со Сл 10, чтобы высвободиться самому или освободить другое существо, находящееся в пределах его досягаемости. Причинение сети 5 единиц рубящего урона (КД 10) тоже освобождает существо, не причиняя ему вреда, оканчивая эффект и уничтожая сеть.\nЕсли вы действием, бонусным действием или реакцией совершаете атаку сетью, вы можете совершить только одну атаку, вне зависимости от количества положенных атак.',

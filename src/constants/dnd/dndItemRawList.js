@@ -37,6 +37,19 @@ import {
   CAT_TRANSPORT_WATER,
   CAT_WEAPON,
 } from '@/constants/dnd/dndItemCategoryList';
+import {
+  WEAPON_AMMO,
+  WEAPON_FINESSE,
+  WEAPON_HEAVY,
+  WEAPON_LIGHT,
+  WEAPON_RANGE,
+  WEAPON_REACH,
+  WEAPON_RELOADING,
+  WEAPON_SPECIAL,
+  WEAPON_THROWN,
+  WEAPON_TWO_HANDED,
+  WEAPON_VERSATILE,
+} from '@/constants/dnd/dndWeaponPropList';
 
 export const ITEM_BREASTPLATE = 'breastplate'
 export const ITEM_CHAIN_MAIL = 'chain⁠_mail'
@@ -263,6 +276,15 @@ const dndItemRawList = [
     damageType: DAMAGE_BLUDGEONING,
     weight: 4,
     source: 'PHB:149',
+    weaponPropList: [
+      {
+        id: WEAPON_VERSATILE,
+        value: {
+          cubeCount: 1,
+          cubeType: 8,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -296,6 +318,9 @@ const dndItemRawList = [
     weight: 2,
     isLight: true,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_LIGHT,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -319,6 +344,18 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 1,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_LIGHT,
+      WEAPON_FINESSE,
+      WEAPON_THROWN,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 20,
+          max: 60,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -340,6 +377,23 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 3,
     source: 'PHB:149',
+    weaponPropList: [
+      {
+        id: WEAPON_VERSATILE,
+        value: {
+          cubeCount: 1,
+          cubeType: 8,
+        },
+      },
+      WEAPON_THROWN,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 20,
+          max: 60,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -362,6 +416,17 @@ const dndItemRawList = [
     damageType: DAMAGE_BLUDGEONING,
     weight: 2,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_LIGHT,
+      WEAPON_THROWN,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 20,
+          max: 60,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -383,6 +448,16 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_THROWN,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 30,
+          max: 120,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -400,6 +475,9 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 10,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_TWO_HANDED,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -422,6 +500,17 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 10,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_LIGHT,
+      WEAPON_THROWN,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 20,
+          max: 60,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -439,6 +528,9 @@ const dndItemRawList = [
     cost: 100,
     weight: 2,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_LIGHT,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -459,6 +551,16 @@ const dndItemRawList = [
     cost: 100,
     damageType: DAMAGE_PIERCING,
     source: 'ToA:32',
+    weaponPropList: [
+      WEAPON_THROWN,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 10,
+          max: 30,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -482,6 +584,18 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 5,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_AMMO,
+      WEAPON_TWO_HANDED,
+      WEAPON_RELOADING,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 80,
+          max: 320,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
@@ -504,6 +618,17 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: '0.25',
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_THROWN,
+      WEAPON_FINESSE,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 20,
+          max: 60,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
@@ -526,6 +651,17 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_AMMO,
+      WEAPON_TWO_HANDED,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 80,
+          max: 320,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
@@ -547,6 +683,16 @@ const dndItemRawList = [
     damageType: DAMAGE_BLUDGEONING,
     weight: 0,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_AMMO,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 30,
+          max: 120,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_RANGE_WEAPON,
   },
@@ -566,6 +712,11 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 6,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_TWO_HANDED,
+      WEAPON_REACH,
+      WEAPON_HEAVY,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -598,6 +749,15 @@ const dndItemRawList = [
     damageType: DAMAGE_BLUDGEONING,
     weight: 2,
     source: 'PHB:149',
+    weaponPropList: [
+      {
+        id: WEAPON_VERSATILE,
+        value: {
+          cubeCount: 1,
+          cubeType: 10,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -614,6 +774,15 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 4,
     source: 'PHB:149',
+    weaponPropList: [
+      {
+        id: WEAPON_VERSATILE,
+        value: {
+          cubeCount: 1,
+          cubeType: 10,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -633,6 +802,11 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 6,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_TWO_HANDED,
+      WEAPON_REACH,
+      WEAPON_HEAVY,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -651,6 +825,10 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 6,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_TWO_HANDED,
+      WEAPON_HEAVY,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -669,6 +847,14 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 6,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_REACH,
+      WEAPON_SPECIAL,
+      {
+        id: WEAPON_SPECIAL,
+        value: 'Вы совершаете с помехой атаки длинным копьём по существам, находящимся в пределах 5 футов от вас. Кроме того, если вы не находитесь верхом, длинное копьё используется двумя руками.',
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -685,6 +871,15 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 3,
     source: 'PHB:149',
+    weaponPropList: [
+      {
+        id: WEAPON_VERSATILE,
+        value: {
+          cubeCount: 1,
+          cubeType: 10,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -703,6 +898,10 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     weight: 3,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_REACH,
+      WEAPON_FINESSE,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -721,6 +920,10 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_LIGHT,
+      WEAPON_FINESSE,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -739,6 +942,10 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 10,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_HEAVY,
+      WEAPON_TWO_HANDED,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -774,6 +981,11 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 18,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_TWO_HANDED,
+      WEAPON_REACH,
+      WEAPON_HEAVY,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -791,6 +1003,9 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_FINESSE,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -809,6 +1024,10 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 7,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_TWO_HANDED,
+      WEAPON_HEAVY,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -827,6 +1046,10 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 3,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_LIGHT,
+      WEAPON_FINESSE,
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -848,6 +1071,23 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 4,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_THROWN,
+      {
+        id: WEAPON_VERSATILE,
+        value: {
+          cubeCount: 1,
+          cubeType: 8,
+        },
+      },
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 150,
+          max: 600,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -887,6 +1127,18 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 3,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_AMMO,
+      WEAPON_LIGHT,
+      WEAPON_RELOADING,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 30,
+          max: 120,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
@@ -911,6 +1163,19 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 18,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_AMMO,
+      WEAPON_TWO_HANDED,
+      WEAPON_RELOADING,
+      WEAPON_HEAVY,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 100,
+          max: 400,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
@@ -934,6 +1199,18 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 2,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_AMMO,
+      WEAPON_TWO_HANDED,
+      WEAPON_HEAVY,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 150,
+          max: 600,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
@@ -957,6 +1234,17 @@ const dndItemRawList = [
     damageType: DAMAGE_PIERCING,
     weight: 1,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_AMMO,
+      WEAPON_RELOADING,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 25,
+          max: 100,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },
@@ -974,6 +1262,21 @@ const dndItemRawList = [
     cost: 100,
     weight: 3,
     source: 'PHB:149',
+    weaponPropList: [
+      WEAPON_THROWN,
+      {
+        id: WEAPON_SPECIAL,
+        value: `Существа Большого и меньшего размеров, по которым попала атака сетью, становятся опутанными, пока не высвободятся. Сеть не оказывает эффекта на бесформенных существ и тех, чей размер Огромный или ещё больше. Существо может действием совершить проверку Силы со Сл 10, чтобы высвободиться самому или освободить другое существо, находящееся в пределах его досягаемости. Причинение сети 5 единиц рубящего урона (КД 10) тоже освобождает существо, не причиняя ему вреда, оканчивая эффект и уничтожая сеть.\n
+Если вы действием, бонусным действием или реакцией совершаете атаку сетью, вы можете совершить только одну атаку, вне зависимости от количества положенных атак.`,
+      },
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 5,
+          max: 15,
+        },
+      },
+    ],
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_RANGE_WEAPON,
   },

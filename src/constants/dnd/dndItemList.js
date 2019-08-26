@@ -15,6 +15,7 @@ const dndItemList = _.sortBy(
   dndItemRawList.map(
     item => ({
       ...item,
+      weaponPropList: item.weaponPropList || [],
       [SEARCH_PROP_NAME]: prepareForSearch(
         [
           item.name,

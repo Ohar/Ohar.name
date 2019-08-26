@@ -1,5 +1,3 @@
-import _ from 'lodash'
-
 import SEARCH_PROP_NAME from '@/constants/SEARCH_PROP_NAME'
 import dndItemRawList from '@/constants/dnd/dndItemRawList'
 import {dndItemCategoryCollection} from '@/constants/dnd/dndItemCategoryList'
@@ -11,8 +9,8 @@ const getCatName = catId => catId
   ? dndItemCategoryCollection[catId].name
   : ''
 
-const dndItemList = _.sortBy(
-  dndItemRawList.map(
+const dndItemList = dndItemRawList
+  .map(
     item => ({
       ...item,
       weaponPropList: item.weaponPropList || [],
@@ -33,12 +31,10 @@ const dndItemList = _.sortBy(
           .join(' ')
       ),
     }),
-  ),
-  [
-    'name',
-    'description',
-  ],
-)
+  )
+  .sort(
+    ({name: A}, {name: B}) => A > B ? 1 : -1
+  )
 
 export default dndItemList
 

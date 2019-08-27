@@ -324,6 +324,7 @@ const CREATURE_BANDIT = 'bandit'
 const CREATURE_BANSHEE = 'banshee'
 const CREATURE_BARLGURA = 'barlgura'
 const CREATURE_BASILISK = 'basilisk'
+const CREATURE_BEARDED_DEVIL = 'bearded_devil'
 const CREATURE_BEHIR = 'behir'
 const CREATURE_BLACK_DRAGON_WYRMLING = 'black_dragon_wyrmling'
 const CREATURE_BLUE_DRAGON_WYRMLING = 'blue_dragon_wyrmling'
@@ -16571,6 +16572,133 @@ module.exports = [
       {
         name: 'Невидимость',
         description: `Бес магическим образом становится невидимым, пока не атакует или не утратит концентрацию (как при концентрации на заклинании). Всё снаряжение, которое бес несёт или носит, становится невидимым вместе с ним.`,
+      },
+    ],
+  },
+  {
+    name: 'Бородатый дьявол',
+    nameAlt: 'Барбазу',
+    nameEn: 'Bearded devil',
+    nameEnAlt: 'Barbazu',
+    id: CREATURE_BEARDED_DEVIL,
+    description: `Бородатые дьяволы служат ударной силой для архидьяволов, сражаясь плечом к плечу и упиваясь славой битвы. Они отвечают насилием на любое пренебрежение, реальное или воображаемое, упиваясь жестокостью, когда их зазубренные клинки разрубают врагов.\n
+Бородатые дьяволы похожи на человека с заострёнными ушами, чешуйчатой кожей, длинным хвостом и когтями, выдающими их жестокую натуру. Эти дьяволы получили своё название из-за змееподобных отростков на подбородках, которые они используют, чтобы атаковать и отравлять врагов, ослабляя их опасным ядом. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:144',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 8,
+      cubeBonus: 16,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 11,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 5,
+      [PARAM_CON]: 4,
+      [PARAM_WIT]: 2,
+    },
+    resistanceList: [
+      [DAMAGE_COLD],
+      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+    ],
+    immunityList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_POISONED],
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Дьявольское зрение',
+        description: `Магическая тьма не мешает тёмному зрению дьявола.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Дьявол совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Уверенный',
+        description: `Дьявол не может быть испуган, если видит в пределах 30 футов от себя союзное существо.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дьявол совершает две атаки: одну бородой, и одну глефой.`,
+      },
+      {
+        name: 'Борода',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 12, иначе станет отравленной на 1 минуту. Будучи отравленной таким образом, цель не может восстанавливать хиты. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Глефа',
+        description: `Если цель — существо, не являющееся ни нежитью, ни конструктом, она должна преуспеть в спасброске Телосложения со Сл 12, иначе будет терять 5 (1к10) хитов в начале каждого своего хода из-за инфернальной раны. Каждый раз, когда демон попадает этой атакой по цели, уже имеющей эту рану, урон от раны увеличивается на 5 (1к10). Любое существо может залечить рану, если действием совершит успешную проверку Мудрости (Медицина) со Сл 12. Эта рана также закрывается, если цель получит магическое лечение.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 3,
+          },
+        },
       },
     ],
   },

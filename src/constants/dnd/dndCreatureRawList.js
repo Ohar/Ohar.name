@@ -429,6 +429,7 @@ const CREATURE_STONE_GOLEM = 'stone_golem'
 const CREATURE_STORM_GIANT = 'storm_giant'
 const CREATURE_SPINED_DEVIL = 'spined_devil'
 const CREATURE_TRICERATOPS = 'triceratops'
+const CREATURE_TWIG_BLIGHT = 'twig_blight'
 const CREATURE_TYRANNOSAURUS_REX = 'tyrannosaurus_rex'
 const CREATURE_UMBER_HULK = 'umber_hulk'
 const CREATURE_UNICORN = 'unicorn'
@@ -18398,6 +18399,91 @@ module.exports = [
             type: DAMAGE_PIERCING,
             cubeCount: 2,
             cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    isFemale: true,
+  },
+  {
+    name: 'Ветвистая зараза',
+    nameEn: 'Twig blight',
+    id: CREATURE_TWIG_BLIGHT,
+    description: `Когда добычи вокруг недостаточно, ветвистая зараза пускает в почву корни. В такие моменты они ничем не отличаться от обычного сухого кустарника. Когда же они высвобождают корни из земли для передвижения, ветки переплетаются друг с другом, формируя человекоподобное тело с головой и конечностями.\n
+Ветвистая зараза ищет поляны и колодцы, прорастая там, и устраивая засады на потенциальных жертв, желающих отдохнуть или утолить жажду. Сбиваясь в группы, зараза сливается с естественной растительностью или грудами мусора или хвороста. Ветвистая зараза очень суха, и потому особенно восприимчива к огню.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_PLANT,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:157',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 6,
+      cubeBonus: 1,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 6,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 4,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 3,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 3,
+    },
+    vulnerabilityList: [
+      [DAMAGE_FIRE],
+    ],
+    conditionImmunityList: [
+      [CONDITION_DEAFENED],
+      [CONDITION_BLINDED],
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        comment: 'слепа за пределами этого радиуса',
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_COMMON,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока зараза остаётся без движения, она неотличима от засохшего кустарника.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
             cubeBonus: 1,
           },
         },

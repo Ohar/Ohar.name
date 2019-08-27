@@ -52,6 +52,7 @@ const {
   CREATURE_TYPE_DEMON,
   CREATURE_TYPE_DRAGON,
   CREATURE_TYPE_ELEMENTAL,
+  CREATURE_TYPE_FEY,
   CREATURE_TYPE_FIEND,
   CREATURE_TYPE_GIANT,
   CREATURE_TYPE_GITH,
@@ -172,6 +173,7 @@ const {
 const {
   SPELL_ANIMATE_DEAD,
   SPELL_BANE,
+  SPELL_BARKSKIN,
   SPELL_BESTOW_CURSE,
   SPELL_BLADE_BARRIER,
   SPELL_BLESS,
@@ -199,6 +201,7 @@ const {
   SPELL_DISPEL_MAGIC,
   SPELL_DIVINATION,
   SPELL_DOMINATE_PERSON,
+  SPELL_DRUIDCRAFT,
   SPELL_ENLARGE_REDUCE,
   SPELL_ENTANGLE,
   SPELL_FAERIE_FIRE,
@@ -208,6 +211,7 @@ const {
   SPELL_FOG_CLOUD,
   SPELL_FREEDOM_OF_MOVEMENT,
   SPELL_GASEOUS_FORM,
+  SPELL_GOODBERRY,
   SPELL_GREATER_INVISIBILITY,
   SPELL_GUST_OF_WIND,
   SPELL_HALLUCINATORY_TERRAIN,
@@ -224,6 +228,7 @@ const {
   SPELL_MISTY_STEP,
   SPELL_MOVE_EARTH,
   SPELL_NONDETECTION,
+  SPELL_PASS_WITHOUT_TRACE,
   SPELL_PASSWALL,
   SPELL_PHANTASMAL_FORCE,
   SPELL_PHANTASMAL_KILLER,
@@ -240,6 +245,7 @@ const {
   SPELL_SANCTUARY,
   SPELL_SEE_INVISIBILITY,
   SPELL_SHIELD,
+  SPELL_SHILLELAGH,
   SPELL_SILENCE,
   SPELL_SLEEP,
   SPELL_STONE_SHAPE,
@@ -333,6 +339,7 @@ const CREATURE_DRAGON_TURTLE = 'DRAGON_TURTLE'
 const CREATURE_DRETCH = 'dretch'
 const CREATURE_DRIDER = 'drider'
 const CREATURE_DRIDER_SPELLCASTER = 'drider_spellcaster'
+const CREATURE_DRYAD = 'dryad'
 const CREATURE_EFREETI = 'efreeti'
 const CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue'
 const CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green'
@@ -15944,6 +15951,7 @@ module.exports = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Драук',
@@ -16163,5 +16171,145 @@ module.exports = [
         2,
       ],
     },
+  },
+  {
+    name: 'Дриада',
+    nameEn: 'Dryad',
+    id: CREATURE_DRYAD,
+    description: `Путешественники, войдя в лес, могут увидеть мельком женственную фигуру, порхающую между деревьями. Тёплый смех, дребезжащий в воздухе, уводит тех, кто слышит его, вглубь, в изумрудные тени.\n
+**Родство с деревьями.** Могущественные феи иногда привязывают более слабых фейских духов к деревьям, превращая их в дриад. Иногда это делается в наказание, когда фейский дух влюбляется в смертного, а такая любовь запретна.\n
+Дриада может выйти из дерева и путешествовать по окрестным землям, но дерево остаётся её домом и привязывает её к миру. Пока дерево остаётся здоровым и невредимым, дриада остаётся вечно молодой и очаровательной. Она страдает, если дереву причинён вред. Если дерево будет уничтожено дриада погружается в безумие.\n
+**Уединённые феи.** Дриады выступают в качестве опекунов своих лесных владений. Застенчивые и отчуждённые, они наблюдают за нарушителями из деревьев. Дриады, поражённые красотой незнакомца, могут пожелать узнать его более тщательно, возможно даже постараются заманить странника подальше, чтобы очаровать.\n
+Дриады работают сообща с другими лесными существами, чтобы защищать свои леса. Единороги, тренты и сатиры живут неподалёку от них, так же как и друиды, разделяющим преданность дриад к лесу, который называют своим домом.\n
+**Магия лесной природы.** Дриады могут говорить с растениями и животными. Они могут телепортироваться из одного дерева в другое, заманивая чужаков в рощи. Попав в опасную ситуацию, дриада может увлечь гуманоидов своими чарами, превращая врагов в друзей. Они также знают несколько полезных заклинаний.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FEY,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:138',
+    armor: {
+      ac: 11,
+      type: '16 c Дубовой корой',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 15,
+      [PARAM_CHA]: 18,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_STEALTH]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_SYLVAN,
+      LANG_ELVEN,
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Сопротивление магии',
+        description: `Дриада совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Общение со зверьми и растениями',
+        description: `Дриада может общаться со зверьми и растениями, как если бы у них был общий язык.`,
+      },
+      {
+        name: 'Путешествие через деревья',
+        description: `Один раз в свой ход дриада может использовать 10 футов перемещения на то, чтобы магическим образом войти живое дерево в пределах досягаемости и выйти из второго живого дерева в пределах 60 футов от первого, появляясь в свободном пространстве в пределах 5 футов от второго дерева. Оба дерева должны быть как минимум Большого размера.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 14,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DRUIDCRAFT,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_ENTANGLE,
+            SPELL_GOODBERRY,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_PASS_WITHOUT_TRACE,
+            SPELL_SHILLELAGH,
+            SPELL_BARKSKIN,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Дубина',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 4,
+          },
+        },
+      },
+      {
+        name: 'Дубина (с Дубинкой)',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Фейское очарование',
+        description: `Дриада нацеливается на одного гуманоида или зверя, которого видит в пределах 30 футов от себя. Если цель видит дриаду, она должна преуспеть в спасброске Мудрости со Сл 14, иначе станет магическим образом очарованной. Очарованное существо считает дриаду верным другом, о котором нужно заботиться и которого нужно защищать. Несмотря на то, что цель не находится под контролем дриады, она выполняет её просьбы.\n
+Каждый раз, когда дриада или её союзники причиняют цели вред, та может повторить спасбросок, оканчивая эффект на себе при успехе. В противном случае эффект длится 24 часа, или пока дриада не умрёт. Чтобы эффект не прерывался, дриада должна находиться на одном плане с целью, и дриада может сама окончить эффект бонусным действием. Если спасбросок цели был успешным, цель получает иммунитет к Фейскому очарованию этой дриады на следующие 24 часа. У дриады одновременно очарованными может быть не более одного гуманоида и не более трёх зверей.`,
+      },
+    ],
+    isFemale: true,
   },
 ]

@@ -31,12 +31,14 @@ const {
 } = require( './dndCastComponentList')
 
 const SPELL_ANIMATE_DEAD = 'animate_dead'
+const SPELL_BANE = 'bane'
 const SPELL_BESTOW_CURSE = 'bestow_curse'
 const SPELL_BLADE_BARRIER = 'blade_barrier'
 const SPELL_BLESS = 'bless'
 const SPELL_BLIGHT = 'blight'
 const SPELL_BLINDNESS_DEAFNESS = 'blindness_deafness'
 const SPELL_BLUR = 'blur'
+const SPELL_CLAIRVOYANCE = 'clairvoyance'
 const SPELL_COLOR_SPRAY = 'color_spray'
 const SPELL_COMMUNE = 'commune'
 const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
@@ -55,6 +57,7 @@ const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
 const SPELL_DISGUISE_SELF = 'disguise_self'
 const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
 const SPELL_DISPEL_MAGIC = 'dispel_magic'
+const SPELL_DIVINATION = 'divination'
 const SPELL_DOMINATE_PERSON = 'dominate_person'
 const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 const SPELL_ENTANGLE = 'entangle'
@@ -63,10 +66,12 @@ const SPELL_FEATHER_FALL = 'feather_fall'
 const SPELL_FLAME_STRIKE = 'flame_strike'
 const SPELL_FLY = 'fly'
 const SPELL_FOG_CLOUD = 'fog_cloud'
+const SPELL_FREEDOM_OF_MOVEMENT = 'freedom_of_movement'
 const SPELL_GASEOUS_FORM = 'gaseous_form'
 const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
 const SPELL_GUST_OF_WIND = 'gust_of_wind'
 const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
+const SPELL_HOLD_PERSON = 'hold_person'
 const SPELL_INSECT_PLAGUE = 'insect_plague'
 const SPELL_INVISIBILITY = 'invisibility'
 const SPELL_JUMP = 'jump'
@@ -83,6 +88,7 @@ const SPELL_PASSWALL = 'passwall'
 const SPELL_PHANTASMAL_FORCE = 'phantasmal_force'
 const SPELL_PHANTASMAL_KILLER = 'phantasmal_killer'
 const SPELL_PLANE_SHIFT = 'plane_shift'
+const SPELL_POISON_SPRAY = 'poison_spray'
 const SPELL_POLYMORPH = 'polymorph'
 const SPELL_POWER_WORD_STUN = 'power_word_stun'
 const SPELL_PRESTIDIGITATION = 'prestidigitation'
@@ -94,6 +100,7 @@ const SPELL_SACRED_FLAME = 'sacred_flame'
 const SPELL_SANCTUARY = 'sanctuary'
 const SPELL_SEE_INVISIBILITY = 'see_invisibility'
 const SPELL_SHIELD = 'shield'
+const SPELL_SILENCE = 'silence'
 const SPELL_SLEEP = 'sleep'
 const SPELL_STONE_SHAPE = 'stone_shape'
 const SPELL_SUGGESTION = 'suggestion'
@@ -1365,6 +1372,104 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_SILENCE,
+    name: 'Тишина',
+    nameEn: 'Silence',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_BANE,
+    name: 'Порча',
+    nameEn: 'Bane',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_CLAIRVOYANCE,
+    name: 'Подсматривание',
+    nameEn: 'Clairvoyance',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_POISON_SPRAY,
+    name: 'Ядовитые брызги',
+    nameEn: 'Poison spray',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_HOLD_PERSON,
+    name: 'Удержание личности',
+    nameEn: 'Hold Person',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_DIVINATION,
+    name: 'Предсказание',
+    nameEn: 'Divination',
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_FREEDOM_OF_MOVEMENT,
+    name: 'Свобода перемещения',
+    nameEn: 'Freedom of Movement',
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1380,12 +1485,14 @@ module.exports = dndSpellList
 module.exports.dndSpellCollection = listToCollectionById(dndSpellList)
 
 module.exports.SPELL_ANIMATE_DEAD = SPELL_ANIMATE_DEAD
+module.exports.SPELL_BANE = SPELL_BANE
 module.exports.SPELL_BESTOW_CURSE = SPELL_BESTOW_CURSE
 module.exports.SPELL_BLADE_BARRIER = SPELL_BLADE_BARRIER
 module.exports.SPELL_BLESS = SPELL_BLESS
 module.exports.SPELL_BLIGHT = SPELL_BLIGHT
 module.exports.SPELL_BLINDNESS_DEAFNESS = SPELL_BLINDNESS_DEAFNESS
 module.exports.SPELL_BLUR = SPELL_BLUR
+module.exports.SPELL_CLAIRVOYANCE = SPELL_CLAIRVOYANCE
 module.exports.SPELL_COLOR_SPRAY = SPELL_COLOR_SPRAY
 module.exports.SPELL_COMMUNE = SPELL_COMMUNE
 module.exports.SPELL_COMPREHEND_LANGUAGES = SPELL_COMPREHEND_LANGUAGES
@@ -1404,6 +1511,7 @@ module.exports.SPELL_DETECT_THOUGHTS = SPELL_DETECT_THOUGHTS
 module.exports.SPELL_DISGUISE_SELF = SPELL_DISGUISE_SELF
 module.exports.SPELL_DISPEL_EVIL_AND_GOOD = SPELL_DISPEL_EVIL_AND_GOOD
 module.exports.SPELL_DISPEL_MAGIC = SPELL_DISPEL_MAGIC
+module.exports.SPELL_DIVINATION = SPELL_DIVINATION
 module.exports.SPELL_DOMINATE_PERSON = SPELL_DOMINATE_PERSON
 module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
 module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
@@ -1412,10 +1520,12 @@ module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
 module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE
 module.exports.SPELL_FLY = SPELL_FLY
 module.exports.SPELL_FOG_CLOUD = SPELL_FOG_CLOUD
+module.exports.SPELL_FREEDOM_OF_MOVEMENT = SPELL_FREEDOM_OF_MOVEMENT
 module.exports.SPELL_GASEOUS_FORM = SPELL_GASEOUS_FORM
 module.exports.SPELL_GREATER_INVISIBILITY = SPELL_GREATER_INVISIBILITY
 module.exports.SPELL_GUST_OF_WIND = SPELL_GUST_OF_WIND
 module.exports.SPELL_HALLUCINATORY_TERRAIN = SPELL_HALLUCINATORY_TERRAIN
+module.exports.SPELL_HOLD_PERSON = SPELL_HOLD_PERSON
 module.exports.SPELL_INSECT_PLAGUE = SPELL_INSECT_PLAGUE
 module.exports.SPELL_INVISIBILITY = SPELL_INVISIBILITY
 module.exports.SPELL_JUMP = SPELL_JUMP
@@ -1432,6 +1542,7 @@ module.exports.SPELL_PASSWALL = SPELL_PASSWALL
 module.exports.SPELL_PHANTASMAL_FORCE = SPELL_PHANTASMAL_FORCE
 module.exports.SPELL_PHANTASMAL_KILLER = SPELL_PHANTASMAL_KILLER
 module.exports.SPELL_PLANE_SHIFT = SPELL_PLANE_SHIFT
+module.exports.SPELL_POISON_SPRAY = SPELL_POISON_SPRAY
 module.exports.SPELL_POLYMORPH = SPELL_POLYMORPH
 module.exports.SPELL_POWER_WORD_STUN = SPELL_POWER_WORD_STUN
 module.exports.SPELL_PRESTIDIGITATION = SPELL_PRESTIDIGITATION
@@ -1443,6 +1554,7 @@ module.exports.SPELL_SACRED_FLAME = SPELL_SACRED_FLAME
 module.exports.SPELL_SANCTUARY = SPELL_SANCTUARY
 module.exports.SPELL_SEE_INVISIBILITY = SPELL_SEE_INVISIBILITY
 module.exports.SPELL_SHIELD = SPELL_SHIELD
+module.exports.SPELL_SILENCE = SPELL_SILENCE
 module.exports.SPELL_SLEEP = SPELL_SLEEP
 module.exports.SPELL_STONE_SHAPE = SPELL_STONE_SHAPE
 module.exports.SPELL_SUGGESTION = SPELL_SUGGESTION

@@ -1174,7 +1174,7 @@ const dndSpellList = [
     name: 'Видеть невидимое',
     nameEn: 'See invisibility',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 2,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1188,7 +1188,7 @@ const dndSpellList = [
     name: 'Прыжок',
     nameEn: 'Jump',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 1,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1202,7 +1202,7 @@ const dndSpellList = [
     name: 'Щит',
     nameEn: 'Shield',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 1,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1216,7 +1216,7 @@ const dndSpellList = [
     name: 'Глухота/Слепота',
     nameEn: 'Blindness/Deafness',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 2,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1230,7 +1230,7 @@ const dndSpellList = [
     name: 'Маскировка',
     nameEn: 'Disguise self',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 1,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1244,7 +1244,7 @@ const dndSpellList = [
     name: 'Размытый образ',
     nameEn: 'Blur',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 2,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1258,7 +1258,7 @@ const dndSpellList = [
     name: 'Воображаемая сила',
     nameEn: 'Phantasmal force',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 2,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1272,7 +1272,7 @@ const dndSpellList = [
     name: 'Опутывание',
     nameEn: 'Entangle',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 1,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1286,7 +1286,7 @@ const dndSpellList = [
     name: 'Рассеивание магии',
     nameEn: 'Dispel magic',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 3,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1300,7 +1300,7 @@ const dndSpellList = [
     name: 'Тьма',
     nameEn: 'Darkness',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 2,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1314,7 +1314,7 @@ const dndSpellList = [
     name: 'Слово силы: оглушение',
     nameEn: 'Power word stun',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 8,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1328,7 +1328,7 @@ const dndSpellList = [
     name: 'Смятение',
     nameEn: 'Confusion',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 4,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1342,7 +1342,7 @@ const dndSpellList = [
     name: 'Паутина',
     nameEn: 'Web',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 2,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -1356,7 +1356,7 @@ const dndSpellList = [
     name: 'Огонь фей',
     nameEn: 'Faerie fire',
     description: ``, // TODO
-    lvl: 0, // TODO
+    lvl: 1,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO

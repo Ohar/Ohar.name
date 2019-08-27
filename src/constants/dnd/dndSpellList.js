@@ -58,6 +58,7 @@ const SPELL_DISPEL_MAGIC = 'dispel_magic'
 const SPELL_DOMINATE_PERSON = 'dominate_person'
 const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 const SPELL_ENTANGLE = 'entangle'
+const SPELL_FAERIE_FIRE = 'faerie_fire'
 const SPELL_FEATHER_FALL = 'feather_fall'
 const SPELL_FLAME_STRIKE = 'flame_strike'
 const SPELL_FLY = 'fly'
@@ -1350,6 +1351,20 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_FAERIE_FIRE,
+    name: 'Огонь фей',
+    nameEn: 'Faerie fire',
+    description: ``, // TODO
+    lvl: 0, // TODO
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1392,6 +1407,7 @@ module.exports.SPELL_DISPEL_MAGIC = SPELL_DISPEL_MAGIC
 module.exports.SPELL_DOMINATE_PERSON = SPELL_DOMINATE_PERSON
 module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
 module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
+module.exports.SPELL_FAERIE_FIRE = SPELL_FAERIE_FIRE
 module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
 module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE
 module.exports.SPELL_FLY = SPELL_FLY

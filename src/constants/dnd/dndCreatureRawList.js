@@ -411,6 +411,7 @@ const CREATURE_SOLAR = 'solar'
 const CREATURE_STONE_GIANT = 'stone_giant'
 const CREATURE_STONE_GOLEM = 'stone_golem'
 const CREATURE_STORM_GIANT = 'storm_giant'
+const CREATURE_SPINED_DEVIL = 'spined_devil'
 const CREATURE_TRICERATOPS = 'triceratops'
 const CREATURE_TYRANNOSAURUS_REX = 'tyrannosaurus_rex'
 const CREATURE_UMBER_HULK = 'umber_hulk'
@@ -16829,6 +16830,149 @@ module.exports = [
       {
         name: 'Обескураживающая иллюзия',
         description: `Если существо, видимое дьяволом, начинает ход в пределах 30 футов от дьявола, дьявол может создать иллюзию, чтобы выглядеть как мертвец, бывший этому существу родным, или наоборот, как его злейший враг. Если это существо видит дьявола, оно должно преуспеть в спасброске Мудрости со Сл 14, иначе станет испуганным до конца своего хода.`,
+      },
+    ],
+  },
+  {
+    name: 'Игольчатый дьявол',
+    nameAlt: 'Спинагон',
+    nameEn: 'Spined devil',
+    nameEnAlt: 'Spinagon',
+    id: CREATURE_SPINED_DEVIL,
+    description: `Спинагоны по размеру меньше большинства других дьяволов, и они служат шпионами и посредниками старших дьяволов и архидьяволов. Они — глаза и уши Девяти Преисподних, и даже те дьяволы, которые презирают физическую слабость спинагонов, относятся к ним, по крайней мере, с толикой уважения.\n
+Тело и хвост спинагона усеяно иглами, а иглы с хвоста он может использовать как дистанционное оружие. При контакте с целью шипы воспламеняются. В свободное от доставки сообщений или сбора разведданных время игольчатые дьяволы служат в инфернальных легионах летучей артиллерией, компенсируя свою относительную слабость путём нападения толпой. Хоть игольчатые дьяволы и жаждут продвижения в ранге и власти, они по своей природе трусливы и быстро рассеются, если сражение пойдёт не в их пользу. `,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:146',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 6,
+      cubeBonus: 5,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 40,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 8,
+    },
+    resistanceList: [
+      [DAMAGE_COLD],
+      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+    ],
+    immunityList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_POISONED],
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Дьявольское зрение',
+        description: `Магическая тьма не мешает тёмному зрению дьявола.`,
+      },
+      {
+        name: 'Облёт',
+        description: `Дьявол не провоцирует атаки, когда вылетает из досягаемости врага.`,
+      },
+      {
+        name: 'Запас игл',
+        description: `У дьявола есть двенадцать игл на хвосте. Использованные иглы отрастают к моменту, когда дьявол оканчивает продолжительный отдых.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Дьявол совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дьявол совершает две атаки: одну укусом, и одну вилами, или же две атаки иглами на хвосте.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 4,
+          },
+        },
+      },
+      {
+        name: 'Вилы',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+          },
+        },
+      },
+      {
+        name: 'Игла на хвосте',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 20,
+            max: 80,
+          },
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 4,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 1,
+              cubeType: 6,
+            },
+          ],
+        },
       },
     ],
   },

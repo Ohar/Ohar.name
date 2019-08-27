@@ -44,7 +44,17 @@ const dndCreatureList = dndCreatureRawList
 
       const creatureFilled = {
         ...parent,
-        ...extendList({creature, parent, nameList: ['actionList', 'featureList']}),
+        ...extendList(
+          {
+            creature,
+            parent,
+            nameList: [
+              'actionList',
+              'featureList',
+              'params',
+            ],
+          }
+        ),
       }
 
       if (creature.parentId) {

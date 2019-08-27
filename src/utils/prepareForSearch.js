@@ -3,4 +3,4 @@ module.exports = text => text
   .replace(/_/g, ' ')
   .replace(/Ё/g, 'Е')
   .replace(/ё/g, 'е')
-  .replace(/[.,:\-]/g, '')
+  .replace(/[.,:-]/g, '')

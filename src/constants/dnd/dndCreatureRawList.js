@@ -353,6 +353,7 @@ const CREATURE_DRIDER_SPELLCASTER = 'drider_spellcaster'
 const CREATURE_DRYAD = 'dryad'
 const CREATURE_DUERGAR = 'duergar'
 const CREATURE_EFREETI = 'efreeti'
+const CREATURE_ERINYES = 'erinyes'
 const CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue'
 const CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green'
 const CREATURE_FAERIE_DRAGON_LIGHT_BLUE = 'faerie_dragon_light_blue'
@@ -17882,5 +17883,155 @@ module.exports = [
         },
       },
     ],
+  },
+  {
+    name: 'Эриния',
+    nameEn: 'Erinyes',
+    id: CREATURE_ERINYES,
+    description: `Самые прекрасные и завораживающие из всех младших и старших дьяволов — это эринии, дисциплинированные и яростные воины. Пикируя с небес, они несут быструю смерть существам, предавшим их повелителей или нарушившим эдикты Асмодея. Эринии выглядят как гуманоиды мужского или женского пола с фигурами, достойными изваяний, и большими пернатыми крыльями. Большинство одето в стилизованную броню и рогатые шлемы, и пользуется изысканными мечами и луками. У некоторых при себе есть верёвки опутывания, чтобы обездвиживать сильных противников.\n
+Легенды гласят, что первые эринии были ангелами, падшими с Верхних Планов из-за какого-то проступка или искушения. Эринии всегда пользуются возможностью быть неверно принятыми за ангела, чтобы легче выполнить свою миссию по завоеванию или совращению. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:152',
+    armor: {
+      ac: 18,
+      type: 'латный доспех',
+    },
+    hp: {
+      cubeCount: 18,
+      cubeType: 8,
+      cubeBonus: 72,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 18,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 7,
+      [PARAM_CON]: 8,
+      [PARAM_WIT]: 6,
+      [PARAM_CHA]: 8,
+    },
+    resistanceList: [
+      [DAMAGE_COLD],
+      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+    ],
+    immunityList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_POISONED],
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_12,
+    featureList: [
+      {
+        name: 'Адское оружие',
+        description: `Атаки оружием эринии являются магическими, и причиняют при попадании дополнительный урон ядом 13 (3к8) (уже учтён в атаках).`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Эриния совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Эриния совершает три атаки.`,
+      },
+      {
+        name: 'Длинный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 4,
+              },
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 10,
+                cubeBonus: 4,
+                comment: `, если используется двумя руками, `,
+              },
+            ],
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 3,
+              cubeType: 8,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Длинный лук',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 14, иначе станет отравленной. Яд действует до тех пор, пока не будет устранён заклинанием _Малое восстановление_ (Lesser restoration) или подобной магией.`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 7,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 8,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 3,
+              cubeType: 8,
+            },
+          ],
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Парирование',
+        description: `Эриния добавляет 4 к КД против одной рукопашной атаки, которая должна попасть по ней. Для этого эриния должна видеть атакующего, и должна использовать рукопашное оружие.`,
+      },
+    ],
+    isFemale: true,
   },
 ]

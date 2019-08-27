@@ -331,6 +331,7 @@ const CREATURE_BEHIR = 'behir'
 const CREATURE_BLACK_DRAGON_WYRMLING = 'black_dragon_wyrmling'
 const CREATURE_BLUE_DRAGON_WYRMLING = 'blue_dragon_wyrmling'
 const CREATURE_BONE_DEVIL = 'bone_devil'
+const CREATURE_BONE_DEVIL_WITH_A_SPEAR = 'bone_devil_with_a_spear'
 const CREATURE_BRASS_DRAGON_WYRMLING = 'brass_dragon_wyrmling'
 const CREATURE_BRONZE_DRAGON_WYRMLING = 'bronze_dragon_wyrmling'
 const CREATURE_CHAIN_DEVIL = 'chain_devil'
@@ -17283,6 +17284,34 @@ module.exports = [
               cubeType: 6,
             },
           ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Костяной дьявол c копьём',
+    nameEn: 'Bone Devil with a Spear',
+    id: CREATURE_BONE_DEVIL_WITH_A_SPEAR,
+    parentId: CREATURE_BONE_DEVIL,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дьявол совершает две атаки: одну гвизармой, и одну жалом.`,
+      },
+      {
+        name: 'Гвизарма',
+        description: `Если цель — существо с размером не больше Огромного, оно становится схваченным (Сл высвобождения 14). Пока цель схвачена, дьявол не может использовать свою гвизарму против другой цели.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 12,
+            cubeBonus: 4,
+          },
         },
       },
     ],

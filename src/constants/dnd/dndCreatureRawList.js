@@ -194,6 +194,7 @@ const {
   SPELL_DISPEL_EVIL_AND_GOOD, SPELL_DISPEL_MAGIC,
   SPELL_DOMINATE_PERSON,
   SPELL_ENLARGE_REDUCE, SPELL_ENTANGLE,
+  SPELL_FAERIE_FIRE,
   SPELL_FEATHER_FALL,
   SPELL_FLAME_STRIKE,
   SPELL_FLY,
@@ -317,6 +318,7 @@ const CREATURE_DJINNI = 'djinni'
 const CREATURE_DOPPELGANGER = 'doppelganger'
 const CREATURE_DRAGON_TURTLE = 'DRAGON_TURTLE'
 const CREATURE_DRETCH = 'dretch'
+const CREATURE_DRIDER = 'drider'
 const CREATURE_EFREETI = 'efreeti'
 const CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue'
 const CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green'
@@ -15925,6 +15927,184 @@ module.exports = [
         restore: {
           from: 5,
           to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Драук',
+    nameEn: 'Drider',
+    id: CREATURE_DRIDER,
+    description: `Когда дроу подаёт большие надежды, Лолс призывает его в Ямы Демонической Паутины, чтобы испытать его веру и силу. Те, кто проходят испытание, возвышаются пред Лолс. Те же, кто не преуспеет, превращаются в драуков — ужасных гибридов дроу и гигантских пауков, которые служат живым напоминанием мощи Лолс. Лишь дроу может быть обращён в драука, и секретом такого превращения владеет только Лолс.\n
+**Пожизненная метка.** Дроу, превращённый в драука, возвращается на Материальный План извращённым и униженным существом. Ведомые своим сумасшествием, они растворяются в Подземье, становясь отшельниками и охотниками, одиночками или вожаками стай гигантских пауков.\n
+В редких исключениях, драуки возвращаются на окраины общества дроу, невзирая на своё проклятье, чаще всего, чтобы воплотить в жизнь давнюю клятву или месть из прошлой жизни. Дроу боятся и сторонятся драуков, ставя их даже ниже рабов. Но они терпят их присутствие, так как эти существа являются живым воплощением воли Лолс и напоминанием о судьбе, которая ожидает всех, кто подведёт Паучью Королеву.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:137',
+    armor: {
+      ac: 19,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 10,
+      cubeBonus: 52,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 12,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+      [SKILL_STEALTH]: 9,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      LANG_UNDERCOMMON,
+      LANG_ELVEN,
+    ],
+    cr: CR_6,
+    featureList: [
+      {
+        name: 'Наследие фей',
+        description: `Драук совершает с преимуществом спасброски от очарования, и магия не может его усыпить.`,
+      },
+      {
+        name: 'Паучье лазание',
+        description: `Драук может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`,
+      },
+      {
+        name: 'Чувствительность к солнечному свету',
+        description: `Находясь на солнечном свету, драук совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+      {
+        name: 'Хождение по паутине',
+        description: `Драук игнорирует ограничения перемещения, вызванные паутиной.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_WIT,
+      saveThrowDc: 13,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DANCING_LIGHTS,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_FAERIE_FIRE,
+            SPELL_DARKNESS,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Драук совершает три атаки, либо длинным мечом, либо длинным луком. Он может заменить одну из этих атак атакой укусом.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 4,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 2,
+              cubeType: 8,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Длинный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 3,
+              },
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 10,
+                cubeBonus: 3,
+                comment: ', если используется двумя руками',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Длинный лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 6,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 8,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 1,
+              cubeType: 8,
+            },
+          ],
         },
       },
     ],

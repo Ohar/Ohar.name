@@ -398,6 +398,7 @@ const CREATURE_ICE_DEVIL_WITH_A_SPEAR = 'ice_devil_with_a_spear'
 const CREATURE_IMP = 'imp'
 const CREATURE_IMP_FAMILIAR = 'imp_familiar'
 const CREATURE_IRON_GOLEM = 'iron_golem'
+const CREATURE_LEMURE = 'lemure'
 const CREATURE_MANES = 'manes'
 const CREATURE_MARID = 'marid'
 const CREATURE_MARILITH = 'marilith'
@@ -17516,6 +17517,91 @@ module.exports = [
               cubeType: 6,
             },
           ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Лемур',
+    nameEn: 'Lemure',
+    id: CREATURE_LEMURE,
+    description: `Лемуры появляются когда душа смертного испорчена злом и сослана навечно в Девять Преисподних. Самая низшая разновидность дьяволов, лемуры — отвратительные, бесформенные существа, обречённые страдать и мучиться до тех пор, пока не продвинутся до более высокой формы дьявола, например, до беса.\n
+Лемуры напоминают собой расплавленную массу плоти с чем-то вроде головы и гуманоидного торса. Постоянная гримаса страдания искривляет лицо, его слабый рот постоянно двигается, несмотря на то, что он не может говорить.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:150',
+    armor: 7,
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 15,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 5,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 3,
+    },
+    resistanceList: [
+      [DAMAGE_COLD],
+    ],
+    immunityList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_FRIGHTENED],
+      [CONDITION_POISONED],
+      [CONDITION_CHARMED],
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_INFERNAL,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Дьявольское зрение',
+        description: `Магическая тьма не мешает тёмному зрению лемура.`,
+      },
+      {
+        name: 'Адское возрождение',
+        description: `Лемур, умерший в Девяти Преисподних, возвращается к жизни с полными хитами через 1к10 дней, если только не был убит существом с добрым мировоззрением и находящимся под действием заклинания _Благословение_ (Bless), и его останки не поливали святой водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 4,
+          },
         },
       },
     ],

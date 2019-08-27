@@ -65,6 +65,7 @@ const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 const SPELL_ENTANGLE = 'entangle'
 const SPELL_FAERIE_FIRE = 'faerie_fire'
 const SPELL_FEATHER_FALL = 'feather_fall'
+const SPELL_FIREBALL = 'fireball'
 const SPELL_FLAME_STRIKE = 'flame_strike'
 const SPELL_FLY = 'fly'
 const SPELL_FOG_CLOUD = 'fog_cloud'
@@ -74,6 +75,7 @@ const SPELL_GOODBERRY = 'goodberry'
 const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
 const SPELL_GUST_OF_WIND = 'gust_of_wind'
 const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
+const SPELL_HOLD_MONSTER = 'hold_monster'
 const SPELL_HOLD_PERSON = 'hold_person'
 const SPELL_INSECT_PLAGUE = 'insect_plague'
 const SPELL_INVISIBILITY = 'invisibility'
@@ -1545,6 +1547,34 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_FIREBALL,
+    name: 'Огненный шар',
+    nameEn: 'Fireball',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_HOLD_MONSTER,
+    name: 'Удержание чудовища',
+    nameEn: 'Hold monster',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1594,6 +1624,7 @@ module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
 module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
 module.exports.SPELL_FAERIE_FIRE = SPELL_FAERIE_FIRE
 module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
+module.exports.SPELL_FIREBALL = SPELL_FIREBALL
 module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE
 module.exports.SPELL_FLY = SPELL_FLY
 module.exports.SPELL_FOG_CLOUD = SPELL_FOG_CLOUD
@@ -1603,6 +1634,7 @@ module.exports.SPELL_GOODBERRY = SPELL_GOODBERRY
 module.exports.SPELL_GREATER_INVISIBILITY = SPELL_GREATER_INVISIBILITY
 module.exports.SPELL_GUST_OF_WIND = SPELL_GUST_OF_WIND
 module.exports.SPELL_HALLUCINATORY_TERRAIN = SPELL_HALLUCINATORY_TERRAIN
+module.exports.SPELL_HOLD_MONSTER = SPELL_HOLD_MONSTER
 module.exports.SPELL_HOLD_PERSON = SPELL_HOLD_PERSON
 module.exports.SPELL_INSECT_PLAGUE = SPELL_INSECT_PLAGUE
 module.exports.SPELL_INVISIBILITY = SPELL_INVISIBILITY

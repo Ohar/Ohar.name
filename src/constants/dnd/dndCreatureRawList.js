@@ -210,6 +210,7 @@ const {
   SPELL_ENTANGLE,
   SPELL_FAERIE_FIRE,
   SPELL_FEATHER_FALL,
+  SPELL_FIREBALL,
   SPELL_FLAME_STRIKE,
   SPELL_FLY,
   SPELL_FOG_CLOUD,
@@ -219,6 +220,7 @@ const {
   SPELL_GREATER_INVISIBILITY,
   SPELL_GUST_OF_WIND,
   SPELL_HALLUCINATORY_TERRAIN,
+  SPELL_HOLD_MONSTER,
   SPELL_HOLD_PERSON,
   SPELL_INSECT_PLAGUE,
   SPELL_INVISIBILITY,
@@ -400,6 +402,7 @@ const CREATURE_NALFESHNEE = 'nalfeshnee'
 const CREATURE_PLANETAR = 'planetar'
 const CREATURE_QUASIT = 'quasit'
 const CREATURE_QUASIT_FAMILIAR = 'quasit_familiar'
+const CREATURE_PIT_FIEND = 'pit_fiend'
 const CREATURE_PLESIOSAURUS = 'plesiosaurus'
 const CREATURE_PTERANODON = 'pteranodon'
 const CREATURE_RED_DRAGON_WYRMLING = 'red_dragon_wyrmling'
@@ -16972,6 +16975,184 @@ module.exports = [
               cubeType: 6,
             },
           ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Исчадие преисподней',
+    nameAlt: 'Исчадие из ямы',
+    nameEn: 'Pit Fiend',
+    id: CREATURE_PIT_FIEND,
+    description: `Безоговорочные повелители большинства других дьяволов, исчадия преисподней служат напрямую эрцгерцогам и эрцгерцогиням Девяти Преисподних, и выполняют их желания. Эти могучие дьяволы — генералы Девяти Преисподних, ведущие в битву инфернальные легионы.\n
+С их гипертрофированным чувством собственного превосходства и права повелевать другими, исчадия преисподней формируют некую гротескную аристократию инфернального царства. Эти доминирующие тираны-манипуляторы плетут внутри сложной и опасной политики Девяти Преисподних заговоры с целью уничтожения всего, что стоит между ними и их желаниями.\n
+Исчадие преисподней представляет собой громадное чудовище с подобным кнуту хвостом и огромными крыльями, в которые он заворачивается как в плащ. Его тело покрыто крепчайшей чешуёй, а с клыкастой пасти капает яд, который может свалить с ног даже самое крепкое смертное существо. Исчадия преисподней бесстрашны в бою, они стараются сойтись в поединке один-на-один с самым сильным врагом, демонстрируя всем своё превосходство и надменность, которая не позволяет им допустить и мысли о возможности поражения. `,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:147',
+    armor: {
+      ac: 19,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 24,
+      cubeType: 10,
+      cubeBonus: 168,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 26,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 24,
+      [PARAM_INT]: 22,
+      [PARAM_WIT]: 18,
+      [PARAM_CHA]: 24,
+    },
+    resistanceList: [
+      [DAMAGE_COLD],
+      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+    ],
+    immunityList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_POISONED],
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_20,
+    featureList: [
+      {
+        name: 'Аура страха',
+        description: `Все враждебные исчадию преисподней существа, начинающие ход в пределах 20 футов от исчадия преисподней, должны совершать спасбросок Мудрости со Сл 21, если исчадие преисподней дееспособно. При провале существо становится испуганным до начала своего следующего хода. Если спасбросок был успешным, оно получает иммунитет к Ауре страха этого исчадия на следующие 24 часа.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Исчадие преисподней совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием исчадия преисподней являются магическими.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 21,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_MAGIC,
+            SPELL_FIREBALL,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_WALL_OF_FIRE,
+            SPELL_HOLD_MONSTER,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Исчадие преисподней совершает четыре атаки: одну укусом, одну когтём, одну булавой, и одну хвостом.`,
+      },
+      {
+        name: 'Укус',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 21, иначе станет отравленной. Будучи отравленной таким образом, цель не может восстанавливать хиты, и получает урон ядом 21 (6к6) в начале каждого своего хода. Отравленная цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 14,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 4,
+            cubeType: 6,
+            cubeBonus: 8,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 14,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 4,
+            cubeType: 8,
+            cubeBonus: 8,
+          },
+        },
+      },
+      {
+        name: 'Булава',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 14,
+          range: 10,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 8,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 6,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Хвост',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 14,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 10,
+            cubeBonus: 8,
+          },
         },
       },
     ],

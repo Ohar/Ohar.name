@@ -330,6 +330,7 @@ const CREATURE_BLACK_DRAGON_WYRMLING = 'black_dragon_wyrmling'
 const CREATURE_BLUE_DRAGON_WYRMLING = 'blue_dragon_wyrmling'
 const CREATURE_BRASS_DRAGON_WYRMLING = 'brass_dragon_wyrmling'
 const CREATURE_BRONZE_DRAGON_WYRMLING = 'bronze_dragon_wyrmling'
+const CREATURE_CHAIN_DEVIL = 'chain_devil'
 const CREATURE_CHASME = 'chasme'
 const CREATURE_CLAY_GOLEM = 'clay_golem'
 const CREATURE_CLOUD_GIANT = 'cloud_giant'
@@ -16714,6 +16715,120 @@ module.exports = [
             cubeBonus: 3,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Дьявол цепей',
+    nameAlt: 'Китон',
+    nameEn: 'Chain devil',
+    nameEnAlt: 'Kyton',
+    id: CREATURE_CHAIN_DEVIL,
+    description: `Это зловещее исчадие носит цепи как одежду. Распугивая других существ жутким взглядом, этот дьявол оживляет покрывающие его тело цепи, а также те цепи, что есть рядом. Ожившие цепи покрываются крюками, лезвиями и шипами, разрывающими врагов.\n
+Дьяволы цепей выступают в роли тюремщиков-садистов, наслаждающихся болью и живущих только ради того, чтобы эту боль причинять. Это они пытают души смертных, запертые в Девяти Преисподних, вымещая свою садистскую ярость на жалких лемурах, в облике которых эти души и появляются.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:145',
+    armor: {
+      ac: 16,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 8,
+      cubeBonus: 40,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 14,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 7,
+      [PARAM_WIT]: 4,
+      [PARAM_CHA]: 5,
+    },
+    resistanceList: [
+      [DAMAGE_COLD],
+      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+    ],
+    immunityList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_POISONED],
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_8,
+    featureList: [
+      {
+        name: 'Дьявольское зрение',
+        description: `Магическая тьма не мешает тёмному зрению дьявола.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Дьявол совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дьявол совершает две атаки цепями.`,
+      },
+      {
+        name: 'Цепь',
+        description: `Цель становится схваченной (Сл высвобождения 14), если нет другого существа, схваченного этим дьяволом. Пока цель схвачена, она опутана и получает колющий урон 7 (2к6) в начале каждого своего хода.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Оживление цепей',
+        comment: 'перезаряжается после короткого или продолжительного отдыха',
+        description: `До четырёх цепей, видимых дьяволом в пределах 60 футов от себя, магическим образом обрастают острыми колючками и оживают, находясь под контролем дьявола, при условии, что эти цепи никто не несёт и не носит.\n
+У каждой ожившей цепи КД 20, 20 хитов, сопротивление к колющему урону и иммунитет к урону звуком и психической энергией. Если дьявол в свой ход использует Мультиатаку, он может каждой ожившей цепью совершить одну дополнительную атаку Цепью. Каждая ожившая цепь может схватить по одной цели, но не может совершать атаки, если есть цель, схваченная ей. Ожившая цепь возвращается в неживое состояние, если её хиты опускаются до 0, а также если дьявол становится недееспособным или умирает.`,
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Обескураживающая иллюзия',
+        description: `Если существо, видимое дьяволом, начинает ход в пределах 30 футов от дьявола, дьявол может создать иллюзию, чтобы выглядеть как мертвец, бывший этому существу родным, или наоборот, как его злейший враг. Если это существо видит дьявола, оно должно преуспеть в спасброске Мудрости со Сл 14, иначе станет испуганным до конца своего хода.`,
       },
     ],
   },

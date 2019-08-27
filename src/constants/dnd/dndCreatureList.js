@@ -18,10 +18,15 @@ const extendList = ({creature, parent, nameList}) => {
     (result, listName) => creature[listName] && parent[listName]
       ? {
         ...result,
-        [listName]: [
-          ...parent[listName],
-          ...creature[listName],
-        ]
+        [listName]: Array.isArray(creature[listName])
+          ? [
+            ...parent[listName],
+            ...creature[listName],
+          ]
+          : {
+            ...parent[listName],
+            ...creature[listName],
+          },
       }
       : result,
     RESULT_DEFAULT

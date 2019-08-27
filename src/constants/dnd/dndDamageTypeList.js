@@ -9,6 +9,7 @@ const DAMAGE_FORCE = 'force'
 const DAMAGE_MAGIC_WEAPON = 'magic_weapon'
 const DAMAGE_NECROTIC = 'necrotic'
 const DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON = 'nonmagic_nonadamantine_weapon'
+const DAMAGE_NONMAGIC_NONSILVER_WEAPON = 'nonmagic_nonsilver_weapon'
 const DAMAGE_NONMAGIC_WEAPON = 'nonmagic_weapon'
 const DAMAGE_PIERCING = 'piercing'
 const DAMAGE_POISON = 'poison'
@@ -44,6 +45,12 @@ const dndDamageTypeList = [
     id: DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
     name: 'Дробящий, колющий и рубящий урон от немагических атак, а также от немагического оружия, которое при этом не изготовлено из адамантина',
     fullName: 'Дробящий, колющий и рубящий урон от немагических атак, а также от немагического оружия, которое при этом не изготовлено из адамантина',
+    isEnumeration: true,
+  },
+  {
+    id: DAMAGE_NONMAGIC_NONSILVER_WEAPON,
+    name: 'Дробящий, колющий и рубящий урон от немагических атак, а также от немагического оружия, которое при этом не посеребрено',
+    fullName: 'Дробящий, колющий и рубящий урон от немагических атак, а также от немагического оружия, которое при этом не посеребрено',
     isEnumeration: true,
   },
   {

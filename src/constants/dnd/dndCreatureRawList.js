@@ -18325,7 +18325,7 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:155',
+    source: 'MM:157',
     armor: {
       ac: 12,
       type: 'природный доспех',

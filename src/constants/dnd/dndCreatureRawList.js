@@ -326,6 +326,7 @@ const CREATURE_BANDIT = 'bandit'
 const CREATURE_BANSHEE = 'banshee'
 const CREATURE_BARLGURA = 'barlgura'
 const CREATURE_BASILISK = 'basilisk'
+const CREATURE_BARBED_DEVIL = 'barbed_devil'
 const CREATURE_BEARDED_DEVIL = 'bearded_devil'
 const CREATURE_BEHIR = 'behir'
 const CREATURE_BLACK_DRAGON_WYRMLING = 'black_dragon_wyrmling'
@@ -17220,12 +17221,12 @@ module.exports = [
     ],
     senseList: [
       {
-        id: SENSE_TRUE_VISION,
+        id: SENSE_DARK_VISION,
         value: 120,
       },
       {
         id: SENSE_PASSIVE_PERCEPTION,
-        value: 14,
+        value: 12,
       },
     ],
     languageList: [
@@ -17601,6 +17602,147 @@ module.exports = [
             type: DAMAGE_BLUDGEONING,
             cubeCount: 1,
             cubeType: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Шипастый дьявол',
+    nameAlt: 'Гаматула',
+    nameEn: 'Barbed devil',
+    nameEnAlt: 'Hamatula',
+    id: CREATURE_BARBED_DEVIL,
+    description: `Существа с необузданными жадностью и желаниями, шипастые дьяволы служат охранниками для более сильных обитателей Девяти Преисподних и их сокровищниц. Светящиеся глаза этого похожего на высокого гуманоида, покрытого острыми колючками, шипами, и крючками, дьявола зорко выискивают предметы или существ, которые можно бы было прибрать к рукам. Эти исчадия готовы к любому шансу вступить в бой, если победа сулит награду.\n
+Шипастые дьяволы известны своей бдительностью, и их трудно застать врасплох, а ещё они относятся к своим обязанностям без скуки и рассеянности. Они используют свои острые когти как оружие и кидают огненные шары в убегающих от них врагов. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:150',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 8,
+      cubeBonus: 52,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 14,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 6,
+      [PARAM_CON]: 7,
+      [PARAM_WIT]: 5,
+      [PARAM_CHA]: 5,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 8,
+      [SKILL_DECEPTION]: 5,
+      [SKILL_INSIGHT]: 5,
+    },
+    resistanceList: [
+      [DAMAGE_COLD],
+      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+    ],
+    immunityList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_POISONED],
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 18,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Шипастая шкура',
+        description: `В начале каждого своего хода шипастый дьявол причиняет колющий урон 5 (1к10) всем схватившим его существам.`,
+      },
+      {
+        name: 'Дьявольское зрение',
+        description: `Магическая тьма не мешает тёмному зрению дьявола.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Дьявол совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дьявол совершает три рукопашные атаки: одну хвостом, и две когтями. В качестве альтернативы, он может дважды использовать Метание пламени.`,
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Хвост',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Метание пламени',
+        description: `Если цель — горючий предмет, который никто не несёт и не носит, она также загорается.`,
+        attack: {
+          type: ACTION_RANGE_SPELL_ATTACK,
+          bonus: 5,
+          range: 150,
+          target: 1,
+          hit: {
+            type: DAMAGE_FIRE,
+            cubeCount: 3,
+            cubeType: 6,
           },
         },
       },

@@ -392,6 +392,7 @@ const CREATURE_HELL_HOUND = 'hell_hound'
 const CREATURE_HEZROU = 'hezrou'
 const CREATURE_HILL_GIANT = 'hill_giant'
 const CREATURE_HOMUNCULUS = 'homunculus'
+const CREATURE_HORNED_DEVIL = 'HORNED_DEVIL'
 const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
 const CREATURE_ICE_DEVIL = 'ice_devil'
@@ -17742,6 +17743,140 @@ module.exports = [
           hit: {
             type: DAMAGE_FIRE,
             cubeCount: 3,
+            cubeType: 6,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Рогатый дьявол',
+    nameAlt: 'Мальбранш',
+    nameEn: 'Horned devil',
+    nameEnAlt: 'Malebranche ',
+    id: CREATURE_HORNED_DEVIL,
+    description: `Рогатые дьяволы безумно ленивы, и стараются не подвергать себя опасности. Более того, они ненавидят и боятся существ сильнее их самих. Однако если их достаточно спровоцировать или разозлить, ярость этих исчадий бывает ужасающей.\n
+Мальбранш ростом примерно с огра и покрыт твёрдыми как железо чешуйками. Рогатые дьяволы, летающая пехота адских легионов, следуют приказам дословно. Их огромные крылья и гигантские рога являют собой устрашающую картину, когда они пикируют с неба, атакуя смертоносными трезубцами и хлеща хвостами.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:151',
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 17,
+      cubeType: 10,
+      cubeBonus: 85,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 22,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 21,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 16,
+      [PARAM_CHA]: 17,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 7,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 7,
+    },
+    resistanceList: [
+      [DAMAGE_COLD],
+      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+    ],
+    immunityList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_POISONED],
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_11,
+    featureList: [
+      {
+        name: 'Дьявольское зрение',
+        description: `Магическая тьма не мешает тёмному зрению дьявола.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Дьявол совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дьявол совершает три рукопашные атаки: две вилами, и одну хвостом. Он может использовать Метание пламени вместо любой рукопашной атаки.`,
+      },
+      {
+        name: 'Вилы',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: 'Хвост',
+        description: `Если цель — существо, не являющееся ни нежитью, ни конструктом, она должна преуспеть в спасброске Телосложения со Сл 17, иначе будет терять 10 (3к6) хитов в начале каждого своего хода из-за инфернальной раны. Каждый раз, когда демон попадает этой атакой по цели, уже имеющей эту рану, урон от раны увеличивается на 10 (3к6). Любое существо может залечить рану, если действием совершит успешную проверку Мудрости (Медицина) со Сл 12. Эта рана также закрывается, если цель получит магическое лечение.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: 'Метание пламени',
+        description: `Если цель — горючий предмет, который никто не несёт и не носит, она также загорается.`,
+        attack: {
+          type: ACTION_RANGE_SPELL_ATTACK,
+          bonus: 7,
+          range: 150,
+          target: 1,
+          hit: {
+            type: DAMAGE_FIRE,
+            cubeCount: 4,
             cubeType: 6,
           },
         },

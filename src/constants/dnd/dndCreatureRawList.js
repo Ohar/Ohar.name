@@ -330,6 +330,7 @@ const CREATURE_BEARDED_DEVIL = 'bearded_devil'
 const CREATURE_BEHIR = 'behir'
 const CREATURE_BLACK_DRAGON_WYRMLING = 'black_dragon_wyrmling'
 const CREATURE_BLUE_DRAGON_WYRMLING = 'blue_dragon_wyrmling'
+const CREATURE_BONE_DEVIL = 'bone_devil'
 const CREATURE_BRASS_DRAGON_WYRMLING = 'brass_dragon_wyrmling'
 const CREATURE_BRONZE_DRAGON_WYRMLING = 'bronze_dragon_wyrmling'
 const CREATURE_CHAIN_DEVIL = 'chain_devil'
@@ -17153,6 +17154,135 @@ module.exports = [
             cubeType: 10,
             cubeBonus: 8,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Костяной дьявол',
+    nameAlt: 'Осилут',
+    nameEn: 'Bone Devil',
+    nameEnAlt: 'Osyluth',
+    id: CREATURE_BONE_DEVIL,
+    description: `Движимые ненавистью, вожделением и завистью, костяные дьяволы служат жестокими надсмотрщиками Девяти Преисподних. Они принуждают более слабых дьяволов к работе, получая особое наслаждение, когда их соперников понижают в ранге. Вместе с тем они долго продвигаются по иерархии и люто завидуют своим начальникам, выслуживаясь перед ними, хоть их это и злит.\n
+Костяные дьяволы выглядят как гуманоидная оболочка с высохшей кожей, натянутой на скелетный остов. У них устрашающий череп вместо головы и хвост скорпиона, и неприятный запах разложения висит в воздухе вокруг них. Хотя их когти наносят разрушительный урон в бою, костяные дьяволы также орудуют костяными копьями с крюками, которыми они ловят врагов перед тем как ударить их ядовитым жалом.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:148',
+    armor: {
+      ac: 19,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 15,
+      cubeType: 10,
+      cubeBonus: 60,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_FLY]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 16,
+    },
+    saveThrowCollection: {
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 6,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_DECEPTION]: 7,
+      [SKILL_INSIGHT]: 6,
+    },
+    resistanceList: [
+      [DAMAGE_COLD],
+      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+    ],
+    immunityList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_POISONED],
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_9,
+    featureList: [
+      {
+        name: 'Дьявольское зрение',
+        description: `Магическая тьма не мешает тёмному зрению дьявола.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Дьявол совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дьявол совершает три атаки: две когтями, и одну жалом.`,
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Жало',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 14, иначе станет отравленной на 1 минуту. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 10,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 2,
+              cubeType: 8,
+              cubeBonus: 4,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 5,
+              cubeType: 6,
+            },
+          ],
         },
       },
     ],

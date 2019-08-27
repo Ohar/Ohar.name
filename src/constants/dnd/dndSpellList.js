@@ -32,6 +32,7 @@ const {
 
 const SPELL_ANIMATE_DEAD = 'animate_dead'
 const SPELL_BANE = 'bane'
+const SPELL_BARKSKIN = 'barkskin'
 const SPELL_BESTOW_CURSE = 'bestow_curse'
 const SPELL_BLADE_BARRIER = 'blade_barrier'
 const SPELL_BLESS = 'bless'
@@ -59,6 +60,7 @@ const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
 const SPELL_DISPEL_MAGIC = 'dispel_magic'
 const SPELL_DIVINATION = 'divination'
 const SPELL_DOMINATE_PERSON = 'dominate_person'
+const SPELL_DRUIDCRAFT = 'druidcraft'
 const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 const SPELL_ENTANGLE = 'entangle'
 const SPELL_FAERIE_FIRE = 'faerie_fire'
@@ -68,6 +70,7 @@ const SPELL_FLY = 'fly'
 const SPELL_FOG_CLOUD = 'fog_cloud'
 const SPELL_FREEDOM_OF_MOVEMENT = 'freedom_of_movement'
 const SPELL_GASEOUS_FORM = 'gaseous_form'
+const SPELL_GOODBERRY = 'goodberry'
 const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
 const SPELL_GUST_OF_WIND = 'gust_of_wind'
 const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
@@ -84,6 +87,7 @@ const SPELL_MIRROR_IMAGE = 'mirror_image'
 const SPELL_MISTY_STEP = 'misty_step'
 const SPELL_MOVE_EARTH = 'move_earth'
 const SPELL_NONDETECTION = 'nondetection'
+const SPELL_PASS_WITHOUT_TRACE = 'pass_without_trace'
 const SPELL_PASSWALL = 'passwall'
 const SPELL_PHANTASMAL_FORCE = 'phantasmal_force'
 const SPELL_PHANTASMAL_KILLER = 'phantasmal_killer'
@@ -100,6 +104,7 @@ const SPELL_SACRED_FLAME = 'sacred_flame'
 const SPELL_SANCTUARY = 'sanctuary'
 const SPELL_SEE_INVISIBILITY = 'see_invisibility'
 const SPELL_SHIELD = 'shield'
+const SPELL_SHILLELAGH = 'shillelagh'
 const SPELL_SILENCE = 'silence'
 const SPELL_SLEEP = 'sleep'
 const SPELL_STONE_SHAPE = 'stone_shape'
@@ -1470,6 +1475,76 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_DRUIDCRAFT,
+    name: 'Искусство друидов',
+    nameEn: 'Druidcraft',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_GOODBERRY,
+    name: 'Чудо-ягоды',
+    nameEn: 'Goodberry',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_PASS_WITHOUT_TRACE,
+    name: 'Бесследное передвижение',
+    nameEn: 'Pass Without Trace',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_SHILLELAGH,
+    name: 'Дубинка',
+    nameEn: 'Shillelagh',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_BARKSKIN,
+    name: 'Дубовая кора',
+    nameEn: 'Barkskin',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1486,6 +1561,7 @@ module.exports.dndSpellCollection = listToCollectionById(dndSpellList)
 
 module.exports.SPELL_ANIMATE_DEAD = SPELL_ANIMATE_DEAD
 module.exports.SPELL_BANE = SPELL_BANE
+module.exports.SPELL_BARKSKIN = SPELL_BARKSKIN
 module.exports.SPELL_BESTOW_CURSE = SPELL_BESTOW_CURSE
 module.exports.SPELL_BLADE_BARRIER = SPELL_BLADE_BARRIER
 module.exports.SPELL_BLESS = SPELL_BLESS
@@ -1513,6 +1589,7 @@ module.exports.SPELL_DISPEL_EVIL_AND_GOOD = SPELL_DISPEL_EVIL_AND_GOOD
 module.exports.SPELL_DISPEL_MAGIC = SPELL_DISPEL_MAGIC
 module.exports.SPELL_DIVINATION = SPELL_DIVINATION
 module.exports.SPELL_DOMINATE_PERSON = SPELL_DOMINATE_PERSON
+module.exports.SPELL_DRUIDCRAFT = SPELL_DRUIDCRAFT
 module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
 module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
 module.exports.SPELL_FAERIE_FIRE = SPELL_FAERIE_FIRE
@@ -1522,6 +1599,7 @@ module.exports.SPELL_FLY = SPELL_FLY
 module.exports.SPELL_FOG_CLOUD = SPELL_FOG_CLOUD
 module.exports.SPELL_FREEDOM_OF_MOVEMENT = SPELL_FREEDOM_OF_MOVEMENT
 module.exports.SPELL_GASEOUS_FORM = SPELL_GASEOUS_FORM
+module.exports.SPELL_GOODBERRY = SPELL_GOODBERRY
 module.exports.SPELL_GREATER_INVISIBILITY = SPELL_GREATER_INVISIBILITY
 module.exports.SPELL_GUST_OF_WIND = SPELL_GUST_OF_WIND
 module.exports.SPELL_HALLUCINATORY_TERRAIN = SPELL_HALLUCINATORY_TERRAIN
@@ -1538,6 +1616,7 @@ module.exports.SPELL_MIRROR_IMAGE = SPELL_MIRROR_IMAGE
 module.exports.SPELL_MISTY_STEP = SPELL_MISTY_STEP
 module.exports.SPELL_MOVE_EARTH = SPELL_MOVE_EARTH
 module.exports.SPELL_NONDETECTION = SPELL_NONDETECTION
+module.exports.SPELL_PASS_WITHOUT_TRACE = SPELL_PASS_WITHOUT_TRACE
 module.exports.SPELL_PASSWALL = SPELL_PASSWALL
 module.exports.SPELL_PHANTASMAL_FORCE = SPELL_PHANTASMAL_FORCE
 module.exports.SPELL_PHANTASMAL_KILLER = SPELL_PHANTASMAL_KILLER
@@ -1554,6 +1633,7 @@ module.exports.SPELL_SACRED_FLAME = SPELL_SACRED_FLAME
 module.exports.SPELL_SANCTUARY = SPELL_SANCTUARY
 module.exports.SPELL_SEE_INVISIBILITY = SPELL_SEE_INVISIBILITY
 module.exports.SPELL_SHIELD = SPELL_SHIELD
+module.exports.SPELL_SHILLELAGH = SPELL_SHILLELAGH
 module.exports.SPELL_SILENCE = SPELL_SILENCE
 module.exports.SPELL_SLEEP = SPELL_SLEEP
 module.exports.SPELL_STONE_SHAPE = SPELL_STONE_SHAPE

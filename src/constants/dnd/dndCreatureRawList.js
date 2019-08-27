@@ -16556,14 +16556,15 @@ module.exports = [
         comment: 'в зверином облике — Укус',
         attack: {
           type: ACTION_MELEE_WEAPON_ATTACK,
-          bonus: 4,
+          bonus: 5,
           range: 5,
           target: 1,
           hit: {
             type: DAMAGE_PIERCING,
             cubeCount: 1,
-            cubeType: 8,
-            cubeBonus: 2,
+            cubeType: 4,
+            cubeBonus: 3,
+            comment: `, и цель должна совершить спасбросок Телосложения со Сл 11, получая урон ядом 10 (3к6) при провале, или половину этого урона при успехе`,
           },
         },
       },

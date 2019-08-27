@@ -3,38 +3,52 @@ import PropTypes from "prop-types"
 
 import { dndManualCollection } from '@/constants/dnd/dndManualList'
 
-import './DndSourceInfoStyles.css'
+import './DndSourceInfoStyles.less'
 
-const DndSourceInfoComponent = ({ source, useFullName }) => {
-  const [sourceName, sourcePage] = source.split(':')
-  const sourceData = dndManualCollection[sourceName]
+const DndSourceInfoComponent = ({ source: sourceStr, useFullName }) => {
+  const [sourceId, ...pageList] = sourceStr.split(':')
+  const page = [...pageList].join(':')
+  const source = dndManualCollection[sourceId]
 
-  if (sourceData) {
-    const pageText = sourcePage
-      ? `, ${sourcePage}`
-      : ''
+  if (source) {
+    const {name, shortName, isUrl} = source
 
-    const fullText = `${sourceData.name}${pageText}`
-    const shortText = `${sourceData.shortName}${pageText}`
-    const title = `${fullText} страница`
+    if (isUrl) {
+      const text = useFullName
+        ? name
+        : shortName
 
-    return useFullName
-      ? (
+      return (
+        <a
+          className='DndSourceInfo DndSourceInfo-link'
+          title={name}
+          rel='nofollow'
+          href={page}
+          target='_blank'
+        >
+          {text}
+        </a>
+      )
+    } else {
+      const pageText = page
+        ? `, ${page}`
+        : ''
+
+      const nameText = `${name}${pageText}`
+      const text = useFullName
+        ? `${name}${pageText}`
+        : `${shortName}${pageText}`
+
+      return (
         <span
           className='DndSourceInfo'
-          title={title}
+          title={`${nameText} страница`}
         >
-          {fullText}
+          {text}
         </span>
       )
-      : (
-        <span
-          className='DndSourceInfo'
-          title={title}
-        >
-          {shortText}
-        </span>
-      )
+
+    }
   }
 
   return null

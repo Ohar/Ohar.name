@@ -437,6 +437,7 @@ const CREATURE_VAMPIRE = 'vampire'
 const CREATURE_VAMPIRE_SPAWN = 'vampire_spawn'
 const CREATURE_VAMPIRE_SPELLCASTER = 'vampire_spellcaster'
 const CREATURE_VAMPIRE_WARRIOR = 'vampire_warrior'
+const CREATURE_VINE_BLIGHT = 'vine_blight'
 const CREATURE_VIOLET_FUNGUS = 'violet_fungus'
 const CREATURE_VROCK = 'vrock'
 const CREATURE_WATER_WEIRD = 'water_weird'
@@ -18486,6 +18487,94 @@ module.exports = [
             cubeType: 4,
             cubeBonus: 1,
           },
+        },
+      },
+    ],
+    isFemale: true,
+  },
+  {
+    name: 'Вьющаяся зараза',
+    nameEn: 'Vine blight',
+    id: CREATURE_VINE_BLIGHT,
+    description: `Прикидываясь массой ползучих лиан, вьющаяся зараза скрывается в зарослях, ожидая приближающуюся добычу. Шевеля растения вокруг себя, эта зараза путает и сбивает с толку своих врагов, прежде чем атаковать.\n
+Это единственная зараза, способная говорить. Благодаря связи со злым духом древа Галтиаса, которому он служит, зараза говорит надломленным голосом своего мёртвого господина, дразня своих жертв или ведя переговоры с более сильным противником. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_PLANT,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:157',
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 8,
+      cubeBonus: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 8,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 3,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 1,
+    },
+    conditionImmunityList: [
+      [CONDITION_DEAFENED],
+      [CONDITION_BLINDED],
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        comment: 'слепа за пределами этого радиуса',
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_COMMON,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока зараза остаётся без движения, она неотличима от клубка лиан.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Сжимание',
+        description: `Если размер цели не больше Большого, она становится схваченной (Сл высвобождения 12). Пока цель схвачена, она опутана, и зараза не может сжимать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Опутывающие растения',
+        description: `Цепкие корни и плети вырастают в 15-футовом радиусе вокруг заразы, засыхая через 1 минуту. В течение этого времени эта область является труднопроходимой местностью для существ, не являющихся растениями. Кроме того, все существа на выбор заразы, находящиеся в этой местности, когда растения только появляются, должны преуспеть в спасброске Силы со Сл 12, иначе станут опутанными. Любое существо может действием совершить проверку Силы со Сл 12, освобождая себя или другое опутанное существо при успехе.`,
+        restore: {
+          from: 5,
+          to: 6,
         },
       },
     ],

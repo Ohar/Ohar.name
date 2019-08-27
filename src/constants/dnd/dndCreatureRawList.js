@@ -393,6 +393,7 @@ const CREATURE_HILL_GIANT = 'hill_giant'
 const CREATURE_HOMUNCULUS = 'homunculus'
 const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
+const CREATURE_ICE_DEVIL = 'ice_devil'
 const CREATURE_IMP = 'imp'
 const CREATURE_IMP_FAMILIAR = 'imp_familiar'
 const CREATURE_IRON_GOLEM = 'iron_golem'
@@ -17312,6 +17313,173 @@ module.exports = [
             cubeType: 12,
             cubeBonus: 4,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Ледяной дьявол',
+    nameAlt: 'Гелюгон',
+    nameEn: 'Ice Devil',
+    nameEnAlt: 'Gelugon',
+    id: CREATURE_ICE_DEVIL,
+    description: `Ледяные дьяволы обычно обитают на холодных слоях Стигии и Кании, и служат командирами инфернальных армий, выплёскивая свои гнев и негодование на меньших дьяволов. Жаждя власти своих командиров — исчадий преисподней, — они упорно трудятся ради повышения, убивая врагов Девяти Преисподних и захватывая для своих хозяев-архидьяволов как можно больше душ.\n
+У ледяных дьяволов, напоминающих внешне гигантских двуногих насекомых, когтистые руки и ноги, мощные мандибулы и длинные хвосты, покрытые бритвенно-острыми шипами. Некоторые из них вооружены зазубренными копьями, чьё ледяное прикосновение делает врагов беспомощными в бою. `,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:149',
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 19,
+      cubeType: 10,
+      cubeBonus: 76,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 21,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 18,
+      [PARAM_WIT]: 15,
+      [PARAM_CHA]: 18,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 7,
+      [PARAM_CON]: 9,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 9,
+    },
+    resistanceList: [
+      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+    ],
+    immunityList: [
+      [DAMAGE_COLD],
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_POISONED],
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_14,
+    featureList: [
+      {
+        name: 'Дьявольское зрение',
+        description: `Магическая тьма не мешает тёмному зрению дьявола.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Дьявол совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дьявол совершает три атаки: одну укусом, одну когтями, и одну хвостом.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 5,
+            },
+            {
+              type: DAMAGE_COLD,
+              cubeCount: 3,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 2,
+              cubeType: 4,
+              cubeBonus: 5,
+            },
+            {
+              type: DAMAGE_COLD,
+              cubeCount: 3,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Хвост',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 10,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 5,
+            },
+            {
+              type: DAMAGE_COLD,
+              cubeCount: 3,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Стена льда',
+        description: `Дьявол магическим образом формирует непрозрачную стену льда на твёрдой поверхности, которую видит в пределах 60 футов от себя. Толщина стены — 1 фут, длина до 30 футов и высота 10 футов, или же это купол полусферы с диаметром до 20 футов.\n
+Когда стена появляется, все существа в её пространстве выталкиваются из неё по ближайшему маршруту. Существо само выбирает, с какой стороны стены окажется, если только оно не недееспособно. После этого существо совершает спасбросок Ловкости со Сл 17, получая урон холодом 35 (10к6) при провале или половину этого урона при успехе.\n
+Стена существует 1 минуту, либо пока дьявол не станет недееспособным или не умрёт. Стене можно причинять урон и прорубать в ней проходы; у каждой 10-футовой секции КД 5, 30 хитов, уязвимость к урону огнём и иммунитет к урону кислотой, некротической энергией, психической энергией, холодом и ядом. Если секция уничтожена, она оставляет после себя область холодного воздуха. Каждый раз, когда существо оканчивает перемещение, проходя в текущем ходу через область холодного воздуха, как добровольно, так и не по своей воле, это существо должно совершить спасбросок Телосложения со Сл 17, получая урон холодом 17 (5к6) при провале, или половину этого урона при успехе. Область холодного воздуха исчезает, когда исчезнет вся стена. `,
+        restore: {
+          from: 6,
+          to: 6,
         },
       },
     ],

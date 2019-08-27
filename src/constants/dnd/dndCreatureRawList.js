@@ -16124,12 +16124,17 @@ module.exports = [
     ],
   },
   {
-    name: 'Драук заклинатель',
+    name: 'Драук-заклинатель',
     nameEn: 'Drider Spellcaster',
     id: CREATURE_DRIDER_SPELLCASTER,
     parentId: CREATURE_DRIDER,
     params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 13,
       [PARAM_WIT]: 16,
+      [PARAM_CHA]: 12,
     },
     spellCast: {
       spellCasterLevel: 7,

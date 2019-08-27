@@ -394,6 +394,7 @@ const CREATURE_HOMUNCULUS = 'homunculus'
 const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
 const CREATURE_ICE_DEVIL = 'ice_devil'
+const CREATURE_ICE_DEVIL_WITH_A_SPEAR = 'ice_devil_with_a_spear'
 const CREATURE_IMP = 'imp'
 const CREATURE_IMP_FAMILIAR = 'imp_familiar'
 const CREATURE_IRON_GOLEM = 'iron_golem'
@@ -17480,6 +17481,41 @@ module.exports = [
         restore: {
           from: 6,
           to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Ледяной дьявол c копьём',
+    nameEn: 'Ice Devil with a Spear',
+    id: CREATURE_ICE_DEVIL_WITH_A_SPEAR,
+    parentId: CREATURE_ICE_DEVIL,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дьявол совершает две атаки: одну ледяным копьём, и одну хвостом.`,
+      },
+      {
+        name: 'Ледяное копьё',
+        description: `Если цель — существо, она должна преуспеть в спасброске Телосложения со Сл 15, иначе её скорость на 1 минуту снижается на 10 футов; в каждом своём ходу она сможет совершать либо действие, либо бонусное действие, но не то и другое; и оно не может совершать реакции. Цель может повторять спасбросок в конце каждого своего хода, при успехе завершая этот эффект на себе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 10,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 2,
+              cubeType: 8,
+              cubeBonus: 5,
+            },
+            {
+              type: DAMAGE_COLD,
+              cubeCount: 3,
+              cubeType: 6,
+            },
+          ],
         },
       },
     ],

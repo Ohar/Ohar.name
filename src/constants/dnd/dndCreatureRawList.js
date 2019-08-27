@@ -50,6 +50,7 @@ const {
   CREATURE_TYPE_CELESTIAL,
   CREATURE_TYPE_CONSTRUCT,
   CREATURE_TYPE_DEMON,
+  CREATURE_TYPE_DEVIL,
   CREATURE_TYPE_DRAGON,
   CREATURE_TYPE_DWARF,
   CREATURE_TYPE_ELEMENTAL,
@@ -132,6 +133,7 @@ const {
   DAMAGE_MAGIC_WEAPON,
   DAMAGE_NECROTIC,
   DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+  DAMAGE_NONMAGIC_NONSILVER_WEAPON,
   DAMAGE_NONMAGIC_WEAPON,
   DAMAGE_PIERCING,
   DAMAGE_POISON,
@@ -385,6 +387,7 @@ const CREATURE_HILL_GIANT = 'hill_giant'
 const CREATURE_HOMUNCULUS = 'homunculus'
 const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
+const CREATURE_IMP = 'imp'
 const CREATURE_IRON_GOLEM = 'iron_golem'
 const CREATURE_MANES = 'manes'
 const CREATURE_MARID = 'marid'
@@ -16466,6 +16469,107 @@ module.exports = [
         name: 'Невидимость',
         comment: 'перезаряжается после короткого или продолжительного отдыха',
         description: `Дуэргар магическим образом становится невидимым, пока не атакует, не наложит заклинание, не использует Увеличение, или пока не окончится его концентрация, но не более 1 часа (как при концентрации на заклинании). Всё снаряжение, которое дуэргар несёт или носит, становится невидимым вместе с ним.`,
+      },
+    ],
+  },
+  {
+    name: 'Бес',
+    nameEn: 'Imp',
+    id: CREATURE_IMP,
+    description: `Бесы могут быть замечены повсеместно на Нижних Планах. Они работают на побегушках у дьявольских господ, шпионят за конкурентами, а также вводят в заблуждение и подстрекают смертных. Бесы будут с гордостью служить своим хозяевам, но на них нельзя положиться, если задача должна быть выполнена эффективно и быстро.\n
+Бес может принимать животный облик по своему желанию, но в естественном состоянии он напоминает крохотного краснокожего гуманоида с колючим хвостом, маленькими рожками и кожаными крыльями. Они нападают из невидимости, ударяя своим ядовитым жалом.`,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_DEVIL,
+      CREATURE_TYPE_SHAPESHIFTER,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:144',
+    armor: 13,
+    hp: {
+      cubeCount: 3,
+      cubeType: 4,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 40,
+    },
+    params: {
+      [PARAM_STR]: 6,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 14,
+    },
+    skillCollection: {
+      [SKILL_DECEPTION]: 4,
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 5,
+      [SKILL_PERSUASION]: 4,
+    },
+    resistanceList: [
+      [DAMAGE_COLD],
+      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+    ],
+    immunityList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_POISON],
+    ],
+    immunityConditionList: [
+      [CONDITION_POISONED],
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      LANG_COMMON,
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Перевёртыш',
+        description: `Бес может действием принять звериный облик, напоминающий ворона (20 фт., летая 60 фт.), крысу (скорость 20 фт.) или паука (20 фт., лазая 20 фт.), или принять свой истинный облик. Во всех обликах его статистика остаётся той же самой, исключая указанные изменения скорости. Всё несомое и носимое им снаряжение не превращается. Он принимает свой истинный облик, если умирает.`,
+      },
+      {
+        name: 'Дьявольское зрение',
+        description: `Магическая тьма не мешает тёмному зрению беса.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Бес совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Жало',
+        comment: 'в зверином облике — Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Невидимость',
+        description: `Бес магическим образом становится невидимым, пока не атакует или не утратит концентрацию (как при концентрации на заклинании). Всё снаряжение, которое бес несёт или носит, становится невидимым вместе с ним.`,
       },
     ],
   },

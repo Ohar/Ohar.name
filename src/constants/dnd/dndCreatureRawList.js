@@ -411,6 +411,7 @@ const CREATURE_MARID = 'marid'
 const CREATURE_MARILITH = 'marilith'
 const CREATURE_MERROW = 'merrow'
 const CREATURE_NALFESHNEE = 'nalfeshnee'
+const CREATURE_NEEDLE_BLIGHT = 'needle_blight'
 const CREATURE_PLANETAR = 'planetar'
 const CREATURE_QUASIT = 'quasit'
 const CREATURE_QUASIT_FAMILIAR = 'quasit_familiar'
@@ -18312,5 +18313,96 @@ module.exports = [
         },
       },
     ],
+  },
+  {
+    name: 'Игольчатая зараза',
+    nameEn: 'Needle blight',
+    id: CREATURE_NEEDLE_BLIGHT,
+    description: `В тени леса игольчатая зараза издалека может быть принята за сгорбившегося гуманоида, передвигающегося шаркающей походкой. Вблизи же эти существа выглядят как ужасные растения, чьи иглы растут по всему телу. Игольчатый сорняк выбрасывает эти игры в стороны или запускает их как стрелы, которые пробивают доспех и плоть.\n
+Когда игольчатая зараза обнаруживает угрозу, она выбрасывает пыльцу, которая с ветром передвигается к другим сородичам по всему лесу. Предупреждённые о местонахождении своих врагов, игольчатые заразы сходятся со всех сторон, чтобы омыть свои корни кровью. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_PLANT,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:155',
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 4,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 3,
+    },
+    conditionImmunityList: [
+      [CONDITION_DEAFENED],
+      [CONDITION_BLINDED],
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        comment: 'слепа за пределами этого радиуса',
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_COMMON,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1_4,
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Иглы',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 30,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    isFemale: true,
   },
 ]

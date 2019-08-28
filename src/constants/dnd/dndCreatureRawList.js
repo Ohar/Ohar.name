@@ -338,6 +338,7 @@ const CREATURE_BANSHEE = 'banshee'
 const CREATURE_BARLGURA = 'barlgura'
 const CREATURE_BASILISK = 'basilisk'
 const CREATURE_BARBED_DEVIL = 'barbed_devil'
+const CREATURE_BARBED_DEVIL_SUMMONER = 'barbed_devil_summoner'
 const CREATURE_BEARDED_DEVIL = 'bearded_devil'
 const CREATURE_BEARDED_DEVIL_SUMMONER = 'bearded_devil_summoner'
 const CREATURE_BEHIR = 'behir'
@@ -17890,6 +17891,23 @@ module.exports = [
             cubeCount: 3,
             cubeType: 6,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Шипастый дьявол-призыватель',
+    nameEn: 'Barbed devil summoner',
+    id: CREATURE_BARBED_DEVIL_SUMMONER,
+    parentId: CREATURE_BARBED_DEVIL,
+    actionList: [
+      {
+        name: 'Призыв дьявола',
+        description: `Дьявол пытается призвать одного шипастого дьявола с шансом 30%.\n
+Призванный дьявол появляется в свободном пространстве в пределах 60 футов от призывателя, и действует как его союзник, не имеющий способности призывать дьяволов. Он помогает в течение 1 минуты или пока призыватель не умрёт или действием его не отпустит.`,
+        limit: {
+          count: 1,
+          period: 'день',
         },
       },
     ],

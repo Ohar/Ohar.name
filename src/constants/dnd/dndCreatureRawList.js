@@ -472,6 +472,7 @@ const CREATURE_PTERANODON = 'pteranodon'
 const CREATURE_RED_DRAGON_WYRMLING = 'red_dragon_wyrmling'
 const CREATURE_ROPER = 'roper'
 const CREATURE_SEA_HAG = 'sea_hag'
+const CREATURE_SEA_HAG_COVEN = 'sea_hag_coven'
 const CREATURE_SHADOW_DEMON = 'shadow_demon'
 const CREATURE_SHRIEKER = 'shrieker'
 const CREATURE_SILVER_DRAGON_WYRMLING = 'silver_dragon_wyrmling'
@@ -19767,6 +19768,14 @@ module.exports = [
       },
     ],
     isFemale: true,
+  },
+  {
+    name: 'Морская карга (в шабаше)',
+    nameEn: 'Sea hag (coven)',
+    id: CREATURE_SEA_HAG_COVEN,
+    parentId: CREATURE_SEA_HAG,
+    cr: CR_4,
+    ...coven,
   },
   {
     name: 'Ночная карга',

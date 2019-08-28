@@ -431,6 +431,7 @@ const CREATURE_QUASIT = 'quasit'
 const CREATURE_QUASIT_FAMILIAR = 'quasit_familiar'
 const CREATURE_OGRE_ZOMBIE = 'ogre_zombie'
 const CREATURE_PIT_FIEND = 'pit_fiend'
+const CREATURE_PIT_FIEND_SUMMONER = 'pit_fiend_summoner'
 const CREATURE_PLESIOSAURUS = 'plesiosaurus'
 const CREATURE_PTERANODON = 'pteranodon'
 const CREATURE_RED_DRAGON_WYRMLING = 'red_dragon_wyrmling'
@@ -17205,6 +17206,27 @@ module.exports = [
             cubeType: 10,
             cubeBonus: 8,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Исчадие-призыватель преисподней',
+    nameAlt: 'Исчадие-призыватель из ямы',
+    nameEn: 'Pit Fiend summoner',
+    id: CREATURE_PIT_FIEND_SUMMONER,
+    parentId: CREATURE_PIT_FIEND,
+    actionList: [
+      {
+        name: 'Призыв дьявола',
+        description: `Исчадие преисподней выбирает, кого призвать, и пытается это сделать без шанса провала.\n
+* 2к4 бородатых дьявола
+* 1к4 шипастых дьявола
+* одну эринию\n
+Призванное существо появляется в свободном пространстве в пределах 60 футов от исчадия преисподней, и действует как его союзник, не имеющий способности призывать дьяволов. Оно помогает в течение 1 минуты или пока исчадие преисподней не умрёт или действием его не отпустит.`,
+        limit: {
+          count: 1,
+          period: 'день',
         },
       },
     ],

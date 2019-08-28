@@ -461,6 +461,7 @@ const CREATURE_MERROW = 'merrow'
 const CREATURE_NALFESHNEE = 'nalfeshnee'
 const CREATURE_NEEDLE_BLIGHT = 'needle_blight'
 const CREATURE_NIGHT_HAG = 'night_hag'
+const CREATURE_NIGHT_HAG_COVEN = 'night_hag_coven'
 const CREATURE_PLANETAR = 'planetar'
 const CREATURE_QUASIT = 'quasit'
 const CREATURE_QUASIT_FAMILIAR = 'quasit_familiar'
@@ -19914,5 +19915,13 @@ module.exports = [
       },
     ],
     isFemale: true,
+  },
+  {
+    name: 'Ночная карга (в шабаше)',
+    nameEn: 'Night hag (coven)',
+    id: CREATURE_NIGHT_HAG_COVEN,
+    parentId: CREATURE_NIGHT_HAG,
+    cr: CR_7,
+    ...coven,
   },
 ]

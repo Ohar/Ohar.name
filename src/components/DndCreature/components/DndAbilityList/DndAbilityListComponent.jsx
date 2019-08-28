@@ -9,7 +9,17 @@ import DndAbility from './components/DndAbility'
 
 import "./DndAbilityListStyles.less"
 
-const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale, entry }) => (
+const DndAbilityListComponent = (
+  {
+    entry,
+    header,
+    isFemale,
+    list,
+    name,
+    spellCast,
+    spellCastTogether,
+  }
+) => (
   <section className='DndAbilityList'>
     {
       header && (
@@ -45,21 +55,31 @@ const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale, entr
       }
 
       {
-        spellCast && (
-          <DndAbility header={
-            (
-              spellCast.title || spellCast.spellCasterLevel
-                ? 'Использование заклинаний'
-                : 'Врождённое колдовство'
-            ) + (
-              spellCast.comment
-                ? ` (${spellCast.comment})`
-                : ''
+        [
+          spellCast,
+          spellCastTogether,
+        ]
+          .map(
+            item => (
+              item && (
+                <DndAbility header={
+                  (
+                    item.title || (
+                      item.spellCasterLevel
+                        ? 'Использование заклинаний'
+                        : 'Врождённое колдовство'
+                    )
+                  ) + (
+                    item.comment
+                      ? ` (${item.comment})`
+                      : ''
+                  )
+                }>
+                  {formatSpellCastDescription({spellCast: item, isFemale, name})}
+                </DndAbility>
+              )
             )
-          }>
-            {formatSpellCastDescription({spellCast, isFemale, name})}
-          </DndAbility>
-        )
+          )
       }
     </ul>
   </section>
@@ -72,6 +92,7 @@ DndAbilityListComponent.propTypes = {
   list: PropTypes.array,
   name: PropTypes.string,
   spellCast: PropTypes.object,
+  spellCastTogether: PropTypes.object,
 }
 
 DndAbilityListComponent.defaultProps = {
@@ -81,6 +102,7 @@ DndAbilityListComponent.defaultProps = {
   list: [],
   name: '',
   spellCast: null,
+  spellCastTogether: null,
 }
 
 export default DndAbilityListComponent

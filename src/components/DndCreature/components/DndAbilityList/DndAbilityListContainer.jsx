@@ -8,13 +8,15 @@ const DndAbilityListContainer = (
     entry,
     list,
     spellCast,
+    spellCastTogether,
     ...rest,
   }
-) => entry || spellCast || list.length
+) => entry || spellCast || spellCastTogether || list.length
   ? (
     <DndAbilityListComponent
       entry={entry}
       spellCast={spellCast}
+      spellCastTogether={spellCastTogether}
       list={list}
       {...rest}
     />

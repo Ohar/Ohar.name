@@ -56,6 +56,7 @@ const DndCreatureComponent = (
     source,
     speed,
     spellCast,
+    spellCastTogether,
     title,
     vulnerabilityList,
   },
@@ -107,6 +108,7 @@ const DndCreatureComponent = (
       name={name}
       isFemale={isFemale}
       spellCast={spellCast}
+      spellCastTogether={spellCastTogether}
     />
     <DndActionList list={actionList}/>
     <DndLegendaryActionList

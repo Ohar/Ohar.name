@@ -33,38 +33,47 @@ export default (
       spellCasterLevel,
       spellIdByCountList,
       spellIdList,
+      preText = '',
+      postText = '',
     },
     isFemale,
     name
   }
 ) => {
-  const statName = dndParamCollection[baseStat].name
-  const bonusText = spellAttackBonus
-    ? `, ${formatBonus(spellAttackBonus)} к попаданию атаками заклинаниями`
-    : ''
-  const saveThrowDcText = saveThrowDc
-    ? `Сл спасброска от заклинания ${saveThrowDc}`
-    : ''
-  const spellAdditionalInfoText = saveThrowDcText || bonusText
-    ? ` (${saveThrowDcText}${bonusText})`
-    : ''
   const spellText = generateSpellText({slotCountList, spellIdByCountList, spellIdList})
+  let preTextResult = preText
 
-  const spellComponentOnlyText = componentOnly
-    ? `, нуждаясь только в ${dndCastComponentCollection[componentOnly].name.plural.genitive} компонентах`
-    : ``
+  if (!preText) {
+    const statName = dndParamCollection[baseStat].name
+    const bonusText = spellAttackBonus
+      ? `, ${formatBonus(spellAttackBonus)} к попаданию атаками заклинаниями`
+      : ''
+    const saveThrowDcText = saveThrowDc
+      ? `Сл спасброска от заклинания ${saveThrowDc}`
+      : ''
+    const spellAdditionalInfoText = saveThrowDcText || bonusText
+      ? ` (${saveThrowDcText}${bonusText})`
+      : ''
 
-  const spellComponentExcludeText = generateExcludeComponentText(componentExclude)
+    const spellComponentOnlyText = componentOnly
+      ? `, нуждаясь только в ${dndCastComponentCollection[componentOnly].name.plural.genitive} компонентах`
+      : ``
 
-  const introText = spellCasterLevel
-    ? `${name} является заклинателем ${spellCasterLevel} уровня.`
-    : ''
-  const baseStatText = `${isFemale ? 'Её' : 'Его'} базовой характеристикой является ${statName}`
+    const spellComponentExcludeText = generateExcludeComponentText(componentExclude)
 
-  const spellCastText = spellCasterClass
-    ? `У ${isFemale ? 'неё' : 'него'}  приготовлены следующие заклинания ${dndPcClassCollection[spellCasterClass].name.singular.genitive}`
-    : `${name} может накладывать следующие заклинания${spellComponentOnlyText}${spellComponentExcludeText}`
+    const introText = spellCasterLevel
+      ? `${name} является заклинателем ${spellCasterLevel} уровня.`
+      : ''
+    const baseStatText = `${isFemale ? 'Её' : 'Его'} базовой характеристикой является ${statName}`
 
-  return `${introText} ${baseStatText}${spellAdditionalInfoText}. ${spellCastText}:
-${spellText}`
+    const spellCastText = spellCasterClass
+      ? `У ${isFemale ? 'неё' : 'него'}  приготовлены следующие заклинания ${dndPcClassCollection[spellCasterClass].name.singular.genitive}`
+      : `${name} может накладывать следующие заклинания${spellComponentOnlyText}${spellComponentExcludeText}`
+
+    preTextResult = `${introText} ${baseStatText}${spellAdditionalInfoText}. ${spellCastText}:`
+  }
+
+  return `${preTextResult}
+${spellText}\n
+${postText}`
 }

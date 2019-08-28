@@ -21,6 +21,6 @@ export default (
   }
 
   if (legendaryPoints) {
-    return 2
+    return 3
   }
 }

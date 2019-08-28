@@ -373,6 +373,7 @@ const CREATURE_DRYAD = 'dryad'
 const CREATURE_DUERGAR = 'duergar'
 const CREATURE_EFREETI = 'efreeti'
 const CREATURE_ERINYES = 'erinyes'
+const CREATURE_ERINYES_SUMMONER = 'erinyes_summoner'
 const CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue'
 const CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green'
 const CREATURE_FAERIE_DRAGON_LIGHT_BLUE = 'faerie_dragon_light_blue'
@@ -18193,6 +18194,26 @@ module.exports = [
       },
     ],
     isFemale: true,
+  },
+  {
+    name: 'Эриния-призыватель',
+    nameEn: 'Erinyes summoner',
+    id: CREATURE_ERINYES_SUMMONER,
+    parentId: CREATURE_ERINYES,
+    actionList: [
+      {
+        name: 'Призыв дьявола',
+        description: `Эриния выбирает, кого призвать, и пытается это сделать с шансом 50%.\n
+* 3к6 игольчатых дьяволов
+* 1к6 бородатых дьяволов
+* одну эринию\n
+Призванные существа появляются в свободном пространстве в пределах 60 футов от исчадия преисподней, и действуют как его союзники, не имеющие способности призывать дьяволов. Они помогает в течение 1 минуты или пока исчадие преисподней не умрёт или действием их не отпустит.`,
+        limit: {
+          count: 1,
+          period: 'день',
+        },
+      },
+    ],
   },
   {
     name: 'Единорог',

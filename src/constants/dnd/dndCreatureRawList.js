@@ -199,7 +199,9 @@ const {
   SPELL_COMPREHEND_LANGUAGES,
   SPELL_CONFUSION,
   SPELL_CONJURE_ELEMENTAL,
+  SPELL_CONTACT_OTHER_PLANE,
   SPELL_CONTROL_WEATHER,
+  SPELL_COUNTERSPELL,
   SPELL_CREATE_FOOD_AND_WATER,
   SPELL_CREATE_OR_DESTROY_WATER,
   SPELL_CREATION,
@@ -217,6 +219,7 @@ const {
   SPELL_DRUIDCRAFT,
   SPELL_ENLARGE_REDUCE,
   SPELL_ENTANGLE,
+  SPELL_EYEBITE,
   SPELL_FAERIE_FIRE,
   SPELL_FEATHER_FALL,
   SPELL_FIREBALL,
@@ -231,11 +234,14 @@ const {
   SPELL_HALLUCINATORY_TERRAIN,
   SPELL_HOLD_MONSTER,
   SPELL_HOLD_PERSON,
+  SPELL_IDENTIFY,
   SPELL_INSECT_PLAGUE,
   SPELL_INVISIBILITY,
   SPELL_JUMP,
   SPELL_LEVITATE,
   SPELL_LIGHT,
+  SPELL_LIGHTNING_BOLT,
+  SPELL_LOCATE_OBJECT,
   SPELL_MAGE_HAND,
   SPELL_MAGIC_MISSILE,
   SPELL_MAJOR_IMAGE,
@@ -257,9 +263,11 @@ const {
   SPELL_RAISE_DEAD,
   SPELL_RAY_OF_ENFEEBLEMENT,
   SPELL_RAY_OF_FROST,
+  SPELL_RAY_OF_SICKNESS,
   SPELL_RESSURECTION,
   SPELL_SACRED_FLAME,
   SPELL_SANCTUARY,
+  SPELL_SCRYING,
   SPELL_SEE_INVISIBILITY,
   SPELL_SHIELD,
   SPELL_SHILLELAGH,
@@ -408,6 +416,7 @@ const CREATURE_GORGON = 'gorgon'
 const CREATURE_GORISTRO = 'goristro'
 const CREATURE_GREEN_DRAGON_WYRMLING = 'green_dragon_wyrmling'
 const CREATURE_GREEN_HAG = 'green_hag'
+const CREATURE_GREEN_HAG_COVEN = 'green_hag_coven'
 const CREATURE_GRELL = 'grell'
 const CREATURE_GRICK = 'grick'
 const CREATURE_GRICK_ALPHA = 'grick_alpha'
@@ -19985,6 +19994,35 @@ module.exports = [
       },
     ],
     isFemale: true,
+  },
+  {
+    name: 'Зелёная карга (в шабаше)',
+    nameEn: 'Green hag (coven)',
+    description: `Когда нужно работать сообща, несмотря на эгоизм, карги собираются в шабаши. В шабаш могут входить разные ведьмы, в нём они считаются равными. Тем не менее, каждая жаждет личной власти.\n
+Шабаш — это три карги, и конфликт между двумя всегда может решить третья. Если встречается больше трёх карг, например, когда возникает конфликт между несколькими шабашами, всё погружается в хаос.`,
+    id: CREATURE_GREEN_HAG_COVEN,
+    parentId: CREATURE_GREEN_HAG,
+    cr: CR_5,
+    spellCastTogether: {
+      title: 'Совместное колдовство',
+      preText: `Если все три представительницы шабаша находятся в пределах 30 футов друг от друга, каждая может накладывать следующие заклинания из списка волшебника, но ячейки заклинаний у них общие на всех.`,
+      postText: `При накладывании этих заклинаний каждая карга считается заклинателем 12 уровня, использующим Интеллект в качестве базовой характеристики. Сл спасброска от заклинаний равна 12 + модификатор Интеллекта карги, а бонус атаки заклинанием равен 4 + модификатор Интеллекта.`,
+      spellIdList: [
+        SPELL_HOLD_PERSON,
+        SPELL_BESTOW_CURSE,
+        SPELL_PHANTASMAL_KILLER,
+        SPELL_POLYMORPH,
+        SPELL_RAY_OF_SICKNESS,
+        SPELL_IDENTIFY,
+        SPELL_LOCATE_OBJECT,
+        SPELL_COUNTERSPELL,
+        SPELL_LIGHTNING_BOLT,
+        SPELL_SCRYING,
+        SPELL_CONTACT_OTHER_PLANE,
+        SPELL_EYEBITE,
+      ],
+      slotCountList: [0, 4, 3, 3, 3, 2, 1],
+    },
   },
   {
     name: 'Морская карга',

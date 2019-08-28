@@ -71,6 +71,7 @@ const {
 } = require('./dndCreatureTypeList')
 const {
   ALIGMENT_ANY,
+  ALIGMENT_ANY_EVIL,
   ALIGMENT_CE,
   ALIGMENT_CG,
   ALIGMENT_CN,
@@ -159,6 +160,7 @@ const {
   SKILL_DECEPTION,
   SKILL_HISTORY,
   SKILL_INSIGHT,
+  SKILL_INTIMIDATION,
   SKILL_INVESTIGATION,
   SKILL_MEDICINE,
   SKILL_PERCEPTION,
@@ -179,6 +181,7 @@ const {
   PARAM_CHA,
 } = require('./dndParamList')
 const {
+  SPELL_ALTER_SELF,
   SPELL_ANIMATE_DEAD,
   SPELL_BANE,
   SPELL_BARKSKIN,
@@ -190,6 +193,7 @@ const {
   SPELL_BLUR,
   SPELL_CLAIRVOYANCE,
   SPELL_COLOR_SPRAY,
+  SPELL_COMMAND,
   SPELL_COMMUNE,
   SPELL_COMPREHEND_LANGUAGES,
   SPELL_CONFUSION,
@@ -267,7 +271,8 @@ const {
   SPELL_WALL_OF_FIRE,
   SPELL_WALL_OF_STONE,
   SPELL_WATER_BREATHING,
-  SPELL_WATER_WALK, SPELL_WEB,
+  SPELL_WATER_WALK,
+  SPELL_WEB,
   SPELL_WIND_WALK,
 } = require('./dndSpellList')
 const {
@@ -343,6 +348,7 @@ const CREATURE_BONE_DEVIL_WITH_A_SPEAR = 'bone_devil_with_a_spear'
 const CREATURE_BRASS_DRAGON_WYRMLING = 'brass_dragon_wyrmling'
 const CREATURE_BRONZE_DRAGON_WYRMLING = 'bronze_dragon_wyrmling'
 const CREATURE_BULLYWUG = 'bullywug'
+const CREATURE_CAMBION = 'cambion'
 const CREATURE_CHAIN_DEVIL = 'chain_devil'
 const CREATURE_CHASME = 'chasme'
 const CREATURE_CLAY_GOLEM = 'clay_golem'
@@ -19526,6 +19532,171 @@ module.exports = [
           from: 6,
           to: 6,
         },
+      },
+    ],
+  },
+  {
+    name: 'Камбион',
+    nameEn: 'Cambion',
+    id: CREATURE_CAMBION,
+    description: `Камбионы являются отпрысками исчадий (обычно суккубов или инкубов) и гуманоидов (обычно людей). Камбионы наследуют черты обоих родителей, однако рога, кожистые крылья и жилистые хвосты явно ука- зывают на их чужеродное происхождение.\n
+**Рождённые быть плохими.** Взрослея, камбионы развратом и пороками повергают в ужас даже самых преданных смертных родителей. Даже в юности камбионы позиционируют себя как владыки смертных. Они могут организовать бунты в городах, собирая банды гуманоидов и младших дьяволов себе в услужение.\n
+**Пешки сильных.** Камбионы вынуждены служить исчадьям, из восхищения и страха, но втайне ожидая, что однажды займут их место. Камбионы, выросшие в Девяти Преисподних, служат солдатами, посланниками и личными слугами дьяволов. В Бездне камбионы занимают своё место исходя из своей силы и воли.\n
+**Порождения Граз’зта.** Демонический повелитель Граз’зт любит сношаться с гуманоидами, которые заключили сделку с исчадиями, и он породил множество камбионов, которые помогают ему сеять хаос по всей мультивселенной. Отпрыски Граз’зта отличаются угольно-чёрной кожей, раздвоенными копытами, шестипалыми руками и невероятной красотой. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+    ],
+    aligmentId: ALIGMENT_ANY_EVIL,
+    source: 'MM:168',
+    armor: {
+      ac: 19,
+      type: 'чешуйчатый доспех',
+    },
+    hp: {
+      cubeCount: 11,
+      cubeType: 8,
+      cubeBonus: 33,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 18,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 16,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 7,
+      [PARAM_CON]: 6,
+      [PARAM_INT]: 5,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_INTIMIDATION]: 6,
+      [SKILL_DECEPTION]: 6,
+      [SKILL_STEALTH]: 7,
+    },
+    resistanceList: [
+      [DAMAGE_FIRE],
+      [DAMAGE_COLD],
+      [DAMAGE_ELECTRICITY],
+      [DAMAGE_POISON],
+      [DAMAGE_NONMAGIC_WEAPON],
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_INFERNAL,
+      LANG_COMMON,
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Благословение исчадия',
+        description: `КД камбиона включает бонус Харизмы.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 14,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_MAGIC,
+            SPELL_COMMAND,
+            SPELL_ALTER_SELF,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            {
+              id: SPELL_PLANE_SHIFT,
+              comment: 'только на себя',
+            },
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Камбион совершает две рукопашные атаки или два раза использует Огненный луч.`,
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 7,
+          range: {
+            melee: 5,
+            range: {
+              normal: 20,
+              max: 60,
+            },
+          },
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 4,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 4,
+                comment: ', если используется двумя руками для совершения рукопашной атаки,',
+              },
+            ],
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 1,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Огненный луч',
+        attack: {
+          type: ACTION_RANGE_SPELL_ATTACK,
+          bonus: 7,
+          range: 120,
+          target: 1,
+          hit: {
+            type: DAMAGE_FIRE,
+            cubeCount: 3,
+            cubeType: 6,
+          },
+        },
+      },
+      {
+        name: 'Чары исчадия',
+        description: `Один гуманоид, видимый камбионом в пределах 30 футов, должен преуспеть в спасброске Мудрости со Сл 14, иначе станет магическим образом очарованным на 1 день. Очарованная цель подчиняется устным командам камбиона. Если цель терпит вред от камбиона или другого существа, или получает самоубийственную команду от камбиона, цель может повторить спасбросок, оканчивая эффект на себе при успехе. Если спасбросок цели был успешным, или эффект на ней закончился, она получает иммунитет к Чарам исчадия этого камбиона на следующие 24 часа.`,
       },
     ],
   },

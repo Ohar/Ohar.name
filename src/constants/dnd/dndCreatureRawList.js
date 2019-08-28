@@ -1,518 +1,519 @@
 const {
-  CR_0,
-  CR_1_8,
-  CR_1_4,
-  CR_1_2,
-  CR_1,
-  CR_2,
-  CR_3,
-  CR_4,
-  CR_5,
-  CR_6,
-  CR_7,
-  CR_8,
-  CR_9,
-  CR_10,
-  CR_11,
-  CR_12,
-  CR_13,
-  CR_14,
-  CR_15,
-  CR_16,
-  CR_17,
-  CR_18,
-  CR_19,
-  CR_20,
-  CR_21,
-  CR_22,
-  CR_23,
-  CR_24,
-  CR_25,
-  CR_26,
-  CR_27,
-  CR_28,
-  CR_29,
-  CR_30,
-} = require('./dndCrList')
-const {
-  SIZE_GARGANTUA,
-  SIZE_HUGE,
-  SIZE_MEDIUM,
-  SIZE_LARGE,
-  SIZE_SMALL,
-  SIZE_TINY,
-} = require('./dndSizeList')
-const {
-  CREATURE_TYPE_AARAKOCRA,
-  CREATURE_TYPE_ABERRATION,
-  CREATURE_TYPE_ANY_RACE,
-  CREATURE_TYPE_BEAST,
-  CREATURE_TYPE_BULLYWUG,
-  CREATURE_TYPE_CELESTIAL,
-  CREATURE_TYPE_CONSTRUCT,
-  CREATURE_TYPE_DEMON,
-  CREATURE_TYPE_DEVIL,
-  CREATURE_TYPE_DRAGON,
-  CREATURE_TYPE_DWARF,
-  CREATURE_TYPE_ELEMENTAL,
-  CREATURE_TYPE_FEY,
-  CREATURE_TYPE_FIEND,
-  CREATURE_TYPE_GIANT,
-  CREATURE_TYPE_GITH,
-  CREATURE_TYPE_GNOLL,
-  CREATURE_TYPE_GNOME,
-  CREATURE_TYPE_GOBLINOID,
-  CREATURE_TYPE_GRIMLOCK,
-  CREATURE_TYPE_HUMANOID,
-  CREATURE_TYPE_MONSTER,
-  CREATURE_TYPE_PLANT,
-  CREATURE_TYPE_SHAPESHIFTER,
-  CREATURE_TYPE_UNDEAD
-} = require('./dndCreatureTypeList')
-const {
-  ALIGMENT_ANY,
-  ALIGMENT_ANY_EVIL,
-  ALIGMENT_CE,
-  ALIGMENT_CG,
-  ALIGMENT_CN,
-  ALIGMENT_LE,
-  ALIGMENT_LG,
-  ALIGMENT_LN,
-  ALIGMENT_NE,
-  ALIGMENT_NG,
-  ALIGMENT_N,
-  ALIGMENT_NO,
-  ALIGMENT_NOT_LAWFUL,
-} = require('./dndAligmentList')
-const {
-  SPEED_CLIMB,
-  SPEED_DIG,
-  SPEED_FLY,
-  SPEED_SWIM,
-  SPEED_WALK,
-} = require('./dndSpeedList')
-const {
-  ACTION_MELEE_WEAPON_ATTACK,
-  ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
-  ACTION_MELEE_SPELL_ATTACK,
-  ACTION_RANGE_WEAPON_ATTACK,
-  ACTION_RANGE_SPELL_ATTACK,
-} = require('./dndActionTypeList')
-const {
-  LANG_AARAKOCRA,
-  LANG_ABYSSAL,
-  LANG_ALL,
-  LANG_ALL_KNOWN_AT_LIFE,
-  LANG_ANY_ONE,
-  LANG_AQUAN,
-  LANG_AURAN,
-  LANG_BULLYWUG,
-  LANG_CELESTIAL,
-  LANG_COMMON,
-  LANG_DEEP_SPEECH,
-  LANG_DRACONIC,
-  LANG_DWARVISH,
-  LANG_ELVEN,
-  LANG_GIANT,
-  LANG_GITH,
-  LANG_GNOLL,
-  LANG_GNOMISH,
-  LANG_GOBLIN,
-  LANG_GRELL,
-  LANG_IGNAN,
-  LANG_INFERNAL,
-  LANG_ITS_CREATOR,
-  LANG_PRIMORDIAL,
-  LANG_SYLVAN,
-  LANG_TELEPATHY,
-  LANG_TERRAN,
-  LANG_UMBER_HULK,
-  LANG_UNDERCOMMON,
-  LANG_YETI,
-} = require('./dndLanguageList')
-const {
-  DAMAGE_ACID,
-  DAMAGE_BLUDGEONING,
-  DAMAGE_COLD,
-  DAMAGE_ELECTRICITY,
-  DAMAGE_FIRE,
-  DAMAGE_MAGIC_WEAPON,
-  DAMAGE_NECROTIC,
-  DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
-  DAMAGE_NONMAGIC_NONSILVER_WEAPON,
-  DAMAGE_NONMAGIC_WEAPON,
-  DAMAGE_PIERCING,
-  DAMAGE_POISON,
-  DAMAGE_PSYCHIC,
-  DAMAGE_RADIANT,
-  DAMAGE_SLASHING,
-  DAMAGE_THUNDER,
-} = require('./dndDamageTypeList')
-const {
-  SENSE_BLIND_VISION,
-  SENSE_DARK_VISION,
-  SENSE_PASSIVE_PERCEPTION,
-  SENSE_TRUE_VISION,
-  SENSE_VIBRATION_SENSE,
-} = require('./dndSenseList')
-const {
-  SKILL_ARCANA,
-  SKILL_ATHLETICS,
-  SKILL_DECEPTION,
-  SKILL_HISTORY,
-  SKILL_INSIGHT,
-  SKILL_INTIMIDATION,
-  SKILL_INVESTIGATION,
-  SKILL_MEDICINE,
-  SKILL_PERCEPTION,
-  SKILL_PERSUASION,
-  SKILL_RELIGION,
-  SKILL_STEALTH,
-} = require('./dndSkillList')
-const {
-  PC_CLASS_PRIEST,
-  PC_CLASS_WIZARD,
-} = require('./dndPcClassList')
-const {
-  PARAM_STR,
-  PARAM_DEX,
-  PARAM_CON,
-  PARAM_INT,
-  PARAM_WIT,
-  PARAM_CHA,
-} = require('./dndParamList')
-const {
-  SPELL_ALTER_SELF,
-  SPELL_ANIMATE_DEAD,
-  SPELL_BANE,
-  SPELL_BARKSKIN,
-  SPELL_BESTOW_CURSE,
-  SPELL_BLADE_BARRIER,
-  SPELL_BLESS,
-  SPELL_BLIGHT,
-  SPELL_BLINDNESS_DEAFNESS,
-  SPELL_BLUR,
-  SPELL_CLAIRVOYANCE,
-  SPELL_COLOR_SPRAY,
-  SPELL_COMMAND,
-  SPELL_COMMUNE,
-  SPELL_COMPREHEND_LANGUAGES,
-  SPELL_CONFUSION,
-  SPELL_CONJURE_ELEMENTAL,
-  SPELL_CONTACT_OTHER_PLANE,
-  SPELL_CONTROL_WEATHER,
-  SPELL_COUNTERSPELL,
-  SPELL_CREATE_FOOD_AND_WATER,
-  SPELL_CREATE_OR_DESTROY_WATER,
-  SPELL_CREATION,
-  SPELL_CURE_WOUNDS,
-  SPELL_DANCING_LIGHTS,
-  SPELL_DARKNESS,
-  SPELL_DETECT_EVIL_AND_GOOD,
-  SPELL_DETECT_MAGIC,
-  SPELL_DETECT_THOUGHTS,
-  SPELL_DISGUISE_SELF,
-  SPELL_DISPEL_EVIL_AND_GOOD,
-  SPELL_DISPEL_MAGIC,
-  SPELL_DIVINATION,
-  SPELL_DOMINATE_PERSON,
-  SPELL_DRUIDCRAFT,
-  SPELL_ENLARGE_REDUCE,
-  SPELL_ENTANGLE,
-  SPELL_EYEBITE,
-  SPELL_FAERIE_FIRE,
-  SPELL_FEATHER_FALL,
-  SPELL_FIREBALL,
-  SPELL_FLAME_STRIKE,
-  SPELL_FLY,
-  SPELL_FOG_CLOUD,
-  SPELL_FREEDOM_OF_MOVEMENT,
-  SPELL_GASEOUS_FORM,
-  SPELL_GOODBERRY,
-  SPELL_GREATER_INVISIBILITY,
-  SPELL_GUST_OF_WIND,
-  SPELL_HALLUCINATORY_TERRAIN,
-  SPELL_HOLD_MONSTER,
-  SPELL_HOLD_PERSON,
-  SPELL_IDENTIFY,
-  SPELL_INSECT_PLAGUE,
-  SPELL_INVISIBILITY,
-  SPELL_JUMP,
-  SPELL_LEVITATE,
-  SPELL_LIGHT,
-  SPELL_LIGHTNING_BOLT,
-  SPELL_LOCATE_OBJECT,
-  SPELL_MAGE_HAND,
-  SPELL_MAGIC_MISSILE,
-  SPELL_MAJOR_IMAGE,
-  SPELL_MINOR_ILLUSION,
-  SPELL_MIRROR_IMAGE,
-  SPELL_MISTY_STEP,
-  SPELL_MOVE_EARTH,
-  SPELL_NONDETECTION,
-  SPELL_PASS_WITHOUT_TRACE,
-  SPELL_PASSWALL,
-  SPELL_PHANTASMAL_FORCE,
-  SPELL_PHANTASMAL_KILLER,
-  SPELL_PLANE_SHIFT,
-  SPELL_POISON_SPRAY,
-  SPELL_POLYMORPH,
-  SPELL_POWER_WORD_STUN,
-  SPELL_PRESTIDIGITATION,
-  SPELL_PURIFY_FOOD_AND_DRINK,
-  SPELL_RAISE_DEAD,
-  SPELL_RAY_OF_ENFEEBLEMENT,
-  SPELL_RAY_OF_FROST,
-  SPELL_RAY_OF_SICKNESS,
-  SPELL_RESSURECTION,
-  SPELL_SACRED_FLAME,
-  SPELL_SANCTUARY,
-  SPELL_SCRYING,
-  SPELL_SEE_INVISIBILITY,
-  SPELL_SHIELD,
-  SPELL_SHILLELAGH,
-  SPELL_SILENCE,
-  SPELL_SLEEP,
-  SPELL_STONE_SHAPE,
-  SPELL_SUGGESTION,
-  SPELL_TELEKINESIS,
-  SPELL_THAUMATURGY,
-  SPELL_THUNDERWAVE,
-  SPELL_TONGUES,
-  SPELL_VICIOUS_MOCKERY,
-  SPELL_WALL_OF_FIRE,
-  SPELL_WALL_OF_STONE,
-  SPELL_WATER_BREATHING,
-  SPELL_WATER_WALK,
-  SPELL_WEB,
-  SPELL_WIND_WALK,
-} = require('./dndSpellList')
-const {
-  CAST_MATERIAL,
-  CAST_NONE,
-  CAST_SOMATIC,
-  CAST_VERBAL,
-} = require('./dndCastComponentList')
-const {
-  CONDITION_BLINDED,
-  CONDITION_CHARMED,
-  CONDITION_DEAFENED,
-  CONDITION_EXHAUSTION,
-  CONDITION_FRIGHTENED,
-  CONDITION_GRAPPLED,
-  CONDITION_INCAPACITATED,
-  CONDITION_INVISIBLE,
-  CONDITION_PARALYZED,
-  CONDITION_PETRIFIED,
-  CONDITION_POISONED,
-  CONDITION_PRONE,
-  CONDITION_RESTRAINED,
-  CONDITION_STUNNED,
-  CONDITION_UNCONSCIOUS,
-} = require('./dndConditionList')
-const {
-  TARGET_CREATURE,
-  TARGET_OBJECT,
-  TARGET_POINT,
-} = require('./dndTargetList')
-const {
-  blackDragonDescription,
-  blueDragonDescription,
-  boneDevilSummoner,
-  brassDragonDescription,
-  bronzeDragonDescription,
-  copperDragonDescription,
-  coven,
-  goldDragonDescription,
-  greenDragonDescription,
-  iceDevilSummoner,
-  redDragonDescription,
-  silverDragonDescription,
-  whiteDragonDescription,
-} = require('./dndCreatureCommonParts')
-
-const CREATURE_AARAKOCRA = 'aarakocra'
-const CREATURE_ABOLETH = 'aboleth'
-const CREATURE_ABOMINABLE_YETI = 'abominable_yeti'
-const CREATURE_ACOLYTE = 'acolyte'
-const CREATURE_ADULT_BLACK_DRAGON = 'adult_black_dragon'
-const CREATURE_ADULT_BLUE_DRAGON = 'adult_blue_dragon'
-const CREATURE_ADULT_BRASS_DRAGON = 'adult_brass_dragon'
-const CREATURE_ADULT_BRONZE_DRAGON = 'adult_bronze_dragon'
-const CREATURE_ADULT_COPPER_DRAGON = 'adult_copper_dragon'
-const CREATURE_ADULT_GOLD_DRAGON = 'adult_gold_dragon'
-const CREATURE_ADULT_GREEN_DRAGON = 'adult_green_dragon'
-const CREATURE_ADULT_RED_DRAGON = 'adult_red_dragon'
-const CREATURE_ADULT_SILVER_DRAGON = 'adult_silver_dragon'
-const CREATURE_ADULT_WHITE_DRAGON = 'adult_white_dragon'
-const CREATURE_ALLOSAURUS = 'allosaurus'
-const CREATURE_ANCIENT_BLACK_DRAGON = 'ancient_black_dragon'
-const CREATURE_ANCIENT_BLUE_DRAGON = 'ancient_blue_dragon'
-const CREATURE_ANCIENT_BRASS_DRAGON = 'ancient_brass_dragon'
-const CREATURE_ANCIENT_BRONZE_DRAGON = 'ancient_bronze_dragon'
-const CREATURE_ANCIENT_COPPER_DRAGON = 'ancient_copper_dragon'
-const CREATURE_ANCIENT_GOLD_DRAGON = 'ancient_gold_dragon'
-const CREATURE_ANCIENT_GREEN_DRAGON = 'ancient_green_dragon'
-const CREATURE_ANCIENT_RED_DRAGON = 'ancient_red_dragon'
-const CREATURE_ANCIENT_SILVER_DRAGON = 'ancient_silver_dragon'
-const CREATURE_ANCIENT_WHITE_DRAGON = 'ancient_white_dragon'
-const CREATURE_ANKHEG = 'ankheg'
-const CREATURE_ANKYLOSAURUS = 'ankylosaurus'
-const CREATURE_BALOR = 'balor'
-const CREATURE_BANDIT = 'bandit'
-const CREATURE_BANSHEE = 'banshee'
-const CREATURE_BARLGURA = 'barlgura'
-const CREATURE_BASILISK = 'basilisk'
-const CREATURE_BARBED_DEVIL = 'barbed_devil'
-const CREATURE_BARBED_DEVIL_SUMMONER = 'barbed_devil_summoner'
-const CREATURE_BEARDED_DEVIL = 'bearded_devil'
-const CREATURE_BEARDED_DEVIL_SUMMONER = 'bearded_devil_summoner'
-const CREATURE_BEHIR = 'behir'
-const CREATURE_BEHOLDER = 'beholder'
-const CREATURE_BEHOLDER_ZOMBIE = 'beholder_zombie'
-const CREATURE_BLACK_DRAGON_WYRMLING = 'black_dragon_wyrmling'
-const CREATURE_BLUE_DRAGON_WYRMLING = 'blue_dragon_wyrmling'
-const CREATURE_BONE_DEVIL = 'bone_devil'
-const CREATURE_BONE_DEVIL_SUMMONER = 'bone_devil_summoner'
-const CREATURE_BONE_DEVIL_SUMMONER_WITH_A_SPEAR = 'bone_devil_summoner_with_a_spear'
-const CREATURE_BONE_DEVIL_WITH_A_SPEAR = 'bone_devil_with_a_spear'
-const CREATURE_BRASS_DRAGON_WYRMLING = 'brass_dragon_wyrmling'
-const CREATURE_BRONZE_DRAGON_WYRMLING = 'bronze_dragon_wyrmling'
-const CREATURE_BULLYWUG = 'bullywug'
-const CREATURE_CAMBION = 'cambion'
-const CREATURE_CHAIN_DEVIL = 'chain_devil'
-const CREATURE_CHASME = 'chasme'
-const CREATURE_CLAY_GOLEM = 'clay_golem'
-const CREATURE_CLOUD_GIANT = 'cloud_giant'
-const CREATURE_COMMONER = 'commoner'
-const CREATURE_COPPER_DRAGON_WYRMLING = 'copper_dragon_wyrmling'
-const CREATURE_DAO = 'dao'
-const CREATURE_DEATH_TYRANT = 'death_tyrant'
-const CREATURE_DEMILICH = 'demilich'
-const CREATURE_DEVA = 'deva'
-const CREATURE_DJINNI = 'djinni'
-const CREATURE_DOPPELGANGER = 'doppelganger'
-const CREATURE_DRAGON_TURTLE = 'dragon_turtle'
-const CREATURE_DRETCH = 'dretch'
-const CREATURE_DRIDER = 'drider'
-const CREATURE_DRIDER_SPELLCASTER = 'drider_spellcaster'
-const CREATURE_DRYAD = 'dryad'
-const CREATURE_DUERGAR = 'duergar'
-const CREATURE_EFREETI = 'efreeti'
-const CREATURE_ERINYES = 'erinyes'
-const CREATURE_ERINYES_SUMMONER = 'erinyes_summoner'
-const CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue'
-const CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green'
-const CREATURE_FAERIE_DRAGON_LIGHT_BLUE = 'faerie_dragon_light_blue'
-const CREATURE_FAERIE_DRAGON_ORANGE = 'faerie_dragon_orange'
-const CREATURE_FAERIE_DRAGON_RED = 'faerie_dragon_red'
-const CREATURE_FAERIE_DRAGON_VIOLET = 'faerie_dragon_violet'
-const CREATURE_FAERIE_DRAGON_YELLOW = 'faerie_dragon_yellow'
-const CREATURE_FIRE_GIANT = 'fire_giant'
-const CREATURE_FLESH_GOLEM = 'flesh_golem'
-const CREATURE_FROST_GIANT = 'frost_giant'
-const CREATURE_GALEB_DUHR = 'galeb_duhr'
-const CREATURE_GARGOYLE = 'gargoyle'
-const CREATURE_GAS_SPORE = 'gas_spore'
-const CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther'
-const CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth'
-const CREATURE_GITHZERAI_MONK = 'githzerai_monk'
-const CREATURE_GITHYANKI_KNIGHT = 'githyanki_knight'
-const CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior'
-const CREATURE_GLABREZU = 'glabrezu'
-const CREATURE_GNOLL = 'gnoll'
-const CREATURE_GNOLL_FANG_OF_YEENOGHU = 'gnoll_fang_of_yeenoghu'
-const CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord'
-const CREATURE_GNOME_DEEP = 'gnome_deep'
-const CREATURE_GOBLIN = 'goblin'
-const CREATURE_GOBLIN_BOSS = 'goblin_boss'
-const CREATURE_GOLD_DRAGON_WYRMLING = 'gold_dragon_wyrmling'
-const CREATURE_GORGON = 'gorgon'
-const CREATURE_GORISTRO = 'goristro'
-const CREATURE_GREEN_DRAGON_WYRMLING = 'green_dragon_wyrmling'
-const CREATURE_GREEN_HAG = 'green_hag'
-const CREATURE_GREEN_HAG_COVEN = 'green_hag_coven'
-const CREATURE_GRELL = 'grell'
-const CREATURE_GRICK = 'grick'
-const CREATURE_GRICK_ALPHA = 'grick_alpha'
-const CREATURE_GRIFFON = 'griffon'
-const CREATURE_GRIMLOCK = 'grimlock'
-const CREATURE_HARPY = 'harpy'
-const CREATURE_HELL_HOUND = 'hell_hound'
-const CREATURE_HEZROU = 'hezrou'
-const CREATURE_HILL_GIANT = 'hill_giant'
-const CREATURE_HOMUNCULUS = 'homunculus'
-const CREATURE_HORNED_DEVIL = 'horned_devil'
-const CREATURE_HORNED_DEVIL_SUMMONER = 'horned_devil_summoner'
-const CREATURE_HYDRA = 'hydra'
-const CREATURE_HIPPOGRIFF = 'hippogriff'
-const CREATURE_ICE_DEVIL = 'ice_devil'
-const CREATURE_ICE_DEVIL_SUMMONER = 'ice_devil_summoner'
-const CREATURE_ICE_DEVIL_SUMMONER_WITH_A_SPEAR = 'ice_devil_summoner_with_a_spear'
-const CREATURE_ICE_DEVIL_WITH_A_SPEAR = 'ice_devil_with_a_spear'
-const CREATURE_IMP = 'imp'
-const CREATURE_IMP_FAMILIAR = 'imp_familiar'
-const CREATURE_IRON_GOLEM = 'iron_golem'
-const CREATURE_LEMURE = 'lemure'
-const CREATURE_MANES = 'manes'
-const CREATURE_MARID = 'marid'
-const CREATURE_MARILITH = 'marilith'
-const CREATURE_MERROW = 'merrow'
-const CREATURE_NALFESHNEE = 'nalfeshnee'
-const CREATURE_NEEDLE_BLIGHT = 'needle_blight'
-const CREATURE_NIGHT_HAG = 'night_hag'
-const CREATURE_NIGHT_HAG_COVEN = 'night_hag_coven'
-const CREATURE_PLANETAR = 'planetar'
-const CREATURE_QUASIT = 'quasit'
-const CREATURE_QUASIT_FAMILIAR = 'quasit_familiar'
-const CREATURE_OGRE_ZOMBIE = 'ogre_zombie'
-const CREATURE_PIT_FIEND = 'pit_fiend'
-const CREATURE_PIT_FIEND_SUMMONER = 'pit_fiend_summoner'
-const CREATURE_PLESIOSAURUS = 'plesiosaurus'
-const CREATURE_PTERANODON = 'pteranodon'
-const CREATURE_RED_DRAGON_WYRMLING = 'red_dragon_wyrmling'
-const CREATURE_ROPER = 'roper'
-const CREATURE_SEA_HAG = 'sea_hag'
-const CREATURE_SEA_HAG_COVEN = 'sea_hag_coven'
-const CREATURE_SHADOW_DEMON = 'shadow_demon'
-const CREATURE_SHRIEKER = 'shrieker'
-const CREATURE_SILVER_DRAGON_WYRMLING = 'silver_dragon_wyrmling'
-const CREATURE_SOLAR = 'solar'
-const CREATURE_STONE_GIANT = 'stone_giant'
-const CREATURE_STONE_GOLEM = 'stone_golem'
-const CREATURE_STORM_GIANT = 'storm_giant'
-const CREATURE_SPECTATOR = 'spectator'
-const CREATURE_SPINED_DEVIL = 'spined_devil'
-const CREATURE_TRICERATOPS = 'triceratops'
-const CREATURE_TWIG_BLIGHT = 'twig_blight'
-const CREATURE_TYRANNOSAURUS_REX = 'tyrannosaurus_rex'
-const CREATURE_UMBER_HULK = 'umber_hulk'
-const CREATURE_UNICORN = 'unicorn'
-const CREATURE_VAMPIRE = 'vampire'
-const CREATURE_VAMPIRE_SPAWN = 'vampire_spawn'
-const CREATURE_VAMPIRE_SPELLCASTER = 'vampire_spellcaster'
-const CREATURE_VAMPIRE_WARRIOR = 'vampire_warrior'
-const CREATURE_VINE_BLIGHT = 'vine_blight'
-const CREATURE_VIOLET_FUNGUS = 'violet_fungus'
-const CREATURE_VROCK = 'vrock'
-const CREATURE_WATER_WEIRD = 'water_weird'
-const CREATURE_WHITE_DRAGON_WYRMLING = 'white_dragon_wyrmling'
-const CREATURE_WILL_O_WISP = 'will_o_wisp'
-const CREATURE_WYVERN = 'wyvern'
-const CREATURE_XORN = 'xorn'
-const CREATURE_YETI = 'yeti'
-const CREATURE_YOCHLOL = 'yochlol'
-const CREATURE_YOUNG_BLACK_DRAGON = 'young_black_dragon'
-const CREATURE_YOUNG_BLUE_DRAGON = 'young_blue_dragon'
-const CREATURE_YOUNG_BRASS_DRAGON = 'young_brass_dragon'
-const CREATURE_YOUNG_BRONZE_DRAGON = 'young_bronze_dragon'
-const CREATURE_YOUNG_COPPER_DRAGON = 'young_copper_dragon'
-const CREATURE_YOUNG_GOLD_DRAGON = 'young_gold_dragon'
-const CREATURE_YOUNG_GREEN_DRAGON = 'young_green_dragon'
-const CREATURE_YOUNG_RED_DRAGON = 'young_red_dragon'
-const CREATURE_YOUNG_SILVER_DRAGON = 'young_silver_dragon'
-const CREATURE_YOUNG_WHITE_DRAGON = 'young_white_dragon'
-const CREATURE_ZOMBIE = 'zombie'
+    CR_0,
+    CR_1_8,
+    CR_1_4,
+    CR_1_2,
+    CR_1,
+    CR_2,
+    CR_3,
+    CR_4,
+    CR_5,
+    CR_6,
+    CR_7,
+    CR_8,
+    CR_9,
+    CR_10,
+    CR_11,
+    CR_12,
+    CR_13,
+    CR_14,
+    CR_15,
+    CR_16,
+    CR_17,
+    CR_18,
+    CR_19,
+    CR_20,
+    CR_21,
+    CR_22,
+    CR_23,
+    CR_24,
+    CR_25,
+    CR_26,
+    CR_27,
+    CR_28,
+    CR_29,
+    CR_30,
+  } = require('./dndCrList'),
+  {
+    SIZE_GARGANTUA,
+    SIZE_HUGE,
+    SIZE_MEDIUM,
+    SIZE_LARGE,
+    SIZE_SMALL,
+    SIZE_TINY,
+  } = require('./dndSizeList'),
+  {
+    CREATURE_TYPE_AARAKOCRA,
+    CREATURE_TYPE_ABERRATION,
+    CREATURE_TYPE_ANY_RACE,
+    CREATURE_TYPE_BEAST,
+    CREATURE_TYPE_BULLYWUG,
+    CREATURE_TYPE_CELESTIAL,
+    CREATURE_TYPE_CONSTRUCT,
+    CREATURE_TYPE_DEMON,
+    CREATURE_TYPE_DEVIL,
+    CREATURE_TYPE_DRAGON,
+    CREATURE_TYPE_DWARF,
+    CREATURE_TYPE_ELEMENTAL,
+    CREATURE_TYPE_FEY,
+    CREATURE_TYPE_FIEND,
+    CREATURE_TYPE_GIANT,
+    CREATURE_TYPE_GITH,
+    CREATURE_TYPE_GNOLL,
+    CREATURE_TYPE_GNOME,
+    CREATURE_TYPE_GOBLINOID,
+    CREATURE_TYPE_GRIMLOCK,
+    CREATURE_TYPE_HUMANOID,
+    CREATURE_TYPE_MONSTER,
+    CREATURE_TYPE_PLANT,
+    CREATURE_TYPE_QUAGGOTH,
+    CREATURE_TYPE_SHAPESHIFTER,
+    CREATURE_TYPE_UNDEAD
+  } = require('./dndCreatureTypeList'),
+  {
+    ALIGMENT_ANY,
+    ALIGMENT_ANY_EVIL,
+    ALIGMENT_CE,
+    ALIGMENT_CG,
+    ALIGMENT_CN,
+    ALIGMENT_LE,
+    ALIGMENT_LG,
+    ALIGMENT_LN,
+    ALIGMENT_NE,
+    ALIGMENT_NG,
+    ALIGMENT_N,
+    ALIGMENT_NO,
+    ALIGMENT_NOT_LAWFUL,
+  } = require('./dndAligmentList'),
+  {
+    SPEED_CLIMB,
+    SPEED_DIG,
+    SPEED_FLY,
+    SPEED_SWIM,
+    SPEED_WALK,
+  } = require('./dndSpeedList'),
+  {
+    ACTION_MELEE_WEAPON_ATTACK,
+    ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+    ACTION_MELEE_SPELL_ATTACK,
+    ACTION_RANGE_WEAPON_ATTACK,
+    ACTION_RANGE_SPELL_ATTACK,
+  } = require('./dndActionTypeList'),
+  {
+    LANG_AARAKOCRA,
+    LANG_ABYSSAL,
+    LANG_ALL,
+    LANG_ALL_KNOWN_AT_LIFE,
+    LANG_ANY_ONE,
+    LANG_AQUAN,
+    LANG_AURAN,
+    LANG_BULLYWUG,
+    LANG_CELESTIAL,
+    LANG_COMMON,
+    LANG_DEEP_SPEECH,
+    LANG_DRACONIC,
+    LANG_DWARVISH,
+    LANG_ELVEN,
+    LANG_GIANT,
+    LANG_GITH,
+    LANG_GNOLL,
+    LANG_GNOMISH,
+    LANG_GOBLIN,
+    LANG_GRELL,
+    LANG_IGNAN,
+    LANG_INFERNAL,
+    LANG_ITS_CREATOR,
+    LANG_PRIMORDIAL,
+    LANG_SYLVAN,
+    LANG_TELEPATHY,
+    LANG_TERRAN,
+    LANG_UMBER_HULK,
+    LANG_UNDERCOMMON,
+    LANG_YETI,
+  } = require('./dndLanguageList'),
+  {
+    DAMAGE_ACID,
+    DAMAGE_BLUDGEONING,
+    DAMAGE_COLD,
+    DAMAGE_ELECTRICITY,
+    DAMAGE_FIRE,
+    DAMAGE_MAGIC_WEAPON,
+    DAMAGE_NECROTIC,
+    DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    DAMAGE_NONMAGIC_NONSILVER_WEAPON,
+    DAMAGE_NONMAGIC_WEAPON,
+    DAMAGE_PIERCING,
+    DAMAGE_POISON,
+    DAMAGE_PSYCHIC,
+    DAMAGE_RADIANT,
+    DAMAGE_SLASHING,
+    DAMAGE_THUNDER,
+  } = require('./dndDamageTypeList'),
+  {
+    SENSE_BLIND_VISION,
+    SENSE_DARK_VISION,
+    SENSE_PASSIVE_PERCEPTION,
+    SENSE_TRUE_VISION,
+    SENSE_VIBRATION_SENSE,
+  } = require('./dndSenseList'),
+  {
+    SKILL_ARCANA,
+    SKILL_ATHLETICS,
+    SKILL_DECEPTION,
+    SKILL_HISTORY,
+    SKILL_INSIGHT,
+    SKILL_INTIMIDATION,
+    SKILL_INVESTIGATION,
+    SKILL_MEDICINE,
+    SKILL_PERCEPTION,
+    SKILL_PERSUASION,
+    SKILL_RELIGION,
+    SKILL_STEALTH,
+  } = require('./dndSkillList'),
+  {
+    PC_CLASS_PRIEST,
+    PC_CLASS_WIZARD,
+  } = require('./dndPcClassList'),
+  {
+    PARAM_STR,
+    PARAM_DEX,
+    PARAM_CON,
+    PARAM_INT,
+    PARAM_WIT,
+    PARAM_CHA,
+  } = require('./dndParamList'),
+  {
+    SPELL_ALTER_SELF,
+    SPELL_ANIMATE_DEAD,
+    SPELL_BANE,
+    SPELL_BARKSKIN,
+    SPELL_BESTOW_CURSE,
+    SPELL_BLADE_BARRIER,
+    SPELL_BLESS,
+    SPELL_BLIGHT,
+    SPELL_BLINDNESS_DEAFNESS,
+    SPELL_BLUR,
+    SPELL_CLAIRVOYANCE,
+    SPELL_COLOR_SPRAY,
+    SPELL_COMMAND,
+    SPELL_COMMUNE,
+    SPELL_COMPREHEND_LANGUAGES,
+    SPELL_CONFUSION,
+    SPELL_CONJURE_ELEMENTAL,
+    SPELL_CONTACT_OTHER_PLANE,
+    SPELL_CONTROL_WEATHER,
+    SPELL_COUNTERSPELL,
+    SPELL_CREATE_FOOD_AND_WATER,
+    SPELL_CREATE_OR_DESTROY_WATER,
+    SPELL_CREATION,
+    SPELL_CURE_WOUNDS,
+    SPELL_DANCING_LIGHTS,
+    SPELL_DARKNESS,
+    SPELL_DETECT_EVIL_AND_GOOD,
+    SPELL_DETECT_MAGIC,
+    SPELL_DETECT_THOUGHTS,
+    SPELL_DISGUISE_SELF,
+    SPELL_DISPEL_EVIL_AND_GOOD,
+    SPELL_DISPEL_MAGIC,
+    SPELL_DIVINATION,
+    SPELL_DOMINATE_PERSON,
+    SPELL_DRUIDCRAFT,
+    SPELL_ENLARGE_REDUCE,
+    SPELL_ENTANGLE,
+    SPELL_EYEBITE,
+    SPELL_FAERIE_FIRE,
+    SPELL_FEATHER_FALL,
+    SPELL_FIREBALL,
+    SPELL_FLAME_STRIKE,
+    SPELL_FLY,
+    SPELL_FOG_CLOUD,
+    SPELL_FREEDOM_OF_MOVEMENT,
+    SPELL_GASEOUS_FORM,
+    SPELL_GOODBERRY,
+    SPELL_GREATER_INVISIBILITY,
+    SPELL_GUST_OF_WIND,
+    SPELL_HALLUCINATORY_TERRAIN,
+    SPELL_HOLD_MONSTER,
+    SPELL_HOLD_PERSON,
+    SPELL_IDENTIFY,
+    SPELL_INSECT_PLAGUE,
+    SPELL_INVISIBILITY,
+    SPELL_JUMP,
+    SPELL_LEVITATE,
+    SPELL_LIGHT,
+    SPELL_LIGHTNING_BOLT,
+    SPELL_LOCATE_OBJECT,
+    SPELL_MAGE_HAND,
+    SPELL_MAGIC_MISSILE,
+    SPELL_MAJOR_IMAGE,
+    SPELL_MINOR_ILLUSION,
+    SPELL_MIRROR_IMAGE,
+    SPELL_MISTY_STEP,
+    SPELL_MOVE_EARTH,
+    SPELL_NONDETECTION,
+    SPELL_PASS_WITHOUT_TRACE,
+    SPELL_PASSWALL,
+    SPELL_PHANTASMAL_FORCE,
+    SPELL_PHANTASMAL_KILLER,
+    SPELL_PLANE_SHIFT,
+    SPELL_POISON_SPRAY,
+    SPELL_POLYMORPH,
+    SPELL_POWER_WORD_STUN,
+    SPELL_PRESTIDIGITATION,
+    SPELL_PURIFY_FOOD_AND_DRINK,
+    SPELL_RAISE_DEAD,
+    SPELL_RAY_OF_ENFEEBLEMENT,
+    SPELL_RAY_OF_FROST,
+    SPELL_RAY_OF_SICKNESS,
+    SPELL_RESSURECTION,
+    SPELL_SACRED_FLAME,
+    SPELL_SANCTUARY,
+    SPELL_SCRYING,
+    SPELL_SEE_INVISIBILITY,
+    SPELL_SHIELD,
+    SPELL_SHILLELAGH,
+    SPELL_SILENCE,
+    SPELL_SLEEP,
+    SPELL_STONE_SHAPE,
+    SPELL_SUGGESTION,
+    SPELL_TELEKINESIS,
+    SPELL_THAUMATURGY,
+    SPELL_THUNDERWAVE,
+    SPELL_TONGUES,
+    SPELL_VICIOUS_MOCKERY,
+    SPELL_WALL_OF_FIRE,
+    SPELL_WALL_OF_STONE,
+    SPELL_WATER_BREATHING,
+    SPELL_WATER_WALK,
+    SPELL_WEB,
+    SPELL_WIND_WALK,
+  } = require('./dndSpellList'),
+  {
+    CAST_MATERIAL,
+    CAST_NONE,
+    CAST_SOMATIC,
+    CAST_VERBAL,
+  } = require('./dndCastComponentList'),
+  {
+    CONDITION_BLINDED,
+    CONDITION_CHARMED,
+    CONDITION_DEAFENED,
+    CONDITION_EXHAUSTION,
+    CONDITION_FRIGHTENED,
+    CONDITION_GRAPPLED,
+    CONDITION_INCAPACITATED,
+    CONDITION_INVISIBLE,
+    CONDITION_PARALYZED,
+    CONDITION_PETRIFIED,
+    CONDITION_POISONED,
+    CONDITION_PRONE,
+    CONDITION_RESTRAINED,
+    CONDITION_STUNNED,
+    CONDITION_UNCONSCIOUS,
+  } = require('./dndConditionList'),
+  {
+    TARGET_CREATURE,
+    TARGET_OBJECT,
+    TARGET_POINT,
+  } = require('./dndTargetList'),
+  {
+    blackDragonDescription,
+    blueDragonDescription,
+    boneDevilSummoner,
+    brassDragonDescription,
+    bronzeDragonDescription,
+    copperDragonDescription,
+    coven,
+    goldDragonDescription,
+    greenDragonDescription,
+    iceDevilSummoner,
+    redDragonDescription,
+    silverDragonDescription,
+    whiteDragonDescription,
+  } = require('./dndCreatureCommonParts'),
+  CREATURE_AARAKOCRA = 'aarakocra',
+  CREATURE_ABOLETH = 'aboleth',
+  CREATURE_ABOMINABLE_YETI = 'abominable_yeti',
+  CREATURE_ACOLYTE = 'acolyte',
+  CREATURE_ADULT_BLACK_DRAGON = 'adult_black_dragon',
+  CREATURE_ADULT_BLUE_DRAGON = 'adult_blue_dragon',
+  CREATURE_ADULT_BRASS_DRAGON = 'adult_brass_dragon',
+  CREATURE_ADULT_BRONZE_DRAGON = 'adult_bronze_dragon',
+  CREATURE_ADULT_COPPER_DRAGON = 'adult_copper_dragon',
+  CREATURE_ADULT_GOLD_DRAGON = 'adult_gold_dragon',
+  CREATURE_ADULT_GREEN_DRAGON = 'adult_green_dragon',
+  CREATURE_ADULT_RED_DRAGON = 'adult_red_dragon',
+  CREATURE_ADULT_SILVER_DRAGON = 'adult_silver_dragon',
+  CREATURE_ADULT_WHITE_DRAGON = 'adult_white_dragon',
+  CREATURE_ALLOSAURUS = 'allosaurus',
+  CREATURE_ANCIENT_BLACK_DRAGON = 'ancient_black_dragon',
+  CREATURE_ANCIENT_BLUE_DRAGON = 'ancient_blue_dragon',
+  CREATURE_ANCIENT_BRASS_DRAGON = 'ancient_brass_dragon',
+  CREATURE_ANCIENT_BRONZE_DRAGON = 'ancient_bronze_dragon',
+  CREATURE_ANCIENT_COPPER_DRAGON = 'ancient_copper_dragon',
+  CREATURE_ANCIENT_GOLD_DRAGON = 'ancient_gold_dragon',
+  CREATURE_ANCIENT_GREEN_DRAGON = 'ancient_green_dragon',
+  CREATURE_ANCIENT_RED_DRAGON = 'ancient_red_dragon',
+  CREATURE_ANCIENT_SILVER_DRAGON = 'ancient_silver_dragon',
+  CREATURE_ANCIENT_WHITE_DRAGON = 'ancient_white_dragon',
+  CREATURE_ANKHEG = 'ankheg',
+  CREATURE_ANKYLOSAURUS = 'ankylosaurus',
+  CREATURE_BALOR = 'balor',
+  CREATURE_BANDIT = 'bandit',
+  CREATURE_BANSHEE = 'banshee',
+  CREATURE_BARLGURA = 'barlgura',
+  CREATURE_BASILISK = 'basilisk',
+  CREATURE_BARBED_DEVIL = 'barbed_devil',
+  CREATURE_BARBED_DEVIL_SUMMONER = 'barbed_devil_summoner',
+  CREATURE_BEARDED_DEVIL = 'bearded_devil',
+  CREATURE_BEARDED_DEVIL_SUMMONER = 'bearded_devil_summoner',
+  CREATURE_BEHIR = 'behir',
+  CREATURE_BEHOLDER = 'beholder',
+  CREATURE_BEHOLDER_ZOMBIE = 'beholder_zombie',
+  CREATURE_BLACK_DRAGON_WYRMLING = 'black_dragon_wyrmling',
+  CREATURE_BLUE_DRAGON_WYRMLING = 'blue_dragon_wyrmling',
+  CREATURE_BONE_DEVIL = 'bone_devil',
+  CREATURE_BONE_DEVIL_SUMMONER = 'bone_devil_summoner',
+  CREATURE_BONE_DEVIL_SUMMONER_WITH_A_SPEAR = 'bone_devil_summoner_with_a_spear',
+  CREATURE_BONE_DEVIL_WITH_A_SPEAR = 'bone_devil_with_a_spear',
+  CREATURE_BRASS_DRAGON_WYRMLING = 'brass_dragon_wyrmling',
+  CREATURE_BRONZE_DRAGON_WYRMLING = 'bronze_dragon_wyrmling',
+  CREATURE_BULLYWUG = 'bullywug',
+  CREATURE_CAMBION = 'cambion',
+  CREATURE_CHAIN_DEVIL = 'chain_devil',
+  CREATURE_CHASME = 'chasme',
+  CREATURE_CLAY_GOLEM = 'clay_golem',
+  CREATURE_CLOUD_GIANT = 'cloud_giant',
+  CREATURE_COMMONER = 'commoner',
+  CREATURE_COPPER_DRAGON_WYRMLING = 'copper_dragon_wyrmling',
+  CREATURE_DAO = 'dao',
+  CREATURE_DEATH_TYRANT = 'death_tyrant',
+  CREATURE_DEMILICH = 'demilich',
+  CREATURE_DEVA = 'deva',
+  CREATURE_DJINNI = 'djinni',
+  CREATURE_DOPPELGANGER = 'doppelganger',
+  CREATURE_DRAGON_TURTLE = 'dragon_turtle',
+  CREATURE_DRETCH = 'dretch',
+  CREATURE_DRIDER = 'drider',
+  CREATURE_DRIDER_SPELLCASTER = 'drider_spellcaster',
+  CREATURE_DRYAD = 'dryad',
+  CREATURE_DUERGAR = 'duergar',
+  CREATURE_EFREETI = 'efreeti',
+  CREATURE_ERINYES = 'erinyes',
+  CREATURE_ERINYES_SUMMONER = 'erinyes_summoner',
+  CREATURE_FAERIE_DRAGON_BLUE = 'faerie_dragon_blue',
+  CREATURE_FAERIE_DRAGON_GREEN = 'faerie_dragon_green',
+  CREATURE_FAERIE_DRAGON_LIGHT_BLUE = 'faerie_dragon_light_blue',
+  CREATURE_FAERIE_DRAGON_ORANGE = 'faerie_dragon_orange',
+  CREATURE_FAERIE_DRAGON_RED = 'faerie_dragon_red',
+  CREATURE_FAERIE_DRAGON_VIOLET = 'faerie_dragon_violet',
+  CREATURE_FAERIE_DRAGON_YELLOW = 'faerie_dragon_yellow',
+  CREATURE_FIRE_GIANT = 'fire_giant',
+  CREATURE_FLESH_GOLEM = 'flesh_golem',
+  CREATURE_FROST_GIANT = 'frost_giant',
+  CREATURE_GALEB_DUHR = 'galeb_duhr',
+  CREATURE_GARGOYLE = 'gargoyle',
+  CREATURE_GAS_SPORE = 'gas_spore',
+  CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther',
+  CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth',
+  CREATURE_GITHZERAI_MONK = 'githzerai_monk',
+  CREATURE_GITHYANKI_KNIGHT = 'githyanki_knight',
+  CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior',
+  CREATURE_GLABREZU = 'glabrezu',
+  CREATURE_GNOLL = 'gnoll',
+  CREATURE_GNOLL_FANG_OF_YEENOGHU = 'gnoll_fang_of_yeenoghu',
+  CREATURE_GNOLL_PACK_LORD = 'gnoll_pack_lord',
+  CREATURE_GNOME_DEEP = 'gnome_deep',
+  CREATURE_GOBLIN = 'goblin',
+  CREATURE_GOBLIN_BOSS = 'goblin_boss',
+  CREATURE_GOLD_DRAGON_WYRMLING = 'gold_dragon_wyrmling',
+  CREATURE_GORGON = 'gorgon',
+  CREATURE_GORISTRO = 'goristro',
+  CREATURE_GREEN_DRAGON_WYRMLING = 'green_dragon_wyrmling',
+  CREATURE_GREEN_HAG = 'green_hag',
+  CREATURE_GREEN_HAG_COVEN = 'green_hag_coven',
+  CREATURE_GRELL = 'grell',
+  CREATURE_GRICK = 'grick',
+  CREATURE_GRICK_ALPHA = 'grick_alpha',
+  CREATURE_GRIFFON = 'griffon',
+  CREATURE_GRIMLOCK = 'grimlock',
+  CREATURE_HARPY = 'harpy',
+  CREATURE_HELL_HOUND = 'hell_hound',
+  CREATURE_HEZROU = 'hezrou',
+  CREATURE_HILL_GIANT = 'hill_giant',
+  CREATURE_HOMUNCULUS = 'homunculus',
+  CREATURE_HORNED_DEVIL = 'horned_devil',
+  CREATURE_HORNED_DEVIL_SUMMONER = 'horned_devil_summoner',
+  CREATURE_HYDRA = 'hydra',
+  CREATURE_HIPPOGRIFF = 'hippogriff',
+  CREATURE_ICE_DEVIL = 'ice_devil',
+  CREATURE_ICE_DEVIL_SUMMONER = 'ice_devil_summoner',
+  CREATURE_ICE_DEVIL_SUMMONER_WITH_A_SPEAR = 'ice_devil_summoner_with_a_spear',
+  CREATURE_ICE_DEVIL_WITH_A_SPEAR = 'ice_devil_with_a_spear',
+  CREATURE_IMP = 'imp',
+  CREATURE_IMP_FAMILIAR = 'imp_familiar',
+  CREATURE_IRON_GOLEM = 'iron_golem',
+  CREATURE_LEMURE = 'lemure',
+  CREATURE_MANES = 'manes',
+  CREATURE_MARID = 'marid',
+  CREATURE_MARILITH = 'marilith',
+  CREATURE_MERROW = 'merrow',
+  CREATURE_NALFESHNEE = 'nalfeshnee',
+  CREATURE_NEEDLE_BLIGHT = 'needle_blight',
+  CREATURE_NIGHT_HAG = 'night_hag',
+  CREATURE_NIGHT_HAG_COVEN = 'night_hag_coven',
+  CREATURE_PLANETAR = 'planetar',
+  CREATURE_QUASIT = 'quasit',
+  CREATURE_QUASIT_FAMILIAR = 'quasit_familiar',
+  CREATURE_OGRE_ZOMBIE = 'ogre_zombie',
+  CREATURE_PIT_FIEND = 'pit_fiend',
+  CREATURE_PIT_FIEND_SUMMONER = 'pit_fiend_summoner',
+  CREATURE_PLESIOSAURUS = 'plesiosaurus',
+  CREATURE_PTERANODON = 'pteranodon',
+  CREATURE_QUAGGOTH = 'quaggoth',
+  CREATURE_RED_DRAGON_WYRMLING = 'red_dragon_wyrmling',
+  CREATURE_ROPER = 'roper',
+  CREATURE_SEA_HAG = 'sea_hag',
+  CREATURE_SEA_HAG_COVEN = 'sea_hag_coven',
+  CREATURE_SHADOW_DEMON = 'shadow_demon',
+  CREATURE_SHRIEKER = 'shrieker',
+  CREATURE_SILVER_DRAGON_WYRMLING = 'silver_dragon_wyrmling',
+  CREATURE_SOLAR = 'solar',
+  CREATURE_STONE_GIANT = 'stone_giant',
+  CREATURE_STONE_GOLEM = 'stone_golem',
+  CREATURE_STORM_GIANT = 'storm_giant',
+  CREATURE_SPECTATOR = 'spectator',
+  CREATURE_SPINED_DEVIL = 'spined_devil',
+  CREATURE_TRICERATOPS = 'triceratops',
+  CREATURE_TWIG_BLIGHT = 'twig_blight',
+  CREATURE_TYRANNOSAURUS_REX = 'tyrannosaurus_rex',
+  CREATURE_UMBER_HULK = 'umber_hulk',
+  CREATURE_UNICORN = 'unicorn',
+  CREATURE_VAMPIRE = 'vampire',
+  CREATURE_VAMPIRE_SPAWN = 'vampire_spawn',
+  CREATURE_VAMPIRE_SPELLCASTER = 'vampire_spellcaster',
+  CREATURE_VAMPIRE_WARRIOR = 'vampire_warrior',
+  CREATURE_VINE_BLIGHT = 'vine_blight',
+  CREATURE_VIOLET_FUNGUS = 'violet_fungus',
+  CREATURE_VROCK = 'vrock',
+  CREATURE_WATER_WEIRD = 'water_weird',
+  CREATURE_WHITE_DRAGON_WYRMLING = 'white_dragon_wyrmling',
+  CREATURE_WILL_O_WISP = 'will_o_wisp',
+  CREATURE_WYVERN = 'wyvern',
+  CREATURE_XORN = 'xorn',
+  CREATURE_YETI = 'yeti',
+  CREATURE_YOCHLOL = 'yochlol',
+  CREATURE_YOUNG_BLACK_DRAGON = 'young_black_dragon',
+  CREATURE_YOUNG_BLUE_DRAGON = 'young_blue_dragon',
+  CREATURE_YOUNG_BRASS_DRAGON = 'young_brass_dragon',
+  CREATURE_YOUNG_BRONZE_DRAGON = 'young_bronze_dragon',
+  CREATURE_YOUNG_COPPER_DRAGON = 'young_copper_dragon',
+  CREATURE_YOUNG_GOLD_DRAGON = 'young_gold_dragon',
+  CREATURE_YOUNG_GREEN_DRAGON = 'young_green_dragon',
+  CREATURE_YOUNG_RED_DRAGON = 'young_red_dragon',
+  CREATURE_YOUNG_SILVER_DRAGON = 'young_silver_dragon',
+  CREATURE_YOUNG_WHITE_DRAGON = 'young_white_dragon',
+  CREATURE_ZOMBIE = 'zombie';
 
 module.exports = [
   {
@@ -16144,7 +16145,7 @@ module.exports = [
       [PARAM_CHA]: 9,
     },
     resistanceList: [
-      [DAMAGE_POISON],
+      DAMAGE_POISON,
     ],
     senseList: [
       {
@@ -16297,12 +16298,12 @@ module.exports = [
       [SKILL_PERSUASION]: 4,
     },
     resistanceList: [
-      [DAMAGE_COLD],
-      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+      DAMAGE_COLD,
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -16415,12 +16416,12 @@ module.exports = [
       [PARAM_WIT]: 2,
     },
     resistanceList: [
-      [DAMAGE_COLD],
-      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+      DAMAGE_COLD,
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -16559,12 +16560,12 @@ module.exports = [
       [PARAM_CHA]: 5,
     },
     resistanceList: [
-      [DAMAGE_COLD],
-      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+      DAMAGE_COLD,
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -16669,12 +16670,12 @@ module.exports = [
       [PARAM_CHA]: 8,
     },
     resistanceList: [
-      [DAMAGE_COLD],
-      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+      DAMAGE_COLD,
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -16812,12 +16813,12 @@ module.exports = [
       [PARAM_CHA]: 24,
     },
     resistanceList: [
-      [DAMAGE_COLD],
-      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+      DAMAGE_COLD,
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -17020,12 +17021,12 @@ module.exports = [
       [SKILL_INSIGHT]: 6,
     },
     resistanceList: [
-      [DAMAGE_COLD],
-      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+      DAMAGE_COLD,
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -17187,12 +17188,12 @@ module.exports = [
       [PARAM_CHA]: 9,
     },
     resistanceList: [
-      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [
-      [DAMAGE_COLD],
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_COLD,
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -17391,11 +17392,11 @@ module.exports = [
       [PARAM_CHA]: 3,
     },
     resistanceList: [
-      [DAMAGE_COLD],
+      DAMAGE_COLD,
     ],
     immunityList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_FRIGHTENED],
@@ -17493,12 +17494,12 @@ module.exports = [
       [SKILL_INSIGHT]: 5,
     },
     resistanceList: [
-      [DAMAGE_COLD],
-      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+      DAMAGE_COLD,
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -17647,12 +17648,12 @@ module.exports = [
       [PARAM_CHA]: 7,
     },
     resistanceList: [
-      [DAMAGE_COLD],
-      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+      DAMAGE_COLD,
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -17796,12 +17797,12 @@ module.exports = [
       [PARAM_CHA]: 8,
     },
     resistanceList: [
-      [DAMAGE_COLD],
-      [DAMAGE_NONMAGIC_NONSILVER_WEAPON],
+      DAMAGE_COLD,
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     immunityList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_POISON],
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -17962,7 +17963,7 @@ module.exports = [
       [PARAM_CHA]: 16,
     },
     immunityList: [
-      [DAMAGE_POISON],
+      DAMAGE_POISON,
     ],
     immunityConditionList: [
       [CONDITION_POISONED],
@@ -18326,7 +18327,7 @@ module.exports = [
       [SKILL_STEALTH]: 3,
     },
     vulnerabilityList: [
-      [DAMAGE_FIRE],
+      DAMAGE_FIRE,
     ],
     conditionImmunityList: [
       [CONDITION_DEAFENED],
@@ -18630,7 +18631,7 @@ module.exports = [
       [SKILL_PERCEPTION]: 12,
     },
     immunityList: [
-      [DAMAGE_POISON],
+      DAMAGE_POISON,
     ],
     conditionImmunityList: [
       [CONDITION_EXHAUSTION],
@@ -18843,7 +18844,7 @@ module.exports = [
       [PARAM_WIT]: 0,
     },
     immunityList: [
-      [DAMAGE_POISON],
+      DAMAGE_POISON,
     ],
     conditionImmunityList: [
       [CONDITION_POISONED],
@@ -18927,7 +18928,7 @@ module.exports = [
       [PARAM_WIT]: 0,
     },
     immunityList: [
-      [DAMAGE_POISON],
+      DAMAGE_POISON,
     ],
     conditionImmunityList: [
       [CONDITION_POISONED],
@@ -19019,7 +19020,7 @@ module.exports = [
       [PARAM_WIT]: 2,
     },
     immunityList: [
-      [DAMAGE_POISON],
+      DAMAGE_POISON,
     ],
     conditionImmunityList: [
       [CONDITION_POISONED],
@@ -19118,7 +19119,7 @@ module.exports = [
       [SKILL_STEALTH]: 3,
     },
     resistanceList: [
-      [DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON],
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
     ],
     senseList: [
       {
@@ -19231,7 +19232,7 @@ module.exports = [
       [SKILL_STEALTH]: 3,
     },
     immunityList: [
-      [DAMAGE_COLD],
+      DAMAGE_COLD,
     ],
     senseList: [
       {
@@ -19331,7 +19332,7 @@ module.exports = [
       [SKILL_STEALTH]: 4,
     },
     immunityList: [
-      [DAMAGE_COLD],
+      DAMAGE_COLD,
     ],
     senseList: [
       {
@@ -19450,11 +19451,11 @@ module.exports = [
       [SKILL_STEALTH]: 7,
     },
     resistanceList: [
-      [DAMAGE_FIRE],
-      [DAMAGE_COLD],
-      [DAMAGE_ELECTRICITY],
-      [DAMAGE_POISON],
-      [DAMAGE_NONMAGIC_WEAPON],
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_WEAPON,
     ],
     senseList: [
       {

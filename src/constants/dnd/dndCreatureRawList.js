@@ -268,6 +268,7 @@ const {
   SPELL_THAUMATURGY,
   SPELL_THUNDERWAVE,
   SPELL_TONGUES,
+  SPELL_VICIOUS_MOCKERY,
   SPELL_WALL_OF_FIRE,
   SPELL_WALL_OF_STONE,
   SPELL_WATER_BREATHING,
@@ -398,6 +399,7 @@ const CREATURE_GOLD_DRAGON_WYRMLING = 'gold_dragon_wyrmling'
 const CREATURE_GORGON = 'gorgon'
 const CREATURE_GORISTRO = 'goristro'
 const CREATURE_GREEN_DRAGON_WYRMLING = 'green_dragon_wyrmling'
+const CREATURE_GREEN_HAG = 'green_hag'
 const CREATURE_GRELL = 'grell'
 const CREATURE_GRICK = 'grick'
 const CREATURE_GRICK_ALPHA = 'grick_alpha'
@@ -19697,6 +19699,111 @@ module.exports = [
       {
         name: 'Чары исчадия',
         description: `Один гуманоид, видимый камбионом в пределах 30 футов, должен преуспеть в спасброске Мудрости со Сл 14, иначе станет магическим образом очарованным на 1 день. Очарованная цель подчиняется устным командам камбиона. Если цель терпит вред от камбиона или другого существа, или получает самоубийственную команду от камбиона, цель может повторить спасбросок, оканчивая эффект на себе при успехе. Если спасбросок цели был успешным, или эффект на ней закончился, она получает иммунитет к Чарам исчадия этого камбиона на следующие 24 часа.`,
+      },
+    ],
+  },
+  {
+    name: 'Зелёная карга',
+    nameEn: 'Green hag',
+    id: CREATURE_GREEN_HAG,
+    description: `Гнусные и злобные зелёные карги живут в умирающих лесах, на безлюдных болотах и туманных топях, устраивая логова в пещерах. Зелёные ведьмы любят манипулировать людьми, скрывая намерения за слоями лжи. Они заманивают жертв, имитируя голоса и прося о помощи, отваживая нежеланных гостей криками диких зверей.\n
+**Одержимость печалью. Зелёные карги пируют на печали и трагедиях других. Они ликуют, когда надежда оборачивается отчаяньем не только для одного существа, но и для целых народов.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FEY,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:170',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 11,
+      cubeType: 8,
+      cubeBonus: 33,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 14,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_ARCANA]: 3,
+      [SKILL_DECEPTION]: 4,
+      [SKILL_STEALTH]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_DRACONIC,
+      LANG_COMMON,
+      LANG_SYLVAN,
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Амфибия',
+        description: `Карга может дышать и воздухом и под водой.`,
+      },
+      {
+        name: 'Подражание',
+        description: `Карга может подражать звукам животных и голосам гуманоидов. Существо, слышащее эти звуки, может понять, что это подражание, если совершит успешную проверку Мудрости (Проницательность) со Сл 14.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 12,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_VICIOUS_MOCKERY,
+            SPELL_MINOR_ILLUSION,
+            SPELL_DANCING_LIGHTS,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Иллюзорная внешность',
+        description: `Карга покрывает себя и всё, что несёт и носит, магической иллюзией, заставляющей её выглядеть как другое существо примерно её размера и с гуманоидным телом. Иллюзия оканчивается, если карга умирает, и карга может окончить её бонусным действием.\n Изменения, внесённые эти эффектом, не проходят физическую проверку. Например, кожа карги может выглядеть гладкой, но тот, кто её коснётся, почувствует морщины. Если же полагаться только на зрение, то существо должно действием совершить проверку Интеллекта (Анализ) со Сл 20 и преуспеть, чтобы понять, что была использована иллюзия.`,
+      },
+      {
+        name: 'Невидимая ходьба',
+        description: `Карга магическим образом становится невидимой, пока не атакует, или не наложит заклинание, либо пока не прервёт концентрацию (как при концентрации на заклинании). Будучи невидимой, она не оставляет физических следов, так что выследить её можно только с помощью магии. Всё снаряжение, которое она несёт и носит, становится невидимым вместе с ней.`,
       },
     ],
   },

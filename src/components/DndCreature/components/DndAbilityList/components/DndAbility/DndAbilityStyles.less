@@ -11,6 +11,8 @@
 }
 
 .DndAbility_description {
+  @gap: .5rem;
+
   display: inline;
   hyphens: auto;
 
@@ -26,12 +28,17 @@
     margin-bottom: 0;
 
     & + li {
-      margin-top: .5rem;
+      margin-top: @gap;
     }
 
     &::first-letter {
       text-transform: uppercase;
     }
+  }
+
+  & ul,
+  & ol {
+    margin-bottom: @gap;
   }
 }
 

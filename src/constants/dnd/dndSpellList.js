@@ -30,6 +30,7 @@ const {
   CAST_MATERIAL,
 } = require( './dndCastComponentList')
 
+const SPELL_ALTER_SELF = 'alter_self'
 const SPELL_ANIMATE_DEAD = 'animate_dead'
 const SPELL_BANE = 'bane'
 const SPELL_BARKSKIN = 'barkskin'
@@ -41,6 +42,7 @@ const SPELL_BLINDNESS_DEAFNESS = 'blindness_deafness'
 const SPELL_BLUR = 'blur'
 const SPELL_CLAIRVOYANCE = 'clairvoyance'
 const SPELL_COLOR_SPRAY = 'color_spray'
+const SPELL_COMMAND = 'command'
 const SPELL_COMMUNE = 'commune'
 const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
 const SPELL_CONFUSION = 'confusion'
@@ -1575,6 +1577,34 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_ALTER_SELF,
+    name: 'Смена обличья',
+    nameEn: 'Alter self',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_COMMAND,
+    name: 'Приказ',
+    nameEn: 'Command',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1589,6 +1619,7 @@ module.exports = dndSpellList
 
 module.exports.dndSpellCollection = listToCollectionById(dndSpellList)
 
+module.exports.SPELL_ALTER_SELF = SPELL_ALTER_SELF
 module.exports.SPELL_ANIMATE_DEAD = SPELL_ANIMATE_DEAD
 module.exports.SPELL_BANE = SPELL_BANE
 module.exports.SPELL_BARKSKIN = SPELL_BARKSKIN
@@ -1600,6 +1631,7 @@ module.exports.SPELL_BLINDNESS_DEAFNESS = SPELL_BLINDNESS_DEAFNESS
 module.exports.SPELL_BLUR = SPELL_BLUR
 module.exports.SPELL_CLAIRVOYANCE = SPELL_CLAIRVOYANCE
 module.exports.SPELL_COLOR_SPRAY = SPELL_COLOR_SPRAY
+module.exports.SPELL_COMMAND = SPELL_COMMAND
 module.exports.SPELL_COMMUNE = SPELL_COMMUNE
 module.exports.SPELL_COMPREHEND_LANGUAGES = SPELL_COMPREHEND_LANGUAGES
 module.exports.SPELL_CONFUSION = SPELL_CONFUSION

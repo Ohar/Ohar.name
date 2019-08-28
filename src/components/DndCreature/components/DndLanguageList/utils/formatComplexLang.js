@@ -5,7 +5,7 @@ export default lang => {
     ? lang
     : lang.id
 
-  const langName = dndLanguageCollection[langId].name
+  const { isFemale, name} = dndLanguageCollection[langId]
 
   const rangeText = lang.range
     ? ` ${lang.range} фт.`
@@ -14,11 +14,11 @@ export default lang => {
     ? `понимает `
     : ''
   const doNotSpeakText2nd = lang.doNotSpeak
-    ? `, но не говорит на нём`
+    ? `, но не говорит на ${isFemale ? 'ней' : 'нём'}`
     : ''
   const commentText = lang.comment
     ? ` (${lang.comment})`
     : ''
 
-  return `${doNotSpeakText1st}${langName}${rangeText}${doNotSpeakText2nd}${commentText}`
+  return `${doNotSpeakText1st}${name}${rangeText}${doNotSpeakText2nd}${commentText}`
 }

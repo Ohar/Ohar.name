@@ -94,7 +94,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_ABYSSAL,
-    name: 'Бездны',
+    name: 'язык Бездны',
   },
   {
     id: LANG_INFERNAL,
@@ -123,6 +123,7 @@ const dndLanguageList = [
   {
     id: LANG_DEEP_SPEECH,
     name: 'Глубинная речь',
+    isFemale: true,
   },
   {
     id: LANG_UNDERCOMMON,
@@ -175,6 +176,7 @@ const dndLanguageList = [
   {
     id: LANG_TELEPATHY,
     name: 'Телепатия',
+    isFemale: true,
   },
   {
     id: LANG_SAHUAGIN,

@@ -42,7 +42,7 @@ const DndCreaturePageTemplate = ({creatureId: creatureIdInput, pageContext: {slu
         description={description}
         keywords={keywords}
       />
-      <DndCreatureCatalog/>
+      <DndCreatureCatalog showAll={!creatureId}/>
       {
         creatureId
           ? <DndCreature id={creatureId}/>

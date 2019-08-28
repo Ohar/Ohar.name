@@ -233,6 +233,7 @@ const {
     SPELL_GREATER_INVISIBILITY,
     SPELL_GUST_OF_WIND,
     SPELL_HALLUCINATORY_TERRAIN,
+    SPELL_HEAT_METAL,
     SPELL_HOLD_MONSTER,
     SPELL_HOLD_PERSON,
     SPELL_IDENTIFY,
@@ -471,6 +472,7 @@ const {
   CREATURE_PLESIOSAURUS = 'plesiosaurus',
   CREATURE_PTERANODON = 'pteranodon',
   CREATURE_QUAGGOTH = 'quaggoth',
+  CREATURE_QUAGGOTH_THONOT = 'quaggoth_thonot',
   CREATURE_RED_DRAGON_WYRMLING = 'red_dragon_wyrmling',
   CREATURE_ROPER = 'roper',
   CREATURE_SEA_HAG = 'sea_hag',
@@ -20013,5 +20015,39 @@ module.exports = [
         },
       },
     ],
+  },
+  {
+    name: 'Кваггот тонот',
+    nameEn: 'Quaggoth Thonot',
+    id: CREATURE_QUAGGOTH_THONOT,
+    parentId: CREATURE_QUAGGOTH,
+    cr: CR_3,
+    spellCast: {
+      comment: 'псионика',
+      baseStat: PARAM_WIT,
+      saveThrowDc: 11,
+      componentExclude: CAST_NONE,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_MAGE_HAND,
+            SPELL_FEATHER_FALL,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_CURE_WOUNDS,
+            SPELL_ENLARGE_REDUCE,
+            SPELL_HEAT_METAL,
+            SPELL_MIRROR_IMAGE,
+          ],
+        },
+      ],
+    },
   },
 ]

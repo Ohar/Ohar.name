@@ -85,6 +85,7 @@ const SPELL_JUMP = 'jump'
 const SPELL_LEVITATE = 'levitate'
 const SPELL_LIGHT = 'light'
 const SPELL_MAGE_HAND = 'mage_hand'
+const SPELL_MAGIC_MISSILE = 'magic_missile'
 const SPELL_MAJOR_IMAGE = 'major_image'
 const SPELL_MINOR_ILLUSION = 'minor_illusion'
 const SPELL_MIRROR_IMAGE = 'mirror_image'
@@ -102,6 +103,7 @@ const SPELL_POWER_WORD_STUN = 'power_word_stun'
 const SPELL_PRESTIDIGITATION = 'prestidigitation'
 const SPELL_PURIFY_FOOD_AND_DRINK = 'purify_food_and_drink'
 const SPELL_RAISE_DEAD = 'raise_dead'
+const SPELL_RAY_OF_ENFEEBLEMENT = 'ray_of_enfeeblement'
 const SPELL_RAY_OF_FROST = 'ray_of_frost'
 const SPELL_RESSURECTION = 'ressurection'
 const SPELL_SACRED_FLAME = 'sacred_flame'
@@ -1620,6 +1622,32 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_RAY_OF_ENFEEBLEMENT,
+    name: 'Луч слабости',
+    nameEn: 'Ray of enfeeblement',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_NECROMANCY,
+    range: 60,
+    ritual: false,
+    componentList: [CAST_VERBAL, CAST_SOMATIC],
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_MAGIC_MISSILE,
+    name: 'Волшебная стрела ',
+    nameEn: 'Magic missile',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_NECROMANCY,
+    range: 60,
+    ritual: false,
+    componentList: [CAST_VERBAL, CAST_SOMATIC],
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1689,6 +1717,7 @@ module.exports.SPELL_JUMP = SPELL_JUMP
 module.exports.SPELL_LEVITATE = SPELL_LEVITATE
 module.exports.SPELL_LIGHT = SPELL_LIGHT
 module.exports.SPELL_MAGE_HAND = SPELL_MAGE_HAND
+module.exports.SPELL_MAGIC_MISSILE = SPELL_MAGIC_MISSILE
 module.exports.SPELL_MAJOR_IMAGE = SPELL_MAJOR_IMAGE
 module.exports.SPELL_MINOR_ILLUSION = SPELL_MINOR_ILLUSION
 module.exports.SPELL_MIRROR_IMAGE = SPELL_MIRROR_IMAGE
@@ -1706,6 +1735,7 @@ module.exports.SPELL_POWER_WORD_STUN = SPELL_POWER_WORD_STUN
 module.exports.SPELL_PRESTIDIGITATION = SPELL_PRESTIDIGITATION
 module.exports.SPELL_PURIFY_FOOD_AND_DRINK = SPELL_PURIFY_FOOD_AND_DRINK
 module.exports.SPELL_RAISE_DEAD = SPELL_RAISE_DEAD
+module.exports.SPELL_RAY_OF_ENFEEBLEMENT = SPELL_RAY_OF_ENFEEBLEMENT
 module.exports.SPELL_RAY_OF_FROST = SPELL_RAY_OF_FROST
 module.exports.SPELL_RESSURECTION = SPELL_RESSURECTION
 module.exports.SPELL_SACRED_FLAME = SPELL_SACRED_FLAME

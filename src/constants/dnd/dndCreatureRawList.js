@@ -19055,11 +19055,7 @@ module.exports = [
     ],
     languageList: [
       {
-        id: LANG_GIANT,
-        doNotSpeak: true,
-      },
-      {
-        id: LANG_COMMON,
+        id: [LANG_GIANT, LANG_COMMON],
         doNotSpeak: true,
       },
     ],

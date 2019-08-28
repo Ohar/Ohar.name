@@ -170,6 +170,7 @@ const {
     SKILL_PERSUASION,
     SKILL_RELIGION,
     SKILL_STEALTH,
+    SKILL_SURVIVAL,
   } = require('./dndSkillList'),
   {
     PC_CLASS_PRIEST,
@@ -382,6 +383,7 @@ const {
   CREATURE_BRONZE_DRAGON_WYRMLING = 'bronze_dragon_wyrmling',
   CREATURE_BULLYWUG = 'bullywug',
   CREATURE_CAMBION = 'cambion',
+  CREATURE_CENTAUR = 'centaur',
   CREATURE_CHAIN_DEVIL = 'chain_devil',
   CREATURE_CHASME = 'chasme',
   CREATURE_CLAY_GOLEM = 'clay_golem',
@@ -20145,6 +20147,115 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Кентавр',
+    nameEn: 'Centaur',
+    id: CREATURE_CENTAUR,
+    description: `Кентавры, одинокие странники и чтецы предзнаменований природы, избегают конфликтов, но будучи загнанными в угол, сражаются с яростью. Они селятся на огромных пустошах, держась подальше от границ, законов и общества других существ.\n
+**Пустынные кочевники. Племена кентавров широко распространены в землях с климатом от мягкого до жаркого, где кентавру достаточно только лёгкого меха, либо промасленной кожи, чтобы бороться с превратностями погоды. Они охотники-собиратели, редко возводят жилища, и даже палатки.\n
+Миграции кентавров покрывают целые континенты и длятся десятки лет, так что племя может не возвращаться на прежний путь несколько поколений. Такие далёкие переселения могут привести к конфликтам с существами, которые могут возвести свои жилища на традиционных путях миграции кентавров.\n
+**Вынужденные поселенцы.** Кентавр, который отстаёт от племени, остаётся позади. Некоторые из этих кентавров исчезают в дикой местности, и никто их больше не видит. Те, кто могут перенести потерю своего племени, селятся среди других рас. Пограничные поселения ценят знания своих сожителей кентавров. Многие из таких общин даже обязаны своим выживанием проницательности и сообразительности кентавров.\n
+Несмотря на затворническую натуру, кентавры торгуют с эльфами и с караванами других дружественных гуманоидов, которых они встречают во время своих странствий. Торговец может спасти жизнь раненого или пожилого кентавра, неспособного для длительного путешествия, и сопроводить его в населённый пункт, где тот может спокойно прожить остаток своих дней. `,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NG,
+    source: 'MM:175',
+    armor: 12,
+    hp: {
+      cubeCount: 6,
+      cubeType: 10,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 6,
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_SURVIVAL]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_SYLVAN,
+      LANG_ELVEN,
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Атака в броске',
+        description: `Если кентавр переместится как минимум на 30 футов по прямой к цели, а затем в том же ходу попадёт по ней атакой пикой, цель получает от атаки дополнительный колющий урон 10 (3к6).`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Кентавр совершает две атаки: одну пикой и одну копытами, либо две атаки длинным луком.`
+      },
+      {
+        name: 'Пика',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Копыта',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Длинный лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
           },
         },
       },

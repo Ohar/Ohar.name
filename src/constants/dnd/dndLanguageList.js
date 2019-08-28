@@ -58,221 +58,383 @@ const LANG_YETI = 'yeti'
 const dndLanguageList = [
   {
     id: LANG_COMMON,
-    name: 'Общий',
+    name: {
+      nominative: 'Общий',
+      instrumental: 'Общий',
+    },
   },
   {
     id: LANG_ANY_ONE,
-    name: 'Любой один язык (обычно — Общий)',
+    name: {
+      nominative: 'Любой один язык (обычно — Общий)',
+      instrumental: 'Любой один язык (обычно — Общий)',
+    },
   },
   {
     id: LANG_ANY_TWO,
-    name: 'Любые два языка',
+    name: {
+      nominative: 'Любые два языка',
+      instrumental: 'Любые два языка',
+    },
   },
   {
     id: LANG_ALL_KNOWN_AT_LIFE,
-    name: 'Все языки, известные при жизни',
+    name: {
+      nominative: 'Все языки, известные при жизни',
+      instrumental: 'Все языки, известные при жизни',
+    },
   },
   {
     id: LANG_ITS_CREATOR,
-    name: 'Язык своего создателя',
+    name: {
+      nominative: 'Язык своего создателя',
+      instrumental: 'Язык своего создателя',
+    },
   },
   {
     id: LANG_ALL,
-    name: 'Все',
+    name: {
+      nominative: 'Все',
+      instrumental: 'Все',
+    },
   },
   {
     id: LANG_PRIMORDIAL,
-    name: 'Первичный',
+    name: {
+      nominative: 'Первичный',
+      instrumental: 'Первичный',
+    },
   },
   {
     id: LANG_ELVEN,
-    name: 'Эльфийский',
+    name: {
+      nominative: 'Эльфийский',
+      instrumental: 'Эльфийский',
+    },
   },
   {
     id: LANG_SYLVAN,
-    name: 'Сильван',
+    name: {
+      nominative: 'Сильван',
+      instrumental: 'Сильван',
+    },
   },
   {
     id: LANG_ABYSSAL,
-    name: 'язык Бездны',
+    name: {
+      nominative: 'язык Бездны',
+      instrumental: 'язык Бездны',
+    },
   },
   {
     id: LANG_INFERNAL,
-    name: 'Инфернальный',
+    name: {
+      nominative: 'Инфернальный',
+      instrumental: 'Инфернальный',
+    },
   },
   {
     id: LANG_AQUAN,
-    name: 'Акван',
+    name: {
+      nominative: 'Акван',
+      instrumental: 'Акван',
+    },
   },
   {
     id: LANG_DWARVISH,
-    name: 'Дварфийский',
+    name: {
+      nominative: 'Дварфийский',
+      instrumental: 'Дварфийский',
+    },
   },
   {
     id: LANG_GIANT,
-    name: 'Великаний',
+    name: {
+      nominative: 'Великаний',
+      instrumental: 'Великаний',
+    },
   },
   {
     id: LANG_AURAN,
-    name: 'Ауран',
+    name: {
+      nominative: 'Ауран',
+      instrumental: 'Ауран',
+    },
   },
   {
     id: LANG_CELESTIAL,
-    name: 'Небесный',
+    name: {
+      nominative: 'Небесный',
+      instrumental: 'Небесный',
+    },
   },
   {
     id: LANG_DEEP_SPEECH,
-    name: 'Глубинная речь',
+    name: {
+      nominative: 'Глубинная речь',
+      instrumental: 'Глубинную речь',
+    },
     isFemale: true,
   },
   {
     id: LANG_UNDERCOMMON,
-    name: 'Подземный',
+    name: {
+      nominative: 'Подземный',
+      instrumental: 'Подземный',
+    },
   },
   {
     id: LANG_DRACONIC,
-    name: 'Драконий',
+    name: {
+      nominative: 'Драконий',
+      instrumental: 'Драконий',
+    },
   },
   {
     id: LANG_DRUIDIC,
-    name: 'Друидский',
+    name: {
+      nominative: 'Друидский',
+      instrumental: 'Друидский',
+    },
   },
   {
     id: LANG_GNOMISH,
-    name: 'Гномий',
+    name: {
+      nominative: 'Гномий',
+      instrumental: 'Гномий',
+    },
   },
   {
     id: LANG_GOBLIN,
-    name: 'Гоблинский',
+    name: {
+      nominative: 'Гоблинский',
+      instrumental: 'Гоблинский',
+    },
   },
   {
     id: LANG_GNOLL,
-    name: 'Гноллий',
+    name: {
+      nominative: 'Гноллий',
+      instrumental: 'Гноллий',
+    },
   },
   {
     id: LANG_HALFLING,
-    name: 'Язык полуросликов',
+    name: {
+      nominative: 'Язык полуросликов',
+      instrumental: 'Язык полуросликов',
+    },
   },
   {
     id: LANG_UMBER_HULK,
-    name: 'Язык бурых увальней',
+    name: {
+      nominative: 'Язык бурых увальней',
+      instrumental: 'Язык бурых увальней',
+    },
   },
   {
     id: LANG_IGNAN,
-    name: 'Игнан',
+    name: {
+      nominative: 'Игнан',
+      instrumental: 'Игнан',
+    },
   },
   {
     id: LANG_ORC,
-    name: 'Орочий',
+    name: {
+      nominative: 'Орочий',
+      instrumental: 'Орочий',
+    },
   },
   {
     id: LANG_TERRAN,
-    name: 'Терран',
+    name: {
+      nominative: 'Терран',
+      instrumental: 'Терран',
+    },
   },
   {
     id: LANG_THUG_JARGON,
-    name: 'Воровской жаргон',
+    name: {
+      nominative: 'Воровской жаргон',
+      instrumental: 'Воровской жаргон',
+    },
   },
   {
     id: LANG_TELEPATHY,
-    name: 'Телепатия',
+    name: {
+      nominative: 'Телепатия',
+      instrumental: 'Телепатию',
+    },
     isFemale: true,
   },
   {
     id: LANG_SAHUAGIN,
-    name: 'Сахуагинский',
+    name: {
+      nominative: 'Сахуагинский',
+      instrumental: 'Сахуагинский',
+    },
   },
   {
     id: LANG_VEGEPYGMY,
-    name: 'Вегепигмейский',
+    name: {
+      nominative: 'Вегепигмейский',
+      instrumental: 'Вегепигмейский',
+    },
   },
   {
     id: LANG_WORGEN,
-    name: 'Язык воргов',
+    name: {
+      nominative: 'Язык воргов',
+      instrumental: 'Язык воргов',
+    },
   },
   {
     id: LANG_GIANT_OWL,
-    name: 'Язык гигантских сов',
+    name: {
+      nominative: 'Язык гигантских сов',
+      instrumental: 'Язык гигантских сов',
+    },
   },
   {
     id: LANG_GIANT_EAGLE,
-    name: 'Язык гигантских орлов',
+    name: {
+      nominative: 'Язык гигантских орлов',
+      instrumental: 'Язык гигантских орлов',
+    },
   },
   {
     id: LANG_SPHINX,
-    name: 'Язык сфинксов',
+    name: {
+      nominative: 'Язык сфинксов',
+      instrumental: 'Язык сфинксов',
+    },
   },
   {
     id: LANG_GITH,
-    name: 'Гитский',
+    name: {
+      nominative: 'Гитский',
+      instrumental: 'Гитский',
+    },
   },
   {
     id: LANG_GRELL,
-    name: 'Грелльский',
+    name: {
+      nominative: 'Грелльский',
+      instrumental: 'Грелльский',
+    },
   },
   {
     id: LANG_GRUNG,
-    name: 'Грунгский',
+    name: {
+      nominative: 'Грунгский',
+      instrumental: 'Грунгский',
+    },
   },
   {
     id: LANG_MODRONE,
-    name: 'Модронский',
+    name: {
+      nominative: 'Модронский',
+      instrumental: 'Модронский',
+    },
   },
   {
     id: LANG_BULLYWUG,
-    name: 'Жаболюдский',
+    name: {
+      nominative: 'Жаболюдский',
+      instrumental: 'Жаболюдский',
+    },
   },
   {
     id: LANG_SLAAD,
-    name: 'Слаадский',
+    name: {
+      nominative: 'Слаадский',
+      instrumental: 'Слаадский',
+    },
   },
   {
     id: LANG_YETI,
-    name: 'Язык йети',
+    name: {
+      nominative: 'Язык йети',
+      instrumental: 'Язык йети',
+    },
   },
   {
     id: LANG_HOOK_HORROR,
-    name: 'Язык крюкастых ужасов',
+    name: {
+      nominative: 'Язык крюкастых ужасов',
+      instrumental: 'Язык крюкастых ужасов',
+    },
   },
   {
     id: LANG_ICE_TOAD,
-    name: 'Язык ледяных жаб',
+    name: {
+      nominative: 'Язык ледяных жаб',
+      instrumental: 'Язык ледяных жаб',
+    },
   },
   {
     id: LANG_BLINK_DOG,
-    name: 'Язык мерцающих псов',
+    name: {
+      nominative: 'Язык мерцающих псов',
+      instrumental: 'Язык мерцающих псов',
+    },
   },
   {
     id: LANG_OTYUGH,
-    name: 'Отиджский',
+    name: {
+      nominative: 'Отиджский',
+      instrumental: 'Отиджский',
+    },
   },
   {
     id: LANG_WINTER_WOLF,
-    name: 'Язык полярных волков',
+    name: {
+      nominative: 'Язык полярных волков',
+      instrumental: 'Язык полярных волков',
+    },
   },
   {
     id: LANG_THAY,
-    name: 'Тэйский',
+    name: {
+      nominative: 'Тэйский',
+      instrumental: 'Тэйский',
+    },
   },
   {
     id: LANG_TLINCALLI,
-    name: 'Язык тлинкалли',
+    name: {
+      nominative: 'Язык тлинкалли',
+      instrumental: 'Язык тлинкалли',
+    },
   },
   {
     id: LANG_THRI_KREEN,
-    name: 'Три-кринский',
+    name: {
+      nominative: 'Три-кринский',
+      instrumental: 'Три-кринский',
+    },
   },
   {
     id: LANG_TROGLODYTE,
-    name: 'Троглодитский',
+    name: {
+      nominative: 'Троглодитский',
+      instrumental: 'Троглодитский',
+    },
   },
   {
     id: LANG_IXITXACHITL,
-    name: 'Язык икситксачитлов',
+    name: {
+      nominative: 'Язык икситксачитлов',
+      instrumental: 'Язык икситксачитлов',
+    },
   },
   {
     id: LANG_AARAKOCRA,
-    name: 'Язык ааракокр',
+    name: {
+      nominative: 'Язык ааракокр',
+      instrumental: 'Язык ааракокр',
+    },
   },
 ]
 

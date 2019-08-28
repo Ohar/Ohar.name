@@ -10,17 +10,20 @@ export default lang => {
   )
 
   const langList = langIdList.map(
-    langId => dndLanguageCollection[langId]
+    langId => dndLanguageCollection[langId].name[
+      lang.doNotSpeak
+        ? 'instrumental'
+        : 'nominative'
+    ]
   )
 
   const name = langList.length === 1
-    ? langList[0].name
+    ? langList[0]
     : [
       langList
         .slice(0, -1)
-        .map(({ name}) => name)
         .join(', '),
-      langList.slice(-1)[0].name,
+      langList.slice(-1)[0],
     ]
       .join(' и ')
 

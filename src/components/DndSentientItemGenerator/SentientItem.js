@@ -88,7 +88,7 @@ export default class SentientItem {
       const langIdList = this.generateLanguageList()
       const langStr = langIdList
         .map(
-          id => dndLanguageCollection[id].name
+          id => dndLanguageCollection[id].name.nominative
         )
         .join('*, *')
 

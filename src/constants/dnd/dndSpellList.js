@@ -117,6 +117,7 @@ const SPELL_TELEKINESIS = 'telekinesis'
 const SPELL_THAUMATURGY = 'thaumaturgy'
 const SPELL_THUNDERWAVE = 'thunderwave'
 const SPELL_TONGUES = 'tongues'
+const SPELL_VICIOUS_MOCKERY = 'vicious_mockery'
 const SPELL_WALL_OF_FIRE = 'wall_of_fire'
 const SPELL_WALL_OF_STONE = 'wall_of_stone'
 const SPELL_WATER_BREATHING = 'water_breathing'
@@ -1605,6 +1606,20 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_VICIOUS_MOCKERY,
+    name: 'Злая насмешка',
+    nameEn: 'Vicious mockery',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1706,6 +1721,7 @@ module.exports.SPELL_TELEKINESIS = SPELL_TELEKINESIS
 module.exports.SPELL_THAUMATURGY = SPELL_THAUMATURGY
 module.exports.SPELL_THUNDERWAVE = SPELL_THUNDERWAVE
 module.exports.SPELL_TONGUES = SPELL_TONGUES
+module.exports.SPELL_VICIOUS_MOCKERY = SPELL_VICIOUS_MOCKERY
 module.exports.SPELL_WALL_OF_FIRE = SPELL_WALL_OF_FIRE
 module.exports.SPELL_WALL_OF_STONE = SPELL_WALL_OF_STONE
 module.exports.SPELL_WATER_BREATHING = SPELL_WATER_BREATHING

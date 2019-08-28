@@ -48,7 +48,7 @@ const DndAbilityListComponent = ({ header, list, name, spellCast, isFemale, entr
         spellCast && (
           <DndAbility header={
             (
-              spellCast.spellCasterLevel
+              spellCast.title || spellCast.spellCasterLevel
                 ? 'Использование заклинаний'
                 : 'Врождённое колдовство'
             ) + (

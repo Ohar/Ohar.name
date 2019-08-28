@@ -1,0 +1,44 @@
+@import '../../../../../../../../styles/mixin';
+
+.DndAbility {
+  text-align: justify;
+}
+
+.DndAbility_header {
+  color: #231F20;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.DndAbility_description {
+  @gap: .5rem;
+
+  display: inline;
+  hyphens: auto;
+
+  & p {
+    .Parapraph();
+
+    &:first-of-type {
+      display: inline;
+    }
+  }
+
+  & li {
+    margin-bottom: 0;
+
+    & + li {
+      margin-top: @gap;
+    }
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  & ul,
+  & ol {
+    margin-bottom: @gap;
+  }
+}
+

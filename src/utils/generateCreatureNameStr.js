@@ -4,7 +4,6 @@ export default (
     nameAlt,
     nameEn,
     nameEnAlt,
-    description
   }
 ) => {
   const nameEnAltText = nameEnAlt
@@ -14,7 +13,7 @@ export default (
     ? ` (${nameAlt})`
     : ''
   const header = `${name}${nameAltText}`
-  const title = `${header} [${nameEn}${nameEnAltText}]\n\n${description}`
+  const title = `${header} [${nameEn}${nameEnAltText}]`
 
   return {
     header,

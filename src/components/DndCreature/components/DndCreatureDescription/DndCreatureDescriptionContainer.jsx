@@ -1,11 +1,24 @@
 import React from 'react'
 
-import DndAbilityList from './../DndAbilityList'
+import DndCreatureDescriptionComponent from './DndCreatureDescriptionComponent'
 
-export default ({description, ...rest}) => (
-  <DndAbilityList
-    header='Описание'
-    entry={description}
-    {...rest}
-  />
-)
+const DndCreatureDescriptionContainer = ({name, nameAlt, nameEn, nameEnAlt, description}) => {
+  const nameEnAltText = nameEnAlt
+    ? ` (${nameEnAlt})`
+    : ''
+  const nameAltText = nameAlt
+    ? ` (${nameAlt})`
+    : ''
+  const nameText = `${name}${nameAltText}`
+  const nameEnText = `${nameEn}${nameEnAltText}`
+
+  return (
+    <DndCreatureDescriptionComponent
+      nameText={nameText}
+      nameEnText={nameEnText}
+      description={description}
+    />
+  )
+}
+
+export default DndCreatureDescriptionContainer

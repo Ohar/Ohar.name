@@ -80,6 +80,7 @@ const SPELL_GOODBERRY = 'goodberry'
 const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
 const SPELL_GUST_OF_WIND = 'gust_of_wind'
 const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
+const SPELL_HEAT_METAL = 'heat_metal'
 const SPELL_HOLD_MONSTER = 'hold_monster'
 const SPELL_HOLD_PERSON = 'hold_person'
 const SPELL_IDENTIFY = 'identify'
@@ -1768,6 +1769,20 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_HEAT_METAL,
+    name: 'Раскалённый металл',
+    nameEn: 'Heat metal',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1832,6 +1847,7 @@ module.exports.SPELL_GOODBERRY = SPELL_GOODBERRY
 module.exports.SPELL_GREATER_INVISIBILITY = SPELL_GREATER_INVISIBILITY
 module.exports.SPELL_GUST_OF_WIND = SPELL_GUST_OF_WIND
 module.exports.SPELL_HALLUCINATORY_TERRAIN = SPELL_HALLUCINATORY_TERRAIN
+module.exports.SPELL_HEAT_METAL = SPELL_HEAT_METAL
 module.exports.SPELL_HOLD_MONSTER = SPELL_HOLD_MONSTER
 module.exports.SPELL_HOLD_PERSON = SPELL_HOLD_PERSON
 module.exports.SPELL_IDENTIFY = SPELL_IDENTIFY

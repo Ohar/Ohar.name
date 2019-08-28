@@ -339,6 +339,7 @@ const CREATURE_BARLGURA = 'barlgura'
 const CREATURE_BASILISK = 'basilisk'
 const CREATURE_BARBED_DEVIL = 'barbed_devil'
 const CREATURE_BEARDED_DEVIL = 'bearded_devil'
+const CREATURE_BEARDED_DEVIL_SUMMONER = 'bearded_devil_summoner'
 const CREATURE_BEHIR = 'behir'
 const CREATURE_BEHOLDER = 'beholder'
 const CREATURE_BEHOLDER_ZOMBIE = 'beholder_zombie'
@@ -16752,6 +16753,23 @@ module.exports = [
             cubeType: 10,
             cubeBonus: 3,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Бородатый дьявол-призыватель',
+    nameEn: 'Bearded devil summoner',
+    id: CREATURE_BEARDED_DEVIL_SUMMONER,
+    parentId: CREATURE_BEARDED_DEVIL,
+    actionList: [
+      {
+        name: 'Призыв дьявола',
+        description: `Дьявол пытается призвать одного бородатого дьявола с шансом 30%.\n
+Призванный дьявол появляется в свободном пространстве в пределах 60 футов от призывателя, и действует как его союзник, не имеющий способности призывать дьяволов. Он помогает в течение 1 минуты или пока призыватель не умрёт или действием его не отпустит.`,
+        limit: {
+          count: 1,
+          period: 'день',
         },
       },
     ],

@@ -417,6 +417,7 @@ const CREATURE_HORNED_DEVIL = 'horned_devil'
 const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
 const CREATURE_ICE_DEVIL = 'ice_devil'
+const CREATURE_ICE_DEVIL_SUMMONER = 'ice_devil_summoner'
 const CREATURE_ICE_DEVIL_WITH_A_SPEAR = 'ice_devil_with_a_spear'
 const CREATURE_IMP = 'imp'
 const CREATURE_IMP_FAMILIAR = 'imp_familiar'
@@ -17591,6 +17592,23 @@ module.exports = [
         restore: {
           from: 6,
           to: 6,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Ледяной дьявол-призыватель',
+    nameEn: 'Ice devil summoner',
+    id: CREATURE_ICE_DEVIL_SUMMONER,
+    parentId: CREATURE_ICE_DEVIL,
+    actionList: [
+      {
+        name: 'Призыв дьявола',
+        description: `Дьявол пытается призвать одного ледяного дьявола с шансом 60%.\n
+Призванный дьявол появляется в свободном пространстве в пределах 60 футов от призывателя, и действует как его союзник, не имеющий способности призывать дьяволов. Он помогает в течение 1 минуты или пока призыватель не умрёт или действием его не отпустит.`,
+        limit: {
+          count: 1,
+          period: 'день',
         },
       },
     ],

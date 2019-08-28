@@ -414,6 +414,7 @@ const CREATURE_HEZROU = 'hezrou'
 const CREATURE_HILL_GIANT = 'hill_giant'
 const CREATURE_HOMUNCULUS = 'homunculus'
 const CREATURE_HORNED_DEVIL = 'horned_devil'
+const CREATURE_HORNED_DEVIL_SUMMONER = 'horned_devil_summoner'
 const CREATURE_HYDRA = 'hydra'
 const CREATURE_HIPPOGRIFF = 'hippogriff'
 const CREATURE_ICE_DEVIL = 'ice_devil'
@@ -18022,6 +18023,23 @@ module.exports = [
             cubeCount: 4,
             cubeType: 6,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Рогатый дьявол-призыватель',
+    nameEn: 'Horned devil summoner',
+    id: CREATURE_HORNED_DEVIL_SUMMONER,
+    parentId: CREATURE_HORNED_DEVIL,
+    actionList: [
+      {
+        name: 'Призыв дьявола',
+        description: `Дьявол пытается призвать одного рогатого дьявола с шансом 30%.\n
+Призванный дьявол появляется в свободном пространстве в пределах 60 футов от призывателя, и действует как его союзник, не имеющий способности призывать дьяволов. Он помогает в течение 1 минуты или пока призыватель не умрёт или действием его не отпустит.`,
+        limit: {
+          count: 1,
+          period: 'день',
         },
       },
     ],

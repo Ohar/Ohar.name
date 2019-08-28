@@ -347,6 +347,7 @@ const CREATURE_BLACK_DRAGON_WYRMLING = 'black_dragon_wyrmling'
 const CREATURE_BLUE_DRAGON_WYRMLING = 'blue_dragon_wyrmling'
 const CREATURE_BONE_DEVIL = 'bone_devil'
 const CREATURE_BONE_DEVIL_SUMMONER = 'bone_devil_summoner'
+const CREATURE_BONE_DEVIL_SUMMONER_WITH_A_SPEAR = 'bone_devil_summoner_with_a_spear'
 const CREATURE_BONE_DEVIL_WITH_A_SPEAR = 'bone_devil_with_a_spear'
 const CREATURE_BRASS_DRAGON_WYRMLING = 'brass_dragon_wyrmling'
 const CREATURE_BRONZE_DRAGON_WYRMLING = 'bronze_dragon_wyrmling'
@@ -17404,6 +17405,25 @@ module.exports = [
             cubeType: 12,
             cubeBonus: 4,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Костяной дьявол-призыватель c копьём',
+    nameEn: 'Bone devil summoner with a Spear',
+    id: CREATURE_BONE_DEVIL_SUMMONER_WITH_A_SPEAR,
+    parentId: CREATURE_BONE_DEVIL_WITH_A_SPEAR,
+    actionList: [
+      {
+        name: 'Призыв дьявола',
+        description: `Дьявол выбирает, кого призвать, и пытается это сделать с шансом 30%.\n
+ * 2к6 игольчатых дьяволов
+ * одного костяного дьявола\n
+Призванные дьяволы появляются в свободном пространстве в пределах 60 футов от призывателя, и действуют как его союзники, не имеющие способности призывать дьяволов. Они помогают в течение 1 минуты или пока призыватель не умрёт или действием их не отпустит.`,
+        limit: {
+          count: 1,
+          period: 'день',
         },
       },
     ],

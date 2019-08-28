@@ -22,7 +22,7 @@ const DndSourceInfoComponent = ({ source: sourceStr, useFullName }) => {
         <a
           className='DndSourceInfo DndSourceInfo-link'
           title={name}
-          rel='nofollow'
+          rel='nofollow noopener noreferrer'
           href={page}
           target='_blank'
         >
@@ -47,7 +47,6 @@ const DndSourceInfoComponent = ({ source: sourceStr, useFullName }) => {
           {text}
         </span>
       )
-
     }
   }
 

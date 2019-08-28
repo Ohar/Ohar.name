@@ -1,4 +1,3 @@
-import React from "react"
 import proschet from 'proschet'
 
 const getActionWord = proschet(['действие', 'действия', 'действий'])

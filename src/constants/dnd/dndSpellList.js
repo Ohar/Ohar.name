@@ -47,7 +47,9 @@ const SPELL_COMMUNE = 'commune'
 const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
 const SPELL_CONFUSION = 'confusion'
 const SPELL_CONJURE_ELEMENTAL = 'conjure_elemental'
+const SPELL_CONTACT_OTHER_PLANE = 'contact_other_plane'
 const SPELL_CONTROL_WEATHER = 'control_weather'
+const SPELL_COUNTERSPELL = 'counterspell'
 const SPELL_CREATE_FOOD_AND_WATER = 'create_food_and_water'
 const SPELL_CREATE_OR_DESTROY_WATER = 'create_or_destroy_water'
 const SPELL_CREATION = 'creation'
@@ -65,6 +67,7 @@ const SPELL_DOMINATE_PERSON = 'dominate_person'
 const SPELL_DRUIDCRAFT = 'druidcraft'
 const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 const SPELL_ENTANGLE = 'entangle'
+const SPELL_EYEBITE = 'eyebite'
 const SPELL_FAERIE_FIRE = 'faerie_fire'
 const SPELL_FEATHER_FALL = 'feather_fall'
 const SPELL_FIREBALL = 'fireball'
@@ -79,11 +82,14 @@ const SPELL_GUST_OF_WIND = 'gust_of_wind'
 const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
 const SPELL_HOLD_MONSTER = 'hold_monster'
 const SPELL_HOLD_PERSON = 'hold_person'
+const SPELL_IDENTIFY = 'identify'
 const SPELL_INSECT_PLAGUE = 'insect_plague'
 const SPELL_INVISIBILITY = 'invisibility'
 const SPELL_JUMP = 'jump'
 const SPELL_LEVITATE = 'levitate'
 const SPELL_LIGHT = 'light'
+const SPELL_LIGHTNING_BOLT = 'lightning_bolt'
+const SPELL_LOCATE_OBJECT = 'locate_object'
 const SPELL_MAGE_HAND = 'mage_hand'
 const SPELL_MAGIC_MISSILE = 'magic_missile'
 const SPELL_MAJOR_IMAGE = 'major_image'
@@ -105,9 +111,11 @@ const SPELL_PURIFY_FOOD_AND_DRINK = 'purify_food_and_drink'
 const SPELL_RAISE_DEAD = 'raise_dead'
 const SPELL_RAY_OF_ENFEEBLEMENT = 'ray_of_enfeeblement'
 const SPELL_RAY_OF_FROST = 'ray_of_frost'
+const SPELL_RAY_OF_SICKNESS = 'ray_of_sickness'
 const SPELL_RESSURECTION = 'ressurection'
 const SPELL_SACRED_FLAME = 'sacred_flame'
 const SPELL_SANCTUARY = 'sanctuary'
+const SPELL_SCRYING = 'scrying'
 const SPELL_SEE_INVISIBILITY = 'see_invisibility'
 const SPELL_SHIELD = 'shield'
 const SPELL_SHILLELAGH = 'shillelagh'
@@ -1648,6 +1656,118 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_RAY_OF_SICKNESS,
+    name: 'Луч болезни',
+    nameEn: 'Ray of sickness',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_IDENTIFY,
+    name: 'Опознание',
+    nameEn: 'Identify',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_LOCATE_OBJECT,
+    name: 'Поиск предмета',
+    nameEn: 'Locate object',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_COUNTERSPELL,
+    name: 'Контрзаклинание',
+    nameEn: 'Counterspell',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_LIGHTNING_BOLT,
+    name: 'Молния',
+    nameEn: 'Lightning bolt',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_SCRYING,
+    name: 'Наблюдение',
+    nameEn: 'Scrying',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_CONTACT_OTHER_PLANE,
+    name: 'Связь с иным миром',
+    nameEn: 'Contact other plane',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_EYEBITE,
+    name: 'Разящее око',
+    nameEn: 'Eyebite',
+    description: ``, // TODO
+    lvl: 6,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1679,7 +1799,9 @@ module.exports.SPELL_COMMUNE = SPELL_COMMUNE
 module.exports.SPELL_COMPREHEND_LANGUAGES = SPELL_COMPREHEND_LANGUAGES
 module.exports.SPELL_CONFUSION = SPELL_CONFUSION
 module.exports.SPELL_CONJURE_ELEMENTAL = SPELL_CONJURE_ELEMENTAL
+module.exports.SPELL_CONTACT_OTHER_PLANE = SPELL_CONTACT_OTHER_PLANE
 module.exports.SPELL_CONTROL_WEATHER = SPELL_CONTROL_WEATHER
+module.exports.SPELL_COUNTERSPELL = SPELL_COUNTERSPELL
 module.exports.SPELL_CREATE_FOOD_AND_WATER = SPELL_CREATE_FOOD_AND_WATER
 module.exports.SPELL_CREATE_OR_DESTROY_WATER = SPELL_CREATE_OR_DESTROY_WATER
 module.exports.SPELL_CREATION = SPELL_CREATION
@@ -1697,6 +1819,7 @@ module.exports.SPELL_DOMINATE_PERSON = SPELL_DOMINATE_PERSON
 module.exports.SPELL_DRUIDCRAFT = SPELL_DRUIDCRAFT
 module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
 module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
+module.exports.SPELL_EYEBITE = SPELL_EYEBITE
 module.exports.SPELL_FAERIE_FIRE = SPELL_FAERIE_FIRE
 module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
 module.exports.SPELL_FIREBALL = SPELL_FIREBALL
@@ -1711,11 +1834,14 @@ module.exports.SPELL_GUST_OF_WIND = SPELL_GUST_OF_WIND
 module.exports.SPELL_HALLUCINATORY_TERRAIN = SPELL_HALLUCINATORY_TERRAIN
 module.exports.SPELL_HOLD_MONSTER = SPELL_HOLD_MONSTER
 module.exports.SPELL_HOLD_PERSON = SPELL_HOLD_PERSON
+module.exports.SPELL_IDENTIFY = SPELL_IDENTIFY
 module.exports.SPELL_INSECT_PLAGUE = SPELL_INSECT_PLAGUE
 module.exports.SPELL_INVISIBILITY = SPELL_INVISIBILITY
 module.exports.SPELL_JUMP = SPELL_JUMP
 module.exports.SPELL_LEVITATE = SPELL_LEVITATE
 module.exports.SPELL_LIGHT = SPELL_LIGHT
+module.exports.SPELL_LIGHTNING_BOLT = SPELL_LIGHTNING_BOLT
+module.exports.SPELL_LOCATE_OBJECT = SPELL_LOCATE_OBJECT
 module.exports.SPELL_MAGE_HAND = SPELL_MAGE_HAND
 module.exports.SPELL_MAGIC_MISSILE = SPELL_MAGIC_MISSILE
 module.exports.SPELL_MAJOR_IMAGE = SPELL_MAJOR_IMAGE
@@ -1737,9 +1863,11 @@ module.exports.SPELL_PURIFY_FOOD_AND_DRINK = SPELL_PURIFY_FOOD_AND_DRINK
 module.exports.SPELL_RAISE_DEAD = SPELL_RAISE_DEAD
 module.exports.SPELL_RAY_OF_ENFEEBLEMENT = SPELL_RAY_OF_ENFEEBLEMENT
 module.exports.SPELL_RAY_OF_FROST = SPELL_RAY_OF_FROST
+module.exports.SPELL_RAY_OF_SICKNESS = SPELL_RAY_OF_SICKNESS
 module.exports.SPELL_RESSURECTION = SPELL_RESSURECTION
 module.exports.SPELL_SACRED_FLAME = SPELL_SACRED_FLAME
 module.exports.SPELL_SANCTUARY = SPELL_SANCTUARY
+module.exports.SPELL_SCRYING = SPELL_SCRYING
 module.exports.SPELL_SEE_INVISIBILITY = SPELL_SEE_INVISIBILITY
 module.exports.SPELL_SHIELD = SPELL_SHIELD
 module.exports.SPELL_SHILLELAGH = SPELL_SHILLELAGH

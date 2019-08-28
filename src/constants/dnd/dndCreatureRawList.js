@@ -19825,7 +19825,7 @@ module.exports = [
       DAMAGE_COLD,
       DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
-    immunityList: [
+    immunityConditionList: [
       CONDITION_CHARMED,
     ],
     senseList: [

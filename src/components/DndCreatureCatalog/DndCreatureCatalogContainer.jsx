@@ -34,7 +34,7 @@ class DndCreatureCatalogContainer extends Component {
     this.updateList(null, showAll);
   }
 
-  onSearch = searchStr => {
+  onSearch = ({searchStr}) => {
     this.setState({searchStr});
     this.filterList(searchStr);
   }

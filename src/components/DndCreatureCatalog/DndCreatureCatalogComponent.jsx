@@ -24,7 +24,7 @@ const DndCreatureCatalogComponent = (
 
       <input
         className='DndCreatureCatalog_input'
-        onChange={({ target: { value } }) => onSearch(value)}
+        onChange={({ target: { value } }) => onSearch({searchStr: value})}
         type='search'
         placeholder='Введите имя существа на русском или английском'
         value={searchStr}

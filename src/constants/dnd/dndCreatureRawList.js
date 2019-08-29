@@ -219,6 +219,7 @@ const {
     SPELL_DISPEL_MAGIC,
     SPELL_DIVINATION,
     SPELL_DOMINATE_PERSON,
+    SPELL_DREAM,
     SPELL_DRUIDCRAFT,
     SPELL_ENLARGE_REDUCE,
     SPELL_ENTANGLE,
@@ -233,6 +234,7 @@ const {
     SPELL_GASEOUS_FORM,
     SPELL_GOODBERRY,
     SPELL_GREATER_INVISIBILITY,
+    SPELL_GREATER_RESTORATION,
     SPELL_GUST_OF_WIND,
     SPELL_HALLUCINATORY_TERRAIN,
     SPELL_HEAT_METAL,
@@ -242,6 +244,7 @@ const {
     SPELL_INSECT_PLAGUE,
     SPELL_INVISIBILITY,
     SPELL_JUMP,
+    SPELL_LESSER_RESTORATION,
     SPELL_LEVITATE,
     SPELL_LIGHT,
     SPELL_LIGHTNING_BOLT,
@@ -263,6 +266,7 @@ const {
     SPELL_POLYMORPH,
     SPELL_POWER_WORD_STUN,
     SPELL_PRESTIDIGITATION,
+    SPELL_PROTECTION_FROM_POISON,
     SPELL_PURIFY_FOOD_AND_DRINK,
     SPELL_RAISE_DEAD,
     SPELL_RAY_OF_ENFEEBLEMENT,
@@ -390,6 +394,7 @@ const {
   CREATURE_CLOUD_GIANT = 'cloud_giant',
   CREATURE_COMMONER = 'commoner',
   CREATURE_COPPER_DRAGON_WYRMLING = 'copper_dragon_wyrmling',
+  CREATURE_COUATL = 'couatl',
   CREATURE_DAO = 'dao',
   CREATURE_DEATH_TYRANT = 'death_tyrant',
   CREATURE_DEMILICH = 'demilich',
@@ -20258,6 +20263,177 @@ module.exports = [
             cubeBonus: 2,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Коатль',
+    nameEn: 'Couatl',
+    id: CREATURE_COUATL,
+    description: `Коатль — доброжелательное змееподобное существо большого интеллекта и проницательности. Их ярко раскрашенные крылья и вежливые манеры говорят о небесном происхождении.\n
+**Божественные посланники.** Коатли были созданы как стражи и посланники добрыми божествами древности, которым уже давно не поклоняются, и которые уже давно забыты всеми, кроме самих коатлей. Большинство божественных поручений, выданных коатлям, уже давно либо выполнены, либо провалены. Тем не менее, некоторые коатли по-прежнему наблюдают за древними силами, ожидают исполнения пророчеств, либо охраняют наследников существ, которых они когда-то охраняли и направляли. Вне зависимости от задания, коатли предпочитают не показываться, и раскрывают себя только если нет другого выхода.\n
+**Правдолюб.** Коатль не может лгать, но может умалчивать информацию, отвечать туманно или позволять собеседнику прийти к неверным выводам, если это необходимо, чтоб защитить что-то, сдержать обещание или скрыть тайну своего существования.\n
+**Древние и немногочисленные.** Коатли могут жить очень долго, обходясь без пищи, и даже без воздуха, но они могут умереть от болезни или старости. Коатль может предчувствовать свою смерть более чем за сто лет, но не может предвидеть, каким именно образом он умрёт.\n
+Если коатль уже достиг поставленной перед ним задачи, он принимает свою судьбу. Но если неминуемая смерть ставит под угрозу достижение целей, он начинает активно искать другого коатля, чтобы произвести потомство.\n
+Брачные ритуалы коатлей представляют собой прекрасные и замысловатые танцы магии и света, в результате которых появляется яйцо, похожее на драгоценный камень, из которого потом вылупляется новый коатль. Родитель, который искал пару, растит новорождённого коатля и рассказывает ему его обязанности, чтобы тот мог завершить задачу, которую его родитель оставит незаконченной. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CELESTIAL,
+    ],
+    aligmentId: ALIGMENT_LG,
+    source: 'MM:176',
+    armor: {
+      ac: 19,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 8,
+      cubeBonus: 39,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 90,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 20,
+      [PARAM_CON]: 17,
+      [PARAM_INT]: 18,
+      [PARAM_WIT]: 20,
+      [PARAM_CHA]: 18,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 5,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 6,
+    },
+    resistanceList: [
+      DAMAGE_RADIANT,
+    ],
+    immunityList: [
+      DAMAGE_PSYCHIC,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      LANG_ALL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием коатля являются магическими.`
+      },
+      {
+        name: 'Защищённое сознание',
+        description: `Коатль обладает иммунитетом к удалённому наблюдению, а также ко всем эффектам, чувствующим его эмоции, читающим его мысли и обнаруживающим его местонахождение.`
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 14,
+      componentOnly: CAST_VERBAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DETECT_EVIL_AND_GOOD,
+            SPELL_DETECT_MAGIC,
+            SPELL_DETECT_THOUGHTS,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_BLESS,
+            SPELL_CURE_WOUNDS,
+            SPELL_PROTECTION_FROM_POISON,
+            SPELL_LESSER_RESTORATION,
+            SPELL_CREATE_FOOD_AND_WATER,
+            SPELL_SANCTUARY,
+            SPELL_SHIELD,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_DREAM,
+            SPELL_GREATER_RESTORATION,
+            SPELL_SCRYING,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 13, иначе станет отравленной на 24 часа. Пока цель отравлена, она лишена сознания. Другое существо может действием привести цель в чувство.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Сжимание',
+        description: `Цель становится схваченной (Сл высвобождения равна 15). Пока цель схвачена, она опутана, а коатль не может сжимать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 10,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              size: {
+                max: SIZE_MEDIUM,
+              },
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Смена формы',
+        description: `Коатль магическим образом превращается в гуманоида или зверя, чей показатель опасности не превышает его собственный, или принимает свой истинный облик. Он принимает свой истинный облик, если умирает. Всё снаряжение, которое он несёт или носит, сливается с новым обликом или используется им (на выбор коатля).\n
+В новом облике коатль сохраняет свою игровую статистику и способность говорить, но КД, режимы перемещения, Сила, Ловкость и остальные действия заменяются теми, что есть у нового облика, и он получает все элементы статистики и умения (кроме классовых умений, легендарных действий и действий логова), которые есть у нового облика, но отсутствуют у него. Если у нового облика есть атака укусом, коатль может использовать в этом облике свой укус. `,
       },
     ],
   },

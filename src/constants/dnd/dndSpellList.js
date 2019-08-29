@@ -64,6 +64,7 @@ const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
 const SPELL_DISPEL_MAGIC = 'dispel_magic'
 const SPELL_DIVINATION = 'divination'
 const SPELL_DOMINATE_PERSON = 'dominate_person'
+const SPELL_DREAM = 'dream'
 const SPELL_DRUIDCRAFT = 'druidcraft'
 const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 const SPELL_ENTANGLE = 'entangle'
@@ -78,6 +79,7 @@ const SPELL_FREEDOM_OF_MOVEMENT = 'freedom_of_movement'
 const SPELL_GASEOUS_FORM = 'gaseous_form'
 const SPELL_GOODBERRY = 'goodberry'
 const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
+const SPELL_GREATER_RESTORATION = 'greater_restoration'
 const SPELL_GUST_OF_WIND = 'gust_of_wind'
 const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
 const SPELL_HEAT_METAL = 'heat_metal'
@@ -87,6 +89,7 @@ const SPELL_IDENTIFY = 'identify'
 const SPELL_INSECT_PLAGUE = 'insect_plague'
 const SPELL_INVISIBILITY = 'invisibility'
 const SPELL_JUMP = 'jump'
+const SPELL_LESSER_RESTORATION = 'lesser_restoration'
 const SPELL_LEVITATE = 'levitate'
 const SPELL_LIGHT = 'light'
 const SPELL_LIGHTNING_BOLT = 'lightning_bolt'
@@ -108,6 +111,7 @@ const SPELL_POISON_SPRAY = 'poison_spray'
 const SPELL_POLYMORPH = 'polymorph'
 const SPELL_POWER_WORD_STUN = 'power_word_stun'
 const SPELL_PRESTIDIGITATION = 'prestidigitation'
+const SPELL_PROTECTION_FROM_POISON = 'protection_from_poison'
 const SPELL_PURIFY_FOOD_AND_DRINK = 'purify_food_and_drink'
 const SPELL_RAISE_DEAD = 'raise_dead'
 const SPELL_RAY_OF_ENFEEBLEMENT = 'ray_of_enfeeblement'
@@ -1783,6 +1787,62 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_PROTECTION_FROM_POISON,
+    name: 'Защита от яда',
+    nameEn: 'Protection from poison',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_LESSER_RESTORATION,
+    name: 'Малое восстановление',
+    nameEn: 'Lesser restoration',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_GREATER_RESTORATION,
+    name: 'Высшее восстановление',
+    nameEn: 'Greater restoration',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_DREAM,
+    name: 'Вещий сон',
+    nameEn: 'dream',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1831,6 +1891,7 @@ module.exports.SPELL_DISPEL_EVIL_AND_GOOD = SPELL_DISPEL_EVIL_AND_GOOD
 module.exports.SPELL_DISPEL_MAGIC = SPELL_DISPEL_MAGIC
 module.exports.SPELL_DIVINATION = SPELL_DIVINATION
 module.exports.SPELL_DOMINATE_PERSON = SPELL_DOMINATE_PERSON
+module.exports.SPELL_DREAM = SPELL_DREAM
 module.exports.SPELL_DRUIDCRAFT = SPELL_DRUIDCRAFT
 module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
 module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
@@ -1845,6 +1906,7 @@ module.exports.SPELL_FREEDOM_OF_MOVEMENT = SPELL_FREEDOM_OF_MOVEMENT
 module.exports.SPELL_GASEOUS_FORM = SPELL_GASEOUS_FORM
 module.exports.SPELL_GOODBERRY = SPELL_GOODBERRY
 module.exports.SPELL_GREATER_INVISIBILITY = SPELL_GREATER_INVISIBILITY
+module.exports.SPELL_GREATER_RESTORATION = SPELL_GREATER_RESTORATION
 module.exports.SPELL_GUST_OF_WIND = SPELL_GUST_OF_WIND
 module.exports.SPELL_HALLUCINATORY_TERRAIN = SPELL_HALLUCINATORY_TERRAIN
 module.exports.SPELL_HEAT_METAL = SPELL_HEAT_METAL
@@ -1854,6 +1916,7 @@ module.exports.SPELL_IDENTIFY = SPELL_IDENTIFY
 module.exports.SPELL_INSECT_PLAGUE = SPELL_INSECT_PLAGUE
 module.exports.SPELL_INVISIBILITY = SPELL_INVISIBILITY
 module.exports.SPELL_JUMP = SPELL_JUMP
+module.exports.SPELL_LESSER_RESTORATION = SPELL_LESSER_RESTORATION
 module.exports.SPELL_LEVITATE = SPELL_LEVITATE
 module.exports.SPELL_LIGHT = SPELL_LIGHT
 module.exports.SPELL_LIGHTNING_BOLT = SPELL_LIGHTNING_BOLT
@@ -1875,6 +1938,7 @@ module.exports.SPELL_POISON_SPRAY = SPELL_POISON_SPRAY
 module.exports.SPELL_POLYMORPH = SPELL_POLYMORPH
 module.exports.SPELL_POWER_WORD_STUN = SPELL_POWER_WORD_STUN
 module.exports.SPELL_PRESTIDIGITATION = SPELL_PRESTIDIGITATION
+module.exports.SPELL_PROTECTION_FROM_POISON = SPELL_PROTECTION_FROM_POISON
 module.exports.SPELL_PURIFY_FOOD_AND_DRINK = SPELL_PURIFY_FOOD_AND_DRINK
 module.exports.SPELL_RAISE_DEAD = SPELL_RAISE_DEAD
 module.exports.SPELL_RAY_OF_ENFEEBLEMENT = SPELL_RAY_OF_ENFEEBLEMENT

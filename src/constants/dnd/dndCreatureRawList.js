@@ -512,6 +512,7 @@ const {
   CREATURE_WATER_WEIRD = 'water_weird',
   CREATURE_WHITE_DRAGON_WYRMLING = 'white_dragon_wyrmling',
   CREATURE_WILL_O_WISP = 'will_o_wisp',
+  CREATURE_WINGED_KOBOLD = 'winged_kobold',
   CREATURE_WYVERN = 'wyvern',
   CREATURE_XORN = 'xorn',
   CREATURE_YETI = 'yeti',
@@ -20528,6 +20529,103 @@ module.exports = [
             cubeCount: 1,
             cubeType: 4,
             cubeBonus: 2,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Крылатый кобольд',
+    nameAlt: 'Урд',
+    nameEn: 'Winged kobold',
+    nameEnAlt: 'Urd',
+    id: CREATURE_WINGED_KOBOLD,
+    description: `Некоторые кобольды рождены с кожистыми крыльями и могут летать. Известные как урды, они любят таиться на высоких уступах и бросаться на прохожих. Хотя крылья урдов считаются подарком от Тиамат, Королевы Драконов, бескрылые кобольды завидуют этому подарку и не ладят с урдами.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_KOBOLD,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:177',
+    armor: 13,
+    hp: {
+      cubeCount: 3,
+      cubeType: 6,
+      cubeBonus: -3,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 7,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 9,
+      [PARAM_INT]: 8,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 8,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 8,
+      },
+    ],
+    languageList: [
+      LANG_DRACONIC,
+      LANG_COMMON,
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Чувствительность к солнечному свету',
+        description: `Находясь на солнечном свету, кобольд совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`
+      },
+      {
+        name: 'Тактика стаи',
+        description: `Кобольд совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа 
+находится как минимум один дееспособный союзник кобольда.`
+      },
+    ],
+    actionList: [
+      {
+        name: 'Кинжал',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Брошенный камень',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 5,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: {
+            count: 1,
+            comment: 'непосредственно под кобольдом',
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
           },
         },
       },

@@ -405,6 +405,7 @@ const {
   CREATURE_CHASME = 'chasme',
   CREATURE_CLAY_GOLEM = 'clay_golem',
   CREATURE_CLOUD_GIANT = 'cloud_giant',
+  CREATURE_COCKATRICE = 'cockatrice',
   CREATURE_COMMONER = 'commoner',
   CREATURE_COPPER_DRAGON_WYRMLING = 'copper_dragon_wyrmling',
   CREATURE_COUATL = 'couatl',
@@ -21631,6 +21632,69 @@ module.exports = [
             cubeCount: 1,
             cubeType: 4,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Куролиск',
+    nameEn: 'Cockatrice',
+    id: CREATURE_COCKATRICE,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:186',
+    armor: 11,
+    hp: {
+      cubeCount: 6,
+      cubeType: 6,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 40,
+    },
+    params: {
+      [PARAM_STR]: 6,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_1_2,
+    actionList: [
+      {
+        name: 'Укус',
+        description: `цель должна преуспеть в спасброске Телосложения со Сл 11, чтобы не превратиться магическим образом в камень. При провале существо начинает превращаться в камень и становится опутанным. Оно должно повторить этот спасбросок в конце своего следующего хода. При успехе эффект заканчивается. При провале существо становится окаменевшим на 24 часа. `,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 1,
           },
         },
       },

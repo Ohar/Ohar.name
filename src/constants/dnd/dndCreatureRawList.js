@@ -480,7 +480,7 @@ const {
   CREATURE_KOBOLD = 'kobold',
   CREATURE_KRAKEN = 'kraken',
   CREATURE_KUO_TOA = 'kuo_toa',
-  CREATURE_KUO_TOA_ARCHPRIЕST = 'kuo_toa_archpriеst',
+  CREATURE_KUO_TOA_ARCHPRIEST = 'kuo_toa_archpriest',
   CREATURE_KUO_TOA_MONITOR = 'kuo_toa_monitor',
   CREATURE_KUO_TOA_WHIP = 'kuo_toa_whip',
   CREATURE_LEMURE = 'lemure',
@@ -21509,7 +21509,7 @@ module.exports = [
   {
     name: 'Верховный жрец куо-тоа',
     nameEn: 'Kuo-toa archpriеst',
-    id: CREATURE_KUO_TOA_ARCHPRIЕST,
+    id: CREATURE_KUO_TOA_ARCHPRIEST,
     ...kuoToaTexts,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [

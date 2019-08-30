@@ -1,8 +1,9 @@
-const COEF_ITEM_PER_COLUMN = 5
+const COEF_ITEM_PER_COLUMN = 10
 const MAX_COLUMN = 4
-const DESCRIPTION_COEF = 1/400
-const NO_DESCRIPTION_WEIGNT = 0
-const ITEM_WEIGNT = 1
+const DESCRIPTION_COEF = 1/200
+const NO_DESCRIPTION_WEIGNT = .25
+const BASIC_WEIGNT = 6
+const ITEM_WEIGNT = .75
 
 export default (
   {
@@ -25,7 +26,7 @@ export default (
       ),
       0
     ),
-    0
+    BASIC_WEIGNT
   )
 
   for (let i = MAX_COLUMN; i > 1; i--) {

@@ -11,10 +11,10 @@ const dndCreatureRawCollection = dndCreatureRawList.reduce(
   {}
 )
 
-const extendList = ({creature, parent, nameList}) => {
+const extendList = ({creature, parent, extendPropNameList}) => {
   const RESULT_DEFAULT = {}
 
-  const extended = nameList.reduce(
+  const extended = extendPropNameList.reduce(
     (result, listName) => creature[listName] && parent[listName]
       ? {
         ...result,
@@ -47,17 +47,17 @@ const dndCreatureList = dndCreatureRawList
         ? dndCreatureRawCollection[creature.parentId]
         : {}
 
+      const extendPropNameList = creature.extendPropCollection
+        ? Object.keys(creature.extendPropCollection)
+        : []
+
       const creatureFilled = {
         ...parent,
         ...extendList(
           {
             creature,
             parent,
-            nameList: [
-              'actionList',
-              'featureList',
-              'params',
-            ],
+            extendPropNameList,
           }
         ),
       }

@@ -475,6 +475,7 @@ const {
   CREATURE_KOBOLD = 'kobold',
   CREATURE_KRAKEN = 'kraken',
   CREATURE_KUO_TOA = 'kuo_toa',
+  CREATURE_KUO_TOA_MONITOR = 'kuo_toa_monitor',
   CREATURE_KUO_TOA_WHIP = 'kuo_toa_whip',
   CREATURE_LEMURE = 'lemure',
   CREATURE_MANES = 'manes',
@@ -21436,6 +21437,62 @@ module.exports = [
             cubeType: 6,
             cubeBonus: 2,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Куо-тоа надзиратель',
+    nameEn: 'Kuo-toa Monitor',
+    id: CREATURE_KUO_TOA_MONITOR,
+    parentId: CREATURE_KUO_TOA_WHIP,
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    cr: CR_3,
+    spellCast: null,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Куо-тоа совершает одну атаку укусом, и два безоружных удара.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Безоружный удар',
+        description: `Цель не может совершать реакции до конца следующего хода куо-тоа.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_ELECTRICITY,
+              cubeCount: 1,
+              cubeType: 6,
+            },
+          ],
         },
       },
     ],

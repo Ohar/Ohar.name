@@ -2,7 +2,11 @@ import React from 'react'
 
 import DndCreatureDescriptionComponent from './DndCreatureDescriptionComponent'
 
-const DndCreatureDescriptionContainer = ({name, nameAlt, nameEn, nameEnAlt, description, ...rest}) => {
+const COLUMN_COEF = 1000
+const MAX_COLUMN = 3
+const MAX_LEN_TO_HANDLE = MAX_COLUMN * COLUMN_COEF
+
+const DndCreatureDescriptionContainer = ({name, nameAlt, nameEn, nameEnAlt, description = '', ...rest}) => {
   const nameEnAltText = nameEnAlt
     ? ` (${nameEnAlt})`
     : ''
@@ -12,11 +16,16 @@ const DndCreatureDescriptionContainer = ({name, nameAlt, nameEn, nameEnAlt, desc
   const nameText = `${name}${nameAltText}`
   const nameEnText = `${nameEn}${nameEnAltText}`
 
+  const columnCount = description.length > MAX_LEN_TO_HANDLE
+    ? MAX_COLUMN
+    : Math.ceil(description.length / COLUMN_COEF)
+
   return (
     <DndCreatureDescriptionComponent
       nameText={nameText}
       nameEnText={nameEnText}
       description={description}
+      columnCount={columnCount}
       {...rest}
     />
   )

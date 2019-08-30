@@ -30,11 +30,6 @@ const dndManualList = [
     id: 'Homebrew',
     name: 'Самоделка',
   },
-  {
-    id: 'R20',
-    name: 'Roll20',
-    isUrl: true,
-  },
 ]
 
 export const dndManualCollection = listToCollectionById(dndManualList)

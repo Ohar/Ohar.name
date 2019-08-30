@@ -14716,8 +14716,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CG,
-    // В Бестиарии перевода студии Phantom неправильная информация
-    source: 'R20:https://roll20.net/compendium/dnd5e/Ancient%20Copper%20Dragon#toc_4',
+    source: {
+      url: 'https://roll20.net/compendium/dnd5e/Ancient%20Copper%20Dragon#toc_4',
+      problemText: `В Бестиарии перевода студии Phantom наполовину неправильный статблок`,
+    },
     armor: {
       ac: 21,
       type: 'природный доспех',

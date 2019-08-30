@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 import './PageTitleStyles.css'
 
-const PageTitleComponent = ({children}) => (
-  <h1 className='PageTitle'>
+const PageTitleComponent = ({children, className = ''}) => (
+  <h1 className={`PageTitle ${className}`}>
     {children}
   </h1>
 )

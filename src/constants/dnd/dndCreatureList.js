@@ -40,6 +40,9 @@ const extendList = ({creature, parent, extendPropNameList}) => {
     }
 }
 
+const handleDescription = text => text
+  .replace(/CREATURE:/g, '/dnd/creature-catalog/')
+
 const dndCreatureList = dndCreatureRawList
   .map(
     creature => {
@@ -76,6 +79,7 @@ const dndCreatureList = dndCreatureRawList
   creature => ({
     ...creature,
     isFemale: Boolean(creature.isFemale),
+    description: handleDescription(creature.description),
     [SEARCH_PROP_NAME]: prepareForSearch(
       [
         creature.name,

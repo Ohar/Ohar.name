@@ -474,6 +474,7 @@ const {
   CREATURE_NEEDLE_BLIGHT = 'needle_blight',
   CREATURE_NIGHT_HAG = 'night_hag',
   CREATURE_NIGHT_HAG_COVEN = 'night_hag_coven',
+  CREATURE_NIGHTMARE = 'nightmare',
   CREATURE_PLANETAR = 'planetar',
   CREATURE_QUASIT = 'quasit',
   CREATURE_QUASIT_FAMILIAR = 'quasit_familiar',
@@ -20628,6 +20629,89 @@ module.exports = [
             cubeBonus: 3,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Кошмар',
+    nameEn: 'Nightmare',
+    id: CREATURE_NIGHTMARE,
+    description: `Кошмар появляется в облаке дыма, его грива, хвост и копыта объяты огнём. Это жуткое чёрное существо двигается со сверхъестественной скоростью, исчезая в облаке серы так же быстро, как появляясь.\n
+**Скакун ужаса.** Кошмар, которого также называют «демонической» или «адской» лошадью, служит ездовым животным существам невероятного зла, перевозя на себе демонов, дьяволов, рыцарей смерти, личей, ночных карг и других злых чудовищ. Он похож на лошадь, но его огненно-красные глаза выдают в нём его недобрый интеллект.\n
+Кошмара можно призвать из Нижних Планов, но если ему не принесена жертва в качестве еды при появлении, кошмар не демонстрирует особенной верности существу, которому служит.\n
+**Создание кошмара.** Кошмар не появляется на свет естественным путём. Их делают из пегасов. Ритуал для создания кошмара включает в себя мучительное лишение пегаса крыльев, и при этом их подвергают воздействию тёмной магии. `,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:178',
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 10,
+      cubeBonus: 24,
+    },
+    speed: {
+      [SPEED_WALK]: 60,
+      [SPEED_FLY]: 90,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 15,
+    },
+    immunityList: [
+      DAMAGE_FIRE,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      {
+        id: [LANG_INFERNAL, LANG_COMMON, LANG_ABYSSAL],
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Дарование сопротивления к огню',
+        description: `Кошмар может предоставить сопротивление к урону огнём всем, кто на нём едет.`
+      },
+      {
+        name: 'Свечение',
+        description: `Кошмар испускает яркий свет в радиусе 10 футов и тусклый свет в пределах ещё 10 футов.`
+      },
+    ],
+    actionList: [
+      {
+        name: 'Копыта',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Эфирный шаг',
+        description: `Кошмар, а также до трёх согласных существ в пределах 5 футов от него, магическим образом переходят на Эфирный План с Материального Плана, или наоборот.`,
       },
     ],
   },

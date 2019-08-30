@@ -80,6 +80,7 @@ const SPELL_GASEOUS_FORM = 'gaseous_form'
 const SPELL_GOODBERRY = 'goodberry'
 const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
 const SPELL_GREATER_RESTORATION = 'greater_restoration'
+const SPELL_GUIDANCE = 'guidance'
 const SPELL_GUST_OF_WIND = 'gust_of_wind'
 const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
 const SPELL_HEAT_METAL = 'heat_metal'
@@ -97,6 +98,7 @@ const SPELL_LOCATE_OBJECT = 'locate_object'
 const SPELL_MAGE_HAND = 'mage_hand'
 const SPELL_MAGIC_MISSILE = 'magic_missile'
 const SPELL_MAJOR_IMAGE = 'major_image'
+const SPELL_MASS_CURE_WOUNDS = 'mass_cure_wounds'
 const SPELL_MINOR_ILLUSION = 'minor_illusion'
 const SPELL_MIRROR_IMAGE = 'mirror_image'
 const SPELL_MISTY_STEP = 'misty_step'
@@ -127,6 +129,8 @@ const SPELL_SHIELD_OF_FAITH = 'shield_of_faith'
 const SPELL_SHILLELAGH = 'shillelagh'
 const SPELL_SILENCE = 'silence'
 const SPELL_SLEEP = 'sleep'
+const SPELL_SPIRIT_GUARDIANS = 'spirit_guardians'
+const SPELL_SPIRITUAL_WEAPON = 'spiritual_weapon'
 const SPELL_STONE_SHAPE = 'stone_shape'
 const SPELL_SUGGESTION = 'suggestion'
 const SPELL_TELEKINESIS = 'telekinesis'
@@ -1858,6 +1862,62 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_SPIRIT_GUARDIANS,
+    name: 'Духовные стражи',
+    nameEn: 'Spirit guardians',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_SPIRITUAL_WEAPON,
+    name: 'Божественное оружие',
+    nameEn: 'Spiritual weapon',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_GUIDANCE,
+    name: 'Указание',
+    nameEn: 'Guidance',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_MASS_CURE_WOUNDS,
+    name: 'Множественное лечение ран',
+    nameEn: 'Mass cure wounds',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1922,6 +1982,7 @@ module.exports.SPELL_GASEOUS_FORM = SPELL_GASEOUS_FORM
 module.exports.SPELL_GOODBERRY = SPELL_GOODBERRY
 module.exports.SPELL_GREATER_INVISIBILITY = SPELL_GREATER_INVISIBILITY
 module.exports.SPELL_GREATER_RESTORATION = SPELL_GREATER_RESTORATION
+module.exports.SPELL_GUIDANCE = SPELL_GUIDANCE
 module.exports.SPELL_GUST_OF_WIND = SPELL_GUST_OF_WIND
 module.exports.SPELL_HALLUCINATORY_TERRAIN = SPELL_HALLUCINATORY_TERRAIN
 module.exports.SPELL_HEAT_METAL = SPELL_HEAT_METAL
@@ -1939,6 +2000,7 @@ module.exports.SPELL_LOCATE_OBJECT = SPELL_LOCATE_OBJECT
 module.exports.SPELL_MAGE_HAND = SPELL_MAGE_HAND
 module.exports.SPELL_MAGIC_MISSILE = SPELL_MAGIC_MISSILE
 module.exports.SPELL_MAJOR_IMAGE = SPELL_MAJOR_IMAGE
+module.exports.SPELL_MASS_CURE_WOUNDS = SPELL_MASS_CURE_WOUNDS
 module.exports.SPELL_MINOR_ILLUSION = SPELL_MINOR_ILLUSION
 module.exports.SPELL_MIRROR_IMAGE = SPELL_MIRROR_IMAGE
 module.exports.SPELL_MISTY_STEP = SPELL_MISTY_STEP
@@ -1969,6 +2031,8 @@ module.exports.SPELL_SHIELD_OF_FAITH = SPELL_SHIELD_OF_FAITH
 module.exports.SPELL_SHILLELAGH = SPELL_SHILLELAGH
 module.exports.SPELL_SILENCE = SPELL_SILENCE
 module.exports.SPELL_SLEEP = SPELL_SLEEP
+module.exports.SPELL_SPIRIT_GUARDIANS = SPELL_SPIRIT_GUARDIANS
+module.exports.SPELL_SPIRITUAL_WEAPON = SPELL_SPIRITUAL_WEAPON
 module.exports.SPELL_STONE_SHAPE = SPELL_STONE_SHAPE
 module.exports.SPELL_SUGGESTION = SPELL_SUGGESTION
 module.exports.SPELL_TELEKINESIS = SPELL_TELEKINESIS

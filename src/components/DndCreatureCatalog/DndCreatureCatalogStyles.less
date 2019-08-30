@@ -1,16 +1,7 @@
 @import './../../styles/mixin';
 
 @columnWidth: 250px;
-
 @size: 2rem;
-@sizeBig: @size * 1.5;
-@halfSize: @size / 2;
-
-.SplitByColumns (@columnCount) {
-    @media (max-width: (@columnWidth * @columnCount * .75)) {
-        columns: @columnCount;
-    }
-}
 
 .DndCreatureCatalog {
   padding-bottom: 2rem;
@@ -19,30 +10,18 @@
 .DndCreatureCatalog_letterList {
     margin-top: @size;
     columns: @columnWidth auto;
-
-    //.SplitByColumns(10);
-    //.SplitByColumns(9);
-    //.SplitByColumns(8);
-    //.SplitByColumns(7);
-    //.SplitByColumns(6);
-    //.SplitByColumns(5);
-    //.SplitByColumns(4);
-    //.SplitByColumns(3);
-    //.SplitByColumns(2);
-    //.SplitByColumns(1);
 }
 
 .DndCreatureCatalog_creatureList {
     list-style-type: none;
-    margin-bottom: @halfSize;
+    margin-bottom: @size;
 }
 
 .DndCreatureCatalog_creatureItem {
-
     position: relative;
 
     &:first-child {
-      padding-top: @sizeBig;
+      margin-top: 0;
 
       &:before {
         content: attr(data-letter);
@@ -50,8 +29,8 @@
         width: @size;
         height: @size;
         position: absolute;
-        top: @halfSize;
-        left: -@sizeBig;
+        top: 0;
+        left: -@size * 1.5;
         font-size: @size;
         text-align: center;
       }

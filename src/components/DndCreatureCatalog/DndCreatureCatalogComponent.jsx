@@ -47,14 +47,20 @@ const DndCreatureCatalogComponent = (
                       >
                         {
                           creatureCollection[letter].map(
-                            ({id, ...rest }) => {
+                            ({id, ...rest }, i) => {
                               const { header, title } = generateCreatureNameStr(rest)
 
                               return (
                                 <li
                                   className='DndCreatureCatalog_creatureItem'
                                   key={id}
-                                  data-letter={letter}
+                                  {
+                                    ...(
+                                      i === 0
+                                        ? { 'data-letter':letter }
+                                        : {}
+                                    )
+                                  }
                                 >
                                   <Link
                                     title={title}

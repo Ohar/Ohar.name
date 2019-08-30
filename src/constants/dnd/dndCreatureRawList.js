@@ -21450,6 +21450,7 @@ module.exports = [
       ac: 13,
       type: 'природный доспех',
     },
+    source: 'MM:183',
     cr: CR_3,
     spellCast: null,
     actionList: [

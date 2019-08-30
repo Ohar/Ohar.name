@@ -207,6 +207,7 @@ const {
     SPELL_CONFUSION,
     SPELL_CONJURE_ELEMENTAL,
     SPELL_CONTACT_OTHER_PLANE,
+    SPELL_CONTROL_WATER,
     SPELL_CONTROL_WEATHER,
     SPELL_COUNTERSPELL,
     SPELL_CREATE_FOOD_AND_WATER,
@@ -21516,7 +21517,10 @@ module.exports = [
       CREATURE_TYPE_KUO_TOA,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:185',
+    source: {
+      url: 'https://www.aidedd.org/dnd/monstres.php?vo=kuo-toa-archpriest',
+      problemText: `В Бестиарии перевода студии Phantom ошибка: у Верховного жреца куо-тоа  не заклинание Власть над погодой, а заклинание Власть над водами. У него не может быть заклинания Власть над погодой, потому что оно 8 уровня. На английском слова weather и water схожи, скорее всего, фантомы просто проглядели.`,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -21564,7 +21568,7 @@ module.exports = [
       saveThrowDc: 14,
       spellAttackBonus: 6,
       spellIdList: [
-        SPELL_CONTROL_WEATHER,
+        SPELL_CONTROL_WATER,
         SPELL_DETECT_MAGIC,
         SPELL_DIVINATION,
         SPELL_GUIDANCE,

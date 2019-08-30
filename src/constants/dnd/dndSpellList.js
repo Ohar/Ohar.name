@@ -123,6 +123,7 @@ const SPELL_SANCTUARY = 'sanctuary'
 const SPELL_SCRYING = 'scrying'
 const SPELL_SEE_INVISIBILITY = 'see_invisibility'
 const SPELL_SHIELD = 'shield'
+const SPELL_SHIELD_OF_FAITH = 'shield_of_faith'
 const SPELL_SHILLELAGH = 'shillelagh'
 const SPELL_SILENCE = 'silence'
 const SPELL_SLEEP = 'sleep'
@@ -1843,6 +1844,20 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_SHIELD_OF_FAITH,
+    name: 'Щит веры',
+    nameEn: 'Shield of faith',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1950,6 +1965,7 @@ module.exports.SPELL_SANCTUARY = SPELL_SANCTUARY
 module.exports.SPELL_SCRYING = SPELL_SCRYING
 module.exports.SPELL_SEE_INVISIBILITY = SPELL_SEE_INVISIBILITY
 module.exports.SPELL_SHIELD = SPELL_SHIELD
+module.exports.SPELL_SHIELD_OF_FAITH = SPELL_SHIELD_OF_FAITH
 module.exports.SPELL_SHILLELAGH = SPELL_SHILLELAGH
 module.exports.SPELL_SILENCE = SPELL_SILENCE
 module.exports.SPELL_SLEEP = SPELL_SLEEP

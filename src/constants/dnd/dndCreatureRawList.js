@@ -282,6 +282,7 @@ const {
     SPELL_SCRYING,
     SPELL_SEE_INVISIBILITY,
     SPELL_SHIELD,
+    SPELL_SHIELD_OF_FAITH,
     SPELL_SHILLELAGH,
     SPELL_SILENCE,
     SPELL_SLEEP,
@@ -474,6 +475,7 @@ const {
   CREATURE_KOBOLD = 'kobold',
   CREATURE_KRAKEN = 'kraken',
   CREATURE_KUO_TOA = 'kuo_toa',
+  CREATURE_KUO_TOA_WHIP = 'kuo_toa_whip',
   CREATURE_LEMURE = 'lemure',
   CREATURE_MANES = 'manes',
   CREATURE_MARID = 'marid',
@@ -21306,6 +21308,113 @@ module.exports = [
       {
         name: 'Липкий щит',
         description: `Если существо промахивается по куо-тоа атакой рукопашным оружием, куо-тоа использует липкий щит, чтобы поймать оружие. Атакующий должен преуспеть в спасброске Силы со Сл 11, иначе оружие приклеится к щиту куо-тоа. Если владелец оружия не хочет или не может отпустить оружие, он становится схваченным, пока не отклеит оружие. Приклеенное оружие нельзя использовать. Любое существо может оторвать оружие действием, если совершит проверку Силы со Сл 11 и преуспеет.  `,
+      },
+    ],
+  },
+  {
+    name: 'Куо-тоа кнут',
+    nameEn: 'Kuo-toa Whip',
+    id: CREATURE_KUO_TOA_WHIP,
+    ...kuoToaTexts,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_KUO_TOA,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:185',
+    armor: {
+      ac: 11,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 8,
+      cubeBonus: 20,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 6,
+      [SKILL_RELIGION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 16,
+      },
+    ],
+    languageList: [
+      LANG_UNDERCOMMON,
+    ],
+    cr: CR_1,
+    featureList: kuoToaFeatures,
+    spellCast: {
+      spellCasterLevel: 2,
+      spellCasterClass: PC_CLASS_PRIEST,
+      baseStat: PARAM_WIT,
+      spellAttackBonus: 4,
+      saveThrowDc: 12,
+      spellIdList: [
+        SPELL_SACRED_FLAME,
+        SPELL_THAUMATURGY,
+        SPELL_BANE,
+        SPELL_SHIELD_OF_FAITH,
+      ],
+      slotCountList: [
+        Infinity,
+        3,
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Куо-тоа совершает две атаки: одну укусом и одну клешнепосохом.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Клешнепосох',
+        description: `Если цель — существо с размером не больше Среднего, она становится схваченной (Сл высвобождения 14). Пока захват не окончится, куо-тоа не может использовать клешнепосох на другой цели.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
       },
     ],
   },

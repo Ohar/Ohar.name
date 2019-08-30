@@ -9,14 +9,23 @@ export default ({armor}) => (
       arrify(armor)
         .map(
           item => {
-            const ac = item.ac || item
-            const type = item.type || ''
+            if (typeof item === 'string' || typeof item === 'number') {
+              return item
+            }
 
-            return type
-              ? `${ac} (${type})`
-              : ac
+            if (typeof item === 'object') {
+              const {ac, type, comment} = item
+              const typeStr = type
+                ? `(${type})`
+                : ''
+
+              return `${ac} ${typeStr} ${comment}`
+            }
+
+            return null
           }
         )
+        .filter(e => e)
         .join(', ')
     }
   </DndCreatureInfo>

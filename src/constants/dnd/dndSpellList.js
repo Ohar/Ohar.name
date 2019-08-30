@@ -48,6 +48,7 @@ const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
 const SPELL_CONFUSION = 'confusion'
 const SPELL_CONJURE_ELEMENTAL = 'conjure_elemental'
 const SPELL_CONTACT_OTHER_PLANE = 'contact_other_plane'
+const SPELL_CONTROL_WATER = 'control_water'
 const SPELL_CONTROL_WEATHER = 'control_weather'
 const SPELL_COUNTERSPELL = 'counterspell'
 const SPELL_CREATE_FOOD_AND_WATER = 'create_food_and_water'
@@ -1918,6 +1919,20 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_CONTROL_WATER,
+    name: 'Власть над водами',
+    nameEn: 'Control water',
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1950,6 +1965,7 @@ module.exports.SPELL_COMPREHEND_LANGUAGES = SPELL_COMPREHEND_LANGUAGES
 module.exports.SPELL_CONFUSION = SPELL_CONFUSION
 module.exports.SPELL_CONJURE_ELEMENTAL = SPELL_CONJURE_ELEMENTAL
 module.exports.SPELL_CONTACT_OTHER_PLANE = SPELL_CONTACT_OTHER_PLANE
+module.exports.SPELL_CONTROL_WATER = SPELL_CONTROL_WATER
 module.exports.SPELL_CONTROL_WEATHER = SPELL_CONTROL_WEATHER
 module.exports.SPELL_COUNTERSPELL = SPELL_COUNTERSPELL
 module.exports.SPELL_CREATE_FOOD_AND_WATER = SPELL_CREATE_FOOD_AND_WATER

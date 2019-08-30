@@ -123,6 +123,7 @@ const {
     LANG_GNOMISH,
     LANG_GOBLIN,
     LANG_GRELL,
+    LANG_HOOK_HORROR,
     LANG_IGNAN,
     LANG_INFERNAL,
     LANG_ITS_CREATOR,
@@ -454,6 +455,7 @@ const {
   CREATURE_HEZROU = 'hezrou',
   CREATURE_HILL_GIANT = 'hill_giant',
   CREATURE_HOMUNCULUS = 'homunculus',
+  CREATURE_HOOK_HORROR = 'hook_horror',
   CREATURE_HORNED_DEVIL = 'horned_devil',
   CREATURE_HORNED_DEVIL_SUMMONER = 'horned_devil_summoner',
   CREATURE_HYDRA = 'hydra',
@@ -21081,6 +21083,95 @@ module.exports = [
             cubeType: 4,
             cubeBonus: 3,
             comment: ', и кровопийца прикрепляется к цели',
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Крюкастый ужас',
+    nameEn: 'Hook horror',
+    id: CREATURE_HOOK_HORROR,
+    description: `Являясь яростным хищником Подземья, крюкастый ужас защищает свои охотничьи угодья. В подземных пещерах, где обитают эти существа, постоянное скрипучее эхо от крюков, которыми эти существа царапают стены.\n
+У чудовищного крюкастого ужаса голова как у грифа, туловище огромного жука с панцирем из костяных наростов. Своё название он получил из-за длинных, крепко сложенных рук и ног, которые заканчиваются искривлёнными крючковатыми когтями.\n
+**Эхо в темноте.** Крюкастые ужасы общаются путём ударов крючьев о панцирь или окружающую каменную поверхность. То, что звучит для других как случайные постукивания, на самом деле — сложный язык, который гулко разносится на многие мили по Подземью и понятен только крюкастым ужасам.\n
+**Стайные хищники.** Всеядные крюкастые ужасы едят лишайники, грибы, растения и всех существ, которых могут поймать. Конечности крюкастого ужаса дают ему отличную устойчивость на поверхности скал. Они используют свои навыки лазания, чтобы устраивать засады на потолке. Крюкастые ужасы охотятся стаями, работая вместе против крупнейших и самых опасных противников. Если бой идёт не в его пользу, крюкастый ужас быстро поднимается на стену пещеры, чтобы сбежать.\n
+**Обособленные кланы.** Крюкастые ужасы живут в обширных группах семей или кланов. Каждый клан управляется старшей женской особью, чей партнёр, как правило, отвечает за охотников клана. Крюкастые ужасы откладывают яйца, которые сгруппированы в центральной, хорошо защищённой пещере клана. `,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:181',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 10,
+      cubeBonus: 20,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 10,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_HOOK_HORROR,
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Эхолокация',
+        description: `Крюкастый ужас не может использовать слепое зрение, будучи оглохшим.`
+      },
+      {
+        name: 'Острый слух',
+        description: `Крюкастый ужас совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух.`
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Крюкастый ужас совершает две атаки крюками.`,
+      },
+      {
+        name: 'Крюк',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
           },
         },
       },

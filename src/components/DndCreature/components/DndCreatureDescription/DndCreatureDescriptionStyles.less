@@ -4,7 +4,7 @@
   padding: 2rem 1.5rem;
   color: black;
   background-color: #D9D7C9;
-  max-width: 1000px;
+  width: auto;
 
   @lineGap: 1rem;
 
@@ -43,26 +43,27 @@
 
 .DndCreatureDescription_content {
   @columnWidth: 400px;
+  column-count: 1;
 
   column-width: @columnWidth;
 
   .DndCreatureDescription-columnCount_2 & {
-    columns: 2;
+    column-count: 2;
   }
   .DndCreatureDescription-columnCount_3 & {
-    columns: 3;
+    column-count: 3;
   }
 
   @media (max-width: ((3 * @columnWidth) - 1px)) {
     .DndCreatureDescription-columnCount_3 & {
-      columns: 2;
+      column-count: 2;
     }
   }
 
   @media (max-width: ((2 * @columnWidth) - 1px)) {
     .DndCreatureDescription-columnCount_2 &,
     .DndCreatureDescription-columnCount_3 & {
-      columns: 1;
+      column-count: 1;
     }
   }
 

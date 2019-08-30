@@ -2,7 +2,7 @@ import React from 'react'
 
 import DndCreatureDescriptionComponent from './DndCreatureDescriptionComponent'
 
-const COLUMN_COEF = 1000
+const COLUMN_COEF = 1500
 const MAX_COLUMN = 3
 const MAX_LEN_TO_HANDLE = MAX_COLUMN * COLUMN_COEF
 

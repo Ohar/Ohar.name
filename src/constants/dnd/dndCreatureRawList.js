@@ -63,6 +63,7 @@ const {
     CREATURE_TYPE_GNOME,
     CREATURE_TYPE_GOBLINOID,
     CREATURE_TYPE_GRIMLOCK,
+    CREATURE_TYPE_HUMAN,
     CREATURE_TYPE_HUMANOID,
     CREATURE_TYPE_KENKU,
     CREATURE_TYPE_KOBOLD,
@@ -72,7 +73,7 @@ const {
     CREATURE_TYPE_QUAGGOTH,
     CREATURE_TYPE_SHAPESHIFTER,
     CREATURE_TYPE_TITAN,
-    CREATURE_TYPE_UNDEAD
+    CREATURE_TYPE_UNDEAD,
   } = require('./dndCreatureTypeList'),
   {
     ALIGMENT_ANY,
@@ -531,6 +532,7 @@ const {
   CREATURE_VIOLET_FUNGUS = 'violet_fungus',
   CREATURE_VROCK = 'vrock',
   CREATURE_WATER_WEIRD = 'water_weird',
+  CREATURE_WEREBOAR = 'wereboar',
   CREATURE_WHITE_DRAGON_WYRMLING = 'white_dragon_wyrmling',
   CREATURE_WILL_O_WISP = 'will_o_wisp',
   CREATURE_WINGED_KOBOLD = 'winged_kobold',
@@ -21697,6 +21699,128 @@ module.exports = [
             cubeCount: 1,
             cubeType: 4,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Вервепрь',
+    nameAlt: 'Веркабан',
+    nameEn: 'Wereboar',
+    description: `Вервепри — грубые верзилы с дурным нравом. В своём гуманоидном облике они выглядят коренастыми и мускулистыми, с короткими, жёсткими волосами. В гуманоидном и гибридном облике они пользуются тяжёлым оружием, но в гибридном и животном облике они получают разрушительную атаку клыками, через которую они распространяют своё проклятье. Вервепрь заражает других существ без разбору, наслаждаясь тем, что чем дольше те сдерживают своё проклятье, тем больше они дичают и уподобляются животным.\n
+Вервепри живут маленькими семейными группами в отдалённых лесах, строя ветхие хижины или обитая в пещерах. Они с подозрением относятся к чужакам, но иногда объединяются с орками.`,
+    id: CREATURE_WEREBOAR,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_HUMAN,
+      CREATURE_TYPE_SHAPESHIFTER,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:190',
+    armor: [
+      {
+        ac: 10,
+        comment: 'в облике гуманоида',
+      },
+      {
+        ac: 11,
+        type: 'природный доспех',
+        comment: 'в облике кабана и гибридном облике',
+      },
+    ],
+    hp: {
+      cubeCount: 12,
+      cubeType: 8,
+      cubeBonus: 24,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: {
+        value: 40,
+        comment: 'в облике кабана',
+      },
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+    },
+    immunityList: [
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_COMMON,
+        comment: 'не может говорить в облике кабана',
+      },
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: 'Перевёртыш',
+        description: `Вервепрь может действием превратиться в кабана, гибрид кабана и гуманоида, или же принять свой истинный облик гуманоида. Все его статистики кроме КД остаются одинаковыми во всех обликах. Всё несомое и носимое им снаряжение не превращается. Он принимает свой истинный облик, если умирает.`,
+      },
+      {
+        name: 'Атака в броске',
+        comment: 'только в облике кабана или гибрида',
+        description: `Если вервепрь переместится как минимум на 15 футов по прямой к цели, а затем в том же ходу попадёт по ней клыками, цель получает от атаки дополнительный рубящий урон 7 (2к6). Если цель — существо, она должна преуспеть в спасброске Силы со Сл 13, иначе будет сбита с ног.`,
+      },
+      {
+        name: 'Неумолимый',
+        comment: 'перезаряжается после короткого или продолжительного отдыха',
+        description: `Если вервепрь получает урон не больше 14, уменьшающий его хиты до 0, его хиты вместо этого уменьшаются лишь до 1.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        comment: 'только в облике гуманоида или гибрида',
+        description: `Вервепрь совершает две атаки, только одна из которых может быть атакой клыками.`,
+      },
+      {
+        name: 'Молот',
+        comment: 'только в облике гуманоида или гибрида',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Клыки',
+        comment: 'только в облике кабана или гибрида',
+        description: `Если цель — гуманоид, она должна преуспеть в спасброске Телосложения со Сл 12, иначе станет проклятой ликантропией вервепря.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
           },
         },
       },

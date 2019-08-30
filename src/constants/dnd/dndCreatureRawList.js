@@ -533,6 +533,7 @@ const {
   CREATURE_VROCK = 'vrock',
   CREATURE_WATER_WEIRD = 'water_weird',
   CREATURE_WEREBOAR = 'wereboar',
+  CREATURE_WERERAT = 'wererat',
   CREATURE_WHITE_DRAGON_WYRMLING = 'white_dragon_wyrmling',
   CREATURE_WILL_O_WISP = 'will_o_wisp',
   CREATURE_WINGED_KOBOLD = 'winged_kobold',
@@ -21821,6 +21822,131 @@ module.exports = [
             cubeCount: 2,
             cubeType: 6,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Веркрыса',
+    nameEn: 'Wererat',
+    description: ``,
+    id: CREATURE_WERERAT,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_HUMAN,
+      CREATURE_TYPE_SHAPESHIFTER,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:190',
+    armor: 12,
+    hp: {
+      cubeCount: 6,
+      cubeType: 8,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+      [SKILL_STEALTH]: 4,
+    },
+    immunityList: [
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+        comment: 'только в облике крысы',
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_COMMON,
+        comment: 'не может говорить в облике крысы',
+      },
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: 'Перевёртыш',
+        description: `Веркрыса может действием превратиться в гигантскую крысу, гибрид крысы и гуманоида, или же принять свой истинный облик гуманоида. Все её статистики кроме размера остаются одинаковыми во всех обликах. Всё несомое и носимое ей снаряжение не превращается. Она принимает свой истинный облик, если умирает.`,
+      },
+      {
+        name: 'Тонкий нюх',
+        comment: `Веркрыса совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        comment: 'только в облике гуманоида или гибрида',
+        description: `Веркрыса совершает две атаки, только одна из которых может быть укусом.`,
+      },
+      {
+        name: 'Укус',
+        comment: 'только в облике крысы или гибрида',
+        description: `Если цель — гуманоид, она должна преуспеть в спасброске Телосложения со Сл 11, иначе станет проклятой ликантропией веркрысы.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Короткий меч',
+        comment: 'только в облике гуманоида или гибрида',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Ручной арбалет',
+        comment: 'только в облике гуманоида или гибрида',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
           },
         },
       },

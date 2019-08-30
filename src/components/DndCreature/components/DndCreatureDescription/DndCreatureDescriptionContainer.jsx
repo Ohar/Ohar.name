@@ -2,7 +2,7 @@ import React from 'react'
 
 import DndCreatureDescriptionComponent from './DndCreatureDescriptionComponent'
 
-const DndCreatureDescriptionContainer = ({name, nameAlt, nameEn, nameEnAlt, description}) => {
+const DndCreatureDescriptionContainer = ({name, nameAlt, nameEn, nameEnAlt, description, ...rest}) => {
   const nameEnAltText = nameEnAlt
     ? ` (${nameEnAlt})`
     : ''
@@ -17,6 +17,7 @@ const DndCreatureDescriptionContainer = ({name, nameAlt, nameEn, nameEnAlt, desc
       nameText={nameText}
       nameEnText={nameEnText}
       description={description}
+      {...rest}
     />
   )
 }

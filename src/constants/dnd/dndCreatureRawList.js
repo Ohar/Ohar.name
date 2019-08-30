@@ -66,6 +66,7 @@ const {
     CREATURE_TYPE_HUMANOID,
     CREATURE_TYPE_KENKU,
     CREATURE_TYPE_KOBOLD,
+    CREATURE_TYPE_KUO_TOA,
     CREATURE_TYPE_MONSTER,
     CREATURE_TYPE_PLANT,
     CREATURE_TYPE_QUAGGOTH,
@@ -338,6 +339,8 @@ const {
     goldDragonDescription,
     greenDragonDescription,
     iceDevilSummoner,
+    kuoToaFeatures,
+    kuoToaTexts,
     redDragonDescription,
     silverDragonDescription,
     whiteDragonDescription,
@@ -470,6 +473,7 @@ const {
   CREATURE_KENKU = 'kenku',
   CREATURE_KOBOLD = 'kobold',
   CREATURE_KRAKEN = 'kraken',
+  CREATURE_KUO_TOA = 'kuo_toa',
   CREATURE_LEMURE = 'lemure',
   CREATURE_MANES = 'manes',
   CREATURE_MARID = 'marid',
@@ -21174,6 +21178,134 @@ module.exports = [
             cubeBonus: 4,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Куо-тоа',
+    nameEn: 'Kuo-toa',
+    id: CREATURE_KUO_TOA,
+    ...kuoToaTexts,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_KUO_TOA,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:184',
+    armor: {
+      ac: 13,
+      type: 'природный доспех, щит',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_UNDERCOMMON,
+    ],
+    cr: CR_1_4,
+    featureList: kuoToaFeatures,
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            melee: 5,
+            range: {
+              normal: 20,
+              max: 60,
+            },
+          },
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 1,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 1,
+                comment: ', если используется двумя руками для совершения рукопашной атаки.',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Сеть',
+        description: `Цель может действием совершить проверку Силы со Сл 10, чтобы освободиться самой или освободить из сети другое существо, оканчивая эффект при успехе. Причинение сети рубящего урона 5 (КД 10) освобождает цель, не причиняя ей урон, и уничтожает сеть. `,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 5,
+            max: 15,
+          },
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              size: {
+                max: SIZE_LARGE,
+              },
+            },
+          },
+          hit: 'Цель становится опутанной',
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Липкий щит',
+        description: `Если существо промахивается по куо-тоа атакой рукопашным оружием, куо-тоа использует липкий щит, чтобы поймать оружие. Атакующий должен преуспеть в спасброске Силы со Сл 11, иначе оружие приклеится к щиту куо-тоа. Если владелец оружия не хочет или не может отпустить оружие, он становится схваченным, пока не отклеит оружие. Приклеенное оружие нельзя использовать. Любое существо может оторвать оружие действием, если совершит проверку Силы со Сл 11 и преуспеет.  `,
       },
     ],
   },

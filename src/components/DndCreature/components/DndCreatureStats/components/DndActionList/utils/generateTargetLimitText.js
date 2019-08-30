@@ -69,7 +69,15 @@ export default target => {
       commentText = target.comment
     }
 
-    return `${numberText} ${conditionText} ${targetText}${limitText} ${commentText}`
+    return [
+      numberText,
+      conditionText,
+      targetText,
+      limitText,
+      commentText,
+    ]
+      .filter(e => e)
+      .join(' ')
   }
 
   return target

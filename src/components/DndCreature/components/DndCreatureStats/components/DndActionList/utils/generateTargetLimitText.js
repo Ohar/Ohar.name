@@ -17,6 +17,7 @@ export default target => {
 
     let conditionText = ''
     let limitText = ''
+    let commentText = ''
     let numberText = numberWordObj[GENDER_FEMALE]
     let targetText = getGoalWord(targetCount)
 
@@ -64,7 +65,11 @@ export default target => {
       }
     }
 
-    return `${numberText} ${conditionText} ${targetText}${limitText}`
+    if (target.comment) {
+      commentText = target.comment
+    }
+
+    return `${numberText} ${conditionText} ${targetText}${limitText} ${commentText}`
   }
 
   return target

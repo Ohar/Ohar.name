@@ -35,6 +35,7 @@ const CREATURE_TYPE_KENKU = 'kenku'
 const CREATURE_TYPE_KOBOLD = 'kobold'
 const CREATURE_TYPE_KUO_TOA = 'kuo_toa'
 const CREATURE_TYPE_LIZARDFOLK = 'lizardfolk'
+const CREATURE_TYPE_MERFOLK = 'merfolk'
 const CREATURE_TYPE_MONSTER = 'monster'
 const CREATURE_TYPE_ORC = 'orc'
 const CREATURE_TYPE_PLANT = 'plant'
@@ -993,6 +994,28 @@ const dndCreatureTypeList = [
         accusative: 'слизей',
         instrumental: 'слизями',
         prepositional: 'слизях',
+      },
+    },
+  },
+  {
+    id: CREATURE_TYPE_MERFOLK,
+    genderId: GENDER_MALE,
+    name: {
+      singular: {
+        nominative: 'мерфолк',
+        genitive: 'мерфолка',
+        dative: 'мерфолку',
+        accusative: 'мерфолка',
+        instrumental: 'мерфолком',
+        prepositional: 'мерфолке',
+      },
+      plural: {
+        nominative: 'мерфолки',
+        genitive: 'мерфолков',
+        dative: 'мерфолкам',
+        accusative: 'мерфолков',
+        instrumental: 'мерфолками',
+        prepositional: 'мерфолках',
       },
     },
   },

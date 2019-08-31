@@ -550,6 +550,7 @@ const {
   CREATURE_SILVER_DRAGON_WYRMLING = 'silver_dragon_wyrmling',
   CREATURE_SMOKE_MEPHIT = 'smoke_mephit',
   CREATURE_SOLAR = 'solar',
+  CREATURE_STEAM_MEPHIT = 'steam',
   CREATURE_STIRGE = 'stirge',
   CREATURE_STONE_GIANT = 'stone_giant',
   CREATURE_STONE_GOLEM = 'stone_golem',
@@ -24350,6 +24351,107 @@ module.exports = [
           to: 6,
         },
         description: `Мефит выдыхает пламя 15-футовым конусом. Все существа в этой области должны совершить спасбросок Ловкости со Сл 11, получая урон огнём 7 (2к6) при провале, или половину этого урона при успехе. `,
+      },
+    ],
+  },
+  {
+    name: 'Паровый мефит',
+    nameEn: 'Steam mephit',
+    description: `Состоящие из воды и огня паровые мефиты всегда оставляют за собой след из горячей воды, а также шипят, испуская пар. Паровые мефиты — существа властные и гиперчувствительные, это самопровозглашённые повелители всех мефитов.`,
+    id: CREATURE_STEAM_MEPHIT,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:206',
+    armor: 10,
+    hp: {
+      cubeCount: 6,
+      cubeType: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 5,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 12,
+    },
+    immunityList: [
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
+    ],
+    conditionImmunityList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_AQUAN,
+      LANG_IGNAN,
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Предсмертная вспышка',
+        description: `Когда мефит умирает, он взрывается облаком пара. Все существа в пределах 5 футов от мефита должны преуспеть в спасброске Ловкости со Сл 10, иначе получат урон огнём 4 (1к8).`,
+      },
+      {
+        name: 'Врождённое колдовство',
+        limit: {
+          count: 1,
+          period: 'день',
+        },
+        description: `Мефит может накладыдывать _Размытый образ_ (Blur), не нуждаясь в материальных компонентах. Его базовой характеристикой является Харизма.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 1,
+              cubeType: 4,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 1,
+              cubeType: 4,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Паровое дыхание',
+        restore: {
+          from: 6,
+          to: 6,
+        },
+        description: `Мефит выдыхает обжигающий пар 15-футовым конусом. Все существа в этой области должны преуспеть в спасброске Ловкости со Сл 10, получая урон огнём 4 (1к8) при провале, или половину этого урона при успехе.`,
       },
     ],
   },

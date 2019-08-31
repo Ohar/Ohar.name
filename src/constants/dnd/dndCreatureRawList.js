@@ -532,6 +532,7 @@ const {
   CREATURE_VIOLET_FUNGUS = 'violet_fungus',
   CREATURE_VROCK = 'vrock',
   CREATURE_WATER_WEIRD = 'water_weird',
+  CREATURE_WEREBEAR = 'werebear',
   CREATURE_WEREBOAR = 'wereboar',
   CREATURE_WERERAT = 'wererat',
   CREATURE_WEREWOLF = 'wererat',
@@ -22110,6 +22111,139 @@ module.exports = [
               },
             ],
           ],
+        },
+      },
+    ],
+  },
+  {
+    name: 'Вермедведь',
+    nameEn: 'Werebear',
+    description: `Вермедведи — могучие ликантропы, наделённые способностью смирять свою звериную натуру и отвергать свои яростные порывы. В облике гуманоида они предстают большими, мускулистыми существами, покрытыми большим количеством волос, цвет которых совпадает с цветом меха их медвежьей формы. Эти оборотни — одиночки по натуре, опасающиеся того, что может произойти с невинными существами рядом, когда их звериная природа возьмёт верх.\n
+Когда вермедведь превращается, он вырастает до неимоверных размеров, размахивая оружием или когтями. Он сражается с яростью медведя, но даже в своём зверином облике он старается никого не кусать, чтобы не передать своё проклятье. Обычно вермедведи передают свою ликантропию только избранным соратникам и ученикам, уделяя достаточное количество времени после этого тому, чтобы новообращённый ликантроп мог принять своё проклятье и научился его контролировать.`,
+    id: CREATURE_WEREBEAR,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_HUMAN,
+      CREATURE_TYPE_SHAPESHIFTER,
+    ],
+    aligmentId: ALIGMENT_NG,
+    source: 'MM:192',
+    armor: [
+      {
+        ac: 10,
+        comment: 'в облике гуманоида',
+      },
+      {
+        ac: 11,
+        type: 'природный доспех',
+        comment: 'в облике медведя и гибридном облике',
+      },
+    ],
+    hp: {
+      cubeCount: 18,
+      cubeType: 8,
+      cubeBonus: 54,
+    },
+    speed: {
+      [SPEED_WALK]: {
+        value: 30,
+        comment: '40 фт. в облике медведя',
+      },
+      [SPEED_CLIMB]: {
+        value: 30,
+        comment: 'в облике медведя и гибридном облике',
+      },
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 17,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 12,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 7,
+    },
+    immunityList: [
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 17,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_COMMON,
+        comment: 'не может говорить в облике медведя',
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Перевёртыш',
+        description: `Вермедведь может действием превратиться в гибрид медведя и гуманоида Большого размера или медведя Большого размера, или же принять свой истинный облик гуманоида. Все его статистики кроме размера и КД остаются одинаковыми во всех обликах. Всё несомое и носимое им снаряжение не превращается. Он принимает свой истинный облик, если умирает.`,
+      },
+      {
+        name: 'Тонкий нюх',
+        comment: `Вермедведь совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `В облике медведя вермедведь совершает две атаки когтями. В облике гуманоида он совершает две атаки секирой. В облике гибрида он может атаковать либо как медведь, либо как гуманоид.`,
+      },
+      {
+        name: 'Укус',
+        comment: 'только в облике медведя или гибрида',
+        description: `Если цель — гуманоид, она должна преуспеть в спасброске Телосложения со Сл 14, иначе станет проклятой ликантропией вермедведя.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        comment: 'только в облике медведя или гибрида',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Секира',
+        comment: 'только в облике гуманоида или гибрида',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 12,
+            cubeBonus: 4,
+          },
         },
       },
     ],

@@ -16150,12 +16150,7 @@ module.exports = [
     },
     extendPropCollection: {
       params: {
-        [PARAM_STR]: 16,
-        [PARAM_DEX]: 16,
-        [PARAM_CON]: 18,
-        [PARAM_INT]: 13,
         [PARAM_WIT]: 16,
-        [PARAM_CHA]: 12,
       },
     },
   },

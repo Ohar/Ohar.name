@@ -15,17 +15,17 @@ const extendList = ({creature, parent, extendPropNameList}) => {
   const RESULT_DEFAULT = {}
 
   const extended = extendPropNameList.reduce(
-    (result, listName) => creature[listName] && parent[listName]
+    (result, listName) => creature.extendPropCollection[listName] && parent[listName]
       ? {
         ...result,
-        [listName]: Array.isArray(creature[listName])
+        [listName]: Array.isArray(creature.extendPropCollection[listName])
           ? [
             ...parent[listName],
-            ...creature[listName],
+            ...creature.extendPropCollection[listName],
           ]
           : {
             ...parent[listName],
-            ...creature[listName],
+            ...creature.extendPropCollection[listName],
           },
       }
       : result,

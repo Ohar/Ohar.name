@@ -21738,10 +21738,9 @@ module.exports = [
       cubeBonus: 24,
     },
     speed: {
-      [SPEED_WALK]: 30,
-      [SPEED_FLY]: {
-        value: 40,
-        comment: 'в облике кабана',
+      [SPEED_WALK]: {
+        value: 30,
+        comment: '40 фт. в облике кабана',
       },
     },
     params: {
@@ -21988,10 +21987,9 @@ module.exports = [
       cubeBonus: 18,
     },
     speed: {
-      [SPEED_WALK]: 30,
-      [SPEED_FLY]: {
-        value: 40,
-        comment: 'в облике волка',
+      [SPEED_WALK]: {
+        value: 30,
+        comment: '40 фт. в облике волка',
       },
     },
     params: {
@@ -22029,7 +22027,7 @@ module.exports = [
       },
       {
         name: 'Острый слух и тонкий нюх',
-        comment: `Вервольф совершает с преиму ществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+        comment: `Вервольф совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
       },
     ],
     actionList: [

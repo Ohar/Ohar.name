@@ -67,7 +67,9 @@ const DndItemCell = ({columnName, item}) => {
       return (
         <>
           <DndWeaponPropList item={item} />
-          {item[columnName]}
+          <ReactMarkdown>
+            {item[columnName]}
+          </ReactMarkdown>
         </>
       )
     }

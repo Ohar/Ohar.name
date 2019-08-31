@@ -40,6 +40,7 @@ const SPELL_BLESS = 'bless'
 const SPELL_BLIGHT = 'blight'
 const SPELL_BLINDNESS_DEAFNESS = 'blindness_deafness'
 const SPELL_BLUR = 'blur'
+const SPELL_CHARM_PERSON = 'charm_person'
 const SPELL_CLAIRVOYANCE = 'clairvoyance'
 const SPELL_CLOUDKILL = 'cloudkill'
 const SPELL_COLOR_SPRAY = 'color_spray'
@@ -84,6 +85,7 @@ const SPELL_FLY = 'fly'
 const SPELL_FOG_CLOUD = 'fog_cloud'
 const SPELL_FREEDOM_OF_MOVEMENT = 'freedom_of_movement'
 const SPELL_GASEOUS_FORM = 'gaseous_form'
+const SPELL_GEAS = 'geas'
 const SPELL_GLOBE_OF_INVULNERABILITY = 'globe_of_invulnerability'
 const SPELL_GOODBERRY = 'goodberry'
 const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
@@ -2128,6 +2130,34 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_CHARM_PERSON,
+    name: 'Очарование личности',
+    nameEn: 'Charm person',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_GEAS,
+    name: 'Обет',
+    nameEn: 'Geas',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2152,6 +2182,7 @@ module.exports.SPELL_BLESS = SPELL_BLESS
 module.exports.SPELL_BLIGHT = SPELL_BLIGHT
 module.exports.SPELL_BLINDNESS_DEAFNESS = SPELL_BLINDNESS_DEAFNESS
 module.exports.SPELL_BLUR = SPELL_BLUR
+module.exports.SPELL_CHARM_PERSON = SPELL_CHARM_PERSON
 module.exports.SPELL_CLAIRVOYANCE = SPELL_CLAIRVOYANCE
 module.exports.SPELL_CLOUDKILL = SPELL_CLOUDKILL
 module.exports.SPELL_COLOR_SPRAY = SPELL_COLOR_SPRAY
@@ -2196,6 +2227,7 @@ module.exports.SPELL_FLY = SPELL_FLY
 module.exports.SPELL_FOG_CLOUD = SPELL_FOG_CLOUD
 module.exports.SPELL_FREEDOM_OF_MOVEMENT = SPELL_FREEDOM_OF_MOVEMENT
 module.exports.SPELL_GASEOUS_FORM = SPELL_GASEOUS_FORM
+module.exports.SPELL_GEAS = SPELL_GEAS
 module.exports.SPELL_GLOBE_OF_INVULNERABILITY = SPELL_GLOBE_OF_INVULNERABILITY
 module.exports.SPELL_GOODBERRY = SPELL_GOODBERRY
 module.exports.SPELL_GREATER_INVISIBILITY = SPELL_GREATER_INVISIBILITY

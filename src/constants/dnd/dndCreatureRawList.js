@@ -445,6 +445,7 @@ const {
   CREATURE_DRIDER_SPELLCASTER = 'drider_spellcaster',
   CREATURE_DRYAD = 'dryad',
   CREATURE_DUERGAR = 'duergar',
+  CREATURE_DUST_MEPHIT = 'dust_mephit',
   CREATURE_EFREETI = 'efreeti',
   CREATURE_ERINYES = 'erinyes',
   CREATURE_ERINYES_SUMMONER = 'erinyes_summoner',
@@ -24452,6 +24453,107 @@ module.exports = [
           to: 6,
         },
         description: `Мефит выдыхает обжигающий пар 15-футовым конусом. Все существа в этой области должны преуспеть в спасброске Ловкости со Сл 10, получая урон огнём 4 (1к8) при провале, или половину этого урона при успехе.`,
+      },
+    ],
+  },
+  {
+    name: 'Пылевой мефит',
+    nameEn: 'Dust mephit',
+    description: `Состоящие из земли и воздуха пылевые мефиты любят обитать в катакомбах и считают смерть ужасно захватывающей.`,
+    id: CREATURE_DUST_MEPHIT,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:206',
+    armor: 12,
+    hp: {
+      cubeCount: 5,
+      cubeType: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 5,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+      [SKILL_STEALTH]: 4,
+    },
+    vulnerabilityList: [
+      DAMAGE_FIRE,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    conditionImmunityList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_AURAN,
+      LANG_TERRAN,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Предсмертная вспышка',
+        description: `Когда мефит умирает, он разлетается во все стороны пылью. Все существа в пределах 5 футов от него должны преуспеть в спасброске Телосложения со Сл 10, иначе станут ослеплёнными на 1 минуту. Ослеплённое существо может повторять спасбросок в каждом своём ходу, оканчивая эффект на себе при успехе. `,
+      },
+      {
+        name: 'Врождённое колдовство',
+        limit: {
+          count: 1,
+          period: 'день',
+        },
+        description: `Мефит может накладыдывать _Усыпление_ (Sleep), не нуждаясь в материальных компонентах. Его базовой характеристикой является Харизма.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Ослепляющее дыхание',
+        restore: {
+          from: 6,
+          to: 6,
+        },
+        description: `Мефит выдыхает ослепляющую пыль 15-футовым конусом. Все существа в этой области должны преуспеть в спасброске Ловкости со Сл 10, иначе станут ослеплёнными на 1 минуту. Существо может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
       },
     ],
   },

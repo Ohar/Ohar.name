@@ -47,6 +47,7 @@ const SPELL_COMMAND = 'command'
 const SPELL_COMMUNE = 'commune'
 const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
 const SPELL_CONFUSION = 'confusion'
+const SPELL_CONJURE_ANIMALS = 'conjure_animals'
 const SPELL_CONJURE_ELEMENTAL = 'conjure_elemental'
 const SPELL_CONTACT_OTHER_PLANE = 'contact_other_plane'
 const SPELL_CONTROL_WATER = 'control_water'
@@ -117,11 +118,13 @@ const SPELL_PASSWALL = 'passwall'
 const SPELL_PHANTASMAL_FORCE = 'phantasmal_force'
 const SPELL_PHANTASMAL_KILLER = 'phantasmal_killer'
 const SPELL_PLANE_SHIFT = 'plane_shift'
+const SPELL_PLANT_GROWTH = 'plant_growth'
 const SPELL_POISON_SPRAY = 'poison_spray'
 const SPELL_POLYMORPH = 'polymorph'
 const SPELL_POWER_WORD_KILL = 'power_word_kill'
 const SPELL_POWER_WORD_STUN = 'power_word_stun'
 const SPELL_PRESTIDIGITATION = 'prestidigitation'
+const SPELL_PRODUCE_FLAME = 'produce_flame'
 const SPELL_PROTECTION_FROM_POISON = 'protection_from_poison'
 const SPELL_PURIFY_FOOD_AND_DRINK = 'purify_food_and_drink'
 const SPELL_RAISE_DEAD = 'raise_dead'
@@ -138,12 +141,14 @@ const SPELL_SHIELD_OF_FAITH = 'shield_of_faith'
 const SPELL_SHILLELAGH = 'shillelagh'
 const SPELL_SILENCE = 'silence'
 const SPELL_SLEEP = 'sleep'
+const SPELL_SPIKE_GROWTH = 'spike_growth'
 const SPELL_SPIRIT_GUARDIANS = 'spirit_guardians'
 const SPELL_SPIRITUAL_WEAPON = 'spiritual_weapon'
 const SPELL_STONE_SHAPE = 'stone_shape'
 const SPELL_SUGGESTION = 'suggestion'
 const SPELL_TELEKINESIS = 'telekinesis'
 const SPELL_THAUMATURGY = 'thaumaturgy'
+const SPELL_THORN_WHIP = 'thorn_whip'
 const SPELL_THUNDERWAVE = 'thunderwave'
 const SPELL_TONGUES = 'tongues'
 const SPELL_VICIOUS_MOCKERY = 'vicious_mockery'
@@ -2053,6 +2058,76 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_THORN_WHIP,
+    name: 'Терновый кнут',
+    nameEn: 'Thorn whip',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_PRODUCE_FLAME,
+    name: 'Сотворение пламени',
+    nameEn: 'Produce flame',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_CONJURE_ANIMALS,
+    name: 'Призыв животных',
+    nameEn: 'Conjure animals',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_PLANT_GROWTH,
+    name: 'Рост растений',
+    nameEn: 'Plant growth',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_SPIKE_GROWTH,
+    name: 'Шипы',
+    nameEn: 'Spike growth',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2084,6 +2159,7 @@ module.exports.SPELL_COMMAND = SPELL_COMMAND
 module.exports.SPELL_COMMUNE = SPELL_COMMUNE
 module.exports.SPELL_COMPREHEND_LANGUAGES = SPELL_COMPREHEND_LANGUAGES
 module.exports.SPELL_CONFUSION = SPELL_CONFUSION
+module.exports.SPELL_CONJURE_ANIMALS = SPELL_CONJURE_ANIMALS
 module.exports.SPELL_CONJURE_ELEMENTAL = SPELL_CONJURE_ELEMENTAL
 module.exports.SPELL_CONTACT_OTHER_PLANE = SPELL_CONTACT_OTHER_PLANE
 module.exports.SPELL_CONTROL_WATER = SPELL_CONTROL_WATER
@@ -2154,11 +2230,13 @@ module.exports.SPELL_PASSWALL = SPELL_PASSWALL
 module.exports.SPELL_PHANTASMAL_FORCE = SPELL_PHANTASMAL_FORCE
 module.exports.SPELL_PHANTASMAL_KILLER = SPELL_PHANTASMAL_KILLER
 module.exports.SPELL_PLANE_SHIFT = SPELL_PLANE_SHIFT
+module.exports.SPELL_PLANT_GROWTH = SPELL_PLANT_GROWTH
 module.exports.SPELL_POISON_SPRAY = SPELL_POISON_SPRAY
 module.exports.SPELL_POLYMORPH = SPELL_POLYMORPH
 module.exports.SPELL_POWER_WORD_KILL = SPELL_POWER_WORD_KILL
 module.exports.SPELL_POWER_WORD_STUN = SPELL_POWER_WORD_STUN
 module.exports.SPELL_PRESTIDIGITATION = SPELL_PRESTIDIGITATION
+module.exports.SPELL_PRODUCE_FLAME = SPELL_PRODUCE_FLAME
 module.exports.SPELL_PROTECTION_FROM_POISON = SPELL_PROTECTION_FROM_POISON
 module.exports.SPELL_PURIFY_FOOD_AND_DRINK = SPELL_PURIFY_FOOD_AND_DRINK
 module.exports.SPELL_RAISE_DEAD = SPELL_RAISE_DEAD
@@ -2175,12 +2253,14 @@ module.exports.SPELL_SHIELD_OF_FAITH = SPELL_SHIELD_OF_FAITH
 module.exports.SPELL_SHILLELAGH = SPELL_SHILLELAGH
 module.exports.SPELL_SILENCE = SPELL_SILENCE
 module.exports.SPELL_SLEEP = SPELL_SLEEP
+module.exports.SPELL_SPIKE_GROWTH = SPELL_SPIKE_GROWTH
 module.exports.SPELL_SPIRIT_GUARDIANS = SPELL_SPIRIT_GUARDIANS
 module.exports.SPELL_SPIRITUAL_WEAPON = SPELL_SPIRITUAL_WEAPON
 module.exports.SPELL_STONE_SHAPE = SPELL_STONE_SHAPE
 module.exports.SPELL_SUGGESTION = SPELL_SUGGESTION
 module.exports.SPELL_TELEKINESIS = SPELL_TELEKINESIS
 module.exports.SPELL_THAUMATURGY = SPELL_THAUMATURGY
+module.exports.SPELL_THORN_WHIP = SPELL_THORN_WHIP
 module.exports.SPELL_THUNDERWAVE = SPELL_THUNDERWAVE
 module.exports.SPELL_TONGUES = SPELL_TONGUES
 module.exports.SPELL_VICIOUS_MOCKERY = SPELL_VICIOUS_MOCKERY

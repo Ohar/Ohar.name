@@ -498,6 +498,7 @@ const {
   CREATURE_ICE_DEVIL_SUMMONER = 'ice_devil_summoner',
   CREATURE_ICE_DEVIL_SUMMONER_WITH_A_SPEAR = 'ice_devil_summoner_with_a_spear',
   CREATURE_ICE_DEVIL_WITH_A_SPEAR = 'ice_devil_with_a_spear',
+  CREATURE_ICE_MEPHIT = 'ice_mephit',
   CREATURE_IMP = 'imp',
   CREATURE_IMP_FAMILIAR = 'imp_familiar',
   CREATURE_IRON_GOLEM = 'iron_golem',
@@ -24121,6 +24122,120 @@ module.exports = [
           to: 6,
         },
         description: `Мефит выдыхает горячий пепел 15-футовым конусом. Все существа в этой области должны преуспеть в спасброске Ловкости со Сл 10, иначе станут ослеплёнными до конца следующего хода мефита. `,
+      },
+    ],
+  },
+  {
+    name: 'Ледяной мефит',
+    nameEn: 'Ice mephit',
+    description: `Ледяные мефиты состоят из холодного воздуха и воды. Они отчуждённые и холодные, и превосходят всех остальных мефитов в беспощадной жестокости.`,
+    id: CREATURE_ICE_MEPHIT,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:205',
+    armor: 11,
+    hp: {
+      cubeCount: 6,
+      cubeType: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 7,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 12,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+      [SKILL_STEALTH]: 3,
+    },
+    vulnerabilityList: [
+      DAMAGE_FIRE,
+      DAMAGE_BLUDGEONING,
+    ],
+    immunityList: [
+      DAMAGE_COLD,
+      DAMAGE_POISON,
+    ],
+    conditionImmunityList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_AQUAN,
+      LANG_AURAN,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Предсмертная вспышка',
+        description: `Когда мефит умирает, он разлетает ся во все стороны обломками льда. Все существа в пределах 5  футов от него должны совершить спасбросок Ловкости со Сл  10, получая рубящий урон 4 (1к8) при провале, или половину  этого урона при успехе.`,
+      },
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока мефит остаётся без движения, он неотличим от обычной глыбы льда.`,
+      },
+      {
+        name: 'Врождённое колдовство',
+        limit: {
+          count: 1,
+          period: 'день',
+        },
+        description: `Мефит может накладывать _Туманное облако_ (Fog cloud), не нуждаясь в материальных компонентах. Его базовой характеристикой является Харизма.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 1,
+              cubeType: 4,
+              cubeBonus: 1,
+            },
+            {
+              type: DAMAGE_COLD,
+              cubeCount: 1,
+              cubeType: 4,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Ледяное дыхание',
+        restore: {
+          from: 6,
+          to: 6,
+        },
+        description: `Мефит выдыхает холодный воздух 15-футовым конусом. Все существа в этой области должны преуспеть в спасброске Ловкости со Сл 10, получая урон холодом 5 (2к4) при провале, или половину этого урона при успехе.`,
       },
     ],
   },

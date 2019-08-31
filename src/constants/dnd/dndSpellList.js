@@ -1986,7 +1986,7 @@ const dndSpellList = [
   {
     id: SPELL_GLOBE_OF_INVULNERABILITY,
     name: 'Сфера неуязвимости',
-    nameEn: 'Globe_of_invulnerability',
+    nameEn: 'Globe of invulnerability',
     description: ``, // TODO
     lvl: 6,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
@@ -2000,7 +2000,7 @@ const dndSpellList = [
   {
     id: SPELL_FINGER_OF_DEATH,
     name: 'Перст смерти',
-    nameEn: 'Finger_of_death',
+    nameEn: 'Finger of death',
     description: ``, // TODO
     lvl: 7,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
@@ -2014,7 +2014,7 @@ const dndSpellList = [
   {
     id: SPELL_DOMINATE_MONSTER,
     name: 'Подчинение чудовища',
-    nameEn: 'Dominate_monster',
+    nameEn: 'Dominate monster',
     description: ``, // TODO
     lvl: 8,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
@@ -2027,8 +2027,8 @@ const dndSpellList = [
   },
   {
     id: SPELL_POWER_WORD_KILL,
-    name: 'слово силы: смерть',
-    nameEn: 'Power_word_kill',
+    name: 'Слово силы: смерть',
+    nameEn: 'Power word kill',
     description: ``, // TODO
     lvl: 9,
     magicSchool: MAGIC_TRANSMUTATION, // TODO

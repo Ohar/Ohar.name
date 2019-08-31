@@ -68,6 +68,7 @@ const {
     CREATURE_TYPE_KENKU,
     CREATURE_TYPE_KOBOLD,
     CREATURE_TYPE_KUO_TOA,
+    CREATURE_TYPE_LIZARDFOLK,
     CREATURE_TYPE_MONSTER,
     CREATURE_TYPE_PLANT,
     CREATURE_TYPE_QUAGGOTH,
@@ -357,6 +358,7 @@ const {
     iceDevilSummoner,
     kuoToaFeatures,
     kuoToaTexts,
+    lizardfolkTexts,
     redDragonDescription,
     silverDragonDescription,
     whiteDragonDescription,
@@ -496,6 +498,7 @@ const {
   CREATURE_KUO_TOA_WHIP = 'kuo_toa_whip',
   CREATURE_LEMURE = 'lemure',
   CREATURE_LICH = 'lich',
+  CREATURE_LIZARDFOLK = 'lizardfolk',
   CREATURE_MANES = 'manes',
   CREATURE_MARID = 'marid',
   CREATURE_MARILITH = 'marilith',
@@ -22708,6 +22711,133 @@ module.exports = [
         name: 'Разрушение жизни',
         cost: 3,
         description: `Все существа, не являющиеся нежитью, в пределах 20 футов от лича должны совершить спасбросок Телосложения со Сл 18 от этой магии, получая урон некротической энергией 21 (6к6) при провале, или половину этого урона при успехе. `,
+      },
+    ],
+  },
+  {
+    name: 'Людоящер',
+    nameEn: 'Lizardfolk',
+    ...lizardfolkTexts,
+    id: CREATURE_LIZARDFOLK,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_LIZARDFOLK,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:197',
+    armor: {
+      ac: 15,
+      type: 'природный доспех, щит',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 8,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_SURVIVAL]: 5,
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_DRACONIC,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Задержка дыхания',
+        description: `Людоящер может задержать дыхание на 15 минут.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Людоящер совершает две рукопашные атаки, каждую разным оружием.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Тяжёлая дубина',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            melee: 5,
+            range: {
+              normal: 30,
+              max: 120,
+            },
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Шипастый щит',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
       },
     ],
   },

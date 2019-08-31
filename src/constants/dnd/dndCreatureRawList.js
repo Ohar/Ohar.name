@@ -535,6 +535,7 @@ const {
   CREATURE_WEREBEAR = 'werebear',
   CREATURE_WEREBOAR = 'wereboar',
   CREATURE_WERERAT = 'wererat',
+  CREATURE_WERETIGER = 'weretiger',
   CREATURE_WEREWOLF = 'wererat',
   CREATURE_WHITE_DRAGON_WYRMLING = 'white_dragon_wyrmling',
   CREATURE_WILL_O_WISP = 'will_o_wisp',
@@ -22243,6 +22244,155 @@ module.exports = [
             cubeCount: 1,
             cubeType: 12,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Вертигр',
+    nameEn: 'Weretiger',
+    description: `Вертигры — яростные охотники и воины с надменным и привередливым характером. Гибкие, с гладкой мускулатурой в гуманоидном облике, они имеют рост выше среднего и выглядят ухоженными. Вертигры вырастают до немыслимых размеров в зверином и гибридном облике, но чаще всего сражаются в гуманоидном обличье. Они не любят заражать проклятьем других, так как каждый новый вертигр означает конкуренцию за территорию и добычу.\n
+Вертигры живут в джунглях на окраине цивилизации, и путешествуют в изолированные поселения для торговли или отдыха. Они живут и охотятся одни или в маленьком семейном кругу. `,
+    id: CREATURE_WERETIGER,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_HUMAN,
+      CREATURE_TYPE_SHAPESHIFTER,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:193',
+    armor: 12,
+    hp: {
+      cubeCount: 16,
+      cubeType: 8,
+      cubeBonus: 48,
+    },
+    speed: {
+      [SPEED_WALK]: {
+        value: 30,
+        comment: '40 фт. в облике тигра',
+      },
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+      [SKILL_STEALTH]: 4,
+    },
+    immunityList: [
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_COMMON,
+        comment: 'не может говорить в облике тигра',
+      },
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: 'Перевёртыш',
+        description: `Вертигр может действием превратиться в тигра, гибрид тигра и гуманоида, или же принять свой истинный облик гуманоида. Все его статистики кроме размера остаются одинаковыми во всех обликах. Всё несомое и носимое им снаряжение не превращается. Он принимает свой истинный облик, если умирает.`,
+      },
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: `Вертигр совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+      {
+        name: 'Наскок',
+        comment: 'только в облике тигра или гибрида',
+        description: `Если вертигр переместится как минимум на 15 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой когтём, эта цель должна преуспеть в спасброске Силы со Сл 14, иначе будет сбита с ног. Если цель сбита с ног, вертигр может бонусным действием совершить по ней одну атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        comment: 'только в облике гуманоида или гибрида',
+        description: `В облике гуманоида вертигр совершает две атаки скимитаром или две атаки длинным луком. В облике гибрида он может атаковать либо как тигр, либо как гуманоид.`,
+      },
+      {
+        name: 'Укус',
+        comment: 'только в облике тигра или гибрида',
+        description: `Если цель — гуманоид, она должна преуспеть в спасброске Телосложения со Сл 13, иначе станет проклятой ликантропией вертигра.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        comment: 'только в облике тигра или гибрида',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Скимитар',
+        comment: 'только в облике гуманоида или гибрида',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Длинный лук',
+        comment: 'только в облике гуманоида или гибрида',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
           },
         },
       },

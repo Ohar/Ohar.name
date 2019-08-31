@@ -531,6 +531,7 @@ const {
   CREATURE_MERROW = 'merrow',
   CREATURE_MUD_MEPHIT = 'mud_mephit',
   CREATURE_MUD_MEPHIT_SUMMONER = 'mud_mephit_summoner',
+  CREATURE_MYCONID_ADULT = 'myconid_adult',
   CREATURE_MYCONID_SOVEREIGN = 'myconid_sovereign',
   CREATURE_NALFESHNEE = 'nalfeshnee',
   CREATURE_NEEDLE_BLIGHT = 'needle_blight',
@@ -24771,6 +24772,94 @@ module.exports = [
       {
         name: 'Споры взаимопонимания',
         description: `От миконида расходятся споры в радиусе 30 футов. Эти споры обходят углы и воздействуют только на существ с Интеллектом 2 и выше, которые не являются нежитью, конструктами и элементалями. Попавшие под действие существа могут телепатически общаться друг с другом, если находятся в пределах 30 футов друг от друга. Эффект длится 1 час.`,
+      },
+    ],
+  },
+  {
+    name: 'Взрослый миконид',
+    nameEn: 'Myconid adult',
+    id: CREATURE_MYCONID_ADULT,
+    description: myconidDescription,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_PLANT,
+    ],
+    aligmentId: ALIGMENT_LN,
+    source: 'MM:207',
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 8,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Споры страдания',
+        description: `Если миконид получает урон, все остальные микониды в пределах 240 футов чувствуют его боль.`,
+      },
+      {
+        name: 'Слабость на солнце',
+        description: `Находясь на солнечном свету, миконид совершает с помехой проверки характеристик, броски атаки и спасброски. Миконид умирает, если проводит больше 1 часа под прямыми солнечными лучами.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 2,
+              cubeType: 4,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 2,
+              cubeType: 4,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Усмиряющие споры',
+        limit: {
+          count: 3,
+          period: 'день',
+        },
+        description: `Миконид выпускает споры на одно существо, которое видит в пределах 5 футов. Цель должна преуспеть в спасброске Телосложения со Сл 11, иначе станет ошеломлённой на 1 минуту. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
+      },
+      {
+        name: 'Споры взаимопонимания',
+        description: `От миконида расходятся споры в радиусе 20 футов. Эти споры обходят углы и воздействуют только на существ с Интеллектом 2 и выше, которые не являются нежитью, конструктами и элементалями. Попавшие под действие существа могут телепатически общаться друг с другом, если находятся в пределах 30 футов друг от друга. Эффект длится 1 час.`,
       },
     ],
   },

@@ -6,6 +6,7 @@ const LANG_ALL = 'all'
 const LANG_ALL_KNOWN_AT_LIFE = 'all_known_at_life'
 const LANG_ANY_ONE = 'any_one'
 const LANG_ANY_TWO = 'any_two'
+const LANG_ANY_UP_TO_FIVE = 'any_up_to_five'
 const LANG_AQUAN = 'aquan'
 const LANG_AURAN = 'auran'
 const LANG_BLINK_DOG = 'blink_dog'
@@ -75,6 +76,13 @@ const dndLanguageList = [
     name: {
       nominative: 'Любые два языка',
       instrumental: 'Любые два языка',
+    },
+  },
+  {
+    id: LANG_ANY_UP_TO_FIVE,
+    name: {
+      nominative: 'до пяти других языков',
+      instrumental: 'до пяти других языков',
     },
   },
   {
@@ -448,6 +456,7 @@ module.exports.LANG_ALL = LANG_ALL
 module.exports.LANG_ALL_KNOWN_AT_LIFE = LANG_ALL_KNOWN_AT_LIFE
 module.exports.LANG_ANY_ONE = LANG_ANY_ONE
 module.exports.LANG_ANY_TWO = LANG_ANY_TWO
+module.exports.LANG_ANY_UP_TO_FIVE = LANG_ANY_UP_TO_FIVE
 module.exports.LANG_AQUAN = LANG_AQUAN
 module.exports.LANG_AURAN = LANG_AURAN
 module.exports.LANG_BLINK_DOG = LANG_BLINK_DOG

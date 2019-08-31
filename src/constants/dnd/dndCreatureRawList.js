@@ -534,6 +534,7 @@ const {
   CREATURE_WATER_WEIRD = 'water_weird',
   CREATURE_WEREBOAR = 'wereboar',
   CREATURE_WERERAT = 'wererat',
+  CREATURE_WEREWOLF = 'wererat',
   CREATURE_WHITE_DRAGON_WYRMLING = 'white_dragon_wyrmling',
   CREATURE_WILL_O_WISP = 'will_o_wisp',
   CREATURE_WINGED_KOBOLD = 'winged_kobold',
@@ -21948,6 +21949,169 @@ module.exports = [
             cubeType: 6,
             cubeBonus: 2,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Вервольф',
+    nameEn: 'Werewolf',
+    description: `Вервольф — это дикий хищник. В гуманоидном облике у такого оборотня обострённые чувства, вспыльчивый характер, а также страсть к сырому мясу. Если в зверином облике оборотень выступает в роли хищника, то в гибридном он выглядит очень пугающе — развитое мускулистое тело, покрытое шерстью, увенчано головой волка. Вервольф может использовать оружие в гибридном облике, однако предпочитает разрывать противников на части при помощи когтей и клыков.\n
+Большинство вервольфов начинает сторониться цивилизованных земель практически сразу же после превращения. Те, кто борются с проклятьем, опасаются за своих родных и близких, так как не уверены в своём контроле. Те, кто приняли проклятье, боятся своих действий и жажды убийств. В дикой среде вервольфы образуют стаи, в которых можно встретить обычных и лютых волков. `,
+    note: {
+      text: `Содружество Черной Луны — когда-то они были искателями приключений, преданными своей стране. Теперь они бродят по лесу как стая вервольфов. Король пообещал землю, титулы и золото любому, кто сможет снять с них проклятье. Меня, к примеру, не интересует такая награда`,
+      author: `Торнстаф, эльф друид`,
+    },
+    id: CREATURE_WEREWOLF,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_HUMAN,
+      CREATURE_TYPE_SHAPESHIFTER,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:190',
+    armor: [
+      {
+        ac: 11,
+        comment: 'в облике гуманоида',
+      },
+      {
+        ac: 12,
+        type: 'природный доспех',
+        comment: 'в облике волка и гибридном облике',
+      },
+    ],
+    hp: {
+      cubeCount: 9,
+      cubeType: 8,
+      cubeBonus: 18,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: {
+        value: 40,
+        comment: 'в облике волка',
+      },
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_STEALTH]: 3,
+    },
+    immunityList: [
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_COMMON,
+        comment: 'не может говорить в облике волка',
+      },
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Перевёртыш',
+        description: `Вервольф может действием превратиться в волка, гибрид волка и гуманоида, или же принять свой истинный облик гуманоида. Все его статистики кроме КД остаются одинаковыми во всех обликах. Всё несомое и носимое им снаряжение не превращается. Он принимает свой истинный облик, если умирает.`,
+      },
+      {
+        name: 'Острый слух и тонкий нюх',
+        comment: `Вервольф совершает с преиму ществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        comment: 'только в облике гуманоида или гибрида',
+        description: `Вервольф совершает две атаки: одну укусом, и одну когтями или копьём.`,
+      },
+      {
+        name: 'Клыки',
+        comment: 'только в облике волка или гибрида',
+        description: `Если цель — гуманоид, она должна преуспеть в спасброске Телосложения со Сл 12, иначе станет проклятой ликантропией вервольфа.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        comment: 'только в гибридном облике',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Копьё',
+        comment: 'только в облике гуманоида',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            melee: 5,
+            range: {
+              normal: 20,
+              max: 60,
+            },
+          },
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 2,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 2,
+                comment: 'если используется двумя руками для совершения рукопашной атаки',
+              },
+            ],
+          ],
         },
       },
     ],

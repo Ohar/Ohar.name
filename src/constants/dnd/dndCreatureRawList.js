@@ -358,6 +358,7 @@ const {
     boneDevilSummoner,
     brassDragonDescription,
     bronzeDragonDescription,
+    bugbearsDescription,
     copperDragonDescription,
     coven,
     gitNote,
@@ -418,6 +419,7 @@ const {
   CREATURE_BONE_DEVIL_WITH_A_SPEAR = 'bone_devil_with_a_spear',
   CREATURE_BRASS_DRAGON_WYRMLING = 'brass_dragon_wyrmling',
   CREATURE_BRONZE_DRAGON_WYRMLING = 'bronze_dragon_wyrmling',
+  CREATURE_BUGBEAR = 'bugbear',
   CREATURE_BULLYWUG = 'bullywug',
   CREATURE_CAMBION = 'cambion',
   CREATURE_CENTAUR = 'centaur',
@@ -23461,6 +23463,119 @@ module.exports = [
             cubeCount: 1,
             cubeType: 8,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Медвежатник',
+    nameAlt: 'Багбир',
+    nameEn: 'Bugbear',
+    description: bugbearsDescription,
+    id: CREATURE_BUGBEAR,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GOBLINOID,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:201',
+    armor: {
+      ac: 16,
+      type: 'шкурный доспех, щит',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 18,
+      cubeBonus: 5,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 8,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 9,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 6,
+      [SKILL_SURVIVAL]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_GOBLIN,
+      LANG_COMMON,
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Жестокость',
+        description: `Рукопашное оружие причиняет одну дополнительную кость своего урона, когда медвежатник попадает им (уже включено в атаку).`,
+      },
+      {
+        name: 'Внезапная атака',
+        description: `Если медвежатник застаёт врасплох существо и попадает по нему атакой в первом раунде сражения, цель получает от атаки дополнительный урон 7 (2к6).`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Моргентшерн',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
           },
         },
       },

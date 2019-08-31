@@ -505,6 +505,7 @@ const {
   CREATURE_LEMURE = 'lemure',
   CREATURE_LICH = 'lich',
   CREATURE_LIZARDFOLK = 'lizardfolk',
+  CREATURE_LIZARDFOLK_KING_QUEEN = 'lizardfolk_king_queen',
   CREATURE_LIZARDFOLK_SHAMAN = 'lizardfolk_shaman',
   CREATURE_MANES = 'manes',
   CREATURE_MARID = 'marid',
@@ -22982,6 +22983,142 @@ module.exports = [
         name: 'Смена формы',
         comment: `перезаряжается после короткого или продолжительного отдыха`,
         description: `Людоящер магическим образом превращается в крокодила, оставаясь в этой форме до 1 часа. Он может вернуть свою истинную форму бонусным действием. Все его статистики, кроме размера, остаются одинаковыми во всех формах. Всё несомое и носимое им снаряжение не превращается. Он принимает свой истинный облик, если умирает.`,
+      },
+    ],
+  },
+  {
+    name: 'Король/королева ящеров',
+    nameEn: 'Lizard king/queen',
+    ...lizardfolkTexts,
+    id: CREATURE_LIZARDFOLK_KING_QUEEN,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_LIZARDFOLK,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:198',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 8,
+      cubeBonus: 24,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 15,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 4,
+      [PARAM_WIT]: 2,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_SURVIVAL]: 4,
+      [SKILL_STEALTH]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_DRACONIC,
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: 'Задержка дыхания',
+        description: `Людоящер может задержать дыхание на 15 минут.`,
+      },
+      {
+        name: 'Пронзание',
+        description: `Один раз в ход, когда людоящер совершает рукопашную атаку трезубцем и попадает, цель получает от атаки дополнительный урон 10 (3к6), а людоящер получает временные хиты, количество которых равно этому дополнительному урону.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Людоящер совершает две атаки: одну укусом, и одну либо когтями, либо трезубцем, или же две рукопашные атаки трезубцем.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Трезубец',
+        attack: {
+          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          bonus: 5,
+          range: {
+            melee: 5,
+            range: {
+              normal: 20,
+              max: 60,
+            },
+          },
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 3,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 3,
+                comment: `если используется двумя руками для совершения рукопашной атаки`,
+              },
+            ],
+          ],
+        },
       },
     ],
   },

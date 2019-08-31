@@ -110,6 +110,7 @@ const {
     LANG_ALL,
     LANG_ALL_KNOWN_AT_LIFE,
     LANG_ANY_ONE,
+    LANG_ANY_UP_TO_FIVE,
     LANG_AQUAN,
     LANG_AURAN,
     LANG_BULLYWUG,
@@ -201,6 +202,7 @@ const {
     SPELL_BLINDNESS_DEAFNESS,
     SPELL_BLUR,
     SPELL_CLAIRVOYANCE,
+    SPELL_CLOUDKILL,
     SPELL_COLOR_SPRAY,
     SPELL_COMMAND,
     SPELL_COMMUNE,
@@ -220,10 +222,13 @@ const {
     SPELL_DETECT_EVIL_AND_GOOD,
     SPELL_DETECT_MAGIC,
     SPELL_DETECT_THOUGHTS,
+    SPELL_DIMENSION_DOOR,
     SPELL_DISGUISE_SELF,
+    SPELL_DISINTEGRATE,
     SPELL_DISPEL_EVIL_AND_GOOD,
     SPELL_DISPEL_MAGIC,
     SPELL_DIVINATION,
+    SPELL_DOMINATE_MONSTER,
     SPELL_DOMINATE_PERSON,
     SPELL_DREAM,
     SPELL_DRUIDCRAFT,
@@ -232,12 +237,14 @@ const {
     SPELL_EYEBITE,
     SPELL_FAERIE_FIRE,
     SPELL_FEATHER_FALL,
+    SPELL_FINGER_OF_DEATH,
     SPELL_FIREBALL,
     SPELL_FLAME_STRIKE,
     SPELL_FLY,
     SPELL_FOG_CLOUD,
     SPELL_FREEDOM_OF_MOVEMENT,
     SPELL_GASEOUS_FORM,
+    SPELL_GLOBE_OF_INVULNERABILITY,
     SPELL_GOODBERRY,
     SPELL_GREATER_INVISIBILITY,
     SPELL_GREATER_RESTORATION,
@@ -260,6 +267,7 @@ const {
     SPELL_MAGIC_MISSILE,
     SPELL_MAJOR_IMAGE,
     SPELL_MASS_CURE_WOUNDS,
+    SPELL_MELFS_ACID_ARROW,
     SPELL_MINOR_ILLUSION,
     SPELL_MIRROR_IMAGE,
     SPELL_MISTY_STEP,
@@ -272,6 +280,7 @@ const {
     SPELL_PLANE_SHIFT,
     SPELL_POISON_SPRAY,
     SPELL_POLYMORPH,
+    SPELL_POWER_WORD_KILL,
     SPELL_POWER_WORD_STUN,
     SPELL_PRESTIDIGITATION,
     SPELL_PROTECTION_FROM_POISON,
@@ -486,6 +495,7 @@ const {
   CREATURE_KUO_TOA_MONITOR = 'kuo_toa_monitor',
   CREATURE_KUO_TOA_WHIP = 'kuo_toa_whip',
   CREATURE_LEMURE = 'lemure',
+  CREATURE_LICH = 'lich',
   CREATURE_MANES = 'manes',
   CREATURE_MARID = 'marid',
   CREATURE_MARILITH = 'marilith',
@@ -22502,6 +22512,202 @@ module.exports = [
             cubeBonus: 9,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Лич',
+    nameEn: 'Lich',
+    description: `Личи — это бывшие великие волшебники, ставшие нежитью для сохранения самих себя. Они любой ценой копят силы, нисколько не заботясь делами смертных кроме тех случаев, когда они пересекаются с их собственными интересами. Коварные и безумные, они жаждут давно забытых знаний и ужасных секретов. Так как страх смерти не властен над ними, они могут задумывать планы, воплощение которых займёт года, десятки лет, а то и столетия.\n
+Личи выглядят как худые скелетоподобные гуманоиды с высохшей кожей, обтягивающей их кости. Их глаза давным-давно сгнили, однако в пустых глазницах горят точечки света, подобные зрачкам. Они часто облачены в остатки хорошей одежды и ювелирные украшения, заношенные и выцветшие со временем.\n
+**Секреты нежити.** Ни один волшебник не станет личем просто по своей прихоти. Процесс превращения в лича — это хорошо охраняемый секрет. Волшебникам, ищущим эти знания, необходимо заключать сделки с исчадиями, злыми божествами и другими отвратительными существами. Многие обращаются к Оркусу, Демоническому Повелителю Нежити, чьими силами было создано бесчисленное множество личей. Однако те, кто контролируют эти знания, всегда требуют за них службы и верности.\n
+Превращение в лича проходит благодаря ритуалу, в ходе которого душа волшебника заточается в филактерий. Его душа привязывается к миру смертных, что не даёт ей после смерти переходить на другие планы существования. Филактерий представляет собой, как правило, амулет в виде маленькой коробочки, но это может быть любой предмет с пустым пространством внутри, в котором серебром начертаны магические символы имени, связывания, бессмертия и тёмной волшбы.\n
+Как только филактерий подготовлен, будущий лич должен выпить зелье трансформации — смесь ужасного яда с кровью разумного существа, чья душа тоже приносится в жертву. После этого волшебник умирает, а затем, когда его душа будет заключена в филактерий, восстаёт как лич.\n
+**Жертвоприношение душ.** Лич должен периодически скармливать души своему филактерию, чтобы поддерживать магию, сохраняющую его тело и сознание. Он делает это, используя заклинание _Заточение_ (Imprisonment). Вместо выбора одной из стандартных опций заклинания, лич использует его, чтобы заключить тело и душу жертвы внутри филактерия. Филактерий должен находиться на том же плане, что и лич, чтобы заклинание сработало. Филактерий лича может одновременно содержать только одно существо, а заклинание _Рассеивание магии_ (Dispel magic) 9 уровня, применённое на филактерий, освобождает заключённое в нём существо. Существо, заключённое в филактерии, через 24 часа поглощается им и исчезает без следа, после чего ничто, кроме божественного вмешательства, не может вернуть его к жизни.\n
+Лич, который не смог или забыл поддерживать своё тело душами жертв, начинает физически разрушаться, и в конце концов может превратиться в демилича.\n
+**Смерть и восстановление.** Когда тело лича случайно или намеренно разрушается, его воля и разум уходят из тела, оставляя позади лишь бездыханный труп. Через несколько дней подле филактерия лича из светящегося дыма формируется новое тело. Так как уничтожение филактерия есть шанс вечной смерти, личи обычно хранят свои филактерии в укрытом и хорошо охраняемом месте.\n
+Уничтожение филактерия лича — нелёгкая задача, ведь часто для этого требуется особый ритуал, предмет или оружие. Каждый филактерий уникален, и секрет его уничтожения может стать целью целого приключения.\n
+**Одинокое существование.** Время от времени лич может отвлечься от своей изоляционистской погони за мощью и поинтересоваться тем, что происходит в мире вокруг — такое происходит чаще всего во время великих потрясений, которые напоминают ему о жизни, которой он когда-то жил. В прочих случаях они живут в изоляции, вступая в контакт лишь с теми существами, чья служба помогает им поддерживать безопасность их логова.\n
+Некоторые личи называют себя своими прежними именами и прозвищами, например, Чёрная Рука или Забытый Король.\n
+**Коллекционеры магии.** Личи ищут и собирают свитки заклинаний и магические предметы. В дополнение к своим магическим способностям лич также может использовать и создавать зелья и свитки, имеет свою личную библиотеку с магическими книгами, и часто у лича есть один или два магических посоха или магические палочки. Если на лича нападут, то он не побоится их использовать.\n
+**Натура нежити.** Личу не нужен воздух, еда, питьё и сон. `,
+    id: CREATURE_LICH,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_ANY_EVIL,
+    source: 'MM:195',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 18,
+      cubeType: 8,
+      cubeBonus: 54,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 20,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 16,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 9,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 9,
+      [SKILL_HISTORY]: 12,
+      [SKILL_ARCANA]: 18,
+      [SKILL_INSIGHT]: 9,
+    },
+    resistanceList: [
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_NECROTIC,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    conditionImmunityList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 19,
+      },
+    ],
+    languageList: [
+      LANG_COMMON,
+      LANG_ANY_UP_TO_FIVE,
+    ],
+    cr: CR_21,
+    featureList: [
+      {
+        name: 'Легендарное сопротивление',
+        description: `Если лич проваливает спасбросок, он может вместо этого сделать спасбросок успешным.`,
+        limit: {
+          count: 3,
+          period: 'день',
+        },
+      },
+      {
+        name: 'Восстановление',
+        description: `Если у лича есть филактерий, лич через 1к10 дней после уничтожения получает новое тело, восстанавливает все хиты и становится живым. Новое тело появляется в пределах 5 футов от филактерия.`,
+      },
+      {
+        name: 'Сопротивление изгнанию',
+        description: `Лич совершает с преимуществом спасброски от всех эффектов, изгоняющих нежить.`,
+      },
+    ],
+    spellCast: {
+      spellCasterLevel: 18,
+      spellCasterClass: PC_CLASS_WIZARD,
+      baseStat: PARAM_INT,
+      spellAttackBonus: 12,
+      saveThrowDc: 20,
+      spellIdList: [
+        SPELL_ANIMATE_DEAD,
+        SPELL_BLIGHT,
+        SPELL_CLOUDKILL,
+        SPELL_COUNTERSPELL,
+        SPELL_DETECT_MAGIC,
+        SPELL_DETECT_THOUGHTS,
+        SPELL_DIMENSION_DOOR,
+        SPELL_DISINTEGRATE,
+        SPELL_DISPEL_MAGIC,
+        SPELL_DOMINATE_MONSTER,
+        SPELL_FINGER_OF_DEATH,
+        SPELL_FIREBALL,
+        SPELL_GLOBE_OF_INVULNERABILITY,
+        SPELL_INVISIBILITY,
+        SPELL_MAGE_HAND,
+        SPELL_MAGIC_MISSILE,
+        SPELL_MELFS_ACID_ARROW,
+        SPELL_MIRROR_IMAGE,
+        SPELL_PLANE_SHIFT,
+        SPELL_POWER_WORD_KILL,
+        SPELL_POWER_WORD_STUN,
+        SPELL_PRESTIDIGITATION,
+        SPELL_RAY_OF_FROST,
+        SPELL_SCRYING,
+        SPELL_SHIELD,
+        SPELL_THUNDERWAVE,
+      ],
+      slotCountList: [
+        Infinity,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+      ],
+    },
+    actionList: [
+      {
+        name: 'Парализующее касание',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 18, иначе станут парализованной на 1 минуту. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
+        attack: {
+          type: ACTION_MELEE_SPELL_ATTACK,
+          bonus: 12,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_COLD,
+            cubeCount: 3,
+            cubeType: 6,
+          },
+        },
+      },
+    ],
+    legendaryPoints: 3,
+    legendaryActionList: [
+      {
+        name: 'Заговор',
+        description: `Лич накладывает заговор.`,
+      },
+      {
+        name: 'Парализующее касание',
+        cost: 2,
+        description: `Лич использует Парализующее касание.`,
+      },
+      {
+        name: 'Пугающий взгляд',
+        cost: 2,
+        description: `Лич фиксирует взгляд на одном существе, видимом в пределах 10 футов. Цель должна преуспеть в спасброске Мудрости со Сл 18 от этой магии, иначе станет испуганной на 1 минуту. Испуганная цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе. Если цель успешно совершила спасбросок или действие эффекта закончилось, она получает иммунитет к взгляду этого лича на следующие 24 часа.`,
+      },
+      {
+        name: 'Разрушение жизни',
+        cost: 3,
+        description: `Все существа, не являющиеся нежитью, в пределах 20 футов от лича должны совершить спасбросок Телосложения со Сл 18 от этой магии, получая урон некротической энергией 21 (6к6) при провале, или половину этого урона при успехе. `,
       },
     ],
   },

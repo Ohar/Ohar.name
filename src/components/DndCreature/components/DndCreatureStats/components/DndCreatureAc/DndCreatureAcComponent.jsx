@@ -14,7 +14,7 @@ export default ({armor}) => (
             }
 
             if (typeof item === 'object') {
-              const {ac, type, comment} = item
+              const {ac, type, comment = ''} = item
               const typeStr = type
                 ? `(${type})`
                 : ''

@@ -403,10 +403,10 @@ const {
   CREATURE_BALOR = 'balor',
   CREATURE_BANDIT = 'bandit',
   CREATURE_BANSHEE = 'banshee',
-  CREATURE_BARLGURA = 'barlgura',
-  CREATURE_BASILISK = 'basilisk',
   CREATURE_BARBED_DEVIL = 'barbed_devil',
   CREATURE_BARBED_DEVIL_SUMMONER = 'barbed_devil_summoner',
+  CREATURE_BARLGURA = 'barlgura',
+  CREATURE_BASILISK = 'basilisk',
   CREATURE_BEARDED_DEVIL = 'bearded_devil',
   CREATURE_BEARDED_DEVIL_SUMMONER = 'bearded_devil_summoner',
   CREATURE_BEHIR = 'behir',
@@ -446,6 +446,7 @@ const {
   CREATURE_DRYAD = 'dryad',
   CREATURE_DUERGAR = 'duergar',
   CREATURE_DUST_MEPHIT = 'dust_mephit',
+  CREATURE_DUST_MEPHIT_SUMMONER = 'dust_mephit_summoner',
   CREATURE_EFREETI = 'efreeti',
   CREATURE_ERINYES = 'erinyes',
   CREATURE_ERINYES_SUMMONER = 'erinyes_summoner',
@@ -463,10 +464,10 @@ const {
   CREATURE_GARGOYLE = 'gargoyle',
   CREATURE_GAS_SPORE = 'gas_spore',
   CREATURE_GIBBERING_MOUTHER = 'gibbering_mouther',
-  CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth',
-  CREATURE_GITHZERAI_MONK = 'githzerai_monk',
   CREATURE_GITHYANKI_KNIGHT = 'githyanki_knight',
   CREATURE_GITHYANKI_WARRIOR = 'githyanki_warrior',
+  CREATURE_GITHZERAI_MONK = 'githzerai_monk',
+  CREATURE_GITHZERAI_ZERTH = 'githzerai_zerth',
   CREATURE_GLABREZU = 'glabrezu',
   CREATURE_GNOLL = 'gnoll',
   CREATURE_GNOLL_FANG_OF_YEENOGHU = 'gnoll_fang_of_yeenoghu',
@@ -489,17 +490,18 @@ const {
   CREATURE_HELL_HOUND = 'hell_hound',
   CREATURE_HEZROU = 'hezrou',
   CREATURE_HILL_GIANT = 'hill_giant',
+  CREATURE_HIPPOGRIFF = 'hippogriff',
   CREATURE_HOMUNCULUS = 'homunculus',
   CREATURE_HOOK_HORROR = 'hook_horror',
   CREATURE_HORNED_DEVIL = 'horned_devil',
   CREATURE_HORNED_DEVIL_SUMMONER = 'horned_devil_summoner',
   CREATURE_HYDRA = 'hydra',
-  CREATURE_HIPPOGRIFF = 'hippogriff',
   CREATURE_ICE_DEVIL = 'ice_devil',
   CREATURE_ICE_DEVIL_SUMMONER = 'ice_devil_summoner',
   CREATURE_ICE_DEVIL_SUMMONER_WITH_A_SPEAR = 'ice_devil_summoner_with_a_spear',
   CREATURE_ICE_DEVIL_WITH_A_SPEAR = 'ice_devil_with_a_spear',
   CREATURE_ICE_MEPHIT = 'ice_mephit',
+  CREATURE_ICE_MEPHIT_SUMMONER = 'ice_mephit_summoner',
   CREATURE_IMP = 'imp',
   CREATURE_IMP_FAMILIAR = 'imp_familiar',
   CREATURE_IRON_GOLEM = 'iron_golem',
@@ -517,6 +519,7 @@ const {
   CREATURE_LIZARDFOLK_KING_QUEEN = 'lizardfolk_king_queen',
   CREATURE_LIZARDFOLK_SHAMAN = 'lizardfolk_shaman',
   CREATURE_MAGMA_MEPHIT = 'magma_mephit',
+  CREATURE_MAGMA_MEPHIT_SUMMONER = 'magma_mephit_summoner',
   CREATURE_MAGMIN = 'magmin',
   CREATURE_MANES = 'manes',
   CREATURE_MANTICORE = 'manticore',
@@ -526,22 +529,23 @@ const {
   CREATURE_MERFOLK = 'merfolk',
   CREATURE_MERROW = 'merrow',
   CREATURE_MUD_MEPHIT = 'mud_mephit',
+  CREATURE_MUD_MEPHIT_SUMMONER = 'mud_mephit_summoner',
   CREATURE_NALFESHNEE = 'nalfeshnee',
   CREATURE_NEEDLE_BLIGHT = 'needle_blight',
   CREATURE_NIGHT_HAG = 'night_hag',
   CREATURE_NIGHT_HAG_COVEN = 'night_hag_coven',
   CREATURE_NIGHTMARE = 'nightmare',
-  CREATURE_PLANETAR = 'planetar',
-  CREATURE_PURPLE_WORM = 'purple_worm',
-  CREATURE_QUASIT = 'quasit',
-  CREATURE_QUASIT_FAMILIAR = 'quasit_familiar',
   CREATURE_OGRE_ZOMBIE = 'ogre_zombie',
   CREATURE_PIT_FIEND = 'pit_fiend',
   CREATURE_PIT_FIEND_SUMMONER = 'pit_fiend_summoner',
+  CREATURE_PLANETAR = 'planetar',
   CREATURE_PLESIOSAURUS = 'plesiosaurus',
   CREATURE_PTERANODON = 'pteranodon',
+  CREATURE_PURPLE_WORM = 'purple_worm',
   CREATURE_QUAGGOTH = 'quaggoth',
   CREATURE_QUAGGOTH_THONOT = 'quaggoth_thonot',
+  CREATURE_QUASIT = 'quasit',
+  CREATURE_QUASIT_FAMILIAR = 'quasit_familiar',
   CREATURE_RED_DRAGON_WYRMLING = 'red_dragon_wyrmling',
   CREATURE_ROPER = 'roper',
   CREATURE_SEA_HAG = 'sea_hag',
@@ -550,14 +554,16 @@ const {
   CREATURE_SHRIEKER = 'shrieker',
   CREATURE_SILVER_DRAGON_WYRMLING = 'silver_dragon_wyrmling',
   CREATURE_SMOKE_MEPHIT = 'smoke_mephit',
+  CREATURE_SMOKE_MEPHIT_SUMMONER = 'smoke_mephit_summoner',
   CREATURE_SOLAR = 'solar',
+  CREATURE_SPECTATOR = 'spectator',
+  CREATURE_SPINED_DEVIL = 'spined_devil',
   CREATURE_STEAM_MEPHIT = 'steam',
+  CREATURE_STEAM_MEPHIT_SUMMONER = 'steam_mephit_summoner',
   CREATURE_STIRGE = 'stirge',
   CREATURE_STONE_GIANT = 'stone_giant',
   CREATURE_STONE_GOLEM = 'stone_golem',
   CREATURE_STORM_GIANT = 'storm_giant',
-  CREATURE_SPECTATOR = 'spectator',
-  CREATURE_SPINED_DEVIL = 'spined_devil',
   CREATURE_TRICERATOPS = 'triceratops',
   CREATURE_TWIG_BLIGHT = 'twig_blight',
   CREATURE_TYRANNOSAURUS_REX = 'tyrannosaurus_rex',
@@ -24556,5 +24562,113 @@ module.exports = [
         description: `Мефит выдыхает ослепляющую пыль 15-футовым конусом. Все существа в этой области должны преуспеть в спасброске Ловкости со Сл 10, иначе станут ослеплёнными на 1 минуту. Существо может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
       },
     ],
+  },
+  {
+    name: 'Грязевой мефит-призыватель',
+    nameEn: 'Mud mephit summoner',
+    id: CREATURE_MUD_MEPHIT_SUMMONER,
+    parentId: CREATURE_MUD_MEPHIT,
+    extendPropCollection: {
+      actionList: [
+        {
+          name: 'Призыв мефитов',
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          description: `У мефита есть 25% шанс призвать 1к4 грязевых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
+        },
+      ]
+    },
+  },
+  {
+    name: 'Дымовой мефит-призыватель',
+    nameEn: 'Smoke mephit summoner',
+    id: CREATURE_SMOKE_MEPHIT_SUMMONER,
+    parentId: CREATURE_SMOKE_MEPHIT,
+    extendPropCollection: {
+      actionList: [
+        {
+          name: 'Призыв мефитов',
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          description: `У мефита есть 25% шанс призвать 1к4 дымовых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
+        },
+      ]
+    },
+  },
+  {
+    name: 'Ледяной мефит-призыватель',
+    nameEn: 'Ice mephit summoner',
+    id: CREATURE_ICE_MEPHIT_SUMMONER,
+    parentId: CREATURE_ICE_MEPHIT,
+    extendPropCollection: {
+      actionList: [
+        {
+          name: 'Призыв мефитов',
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          description: `У мефита есть 25% шанс призвать 1к4 ледяных мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
+        },
+      ]
+    },
+  },
+  {
+    name: 'Магмовый мефит-призыватель',
+    nameEn: 'Magma mephit summoner',
+    id: CREATURE_MAGMA_MEPHIT_SUMMONER,
+    parentId: CREATURE_MAGMA_MEPHIT,
+    extendPropCollection: {
+      actionList: [
+        {
+          name: 'Призыв мефитов',
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          description: `У мефита есть 25% шанс призвать 1к4 магмовых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
+        },
+      ]
+    },
+  },
+  {
+    name: 'Паровый мефит-призыватель',
+    nameEn: 'Steam mephit summoner',
+    id: CREATURE_STEAM_MEPHIT_SUMMONER,
+    parentId: CREATURE_STEAM_MEPHIT,
+    extendPropCollection: {
+      actionList: [
+        {
+          name: 'Призыв мефитов',
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          description: `У мефита есть 25% шанс призвать 1к4 паровых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
+        },
+      ]
+    },
+  },
+  {
+    name: 'Пылевой мефит-призыватель',
+    nameEn: 'Dust mephit summoner',
+    id: CREATURE_DUST_MEPHIT_SUMMONER,
+    parentId: CREATURE_DUST_MEPHIT,
+    extendPropCollection: {
+      actionList: [
+        {
+          name: 'Призыв мефитов',
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          description: `У мефита есть 25% шанс призвать 1к4 пылевых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
+        },
+      ]
+    },
   },
 ]

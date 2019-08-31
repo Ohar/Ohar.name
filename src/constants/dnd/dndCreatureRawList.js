@@ -522,6 +522,7 @@ const {
   CREATURE_MEDUSA = 'medusa',
   CREATURE_MERFOLK = 'merfolk',
   CREATURE_MERROW = 'merrow',
+  CREATURE_MUD_MEPHIT = 'mud_mephit',
   CREATURE_NALFESHNEE = 'nalfeshnee',
   CREATURE_NEEDLE_BLIGHT = 'needle_blight',
   CREATURE_NIGHT_HAG = 'night_hag',
@@ -23924,6 +23925,101 @@ module.exports = [
             },
           ],
         },
+      },
+    ],
+  },
+  {
+    name: 'Грязевой мефит',
+    nameEn: 'Mud mephit',
+    description: `Грязевые мефиты медлительны и маслянисты. Они состоят из земли и воды. Они будут жаловаться на жизнь любому, кто станет их слушать, и будут беспрестанно требовать к себе внимания и выпрашивать подарки.`,
+    id: CREATURE_MUD_MEPHIT,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:204',
+    armor: 11,
+    hp: {
+      cubeCount: 6,
+      cubeType: 6,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_FLY]: 20,
+      [SPEED_SWIM]: 20,
+    },
+    params: {
+      [PARAM_STR]: 8,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 3,
+    },
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    conditionImmunityList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_AQUAN,
+      LANG_TERRAN,
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Предсмертная вспышка',
+        description: `Когда мефит умирает, он разлетается во все стороны липкой грязью. Все существа с размером не больше Среднего в пределах 5 футов от него должны преусферы спеть в спасброске Ловкости со Сл 11, иначе станут опутанными до конца своего следующего хода.`,
+      },
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока мефит остаётся без движения,  он неотличим от обычной кучи грязи.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Кулаки',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Грязевое дыхание',
+        restore: {
+          from: 6,
+          to: 6,
+        },
+        description: `Мефит изрыгает липкую грязь на одно существо, находящееся в пределах 5 футов от него. Если размер цели не больше Среднего, она должна преуспеть в спасброске Ловкости со Сл 11, иначе станет опутанной на 1 минуту. Существо может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
       },
     ],
   },

@@ -15,11 +15,13 @@ const DndCreatureStatsContainer = ({id}) => {
     featureList,
     legendaryActionList,
     legendaryPoints,
+    spellCast,
+    spellCastTogether,
     ...rest
   } = dndCreatureCollection[id]
 
   const {genderId} = dndCreatureTypeCollection[creatureTypeIdList[0]]
-  const columnCount = calculateColumnCount({actionList, featureList, legendaryPoints, legendaryActionList})
+  const columnCount = calculateColumnCount({actionList, featureList, legendaryPoints, legendaryActionList, spellCast, spellCastTogether})
 
   return (
     <DndCreatureStatsComponent
@@ -30,6 +32,8 @@ const DndCreatureStatsContainer = ({id}) => {
       legendaryActionList={legendaryActionList}
       legendaryPoints={legendaryPoints}
       columnCount={columnCount}
+      spellCast={spellCast}
+      spellCastTogether={spellCastTogether}
       {...rest}
     />
   )

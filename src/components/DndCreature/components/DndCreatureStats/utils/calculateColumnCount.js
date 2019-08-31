@@ -2,6 +2,8 @@ const COEF_ITEM_PER_COLUMN = 10
 const MAX_COLUMN = 4
 const DESCRIPTION_COEF = 1/200
 const NO_DESCRIPTION_WEIGNT = .25
+const LEGENDARY_WEIGNT = 2
+const SPELLCAST_WEIGNT = 3
 const BASIC_WEIGNT = 6
 const ITEM_WEIGNT = .75
 
@@ -11,9 +13,11 @@ export default (
     featureList = [],
     legendaryActionList = [],
     legendaryPoints = 0,
+    spellCast = null,
+    spellCastTogether = null,
   }
 ) => {
-  const total = [
+  let total = [
     actionList,
     featureList,
     legendaryActionList,
@@ -28,6 +32,18 @@ export default (
     ),
     BASIC_WEIGNT
   )
+
+  if (legendaryActionList.length) {
+    total += LEGENDARY_WEIGNT
+  }
+
+  if (spellCast) {
+    total += SPELLCAST_WEIGNT
+  }
+
+  if (spellCastTogether) {
+    total += SPELLCAST_WEIGNT
+  }
 
   for (let i = MAX_COLUMN; i > 1; i--) {
     if (total > (i - 1) * COEF_ITEM_PER_COLUMN) {

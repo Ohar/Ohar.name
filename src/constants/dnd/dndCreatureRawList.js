@@ -546,6 +546,7 @@ const {
   CREATURE_SHADOW_DEMON = 'shadow_demon',
   CREATURE_SHRIEKER = 'shrieker',
   CREATURE_SILVER_DRAGON_WYRMLING = 'silver_dragon_wyrmling',
+  CREATURE_SMOKE_MEPHIT = 'smoke_mephit',
   CREATURE_SOLAR = 'solar',
   CREATURE_STIRGE = 'stirge',
   CREATURE_STONE_GIANT = 'stone_giant',
@@ -24020,6 +24021,106 @@ module.exports = [
           to: 6,
         },
         description: `Мефит изрыгает липкую грязь на одно существо, находящееся в пределах 5 футов от него. Если размер цели не больше Среднего, она должна преуспеть в спасброске Ловкости со Сл 11, иначе станет опутанной на 1 минуту. Существо может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
+      },
+    ],
+  },
+  {
+    name: 'Дымовой мефит',
+    nameEn: 'Smoke mephit',
+    description: `Это грубые, ленивые, сотворённые из воздуха и огня создания, которые постоянно дымятся. Они редко говорят правду и любят издеваться над другими существами, вводя их в заблуждение. `,
+    id: CREATURE_SMOKE_MEPHIT,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: 'MM:204',
+    armor: 12,
+    hp: {
+      cubeCount: 5,
+      cubeType: 6,
+      cubeBonus: 5,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 6,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+      [SKILL_STEALTH]: 4,
+    },
+    immunityList: [
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
+    ],
+    conditionImmunityList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_AURAN,
+      LANG_IGNAN,
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Предсмертная вспышка',
+        description: `Когда мефит умирает, он оставляет после себя облачко дыма, заполняющее сферу с радиусом 5 футов и центром на его пространстве. Пространство сферы сильно заслонено. Ветер рассеивает облачко, которое в противном случае висит 1 минуту. `,
+      },
+      {
+        name: 'Врождённое колдовство',
+        limit: {
+          count: 1,
+          period: 'день',
+        },
+        description: `Мефит может накладывать _Пляшущие огоньки_ (Dancing lights), не нуждаясь в материальных компонентах. Его базовой характеристикой является Харизма.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Пепельное дыхание',
+        restore: {
+          from: 6,
+          to: 6,
+        },
+        description: `Мефит выдыхает горячий пепел 15-футовым конусом. Все существа в этой области должны преуспеть в спасброске Ловкости со Сл 10, иначе станут ослеплёнными до конца следующего хода мефита. `,
       },
     ],
   },

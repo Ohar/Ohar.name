@@ -24685,7 +24685,7 @@ module.exports = [
     aligmentId: ALIGMENT_LN,
     source: 'MM:207',
     armor: {
-      ac: 11,
+      ac: 13,
       type: 'природный доспех',
     },
     hp: {

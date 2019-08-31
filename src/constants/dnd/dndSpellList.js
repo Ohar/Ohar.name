@@ -41,6 +41,7 @@ const SPELL_BLIGHT = 'blight'
 const SPELL_BLINDNESS_DEAFNESS = 'blindness_deafness'
 const SPELL_BLUR = 'blur'
 const SPELL_CLAIRVOYANCE = 'clairvoyance'
+const SPELL_CLOUDKILL = 'cloudkill'
 const SPELL_COLOR_SPRAY = 'color_spray'
 const SPELL_COMMAND = 'command'
 const SPELL_COMMUNE = 'commune'
@@ -60,10 +61,13 @@ const SPELL_DARKNESS = 'darkness'
 const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
 const SPELL_DETECT_MAGIC = 'detect_magic'
 const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
+const SPELL_DIMENSION_DOOR = 'dimension_door'
 const SPELL_DISGUISE_SELF = 'disguise_self'
+const SPELL_DISINTEGRATE = 'disintegrate'
 const SPELL_DISPEL_EVIL_AND_GOOD = 'dispel_evil_and_good'
 const SPELL_DISPEL_MAGIC = 'dispel_magic'
 const SPELL_DIVINATION = 'divination'
+const SPELL_DOMINATE_MONSTER = 'dominate_monster'
 const SPELL_DOMINATE_PERSON = 'dominate_person'
 const SPELL_DREAM = 'dream'
 const SPELL_DRUIDCRAFT = 'druidcraft'
@@ -72,12 +76,14 @@ const SPELL_ENTANGLE = 'entangle'
 const SPELL_EYEBITE = 'eyebite'
 const SPELL_FAERIE_FIRE = 'faerie_fire'
 const SPELL_FEATHER_FALL = 'feather_fall'
+const SPELL_FINGER_OF_DEATH = 'finger_of_death'
 const SPELL_FIREBALL = 'fireball'
 const SPELL_FLAME_STRIKE = 'flame_strike'
 const SPELL_FLY = 'fly'
 const SPELL_FOG_CLOUD = 'fog_cloud'
 const SPELL_FREEDOM_OF_MOVEMENT = 'freedom_of_movement'
 const SPELL_GASEOUS_FORM = 'gaseous_form'
+const SPELL_GLOBE_OF_INVULNERABILITY = 'globe_of_invulnerability'
 const SPELL_GOODBERRY = 'goodberry'
 const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
 const SPELL_GREATER_RESTORATION = 'greater_restoration'
@@ -100,6 +106,7 @@ const SPELL_MAGE_HAND = 'mage_hand'
 const SPELL_MAGIC_MISSILE = 'magic_missile'
 const SPELL_MAJOR_IMAGE = 'major_image'
 const SPELL_MASS_CURE_WOUNDS = 'mass_cure_wounds'
+const SPELL_MELFS_ACID_ARROW = 'melfs_acid_arrow'
 const SPELL_MINOR_ILLUSION = 'minor_illusion'
 const SPELL_MIRROR_IMAGE = 'mirror_image'
 const SPELL_MISTY_STEP = 'misty_step'
@@ -112,6 +119,7 @@ const SPELL_PHANTASMAL_KILLER = 'phantasmal_killer'
 const SPELL_PLANE_SHIFT = 'plane_shift'
 const SPELL_POISON_SPRAY = 'poison_spray'
 const SPELL_POLYMORPH = 'polymorph'
+const SPELL_POWER_WORD_KILL = 'power_word_kill'
 const SPELL_POWER_WORD_STUN = 'power_word_stun'
 const SPELL_PRESTIDIGITATION = 'prestidigitation'
 const SPELL_PROTECTION_FROM_POISON = 'protection_from_poison'
@@ -1933,6 +1941,118 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_DIMENSION_DOOR,
+    name: 'Переносящая дверь',
+    nameEn: 'Dimension door',
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_CLOUDKILL,
+    name: 'Облако смерти',
+    nameEn: 'Cloudkill',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_DISINTEGRATE,
+    name: 'Распад',
+    nameEn: 'Disintegrate',
+    description: ``, // TODO
+    lvl: 6,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_GLOBE_OF_INVULNERABILITY,
+    name: 'Сфера неуязвимости',
+    nameEn: 'Globe_of_invulnerability',
+    description: ``, // TODO
+    lvl: 6,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_FINGER_OF_DEATH,
+    name: 'Перст смерти',
+    nameEn: 'Finger_of_death',
+    description: ``, // TODO
+    lvl: 7,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_DOMINATE_MONSTER,
+    name: 'Подчинение чудовища',
+    nameEn: 'Dominate_monster',
+    description: ``, // TODO
+    lvl: 8,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_POWER_WORD_KILL,
+    name: 'слово силы: смерть',
+    nameEn: 'Power_word_kill',
+    description: ``, // TODO
+    lvl: 9,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_MELFS_ACID_ARROW,
+    name: 'Мельфова кислотная стрела',
+    nameEn: 'Melf’s acid arrow',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -1958,6 +2078,7 @@ module.exports.SPELL_BLIGHT = SPELL_BLIGHT
 module.exports.SPELL_BLINDNESS_DEAFNESS = SPELL_BLINDNESS_DEAFNESS
 module.exports.SPELL_BLUR = SPELL_BLUR
 module.exports.SPELL_CLAIRVOYANCE = SPELL_CLAIRVOYANCE
+module.exports.SPELL_CLOUDKILL = SPELL_CLOUDKILL
 module.exports.SPELL_COLOR_SPRAY = SPELL_COLOR_SPRAY
 module.exports.SPELL_COMMAND = SPELL_COMMAND
 module.exports.SPELL_COMMUNE = SPELL_COMMUNE
@@ -1977,10 +2098,13 @@ module.exports.SPELL_DARKNESS = SPELL_DARKNESS
 module.exports.SPELL_DETECT_EVIL_AND_GOOD = SPELL_DETECT_EVIL_AND_GOOD
 module.exports.SPELL_DETECT_MAGIC = SPELL_DETECT_MAGIC
 module.exports.SPELL_DETECT_THOUGHTS = SPELL_DETECT_THOUGHTS
+module.exports.SPELL_DIMENSION_DOOR = SPELL_DIMENSION_DOOR
 module.exports.SPELL_DISGUISE_SELF = SPELL_DISGUISE_SELF
+module.exports.SPELL_DISINTEGRATE = SPELL_DISINTEGRATE
 module.exports.SPELL_DISPEL_EVIL_AND_GOOD = SPELL_DISPEL_EVIL_AND_GOOD
 module.exports.SPELL_DISPEL_MAGIC = SPELL_DISPEL_MAGIC
 module.exports.SPELL_DIVINATION = SPELL_DIVINATION
+module.exports.SPELL_DOMINATE_MONSTER = SPELL_DOMINATE_MONSTER
 module.exports.SPELL_DOMINATE_PERSON = SPELL_DOMINATE_PERSON
 module.exports.SPELL_DREAM = SPELL_DREAM
 module.exports.SPELL_DRUIDCRAFT = SPELL_DRUIDCRAFT
@@ -1989,12 +2113,14 @@ module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
 module.exports.SPELL_EYEBITE = SPELL_EYEBITE
 module.exports.SPELL_FAERIE_FIRE = SPELL_FAERIE_FIRE
 module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
+module.exports.SPELL_FINGER_OF_DEATH = SPELL_FINGER_OF_DEATH
 module.exports.SPELL_FIREBALL = SPELL_FIREBALL
 module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE
 module.exports.SPELL_FLY = SPELL_FLY
 module.exports.SPELL_FOG_CLOUD = SPELL_FOG_CLOUD
 module.exports.SPELL_FREEDOM_OF_MOVEMENT = SPELL_FREEDOM_OF_MOVEMENT
 module.exports.SPELL_GASEOUS_FORM = SPELL_GASEOUS_FORM
+module.exports.SPELL_GLOBE_OF_INVULNERABILITY = SPELL_GLOBE_OF_INVULNERABILITY
 module.exports.SPELL_GOODBERRY = SPELL_GOODBERRY
 module.exports.SPELL_GREATER_INVISIBILITY = SPELL_GREATER_INVISIBILITY
 module.exports.SPELL_GREATER_RESTORATION = SPELL_GREATER_RESTORATION
@@ -2017,6 +2143,7 @@ module.exports.SPELL_MAGE_HAND = SPELL_MAGE_HAND
 module.exports.SPELL_MAGIC_MISSILE = SPELL_MAGIC_MISSILE
 module.exports.SPELL_MAJOR_IMAGE = SPELL_MAJOR_IMAGE
 module.exports.SPELL_MASS_CURE_WOUNDS = SPELL_MASS_CURE_WOUNDS
+module.exports.SPELL_MELFS_ACID_ARROW = SPELL_MELFS_ACID_ARROW
 module.exports.SPELL_MINOR_ILLUSION = SPELL_MINOR_ILLUSION
 module.exports.SPELL_MIRROR_IMAGE = SPELL_MIRROR_IMAGE
 module.exports.SPELL_MISTY_STEP = SPELL_MISTY_STEP
@@ -2029,6 +2156,7 @@ module.exports.SPELL_PHANTASMAL_KILLER = SPELL_PHANTASMAL_KILLER
 module.exports.SPELL_PLANE_SHIFT = SPELL_PLANE_SHIFT
 module.exports.SPELL_POISON_SPRAY = SPELL_POISON_SPRAY
 module.exports.SPELL_POLYMORPH = SPELL_POLYMORPH
+module.exports.SPELL_POWER_WORD_KILL = SPELL_POWER_WORD_KILL
 module.exports.SPELL_POWER_WORD_STUN = SPELL_POWER_WORD_STUN
 module.exports.SPELL_PRESTIDIGITATION = SPELL_PRESTIDIGITATION
 module.exports.SPELL_PROTECTION_FROM_POISON = SPELL_PROTECTION_FROM_POISON

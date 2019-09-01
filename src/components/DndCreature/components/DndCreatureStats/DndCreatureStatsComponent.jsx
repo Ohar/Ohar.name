@@ -5,14 +5,15 @@ import DndActionList from "./components/DndActionList"
 import DndCreatureAc from "./components/DndCreatureAc"
 import DndCreatureAligment from "./components/DndCreatureAligment"
 import DndCreatureCr from "./components/DndCreatureCr"
+import DndCreatureExtender from "./components/DndCreatureExtender"
 import DndCreatureHp from "./components/DndCreatureHp"
 import DndCreatureSize from "./components/DndCreatureSize"
 import DndCreatureSource from "./components/DndCreatureSource"
 import DndCreatureSpeed from "./components/DndCreatureSpeed"
 import DndCreatureType from "./components/DndCreatureType"
 import DndFeatureList from "./components/DndFeatureList"
-import DndImmunityList from "./components/DndImmunityList"
 import DndImmunityConditionList from "./components/DndImmunityConditionList"
+import DndImmunityList from "./components/DndImmunityList"
 import DndLanguageList from "./components/DndLanguageList"
 import DndLegendaryActionList from "./components/DndLegendaryActionList"
 import DndParamList from "./components/DndParamList"
@@ -27,37 +28,46 @@ import "./DndCreatureStatsStyles.less"
 
 const DndCreatureStatsComponent = (
   {
-    actionList,
-    aligmentId,
-    armor,
+    creature,
+    creature: {
+      actionList = [],
+      aligmentId,
+      armor,
+      cr,
+      creatureTypeIdList,
+      featureList = [],
+      hp,
+      immunityConditionList = [],
+      immunityList = [],
+      isFemale = false,
+      languageList = [],
+      legendaryActionList = [],
+      legendaryPoints = 0,
+      name,
+      params,
+      reactionList = [],
+      resistanceList = [],
+      saveThrowCollection = null,
+      senseList = [],
+      sizeType,
+      skillCollection = null,
+      source,
+      speed,
+      spellCast = null,
+      spellCastTogether = null,
+      vulnerabilityList = [],
+    },
     columnCount,
-    cr,
-    creatureTypeIdList,
-    featureList,
     genderId,
-    hp,
-    immunityConditionList,
-    immunityList,
-    isFemale,
-    languageList,
-    legendaryActionList,
-    legendaryPoints,
-    name,
-    params,
-    reactionList,
-    resistanceList,
-    saveThrowCollection,
-    senseList,
-    sizeType,
-    skillCollection,
-    source,
-    speed,
-    spellCast,
-    spellCastTogether,
-    vulnerabilityList,
+    extendCreature,
   },
 ) => (
   <section className={`DndCreatureStats DndCreatureStats-columnCount_${columnCount}`}>
+    <DndCreatureExtender
+      className='DndCreatureStats_extender'
+      creature={creature}
+      callback={extendCreature}
+    />
     <header className='DndCreatureStats_header'>
       {name}
     </header>
@@ -115,60 +125,48 @@ const DndCreatureStatsComponent = (
 )
 
 DndCreatureStatsComponent.propTypes = {
-  actionList: PropTypes.array,
-  aligmentId: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-  ]).isRequired,
-  armor: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.array,
-    PropTypes.shape({
-      ac: PropTypes.number,
-      type: PropTypes.string,
-    }),
-  ]).isRequired,
   columnCount: PropTypes.number,
-  cr: PropTypes.string.isRequired,
-  creatureTypeIdList: PropTypes.array.isRequired,
-  description: PropTypes.string,
-  featureList: PropTypes.array,
   genderId: PropTypes.string.isRequired,
-  hp: PropTypes.object.isRequired,
-  immunityList: PropTypes.array,
-  isFemale: PropTypes.bool,
-  languageList: PropTypes.array,
-  legendaryActionList: PropTypes.array,
-  legendaryPoints: PropTypes.number,
-  name: PropTypes.string.isRequired,
-  params: PropTypes.object.isRequired,
-  reactionList: PropTypes.array,
-  saveThrowCollection: PropTypes.object,
-  senseList: PropTypes.array,
-  sizeType: PropTypes.string.isRequired,
-  skillCollection: PropTypes.object,
-  source: PropTypes.string.isRequired,
-  speed: PropTypes.object.isRequired,
-  spellCast: PropTypes.object,
-  vulnerabilityList: PropTypes.array,
+  creature: PropTypes.shape({
+    actionList: PropTypes.array,
+    aligmentId: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.array,
+    ]).isRequired,
+    armor: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.array,
+      PropTypes.shape({
+        ac: PropTypes.number,
+        type: PropTypes.string,
+      }),
+    ]).isRequired,
+    cr: PropTypes.string.isRequired,
+    creatureTypeIdList: PropTypes.array.isRequired,
+    featureList: PropTypes.array,
+    hp: PropTypes.object.isRequired,
+    immunityList: PropTypes.array,
+    isFemale: PropTypes.bool,
+    languageList: PropTypes.array,
+    legendaryActionList: PropTypes.array,
+    legendaryPoints: PropTypes.number,
+    name: PropTypes.string.isRequired,
+    params: PropTypes.object.isRequired,
+    reactionList: PropTypes.array,
+    saveThrowCollection: PropTypes.object,
+    senseList: PropTypes.array,
+    sizeType: PropTypes.string.isRequired,
+    skillCollection: PropTypes.object,
+    source: PropTypes.string.isRequired,
+    speed: PropTypes.object.isRequired,
+    spellCast: PropTypes.object,
+    spellCastTogether: PropTypes.object,
+    vulnerabilityList: PropTypes.array,
+  }).isRequired,
 }
 
 DndCreatureStatsComponent.defaultProps = {
-  actionList: [],
   columnCount: 1,
-  description: '',
-  featureList: [],
-  immunityList: [],
-  isFemale: false,
-  languageList: [],
-  legendaryActionList: [],
-  legendaryPoints: 0,
-  reactionList: [],
-  saveThrowCollection: null,
-  senseList: [],
-  skillCollection: null,
-  spellCast: null,
-  vulnerabilityList: [],
 }
 
 export default DndCreatureStatsComponent

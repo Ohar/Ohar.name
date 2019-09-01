@@ -8,7 +8,7 @@ import "./DndCreatureStyles.less"
 
 const DndCreatureComponent = ({creature}) => (
   <section className='DndCreature'>
-    <DndCreatureStats {...creature} />
+    <DndCreatureStats id={creature.id} />
     <DndCreatureDescription {...creature} />
   </section>
 )

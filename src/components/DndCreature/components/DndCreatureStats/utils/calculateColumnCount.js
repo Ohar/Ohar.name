@@ -22,14 +22,16 @@ export default (
     featureList,
     legendaryActionList,
   ].reduce(
-    (listSum, listItem) => listSum + listItem.reduce(
-      (sum, item) => ITEM_WEIGNT + sum + (
-        item.description
-          ? item.description.length * DESCRIPTION_COEF
-          : NO_DESCRIPTION_WEIGNT
-      ),
-      0
-    ),
+    (listSum, listItem) => listItem
+      ? listSum + listItem.reduce(
+        (sum, item) => ITEM_WEIGNT + sum + (
+          item.description
+            ? item.description.length * DESCRIPTION_COEF
+            : NO_DESCRIPTION_WEIGNT
+        ),
+        0
+      )
+      : 0,
     BASIC_WEIGNT
   )
 

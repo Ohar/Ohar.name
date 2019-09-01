@@ -1,5 +1,9 @@
-const extendCreature = ({creature, parent, extendPropNameList}) => {
+const extendCreature = ({creature, parent}) => {
   const RESULT_DEFAULT = {}
+
+  const extendPropNameList = creature.extendPropCollection
+    ? Object.keys(creature.extendPropCollection)
+    : []
 
   const extended = extendPropNameList.reduce(
     (result, listName) => creature.extendPropCollection[listName] && parent[listName]

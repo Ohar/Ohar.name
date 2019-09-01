@@ -22,19 +22,9 @@ const dndCreatureList = dndCreatureRawList
         ? dndCreatureRawCollection[creature.parentId]
         : {}
 
-      const extendPropNameList = creature.extendPropCollection
-        ? Object.keys(creature.extendPropCollection)
-        : []
-
       const creatureFilled = {
         ...parent,
-        ...extendCreature(
-          {
-            creature,
-            parent,
-            extendPropNameList,
-          }
-        ),
+        ...extendCreature({creature, parent}),
       }
 
       if (creature.parentId) {

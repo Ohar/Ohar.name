@@ -3958,15 +3958,15 @@ module.exports = [
 **Дружелюбные и смышлёные.** У волшебного дракончика острый ум, любовь к сокровищам и хорошей компании и озорное чувство юмора. Путешественники могут сыграть на драконьей натуре дракончика, предложив ему «сокровища» в виде конфет, выпечки и побрякушек в обмен на информацию и безопасный проход через его территорию.\n
 **Цвет и возраст.** Чешуя волшебного дракончика меняет оттенок с возрастом, проходя все цвета радуги. У всех волшебных дракончиков есть способности к магии, и они получают доступ к новым заклинаниям по мере взросления.\n
 
-| Цвета дракона                               | Возраст         |
-|---------------------------------------------|-----------------|
-| [Красный](CREATURE:faerie_dragon_red)       | 5 лет и меньше  |
-| [Оранжевый](CREATURE:faerie_dragon_orange)  | 6–10 лет        |
-| [Жёлтый](CREATURE:faerie_dragon_yellow)     | 11–20 лет       |
-| [Зелёный](CREATURE:faerie_dragon_green)     | 21–30 лет       |
-| [Голубой](CREATURE:faerie_dragon_light_blue)| 31–40 лет       |
-| [Синий](CREATURE:faerie_dragon_blue)        | 41–50 лет       |
-| [Фиолетовый](CREATURE:faerie_dragon_violet) | 51 год и старше |
+| Цвета дракона                                           | Возраст         |
+|---------------------------------------------------------|-----------------|
+| [Красный](CREATURE:${CREATURE_FAERIE_DRAGON_RED})       | 5 лет и меньше  |
+| [Оранжевый](CREATURE:${CREATURE_FAERIE_DRAGON_ORANGE})  | 6–10 лет        |
+| [Жёлтый](CREATURE:${CREATURE_FAERIE_DRAGON_YELLOW})     | 11–20 лет       |
+| [Зелёный](CREATURE:${CREATURE_FAERIE_DRAGON_GREEN})     | 21–30 лет       |
+| [Голубой](CREATURE:${CREATURE_FAERIE_DRAGON_LIGHT_BLUE})| 31–40 лет       |
+| [Синий](CREATURE:${CREATURE_FAERIE_DRAGON_BLUE})        | 41–50 лет       |
+| [Фиолетовый](CREATURE:${CREATURE_FAERIE_DRAGON_VIOLET}) | 51 год и старше |
 `,
     sizeType: SIZE_TINY,
     creatureTypeIdList: [
@@ -4082,24 +4082,23 @@ module.exports = [
     nameEn: 'Orange faerie dragon',
     id: CREATURE_FAERIE_DRAGON_ORANGE,
     parentId: CREATURE_FAERIE_DRAGON_RED,
-    spellCast: {
-      baseStat: PARAM_CHA,
-      saveThrowDc: 13,
-      componentExclude: CAST_MATERIAL,
-      spellIdByCountList: [
-        {
-          limit: {
-            count: 1,
-            period: 'день',
+    extendPropCollection: {
+      spellCast: {
+        spellIdByCountList: [
+          {
+            limit: {
+              count: 1,
+              period: 'день',
+            },
+            list: [
+              SPELL_MAGE_HAND,
+              SPELL_MINOR_ILLUSION,
+              SPELL_DANCING_LIGHTS,
+              SPELL_COLOR_SPRAY,
+            ],
           },
-          list: [
-            SPELL_MAGE_HAND,
-            SPELL_MINOR_ILLUSION,
-            SPELL_DANCING_LIGHTS,
-            SPELL_COLOR_SPRAY,
-          ],
-        },
-      ],
+        ],
+      },
     },
   },
   {
@@ -4107,25 +4106,24 @@ module.exports = [
     nameEn: 'Yellow faerie dragon',
     id: CREATURE_FAERIE_DRAGON_YELLOW,
     parentId: CREATURE_FAERIE_DRAGON_ORANGE,
-    spellCast: {
-      baseStat: PARAM_CHA,
-      saveThrowDc: 13,
-      componentExclude: CAST_MATERIAL,
-      spellIdByCountList: [
-        {
-          limit: {
-            count: 1,
-            period: 'день',
+    extendPropCollection: {
+      spellCast: {
+        spellIdByCountList: [
+          {
+            limit: {
+              count: 1,
+              period: 'день',
+            },
+            list: [
+              SPELL_MAGE_HAND,
+              SPELL_MINOR_ILLUSION,
+              SPELL_DANCING_LIGHTS,
+              SPELL_COLOR_SPRAY,
+              SPELL_MIRROR_IMAGE,
+            ],
           },
-          list: [
-            SPELL_MAGE_HAND,
-            SPELL_MINOR_ILLUSION,
-            SPELL_DANCING_LIGHTS,
-            SPELL_COLOR_SPRAY,
-            SPELL_MIRROR_IMAGE,
-          ],
-        },
-      ],
+        ],
+      },
     },
   },
   {
@@ -4134,26 +4132,25 @@ module.exports = [
     id: CREATURE_FAERIE_DRAGON_GREEN,
     parentId: CREATURE_FAERIE_DRAGON_YELLOW,
     cr: CR_2,
-    spellCast: {
-      baseStat: PARAM_CHA,
-      saveThrowDc: 13,
-      componentExclude: CAST_MATERIAL,
-      spellIdByCountList: [
-        {
-          limit: {
-            count: 1,
-            period: 'день',
+    extendPropCollection: {
+      spellCast: {
+        spellIdByCountList: [
+          {
+            limit: {
+              count: 1,
+              period: 'день',
+            },
+            list: [
+              SPELL_MAGE_HAND,
+              SPELL_MINOR_ILLUSION,
+              SPELL_DANCING_LIGHTS,
+              SPELL_COLOR_SPRAY,
+              SPELL_MIRROR_IMAGE,
+              SPELL_SUGGESTION,
+            ],
           },
-          list: [
-            SPELL_MAGE_HAND,
-            SPELL_MINOR_ILLUSION,
-            SPELL_DANCING_LIGHTS,
-            SPELL_COLOR_SPRAY,
-            SPELL_MIRROR_IMAGE,
-            SPELL_SUGGESTION,
-          ],
-        },
-      ],
+        ],
+      },
     },
   },
   {
@@ -4161,27 +4158,26 @@ module.exports = [
     nameEn: 'Light blue faerie dragon',
     id: CREATURE_FAERIE_DRAGON_LIGHT_BLUE,
     parentId: CREATURE_FAERIE_DRAGON_GREEN,
-    spellCast: {
-      baseStat: PARAM_CHA,
-      saveThrowDc: 13,
-      componentExclude: CAST_MATERIAL,
-      spellIdByCountList: [
-        {
-          limit: {
-            count: 1,
-            period: 'день',
+    extendPropCollection: {
+      spellCast: {
+        spellIdByCountList: [
+          {
+            limit: {
+              count: 1,
+              period: 'день',
+            },
+            list: [
+              SPELL_MAGE_HAND,
+              SPELL_MINOR_ILLUSION,
+              SPELL_DANCING_LIGHTS,
+              SPELL_COLOR_SPRAY,
+              SPELL_MIRROR_IMAGE,
+              SPELL_SUGGESTION,
+              SPELL_MAJOR_IMAGE,
+            ],
           },
-          list: [
-            SPELL_MAGE_HAND,
-            SPELL_MINOR_ILLUSION,
-            SPELL_DANCING_LIGHTS,
-            SPELL_COLOR_SPRAY,
-            SPELL_MIRROR_IMAGE,
-            SPELL_SUGGESTION,
-            SPELL_MAJOR_IMAGE,
-          ],
-        },
-      ],
+        ],
+      },
     },
   },
   {
@@ -4189,28 +4185,27 @@ module.exports = [
     nameEn: 'Blue faerie dragon',
     id: CREATURE_FAERIE_DRAGON_BLUE,
     parentId: CREATURE_FAERIE_DRAGON_LIGHT_BLUE,
-    spellCast: {
-      baseStat: PARAM_CHA,
-      saveThrowDc: 13,
-      componentExclude: CAST_MATERIAL,
-      spellIdByCountList: [
-        {
-          limit: {
-            count: 1,
-            period: 'день',
+    extendPropCollection: {
+      spellCast: {
+        spellIdByCountList: [
+          {
+            limit: {
+              count: 1,
+              period: 'день',
+            },
+            list: [
+              SPELL_MAGE_HAND,
+              SPELL_MINOR_ILLUSION,
+              SPELL_DANCING_LIGHTS,
+              SPELL_COLOR_SPRAY,
+              SPELL_MIRROR_IMAGE,
+              SPELL_SUGGESTION,
+              SPELL_MAJOR_IMAGE,
+              SPELL_HALLUCINATORY_TERRAIN,
+            ],
           },
-          list: [
-            SPELL_MAGE_HAND,
-            SPELL_MINOR_ILLUSION,
-            SPELL_DANCING_LIGHTS,
-            SPELL_COLOR_SPRAY,
-            SPELL_MIRROR_IMAGE,
-            SPELL_SUGGESTION,
-            SPELL_MAJOR_IMAGE,
-            SPELL_HALLUCINATORY_TERRAIN,
-          ],
-        },
-      ],
+        ],
+      },
     },
   },
   {
@@ -4218,29 +4213,28 @@ module.exports = [
     nameEn: 'Violet faerie dragon',
     id: CREATURE_FAERIE_DRAGON_VIOLET,
     parentId: CREATURE_FAERIE_DRAGON_BLUE,
-    spellCast: {
-      baseStat: PARAM_CHA,
-      saveThrowDc: 13,
-      componentExclude: CAST_MATERIAL,
-      spellIdByCountList: [
-        {
-          limit: {
-            count: 1,
-            period: 'день',
+    extendPropCollection: {
+      spellCast: {
+        spellIdByCountList: [
+          {
+            limit: {
+              count: 1,
+              period: 'день',
+            },
+            list: [
+              SPELL_MAGE_HAND,
+              SPELL_MINOR_ILLUSION,
+              SPELL_DANCING_LIGHTS,
+              SPELL_COLOR_SPRAY,
+              SPELL_MIRROR_IMAGE,
+              SPELL_SUGGESTION,
+              SPELL_MAJOR_IMAGE,
+              SPELL_HALLUCINATORY_TERRAIN,
+              SPELL_POLYMORPH,
+            ],
           },
-          list: [
-            SPELL_MAGE_HAND,
-            SPELL_MINOR_ILLUSION,
-            SPELL_DANCING_LIGHTS,
-            SPELL_COLOR_SPRAY,
-            SPELL_MIRROR_IMAGE,
-            SPELL_SUGGESTION,
-            SPELL_MAJOR_IMAGE,
-            SPELL_HALLUCINATORY_TERRAIN,
-            SPELL_POLYMORPH,
-          ],
-        },
-      ],
+        ],
+      },
     },
   },
   {

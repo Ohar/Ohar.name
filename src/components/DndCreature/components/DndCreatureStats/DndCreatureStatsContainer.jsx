@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Component } from 'react';
 import PropTypes from "prop-types"
 
 import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
@@ -8,35 +8,21 @@ import calculateColumnCount from "./utils/calculateColumnCount"
 
 import DndCreatureStatsComponent from "./DndCreatureStatsComponent"
 
-const DndCreatureStatsContainer = ({id}) => {
-  const {
-    actionList,
-    creatureTypeIdList,
-    featureList,
-    legendaryActionList,
-    legendaryPoints,
-    spellCast,
-    spellCastTogether,
-    ...rest
-  } = dndCreatureCollection[id]
+class DndCreatureStatsContainer extends Component {
+  render() {
+    const { id } = this.props;
+    const creature = dndCreatureCollection[id];
+    const { genderId } = dndCreatureTypeCollection[creature.creatureTypeIdList[0]];
+    const columnCount = calculateColumnCount(creature);
 
-  const {genderId} = dndCreatureTypeCollection[creatureTypeIdList[0]]
-  const columnCount = calculateColumnCount({actionList, featureList, legendaryPoints, legendaryActionList, spellCast, spellCastTogether})
-
-  return (
-    <DndCreatureStatsComponent
-      actionList={actionList}
-      creatureTypeIdList={creatureTypeIdList}
-      featureList={featureList}
-      genderId={genderId}
-      legendaryActionList={legendaryActionList}
-      legendaryPoints={legendaryPoints}
-      columnCount={columnCount}
-      spellCast={spellCast}
-      spellCastTogether={spellCastTogether}
-      {...rest}
-    />
-  )
+    return (
+      <DndCreatureStatsComponent
+        genderId={genderId}
+        columnCount={columnCount}
+        {...creature}
+      />
+    );
+  }
 }
 
 DndCreatureStatsContainer.propTypes = {

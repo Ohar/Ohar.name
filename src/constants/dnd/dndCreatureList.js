@@ -1,4 +1,5 @@
 const prepareForSearch = require('./../../utils/prepareForSearch')
+const extendCreature = require('./../../utils/extendCreature')
 
 const SEARCH_PROP_NAME = require('./../SEARCH_PROP_NAME')
 const dndCreatureRawList = require('./dndCreatureRawList')
@@ -10,35 +11,6 @@ const dndCreatureRawCollection = dndCreatureRawList.reduce(
   }),
   {}
 )
-
-const extendList = ({creature, parent, extendPropNameList}) => {
-  const RESULT_DEFAULT = {}
-
-  const extended = extendPropNameList.reduce(
-    (result, listName) => creature.extendPropCollection[listName] && parent[listName]
-      ? {
-        ...result,
-        [listName]: Array.isArray(creature.extendPropCollection[listName])
-          ? [
-            ...parent[listName],
-            ...creature.extendPropCollection[listName],
-          ]
-          : {
-            ...parent[listName],
-            ...creature.extendPropCollection[listName],
-          },
-      }
-      : result,
-    RESULT_DEFAULT
-  )
-
-  return extended === RESULT_DEFAULT
-    ? creature
-    : {
-      ...creature,
-      ...extended,
-    }
-}
 
 const handleDescription = text => text
   .replace(/CREATURE:/g, '/dnd/creature-catalog/')
@@ -56,7 +28,7 @@ const dndCreatureList = dndCreatureRawList
 
       const creatureFilled = {
         ...parent,
-        ...extendList(
+        ...extendCreature(
           {
             creature,
             parent,

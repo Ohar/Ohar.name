@@ -143,6 +143,7 @@ DndCreatureStatsComponent.propTypes = {
     ]).isRequired,
     cr: PropTypes.string.isRequired,
     creatureTypeIdList: PropTypes.array.isRequired,
+    extendCreature: PropTypes.func,
     featureList: PropTypes.array,
     hp: PropTypes.object.isRequired,
     immunityList: PropTypes.array,
@@ -167,6 +168,7 @@ DndCreatureStatsComponent.propTypes = {
 
 DndCreatureStatsComponent.defaultProps = {
   columnCount: 1,
+  extendCreature: null,
 }
 
 export default DndCreatureStatsComponent

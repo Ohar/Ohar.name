@@ -53,9 +53,9 @@ class DndCreatureExtenderContainer extends Component {
   }
 
   render () {
-    const {creature, ...rest} = this.props
+    const {creature, callback, ...rest} = this.props
 
-    if (creature) {
+    if (creature && callback) {
       const availableTemplateList = this.filterAvailableTemplates()
 
       return availableTemplateList.length

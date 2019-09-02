@@ -1,54 +1,38 @@
-import React, { Component } from 'react';
-import PropTypes from "prop-types"
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import {dndCreatureTypeCollection} from "@/constants/dnd/dndCreatureTypeList"
-import {dndCreatureCollection} from "@/constants/dnd/dndCreatureList"
+import { dndCreatureTypeCollection } from '@/constants/dnd/dndCreatureTypeList';
 
-import calculateColumnCount from "./utils/calculateColumnCount"
+import calculateColumnCount from './utils/calculateColumnCount';
 
-import DndCreatureStatsComponent from "./DndCreatureStatsComponent"
+import DndCreatureStatsComponent from './DndCreatureStatsComponent';
 
-class DndCreatureStatsContainer extends Component {
-  state = {
-    creature: dndCreatureCollection[this.props.id],
+const DndCreatureStatsContainer = ({ creature, ...rest }) => {
+  if (creature) {
+    const { genderId } = dndCreatureTypeCollection[creature.creatureTypeIdList[0]];
+    const columnCount = calculateColumnCount(creature);
+
+    return (
+      <DndCreatureStatsComponent
+        genderId={genderId}
+        creature={creature}
+        columnCount={columnCount}
+        {...rest}
+      />
+    );
   }
 
-  componentDidUpdate(prevProps) {
-    const { id } = this.props;
+  return null;
+}
 
-    if (id !== prevProps.id) {
-      const creature = dndCreatureCollection[id];
-      this.setState({creature})
-    }
-  }
-
-  extendCreature = creature => {
-    this.setState({creature})
-  }
-
-  render() {
-    const { creature } = this.state;
-
-    if (creature) {
-      const { genderId } = dndCreatureTypeCollection[creature.creatureTypeIdList[0]];
-      const columnCount = calculateColumnCount(creature);
-
-      return (
-        <DndCreatureStatsComponent
-          genderId={genderId}
-          creature={creature}
-          columnCount={columnCount}
-          extendCreature={this.extendCreature}
-        />
-      );
-    }
-
-    return null
-  }
+DndCreatureStatsContainer.defaultProps = {
+  creature: null,
 }
 
 DndCreatureStatsContainer.propTypes = {
-  id: PropTypes.string.isRequired,
+  creature: PropTypes.shape({
+    creatureTypeIdList: PropTypes.array,
+  }),
 }
 
 export default DndCreatureStatsContainer

@@ -6,9 +6,12 @@ import DndCreatureDescriptionList from "@/components/DndCreature/components/DndC
 
 import "./DndCreatureStyles.less"
 
-const DndCreatureComponent = ({creature}) => (
+const DndCreatureComponent = ({creature, ...rest}) => (
   <section className='DndCreature'>
-    <DndCreatureStats id={creature.id} />
+    <DndCreatureStats
+      creature={creature}
+      {...rest}
+    />
     <DndCreatureDescriptionList {...creature} />
   </section>
 )

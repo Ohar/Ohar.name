@@ -1,16 +1,38 @@
-import React from "react"
+import React, { Component } from 'react';
 import PropTypes from "prop-types"
 
 import {dndCreatureCollection} from "@/constants/dnd/dndCreatureList"
 
 import DndCreatureComponent from "./DndCreatureComponent"
 
-const DndCreatureContainer = ({id}) => {
-  const creature = dndCreatureCollection[id]
+class DndCreatureContainer extends Component {
+  state = {
+    creature: dndCreatureCollection[this.props.id],
+  }
 
-  return (
-    <DndCreatureComponent creature={creature} />
-  )
+  componentDidUpdate(prevProps) {
+    const { id } = this.props;
+
+    if (id !== prevProps.id) {
+      const creature = dndCreatureCollection[id];
+      this.setState({creature})
+    }
+  }
+
+  extendCreature = creature => {
+    this.setState({creature})
+  }
+
+  render () {
+    const {creature} = this.state
+
+    return (
+      <DndCreatureComponent
+        creature={creature}
+        extendCreature={this.extendCreature}
+      />
+    )
+  }
 }
 
 DndCreatureContainer.propTypes = {

@@ -1,3 +1,5 @@
+const arrify = require('arrify')
+
 const prepareForSearch = require('./../../utils/prepareForSearch')
 const extendCreature = require('./../../utils/extendCreature')
 
@@ -12,8 +14,30 @@ const dndCreatureRawCollection = dndCreatureRawList.reduce(
   {}
 )
 
-const handleDescription = text => text
-  .replace(/CREATURE:/g, '/dnd/creature-catalog/')
+const handleDescription = (
+  {
+    description,
+    name,
+    nameAlt,
+    nameEn,
+    nameEnAlt,
+  }
+) => arrify(description)
+  .map(
+    item => typeof item === 'string'
+      ? {
+        header: `${name}${nameAlt ? ` (${nameAlt})` : ''}`,
+        subHeader: `${nameEn}${nameEnAlt ? ` (${nameEnAlt})` : ''}`,
+        text: item,
+      }
+      : item
+  )
+  .map(
+    ({ text, ...rest }) => ({
+      text: text.replace(/CREATURE:/g, '/dnd/creature-catalog/'),
+      ...rest
+    })
+  )
 
 const dndCreatureList = dndCreatureRawList
   .map(
@@ -41,7 +65,7 @@ const dndCreatureList = dndCreatureRawList
   creature => ({
     ...creature,
     isFemale: Boolean(creature.isFemale),
-    description: handleDescription(creature.description),
+    description: handleDescription(creature),
     [SEARCH_PROP_NAME]: prepareForSearch(
       [
         creature.name,

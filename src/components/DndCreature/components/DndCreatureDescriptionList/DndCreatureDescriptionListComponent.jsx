@@ -7,8 +7,11 @@ const DndCreatureDescriptionListComponent = ({description}) => (
   <>
     {
       description.map(
-        item => (
-          <DndCreatureDescription {...item}/>
+        (item, i) => (
+          <DndCreatureDescription
+            key={i}
+            {...item}
+          />
         )
       )
     }

@@ -2,14 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import DndCreatureStats from "@/components/DndCreature/components/DndCreatureStats"
-import DndCreatureDescription from "@/components/DndCreature/components/DndCreatureDescription"
+import DndCreatureDescriptionList from "@/components/DndCreature/components/DndCreatureDescriptionList"
 
 import "./DndCreatureStyles.less"
 
 const DndCreatureComponent = ({creature}) => (
   <section className='DndCreature'>
     <DndCreatureStats {...creature} />
-    <DndCreatureDescription {...creature} />
+    <DndCreatureDescriptionList {...creature} />
   </section>
 )
 

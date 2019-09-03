@@ -8,7 +8,7 @@ import calculateColumnCount from './utils/calculateColumnCount';
 import DndCreatureStatsComponent from './DndCreatureStatsComponent';
 
 const DndCreatureStatsContainer = ({ creature, ...rest }) => {
-  if (creature) {
+  if (creature && creature.creatureTypeIdList && creature.creatureTypeIdList[0]) {
     const { genderId } = dndCreatureTypeCollection[creature.creatureTypeIdList[0]];
     const columnCount = calculateColumnCount(creature);
 

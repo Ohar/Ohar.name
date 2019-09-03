@@ -18626,7 +18626,7 @@ module.exports = [
       [PARAM_WIT]: 8,
       [PARAM_CHA]: 3,
     },
-    conditionImmunityList: [
+    immunityConditionList: [
       [CONDITION_DEAFENED],
       [CONDITION_BLINDED],
     ],
@@ -18726,7 +18726,7 @@ module.exports = [
     vulnerabilityList: [
       DAMAGE_FIRE,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       [CONDITION_DEAFENED],
       [CONDITION_BLINDED],
     ],
@@ -18811,7 +18811,7 @@ module.exports = [
     skillCollection: {
       [SKILL_STEALTH]: 1,
     },
-    conditionImmunityList: [
+    immunityConditionList: [
       [CONDITION_DEAFENED],
       [CONDITION_BLINDED],
     ],
@@ -18918,7 +18918,7 @@ module.exports = [
     skillCollection: {
       [SKILL_PERCEPTION]: 12,
     },
-    conditionImmunityList: [
+    immunityConditionList: [
       [CONDITION_PRONE],
     ],
     senseList: [
@@ -19041,7 +19041,7 @@ module.exports = [
     immunityList: [
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       [CONDITION_EXHAUSTION],
       [CONDITION_PETRIFIED],
       [CONDITION_POISONED],
@@ -19156,7 +19156,7 @@ module.exports = [
     skillCollection: {
       [SKILL_PERCEPTION]: 6,
     },
-    conditionImmunityList: [
+    immunityConditionList: [
       [CONDITION_PRONE],
     ],
     senseList: [
@@ -19252,7 +19252,7 @@ module.exports = [
     immunityList: [
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       [CONDITION_POISONED],
     ],
     senseList: [
@@ -19330,7 +19330,7 @@ module.exports = [
     immunityList: [
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       [CONDITION_POISONED],
     ],
     senseList: [
@@ -19416,7 +19416,7 @@ module.exports = [
     immunityList: [
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       [CONDITION_POISONED],
       [CONDITION_PRONE],
     ],
@@ -20379,7 +20379,7 @@ module.exports = [
     immunityList: [
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       CONDITION_POISONED,
     ],
     senseList: [
@@ -22944,7 +22944,7 @@ module.exports = [
       DAMAGE_POISON,
       DAMAGE_NONMAGIC_WEAPON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       CONDITION_FRIGHTENED,
       CONDITION_EXHAUSTION,
       CONDITION_POISONED,
@@ -24162,7 +24162,7 @@ module.exports = [
     immunityList: [
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       CONDITION_POISONED,
     ],
     senseList: [
@@ -24261,7 +24261,7 @@ module.exports = [
       DAMAGE_FIRE,
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       CONDITION_POISONED,
     ],
     senseList: [
@@ -24367,7 +24367,7 @@ module.exports = [
       DAMAGE_COLD,
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       CONDITION_POISONED,
     ],
     senseList: [
@@ -24483,7 +24483,7 @@ module.exports = [
       DAMAGE_COLD,
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       CONDITION_POISONED,
     ],
     senseList: [
@@ -24592,7 +24592,7 @@ module.exports = [
       DAMAGE_FIRE,
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       CONDITION_POISONED,
     ],
     senseList: [
@@ -24702,7 +24702,7 @@ module.exports = [
     immunityList: [
       DAMAGE_POISON,
     ],
-    conditionImmunityList: [
+    immunityConditionList: [
       CONDITION_POISONED,
     ],
     senseList: [

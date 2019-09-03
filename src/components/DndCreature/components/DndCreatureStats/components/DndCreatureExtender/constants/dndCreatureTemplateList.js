@@ -124,12 +124,6 @@ export default [
     source: 'MM:209',
     saveThrowCollection: null,
     skillCollection: null,
-    immunityConditionList: [
-      CONDITION_FRIGHTENED,
-      CONDITION_BLINDED,
-      CONDITION_CHARMED,
-      CONDITION_PARALYZED
-    ],
     featureList: [
       {
         name: 'Подчинение миконидам',
@@ -265,6 +259,12 @@ export default [
         [PARAM_WIT]: 6,
         [PARAM_CHA]: 1
       },
+      immunityConditionList: [
+        CONDITION_FRIGHTENED,
+        CONDITION_BLINDED,
+        CONDITION_CHARMED,
+        CONDITION_PARALYZED
+      ],
     }
   }
 ]

@@ -6,6 +6,7 @@ import {
 } from '@/constants/dnd/dndSizeList'
 import {
   CREATURE_TYPE_AARAKOCRA,
+  CREATURE_TYPE_ANY_RACE,
   CREATURE_TYPE_ABERRATION,
   CREATURE_TYPE_BEAST,
   CREATURE_TYPE_BULLYWUG,
@@ -171,6 +172,7 @@ export default [
       ],
       creatureTypeIdList: [
         CREATURE_TYPE_AARAKOCRA,
+        CREATURE_TYPE_ANY_RACE,
         CREATURE_TYPE_ABERRATION,
         CREATURE_TYPE_BEAST,
         CREATURE_TYPE_BULLYWUG,
@@ -243,14 +245,18 @@ export default [
     },
 
     filterPropCollection: {
-      actionList: {
-        attack: {
-          // name: 'Мультиатака',
-          type: [
-            ACTION_MELEE_WEAPON_ATTACK,
-          ],
+      actionList: [
+        {
+          name: 'Мультиатака',
         },
-      },
+        {
+          attack: {
+            type: [
+              ACTION_MELEE_WEAPON_ATTACK,
+            ],
+          },
+        },
+      ],
     },
 
     extendPropCollection: {

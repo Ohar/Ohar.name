@@ -1,7 +1,6 @@
 const listToCollectionById = require('./../../utils/listToCollectionById')
 
 const ACTION_MELEE_WEAPON_ATTACK = 'melee_weapon_attack'
-const ACTION_MELEE_OR_RANGE_WEAPON_ATTACK = 'melee_or_range_weapon_attack'
 const ACTION_RANGE_WEAPON_ATTACK = 'range_weapon_attack'
 const ACTION_MELEE_SPELL_ATTACK = 'melee_spell_attack'
 const ACTION_RANGE_SPELL_ATTACK = 'range_spell_attack'
@@ -17,10 +16,6 @@ const dndActionTypeList = [
   {
     id: ACTION_RANGE_WEAPON_ATTACK,
     name: 'Дальнобойная атака оружием',
-  },
-  {
-    id: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
-    name: 'Рукопашная или дальнобойная атака оружием',
   },
   {
     id: ACTION_MELEE_SPELL_ATTACK,
@@ -49,7 +44,6 @@ module.exports = dndActionTypeList
 module.exports.dndActionTypeCollection = listToCollectionById(dndActionTypeList)
 
 module.exports.ACTION_MELEE_WEAPON_ATTACK = ACTION_MELEE_WEAPON_ATTACK
-module.exports.ACTION_MELEE_OR_RANGE_WEAPON_ATTACK = ACTION_MELEE_OR_RANGE_WEAPON_ATTACK
 module.exports.ACTION_RANGE_WEAPON_ATTACK = ACTION_RANGE_WEAPON_ATTACK
 module.exports.ACTION_MELEE_SPELL_ATTACK = ACTION_MELEE_SPELL_ATTACK
 module.exports.ACTION_RANGE_SPELL_ATTACK = ACTION_RANGE_SPELL_ATTACK

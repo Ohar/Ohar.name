@@ -101,7 +101,6 @@ const {
   } = require('./dndSpeedList'),
   {
     ACTION_MELEE_WEAPON_ATTACK,
-    ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
     ACTION_MELEE_SPELL_ATTACK,
     ACTION_RANGE_WEAPON_ATTACK,
     ACTION_RANGE_SPELL_ATTACK,
@@ -913,14 +912,26 @@ module.exports = [
       {
         name: 'Метательное копьё',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
           bonus: 4,
           range: {
-            melee: 5,
-            range: {
-              normal: 30,
-              max: 120,
-            },
+            normal: 30,
+            max: 120,
           },
           target: 1,
           hit: {
@@ -3972,16 +3983,28 @@ module.exports = [
       },
       {
         name: 'Гарпун',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Гарпун',
         description: `Если цель — существо с размером не больше Огромного, она должна преуспеть в состязании Силы с водянником, иначе её подтянет на 20 футов в сторону водянника.`,
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_RANGE_WEAPON_ATTACK,
           bonus: 6,
           range: {
-            melee: 5,
-            range: {
-              normal: 20,
-              max: 60,
-            },
+            normal: 20,
+            max: 60,
           },
           target: 1,
           hit: {
@@ -5088,15 +5111,9 @@ module.exports = [
       {
         name: 'Трезубец',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 10,
-          range: {
-            melee: 5,
-            range: {
-              normal: 20,
-              max: 60,
-            },
-          },
+          range: 5,
           target: 1,
           hit: [
             [
@@ -5115,6 +5132,24 @@ module.exports = [
               },
             ],
           ],
+        },
+      },
+      {
+        name: 'Трезубец',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 10,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 6,
+          },
         },
       },
       {
@@ -5975,15 +6010,9 @@ module.exports = [
       {
         name: 'Копьё',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 4,
-          range: {
-            melee: 5,
-            range: {
-              normal: 20,
-              max: 60,
-            },
-          },
+          range: 5,
           target: 1,
           hit: [
             [
@@ -6002,6 +6031,24 @@ module.exports = [
               },
             ],
           ],
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
         },
       },
       {
@@ -6348,14 +6395,25 @@ module.exports = [
       {
         name: 'Метательное копьё',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
           bonus: 2,
           range: {
-            melee: 5,
-            range: {
-              normal: 30,
-              max: 120,
-            },
+            normal: 30,
+            max: 120,
           },
           target: 1,
           hit: {
@@ -16540,14 +16598,26 @@ module.exports = [
       {
         name: 'Метательное копьё',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
           bonus: 4,
           range: {
-            melee: 5,
-            range: {
-              normal: 30,
-              max: 120,
-            },
+            normal: 30,
+            max: 120,
           },
           target: 1,
           hit: {
@@ -16562,14 +16632,27 @@ module.exports = [
         name: 'Метательное копьё',
         comment: 'в увеличенной форме',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        comment: 'в увеличенной форме',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
           bonus: 4,
           range: {
-            melee: 5,
-            range: {
-              normal: 30,
-              max: 120,
-            },
+            normal: 30,
+            max: 120,
           },
           target: 1,
           hit: {
@@ -18560,15 +18643,9 @@ module.exports = [
       {
         name: 'Копьё',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 3,
-          range: {
-            melee: 5,
-            range: {
-              normal: 20,
-              max: 60,
-            },
-          },
+          range: 5,
           target: 1,
           hit: [
             [
@@ -18587,6 +18664,24 @@ module.exports = [
               },
             ],
           ],
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
         },
       },
     ],
@@ -19920,15 +20015,9 @@ module.exports = [
       {
         name: 'Копьё',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 7,
-          range: {
-            melee: 5,
-            range: {
-              normal: 20,
-              max: 60,
-            },
-          },
+          range: 5,
           target: 1,
           hit: [
             [
@@ -19946,6 +20035,31 @@ module.exports = [
                 comment: ', если используется двумя руками для совершения рукопашной атаки,',
               },
             ],
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 1,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 7,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 4,
+            },
             {
               type: DAMAGE_FIRE,
               cubeCount: 1,
@@ -21503,15 +21617,9 @@ module.exports = [
       {
         name: 'Копьё',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 3,
-          range: {
-            melee: 5,
-            range: {
-              normal: 20,
-              max: 60,
-            },
-          },
+          range: 5,
           target: 1,
           hit: [
             [
@@ -21530,6 +21638,24 @@ module.exports = [
               },
             ],
           ],
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
         },
       },
       {
@@ -22451,15 +22577,9 @@ module.exports = [
         name: 'Копьё',
         comment: 'только в облике гуманоида',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 4,
-          range: {
-            melee: 5,
-            range: {
-              normal: 20,
-              max: 60,
-            },
-          },
+          range: 5,
           target: {
             count: 1,
             limit: {
@@ -22483,6 +22603,30 @@ module.exports = [
               },
             ],
           ],
+        },
+      },
+      {
+        name: 'Копьё',
+        comment: 'только в облике гуманоида',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
         },
       },
     ],
@@ -23169,14 +23313,26 @@ module.exports = [
       {
         name: 'Метательное копьё',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
           bonus: 4,
           range: {
-            melee: 5,
-            range: {
-              normal: 30,
-              max: 120,
-            },
+            normal: 30,
+            max: 120,
           },
           target: 1,
           hit: {
@@ -23446,15 +23602,9 @@ module.exports = [
       {
         name: 'Трезубец',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 5,
-          range: {
-            melee: 5,
-            range: {
-              normal: 20,
-              max: 60,
-            },
-          },
+          range: 5,
           target: 1,
           hit: [
             [
@@ -23473,6 +23623,24 @@ module.exports = [
               },
             ],
           ],
+        },
+      },
+      {
+        name: 'Трезубец',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 5,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
         },
       },
     ],
@@ -24096,15 +24264,9 @@ module.exports = [
       {
         name: 'Копьё',
         attack: {
-          type: ACTION_MELEE_OR_RANGE_WEAPON_ATTACK,
+          type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 2,
-          range: {
-            melee: 5,
-            range: {
-              normal: 20,
-              max: 60,
-            },
-          },
+          range: 5,
           target: 1,
           hit: [
             {
@@ -24119,6 +24281,23 @@ module.exports = [
               comemnt: ', если используется двумя руками для совершения рукопашной атаки',
             },
           ],
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 2,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+          },
         },
       },
     ],

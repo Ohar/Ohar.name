@@ -46,10 +46,7 @@ const dndCreatureList = dndCreatureRawList
         ? dndCreatureRawCollection[creature.parentId]
         : {}
 
-      const creatureFilled = {
-        ...parent,
-        ...extendCreature({creature, parent}),
-      }
+      const creatureFilled = extendCreature({creature, parent})
 
       if (creature.parentId) {
         dndCreatureRawCollection[creature.id] = creatureFilled

@@ -17,7 +17,6 @@ class DndCreatureExtenderContainer extends Component {
     })
 
     callback({
-      ...creature,
       ...extendedCreature,
       name,
     })

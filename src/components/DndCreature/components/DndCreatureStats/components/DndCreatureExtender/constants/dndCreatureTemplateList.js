@@ -132,7 +132,7 @@ export default [
     ],
     featureList: [
       {
-        name: 'Приказы миконидов',
+        name: 'Подчинение миконидам',
         description: `Слуга может отвечать на приказы, отданные миконидами посредством спор взаимопонимания. Слуга отдаёт наивысший приоритет приказам, полученным от более сильных миконидов.`,
       },
     ],
@@ -246,6 +246,17 @@ export default [
           min: 5
         }
       }
+    },
+
+    filterPropCollection: {
+      actionList: {
+        attack: {
+          // name: 'Мультиатака',
+          type: [
+            ACTION_MELEE_WEAPON_ATTACK,
+          ],
+        },
+      },
     },
 
     extendPropCollection: {

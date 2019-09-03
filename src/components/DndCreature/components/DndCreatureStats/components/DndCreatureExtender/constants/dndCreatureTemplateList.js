@@ -1,3 +1,4 @@
+import { faDizzy } from '@fortawesome/free-solid-svg-icons'
 import {
   SIZE_MEDIUM,
   SIZE_LARGE,
@@ -117,7 +118,7 @@ export default [
   {
     templateName: 'Споровый слуга',
     templateCreatureName: 'NAME споровый слуга',
-    templateTitle: 'Превратить NAME в спорового слугу',
+    templateIcon: faDizzy,
 
     creatureTypeIdList: [CREATURE_TYPE_PLANT],
     aligmentId: ALIGMENT_NO,
@@ -127,7 +128,7 @@ export default [
     featureList: [
       {
         name: 'Подчинение миконидам',
-        description: `Слуга может отвечать на приказы, отданные миконидами посредством спор взаимопонимания. Слуга отдаёт наивысший приоритет приказам, полученным от более сильных миконидов.`,
+        description: `Слуга теряет знание всех известных ему языков, но может отвечать на приказы, отданные миконидами посредством спор взаимопонимания. Слуга отдаёт наивысший приоритет приказам, полученным от более сильных миконидов.`,
       },
     ],
     spellCast: null,

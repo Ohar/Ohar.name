@@ -60,7 +60,6 @@ class DndCreatureExtenderContainer extends Component {
       return availableTemplateList.length
         ? (
           <DndCreatureExtenderComponent
-            creature={creature}
             list={availableTemplateList}
             extend={this.extend}
             {...rest}

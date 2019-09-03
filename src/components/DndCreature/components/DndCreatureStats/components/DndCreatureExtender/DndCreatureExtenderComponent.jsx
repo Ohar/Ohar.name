@@ -1,25 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from '@/components/Icon'
 
-const DndCreatureExtenderComponent = ({ list, creature, className, extend }) => (
+import './DndCreatureExtenderStyles.less'
+
+const DndCreatureExtenderComponent = ({ list, className, extend }) => (
   <span className={`DndCreatureExtender ${className}`}>
     {
+      list.length
+        ? 'Превратить в'
+        : null
+    }
+    {
       list.map(
-        (template, i) => {
-          const title = template.templateTitle.replace('NAME', creature.name);
-
-          return (
-            <button
-              className='DndCreatureExtender_btn'
-              onClick={() => extend(template)}
-              key={i}
-              type='button'
-              title={title}
-            >
-              {template.templateName}
-            </button>
-          );
-        }
+        (template, i) => (
+          <button
+            className='DndCreatureExtender_btn'
+            onClick={() => extend(template)}
+            key={i}
+            type='button'
+            title={template.templateName}
+          >
+            <Icon icon={template.templateIcon}/>
+          </button>
+        )
       )
     }
   </span>
@@ -27,13 +31,11 @@ const DndCreatureExtenderComponent = ({ list, creature, className, extend }) => 
 
 DndCreatureExtenderComponent.defaultProps = {
   className: '',
-  creature: null,
   list: []
 };
 
 DndCreatureExtenderComponent.propTypes = {
   className: PropTypes.string,
-  creature: PropTypes.object,
   list: PropTypes.array,
 };
 

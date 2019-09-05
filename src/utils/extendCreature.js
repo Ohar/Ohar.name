@@ -10,7 +10,12 @@ const extendCreature = ({creature, parent}) => {
   const filteredParent = filterPropNameList.reduce(
     (parentObj, propName) => ({
       ...parentObj,
-      [propName]: filterParentProps({ creature, parent, propName }),
+      [propName]: filterParentProps(
+        {
+          creature: creature[propName],
+          parent: parent[propName],
+        }
+      ),
     }),
     {...parent}
   )

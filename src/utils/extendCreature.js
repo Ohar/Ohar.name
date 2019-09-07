@@ -1,4 +1,4 @@
-const filterParentProps = require('./filterParentProps')
+const filterData = require('./filterData')
 
 const extendCreature = ({creature, parent}) => {
   const RESULT_DEFAULT = {}
@@ -10,10 +10,10 @@ const extendCreature = ({creature, parent}) => {
   const filteredParent = filterPropNameList.reduce(
     (parentObj, propName) => ({
       ...parentObj,
-      [propName]: filterParentProps(
+      [propName]: filterData(
         {
-          creature: creature[propName],
-          parent: parent[propName],
+          filters: creature.filterPropCollection[propName],
+          data: parent[propName],
         }
       ),
     }),

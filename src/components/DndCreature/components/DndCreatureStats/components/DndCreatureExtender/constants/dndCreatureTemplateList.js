@@ -254,11 +254,13 @@ export default [
             type: [
               ACTION_MELEE_WEAPON_ATTACK,
             ],
-            hit: [
-              DAMAGE_BLUDGEONING,
-              DAMAGE_SLASHING,
-              DAMAGE_PIERCING,
-            ],
+            hit: {
+              type: [
+                DAMAGE_BLUDGEONING,
+                DAMAGE_SLASHING,
+                DAMAGE_PIERCING,
+              ],
+            },
           },
         },
       ],

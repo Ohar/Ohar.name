@@ -12,7 +12,7 @@ function filterData ({data, filters}) {
 
   if (data && filters) {
     if (isDataPrimitive) {
-      return  arrify(filters).includes(data)
+      return arrify(filters).includes(data)
         ? data
         : null
     }
@@ -20,23 +20,23 @@ function filterData ({data, filters}) {
     if (isDataArray) {
       const defaultArr = []
 
-      const result2 = data.reduce(
+      const result = data.reduce(
         (resultArr, item) => {
-          const result = filterData({data: item, filters})
+          const filtered = filterData({data: item, filters})
 
-          return result
+          return filtered
             ? [
               ...resultArr,
-              result,
+              filtered,
             ]
             : resultArr
         },
         defaultArr
       )
 
-      return result2 === defaultArr
-        ? null
-        : result2
+      return result.length
+        ? result
+        : null
     }
 
     if (isDataObject && isFiltersPrimitive) {
@@ -46,52 +46,65 @@ function filterData ({data, filters}) {
     if (isDataObject && isFiltersObject) {
       const defaultObj = {}
 
-      const result2 = Object
+      let isOkay = true
+
+      const result = Object
         .keys(filters)
         .reduce(
           (resultObj, propName) => {
-            const result = filterData({data: data[propName], filters: filters[propName]})
+            if (isOkay) {
+              const filtered = filterData(
+                {
+                  data: data[propName],
+                  filters: filters[propName],
+                }
+              )
 
-            return result
-              ? {
-                ...resultObj,
-                [propName]: result,
+              if (filtered) {
+                return {
+                  ...resultObj,
+                  [propName]: filtered,
+                }
               }
-              : resultObj
+
+              isOkay = false
+            }
+
+            return defaultObj
           },
           defaultObj
         )
 
-      return result2 === defaultObj
-        ? null
-        : {
+      return isOkay
+        ? {
           ...data,
-          ...result2,
+          ...result,
         }
+        : null
     }
 
     if (isDataObject && isFiltersArray) {
       const defaultObj = {}
 
-      const result2 = filters.reduce(
+      const result = filters.reduce(
         (resultObj, item) => {
-          const result = filterData({data, filters: item})
+          const filtered = filterData({data, filters: item})
 
-          return result
+          return filtered
             ? {
               ...resultObj,
-              ...result,
+              ...filtered,
             }
             : resultObj
         },
         defaultObj
       )
 
-      return result2 === defaultObj
+      return result === defaultObj
         ? null
         : {
           ...data,
-          ...result2,
+          ...result,
         }
     }
   }

@@ -1,71 +1,116 @@
-const arrify = require('arrify')
+const { ACTION_MELEE_WEAPON_ATTACK, ACTION_RANGE_WEAPON_ATTACK } = require('./../constants/dnd/dndActionTypeList')
+const { DAMAGE_BLUDGEONING, DAMAGE_PIERCING, DAMAGE_POISON, DAMAGE_SLASHING } = require('./../constants/dnd/dndDamageTypeList')
+const { TARGET_CREATURE } = require('./../constants/dnd/dndTargetList')
 
-function foo ({parent, creature}) {
-  console.log(1, parent, creature);
-  if (parent && creature) {
-    console.log(2);
-    return arrify(creature)
-      .some(
-        creatureItem => {
-          console.log(3, creatureItem);
+const filterData = require('./filterData')
 
-          const isPrimitive = (
-            typeof creatureItem === 'string'
-            || typeof creatureItem === 'number'
-          )
-
-          console.log(4, isPrimitive);
-
-          const itemResult = isPrimitive
-            ? creatureItem === parent
-            : Object
-              .keys(creatureItem)
-              .every(
-                propName => {
-                  console.log(5, propName);
-                  const everyResult = foo(
-                    {
-                      parent: parent[propName],
-                      creature: creatureItem[propName],
-                    }
-                  )
-
-                  console.log(6, everyResult);
-
-                  return everyResult
-                }
-              )
-
-          console.log(7, itemResult);
-
-          return itemResult
-        }
-      )
-  }
-  return false
-}
-
-const creatureData = [
-  {
-    name: {
-      bar: [2, 3],
+const filters = {
+  actionList: [
+    {
+      name: 'Мультиатака',
     },
-  },
-  {
-    name: 'Киянка',
-  },
-]
-
-const parentData = {
-  name: {
-    bar: 3,
-    buzz: 3,
-  },
+    {
+      attack: {
+        type: [
+          ACTION_MELEE_WEAPON_ATTACK,
+        ],
+        hit: {
+          type: [
+            DAMAGE_BLUDGEONING,
+            DAMAGE_SLASHING,
+            DAMAGE_PIERCING,
+          ],
+        },
+      },
+    },
+  ],
 }
 
-const result = foo({
-  creature: creatureData,
-  parent: parentData,
-})
+const data = {
+  actionList: [
+    {
+      name: 'Мультиатака',
+    },
+    {
+      name: 'Укус',
+      attack: {
+        type: ACTION_MELEE_WEAPON_ATTACK,
+        bonus: 6,
+        range: 5,
+        target: {
+          count: 1,
+          limit: {
+            type: TARGET_CREATURE,
+          },
+        },
+        hit: [
+          {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+          },
+          {
+            type: DAMAGE_POISON,
+            cubeCount: 2,
+            cubeType: 8,
+          },
+        ],
+      },
+    },
+    {
+      name: 'Длинный меч',
+      attack: {
+        type: ACTION_MELEE_WEAPON_ATTACK,
+        bonus: 6,
+        range: 5,
+        target: 1,
+        hit: [
+          [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 1,
+              cubeType: 8,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 1,
+              cubeType: 10,
+              cubeBonus: 3,
+              comment: ', если используется двумя руками',
+            },
+          ],
+        ],
+      },
+    },
+    {
+      name: 'Длинный лук',
+      attack: {
+        type: ACTION_RANGE_WEAPON_ATTACK,
+        bonus: 6,
+        range: {
+          normal: 150,
+          max: 600,
+        },
+        target: 1,
+        hit: [
+          {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 3,
+          },
+          {
+            type: DAMAGE_POISON,
+            cubeCount: 1,
+            cubeType: 8,
+          },
+        ],
+      },
+    },
+  ],
+}
 
-console.log('result', result);
+const result = filterData({filters, data})
+
+console.log('result', JSON.stringify(result));

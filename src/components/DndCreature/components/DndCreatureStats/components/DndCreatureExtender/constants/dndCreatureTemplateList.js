@@ -86,6 +86,7 @@ import {
   SENSE_PASSIVE_PERCEPTION
 } from '@/constants/dnd/dndSenseList'
 import {
+  PARAM_STR,
   PARAM_INT,
   PARAM_WIT,
   PARAM_CHA
@@ -97,22 +98,9 @@ import {
   CONDITION_PARALYZED
 } from '@/constants/dnd/dndConditionList'
 
-// TODO
-// Он теряет все действия кроме
-// Мультиатаки и рукопашных атак оружием, причиня-
-// ющих дробящий, колющий или рубящий урон. Если
-// у него есть действие или рукопашная атака оружи-
-// ем, которая причиняет урон другого вида, он теряет
-// способность причинять урон этого вида, если только
-// урон не исходит от какого-то снаряжения, например,
-// магического предмета
-// Атаки. Если слуга не обладает иными возмож-
-// ностями причинения урона, он может использовать
-// свои кулаки и конечности для совершения невоору-
-// жённых ударов. При попадании невооружённый удар
-// причиняет дробящий урон 1к4 + модификатор Силы
-// слуги, или, если слуга Большого размера, то 2к4 + его
-// модификатор Силы.
+import {dndCrCollection} from "@/constants/dnd/dndCrList"
+
+import calcParamBonus from '@/utils/calcParamBonus'
 
 export default [
   {
@@ -132,7 +120,6 @@ export default [
     ],
     spellCast: null,
     spellCastTogether: null,
-    // actionList: [],
     languageList: [],
     senseList: [
       {
@@ -276,6 +263,33 @@ export default [
         CONDITION_CHARMED,
         CONDITION_PARALYZED
       ],
-    }
+    },
+
+    replaceEmptyPropCollection: {
+      actionList: ({params, sizeType, cr}) => {
+        const strBonus = calcParamBonus(params[PARAM_STR])
+        const cubeCount = sizeType === SIZE_LARGE ? 2 : 1
+        const {profBonus} = dndCrCollection[cr]
+        const bonus = strBonus + profBonus
+
+        return [
+          {
+            name: 'Безоружный удар',
+            attack: {
+              type: ACTION_MELEE_WEAPON_ATTACK,
+              bonus,
+              range: 5,
+              target: 1,
+              hit: {
+                type: DAMAGE_BLUDGEONING,
+                cubeCount,
+                cubeType: 4,
+                cubeBonus: strBonus,
+              },
+            },
+          },
+        ]
+      },
+    },
   }
 ]

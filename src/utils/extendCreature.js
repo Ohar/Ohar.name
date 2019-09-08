@@ -58,7 +58,11 @@ const extendCreature = ({creature, parent}) => {
     RESULT_DEFAULT
   )
 
-  return extended === RESULT_DEFAULT && !filterPropNameList.length && !editPropNameList.length
+  const resultObj = (
+    extended === RESULT_DEFAULT
+    && !filterPropNameList.length
+    && !editPropNameList.length
+  )
     ? creature
     : {
       ...filteredParent,
@@ -66,6 +70,22 @@ const extendCreature = ({creature, parent}) => {
       ...extended,
       ...editedParent,
     }
+
+  const replaceEmptyPropNameList = creature.replaceEmptyPropCollection
+    ? Object.keys(creature.replaceEmptyPropCollection)
+    : []
+
+  const replaceEmptyParent = replaceEmptyPropNameList.reduce(
+    (parentObj, propName) => ({
+      ...parentObj,
+      [propName]: parentObj[propName] || creature.replaceEmptyPropCollection[propName](parentObj),
+    }),
+    {...resultObj}
+  )
+
+  return replaceEmptyPropNameList.length
+    ? replaceEmptyParent
+    : resultObj
 }
 
 module.exports = extendCreature

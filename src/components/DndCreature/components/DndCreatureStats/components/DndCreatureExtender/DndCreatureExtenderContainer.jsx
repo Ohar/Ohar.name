@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
+import arrify from "arrify"
 
 import extendCreature from '@/utils/extendCreature'
 
@@ -33,11 +34,9 @@ class DndCreatureExtenderContainer extends Component {
 
               default: {
                 return !(
-                  Array.isArray(creature[propName])
-                    ? creature[propName].every(
-                      creatureTypeId => extendLimitations[propName].includes(creatureTypeId)
-                    )
-                    : extendLimitations[propName].includes(creature[propName])
+                  arrify(creature[propName]).every(
+                    id => extendLimitations[propName].includes(id)
+                  )
                 )
               }
             }

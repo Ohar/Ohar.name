@@ -254,13 +254,18 @@ export default [
             type: [
               ACTION_MELEE_WEAPON_ATTACK,
             ],
-            hit: {
-              type: [
-                DAMAGE_BLUDGEONING,
-                DAMAGE_SLASHING,
-                DAMAGE_PIERCING,
-              ],
-            },
+            hit: [
+              {
+                isMagicWeaponDamage: true,
+              },
+              {
+                type: [
+                  DAMAGE_BLUDGEONING,
+                  DAMAGE_SLASHING,
+                  DAMAGE_PIERCING,
+                ],
+              },
+            ],
           },
         },
       ],

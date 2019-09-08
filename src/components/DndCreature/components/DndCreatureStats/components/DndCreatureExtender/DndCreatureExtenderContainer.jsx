@@ -10,16 +10,11 @@ import DndCreatureExtenderComponent from './DndCreatureExtenderComponent'
 class DndCreatureExtenderContainer extends Component {
   extend = template => {
     const {creature, callback} = this.props
-    const name = template.templateCreatureName.replace('NAME', creature.name)
-    const extendedCreature = extendCreature({
+
+    callback(extendCreature({
       parent: creature,
       creature: template,
-    })
-
-    callback({
-      ...extendedCreature,
-      name,
-    })
+    }))
   }
 
   filterAvailableTemplates = () => {

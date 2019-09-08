@@ -117,7 +117,6 @@ import {
 export default [
   {
     templateName: 'Споровый слуга',
-    templateCreatureName: 'NAME споровый слуга',
     templateIcon: faDizzy,
 
     creatureTypeIdList: [CREATURE_TYPE_PLANT],
@@ -214,34 +213,28 @@ export default [
     },
 
     editPropCollection: {
-      name: 'Споровый слуга NAME',
-      speed: {
-        [SPEED_WALK]: {
-          value: -10,
-          changeBy: true,
-          min: 5
-        },
-        [SPEED_DIG]: {
-          value: -10,
-          changeBy: true,
-          min: 5
-        },
-        [SPEED_FLY]: {
-          value: -10,
-          changeBy: true,
-          min: 5
-        },
-        [SPEED_SWIM]: {
-          value: -10,
-          changeBy: true,
-          min: 5
-        },
-        [SPEED_CLIMB]: {
-          value: -10,
-          changeBy: true,
-          min: 5
-        }
-      }
+      name: ({name}) => `${name} споровый слуга`,
+      speed: ({speed: speedCollection}) => Object
+        .keys(speedCollection)
+        .reduce(
+          (resultSpeed, speedId) => {
+            const speed = speedCollection[speedId]
+            const isObj = typeof speed === 'object'
+            const value = isObj ? speed.value : speed
+            const editedValue = Math.max(5, value - 10)
+
+            return {
+              ...resultSpeed,
+              [speedId]: isObj
+                ? {
+                  ...speed,
+                  value: editedValue,
+                }
+                : editedValue,
+            }
+          },
+          {}
+        )
     },
 
     filterPropCollection: {

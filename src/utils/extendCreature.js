@@ -20,6 +20,18 @@ const extendCreature = ({creature, parent}) => {
     {...parent}
   )
 
+  const editPropNameList = creature.editPropCollection
+    ? Object.keys(creature.editPropCollection)
+    : []
+
+  const editedParent = editPropNameList.reduce(
+    (resultObj, propName) => ({
+      ...resultObj,
+      [propName]: creature.editPropCollection[propName](filteredParent),
+    }),
+    {}
+  )
+
   const extendPropNameList = creature.extendPropCollection
     ? Object.keys(creature.extendPropCollection)
     : []
@@ -46,12 +58,13 @@ const extendCreature = ({creature, parent}) => {
     RESULT_DEFAULT
   )
 
-  return extended === RESULT_DEFAULT
+  return extended === RESULT_DEFAULT && !filterPropNameList.length && !editPropNameList.length
     ? creature
     : {
       ...filteredParent,
       ...creature,
       ...extended,
+      ...editedParent,
     }
 }
 

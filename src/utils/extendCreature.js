@@ -52,18 +52,11 @@ const extendCreature = ({creature, parent}) => {
       RESULT_DEFAULT
     )
 
-  const resultObj = (
-    extended === RESULT_DEFAULT
-    && !creature.extendPropCollection
-    && !creature.filterPropCollection
-    && !creature.editPropCollection
-  )
-    ? creature
-    : {
-      ...filteredParent,
-      ...creature,
-      ...extended,
-    }
+  const resultObj = {
+    ...filteredParent,
+    ...creature,
+    ...extended,
+  }
 
   const replaceEmptyParent = Object
     .keys(creature.replaceEmptyPropCollection || {})

@@ -54,17 +54,16 @@ const handleListWithDescriptions = list => list
 const dndCreatureList = dndCreatureRawList
   .map(
     creature => {
-      const parent = creature.parentId
-        ? dndCreatureRawCollection[creature.parentId]
-        : {}
-
-      const creatureFilled = extendCreature({creature, parent})
-
       if (creature.parentId) {
+        const parent = dndCreatureRawCollection[creature.parentId]
+        const creatureFilled = extendCreature({creature, parent})
+
         dndCreatureRawCollection[creature.id] = creatureFilled
+
+        return creatureFilled
       }
 
-      return creatureFilled
+      return creature
     }
   )
   .sort(

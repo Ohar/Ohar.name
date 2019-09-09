@@ -40,6 +40,17 @@ const handleDescription = (
     })
   )
 
+const handleListWithDescriptions = list => list
+  ? list.map(
+    action => action.description
+      ? {
+        ...action,
+        description: generateTextLinks(action.description),
+      }
+      : action
+  )
+  : []
+
 const dndCreatureList = dndCreatureRawList
   .map(
     creature => {
@@ -64,6 +75,8 @@ const dndCreatureList = dndCreatureRawList
     ...creature,
     isFemale: Boolean(creature.isFemale),
     description: handleDescription(creature),
+    actionList: handleListWithDescriptions(creature.actionList),
+    featureList: handleListWithDescriptions(creature.featureList),
     [SEARCH_PROP_NAME]: prepareForSearch(
       [
         creature.name,

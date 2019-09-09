@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import arrify from "arrify"
 
 import extendCreature from '@/utils/extendCreature'
+
+import checkInCollection from './utils/checkInCollection'
 
 import dndCreatureTemplateList from './constants/dndCreatureTemplateList'
 
@@ -19,31 +20,19 @@ class DndCreatureExtenderContainer extends Component {
   }
 
   filterAvailableTemplates = () => {
-    const {creature} = this.props
+    const {creature} = this.props;
 
     return dndCreatureTemplateList.filter(
-      ({extendLimitations}) => Object
-        .keys(extendLimitations)
-        .every(
-          propName => {
-            switch (propName) {
-              // Special case for “sizeTypeList”, bcz it has different name on “creature” obj
-              case 'sizeTypeList': {
-                return extendLimitations.sizeTypeList.includes(creature.sizeType)
-              }
+      ({templateLimitations: {include, exclude}}) => {
+        const shouldExclude = exclude
+          ? !Object.keys(exclude).some(checkInCollection({creature, collection: exclude}))
+          : false
+        const shouldInclude = include
+          ? Object.keys(include).every(checkInCollection({creature, collection: include}))
+          : true
 
-              case 'creatureIdList': {
-                return extendLimitations.creatureIdList.includes(creature.id)
-              }
-
-              default: {
-                return arrify(creature[propName]).every(
-                  id => extendLimitations[propName].includes(id)
-                )
-              }
-            }
-          }
-        )
+        return shouldInclude && !shouldExclude
+      }
     )
   }
 

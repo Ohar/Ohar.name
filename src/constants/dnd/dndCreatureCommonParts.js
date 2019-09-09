@@ -667,6 +667,11 @@ const modronsDescription = {
 **Великий Марш Модронов.** Когда шестерни Механуса завершают семнадцать циклов, что происходит раз в 289 лет, Праймус отправляет огромную армию модронов по Внешним Планам, вероятно, с разведывательной миссией. Марш долог и опасен, и лишь малое число модронов в результате возвращается на Механус. `,
 }
 
+const modronsNote = {
+  text: `Каждые 289 лет вся Мультивселенная сходит с ума. Как по расписанию.`,
+  author: `Квинт Стормбеллоу, скальный гном, искатель приключений`,
+}
+
 module.exports.angelDescription = angelDescription
 module.exports.blackDragonDescriptionList = blackDragonDescriptionList
 module.exports.blightsDesciption = blightsDesciption
@@ -700,6 +705,7 @@ module.exports.lizardfolkTexts = lizardfolkTexts
 module.exports.lycantropsDescription = lycantropsDescription
 module.exports.mephitsDescription = mephitsDescription
 module.exports.modronsDescription = modronsDescription
+module.exports.modronsNote = modronsNote
 module.exports.mushroomsDescription = mushroomsDescription
 module.exports.myconidDescription = myconidDescription
 module.exports.nightHagDescriptionList = nightHagDescriptionList

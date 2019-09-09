@@ -387,6 +387,7 @@ const {
     lycantropsDescription,
     mephitsDescription,
     modronsDescription,
+    modronsNote,
     mushroomsDescription,
     myconidDescription,
     nightHagDescriptionList,
@@ -25560,6 +25561,7 @@ module.exports = [
       'Монодрон может выполнять одновременно не более одной простой задачи и передавать одно сообщение длиной не более сорока восьми слов.',
       modronsDescription,
     ],
+    note: modronsNote,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
       CREATURE_TYPE_CONSTRUCT,

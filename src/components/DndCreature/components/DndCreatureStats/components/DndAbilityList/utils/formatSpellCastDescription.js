@@ -6,15 +6,21 @@ import { dndPcClassCollection } from '@/constants/dnd/dndPcClassList'
 
 import generateSpellText from './generateSpellText'
 
-const generateExcludeComponentText = componentExclude => {
+const generateExcludeComponentText = ({componentExclude, spellCasterClass}) => {
   if (componentExclude) {
-    if (componentExclude === CAST_NONE) {
-      return `, не нуждаясь ни в каких компонентах`
+    if (spellCasterClass) {
+      const componentText = componentExclude === CAST_NONE
+        ? 'не нужны никакие'
+        : `нужны только ${dndCastComponentCollection[componentExclude].name.plural.genitive}`
+
+      return `, которому для накладывания заклинаний ${componentText} компоненты`
+    } else {
+      const componentText = componentExclude === CAST_NONE
+        ? 'ни в каких'
+        : `в ${dndCastComponentCollection[componentExclude].name.plural.genitive}`
+
+      return `, не нуждаясь ${componentText} компонентах`
     }
-
-    const componentName = dndCastComponentCollection[componentExclude].name.plural.genitive
-
-    return `, не нуждаясь в ${componentName} компонентах`
   }
 
   return ''
@@ -56,19 +62,29 @@ export default (
       : ''
 
     const spellComponentOnlyText = componentOnly
-      ? `, нуждаясь только в ${dndCastComponentCollection[componentOnly].name.plural.genitive} компонентах`
+      ? spellCasterClass
+        ? `, которому нужны только ${dndCastComponentCollection[componentOnly].name.plural.genitive} компоненты`
+        : `, нуждаясь только в ${dndCastComponentCollection[componentOnly].name.plural.genitive} компонентах`
       : ``
 
-    const spellComponentExcludeText = generateExcludeComponentText(componentExclude)
+    const spellComponentExcludeText = generateExcludeComponentText({componentExclude, spellCasterClass})
+
+    const spellComponentText = spellComponentOnlyText || spellComponentExcludeText
+      ? `${spellComponentOnlyText}${spellComponentExcludeText}`
+      : ''
 
     const introText = spellCasterLevel
-      ? `${name} является заклинателем ${spellCasterLevel} уровня.`
+      ? `${name} является заклинателем ${spellCasterLevel} уровня${spellComponentText}.`
       : ''
     const baseStatText = `${isFemale ? 'Её' : 'Его'} базовой характеристикой является ${statName}`
 
+    const spellCasterClassText = spellCasterClass
+      ? dndPcClassCollection[spellCasterClass].name.singular.genitive
+      : ''
+
     const spellCastText = spellCasterClass
-      ? `У ${isFemale ? 'неё' : 'него'}  приготовлены следующие заклинания ${dndPcClassCollection[spellCasterClass].name.singular.genitive}`
-      : `${name} может накладывать следующие заклинания${spellComponentOnlyText}${spellComponentExcludeText}`
+      ? `У ${isFemale ? 'неё' : 'него'}  приготовлены следующие заклинания ${spellCasterClassText}`
+      : `. ${name} может накладывать следующие заклинания${spellComponentOnlyText}${spellComponentExcludeText}`
 
     preTextResult = `${introText} ${baseStatText}${spellAdditionalInfoText}. ${spellCastText}:`
   }

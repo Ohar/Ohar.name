@@ -23,7 +23,8 @@ class DndCreatureExtenderContainer extends Component {
     const {creature} = this.props;
 
     return dndCreatureTemplateList.filter(
-      ({templateLimitations: {include, exclude}}) => {
+      ({templateName, templateLimitations: {include, exclude}}) => {
+        const isSameTemplate = creature.templateName === templateName
         const shouldExclude = exclude
           ? !Object.keys(exclude).some(checkInCollection({creature, collection: exclude}))
           : false
@@ -31,7 +32,7 @@ class DndCreatureExtenderContainer extends Component {
           ? Object.keys(include).every(checkInCollection({creature, collection: include}))
           : true
 
-        return shouldInclude && !shouldExclude
+        return shouldInclude && !shouldExclude && !isSameTemplate
       }
     )
   }

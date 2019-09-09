@@ -10,6 +10,7 @@ const ALIGMENT_NOT_NEUTRAL = 'not_neutral'
 const ALIGMENT_NOT_GOOD = 'not_good'
 const ALIGMENT_NOT_EVIL = 'not_evil'
 const ALIGMENT_NOT_LAWFUL = 'not_lawful'
+const ALIGMENT_NOT_LN = 'not_ln'
 const ALIGMENT_NOT_CHAOTIC = 'not_chaotic'
 const ALIGMENT_ANY_NEUTRAL = 'any_neutral'
 const ALIGMENT_LG = 'lg'
@@ -339,6 +340,24 @@ const dndAligmentList = [
         prepositional: 'хаотично-злом',
     },
   },
+  {
+    id: ALIGMENT_NOT_LN,
+    oppositeId: null,
+    name: {
+      nominative: 'любое мировоззрение, кроме законопослушно-нейтрального',
+      genitive: 'любого мировоззрения, кроме законопослушно-нейтрального',
+      dative: 'любому мировоззрению, кроме законопослушно-нейтрального',
+      accusative: 'любое мировоззрение, кроме законопослушно-нейтрального',
+      instrumental: 'любым мировоззрением, кроме законопослушно-нейтрального',
+      prepositional: 'любом мировоззрении, кроме законопослушно-нейтрального',
+    },
+    children: [
+      ALIGMENT_ANY_GOOD,
+      ALIGMENT_ANY_EVIL,
+      ALIGMENT_ANY_CHAOTIC,
+      ALIGMENT_N,
+    ],
+  },
 ]
 
 module.exports = dndAligmentList
@@ -351,6 +370,7 @@ module.exports.ALIGMENT_ANY_GOOD = ALIGMENT_ANY_GOOD
 module.exports.ALIGMENT_ANY_EVIL = ALIGMENT_ANY_EVIL
 module.exports.ALIGMENT_ANY_LAWFUL = ALIGMENT_ANY_LAWFUL
 module.exports.ALIGMENT_ANY_CHAOTIC = ALIGMENT_ANY_CHAOTIC
+module.exports.ALIGMENT_NOT_LN = ALIGMENT_NOT_LN
 module.exports.ALIGMENT_NOT_NEUTRAL = ALIGMENT_NOT_NEUTRAL
 module.exports.ALIGMENT_NOT_GOOD = ALIGMENT_NOT_GOOD
 module.exports.ALIGMENT_NOT_EVIL = ALIGMENT_NOT_EVIL

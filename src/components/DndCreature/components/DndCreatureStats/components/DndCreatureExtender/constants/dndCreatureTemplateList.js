@@ -1,5 +1,5 @@
 import arrify from "arrify"
-import { faDizzy, faSkullCrossbones, faMehBlank } from '@fortawesome/free-solid-svg-icons'
+import { faDizzy, faSkullCrossbones, faMehBlank, faRobot } from '@fortawesome/free-solid-svg-icons'
 
 import generateTextLinks from '@/utils/generateTextLinks'
 
@@ -53,7 +53,8 @@ import {
   CREATURE_TYPE_YUGOLOT,
 } from '@/constants/dnd/dndCreatureTypeList'
 import {
-  ALIGMENT_NO
+  ALIGMENT_NO,
+  ALIGMENT_NOT_LN,
 } from '@/constants/dnd/dndAligmentList'
 import {
   SPEED_CLIMB,
@@ -134,10 +135,15 @@ import {
   CREATURE_BRASS_DRAGON_WYRMLING,
   CREATURE_BRONZE_DRAGON_WYRMLING,
   CREATURE_COPPER_DRAGON_WYRMLING,
+  CREATURE_DUODRONE,
   CREATURE_GOLD_DRAGON_WYRMLING,
   CREATURE_GREEN_DRAGON_WYRMLING,
+  CREATURE_MONODRONE,
+  CREATURE_PENTADRONE,
+  CREATURE_QUADRONE,
   CREATURE_RED_DRAGON_WYRMLING,
   CREATURE_SILVER_DRAGON_WYRMLING,
+  CREATURE_TRIDRONE,
   CREATURE_WHITE_DRAGON_WYRMLING,
   CREATURE_YOUNG_BLACK_DRAGON,
   CREATURE_YOUNG_BLUE_DRAGON,
@@ -613,6 +619,38 @@ export default [
           name: 'Скрытность в тени',
           description: `Находясь в области тусклого света или тьмы, дракон может совершать действие Засада бонусным действием.`,
         },
+      ],
+    },
+  },
+  {
+    templateName: 'Модрон-ренегат',
+    templateIcon: faRobot,
+
+    aligmentId: ALIGMENT_NOT_LN,
+
+    source: 'MM:212',
+    description: [
+      {
+        header: 'Вариант: Модроны-ренегаты',
+        text: `Модрон иногда может дезертировать, либо из-за того, что подвергся воздействию сил хаоса, либо по причине какой-то неисправности. Модроны-ренегаты перестают действовать в соответствии с директивами и желаниями Праймуса, нарушая законы, не подчиняясь приказам и даже занимаясь насилием. Другие модроны стараются отлавливать и уничтожать таких ренегатов.\n
+Модрон-ренегат теряет особенность _Косное сознание_, и может иметь любое мировоззрение кроме законно-нейтрального. В остальном у него статистика как у обычного модрона соответствующего ранга.`,
+      },
+    ],
+
+    editPropCollection: {
+      name: ({name}) => `${name}-ренегат`,
+      featureList: ({featureList}) => featureList.filter(
+        ({name}) => name !== 'Косное сознание'
+      ),
+    },
+
+    extendLimitations: {
+      creatureIdList: [
+        CREATURE_MONODRONE,
+        CREATURE_DUODRONE,
+        CREATURE_TRIDRONE,
+        CREATURE_QUADRONE,
+        CREATURE_PENTADRONE,
       ],
     },
   },

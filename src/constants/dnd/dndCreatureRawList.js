@@ -18349,7 +18349,7 @@ module.exports = [
             ],
             {
               type: DAMAGE_POISON,
-              isMagicWeaponDamage: true,
+              isDamageByEquipment: true,
               cubeCount: 3,
               cubeType: 8,
             },

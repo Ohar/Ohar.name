@@ -311,7 +311,7 @@ export default [
             ],
             hit: [
               {
-                isMagicWeaponDamage: true,
+                isDamageByEquipment: true,
               },
               {
                 type: [

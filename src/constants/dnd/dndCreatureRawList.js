@@ -25502,7 +25502,7 @@ module.exports = [
       },
     ],
     languageList: [
-      LANG_ABYSS,
+      LANG_ABYSSAL,
     ],
     cr: CR_3,
     featureList: [

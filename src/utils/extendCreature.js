@@ -3,6 +3,16 @@ const filterData = require('./filterData')
 const extendCreature = ({creature, parent}) => {
   const RESULT_DEFAULT = {}
 
+  const editedParent = Object
+    .keys(creature.editPropCollection || {})
+    .reduce(
+      (resultObj, propName) => ({
+        ...resultObj,
+        [propName]: creature.editPropCollection[propName](parent),
+      }),
+      {...parent}
+    )
+
   const filteredParent = Object
     .keys(creature.filterPropCollection || {})
     .reduce(
@@ -11,21 +21,11 @@ const extendCreature = ({creature, parent}) => {
         [propName]: filterData(
           {
             filters: creature.filterPropCollection[propName],
-            data: parent[propName],
+            data: editedParent[propName],
           }
         ),
       }),
-      {...parent}
-    )
-
-  const editedParent = Object
-    .keys(creature.editPropCollection || {})
-    .reduce(
-      (resultObj, propName) => ({
-        ...resultObj,
-        [propName]: creature.editPropCollection[propName](filteredParent),
-      }),
-      {}
+      {...editedParent}
     )
 
   const extended = Object
@@ -63,7 +63,6 @@ const extendCreature = ({creature, parent}) => {
       ...filteredParent,
       ...creature,
       ...extended,
-      ...editedParent,
     }
 
   const replaceEmptyParent = Object

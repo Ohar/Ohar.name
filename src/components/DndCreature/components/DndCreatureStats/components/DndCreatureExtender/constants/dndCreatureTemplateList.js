@@ -321,7 +321,6 @@ export default [
   {
     templateName: 'Драколич',
     templateIcon: faSkullCrossbones,
-    name: 'Драколич',
 
     creatureTypeIdList: [CREATURE_TYPE_UNDEAD],
     source: 'MM:99',

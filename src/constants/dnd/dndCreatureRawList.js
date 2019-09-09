@@ -396,6 +396,7 @@ const {
     mummyNote,
     mushroomsDescription,
     myconidDescription,
+    nagaDescription,
     nightHagDescriptionList,
     quasitText,
     redDragonDescriptionList,
@@ -602,6 +603,7 @@ const {
     CREATURE_SOLAR,
     CREATURE_SPECTATOR,
     CREATURE_SPINED_DEVIL,
+    CREATURE_SPIRIT_NAGA,
     CREATURE_STEAM_MEPHIT,
     CREATURE_STEAM_MEPHIT_SUMMONER,
     CREATURE_STIRGE,
@@ -26375,6 +26377,132 @@ module.exports = [
         name: 'Песчаный вихрь',
         description: `Лорд-мумия магическим образом превращается в песчаный вихрь, перемещается на расстояние до 60 футов и принимает свой обычный облик. Находясь в облике вихря, лорд-мумия обладает иммунитетом ко всем видам урона, и не может быть опутана, ошеломлена, сбита с ног, схвачена, и не может стать окаменевшей. Снаряжение, несомое и носимое лорд-мумией, остаётся у неё.`,
         cost: 2,
+      },
+    ],
+  },
+  {
+    name: 'Духовная нага',
+    nameEn: 'Spirit naga',
+    id: CREATURE_SPIRIT_NAGA,
+    description: [
+      `Духовные наги живут в злобе и безрадостности, постоянно планируя месть против тех, кто их предал, — или тех, кто, как они считают, их предал. Они устраивают логова в угрюмых пещерах и руинах, проводя всё своё время в изучении новых заклинаний и порабощении смертных, которыми они себя окружают. Духовные наги любят зачаровывать своих врагов, подтягивая их к себе поближе, чтобы можно было впиться ядовитыми клыками в их плоть.`,
+      nagaDescription,
+    ],
+    note: {
+      text: `Если даже ты уничтожишь меня, я все равно вернусь, и все твои близкие поплатятся`,
+      author: `Экспликтика Дефайлус, духовная нага`,
+    },
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:218',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 10,
+      cubeBonus: 20,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 16,
+      [PARAM_WIT]: 15,
+      [PARAM_CHA]: 16,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 6,
+      [PARAM_CON]: 5,
+      [PARAM_WIT]: 5,
+      [PARAM_CHA]: 6,
+    },
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_COMMON,
+    ],
+    cr: CR_8,
+    featureList: [
+      {
+        name: 'Восстановление',
+        description: `Если нага умирает, она возвращается к жизни через 1к6 дней и восстанавливает все хиты. Только заклинание _Исполнение желаний_ (Wish) может прекратить действие этой особенности.`,
+      },
+    ],
+    spellCast: {
+      spellCasterLevel: 10,
+      spellCasterClass: PC_CLASS_WIZARD,
+      baseStat: PARAM_INT,
+      spellAttackBonus: 6,
+      saveThrowDc: 14,
+      spellIdList: [
+        SPELL_BLIGHT,
+        SPELL_CHARM_PERSON,
+        SPELL_DETECT_MAGIC,
+        SPELL_DETECT_THOUGHTS,
+        SPELL_DIMENSION_DOOR,
+        SPELL_DOMINATE_PERSON,
+        SPELL_HOLD_PERSON,
+        SPELL_LIGHTNING_BOLT,
+        SPELL_MAGE_HAND,
+        SPELL_MINOR_ILLUSION,
+        SPELL_RAY_OF_FROST,
+        SPELL_SLEEP,
+        SPELL_WATER_BREATHING,
+      ],
+      slotCountList: [
+        Infinity,
+        4,
+        3,
+        3,
+        3,
+        2,
+      ],
+    },
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель должна совершить спасбросок Телосложения со Сл 13, получая урон ядом 31 (7к8) при провале, или половину этого урона при успехе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
       },
     ],
   },

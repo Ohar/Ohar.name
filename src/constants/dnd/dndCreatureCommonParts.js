@@ -690,6 +690,16 @@ const mummyNote = {
   author: `седьмое правило выживания в подземельях Мистика X `,
 }
 
+const nagaDescription = {
+  header: 'Наги',
+  text: `Наги — разумные змеевидные создания, населяющие древние руины и собирающие волшебные сокровища и знания.\n
+Первые наги давным-давно были созданы как бессмертные стражи гуманоидной расы. Когда эта раса вымерла, наги посчитали себя законными наследниками сокровищ и магических таинств своих хозяев. Трудолюбивые наги иногда выбираются из своего логова, чтоб отыскать волшебные предметы и редкие книги заклинаний.\n
+Наги никогда не чувствуют разрушительное воздействие времени и не поддаются болезням. Даже если тело наги уничтожить, её бессмертная душа за несколько дней формирует новое тело, готовое продолжать бессмертное дело.\n
+**Доброжелательные диктаторы и жестокие тираны.** В своих владениях нага обладает абсолютной властью. Вне зависимости от того, руководит она милосердно или терроризирует своих подданных, нага верит, что является хозяином всех прочих существ, населяющих её территорию.\n
+**Соперничество.** Наги ведут давнюю вражду с юань-ти, расой, считающей себя воплощением змеиной эволюции. Хотя сотрудничество между ними редко, наги и юань-ти порой забывают о разногласиях, чтобы достичь общей цели. Однако юань-ти очень не любят находиться во власти наги.\n
+**Бессмертная натура.** Нага не нуждается в воздухе, еде, питье и сне.`,
+}
+
 module.exports.angelDescription = angelDescription
 module.exports.blackDragonDescriptionList = blackDragonDescriptionList
 module.exports.blightsDesciption = blightsDesciption
@@ -728,6 +738,7 @@ module.exports.mummyDescription = mummyDescription
 module.exports.mummyNote = mummyNote
 module.exports.mushroomsDescription = mushroomsDescription
 module.exports.myconidDescription = myconidDescription
+module.exports.nagaDescription = nagaDescription
 module.exports.nightHagDescriptionList = nightHagDescriptionList
 module.exports.quasitText = quasitText
 module.exports.redDragonDescriptionList = redDragonDescriptionList

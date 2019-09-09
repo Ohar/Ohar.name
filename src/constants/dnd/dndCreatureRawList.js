@@ -131,6 +131,7 @@ const {
     LANG_IGNAN,
     LANG_INFERNAL,
     LANG_ITS_CREATOR,
+    LANG_MODRONE,
     LANG_PRIMORDIAL,
     LANG_SYLVAN,
     LANG_TELEPATHY,
@@ -385,6 +386,7 @@ const {
     lizardfolkTexts,
     lycantropsDescription,
     mephitsDescription,
+    modronsDescription,
     mushroomsDescription,
     myconidDescription,
     nightHagDescriptionList,
@@ -554,6 +556,7 @@ const {
     CREATURE_MERROW,
     CREATURE_MIMIC,
     CREATURE_MINOTAUR,
+    CREATURE_MONODRONE,
     CREATURE_MUD_MEPHIT,
     CREATURE_MUD_MEPHIT_SUMMONER,
     CREATURE_MYCONID_ADULT,
@@ -25544,6 +25547,114 @@ module.exports = [
             cubeCount: 2,
             cubeType: 8,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Монодрон',
+    nameEn: 'Monodrone',
+    id: CREATURE_MONODRONE,
+    description: [
+      'Монодрон может выполнять одновременно не более одной простой задачи и передавать одно сообщение длиной не более сорока восьми слов.',
+      modronsDescription,
+    ],
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_LN,
+    source: 'MM:212',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 8,
+      cubeBonus: 1,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 4,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_MODRONE,
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Косное сознание',
+        description: `Монодрона нельзя заставить действовать так, как противоречит его природе или инструкциям.`,
+      },
+      {
+        name: 'Распад',
+        description: `Если монодрон умирает, его тело рассыпается в пыль, оставляя лишь оружие и то, что он нёс.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Кинжал',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 2,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
           },
         },
       },

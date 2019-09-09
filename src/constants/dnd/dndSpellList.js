@@ -40,6 +40,7 @@ const SPELL_BLESS = 'bless'
 const SPELL_BLIGHT = 'blight'
 const SPELL_BLINDNESS_DEAFNESS = 'blindness_deafness'
 const SPELL_BLUR = 'blur'
+const SPELL_CALM_EMOTIONS = 'calm_emotions'
 const SPELL_CHARM_PERSON = 'charm_person'
 const SPELL_CLAIRVOYANCE = 'clairvoyance'
 const SPELL_CLOUDKILL = 'cloudkill'
@@ -114,6 +115,7 @@ const SPELL_MAGIC_MISSILE = 'magic_missile'
 const SPELL_MAJOR_IMAGE = 'major_image'
 const SPELL_MASS_CURE_WOUNDS = 'mass_cure_wounds'
 const SPELL_MELFS_ACID_ARROW = 'melfs_acid_arrow'
+const SPELL_MENDING = 'mending'
 const SPELL_MINOR_ILLUSION = 'minor_illusion'
 const SPELL_MIRROR_IMAGE = 'mirror_image'
 const SPELL_MISTY_STEP = 'misty_step'
@@ -2218,6 +2220,34 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_MENDING,
+    name: 'Починка',
+    nameEn: 'Mending',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_CALM_EMOTIONS,
+    name: 'Умиротворение',
+    nameEn: 'Calm emotions',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2242,6 +2272,7 @@ module.exports.SPELL_BLESS = SPELL_BLESS
 module.exports.SPELL_BLIGHT = SPELL_BLIGHT
 module.exports.SPELL_BLINDNESS_DEAFNESS = SPELL_BLINDNESS_DEAFNESS
 module.exports.SPELL_BLUR = SPELL_BLUR
+module.exports.SPELL_CALM_EMOTIONS = SPELL_CALM_EMOTIONS
 module.exports.SPELL_CHARM_PERSON = SPELL_CHARM_PERSON
 module.exports.SPELL_CLAIRVOYANCE = SPELL_CLAIRVOYANCE
 module.exports.SPELL_CLOUDKILL = SPELL_CLOUDKILL
@@ -2316,6 +2347,7 @@ module.exports.SPELL_MAGIC_MISSILE = SPELL_MAGIC_MISSILE
 module.exports.SPELL_MAJOR_IMAGE = SPELL_MAJOR_IMAGE
 module.exports.SPELL_MASS_CURE_WOUNDS = SPELL_MASS_CURE_WOUNDS
 module.exports.SPELL_MELFS_ACID_ARROW = SPELL_MELFS_ACID_ARROW
+module.exports.SPELL_MENDING = SPELL_MENDING
 module.exports.SPELL_MINOR_ILLUSION = SPELL_MINOR_ILLUSION
 module.exports.SPELL_MIRROR_IMAGE = SPELL_MIRROR_IMAGE
 module.exports.SPELL_MISTY_STEP = SPELL_MISTY_STEP

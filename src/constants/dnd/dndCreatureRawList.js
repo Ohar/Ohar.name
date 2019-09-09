@@ -546,6 +546,7 @@ const {
     CREATURE_ICE_MEPHIT_SUMMONER,
     CREATURE_IMP,
     CREATURE_IMP_FAMILIAR,
+    CREATURE_INVISIBLE_STALKER,
     CREATURE_IRON_GOLEM,
     CREATURE_KENKU,
     CREATURE_KOBOLD,
@@ -26805,5 +26806,111 @@ module.exports = [
       },
     ],
     isFemale: true,
+  },
+  {
+    name: 'Невидимый охотник',
+    nameEn: 'Invisible stalker',
+    id: CREATURE_INVISIBLE_STALKER,
+    description: `Невидимый охотник — это воздушный элементаль, призванный со своего родного плана и превращённый мощной магией. Единственная его цель — охотиться за кем-то и добывать определённые предметы для своего призывателя. Если невидимый охотник повержен или магия, которая связывает его, рассеивается, невидимый охотник исчезает в порыве ветра.\n
+**Целеустремлённый охотник.** После создания невидимый охотник остаётся при своём призывателе, пока не получит от него задание. Если такое задание не состоит в поиске и уничтожении конкретного существа или получении определённого предмета, то магия, связывающая невидимого охотника, рассеивается, и элементаль вновь обретает свободу. В противном случае он выполняет задание и возвращается к призывателю за следующим поручением, служа ему таким образом, пока связывающая его магия не рассеивается. Если во время выполнения задания призыватель погибает, то невидимый охотник исчезает после того, как выполнит это задание.\n
+Невидимый охотник служит в лучшем случае неохотно, и ему отвратительны все получаемые поручения. Если задание занимает много времени, невидимый охотник может даже попытаться извратить полученное поручение, поэтому оно должно быть сформулировано очень аккуратно.\n
+**Невидимая угроза.** Невидимые охотники состоят из воздуха, поэтому по своей природе невидимы. Его перемещения можно услышать или почувствовать, но элементаль остаётся невидимым даже когда атакует. Заклинания, позволяющие видеть невидимое, показывают только расплывчатые очертания охотника.\n
+**Стихийная натура.** Невидимому охотнику не нужен воздух, еда, питьё и сон. `,
+    sizeType: SIZE_MIDDLE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: 'MM:220',
+    armor: 14,
+    hp: {
+      cubeCount: 16,
+      cubeType: 8,
+      cubeBonus: 32,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+      [SPEED_FLY]: {
+        value: 50,
+        comment: 'парит',
+      },
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 19,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 15,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 8,
+      [SKILL_STEALTH]: 10,
+    },
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_UNCONSCIOUS,
+      CONDITION_GRAPPLED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 18,
+      },
+    ],
+    languageList: [
+      LANG_AURAN,
+      {
+        id: LANG_COMMON,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_6,
+    featureList: [
+      {
+        name: 'Невидимость',
+        description: `Охотник невидим.`,
+      },
+      {
+        name: 'Безупречный следопыт',
+        description: `Призыватель назначает охотнику добычу. Охотник знает, в каком направлении находится добыча и расстояние до неё, если они находятся на одном плане существования. Охотник также знает местонахождение того, кто его призвал.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Охотник совершает два размашистых удара.`,
+      },
+      {
+        name: 'Размашистый удар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
   },
 ]

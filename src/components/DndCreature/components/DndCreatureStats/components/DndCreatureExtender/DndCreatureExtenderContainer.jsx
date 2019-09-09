@@ -24,7 +24,7 @@ class DndCreatureExtenderContainer extends Component {
     return dndCreatureTemplateList.filter(
       ({extendLimitations}) => !Object
         .keys(extendLimitations)
-        .find(
+        .some(
           propName => {
             switch (propName) {
               // Special case for “sizeTypeList”, bcz it has different name on “creature” obj

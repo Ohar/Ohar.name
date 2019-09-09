@@ -364,6 +364,7 @@ const {
   } = require('./dndTargetList'),
   {
     angelDescription,
+    animatedThingsDescription,
     blackDragonDescriptionList,
     blightsDesciption,
     blueDragonDescriptionList,
@@ -605,6 +606,7 @@ const {
     CREATURE_QUASIT_FAMILIAR,
     CREATURE_RED_DRAGON_WYRMLING,
     CREATURE_ROPER,
+    CREATURE_RUG_OF_SMOTHERING,
     CREATURE_SEA_HAG,
     CREATURE_SEA_HAG_COVEN,
     CREATURE_SHADOW_DEMON,
@@ -27224,6 +27226,98 @@ module.exports = [
             cubeType: 6,
             cubeBonus: 3,
           },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Ковёр удушения',
+    nameEn: 'Rug of smothering',
+    id: CREATURE_RUG_OF_SMOTHERING,
+    description: [
+      `Потенциальных воров и неосторожных героев, прибывших к порогу обители врага, глаза и уши предупреждают о ловушках. Но приключение может закончиться, не начавшись, из-за оживлённого ковра под их ногами, который задушит их до смерти.\n
+Ковёр удушения может быть любой формы, от высококачественной ручной работы, достойной королевы, до грубой циновки в хижине крестьянина.\n
+Существа со способностью чувствовать магию, обнаруживают ложную магическую ауру ковра душителя. В некоторых случаях ковёр удушения маскируется под ковёр-самолёт или другой полезный магический предмет. Однако персонаж, который стоит или сидит на ковре, или пытается произнести командные слова, быстро оказывается в ловушке ковра, который плотно обхватывает свою жертву.`,
+      animatedThingsDescription,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:224',
+    armor: 12,
+    hp: {
+      cubeCount: 6,
+      cubeType: 10,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 3,
+      [PARAM_CHA]: 1,
+    },
+    immunityList: [
+      DAMAGE_PSYCHIC,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_PETRIFIED,
+      CONDITION_BLINDED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        comment: `слеп за пределами этого радиуса`,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 6,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Восприимчивость к антимагии',
+        description: `Ковёр недееспособен, пока находится в пределах области _Преграды магии_ (Antimagic field). Став целью _Рассеивания магии_ (Dispel magic), ковёр должен преуспеть в спасброске Телосложения со Сл спасброска заклинателя, иначе потеряет сознание на 1 минуту.`,
+      },
+      {
+        name: 'Передача урона',
+        description: `Пока ковёр держит существо в захвате, он получает только половину урона, причиняемого ему, а существо, схваченное ковром, получает вторую половину.`,
+      },
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока ковёр остаётся без движения, он неотличим от обычного ковра.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Удушение',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              size: {
+                max: SIZE_MEDIUM,
+              },
+            },
+          },
+          hit: `Существо становится схваченным (Сл высвобождения 13). Пока цель схвачена, она опутана, ослеплена, и рискует задохнуться, а ковёр не может душить другую цель. Кроме того, цель в начале каждого своего хода получает дробящий урон 10 (2к6+3)`,
         },
       },
     ],

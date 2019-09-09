@@ -700,7 +700,15 @@ const nagaDescription = {
 **Бессмертная натура.** Нага не нуждается в воздухе, еде, питье и сне.`,
 }
 
+const animatedThingsDescription = {
+  header: 'Оживлённые предметы',
+  text: `Оживлённые предметы создаться мощной магией и следуют командам своих создателей. Не получая приказов, они следуют последней полученной команде, стараясь выполнить её изо всех сил. Они могут действовать самостоятельно, выполняя простые инструкции. Некоторые из оживлённых предметов (особенно те, что созданы в Стране Фей) могут свободно разговаривать или отыгрывать роль, но по большей части это простые автоматы.\n
+**Природа конструкта.** Оживлённые предметы не нуждаются в воздухе, еде, питье и сне.\n
+Магия, которая оживляет предмет, рассеивается, когда хиты предмета уменьшаются до 0. Оживлённый предмет с 0 хитов перестаёт быть живым и получает слишком много повреждений, чтобы его можно было использовать ещё раз, и он перестаёт представлять собой ценность. `,
+}
+
 module.exports.angelDescription = angelDescription
+module.exports.animatedThingsDescription = animatedThingsDescription
 module.exports.blackDragonDescriptionList = blackDragonDescriptionList
 module.exports.blightsDesciption = blightsDesciption
 module.exports.blueDragonDescriptionList = blueDragonDescriptionList
@@ -719,11 +727,11 @@ module.exports.giantDescriptionList = giantDescriptionList
 module.exports.githDescription = githDescription
 module.exports.gitNote = gitNote
 module.exports.gnollDescription = gnollDescription
-module.exports.golemDescription = golemDescription
 module.exports.goblinDescription = goblinDescription
 module.exports.goldDragonDescriptionList = goldDragonDescriptionList
-module.exports.greenHagDescriptionList = greenHagDescriptionList
+module.exports.golemDescription = golemDescription
 module.exports.greenDragonDescriptionList = greenDragonDescriptionList
+module.exports.greenHagDescriptionList = greenHagDescriptionList
 module.exports.grickDescription = grickDescription
 module.exports.iceDevilSummoner = iceDevilSummoner
 module.exports.impDescription = impDescription

@@ -25498,6 +25498,9 @@ module.exports = [
         value: 17,
       },
     ],
+    languageList: [
+      LANG_ABYSS,
+    ],
     cr: CR_3,
     featureList: [
       {

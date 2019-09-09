@@ -1,4 +1,4 @@
-import { faDizzy } from '@fortawesome/free-solid-svg-icons'
+import { faDizzy, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons'
 import {
   SIZE_MEDIUM,
   SIZE_LARGE,
@@ -43,9 +43,10 @@ import {
   CREATURE_TYPE_THRI_KREEN,
   CREATURE_TYPE_TITAN,
   CREATURE_TYPE_TROGLODYTE,
+  CREATURE_TYPE_UNDEAD,
   CREATURE_TYPE_XVART,
   CREATURE_TYPE_YOAN_TI,
-  CREATURE_TYPE_YUGOLOT
+  CREATURE_TYPE_YUGOLOT,
 } from '@/constants/dnd/dndCreatureTypeList'
 import {
   ALIGMENT_NO
@@ -94,9 +95,34 @@ import {
 import {
   CONDITION_BLINDED,
   CONDITION_CHARMED,
+  CONDITION_EXHAUSTION,
   CONDITION_FRIGHTENED,
-  CONDITION_PARALYZED
+  CONDITION_PARALYZED,
+  CONDITION_POISONED,
 } from '@/constants/dnd/dndConditionList'
+
+import {
+  CREATURE_ADULT_BLACK_DRAGON,
+  CREATURE_ADULT_BLUE_DRAGON,
+  CREATURE_ADULT_BRASS_DRAGON,
+  CREATURE_ADULT_BRONZE_DRAGON,
+  CREATURE_ADULT_COPPER_DRAGON,
+  CREATURE_ADULT_GOLD_DRAGON,
+  CREATURE_ADULT_GREEN_DRAGON,
+  CREATURE_ADULT_RED_DRAGON,
+  CREATURE_ADULT_SILVER_DRAGON,
+  CREATURE_ADULT_WHITE_DRAGON,
+  CREATURE_ANCIENT_BLACK_DRAGON,
+  CREATURE_ANCIENT_BLUE_DRAGON,
+  CREATURE_ANCIENT_BRASS_DRAGON,
+  CREATURE_ANCIENT_BRONZE_DRAGON,
+  CREATURE_ANCIENT_COPPER_DRAGON,
+  CREATURE_ANCIENT_GOLD_DRAGON,
+  CREATURE_ANCIENT_GREEN_DRAGON,
+  CREATURE_ANCIENT_RED_DRAGON,
+  CREATURE_ANCIENT_SILVER_DRAGON,
+  CREATURE_ANCIENT_WHITE_DRAGON,
+} from '@/constants/dnd/dndCreatureIdList'
 
 import {dndCrCollection} from "@/constants/dnd/dndCrList"
 
@@ -291,5 +317,87 @@ export default [
         ]
       },
     },
-  }
+  },
+  {
+    templateName: 'Драколич',
+    templateIcon: faSkullCrossbones,
+    name: 'Драколич',
+
+    creatureTypeIdList: [CREATURE_TYPE_UNDEAD],
+    source: 'MM:99',
+    description: [
+      {
+        header: 'Шаблон драколича',
+        text: `Только древний или взрослый истинный дракон может быть преобразован в драколича. Молодые драконы, которые пытаются пройти трансформацию, умирают, равно как и другие существа, не являющиеся истинными драконами, такие как псевдодраконы и виверны. Теневой дракон не может быть преобразован в драколича, поскольку он уже потерял слишком большую часть своего физического тела.\n
+Когда дракон становится драколичем, он сохраняет свою статистику, за исключением пунктов, описанных ниже. Дракон теряет все особенности, такие как Амфибия, которые подразумевают живую физиологию. Драколич может сохранить или потерять некоторые или все свои действия логова, или унаследовать новые, в зависимости от решения Мастера.\n
+**Вид.** Вид драколича меняется с «дракон» на «нежить», и ему больше не требуется воздух, еда, питьё и сон.\n
+**Сопротивление к урону.** Драколич получает сопротивление к урону некротической энергией.\n
+**Иммунитет к урону.** Драколич получает иммунитет к яду. Он также сохраняет все иммунитеты, которыми обладал до того, как стал нежитью.\n
+**Иммунитет к состоянию.** Драколич не может быть очарован, испуган, парализован или отравлен. Он также не страдает от истощения.\n
+**Сопротивление магии.** Драколич совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        header: 'Драколич',
+        text: `Даже таким долгожителям как драконы когда-то приходится умирать. Осознание этого многим драконам не даёт покоя, и некоторые из них позволяют с помощью некромантии и древних ритуалов превращать себя в могущественную нежить — драколичей. Только самые самовлюблённые драконы выбирают этот путь, зная, что в результате они оборвут все связи со своими сородичами и богами драконов.\n
+**По ту сторону смерти.** При трансформации драколич сохраняет свою форму и размеры, его кожа и чешуя плотно прилегают к костям или же наоборот, сбрасываются, оставляя голый скелет. Его глаза выглядят как пылающие точки света, плавающие в тёмных впадинах, и намекающие на недоброжелательность неживого разума.\n
+Многие драконы преследуют тщеславные цели уничтожения и доминирования, но драколичи сильнее самых злых драконов движимы жаждой власти над всеми. Драколичи являются дьявольски умными тиранами, плетущими паутину из бесчестных схем и планов, завлекая прислужников, движимых алчностью и жаждой власти. Действуя из тени и тщательно стараясь сохранить своё существование в секрете, драколич представляет собой хитрого и опасного противника.\n
+**Филактерий драколича.** Создание драколича требует сотрудничества дракона и группы магов или культистов, способных провести надлежащий ритуал. Во время ритуала дракон поглощает токсичное варево, мгновенно его убивающее. Заклинатели при этом уже готовы опутать его дух, чтобы поместить его в специальный драгоценный камень, функционирующий как филактерий лича. Когда плоть дракона изгнивает, дух заключённый внутри камня, возвращается и оживляет драконьи кости.\n
+Если физическое тело драколича когда-нибудь будет разрушено, его дух вернётся в драгоценный камень, если они находятся на одном плане. Если драгоценный камень прикоснётся к трупу другого дракона, дух драколича может овладеть этим телом, чтобы стать новым драколичем. Если духовный камень драколича будет находиться на другом плане, духу драколича будет некуда идти при разрушении его тела, и он просто уйдёт в посмертие.`,
+      },
+    ],
+
+    editPropCollection: {
+      name: ({name}) => name.replace('дракон', 'драколич'),
+    },
+
+    extendLimitations: {
+      creatureIdList: [
+        CREATURE_ADULT_BLACK_DRAGON,
+        CREATURE_ADULT_BLUE_DRAGON,
+        CREATURE_ADULT_BRASS_DRAGON,
+        CREATURE_ADULT_BRONZE_DRAGON,
+        CREATURE_ADULT_COPPER_DRAGON,
+        CREATURE_ADULT_GOLD_DRAGON,
+        CREATURE_ADULT_GREEN_DRAGON,
+        CREATURE_ADULT_RED_DRAGON,
+        CREATURE_ADULT_SILVER_DRAGON,
+        CREATURE_ADULT_WHITE_DRAGON,
+        CREATURE_ANCIENT_BLACK_DRAGON,
+        CREATURE_ANCIENT_BLUE_DRAGON,
+        CREATURE_ANCIENT_BRASS_DRAGON,
+        CREATURE_ANCIENT_BRONZE_DRAGON,
+        CREATURE_ANCIENT_COPPER_DRAGON,
+        CREATURE_ANCIENT_GOLD_DRAGON,
+        CREATURE_ANCIENT_GREEN_DRAGON,
+        CREATURE_ANCIENT_RED_DRAGON,
+        CREATURE_ANCIENT_SILVER_DRAGON,
+        CREATURE_ANCIENT_WHITE_DRAGON,
+      ],
+      creatureTypeIdList: [
+        CREATURE_TYPE_DRAGON,
+      ],
+    },
+
+    extendPropCollection: {
+      resistanceList: [
+        DAMAGE_NECROTIC,
+      ],
+      immunityList: [
+        DAMAGE_POISON,
+      ],
+      immunityConditionList: [
+        CONDITION_FRIGHTENED,
+        CONDITION_POISONED,
+        CONDITION_CHARMED,
+        CONDITION_PARALYZED,
+        CONDITION_EXHAUSTION,
+      ],
+      featureList: [
+        {
+          name: 'Сопротивление магии',
+          description: `Драколич совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+        },
+      ],
+    },
+  },
 ]

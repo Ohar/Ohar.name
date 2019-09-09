@@ -32,6 +32,10 @@ class DndCreatureExtenderContainer extends Component {
                 return !extendLimitations.sizeTypeList.includes(creature.sizeType)
               }
 
+              case 'creatureIdList': {
+                return !extendLimitations.creatureIdList.includes(creature.id)
+              }
+
               default: {
                 return !(
                   arrify(creature[propName]).every(

@@ -80,6 +80,7 @@ const {
   {
     ALIGMENT_ANY,
     ALIGMENT_ANY_EVIL,
+    ALIGMENT_ANY_CHAOTIC,
     ALIGMENT_CE,
     ALIGMENT_CG,
     ALIGMENT_CN,
@@ -528,6 +529,7 @@ const {
     CREATURE_GRIFFON,
     CREATURE_GRIMLOCK,
     CREATURE_GUARDIAN_NAGA,
+    CREATURE_HALF_OGRE,
     CREATURE_HARPY,
     CREATURE_HELL_HOUND,
     CREATURE_HEZROU,
@@ -27110,6 +27112,117 @@ module.exports = [
             cubeCount: 2,
             cubeType: 6,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Полуогр',
+    nameAlt: 'Огриллон',
+    nameEn: 'Half-ogre',
+    nameEnAlt: 'Ogrillon',
+    id: CREATURE_HALF_OGRE,
+    description: `Когда огры спариваются с людьми, [хобгоблинами](CREATURE:hobgoblin), [медвежатниками](CREATURE:bugbear) или [орками](CREATURE:orc), результатом всегда становится полуогр (огры не скрещиваются с дварфами, полуросликами или эльфами; они съедают их). Человеческие матери редко переживают рождение такого отпрыска.\n
+Полуогрский потомок огра и орка также известен как «огриллон». Взрослый полуогр или огриллон в среднем достигает восьми футов роста и весит около 450 фунтов.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_GIANT,
+    ],
+    aligmentId: ALIGMENT_ANY_CHAOTIC,
+    source: 'MM:223',
+    armor: {
+      ac: 12,
+      type: 'шкурный доспех',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 10,
+      cubeBonus: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 10,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      LANG_GIANT,
+      LANG_COMMON,
+    ],
+    cr: CR_1,
+    actionList: [
+      {
+        name: 'Боевой топор',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: [
+              [
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 2,
+                cubeType: 8,
+                cubeBonus: 3,
+              },
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 2,
+                cubeType: 10,
+                cubeBonus: 3,
+                comment: `, если используется двумя руками`,
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 5,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
           },
         },
       },

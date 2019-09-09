@@ -2,6 +2,7 @@ const arrify = require('arrify')
 
 const prepareForSearch = require('./../../utils/prepareForSearch')
 const extendCreature = require('./../../utils/extendCreature')
+const generateTextLinks = require('./../../utils/generateTextLinks')
 
 const SEARCH_PROP_NAME = require('./../SEARCH_PROP_NAME')
 const dndCreatureRawList = require('./dndCreatureRawList')
@@ -34,7 +35,7 @@ const handleDescription = (
   )
   .map(
     ({ text, ...rest }) => ({
-      text: text.replace(/CREATURE:/g, '/dnd/creature-catalog/'),
+      text: generateTextLinks(text),
       ...rest
     })
   )

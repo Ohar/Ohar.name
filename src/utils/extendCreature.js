@@ -40,16 +40,16 @@ const extendCreature = ({creature, parent}) => {
     (result, listName) => {
       const {extendPropCollection} = creature
 
-      return extendPropCollection[listName] && filteredParent[listName]
+      return extendPropCollection[listName]
         ? {
           ...result,
           [listName]: Array.isArray(extendPropCollection[listName])
             ? [
-              ...filteredParent[listName],
+              ...(filteredParent[listName] || []),
               ...extendPropCollection[listName],
             ]
             : {
-              ...filteredParent[listName],
+              ...(filteredParent[listName] || {}),
               ...extendPropCollection[listName],
             },
         }

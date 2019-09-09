@@ -51,6 +51,7 @@ const SPELL_CONFUSION = 'confusion'
 const SPELL_CONJURE_ANIMALS = 'conjure_animals'
 const SPELL_CONJURE_ELEMENTAL = 'conjure_elemental'
 const SPELL_CONTACT_OTHER_PLANE = 'contact_other_plane'
+const SPELL_CONTAGION = 'contagion'
 const SPELL_CONTROL_WATER = 'control_water'
 const SPELL_CONTROL_WEATHER = 'control_weather'
 const SPELL_COUNTERSPELL = 'counterspell'
@@ -90,9 +91,12 @@ const SPELL_GLOBE_OF_INVULNERABILITY = 'globe_of_invulnerability'
 const SPELL_GOODBERRY = 'goodberry'
 const SPELL_GREATER_INVISIBILITY = 'greater_invisibility'
 const SPELL_GREATER_RESTORATION = 'greater_restoration'
+const SPELL_GUARDIAN_OF_FAITH = 'guardian_of_faith'
 const SPELL_GUIDANCE = 'guidance'
+const SPELL_GUIDING_BOLT = 'guiding_bolt'
 const SPELL_GUST_OF_WIND = 'gust_of_wind'
 const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
+const SPELL_HARM = 'harm'
 const SPELL_HEAT_METAL = 'heat_metal'
 const SPELL_HOLD_MONSTER = 'hold_monster'
 const SPELL_HOLD_PERSON = 'hold_person'
@@ -2158,6 +2162,62 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_GUIDING_BOLT,
+    name: 'Направленный снаряд',
+    nameEn: 'Guiding bolt',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_GUARDIAN_OF_FAITH,
+    name: 'Страж веры',
+    nameEn: 'Guardian of faith',
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_HARM,
+    name: 'Поражение',
+    nameEn: 'Harm',
+    description: ``, // TODO
+    lvl: 6,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_CONTAGION,
+    name: 'Заражение',
+    nameEn: 'Contagion',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2193,6 +2253,7 @@ module.exports.SPELL_CONFUSION = SPELL_CONFUSION
 module.exports.SPELL_CONJURE_ANIMALS = SPELL_CONJURE_ANIMALS
 module.exports.SPELL_CONJURE_ELEMENTAL = SPELL_CONJURE_ELEMENTAL
 module.exports.SPELL_CONTACT_OTHER_PLANE = SPELL_CONTACT_OTHER_PLANE
+module.exports.SPELL_CONTAGION = SPELL_CONTAGION
 module.exports.SPELL_CONTROL_WATER = SPELL_CONTROL_WATER
 module.exports.SPELL_CONTROL_WEATHER = SPELL_CONTROL_WEATHER
 module.exports.SPELL_COUNTERSPELL = SPELL_COUNTERSPELL
@@ -2232,9 +2293,12 @@ module.exports.SPELL_GLOBE_OF_INVULNERABILITY = SPELL_GLOBE_OF_INVULNERABILITY
 module.exports.SPELL_GOODBERRY = SPELL_GOODBERRY
 module.exports.SPELL_GREATER_INVISIBILITY = SPELL_GREATER_INVISIBILITY
 module.exports.SPELL_GREATER_RESTORATION = SPELL_GREATER_RESTORATION
+module.exports.SPELL_GUARDIAN_OF_FAITH = SPELL_GUARDIAN_OF_FAITH
 module.exports.SPELL_GUIDANCE = SPELL_GUIDANCE
+module.exports.SPELL_GUIDING_BOLT = SPELL_GUIDING_BOLT
 module.exports.SPELL_GUST_OF_WIND = SPELL_GUST_OF_WIND
 module.exports.SPELL_HALLUCINATORY_TERRAIN = SPELL_HALLUCINATORY_TERRAIN
+module.exports.SPELL_HARM = SPELL_HARM
 module.exports.SPELL_HEAT_METAL = SPELL_HEAT_METAL
 module.exports.SPELL_HOLD_MONSTER = SPELL_HOLD_MONSTER
 module.exports.SPELL_HOLD_PERSON = SPELL_HOLD_PERSON

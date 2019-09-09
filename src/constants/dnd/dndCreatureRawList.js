@@ -502,6 +502,7 @@ const {
     CREATURE_FAERIE_DRAGON_YELLOW,
     CREATURE_FIRE_GIANT,
     CREATURE_FLESH_GOLEM,
+    CREATURE_FLYING_SWORD,
     CREATURE_FROST_GIANT,
     CREATURE_GALEB_DUHR,
     CREATURE_GARGOYLE,
@@ -27318,6 +27319,103 @@ module.exports = [
             },
           },
           hit: `Существо становится схваченным (Сл высвобождения 13). Пока цель схвачена, она опутана, ослеплена, и рискует задохнуться, а ковёр не может душить другую цель. Кроме того, цель в начале каждого своего хода получает дробящий урон 10 (2к6+3)`,
+        },
+      },
+    ],
+  },
+  {
+    name: 'Летающий меч',
+    nameEn: 'Flying sword',
+    id: CREATURE_FLYING_SWORD,
+    description: [
+      `Летающий меч танцует в воздухе с уверенностью воина, которого нельзя ранить. Мечи — наиболее распространённое оружие, которое оживляют при помощи магии. Топоры, дубины, кинжалы, булавы, копья и даже самозарядные арбалеты тоже можно встретить в качестве оживлённого предмета.`,
+      animatedThingsDescription,
+    ],
+    note: {
+      text: `Рядом с сундуком лежали кости капитана Скорнблейда, всё ещё сжимавшего свой ржавый меч. Представьте моё удивление, когда клинок сам по себе вылетел из его костяной руки! Шрам остался до сих пор`,
+      author: `Левити Квикстич, плут полурослик`,
+    },
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:225',
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_FLY]: {
+        value: 50,
+        comment: 'парит',
+      },
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 5,
+      [PARAM_CHA]: 1,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 4,
+    },
+    immunityList: [
+      DAMAGE_PSYCHIC,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_PETRIFIED,
+      CONDITION_BLINDED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        comment: `слеп за пределами этого радиуса`,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 7,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Восприимчивость к антимагии',
+        description: `Меч недееспособен, пока находится в пределах области _Преграды магии_ (Antimagic field). Став целью _Рассеивания магии_ (Dispel magic), меч должен преуспеть в спасброске Телосложения со Сл спасброска заклинателя, иначе потеряет сознание на 1 минуту.`,
+      },
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока меч остаётся без движения, он неотличим от обычного меча.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Длинный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 1,
+          },
         },
       },
     ],

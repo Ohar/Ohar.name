@@ -438,6 +438,7 @@ const {
     CREATURE_ANCIENT_RED_DRAGON,
     CREATURE_ANCIENT_SILVER_DRAGON,
     CREATURE_ANCIENT_WHITE_DRAGON,
+    CREATURE_ANIMATED_ARMOR,
     CREATURE_ANKHEG,
     CREATURE_ANKYLOSAURUS,
     CREATURE_BALOR,
@@ -27415,6 +27416,99 @@ module.exports = [
             cubeCount: 1,
             cubeType: 8,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Оживлённый доспех',
+    nameEn: 'Animated armor',
+    id: CREATURE_ANIMATED_ARMOR,
+    description: [
+      `Эта пустая стальная оболочка громыхает при передвижении, тяжёлые пластины стучат и трутся друг о друга. Оживлённый доспех похож на мстительный дух павшего рыцаря. Тяжеловесный, но настойчивый, этот волшебный страж почти всегда одет в пластинчатый доспех.\n
+Для большей угрозы, оживлённый доспех часто может произносить заготовленную речь. Например, доспех может предупреждать о чём-то, спрашивать пароли или загадывать загадки. Очень редко они могут вести настоящий разговор. `,
+      animatedThingsDescription,
+    ],
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: 'MM:225',
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 8,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 25,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 3,
+      [PARAM_CHA]: 1,
+    },
+    immunityList: [
+      DAMAGE_PSYCHIC,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_BLINDED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        comment: `слеп за пределами этого радиуса`,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 6,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Восприимчивость к антимагии',
+        description: `Доспех недееспособен, пока находится в пределах области _Преграды магии_ (Antimagic field). Став целью _Рассеивания магии_ (Dispel magic), доспех должен преуспеть в спасброске Телосложения со Сл спасброска заклинателя, иначе потеряет сознание на 1 минуту.`,
+      },
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока доспех остаётся без движения, он неотличим от обычного комплекта доспехов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Доспех совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Размашистый удар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
           },
         },
       },

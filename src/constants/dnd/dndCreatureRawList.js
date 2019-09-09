@@ -388,6 +388,8 @@ const {
     mephitsDescription,
     modronsDescription,
     modronsNote,
+    mummyDescription,
+    mummyNote,
     mushroomsDescription,
     myconidDescription,
     nightHagDescriptionList,
@@ -561,6 +563,7 @@ const {
     CREATURE_MONODRONE,
     CREATURE_MUD_MEPHIT,
     CREATURE_MUD_MEPHIT_SUMMONER,
+    CREATURE_MUMMY,
     CREATURE_MYCONID_ADULT,
     CREATURE_MYCONID_SOVEREIGN,
     CREATURE_MYCONID_SPROUT,
@@ -26085,6 +26088,106 @@ module.exports = [
           to: 6,
         },
         description: `Пентадрон выдыхает газ 30-футовым конусом. Все существа в этой области должны преуспеть в спасброске Телосложения со Сл 11, иначе станут парализованными на 1 минуту. Существо может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
+      },
+    ],
+  },
+  {
+    name: 'Мумия',
+    nameEn: 'Mummy',
+    id: CREATURE_MUMMY,
+    description: mummyDescription,
+    note: mummyNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:216',
+    armor: {
+      ac: 11,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 8,
+      cubeBonus: 18,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 8,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 12,
+    },
+    saveThrowCollection: {
+      [PARAM_WIT]: 2,
+    },
+    vulnerabilityList: [
+      DAMAGE_FIRE,
+    ],
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_NECROTIC,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_ALL_KNOWN_AT_LIFE,
+    ],
+    cr: CR_3,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Мумия может использовать Ужасающий взгляд и совершить одну атаку разлагающим кулаком.`,
+      },
+      {
+        name: 'Разлагающий кулак',
+        description: `Если цель — существо, она должна преуспеть в спасброске Телосложения со Сл 12, иначе станет проклятой гнилью мумии. Проклятая цель не может восстанавливать хиты, и её максимум хитов уменьшается на 10 (3к6) за каждые прошедшие 24 часа. Если проклятье уменьшает максимум хитов цели до 0, цель умирает, а её тело становится прахом. Проклятье длится до тех пор, пока не будет снято заклинанием _Снятие проклятья_ (Remove curse) или другой магией. `,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_NECROTIC,
+              cubeCount: 3,
+              cubeType: 6,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Ужасающий взгляд',
+        description: `Мумия нацеливается на одно существо, которое видит в пределах 60 футов. Если цель видит мумию, она должна преуспеть в спасброске Мудрости со Сл 11 от этой магии, иначе станет испуганной до конца следующего хода мумии. Если цель проваливает спасбросок на 5 и более единиц, она также становится парализованной на тот же период. Цель, преуспевшая в спасброске, получает иммунитет к Ужасающему взгляду всех мумий (но не [лорд-мумий](CREATURE:mummy_lord)) на следующие 24 часа. `,
       },
     ],
   },

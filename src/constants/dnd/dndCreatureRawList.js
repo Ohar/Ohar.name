@@ -599,6 +599,7 @@ const {
     CREATURE_STONE_GOLEM,
     CREATURE_STORM_GIANT,
     CREATURE_TRICERATOPS,
+    CREATURE_TRIDRONE,
     CREATURE_TWIG_BLIGHT,
     CREATURE_TYRANNOSAURUS_REX,
     CREATURE_UMBER_HULK,
@@ -25738,6 +25739,120 @@ module.exports = [
             type: DAMAGE_BLUDGEONING,
             cubeCount: 1,
             cubeType: 4,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Тридрон',
+    nameEn: 'Tridrone',
+    id: CREATURE_TRIDRONE,
+    description: [
+      'Тридроны выглядят как перевёрнутые пирамиды. Они ведут младших модронов в бой.',
+      modronsDescription,
+    ],
+    note: modronsNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_LN,
+    source: 'MM:213',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 9,
+    },
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_MODRONE,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Косное сознание',
+        description: `Тридрона нельзя заставить действовать так, как противоречит его природе или инструкциям.`,
+      },
+      {
+        name: 'Распад',
+        description: `Если тридрон умирает, его тело рассыпается в пыль, оставляя лишь оружие и то, что он нёс.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Тридрон совершает три атаки кулаком или три атаки метательным копьём.`,
+      },
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 1,
           },
         },
       },

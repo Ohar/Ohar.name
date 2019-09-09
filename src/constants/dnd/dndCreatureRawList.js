@@ -472,6 +472,7 @@ const {
     CREATURE_DRIDER_SPELLCASTER,
     CREATURE_DRYAD,
     CREATURE_DUERGAR,
+    CREATURE_DUODRONE,
     CREATURE_DUST_MEPHIT,
     CREATURE_DUST_MEPHIT_SUMMONER,
     CREATURE_EFREETI,
@@ -25657,6 +25658,119 @@ module.exports = [
             type: DAMAGE_PIERCING,
             cubeCount: 1,
             cubeType: 6,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Дуодрон',
+    nameEn: 'Duodrone',
+    id: CREATURE_DUODRONE,
+    description: [
+      'Угловатые дуодроны управляют отрядами монодронов и могут одновременно выполнять до двух задач.',
+      modronsDescription,
+    ],
+    note: modronsNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_LN,
+    source: 'MM:213',
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_MODRONE,
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Косное сознание',
+        description: `Дуодрона нельзя заставить действовать так, как противоречит его природе или инструкциям.`,
+      },
+      {
+        name: 'Распад',
+        description: `Если дуодрон умирает, его тело рассыпается в пыль, оставляя лишь оружие и то, что он нёс.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Дуодрон совершает две атаки кулаком или две атаки метательным копьём.`,
+      },
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 4,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
           },
         },
       },

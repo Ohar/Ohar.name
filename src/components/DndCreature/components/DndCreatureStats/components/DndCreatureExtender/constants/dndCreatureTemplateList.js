@@ -348,6 +348,9 @@ export default [
 
     editPropCollection: {
       name: ({name}) => name.replace('дракон', 'драколич'),
+      featureList: ({featureList = []}) => featureList.filter(
+        ({name}) => name !== 'Амфибия'
+      ),
     },
 
     extendLimitations: {

@@ -26509,6 +26509,7 @@ module.exports = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Костяная нага (охранная)',
@@ -26621,6 +26622,7 @@ module.exports = [
         },
       },
     ],
+    isFemale: true,
   },
   {
     name: 'Костяная нага (духовная)',

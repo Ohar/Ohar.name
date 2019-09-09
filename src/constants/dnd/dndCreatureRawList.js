@@ -570,6 +570,7 @@ const {
     CREATURE_NIGHT_HAG_COVEN,
     CREATURE_NIGHTMARE,
     CREATURE_OGRE_ZOMBIE,
+    CREATURE_PENTADRONE,
     CREATURE_PIT_FIEND,
     CREATURE_PIT_FIEND_SUMMONER,
     CREATURE_PLANETAR,
@@ -25992,6 +25993,98 @@ module.exports = [
             cubeBonus: 2,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Пентадрон',
+    nameEn: 'Pentadrone',
+    id: CREATURE_PENTADRONE,
+    description: [
+      `Пентадроны управляют рабочим населением Механуса и могут импровизировать в ответ на непредвиденные изменения ситуации. `,
+      modronsDescription,
+    ],
+    note: modronsNote,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_LN,
+    source: 'MM:214',
+    armor: {
+      ac: 16,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+      cubeBonus: 5,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 13,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_MODRONE,
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Косное сознание',
+        description: `Пентадрона нельзя заставить действовать так, как противоречит его природе или инструкциям.`,
+      },
+      {
+        name: 'Распад',
+        description: `Если пентадрон умирает, его тело рассыпается в пыль, оставляя лишь оружие и то, что он нёс.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Пентадрон совершает пять атак рукой.`,
+      },
+      {
+        name: 'Рука',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Парализующий газ',
+        restore: {
+          from: 5,
+          to: 6,
+        },
+        description: `Пентадрон выдыхает газ 30-футовым конусом. Все существа в этой области должны преуспеть в спасброске Телосложения со Сл 11, иначе станут парализованными на 1 минуту. Существо может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
       },
     ],
   },

@@ -166,6 +166,8 @@ const SPELL_WATER_BREATHING = 'water_breathing'
 const SPELL_WATER_WALK = 'water_walk'
 const SPELL_WEB = 'web'
 const SPELL_WIND_WALK = 'wind_walk'
+const SPELL_BANISHMENT = 'banishment'
+const SPELL_TRUE_SEEING = 'true_seeing'
 
 const defaultCastTime = '1 действие'
 const defaultDuration = 'мгновенная'
@@ -2248,6 +2250,34 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_BANISHMENT,
+    name: 'Изгнание',
+    nameEn: 'Banishment',
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_TRUE_SEEING,
+    name: 'Истинное зрение',
+    nameEn: 'True seeing',
+    description: ``, // TODO
+    lvl: 6,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2265,6 +2295,7 @@ module.exports.dndSpellCollection = listToCollectionById(dndSpellList)
 module.exports.SPELL_ALTER_SELF = SPELL_ALTER_SELF
 module.exports.SPELL_ANIMATE_DEAD = SPELL_ANIMATE_DEAD
 module.exports.SPELL_BANE = SPELL_BANE
+module.exports.SPELL_BANISHMENT = SPELL_BANISHMENT
 module.exports.SPELL_BARKSKIN = SPELL_BARKSKIN
 module.exports.SPELL_BESTOW_CURSE = SPELL_BESTOW_CURSE
 module.exports.SPELL_BLADE_BARRIER = SPELL_BLADE_BARRIER
@@ -2391,6 +2422,7 @@ module.exports.SPELL_THAUMATURGY = SPELL_THAUMATURGY
 module.exports.SPELL_THORN_WHIP = SPELL_THORN_WHIP
 module.exports.SPELL_THUNDERWAVE = SPELL_THUNDERWAVE
 module.exports.SPELL_TONGUES = SPELL_TONGUES
+module.exports.SPELL_TRUE_SEEING = SPELL_TRUE_SEEING
 module.exports.SPELL_VICIOUS_MOCKERY = SPELL_VICIOUS_MOCKERY
 module.exports.SPELL_WALL_OF_FIRE = SPELL_WALL_OF_FIRE
 module.exports.SPELL_WALL_OF_STONE = SPELL_WALL_OF_STONE

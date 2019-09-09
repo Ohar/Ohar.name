@@ -197,6 +197,7 @@ const {
     SPELL_ALTER_SELF,
     SPELL_ANIMATE_DEAD,
     SPELL_BANE,
+    SPELL_BANISHMENT,
     SPELL_BARKSKIN,
     SPELL_BESTOW_CURSE,
     SPELL_BLADE_BARRIER,
@@ -204,6 +205,7 @@ const {
     SPELL_BLIGHT,
     SPELL_BLINDNESS_DEAFNESS,
     SPELL_BLUR,
+    SPELL_CALM_EMOTIONS,
     SPELL_CHARM_PERSON,
     SPELL_CLAIRVOYANCE,
     SPELL_CLOUDKILL,
@@ -278,6 +280,7 @@ const {
     SPELL_MAJOR_IMAGE,
     SPELL_MASS_CURE_WOUNDS,
     SPELL_MELFS_ACID_ARROW,
+    SPELL_MENDING,
     SPELL_MINOR_ILLUSION,
     SPELL_MIRROR_IMAGE,
     SPELL_MISTY_STEP,
@@ -321,9 +324,8 @@ const {
     SPELL_THORN_WHIP,
     SPELL_THUNDERWAVE,
     SPELL_TONGUES,
+    SPELL_TRUE_SEEING,
     SPELL_VICIOUS_MOCKERY,
-    SPELL_MENDING,
-    SPELL_CALM_EMOTIONS,
     SPELL_WALL_OF_FIRE,
     SPELL_WALL_OF_STONE,
     SPELL_WATER_BREATHING,
@@ -525,6 +527,7 @@ const {
     CREATURE_GRICK_ALPHA,
     CREATURE_GRIFFON,
     CREATURE_GRIMLOCK,
+    CREATURE_GUARDIAN_NAGA,
     CREATURE_HARPY,
     CREATURE_HELL_HOUND,
     CREATURE_HEZROU,
@@ -26653,5 +26656,154 @@ module.exports = [
         2,
       ],
     },
+  },
+  {
+    name: 'Охранная нага',
+    nameEn: 'Guardian naga',
+    id: CREATURE_GUARDIAN_NAGA,
+    description: [
+      `Мудрые и добрые наги стражи охраняют священные места и предметы с магической силой от попадания в злые руки. В своих потайных убежищах они исследуют заклинания и вынашивают запутанные планы, чтобы сорвать злые замыслы врагов.\n
+Охранная нага не ищет насилия, предупреждая нарушителей, а не атакуя. Только если противник упорно атакует нагу, она бросается на врага с заклинаниями и ядовитой слюной.`,
+      nagaDescription,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_LG,
+    source: 'MM:219',
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 15,
+      cubeType: 10,
+      cubeBonus: 45,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 18,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 16,
+      [PARAM_WIT]: 19,
+      [PARAM_CHA]: 18,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 8,
+      [PARAM_CON]: 7,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 8,
+    },
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_CELESTIAL,
+      LANG_COMMON,
+    ],
+    cr: CR_10,
+    featureList: [
+      {
+        name: 'Восстановление',
+        description: `Если нага умирает, она возвращается к жизни через 1к6 дней и восстанавливает все хиты. Только заклинание _Исполнение желаний_ (Wish) может прекратить действие этой особенности.`,
+      },
+    ],
+    spellCast: {
+      spellCasterLevel: 11,
+      spellCasterClass: PC_CLASS_PRIEST,
+      baseStat: PARAM_WIT,
+      spellAttackBonus: 8,
+      saveThrowDc: 16,
+      componentOnly: CAST_VERBAL,
+      spellIdList: [
+        SPELL_BANISHMENT,
+        SPELL_BESTOW_CURSE,
+        SPELL_CALM_EMOTIONS,
+        SPELL_CLAIRVOYANCE,
+        SPELL_COMMAND,
+        SPELL_CURE_WOUNDS,
+        SPELL_FLAME_STRIKE,
+        SPELL_FREEDOM_OF_MOVEMENT,
+        SPELL_GEAS,
+        SPELL_HOLD_PERSON,
+        SPELL_MENDING,
+        SPELL_SACRED_FLAME,
+        SPELL_SHIELD_OF_FAITH,
+        SPELL_THAUMATURGY,
+        SPELL_TRUE_SEEING,
+      ],
+      slotCountList: [
+        Infinity,
+        4,
+        3,
+        3,
+        3,
+        2,
+        1,
+      ],
+    },
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 10,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 8,
+              cubeBonus: 4,
+            },
+            `цель должна совершить спасбросок Телосложения со Сл 15, получая урон ядом 45 (10к8) при провале, или половину этого урона при успехе`
+          ],
+        },
+      },
+      {
+        name: 'Плевок ядом',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 8,
+          range: {
+            normal: 15,
+            max: 30,
+          },
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: `Цель должна совершить спасбросок Телосложения со Сл 15, получая урон ядом 45 (10к8) при провале, или половину этого урона при успехе`,
+        },
+      },
+    ],
+    isFemale: true,
   },
 ]

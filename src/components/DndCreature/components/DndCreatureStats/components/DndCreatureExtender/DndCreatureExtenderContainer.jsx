@@ -22,25 +22,23 @@ class DndCreatureExtenderContainer extends Component {
     const {creature} = this.props
 
     return dndCreatureTemplateList.filter(
-      ({extendLimitations}) => !Object
+      ({extendLimitations}) => Object
         .keys(extendLimitations)
-        .some(
+        .every(
           propName => {
             switch (propName) {
               // Special case for “sizeTypeList”, bcz it has different name on “creature” obj
               case 'sizeTypeList': {
-                return !extendLimitations.sizeTypeList.includes(creature.sizeType)
+                return extendLimitations.sizeTypeList.includes(creature.sizeType)
               }
 
               case 'creatureIdList': {
-                return !extendLimitations.creatureIdList.includes(creature.id)
+                return extendLimitations.creatureIdList.includes(creature.id)
               }
 
               default: {
-                return !(
-                  arrify(creature[propName]).every(
-                    id => extendLimitations[propName].includes(id)
-                  )
+                return arrify(creature[propName]).every(
+                  id => extendLimitations[propName].includes(id)
                 )
               }
             }

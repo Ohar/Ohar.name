@@ -576,6 +576,7 @@ const {
     CREATURE_PLESIOSAURUS,
     CREATURE_PTERANODON,
     CREATURE_PURPLE_WORM,
+    CREATURE_QUADRONE,
     CREATURE_QUAGGOTH,
     CREATURE_QUAGGOTH_THONOT,
     CREATURE_QUASIT,
@@ -25886,6 +25887,109 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Квадрон',
+    nameEn: 'Quadrone',
+    id: CREATURE_QUADRONE,
+    description: [
+      'Квадроны — искусные бойцы, в подразделениях модроньих армий они служат артиллерией и полевыми офицерами.',
+      modronsDescription,
+    ],
+    note: modronsNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_LN,
+    source: 'MM:214',
+    armor: {
+      ac: 16,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 8,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_MODRONE,
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Косное сознание',
+        description: `Квадрона нельзя заставить действовать так, как противоречит его природе или инструкциям.`,
+      },
+      {
+        name: 'Распад',
+        description: `Если квадрон умирает, его тело рассыпается в пыль, оставляя лишь оружие и то, что он нёс.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Квадрон совершает две атаки кулаком или четыре атаки коротким луком.`,
+      },
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Короткий лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 80,
+            max: 320,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
           },
         },
       },

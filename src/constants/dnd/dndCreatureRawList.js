@@ -8109,6 +8109,7 @@ module.exports = [
     hp: {
       cubeCount: 20,
       cubeType: 4,
+      useMax: true,
     },
     speed: {
       [SPEED_WALK]: 0,

@@ -6,7 +6,10 @@ export default cube => {
       cubeBonus = 0
     } = cube
 
-    const average = cubeCount + cubeBonus + Math.floor((cubeType * cubeCount - cubeCount) / 2)
+    const average = Math.max(
+      cubeCount + cubeBonus + Math.floor((cubeType * cubeCount - cubeCount) / 2),
+      0
+    )
     const count = cubeCount
       ? `${cubeCount}к${cubeType}`
       : ''

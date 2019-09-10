@@ -33,6 +33,7 @@ const {
 const SPELL_ALTER_SELF = 'alter_self'
 const SPELL_ANIMATE_DEAD = 'animate_dead'
 const SPELL_BANE = 'bane'
+const SPELL_BANISHMENT = 'banishment'
 const SPELL_BARKSKIN = 'barkskin'
 const SPELL_BESTOW_CURSE = 'bestow_curse'
 const SPELL_BLADE_BARRIER = 'blade_barrier'
@@ -160,6 +161,7 @@ const SPELL_THAUMATURGY = 'thaumaturgy'
 const SPELL_THORN_WHIP = 'thorn_whip'
 const SPELL_THUNDERWAVE = 'thunderwave'
 const SPELL_TONGUES = 'tongues'
+const SPELL_TRUE_SEEING = 'true_seeing'
 const SPELL_VICIOUS_MOCKERY = 'vicious_mockery'
 const SPELL_WALL_OF_FIRE = 'wall_of_fire'
 const SPELL_WALL_OF_STONE = 'wall_of_stone'
@@ -167,8 +169,8 @@ const SPELL_WATER_BREATHING = 'water_breathing'
 const SPELL_WATER_WALK = 'water_walk'
 const SPELL_WEB = 'web'
 const SPELL_WIND_WALK = 'wind_walk'
-const SPELL_BANISHMENT = 'banishment'
-const SPELL_TRUE_SEEING = 'true_seeing'
+const SPELL_AUGURY = 'augury'
+const SPELL_RESISTANCE = 'resistance'
 
 const defaultCastTime = '1 действие'
 const defaultDuration = 'мгновенная'
@@ -2293,6 +2295,34 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_AUGURY,
+    name: 'Гадание',
+    nameEn: 'Augury',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_RESISTANCE,
+    name: 'Сопротивление',
+    nameEn: 'Resistance',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2309,6 +2339,7 @@ module.exports.dndSpellCollection = listToCollectionById(dndSpellList)
 
 module.exports.SPELL_ALTER_SELF = SPELL_ALTER_SELF
 module.exports.SPELL_ANIMATE_DEAD = SPELL_ANIMATE_DEAD
+module.exports.SPELL_AUGURY = SPELL_AUGURY
 module.exports.SPELL_BANE = SPELL_BANE
 module.exports.SPELL_BANISHMENT = SPELL_BANISHMENT
 module.exports.SPELL_BARKSKIN = SPELL_BARKSKIN
@@ -2418,6 +2449,7 @@ module.exports.SPELL_RAISE_DEAD = SPELL_RAISE_DEAD
 module.exports.SPELL_RAY_OF_ENFEEBLEMENT = SPELL_RAY_OF_ENFEEBLEMENT
 module.exports.SPELL_RAY_OF_FROST = SPELL_RAY_OF_FROST
 module.exports.SPELL_RAY_OF_SICKNESS = SPELL_RAY_OF_SICKNESS
+module.exports.SPELL_RESISTANCE = SPELL_RESISTANCE
 module.exports.SPELL_RESSURECTION = SPELL_RESSURECTION
 module.exports.SPELL_SACRED_FLAME = SPELL_SACRED_FLAME
 module.exports.SPELL_SANCTUARY = SPELL_SANCTUARY

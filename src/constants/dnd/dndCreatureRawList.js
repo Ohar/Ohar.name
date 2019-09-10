@@ -214,6 +214,7 @@ const {
     SPELL_COMMAND,
     SPELL_COMMUNE,
     SPELL_COMPREHEND_LANGUAGES,
+    SPELL_CONE_OF_COLD,
     SPELL_CONFUSION,
     SPELL_CONJURE_ANIMALS,
     SPELL_CONJURE_ELEMENTAL,
@@ -594,6 +595,7 @@ const {
     CREATURE_NOTHIC,
     CREATURE_OGRE,
     CREATURE_OGRE_ZOMBIE,
+    CREATURE_ONI,
     CREATURE_PENTADRONE,
     CREATURE_PIT_FIEND,
     CREATURE_PIT_FIEND_SUMMONER,
@@ -27511,6 +27513,173 @@ module.exports = [
             cubeBonus: 2,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Они',
+    nameEn: 'Oni',
+    id: CREATURE_ONI,
+    description: `В детских песенках они — это жуткие чудовища, которые приходят в ночных кошмарах к детям и подросткам, но на самом деле они вполне реальны и всегда ужасно голодны. Человеческих детей они находят особенным лакомством. Они выглядят как демонические огры со шкурой синего или зелёного цветов, тёмными волосами и парой коротких рогов цвета слоновой кости, торчащими из их лбов. У них чёрные глаза с ярко-белыми зрачками, а их зубы и клыки угольно-чёрного цвета.\n
+**Обитатели ночи.** При свете дня они скрывают свой истинный облик, чтобы легче втираться в доверие к тому, кого они собираются сожрать под покровом тьмы. Эти существа могут менять свой облик и размер, появляясь под видом гуманоидов в населённых пунктах, где они выдают себя за путешественников, лесорубов или обитателей пограничья. В таком виде они заранее подбирают себе жертв из жителей поселений, а также измышляют различные пути и способы для их похищения и последующего пожирания.\n
+**Магические огры.** Этих существ иногда называют «ограми магами» за врождённые магические способности. Хотя их связь с истинными [ограми](CREATURE:ogre) весьма посредственна, они вполне разделяют привычки огров по объединению с другими злобными созданиями. Они охотно служат сильным хозяевам, особенно если эта служба сулит прибыль или предоставляет им роскошное, хорошо защищённое убежище. Они жадно ищут магию и работают на злых волшебников и ведьм в обмен на полезные магические предметы.`,
+    note: {
+      text: `Затвори двери, задуй свечу;\n
+Голодный они крадется ночью.\n
+Прячься и бойся, маленький мой;\n
+Повеселиться хочет они с тобой.\n
+\n
+Слышен скрежет у дверей;\n
+Видны тени средь щелей.\n
+Солнышко выйдет над вершинами гор;\n
+Улыбки они страшись до тех пор. `,
+      author: `Детский стишок`,
+    },
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_GIANT,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: 'MM:226',
+    armor: {
+      ac: 16,
+      type: 'кольчуга',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 10,
+      cubeBonus: 39,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 15,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 3,
+      [PARAM_CON]: 6,
+      [PARAM_WIT]: 4,
+      [PARAM_CHA]: 5,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_ARCANA]: 5,
+      [SKILL_DECEPTION]: 8,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_GIANT,
+      LANG_COMMON,
+    ],
+    cr: CR_7,
+    featureList: [
+      {
+        name: 'Регенерация',
+        description: `Они восстанавливает 10 хитов в начале своего хода, если у него есть хотя бы 1 хит.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием они являются магическими.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 13,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DARKNESS,
+            SPELL_INVISIBILITY,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_CHARM_PERSON,
+            SPELL_CONE_OF_COLD,
+            SPELL_GASEOUS_FORM,
+            SPELL_SLEEP,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Они совершает две атаки, либо когтями, либо глефой.`,
+      },
+      {
+        name: 'Коготь',
+        comment: 'только в облике они',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Глефа',
+        comment: 'в Маленьком или Среднем облике',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Глефа',
+        comment: 'в Большом облике',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Смена формы',
+        description: `Они магическим образом превращается в Маленького или Среднего гуманоида, в Большого великана, или принимает свой истинный облик. За исключением размера, во всех обликах его характеристики остаются теми же самыми. Единственное снаряжение, которое трансформируется вместе с ним, это глефа, которая может уменьшаться, чтобы подходить гуманоидному облику. Если они умирает, он принимает свой истинный облик, и глефа принимает нормальный размер.`,
       },
     ],
   },

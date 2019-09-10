@@ -48,6 +48,7 @@ const SPELL_COLOR_SPRAY = 'color_spray'
 const SPELL_COMMAND = 'command'
 const SPELL_COMMUNE = 'commune'
 const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
+const SPELL_CONE_OF_COLD = 'cone_of_cold'
 const SPELL_CONFUSION = 'confusion'
 const SPELL_CONJURE_ANIMALS = 'conjure_animals'
 const SPELL_CONJURE_ELEMENTAL = 'conjure_elemental'
@@ -2278,6 +2279,20 @@ const dndSpellList = [
     source: 'PHB:', // TODO
     classList: [], // TODO
   },
+  {
+    id: SPELL_CONE_OF_COLD,
+    name: 'Конус холода',
+    nameEn: 'Cone of cold',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: 'PHB:', // TODO
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2311,6 +2326,7 @@ module.exports.SPELL_COLOR_SPRAY = SPELL_COLOR_SPRAY
 module.exports.SPELL_COMMAND = SPELL_COMMAND
 module.exports.SPELL_COMMUNE = SPELL_COMMUNE
 module.exports.SPELL_COMPREHEND_LANGUAGES = SPELL_COMPREHEND_LANGUAGES
+module.exports.SPELL_CONE_OF_COLD = SPELL_CONE_OF_COLD
 module.exports.SPELL_CONFUSION = SPELL_CONFUSION
 module.exports.SPELL_CONJURE_ANIMALS = SPELL_CONJURE_ANIMALS
 module.exports.SPELL_CONJURE_ELEMENTAL = SPELL_CONJURE_ELEMENTAL

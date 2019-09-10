@@ -199,6 +199,7 @@ const {
   {
     SPELL_ALTER_SELF,
     SPELL_ANIMATE_DEAD,
+    SPELL_AUGURY,
     SPELL_BANE,
     SPELL_BANISHMENT,
     SPELL_BARKSKIN,
@@ -308,6 +309,7 @@ const {
     SPELL_RAY_OF_ENFEEBLEMENT,
     SPELL_RAY_OF_FROST,
     SPELL_RAY_OF_SICKNESS,
+    SPELL_RESISTANCE,
     SPELL_RESSURECTION,
     SPELL_SACRED_FLAME,
     SPELL_SANCTUARY,
@@ -600,6 +602,7 @@ const {
     CREATURE_OGRE_ZOMBIE,
     CREATURE_ONI,
     CREATURE_ORC,
+    CREATURE_ORC_EYE_OF_GRUUMSH,
     CREATURE_ORC_WAR_CHIEF,
     CREATURE_PENTADRONE,
     CREATURE_PIT_FIEND,
@@ -27965,6 +27968,154 @@ module.exports = [
           period: 'день',
         },
         description: `Все существа на выбор боевого вождя в пределах 30 футов, слышащие его, и пока не находящиеся под действием Боевого клича, до начала следующего хода боевого вождя совершают броски атаки с преимуществом. После этого боевой вождь может бонусным действием совершить одну атаку.`,
+      },
+    ],
+  },
+  {
+    name: 'Орк око Груумша',
+    nameEn: 'Orc eye of Gruumsh',
+    id: CREATURE_ORC_EYE_OF_GRUUMSH,
+    description: [
+      `Когда орк убивает эльфа во имя Груумша и преподносит ему тело врага как жертву, может появиться проявление бога. Он требует добавочной жертвы: один глаз орка, как символ потери Груумша от рук его великого врага Кореллона Ларетиана.\n
+Если орк вырывает свой глаз, Груумш может одарить его способностью к заклинаниям и особой благосклонностью, также как и правом называть себя Оком Груумша. Этот дикий поборник бога резни даёт советы вождю предсказаниями, а в бою бросается первым, чтобы обагрить своё оружие кровью. `,
+      orcsDescription,
+    ],
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ORC,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:230',
+    armor: {
+      ac: 16,
+      type: 'колечный доспех, щит',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 8,
+      cubeBonus: 18,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 12,
+    },
+    skillCollection: {
+      [SKILL_INTIMIDATION]: 3,
+      [SKILL_RELIGION]: 1,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_ORC,
+      LANG_COMMON,
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Агрессивный',
+        description: `Орк может бонусным действием переместиться на расстояние, не превышающее его скорость, в сторону видимого враждебного существа.`,
+      },
+      {
+        name: 'Ярость Груумша',
+        description: `Орк причиняет дополнительный урон 4 (1к8), когда попадает атакой оружием (уже учтено в атаках).`,
+      },
+    ],
+    spellCast: {
+      spellCasterLevel: 3,
+      spellCasterClass: PC_CLASS_PRIEST,
+      baseStat: PARAM_WIT,
+      spellAttackBonus: 3,
+      saveThrowDc: 11,
+      spellIdList: [
+        SPELL_AUGURY,
+        SPELL_BLESS,
+        SPELL_COMMAND,
+        SPELL_GUIDANCE,
+        SPELL_RESISTANCE,
+        SPELL_THAUMATURGY,
+        {
+          id: SPELL_SPIRITUAL_WEAPON,
+          comment: 'копьё',
+        },
+      ],
+      slotCountList: [
+        Infinity,
+        4,
+        2,
+      ],
+    },
+    actionList: [
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 3,
+            },
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 8,
+                cubeBonus: 3,
+                comment: `, если используется двумя руками для совершения рукопашной атаки`,
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 5,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 8,
+            },
+          ],
+        },
       },
     ],
   },

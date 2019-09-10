@@ -71,6 +71,7 @@ const {
     CREATURE_TYPE_LIZARDFOLK,
     CREATURE_TYPE_MERFOLK,
     CREATURE_TYPE_MONSTER,
+    CREATURE_TYPE_ORC,
     CREATURE_TYPE_PLANT,
     CREATURE_TYPE_QUAGGOTH,
     CREATURE_TYPE_SHAPESHIFTER,
@@ -133,6 +134,7 @@ const {
     LANG_INFERNAL,
     LANG_ITS_CREATOR,
     LANG_MODRONE,
+    LANG_ORC,
     LANG_PRIMORDIAL,
     LANG_SYLVAN,
     LANG_TELEPATHY,
@@ -405,6 +407,7 @@ const {
     myconidDescription,
     nagaDescription,
     nightHagDescriptionList,
+    orcsDescription,
     quasitText,
     redDragonDescriptionList,
     seaHagDescriptionList,
@@ -596,6 +599,7 @@ const {
     CREATURE_OGRE,
     CREATURE_OGRE_ZOMBIE,
     CREATURE_ONI,
+    CREATURE_ORC,
     CREATURE_PENTADRONE,
     CREATURE_PIT_FIEND,
     CREATURE_PIT_FIEND_SUMMONER,
@@ -27680,6 +27684,113 @@ module.exports = [
       {
         name: 'Смена формы',
         description: `Они магическим образом превращается в Маленького или Среднего гуманоида, в Большого великана, или принимает свой истинный облик. За исключением размера, во всех обликах его характеристики остаются теми же самыми. Единственное снаряжение, которое трансформируется вместе с ним, это глефа, которая может уменьшаться, чтобы подходить гуманоидному облику. Если они умирает, он принимает свой истинный облик, и глефа принимает нормальный размер.`,
+      },
+    ],
+  },
+  {
+    name: 'Орк',
+    nameEn: 'Orc',
+    id: CREATURE_ORC,
+    description: orcsDescription,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ORC,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: 'MM:229',
+    armor: {
+      ac: 13,
+      type: 'шкурный доспех',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_INTIMIDATION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_ORC,
+      LANG_COMMON,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Агрессивный',
+        description: `Орк может бонусным действием переместиться на расстояние, не превышающее его скорость, в сторону видимого враждебного существа.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Секира',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 12,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Метательное копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 5,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
       },
     ],
   },

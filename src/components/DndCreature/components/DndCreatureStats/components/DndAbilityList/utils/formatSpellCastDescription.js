@@ -6,7 +6,7 @@ import { dndPcClassCollection } from '@/constants/dnd/dndPcClassList'
 
 import generateSpellText from './generateSpellText'
 
-const generateExcludeComponentText = ({componentExclude, spellCasterClass}) => {
+const generateExcludeComponentText = ({componentExclude, componentInstead, spellCasterClass}) => {
   if (componentExclude) {
     if (spellCasterClass) {
       const componentText = componentExclude === CAST_NONE
@@ -23,6 +23,10 @@ const generateExcludeComponentText = ({componentExclude, spellCasterClass}) => {
     }
   }
 
+  if (componentInstead) {
+    return `, используя вместо всех компонентов ${componentInstead}`
+  }
+
   return ''
 }
 
@@ -32,6 +36,7 @@ export default (
       baseStat,
       componentOnly,
       componentExclude,
+      componentInstead,
       saveThrowDc,
       slotCountList,
       spellAttackBonus,
@@ -67,7 +72,7 @@ export default (
         : `, нуждаясь только в ${dndCastComponentCollection[componentOnly].name.plural.genitive} компонентах`
       : ``
 
-    const spellComponentExcludeText = generateExcludeComponentText({componentExclude, spellCasterClass})
+    const spellComponentExcludeText = generateExcludeComponentText({componentExclude, componentInstead, spellCasterClass})
 
     const spellComponentText = spellComponentOnlyText || spellComponentExcludeText
       ? `${spellComponentOnlyText}${spellComponentExcludeText}`

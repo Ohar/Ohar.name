@@ -1,70 +1,107 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import arrify from 'arrify';
 
-import SEARCH_PROP_NAME from '@/constants/SEARCH_PROP_NAME';
-import {dndCreatureNameList} from '@/constants/dnd/dndCreatureList';
+import dndCreatureList, { dndCreatureNameList } from '@/constants/dnd/dndCreatureList';
 
 import prepareForSearch from '@/utils/prepareForSearch';
 
+import filterCollection from './constants/filterCollection';
+import TIME_LAG from './constants/TIME_LAG';
+
+import groupListByName from './utils/groupListByName';
+
 import DndCreatureCatalogComponent from './DndCreatureCatalogComponent';
-
-const TIME_LAG = 100;
-
-const groupListByName = list => _.groupBy(list, ({name}) => name[0])
 
 class DndCreatureCatalogContainer extends Component {
   static propTypes = {
-    showAll: PropTypes.bool,
-  }
+    showAll: PropTypes.bool
+  };
 
   static defaultProps = {
-    showAll: false,
-  }
+    showAll: false
+  };
 
   state = {
     filteredCreatureCollection: {},
     isTooMuch: false,
-    searchStr: '',
+    filterCollection
   };
 
-  componentDidMount () {
+  componentDidMount() {
     const { showAll } = this.props;
 
-    this.updateList(null, showAll);
+    this.updateList(showAll);
   }
 
-  onSearch = ({searchStr}) => {
-    this.setState({searchStr});
-    this.filterList(searchStr);
-  }
+  componentDidUpdate(prevProps, prevState) {
+    const { filterCollection } = this.state;
 
-  updateList = (value, showAll) => {
-    if (showAll && !value) {
-      this.setState({
-        filteredCreatureCollection: groupListByName(dndCreatureNameList),
-      });
-    } else {
-      const filteredCreatureCollection = value
-        ? groupListByName(
-          dndCreatureNameList.filter(
-            item => item[SEARCH_PROP_NAME].includes(prepareForSearch(value))
-          )
-        )
-        : {};
-
-      this.setState({filteredCreatureCollection});
+    if (filterCollection !== prevState.filterCollection) {
+      this.filterList(false);
     }
   }
+
+  onSearch = ({ name, value }) => {
+    const { filterCollection } = this.state;
+
+    this.setState({
+      filterCollection: {
+        ...filterCollection,
+        [name]: {
+          ...filterCollection[name],
+          value
+        }
+      }
+    });
+  };
+
+  updateList = showAll => {
+    if (showAll) {
+      this.setState({
+        filteredCreatureCollection: groupListByName(dndCreatureNameList)
+      });
+    } else {
+      const { filterCollection } = this.state;
+
+      const filteredCreatureCollection = groupListByName(
+        Object
+          .keys(filterCollection)
+          .reduce(
+            (list, filterName) => {
+              const { type, value } = filterCollection[filterName];
+
+              if (value) {
+                return list.filter(
+                  item => {
+                    const propToCheck = type === 'input'
+                      ? item[filterName]
+                      : arrify(item[filterName]);
+
+                    return propToCheck.includes(prepareForSearch(value));
+                  }
+                )
+              }
+
+              return list
+            },
+            dndCreatureList
+          )
+      );
+
+      this.setState({ filteredCreatureCollection });
+    }
+  };
 
   filterList = _.debounce(this.updateList, TIME_LAG);
 
   render() {
-    const { filteredCreatureCollection, searchStr } = this.state;
+    const { filteredCreatureCollection, filterCollection } = this.state;
 
     return (
       <DndCreatureCatalogComponent
-        searchStr={searchStr}
+        filterCollection={filterCollection}
         onSearch={this.onSearch}
         creatureCollection={filteredCreatureCollection}
       />

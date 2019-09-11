@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 import DndCreatureDescription from './../DndCreatureDescription'
+import arrify from 'arrify';
 
 const DndCreatureDescriptionListComponent = ({description}) => (
   <>
     {
-      description.map(
+      arrify(description).map(
         (item, i) => (
           <DndCreatureDescription
             key={i}
@@ -19,7 +20,10 @@ const DndCreatureDescriptionListComponent = ({description}) => (
 )
 
 DndCreatureDescriptionListComponent.propTypes = {
-  description: PropTypes.array,
+  description: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.string,
+  ]),
 }
 
 DndCreatureDescriptionListComponent.defaultProps = {

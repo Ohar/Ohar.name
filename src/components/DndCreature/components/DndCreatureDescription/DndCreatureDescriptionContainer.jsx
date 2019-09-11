@@ -8,21 +8,29 @@ const MAX_COLUMN = 3;
 const MAX_LEN_TO_HANDLE = MAX_COLUMN * COLUMN_COEF;
 
 const DndCreatureDescriptionContainer = ({ text, ...rest }) => {
-  const columnCount = text.length > MAX_LEN_TO_HANDLE
-    ? MAX_COLUMN
-    : Math.ceil(text.length / COLUMN_COEF);
+  if (text) {
+    const columnCount = text.length > MAX_LEN_TO_HANDLE
+      ? MAX_COLUMN
+      : Math.ceil(text.length / COLUMN_COEF);
 
-  return (
-    <DndCreatureDescriptionComponent
-      columnCount={columnCount}
-      text={text}
-      {...rest}
-    />
-  );
+    return (
+      <DndCreatureDescriptionComponent
+        columnCount={columnCount}
+        text={text}
+        {...rest}
+      />
+    );
+  }
+
+  return null
 };
 
+DndCreatureDescriptionContainer.defaultProps = {
+  text: '',
+}
+
 DndCreatureDescriptionContainer.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
 }
 
 export default DndCreatureDescriptionContainer;

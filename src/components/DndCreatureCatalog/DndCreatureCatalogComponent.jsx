@@ -7,13 +7,15 @@ import PageTitle from "@/components/PageTitle"
 import generateCreatureNameStr from "@/utils/generateCreatureNameStr"
 import generateCreaturePageUrlById from "@/utils/generateCreaturePageUrlById"
 
+import DndCreatureFilterList from "./components/DndCreatureFilterList"
+
 import "./DndCreatureCatalogStyles.less"
 
 const DndCreatureCatalogComponent = (
   {
     creatureCollection,
     onSearch,
-    searchStr,
+    filterCollection,
   },
 ) => {
   const creatureCollectionKeysList = Object.keys(creatureCollection)
@@ -22,13 +24,9 @@ const DndCreatureCatalogComponent = (
     <section className={`DndCreatureCatalog DndCreatureCatalog-lettersCount_${creatureCollectionKeysList.length}`}>
       <PageTitle>Каталог существ (в разработке)</PageTitle>
 
-      <input
-        className='DndCreatureCatalog_input'
-        onChange={({ target: { value } }) => onSearch({searchStr: value})}
-        type='search'
-        placeholder='Введите имя существа на русском или английском'
-        value={searchStr}
-        autoFocus
+      <DndCreatureFilterList
+        filterCollection={filterCollection}
+        onSearch={onSearch}
       />
 
       {
@@ -82,25 +80,18 @@ const DndCreatureCatalogComponent = (
           )
           : null
       }
-
-      {
-        searchStr && !creatureCollectionKeysList.length
-          ? <p className='DndCreatureCatalog_result'>Ничего не найдено</p>
-          : null
-      }
     </section>
   )
 }
 
 DndCreatureCatalogComponent.defaultProps = {
   creatureCollection: {},
-  searchStr: '',
 }
 
 DndCreatureCatalogComponent.propTypes = {
   creatureCollection: PropTypes.object,
+  filterCollection: PropTypes.object.isRequired,
   onSearch: PropTypes.func.isRequired,
-  searchStr: PropTypes.string,
 }
 
 export default DndCreatureCatalogComponent

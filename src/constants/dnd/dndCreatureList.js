@@ -73,7 +73,6 @@ const dndCreatureList = dndCreatureRawList
   creature => ({
     ...creature,
     isFemale: Boolean(creature.isFemale),
-    description: handleDescription(creature),
     actionList: handleListWithDescriptions(creature.actionList),
     featureList: handleListWithDescriptions(creature.featureList),
     [SEARCH_PROP_NAME]: prepareForSearch(

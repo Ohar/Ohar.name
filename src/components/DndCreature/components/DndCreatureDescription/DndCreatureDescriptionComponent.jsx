@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactMarkdown from "react-markdown"
+import PropTypes from 'prop-types';
+
+import generateTextLinks from '@/utils/generateTextLinks'
 
 import './DndCreatureDescriptionStyles.less'
-import PropTypes from 'prop-types';
 
 const DndCreatureDescriptionComponent = ({header, subHeader, text, columnCount}) => (
   <article className={`DndCreatureDescription DndCreatureDescription-columnCount_${columnCount}`}>
@@ -16,7 +18,9 @@ const DndCreatureDescriptionComponent = ({header, subHeader, text, columnCount})
         )
       }
     </header>
-    <ReactMarkdown className='DndCreatureDescription_content'>{text}</ReactMarkdown>
+    <ReactMarkdown className='DndCreatureDescription_content'>
+      {generateTextLinks(text)}
+    </ReactMarkdown>
   </article>
 )
 

@@ -16818,7 +16818,24 @@ module.exports = [
     actionList: [
       {
         name: 'Жало',
-        comment: 'в зверином облике — Укус',
+        comment: 'в истинном облике',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 3,
+            comment: `, и цель должна совершить спасбросок Телосложения со Сл 11, получая урон ядом 10 (3к6) при провале, или половину этого урона при успехе`,
+          },
+        },
+      },
+      {
+        name: 'Укус',
+        comment: 'в зверином облике',
         attack: {
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 5,

@@ -15,21 +15,26 @@ const dndManualList = [
     id: 'MM',
     name: 'Бестиарий',
     shortName: 'Б',
+    includeMonsters: true,
   },
   {
     id: 'VGtM',
     name: 'Руководство Воло по монстрам',
     shortName: 'РВпМ',
+    includeMonsters: true,
   },
   {
     id: 'ToA',
     name: 'Гробница аннигиляции',
     shortName: 'ГА',
+    includeMonsters: true,
   },
   {
     id: 'Homebrew',
     name: 'Самоделка',
+    includeMonsters: true,
   },
 ]
 
+export default dndManualList
 export const dndManualCollection = listToCollectionById(dndManualList)

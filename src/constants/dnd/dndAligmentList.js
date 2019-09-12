@@ -26,6 +26,7 @@ const ALIGMENT_CE = 'ce'
 const dndAligmentList = [
   {
     id: ALIGMENT_NO,
+    showInList: true,
     oppositeId: null,
     name: {
         nominative: 'без мировоззрения',
@@ -57,6 +58,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_ANY_GOOD,
+    showInList: true,
     oppositeId: ALIGMENT_ANY_EVIL,
     name: {
         nominative: 'любое доброе',
@@ -74,6 +76,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_ANY_EVIL,
+    showInList: true,
     oppositeId: ALIGMENT_ANY_GOOD,
     name: {
         nominative: 'любое злое',
@@ -91,6 +94,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_ANY_LAWFUL,
+    showInList: true,
     oppositeId: ALIGMENT_ANY_CHAOTIC,
     name: {
         nominative: 'любое принципиальное',
@@ -108,6 +112,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_ANY_CHAOTIC,
+    showInList: true,
     oppositeId: ALIGMENT_ANY_LAWFUL,
     name: {
         nominative: 'любое хаотичное',
@@ -125,6 +130,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_NOT_NEUTRAL,
+    showInList: true,
     oppositeId: ALIGMENT_NOT_NEUTRAL,
     name: {
       nominative: 'любое не нейтральное',
@@ -143,6 +149,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_NOT_GOOD,
+    showInList: true,
     oppositeId: ALIGMENT_NOT_EVIL,
     name: {
         nominative: 'любое недоброе',
@@ -161,6 +168,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_NOT_EVIL,
+    showInList: true,
     oppositeId: ALIGMENT_NOT_GOOD,
     name: {
         nominative: 'любое незлое',
@@ -179,6 +187,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_NOT_LAWFUL,
+    showInList: true,
     oppositeId: ALIGMENT_NOT_CHAOTIC,
     name: {
         nominative: 'любое непринципиальное',
@@ -197,6 +206,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_NOT_CHAOTIC,
+    showInList: true,
     oppositeId: ALIGMENT_NOT_LAWFUL,
     name: {
         nominative: 'любое нехаотичное',
@@ -215,6 +225,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_ANY_NEUTRAL,
+    showInList: true,
     oppositeId: ALIGMENT_NOT_NEUTRAL,
     name: {
         nominative: 'любое нейтральное',
@@ -234,6 +245,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_LG,
+    showInList: true,
     oppositeId: ALIGMENT_CE,
     name: {
         nominative: 'принципиально-доброе',
@@ -246,6 +258,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_NG,
+    showInList: true,
     oppositeId: ALIGMENT_NE,
     name: {
         nominative: 'нейтрально-доброе',
@@ -258,6 +271,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_CG,
+    showInList: true,
     oppositeId: ALIGMENT_LE,
     name: {
         nominative: 'хаотично-доброе',
@@ -270,6 +284,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_LN,
+    showInList: true,
     oppositeId: ALIGMENT_CN,
     name: {
         nominative: 'принципиально-нейтральное',
@@ -282,6 +297,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_N,
+    showInList: true,
     oppositeId: null,
     name: {
         nominative: 'нейтральное',
@@ -294,6 +310,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_CN,
+    showInList: true,
     oppositeId: ALIGMENT_LN,
     name: {
         nominative: 'хаотично-нейтральное',
@@ -306,6 +323,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_LE,
+    showInList: true,
     oppositeId: ALIGMENT_CG,
     name: {
         nominative: 'принципиально-злое',
@@ -318,6 +336,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_NE,
+    showInList: true,
     oppositeId: ALIGMENT_NG,
     name: {
         nominative: 'нейтрально-злое',
@@ -330,6 +349,7 @@ const dndAligmentList = [
   },
   {
     id: ALIGMENT_CE,
+    showInList: true,
     oppositeId: ALIGMENT_LG,
     name: {
         nominative: 'хаотично-злое',

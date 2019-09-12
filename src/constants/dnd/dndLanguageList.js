@@ -60,15 +60,16 @@ const dndLanguageList = [
   {
     id: LANG_COMMON,
     name: {
-      nominative: 'Общий',
-      instrumental: 'Общий',
+      nominative: 'Всеобщий',
+      instrumental: 'Всеобщий',
     },
+    isRealLang: true,
   },
   {
     id: LANG_ANY_ONE,
     name: {
-      nominative: 'Любой один язык (обычно — Общий)',
-      instrumental: 'Любой один язык (обычно — Общий)',
+      nominative: 'Любой один язык (обычно — Всеобщий)',
+      instrumental: 'Любой один язык (обычно — Всеобщий)',
     },
   },
   {
@@ -112,6 +113,7 @@ const dndLanguageList = [
       nominative: 'Первичный',
       instrumental: 'Первичный',
     },
+    isRealLang: true,
   },
   {
     id: LANG_ELVEN,
@@ -119,6 +121,7 @@ const dndLanguageList = [
       nominative: 'Эльфийский',
       instrumental: 'Эльфийский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_SYLVAN,
@@ -126,13 +129,15 @@ const dndLanguageList = [
       nominative: 'Сильван',
       instrumental: 'Сильван',
     },
+    isRealLang: true,
   },
   {
     id: LANG_ABYSSAL,
     name: {
-      nominative: 'язык Бездны',
-      instrumental: 'язык Бездны',
+      nominative: 'Язык Бездны',
+      instrumental: 'Язык Бездны',
     },
+    isRealLang: true,
   },
   {
     id: LANG_INFERNAL,
@@ -140,6 +145,7 @@ const dndLanguageList = [
       nominative: 'Инфернальный',
       instrumental: 'Инфернальный',
     },
+    isRealLang: true,
   },
   {
     id: LANG_AQUAN,
@@ -147,6 +153,7 @@ const dndLanguageList = [
       nominative: 'Акван',
       instrumental: 'Акван',
     },
+    isRealLang: true,
   },
   {
     id: LANG_DWARVISH,
@@ -154,6 +161,7 @@ const dndLanguageList = [
       nominative: 'Дварфийский',
       instrumental: 'Дварфийский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_GIANT,
@@ -161,6 +169,7 @@ const dndLanguageList = [
       nominative: 'Великаний',
       instrumental: 'Великаний',
     },
+    isRealLang: true,
   },
   {
     id: LANG_AURAN,
@@ -168,6 +177,7 @@ const dndLanguageList = [
       nominative: 'Ауран',
       instrumental: 'Ауран',
     },
+    isRealLang: true,
   },
   {
     id: LANG_CELESTIAL,
@@ -175,6 +185,7 @@ const dndLanguageList = [
       nominative: 'Небесный',
       instrumental: 'Небесный',
     },
+    isRealLang: true,
   },
   {
     id: LANG_DEEP_SPEECH,
@@ -182,6 +193,7 @@ const dndLanguageList = [
       nominative: 'Глубинная речь',
       instrumental: 'Глубинную речь',
     },
+    isRealLang: true,
     isFemale: true,
   },
   {
@@ -190,6 +202,7 @@ const dndLanguageList = [
       nominative: 'Подземный',
       instrumental: 'Подземный',
     },
+    isRealLang: true,
   },
   {
     id: LANG_DRACONIC,
@@ -197,6 +210,7 @@ const dndLanguageList = [
       nominative: 'Драконий',
       instrumental: 'Драконий',
     },
+    isRealLang: true,
   },
   {
     id: LANG_DRUIDIC,
@@ -204,6 +218,7 @@ const dndLanguageList = [
       nominative: 'Друидский',
       instrumental: 'Друидский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_GNOMISH,
@@ -211,6 +226,7 @@ const dndLanguageList = [
       nominative: 'Гномий',
       instrumental: 'Гномий',
     },
+    isRealLang: true,
   },
   {
     id: LANG_GOBLIN,
@@ -218,6 +234,7 @@ const dndLanguageList = [
       nominative: 'Гоблинский',
       instrumental: 'Гоблинский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_GNOLL,
@@ -225,6 +242,7 @@ const dndLanguageList = [
       nominative: 'Гноллий',
       instrumental: 'Гноллий',
     },
+    isRealLang: true,
   },
   {
     id: LANG_HALFLING,
@@ -232,6 +250,7 @@ const dndLanguageList = [
       nominative: 'Язык полуросликов',
       instrumental: 'Язык полуросликов',
     },
+    isRealLang: true,
   },
   {
     id: LANG_UMBER_HULK,
@@ -239,6 +258,7 @@ const dndLanguageList = [
       nominative: 'Язык бурых увальней',
       instrumental: 'Язык бурых увальней',
     },
+    isRealLang: true,
   },
   {
     id: LANG_IGNAN,
@@ -246,6 +266,7 @@ const dndLanguageList = [
       nominative: 'Игнан',
       instrumental: 'Игнан',
     },
+    isRealLang: true,
   },
   {
     id: LANG_ORC,
@@ -253,6 +274,7 @@ const dndLanguageList = [
       nominative: 'Орочий',
       instrumental: 'Орочий',
     },
+    isRealLang: true,
   },
   {
     id: LANG_TERRAN,
@@ -260,6 +282,7 @@ const dndLanguageList = [
       nominative: 'Терран',
       instrumental: 'Терран',
     },
+    isRealLang: true,
   },
   {
     id: LANG_THUG_JARGON,
@@ -267,6 +290,7 @@ const dndLanguageList = [
       nominative: 'Воровской жаргон',
       instrumental: 'Воровской жаргон',
     },
+    isRealLang: true,
   },
   {
     id: LANG_TELEPATHY,
@@ -274,6 +298,7 @@ const dndLanguageList = [
       nominative: 'Телепатия',
       instrumental: 'Телепатию',
     },
+    isRealLang: true,
     isFemale: true,
   },
   {
@@ -282,6 +307,7 @@ const dndLanguageList = [
       nominative: 'Сахуагинский',
       instrumental: 'Сахуагинский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_VEGEPYGMY,
@@ -289,6 +315,7 @@ const dndLanguageList = [
       nominative: 'Вегепигмейский',
       instrumental: 'Вегепигмейский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_WORGEN,
@@ -296,6 +323,7 @@ const dndLanguageList = [
       nominative: 'Язык воргов',
       instrumental: 'Язык воргов',
     },
+    isRealLang: true,
   },
   {
     id: LANG_GIANT_OWL,
@@ -303,6 +331,7 @@ const dndLanguageList = [
       nominative: 'Язык гигантских сов',
       instrumental: 'Язык гигантских сов',
     },
+    isRealLang: true,
   },
   {
     id: LANG_GIANT_EAGLE,
@@ -310,6 +339,7 @@ const dndLanguageList = [
       nominative: 'Язык гигантских орлов',
       instrumental: 'Язык гигантских орлов',
     },
+    isRealLang: true,
   },
   {
     id: LANG_SPHINX,
@@ -317,6 +347,7 @@ const dndLanguageList = [
       nominative: 'Язык сфинксов',
       instrumental: 'Язык сфинксов',
     },
+    isRealLang: true,
   },
   {
     id: LANG_GITH,
@@ -324,6 +355,7 @@ const dndLanguageList = [
       nominative: 'Гитский',
       instrumental: 'Гитский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_GRELL,
@@ -331,6 +363,7 @@ const dndLanguageList = [
       nominative: 'Грелльский',
       instrumental: 'Грелльский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_GRUNG,
@@ -338,6 +371,7 @@ const dndLanguageList = [
       nominative: 'Грунгский',
       instrumental: 'Грунгский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_MODRONE,
@@ -345,6 +379,7 @@ const dndLanguageList = [
       nominative: 'Модронский',
       instrumental: 'Модронский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_BULLYWUG,
@@ -352,6 +387,7 @@ const dndLanguageList = [
       nominative: 'Жаболюдский',
       instrumental: 'Жаболюдский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_SLAAD,
@@ -359,6 +395,7 @@ const dndLanguageList = [
       nominative: 'Слаадский',
       instrumental: 'Слаадский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_YETI,
@@ -366,6 +403,7 @@ const dndLanguageList = [
       nominative: 'Язык йети',
       instrumental: 'Язык йети',
     },
+    isRealLang: true,
   },
   {
     id: LANG_HOOK_HORROR,
@@ -373,6 +411,7 @@ const dndLanguageList = [
       nominative: 'Язык крюкастых ужасов',
       instrumental: 'Язык крюкастых ужасов',
     },
+    isRealLang: true,
   },
   {
     id: LANG_ICE_TOAD,
@@ -380,6 +419,7 @@ const dndLanguageList = [
       nominative: 'Язык ледяных жаб',
       instrumental: 'Язык ледяных жаб',
     },
+    isRealLang: true,
   },
   {
     id: LANG_BLINK_DOG,
@@ -387,6 +427,7 @@ const dndLanguageList = [
       nominative: 'Язык мерцающих псов',
       instrumental: 'Язык мерцающих псов',
     },
+    isRealLang: true,
   },
   {
     id: LANG_OTYUGH,
@@ -394,6 +435,7 @@ const dndLanguageList = [
       nominative: 'Отиджский',
       instrumental: 'Отиджский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_WINTER_WOLF,
@@ -401,6 +443,7 @@ const dndLanguageList = [
       nominative: 'Язык полярных волков',
       instrumental: 'Язык полярных волков',
     },
+    isRealLang: true,
   },
   {
     id: LANG_THAY,
@@ -408,6 +451,7 @@ const dndLanguageList = [
       nominative: 'Тэйский',
       instrumental: 'Тэйский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_TLINCALLI,
@@ -415,6 +459,7 @@ const dndLanguageList = [
       nominative: 'Язык тлинкалли',
       instrumental: 'Язык тлинкалли',
     },
+    isRealLang: true,
   },
   {
     id: LANG_THRI_KREEN,
@@ -422,6 +467,7 @@ const dndLanguageList = [
       nominative: 'Три-кринский',
       instrumental: 'Три-кринский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_TROGLODYTE,
@@ -429,6 +475,7 @@ const dndLanguageList = [
       nominative: 'Троглодитский',
       instrumental: 'Троглодитский',
     },
+    isRealLang: true,
   },
   {
     id: LANG_IXITXACHITL,
@@ -436,6 +483,7 @@ const dndLanguageList = [
       nominative: 'Язык икситксачитлов',
       instrumental: 'Язык икситксачитлов',
     },
+    isRealLang: true,
   },
   {
     id: LANG_AARAKOCRA,
@@ -443,6 +491,7 @@ const dndLanguageList = [
       nominative: 'Язык ааракокр',
       instrumental: 'Язык ааракокр',
     },
+    isRealLang: true,
   },
 ]
 

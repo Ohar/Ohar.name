@@ -16779,7 +16779,7 @@ module.exports = [
     },
     resistanceList: [
       DAMAGE_COLD,
-      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
     immunityList: [
       DAMAGE_FIRE,
@@ -16923,7 +16923,7 @@ module.exports = [
     },
     resistanceList: [
       DAMAGE_COLD,
-      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
     immunityList: [
       DAMAGE_FIRE,
@@ -17072,7 +17072,7 @@ module.exports = [
     },
     resistanceList: [
       DAMAGE_COLD,
-      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
     immunityList: [
       DAMAGE_FIRE,
@@ -17186,7 +17186,7 @@ module.exports = [
     },
     resistanceList: [
       DAMAGE_COLD,
-      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
     immunityList: [
       DAMAGE_FIRE,
@@ -17336,7 +17336,7 @@ module.exports = [
     },
     resistanceList: [
       DAMAGE_COLD,
-      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
     immunityList: [
       DAMAGE_FIRE,
@@ -17550,7 +17550,7 @@ module.exports = [
     },
     resistanceList: [
       DAMAGE_COLD,
-      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
     immunityList: [
       DAMAGE_FIRE,
@@ -17721,7 +17721,7 @@ module.exports = [
       [PARAM_CHA]: 9,
     },
     resistanceList: [
-      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
     immunityList: [
       DAMAGE_COLD,
@@ -18036,7 +18036,7 @@ module.exports = [
     },
     resistanceList: [
       DAMAGE_COLD,
-      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
     immunityList: [
       DAMAGE_FIRE,
@@ -18196,7 +18196,7 @@ module.exports = [
     },
     resistanceList: [
       DAMAGE_COLD,
-      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
     immunityList: [
       DAMAGE_FIRE,
@@ -18354,7 +18354,7 @@ module.exports = [
     },
     resistanceList: [
       DAMAGE_COLD,
-      DAMAGE_NONMAGIC_WEAPON,
+      DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     ],
     immunityList: [
       DAMAGE_FIRE,

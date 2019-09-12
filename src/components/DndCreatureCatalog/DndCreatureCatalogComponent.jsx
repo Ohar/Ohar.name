@@ -14,6 +14,7 @@ import "./DndCreatureCatalogStyles.less"
 const DndCreatureCatalogComponent = (
   {
     creatureCollection,
+    showList,
     onSearch,
     filterCollection,
   },
@@ -30,7 +31,7 @@ const DndCreatureCatalogComponent = (
       />
 
       {
-        creatureCollectionKeysList.length
+        showList && creatureCollectionKeysList.length
           ? (
             <ul className='DndCreatureCatalog_letterList'>
               {
@@ -80,6 +81,12 @@ const DndCreatureCatalogComponent = (
           )
           : null
       }
+
+      {
+        showList && !creatureCollectionKeysList.length
+          ? <p className='DndCreatureCatalog_result'>Ничего не найдено</p>
+          : null
+      }
     </section>
   )
 }
@@ -91,6 +98,7 @@ DndCreatureCatalogComponent.defaultProps = {
 DndCreatureCatalogComponent.propTypes = {
   creatureCollection: PropTypes.object,
   filterCollection: PropTypes.object.isRequired,
+  showList: PropTypes.bool.isRequired,
   onSearch: PropTypes.func.isRequired,
 }
 

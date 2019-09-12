@@ -7,7 +7,7 @@ import dndCreatureList, { dndCreatureNameList } from '@/constants/dnd/dndCreatur
 
 import prepareForSearch from '@/utils/prepareForSearch';
 
-import filterCollection from './constants/filterCollection';
+import filterCollectionOriginal from './constants/filterCollection';
 import TIME_LAG from './constants/TIME_LAG';
 
 import groupListByName from './utils/groupListByName';
@@ -26,7 +26,7 @@ class DndCreatureCatalogContainer extends Component {
   state = {
     filteredCreatureCollection: {},
     isTooMuch: false,
-    filterCollection
+    filterCollection: filterCollectionOriginal,
   };
 
   componentDidMount() {
@@ -97,10 +97,14 @@ class DndCreatureCatalogContainer extends Component {
   filterList = _.debounce(this.updateList, TIME_LAG);
 
   render() {
+    const { showAll } = this.props;
     const { filteredCreatureCollection, filterCollection } = this.state;
+
+    const isFiltersEmpty = filterCollection === filterCollectionOriginal
 
     return (
       <DndCreatureCatalogComponent
+        showList={showAll || !isFiltersEmpty}
         filterCollection={filterCollection}
         onSearch={this.onSearch}
         creatureCollection={filteredCreatureCollection}

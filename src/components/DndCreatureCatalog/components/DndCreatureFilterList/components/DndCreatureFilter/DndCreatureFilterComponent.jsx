@@ -5,7 +5,6 @@ import "./DndCreatureFilterStyles.less"
 
 const DndCreatureFilterComponent = ({id, label, type, list, value, onSearch}) => (
   <div className='DndCreatureFilter'>
-    <span className='DndCreatureFilter_label'>{label}</span>
     {
       type === 'input'
         ? (
@@ -19,25 +18,28 @@ const DndCreatureFilterComponent = ({id, label, type, list, value, onSearch}) =>
           />
         )
         : (
-          <select
-            className='DndCreatureFilter_select'
-            value={value}
-            onChange={({ target: { value } }) => onSearch({name: id, value})}
-          >
-            {
-              list.map(
-                ({text, value}) => (
-                  <option
-                    value={value}
-                    key={value}
-                    className='DndCreatureFilter_option'
-                  >
-                    {text}
-                  </option>
+          <>
+            <span className='DndCreatureFilter_label'>{label}</span>
+            <select
+              className='DndCreatureFilter_select'
+              value={value}
+              onChange={({ target: { value } }) => onSearch({name: id, value})}
+            >
+              {
+                list.map(
+                  ({text, value}) => (
+                    <option
+                      value={value}
+                      key={value}
+                      className='DndCreatureFilter_option'
+                    >
+                      {text}
+                    </option>
+                  )
                 )
-              )
-            }
-          </select>
+              }
+            </select>
+          </>
         )
     }
   </div>

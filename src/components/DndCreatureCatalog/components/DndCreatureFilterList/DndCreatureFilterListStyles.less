@@ -1,9 +1,28 @@
 .DndCreatureFilterList {
   display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
   list-style-type: none;
-  padding-left: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .DndCreatureFilterList_item {
-  margin: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.DndCreatureFilterList_blockList {
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.DndCreatureFilterList_blockItem {
+  margin: .25rem 1rem;
+  flex-basis: 100%;
 }

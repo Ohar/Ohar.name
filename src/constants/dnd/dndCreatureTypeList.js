@@ -76,6 +76,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_HUMANOID,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'гуманоид',
@@ -98,6 +99,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_GOBLINOID,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'гоблиноид',
@@ -120,6 +122,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_SHAPESHIFTER,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'перевёртыш',
@@ -142,6 +145,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_BEAST,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'зверь',
@@ -164,6 +168,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_FIEND,
     genderId: GENDER_MIDDLE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'исчадие',
@@ -186,6 +191,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_CELESTIAL,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'небожитель',
@@ -208,6 +214,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_MONSTER,
     genderId: GENDER_MIDDLE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'чудовище',
@@ -230,6 +237,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_PLANT,
     genderId: GENDER_MIDDLE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'растение',
@@ -252,6 +260,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_CONSTRUCT,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'конструкт',
@@ -274,6 +283,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_UNDEAD,
     genderId: GENDER_FEMALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'нежить',
@@ -296,6 +306,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_DRAGON,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'дракон',
@@ -318,6 +329,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_ABERRATION,
     genderId: GENDER_FEMALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'аберрация',
@@ -340,6 +352,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_DEVIL,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'дьявол',
@@ -362,6 +375,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_DEMON,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'демон',
@@ -384,6 +398,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_KOBOLD,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'кобольд',
@@ -406,6 +421,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_TITAN,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'титан',
@@ -428,6 +444,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_BULLYWUG,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'жаболюд',
@@ -450,6 +467,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_GNOLL,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'гнолл',
@@ -472,6 +490,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_GITH,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'гит',
@@ -494,6 +513,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_GNOME,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'гном',
@@ -516,6 +536,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_GRIMLOCK,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'гримлок',
@@ -538,6 +559,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_ORC,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'орк',
@@ -560,6 +582,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_GRUNG,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'грунг',
@@ -582,6 +605,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_YUGOLOT,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'юголот',
@@ -604,6 +628,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_DWARF,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'дварф',
@@ -626,6 +651,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_SAHUAGIN,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'сахуагин',
@@ -648,6 +674,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_ELF,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'эльф',
@@ -670,6 +697,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_QUAGGOTH,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'кваггот',
@@ -692,6 +720,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_LIZARDFOLK,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'людоящер',
@@ -714,6 +743,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_XVART,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'ксварт',
@@ -736,6 +766,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_THRI_KREEN,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'три-крин',
@@ -758,6 +789,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_TROGLODYTE,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'троглодит',
@@ -780,6 +812,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_GIANT,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'великан',
@@ -802,6 +835,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_FIRENEWT,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'огненный тритон',
@@ -824,6 +858,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_FEY,
     genderId: GENDER_FEMALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'фея',
@@ -846,6 +881,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_AARAKOCRA,
     genderId: GENDER_FEMALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'ааракокра',
@@ -868,6 +904,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_HUMAN,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'человек',
@@ -890,6 +927,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_KUO_TOA,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'куо-тоа',
@@ -912,6 +950,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_KENKU,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'кенку',
@@ -934,6 +973,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_YOAN_TI,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'юань-ти',
@@ -956,6 +996,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_ELEMENTAL,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'элементаль',
@@ -978,6 +1019,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_JELLY,
     genderId: GENDER_FEMALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'слизь',
@@ -1000,6 +1042,7 @@ const dndCreatureTypeList = [
   {
     id: CREATURE_TYPE_MERFOLK,
     genderId: GENDER_MALE,
+    isRealRace: true,
     name: {
       singular: {
         nominative: 'мерфолк',

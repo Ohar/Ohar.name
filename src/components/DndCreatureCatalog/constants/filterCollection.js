@@ -73,9 +73,13 @@ export default {
         value: '',
         text: 'Любой'
       },
-      ...dndCreatureTypeList.map(
-        ({ name: {singular: {nominative: text}}, id: value }) => ({ value, text })
-      )
+      ...dndCreatureTypeList
+        .filter(
+          ({ isRealRace }) => isRealRace
+        )
+        .map(
+          ({ name: {singular: {nominative: text}}, id: value }) => ({ value, text })
+        )
     ]
   },
   languageList: {

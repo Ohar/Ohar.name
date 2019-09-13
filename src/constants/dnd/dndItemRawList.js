@@ -36,7 +36,7 @@ import {
   CAT_TRANSPORT,
   CAT_TRANSPORT_WATER,
   CAT_WEAPON,
-} from '@/constants/dnd/dndItemCategoryList';
+} from '@/constants/dnd/dndItemCategoryList'
 import {
   WEAPON_AMMO,
   WEAPON_FINESSE,
@@ -49,7 +49,7 @@ import {
   WEAPON_THROWN,
   WEAPON_TWO_HANDED,
   WEAPON_VERSATILE,
-} from '@/constants/dnd/dndWeaponPropList';
+} from '@/constants/dnd/dndWeaponPropList'
 
 export const ITEM_BATTLEAXE = 'battleaxe'
 export const ITEM_BLOWGUN = 'blowgun'
@@ -114,7 +114,10 @@ const dndItemRawList = [
     blockHiding: true,
     acChangeTo: 11,
     acUseDexMod: true,
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_LIGHT_ARMOR,
   },
@@ -127,7 +130,10 @@ const dndItemRawList = [
     weight: 10,
     acChangeTo: 11,
     acUseDexMod: true,
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_LIGHT_ARMOR,
   },
@@ -140,7 +146,10 @@ const dndItemRawList = [
     weight: 13,
     acChangeTo: 12,
     acUseDexMod: true,
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_LIGHT_ARMOR,
   },
@@ -154,7 +163,10 @@ const dndItemRawList = [
     acChangeTo: 12,
     acUseDexMod: true,
     acDexModMax: 2,
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_MEDIUM_ARMOR,
   },
@@ -168,7 +180,10 @@ const dndItemRawList = [
     acChangeTo: 13,
     acUseDexMod: true,
     acDexModMax: 2,
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_MEDIUM_ARMOR,
   },
@@ -183,7 +198,10 @@ const dndItemRawList = [
     acChangeTo: 14,
     acUseDexMod: true,
     acDexModMax: 2,
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_MEDIUM_ARMOR,
   },
@@ -197,7 +215,10 @@ const dndItemRawList = [
     acChangeTo: 14,
     acUseDexMod: true,
     acDexModMax: 2,
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_MEDIUM_ARMOR,
   },
@@ -212,7 +233,10 @@ const dndItemRawList = [
     acChangeTo: 15,
     acUseDexMod: true,
     acDexModMax: 2,
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_MEDIUM_ARMOR,
   },
@@ -225,7 +249,10 @@ const dndItemRawList = [
     weight: 40,
     blockHiding: true,
     acChangeTo: 14,
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_HEAVY_ARMOR,
   },
@@ -245,7 +272,10 @@ const dndItemRawList = [
         min: 13,
       },
     ],
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_HEAVY_ARMOR,
   },
@@ -265,7 +295,10 @@ const dndItemRawList = [
         min: 15,
       },
     ],
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_HEAVY_ARMOR,
   },
@@ -285,7 +318,10 @@ const dndItemRawList = [
         min: 15,
       },
     ],
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_HEAVY_ARMOR,
   },
@@ -297,7 +333,10 @@ const dndItemRawList = [
     cost: 1000,
     weight: 6,
     acBonus: 2,
-    source: 'PHB:145',
+    source: {
+      id: 'PHB',
+      page: 145,
+    },
     category: CAT_ARMOR,
     subcategory: CAT_SHIELDS,
   },
@@ -312,7 +351,10 @@ const dndItemRawList = [
     cost: 20,
     damageType: DAMAGE_BLUDGEONING,
     weight: 4,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       {
         id: WEAPON_VERSATILE,
@@ -337,7 +379,10 @@ const dndItemRawList = [
     cost: 500,
     damageType: DAMAGE_BLUDGEONING,
     weight: 4,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
   },
@@ -352,7 +397,10 @@ const dndItemRawList = [
     cost: 10,
     damageType: DAMAGE_BLUDGEONING,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_LIGHT,
     ],
@@ -374,7 +422,10 @@ const dndItemRawList = [
     cost: 200,
     damageType: DAMAGE_PIERCING,
     weight: 1,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_LIGHT,
       WEAPON_FINESSE,
@@ -405,7 +456,10 @@ const dndItemRawList = [
     cost: 100,
     damageType: DAMAGE_PIERCING,
     weight: 3,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       {
         id: WEAPON_VERSATILE,
@@ -441,7 +495,10 @@ const dndItemRawList = [
     cost: 200,
     damageType: DAMAGE_BLUDGEONING,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_LIGHT,
       WEAPON_THROWN,
@@ -471,7 +528,10 @@ const dndItemRawList = [
     cost: 50,
     damageType: DAMAGE_PIERCING,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_THROWN,
       {
@@ -496,7 +556,10 @@ const dndItemRawList = [
     cost: 20,
     damageType: DAMAGE_BLUDGEONING,
     weight: 10,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_TWO_HANDED,
     ],
@@ -518,7 +581,10 @@ const dndItemRawList = [
     cost: 500,
     damageType: DAMAGE_SLASHING,
     weight: 10,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_LIGHT,
       WEAPON_THROWN,
@@ -544,7 +610,10 @@ const dndItemRawList = [
     damageType: DAMAGE_SLASHING,
     cost: 100,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_LIGHT,
     ],
@@ -566,7 +635,10 @@ const dndItemRawList = [
     },
     cost: 100,
     damageType: DAMAGE_PIERCING,
-    source: 'ToA:32',
+    source: {
+      id: 'ToA',
+      page: 32,
+    },
     weaponPropList: [
       WEAPON_THROWN,
       {
@@ -595,7 +667,10 @@ const dndItemRawList = [
     cost: 2500,
     damageType: DAMAGE_PIERCING,
     weight: 5,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_AMMO,
       WEAPON_TWO_HANDED,
@@ -626,7 +701,10 @@ const dndItemRawList = [
     cost: 5,
     damageType: DAMAGE_PIERCING,
     weight: '0.25',
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_THROWN,
       WEAPON_FINESSE,
@@ -656,7 +734,10 @@ const dndItemRawList = [
     cost: 2500,
     damageType: DAMAGE_PIERCING,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_AMMO,
       WEAPON_TWO_HANDED,
@@ -686,7 +767,10 @@ const dndItemRawList = [
     cost: 10,
     damageType: DAMAGE_BLUDGEONING,
     weight: 0,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_AMMO,
       {
@@ -711,7 +795,10 @@ const dndItemRawList = [
     cost: 2000,
     damageType: DAMAGE_SLASHING,
     weight: 6,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_TWO_HANDED,
       WEAPON_REACH,
@@ -731,7 +818,10 @@ const dndItemRawList = [
     cost: 500,
     damageType: DAMAGE_PIERCING,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -746,7 +836,10 @@ const dndItemRawList = [
     cost: 1500,
     damageType: DAMAGE_BLUDGEONING,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       {
         id: WEAPON_VERSATILE,
@@ -770,7 +863,10 @@ const dndItemRawList = [
     cost: 1000,
     damageType: DAMAGE_SLASHING,
     weight: 4,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       {
         id: WEAPON_VERSATILE,
@@ -794,7 +890,10 @@ const dndItemRawList = [
     cost: 2000,
     damageType: DAMAGE_SLASHING,
     weight: 6,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_TWO_HANDED,
       WEAPON_REACH,
@@ -814,7 +913,10 @@ const dndItemRawList = [
     cost: 5000,
     damageType: DAMAGE_SLASHING,
     weight: 6,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_TWO_HANDED,
       WEAPON_HEAVY,
@@ -834,7 +936,10 @@ const dndItemRawList = [
     cost: 1000,
     damageType: DAMAGE_PIERCING,
     weight: 6,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_REACH,
       WEAPON_SPECIAL,
@@ -853,7 +958,10 @@ const dndItemRawList = [
     cost: 1500,
     damageType: DAMAGE_SLASHING,
     weight: 3,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       {
         id: WEAPON_VERSATILE,
@@ -877,7 +985,10 @@ const dndItemRawList = [
     cost: 200,
     damageType: DAMAGE_SLASHING,
     weight: 3,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_REACH,
       WEAPON_FINESSE,
@@ -896,7 +1007,10 @@ const dndItemRawList = [
     cost: 1000,
     damageType: DAMAGE_PIERCING,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_LIGHT,
       WEAPON_FINESSE,
@@ -915,7 +1029,10 @@ const dndItemRawList = [
     cost: 1000,
     damageType: DAMAGE_PIERCING,
     weight: 10,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_HEAVY,
       WEAPON_TWO_HANDED,
@@ -934,7 +1051,10 @@ const dndItemRawList = [
     cost: 1500,
     damageType: DAMAGE_PIERCING,
     weight: 4,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -949,7 +1069,10 @@ const dndItemRawList = [
     cost: 500,
     damageType: DAMAGE_PIERCING,
     weight: 18,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_TWO_HANDED,
       WEAPON_REACH,
@@ -969,7 +1092,10 @@ const dndItemRawList = [
     cost: 2500,
     damageType: DAMAGE_PIERCING,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_FINESSE,
     ],
@@ -987,7 +1113,10 @@ const dndItemRawList = [
     cost: 3000,
     damageType: DAMAGE_PIERCING,
     weight: 7,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_TWO_HANDED,
       WEAPON_HEAVY,
@@ -1006,7 +1135,10 @@ const dndItemRawList = [
     cost: 2500,
     damageType: DAMAGE_PIERCING,
     weight: 3,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_LIGHT,
       WEAPON_FINESSE,
@@ -1029,7 +1161,10 @@ const dndItemRawList = [
     cost: 500,
     damageType: DAMAGE_PIERCING,
     weight: 4,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_THROWN,
       {
@@ -1061,7 +1196,10 @@ const dndItemRawList = [
     cost: 1000,
     damageType: DAMAGE_BLUDGEONING,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     category: CAT_WEAPON,
     subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
@@ -1080,7 +1218,10 @@ const dndItemRawList = [
     cost: 7500,
     damageType: DAMAGE_PIERCING,
     weight: 3,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_AMMO,
       WEAPON_LIGHT,
@@ -1111,7 +1252,10 @@ const dndItemRawList = [
     cost: 5000,
     damageType: DAMAGE_PIERCING,
     weight: 18,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_AMMO,
       WEAPON_TWO_HANDED,
@@ -1143,7 +1287,10 @@ const dndItemRawList = [
     cost: 5000,
     damageType: DAMAGE_PIERCING,
     weight: 2,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_AMMO,
       WEAPON_TWO_HANDED,
@@ -1175,7 +1322,10 @@ const dndItemRawList = [
     cost: 1000,
     damageType: DAMAGE_PIERCING,
     weight: 1,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_AMMO,
       WEAPON_RELOADING,
@@ -1201,7 +1351,10 @@ const dndItemRawList = [
     },
     cost: 100,
     weight: 3,
-    source: 'PHB:149',
+    source: {
+      id: 'PHB',
+      page: 149,
+    },
     weaponPropList: [
       WEAPON_THROWN,
       WEAPON_SPECIAL,
@@ -1222,7 +1375,10 @@ const dndItemRawList = [
     nameEn: 'Abacus',
     cost: 200,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1245,7 +1401,10 @@ const dndItemRawList = [
       dc: 10,
     },
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1255,7 +1414,10 @@ const dndItemRawList = [
     description: 'Набор блоков и тросов с крюками для подвешивания предметов. Блок и лебёдка позволяют вам поднять в четыре раза больше, чем обычно.',
     cost: 100,
     weight: 5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1265,7 +1427,10 @@ const dndItemRawList = [
     description: '20 шт.',
     cost: 100,
     weight: 1.5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_AMMO,
   },
@@ -1276,7 +1441,10 @@ const dndItemRawList = [
     description: '50 шт.',
     cost: 100,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_AMMO,
   },
@@ -1287,7 +1455,10 @@ const dndItemRawList = [
     description: '20 шт.',
     cost: 4,
     weight: 1.5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_AMMO,
   },
@@ -1298,7 +1469,10 @@ const dndItemRawList = [
     description: '20 шт.',
     cost: 100,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_AMMO,
   },
@@ -1309,7 +1483,10 @@ const dndItemRawList = [
     description: '40 галлонов, 4 кубических фута',
     cost: 200,
     weight: 70,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1319,7 +1496,10 @@ const dndItemRawList = [
     description: '1 лист',
     cost: 20,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1329,7 +1509,10 @@ const dndItemRawList = [
     description: '4 пинты',
     cost: 20,
     weight: 5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1339,7 +1522,10 @@ const dndItemRawList = [
     description: '1,5 пинты',
     cost: 200,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1349,7 +1535,10 @@ const dndItemRawList = [
     description: '3 галлона, ½ фт³',
     cost: 5,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1359,7 +1548,10 @@ const dndItemRawList = [
     description: '50 фт. У верёвки 2 хита, и её можно порвать проверкой Силы со Сл 17',
     cost: 100,
     weight: 10,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1369,7 +1561,10 @@ const dndItemRawList = [
     description: '50 фт. У верёвки 2 хита, и её можно порвать проверкой Силы со Сл 17',
     cost: 1000,
     weight: 5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1379,7 +1574,10 @@ const dndItemRawList = [
     description: 'В набор входят рычажные весы, чашки и набор грузиков на 2 фунта. С их помощью можно точно измерять вес небольших предметов, таких как драгоценные металлы или товары.',
     cost: 500,
     weight: 3,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1388,7 +1586,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 50,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1398,7 +1599,10 @@ const dndItemRawList = [
     description: '1 галлон',
     cost: 200,
     weight: 10,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1408,7 +1612,10 @@ const dndItemRawList = [
     description: '1 галлон',
     cost: 2,
     weight: 4,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1418,7 +1625,10 @@ const dndItemRawList = [
     description: 'флакон',
     cost: 500,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1428,7 +1638,10 @@ const dndItemRawList = [
     description: 'Вместе с замком идёт и ключ. Без ключа существо, владеющее воровскими инструментами, может вскрыть замок успешной проверкой Ловкости со Сл 15. Мастер может решить, что есть более качественные замки, стоящие больше.',
     cost: 1000,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1438,7 +1651,10 @@ const dndItemRawList = [
     description: 'Существо, выпившее магическую красную жидкость из этого флакона, восстанавливает 2к4 + 2 хита. Зелье выпивается или заливается в рот другому действием.',
     cost: 5000,
     weight: 0.5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1447,7 +1663,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 500,
     weight: 0.5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1458,7 +1677,10 @@ const dndItemRawList = [
     cost: 100,
     damageType: DAMAGE_PIERCING,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1468,7 +1690,10 @@ const dndItemRawList = [
     description: 'Эти металлические оковы удерживают существ Маленького и Среднего размера. Для того чтобы сбежать из кандалов, требуется успешная проверка Ловкости со Сл 20. Для того чтобы их сломать, требуется проверка Силы со Сл 20. Каждый набор кандалов идёт с одним ключом. Без ключа существо, владеющее воровскими инструментами, может вскрыть замок кандалов успешной проверкой Ловкости со Сл 15. У кандалов 15 хитов.',
     cost: 200,
     weight: 6,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1487,7 +1712,10 @@ const dndItemRawList = [
     cost: 2500,
     damageType: DAMAGE_ACID,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1497,7 +1725,10 @@ const dndItemRawList = [
     description: 'В книге могут быть стихи, документальные сведения, информация о чём-либо, диаграммы и заметки о гномьих приспособлениях, или что угодно другое, представленное текстом и картинками.',
     cost: 2500,
     weight: 5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1507,7 +1738,10 @@ const dndItemRawList = [
     description: 'Книги заклинаний очень важны для волшебников. Это переплетённые кожей тома, содержащие 100 пустых пергаментных страниц, на которых можно записывать заклинания.',
     cost: 5000,
     weight: 3,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1516,7 +1750,10 @@ const dndItemRawList = [
     nameEn: 'Bell',
     cost: 100,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1526,7 +1763,10 @@ const dndItemRawList = [
     description: 'В колчан помещается 20 стрел.',
     cost: 100,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1535,7 +1775,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 500,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1545,7 +1788,10 @@ const dndItemRawList = [
     description: 'В набор для лазания входят шлямбуры, накладные подошвы, перчатки и страховочная привязь. Вы можете действием использовать набор для лазания, чтобы закрепиться на высоте; если вы делаете это, вы не можете упасть более чем на 25 фт от того места, где закрепились, но и не можете подняться выше 25 фт от этого места, не открепившись.',
     cost: 2500,
     weight: 12,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1555,7 +1801,10 @@ const dndItemRawList = [
     description: 'В этот набор входит удилище, шёлковая леска, пробковый поплавок, стальные крючки, свинцовые грузила, приманки из ниток и мелкоячеистая сеть.',
     cost: 100,
     weight: 4,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1565,7 +1814,10 @@ const dndItemRawList = [
     description: 'Это кожаный кошель с бинтами, мазями и шинами. Набор годится для 10 использований. Вы можете действием потратить одно использование набора для стабилизации существа, у которого 0 хитов, не совершая проверку Мудрости (Медицина).',
     cost: 500,
     weight: 3,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1575,7 +1827,10 @@ const dndItemRawList = [
     description: 'В этот деревянный контейнер помещаются 20 арбалетных болтов.',
     cost: 100,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1585,7 +1840,10 @@ const dndItemRawList = [
     description: 'В этом цилиндрическом кожаном тубусе может храниться до десяти скрученных листов бумаги или пять скрученных листов пергамента.',
     cost: 100,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1595,7 +1853,10 @@ const dndItemRawList = [
     description: '2 фт³/40 фунтов',
     cost: 40,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1605,7 +1866,10 @@ const dndItemRawList = [
     description: '0,2 фт³/6 фунтов. В кожаном или тканевом кошеле поместится 20 снарядов для пращи или 50 иголок для духовой трубки, а также другие вещи.',
     cost: 50,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1614,7 +1878,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 200,
     weight: 4,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1624,7 +1891,10 @@ const dndItemRawList = [
     description: '1 галлон',
     cost: 2,
     weight: 4,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1638,7 +1908,10 @@ const dndItemRawList = [
     },
     cost: 50,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1648,7 +1921,10 @@ const dndItemRawList = [
     description: '10 фт',
     cost: 10,
     weight: 25,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1658,7 +1934,10 @@ const dndItemRawList = [
     description: 'Использование ломика позволяет совершать проверки Силы с преимуществом, если рычаг должен помочь.',
     cost: 200,
     weight: 5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1668,7 +1947,10 @@ const dndItemRawList = [
     description: '',
     cost: 200,
     weight: 5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1678,7 +1960,10 @@ const dndItemRawList = [
     description: 'Это особый предмет, созданный для проведения тайных заклинаний. Волшебники, колдуны и чародеи могут использовать эти предметы в качестве фокусировки для заклинаний, как описано в главе 10.',
     cost: 1000,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_MAGIC_FOCUS,
   },
@@ -1689,7 +1974,10 @@ const dndItemRawList = [
     description: 'Это особый предмет, созданный для проведения тайных заклинаний. Волшебники, колдуны и чародеи могут использовать эти предметы в качестве фокусировки для заклинаний, как описано в главе 10.',
     cost: 1000,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_MAGIC_FOCUS,
   },
@@ -1700,7 +1988,10 @@ const dndItemRawList = [
     description: 'Это особый предмет, созданный для проведения тайных заклинаний. Волшебники, колдуны и чародеи могут использовать эти предметы в качестве фокусировки для заклинаний, как описано в главе 10.',
     cost: 1000,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_MAGIC_FOCUS,
   },
@@ -1711,7 +2002,10 @@ const dndItemRawList = [
     description: 'Это особый предмет, созданный для проведения тайных заклинаний. Волшебники, колдуны и чародеи могут использовать эти предметы в качестве фокусировки для заклинаний, как описано в главе 10.',
     cost: 500,
     weight: 4,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_MAGIC_FOCUS,
   },
@@ -1722,7 +2016,10 @@ const dndItemRawList = [
     description: 'Это особый предмет, созданный для проведения тайных заклинаний. Волшебники, колдуны и чародеи могут использовать эти предметы в качестве фокусировки для заклинаний, как описано в главе 10.',
     cost: 2000,
     weight: 3,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_MAGIC_FOCUS,
   },
@@ -1741,7 +2038,10 @@ const dndItemRawList = [
     },
     damageType: DAMAGE_FIRE,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1751,7 +2051,10 @@ const dndItemRawList = [
     description: '1 кусочек',
     cost: 1,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1761,7 +2064,10 @@ const dndItemRawList = [
     description: 'В сумке 1000 шт. Вы можете действием рассыпать из этого мешка крохотные металлические шарики, покрыв площадь 10 × 10 фт. Существа, перемещающиеся по этой области, должны преуспеть в спасброске Ловкости со Сл 10, иначе они падают ничком. Существо, перемещающееся по этой области с уменьшенной вдвое скоростью, не обязано совершать спасбросок',
     cost: 100,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1771,7 +2077,10 @@ const dndItemRawList = [
     description: '1 кубический фут/30 фунтов',
     cost: 1,
     weight: 0.5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1781,7 +2090,10 @@ const dndItemRawList = [
     description: 'Мешочек с компонентами это маленький водонепроницаемый кожаный поясной кошель с отделениями для хранения материальных компонентов и других особых предметов, нужных для накладывания заклинаний, если только у этих компонентов не указана стоимость (смотрите описание заклинания).',
     cost: 2500,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1790,7 +2102,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 200,
     weight: 10,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1799,7 +2114,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 100,
     weight: 3,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1808,7 +2126,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 2,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1817,7 +2138,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 200,
     weight: 4,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_CLOTHES,
   },
@@ -1827,7 +2151,10 @@ const dndItemRawList = [
     nameEn: 'Costume clothes',
     cost: 500,
     weight: 4,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_CLOTHES,
   },
@@ -1837,7 +2164,10 @@ const dndItemRawList = [
     nameEn: 'Common clothes',
     cost: 50,
     weight: 3,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_CLOTHES,
   },
@@ -1847,7 +2177,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 1500,
     weight: 6,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_CLOTHES,
   },
@@ -1857,7 +2190,10 @@ const dndItemRawList = [
     nameEn: 'Blanket',
     cost: 50,
     weight: 3,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1872,7 +2208,10 @@ const dndItemRawList = [
     cost: 500,
     damageType: DAMAGE_PIERCING,
     weight: 25,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1882,7 +2221,10 @@ const dndItemRawList = [
     description: 'В палатке, простом парусиновом жилище, могут спать двое.',
     cost: 200,
     weight: 20,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1892,7 +2234,10 @@ const dndItemRawList = [
     description: '1 лист',
     cost: 10,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1901,7 +2246,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 2500,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1910,7 +2258,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 2,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1920,7 +2271,10 @@ const dndItemRawList = [
     description: 'Предметы, на которые смотрят в подзорную трубу, увеличиваются в два раза.',
     cost: 100000,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1930,7 +2284,10 @@ const dndItemRawList = [
     description: 'Флакон. Существо, выпившее жидкость из этого флакона, в течение часа совершает спасброски от яда с преимуществом. Оно не предоставляет преимущества нежити и конструктам.',
     cost: 5000,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1940,7 +2297,10 @@ const dndItemRawList = [
     description: 'На 1 день. Рационы состоят из обезвоженной пищи, подходящей для путешествий, включая вяленое мясо, сухофрукты, галеты и орехи.',
     cost: 50,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1950,7 +2310,10 @@ const dndItemRawList = [
     description: '1 фт³/30 фунтов',
     cost: 200,
     weight: 5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1959,7 +2322,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 100,
     weight: 4,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1973,7 +2339,10 @@ const dndItemRawList = [
     },
     cost: 1,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -1992,7 +2361,10 @@ const dndItemRawList = [
     cost: 2500,
     damageType: DAMAGE_RADIANT,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2002,7 +2374,10 @@ const dndItemRawList = [
     description: 'Священный символ изображает божество или целый пантеон. Это амулет, изображающий символ божества. Жрец или паладин может использовать священный символ в качестве фокусировки для заклинаний. Для такого использования символа заклинатель должен держать его в руке, носить у всех на виду или нести на щите.',
     cost: 500,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_HOLY_SYMBOL,
   },
@@ -2013,7 +2388,10 @@ const dndItemRawList = [
     description: 'Священный символ изображает божество или целый пантеон. Это крохотная коробочка, в которой хранится священная реликвия. Жрец или паладин может использовать священный символ в качестве фокусировки для заклинаний. Для такого использования символа заклинатель должен держать его в руке, носить у всех на виду или нести на щите.',
     cost: 500,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_HOLY_SYMBOL,
   },
@@ -2024,7 +2402,10 @@ const dndItemRawList = [
     description: 'Священный символ изображает божество или целый пантеон. Это символ, выгравированный или выложенный камнями в качестве эмблемы на щите. Жрец или паладин может использовать священный символ в качестве фокусировки для заклинаний. Для такого использования символа заклинатель должен держать его в руке, носить у всех на виду или нести на щите.',
     cost: 500,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_HOLY_SYMBOL,
   },
@@ -2034,7 +2415,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 5,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2043,7 +2427,10 @@ const dndItemRawList = [
     nameEn: 'Bedroll',
     cost: 100,
     weight: 7,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2053,7 +2440,10 @@ const dndItemRawList = [
     description: 'В этой небольшой коробке находится чашка и простые столовые приборы. Коробка раскрывается, и одна сторона может использоваться как сковорода, а другая — как тарелка или неглубокая миска.',
     cost: 20,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2063,7 +2453,10 @@ const dndItemRawList = [
     description: '12 фт³/300 фунтов',
     cost: 500,
     weight: 25,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2073,7 +2466,10 @@ const dndItemRawList = [
     description: 'Вы можете вышибать портативным тараном двери. Вы получаете бонус +4 к проверкам Силы. Если другой персонаж помогает вам использовать таран, вы совершаете проверку с преимуществом.',
     cost: 400,
     weight: 35,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2082,7 +2478,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 1,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2092,7 +2491,10 @@ const dndItemRawList = [
     description: 'В этом небольшом контейнере находится кремень, кресало и трут (обычно это сухая тряпка, вымоченная в масле), используемые для разжигания огня. Использование его для разжигания факела — или чего-нибудь другого, легковоспламеняющегося — требует одного действия. Разжигание другого огня требует 1 минуты.',
     cost: 50,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2102,7 +2504,10 @@ const dndItemRawList = [
     description: 'Эта линза позволяет разглядывать маленькие предметы. Линзу также можно использовать для замены кремня и кресала. Разжигание огня увеличительным стеклом требует света, яркого как свет солнца, трута для розжига и примерно 5 минут. Увеличительное стекло позволяет совершать с преимуществом проверки характеристик, сделанных для оценки или исследования мелких и высокодетализированных предметов.',
     cost: 10000,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2120,7 +2525,10 @@ const dndItemRawList = [
     cost: 1,
     damageType: DAMAGE_FIRE,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2130,7 +2538,10 @@ const dndItemRawList = [
     description: '4 унции',
     cost: 100,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2140,7 +2551,10 @@ const dndItemRawList = [
     description: '1 пинта',
     cost: 2,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2150,7 +2564,10 @@ const dndItemRawList = [
     description: '1 пинта',
     cost: 2,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2160,7 +2577,10 @@ const dndItemRawList = [
     description: 'Друид может использовать этот предмет в качестве фокусировки для заклинаний.',
     cost: 100,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_DRUID_FOCUS,
   },
@@ -2171,7 +2591,10 @@ const dndItemRawList = [
     description: 'Друид может использовать этот предмет в качестве фокусировки для заклинаний.',
     cost: 100,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_DRUID_FOCUS,
   },
@@ -2182,7 +2605,10 @@ const dndItemRawList = [
     description: 'Палочка из тиса или другого дерева. Друид может использовать этот предмет в качестве фокусировки для заклинаний.',
     cost: 1000,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_DRUID_FOCUS,
   },
@@ -2193,7 +2619,10 @@ const dndItemRawList = [
     description: 'Скипетр из тиса или другого дерева. Друид может использовать этот предмет в качестве фокусировки для заклинаний.',
     cost: 1000,
     weight: 1,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_DRUID_FOCUS,
   },
@@ -2204,7 +2633,10 @@ const dndItemRawList = [
     description: 'Посох, созданный из живого дерева. Друид может использовать этот предмет в качестве фокусировки для заклинаний.',
     cost: 500,
     weight: 4,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_DRUID_FOCUS,
   },
@@ -2215,7 +2647,10 @@ const dndItemRawList = [
     description: 'Тотем с перьями, мехом, костями и зубами священных животных. Друид может использовать этот предмет в качестве фокусировки для заклинаний.',
     cost: 100,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_DRUID_FOCUS,
   },
@@ -2230,7 +2665,10 @@ const dndItemRawList = [
     },
     cost: 500,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2244,7 +2682,10 @@ const dndItemRawList = [
     },
     cost: 1000,
     weight: 2,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2260,7 +2701,10 @@ const dndItemRawList = [
       dc: 20,
     },
     weight: 10,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2270,7 +2714,10 @@ const dndItemRawList = [
     description: 'Бутылочка, 1 унция',
     cost: 1000,
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2280,7 +2727,10 @@ const dndItemRawList = [
     description: 'Длина 10 фт',
     cost: 5,
     weight: 7,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2290,7 +2740,10 @@ const dndItemRawList = [
     description: '10 штук',
     cost: 100,
     weight: 5,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2299,7 +2752,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 5,
     weight: 0.25,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
   },
   {
@@ -2319,7 +2775,10 @@ const dndItemRawList = [
     damageType: DAMAGE_POISON,
     poisonType: 'injury',
     weight: 0,
-    source: 'PHB:150',
+    source: {
+      id: 'PHB',
+      page: 150,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -2330,7 +2789,10 @@ const dndItemRawList = [
     description: 'Включает рюкзак, спальник, 2 костюма, 5 свечек, рационы на 5 дней, бурдюк и набор для грима',
     cost: 4000,
     weight: 35,
-    source: 'PHB:151',
+    source: {
+      id: 'PHB',
+      page: 151,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_EQUIPMENT_KIT,
   },
@@ -2341,7 +2803,10 @@ const dndItemRawList = [
     description: 'Включает рюкзак, сумку с 1 000 металлических шариков, 10 фт лески, колокольчик, 5 свечек, ломик, молоток, 10 шлямбуров, закрытый фонарь, 2 фляги масла, рационы на 5 дней, трутницу и бурдюк. В набор также входит 50-футовая пеньковая верёвка, закреплённая сбоку.',
     cost: 1600,
     weight: 39,
-    source: 'PHB:151',
+    source: {
+      id: 'PHB',
+      page: 151,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_EQUIPMENT_KIT,
   },
@@ -2352,7 +2817,10 @@ const dndItemRawList = [
     description: 'Включает сундук, 2 контейнера для карт и свитков, комплект отличной одежды, бутылочку чернил, писчее перо, лампу, 2 фляги масла, 5 листов бумаги, флакон духов, воск и мыло.',
     cost: 3900,
     weight: 36,
-    source: 'PHB:151',
+    source: {
+      id: 'PHB',
+      page: 151,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_EQUIPMENT_KIT,
   },
@@ -2363,7 +2831,10 @@ const dndItemRawList = [
     description: 'Включает рюкзак, ломик, молоток, 10 шлямбуров, 10 факелов, трутницу, рационы на 10 дней и бурдюк. В набор также входит 50-футовая пеньковая верёвка, закреплённая сбоку.',
     cost: 1200,
     weight: 43,
-    source: 'PHB:151',
+    source: {
+      id: 'PHB',
+      page: 151,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_EQUIPMENT_KIT,
   },
@@ -2374,7 +2845,10 @@ const dndItemRawList = [
     description: 'Включает рюкзак, спальник, столовый набор, трутницу, 10 факелов, рационы на 10 дней и бурдюк. В набор также входит 50-футовая пеньковая верёвка, закреплённая сбоку.',
     cost: 1000,
     weight: 59,
-    source: 'PHB:151',
+    source: {
+      id: 'PHB',
+      page: 151,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_EQUIPMENT_KIT,
   },
@@ -2385,7 +2859,10 @@ const dndItemRawList = [
     description: 'Включает рюкзак, одеяло, 10 свечек, трутницу, коробку для пожертвований, 2 упаковки благовоний, кадило, облачение, рационы на 2 дня и бурдюк.',
     cost: 1900,
     weight: 22,
-    source: 'PHB:151',
+    source: {
+      id: 'PHB',
+      page: 151,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_EQUIPMENT_KIT,
   },
@@ -2396,7 +2873,10 @@ const dndItemRawList = [
     description: 'Включает рюкзак, научную книгу, бутылочку чернил, писчее перо, 10 листов пергамента, небольшую сумочку с песком и небольшой нож.',
     cost: 4000,
     weight: 11,
-    source: 'PHB:151',
+    source: {
+      id: 'PHB',
+      page: 151,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_EQUIPMENT_KIT,
   },
@@ -2407,7 +2887,10 @@ const dndItemRawList = [
     description: 'В этот набор инструментов входят небольшой напильник, набор отмычек, небольшое зеркальце на длинной ручке, ножницы и пара щипчиков. Владение этими инструментами позволяет добавлять бонус мастерства ко всем проверкам характеристик, сделанным для отключения ловушек и взлома замков.',
     cost: 2500,
     weight: 1,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
   },
   {
@@ -2417,7 +2900,10 @@ const dndItemRawList = [
     description: 'Игры могут состоять из разных предметов, включая кости и колоды карт. В таблице указаны примеры игр, но есть и другие наборы. Если вы владеете игровым набором, вы можете добавлять бонус мастерства к проверкам характеристик, совершаемым во время игры. Для каждой игры требуется отдельное владение.',
     cost: 100,
     weight: 0.5,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_GAME_SET,
   },
@@ -2428,7 +2914,10 @@ const dndItemRawList = [
     description: 'Игры могут состоять из разных предметов, включая кости и колоды карт. В таблице указаны примеры игр, но есть и другие наборы. Если вы владеете игровым набором, вы можете добавлять бонус мастерства к проверкам характеристик, совершаемым во время игры. Для каждой игры требуется отдельное владение.',
     cost: 50,
     weight: 0,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_GAME_SET,
   },
@@ -2439,7 +2928,10 @@ const dndItemRawList = [
     description: 'Игры могут состоять из разных предметов, включая кости и колоды карт. В таблице указаны примеры игр, но есть и другие наборы. Если вы владеете игровым набором, вы можете добавлять бонус мастерства к проверкам характеристик, совершаемым во время игры. Для каждой игры требуется отдельное владение.',
     cost: 10,
     weight: 0,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_GAME_SET,
   },
@@ -2450,7 +2942,10 @@ const dndItemRawList = [
     description: 'Игры могут состоять из разных предметов, включая кости и колоды карт. В таблице указаны примеры игр, но есть и другие наборы. Если вы владеете игровым набором, вы можете добавлять бонус мастерства к проверкам характеристик, совершаемым во время игры. Для каждой игры требуется отдельное владение.',
     cost: 100,
     weight: 0,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_GAME_SET,
   },
@@ -2461,7 +2956,10 @@ const dndItemRawList = [
     description: 'Эти инструменты используются для навигации в море. Владение инструментами навигатора позволяет прокладывать курс корабля и пользоваться морскими картами. Кроме того, эти инструменты позволяют вам добавлять бонус мастерства к проверкам характеристик, совершённым, чтобы не потеряться в море.',
     cost: 2500,
     weight: 2,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
   },
   {
@@ -2471,7 +2969,10 @@ const dndItemRawList = [
     description: 'В набор отравителя входят флаконы, химикаты и прочее снаряжение, необходимое для создания ядов. Владение этим набором позволяет вам добавлять бонус мастерства к проверкам характеристик, совершённым для создания и использования ядов.',
     cost: 5000,
     weight: 2,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
   },
   {
@@ -2481,7 +2982,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 5000,
     weight: 8,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2492,7 +2996,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 1000,
     weight: 3,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2503,7 +3010,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 5000,
     weight: 10,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2514,7 +3024,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 1000,
     weight: 5,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2525,7 +3038,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 1000,
     weight: 8,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2536,7 +3052,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 1500,
     weight: 6,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2547,7 +3066,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 500,
     weight: 5,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2558,7 +3080,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 2000,
     weight: 8,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2569,7 +3094,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 2000,
     weight: 9,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2580,7 +3108,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 800,
     weight: 6,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2591,7 +3122,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 100,
     weight: 8,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2602,7 +3136,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 100,
     weight: 5,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2613,7 +3150,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 500,
     weight: 5,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2624,7 +3164,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 3000,
     weight: 5,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2635,7 +3178,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 100,
     weight: 5,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2646,7 +3192,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 1000,
     weight: 5,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2657,7 +3206,10 @@ const dndItemRawList = [
     description: 'В эти особые наборы входят инструменты, необходимые для ремесла и торговли. Владение инструментами ремесленника позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при использовании инструментов в ремесле.',
     cost: 2500,
     weight: 2,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_ARTISAN_TOOLS,
   },
@@ -2668,7 +3220,10 @@ const dndItemRawList = [
     description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
     cost: 600,
     weight: 3,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_MUSIC_TOOLS,
   },
@@ -2679,7 +3234,10 @@ const dndItemRawList = [
     description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
     cost: 3000,
     weight: 1,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_MUSIC_TOOLS,
   },
@@ -2690,7 +3248,10 @@ const dndItemRawList = [
     description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
     cost: 3000,
     weight: 6,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_MUSIC_TOOLS,
   },
@@ -2701,7 +3262,10 @@ const dndItemRawList = [
     description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
     cost: 3000,
     weight: 2,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_MUSIC_TOOLS,
   },
@@ -2712,7 +3276,10 @@ const dndItemRawList = [
     description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
     cost: 3500,
     weight: 2,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_MUSIC_TOOLS,
   },
@@ -2723,7 +3290,10 @@ const dndItemRawList = [
     description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
     cost: 300,
     weight: 2,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_MUSIC_TOOLS,
   },
@@ -2734,7 +3304,10 @@ const dndItemRawList = [
     description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
     cost: 1200,
     weight: 2,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_MUSIC_TOOLS,
   },
@@ -2745,7 +3318,10 @@ const dndItemRawList = [
     description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
     cost: 200,
     weight: 1,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_MUSIC_TOOLS,
   },
@@ -2756,7 +3332,10 @@ const dndItemRawList = [
     description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
     cost: 2500,
     weight: 10,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_MUSIC_TOOLS,
   },
@@ -2767,7 +3346,10 @@ const dndItemRawList = [
     description: 'Если вы владеете определённым музыкальным инструментом, вы можете добавлять бонус мастерства к проверкам характеристик, совершённым во время игры на нём. Бард может использовать музыкальный инструмент в качестве фокусировки для заклинаний.',
     cost: 200,
     weight: 1,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
     subcategory: CAT_MUSIC_TOOLS,
   },
@@ -2778,7 +3360,10 @@ const dndItemRawList = [
     description: 'Этот набор косметики, красителей для волос и бутафории позволяет изменять ваш внешний облик. Владение этим набором позволяет добавлять бонус мастерства к проверкам характеристик, совершённым для визуальной маскировки.',
     cost: 2500,
     weight: 3,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
   },
   {
@@ -2788,7 +3373,10 @@ const dndItemRawList = [
     description: 'В этой небольшой коробке лежат разные бумаги и пергаменты, ручки и чернила, печати и куски воска, золотая и серебряная фольга, и прочие припасы, необходимые для создания убедительных подделок документов. Владение этим набором позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при создании поддельных документов.',
     cost: 1500,
     weight: 5,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
   },
   {
@@ -2798,7 +3386,10 @@ const dndItemRawList = [
     description: 'В этот набор входят разнообразные инструменты, такие как ножницы, ступка и пестик, а также мешочки и флаконы, используемые травниками при создании снадобий и зелий. Владение этим набором позволяет добавлять бонус мастерства к проверкам характеристик, совершённым при опознании и использовании трав. Кроме того, владение этим набором требуется для создания противоядия и зелья лечения.',
     cost: 500,
     weight: 3,
-    source: 'PHB:154',
+    source: {
+      id: 'PHB',
+      page: 154,
+    },
     category: CAT_TOOLS,
   },
   {
@@ -2807,7 +3398,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость 60 фт. Грузоподъёмность 540 фунтов.',
     cost: 40000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_ANIMALS,
   },
   {
@@ -2816,7 +3410,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость 50 фт. Грузоподъёмность 480 фунтов.',
     cost: 5000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_ANIMALS,
   },
   {
@@ -2825,7 +3422,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость 60 фт. Грузоподъёмность 480 фунтов.',
     cost: 7500,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_ANIMALS,
   },
   {
@@ -2834,7 +3434,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость 40 фт. Грузоподъёмность 540 фунтов.',
     cost: 5000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_ANIMALS,
   },
   {
@@ -2843,7 +3446,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость 40 фт. Грузоподъёмность 195 фунтов.',
     cost: 2500,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_ANIMALS,
   },
   {
@@ -2852,7 +3458,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость 40 фт. Грузоподъёмность 420 фунтов.',
     cost: 800,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_ANIMALS,
   },
   {
@@ -2861,7 +3470,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость 40 фт. Грузоподъёмность 420 фунтов.',
     cost: 800,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_ANIMALS,
   },
   {
@@ -2870,7 +3482,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость 40 фт. Грузоподъёмность 225 фунтов.',
     cost: 3000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_ANIMALS,
   },
   {
@@ -2879,7 +3494,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость: 40 фт. Грузоподъёмность 1320 фунтов.',
     cost: 20000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_ANIMALS,
   },
   {
@@ -2888,7 +3506,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость: 50 фт. Грузоподъёмность 1320 фунтов.',
     cost: 50000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_ANIMALS,
   },
   {
@@ -2897,7 +3518,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 25000,
     weight: 100,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
   },
   {
@@ -2906,7 +3530,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 10000,
     weight: 600,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
   },
   {
@@ -2915,7 +3542,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'В день',
     cost: 50,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
   },
   {
@@ -2925,7 +3555,10 @@ const dndItemRawList = [
     description: 'В день',
     cost: 5,
     weight: 10,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
   },
   {
@@ -2934,7 +3567,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 2000,
     weight: 300,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
   },
   {
@@ -2943,7 +3579,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 400,
     weight: 8,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
   },
   {
@@ -2952,7 +3591,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 2000,
     weight: 30,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
     subcategory: CAT_SADDLES,
   },
@@ -2962,7 +3604,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 500,
     weight: 15,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
     subcategory: CAT_SADDLES,
   },
@@ -2972,7 +3617,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 1000,
     weight: 25,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
     subcategory: CAT_SADDLES,
   },
@@ -2982,7 +3630,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 6000,
     weight: 40,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
     subcategory: CAT_SADDLES,
   },
@@ -2992,7 +3643,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 1500,
     weight: 200,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
   },
   {
@@ -3001,7 +3655,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 200,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
   },
   {
@@ -3010,7 +3667,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 3500,
     weight: 400,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT,
   },
   {
@@ -3019,7 +3679,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость: 2,5 узла',
     cost: 2500000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT_WATER,
   },
   {
@@ -3028,7 +3691,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость: 4 узла',
     cost: 3000000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT_WATER,
   },
   {
@@ -3037,7 +3703,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость: 1 узел',
     cost: 300000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT_WATER,
   },
   {
@@ -3046,7 +3715,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость: 3 узла',
     cost: 1000000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT_WATER,
   },
   {
@@ -3055,7 +3727,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Скорость: 2 узла',
     cost: 1000000,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT_WATER,
   },
   {
@@ -3065,7 +3740,10 @@ const dndItemRawList = [
     description: 'Скорость: 1,5 узла. Мест: 2',
     cost: 50,
     weight: 100,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_TRANSPORT_WATER,
   },
   {
@@ -3075,7 +3753,10 @@ const dndItemRawList = [
     description: 'Скорость: 2 узла. Мест: 6',
     cost: 5000,
     weight: 100,
-    source: 'ToA:32',
+    source: {
+      id: 'ToA',
+      page: 32,
+    },
     category: CAT_TRANSPORT_WATER,
   },
   {
@@ -3084,7 +3765,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 1,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3093,7 +3777,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 2,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3101,7 +3788,10 @@ const dndItemRawList = [
     name: 'Курица',
     nameEn: '',
     cost: 2,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3110,7 +3800,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 5,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3120,7 +3813,10 @@ const dndItemRawList = [
     description: '',
     cost: 10,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3129,7 +3825,10 @@ const dndItemRawList = [
     nameEn: '',
     description: '10 фт²',
     cost: 10,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3138,7 +3837,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 50,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3147,7 +3849,10 @@ const dndItemRawList = [
     nameEn: '',
     description: '10 фт²',
     cost: 50,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3156,7 +3861,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 100,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3164,7 +3872,10 @@ const dndItemRawList = [
     name: 'Коза',
     nameEn: '',
     cost: 100,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3173,7 +3884,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 200,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3182,7 +3896,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 200,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3190,7 +3907,10 @@ const dndItemRawList = [
     name: 'Овца',
     nameEn: '',
     cost: 200,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3199,7 +3919,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 300,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3207,7 +3930,10 @@ const dndItemRawList = [
     name: 'Свинья',
     nameEn: '',
     cost: 300,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3216,7 +3942,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 500,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3225,7 +3954,10 @@ const dndItemRawList = [
     nameEn: '',
     description: '10 фт²',
     cost: 300,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3234,7 +3966,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 1500,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3242,7 +3977,10 @@ const dndItemRawList = [
     name: 'Вол',
     nameEn: '',
     cost: 1500,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3251,7 +3989,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 5000,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3260,7 +4001,10 @@ const dndItemRawList = [
     nameEn: '',
     cost: 50000,
     weight: 1,
-    source: 'PHB:157',
+    source: {
+      id: 'PHB',
+      page: 157,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3269,7 +4013,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Бутыль из тыквы или флакон мази содержит 20 порций мази. Одна порция защищает носителя от обычных насекомых в течение 24 часов. Средство водостойкое, так что оно не смывается дождём.',
     cost: 100,
-    source: 'ToA:32',
+    source: {
+      id: 'ToA',
+      page: 32,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3278,7 +4025,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'Свеча горит в течение 8 часов и отгоняет насекомых в радиусе 20 фт вокруг себя.',
     cost: 10,
-    source: 'ToA:32',
+    source: {
+      id: 'ToA',
+      page: 32,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3288,7 +4038,10 @@ const dndItemRawList = [
     description: 'Простое устройство, состоящее из квадратного куска шкуры со стороной 5 фт и деревянного каркаса с ножками. Будучи растянутой на каркасе, шкура формирует бассейн, который может собрать два галлона питьевой воды за дюйм осадков и вмещает до 8 галлонов воды. Шкура и каркас складываются и удобны в транспортировке.',
     cost: 100,
     weight: 5,
-    source: 'ToA:32',
+    source: {
+      id: 'ToA',
+      page: 32,
+    },
     category: CAT_GOODS,
   },
   {
@@ -3297,7 +4050,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'кружка',
     cost: 20,
-    source: 'PHB:158',
+    source: {
+      id: 'PHB',
+      page: 158,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3306,7 +4062,10 @@ const dndItemRawList = [
     nameEn: 'Tej',
     description: 'Перебродивший напиток янтарного цвета на основе мёда. В Чульте он куда более распространён и популярен, чем пиво или эль.',
     cost: 4,
-    source: 'ToA:32',
+    source: {
+      id: 'ToA',
+      page: 32,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3315,7 +4074,10 @@ const dndItemRawList = [
     nameEn: 'Tej',
     description: 'Перебродивший напиток янтарного цвета на основе мёда. В Чульте он куда более распространён и популярен, чем пиво или эль.',
     cost: 20,
-    source: 'ToA:32',
+    source: {
+      id: 'ToA',
+      page: 32,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3324,7 +4086,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'бутылка',
     cost: 50,
-    source: 'PHB:158',
+    source: {
+      id: 'PHB',
+      page: 158,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3333,7 +4098,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'кружка',
     cost: 400,
-    source: 'PHB:158',
+    source: {
+      id: 'PHB',
+      page: 158,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3342,7 +4110,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'бутылка',
     cost: 1000,
-    source: 'PHB:158',
+    source: {
+      id: 'PHB',
+      page: 158,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3351,7 +4122,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'кусок',
     cost: 300,
-    source: 'PHB:158',
+    source: {
+      id: 'PHB',
+      page: 158,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3360,7 +4134,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'кружка',
     cost: 4,
-    source: 'PHB:158',
+    source: {
+      id: 'PHB',
+      page: 158,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3369,7 +4146,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'галлон',
     cost: 20,
-    source: 'PHB:158',
+    source: {
+      id: 'PHB',
+      page: 158,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3378,7 +4158,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'кусок',
     cost: 10,
-    source: 'PHB:158',
+    source: {
+      id: 'PHB',
+      page: 158,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3387,7 +4170,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'на 1 едока',
     cost: 1000,
-    source: 'PHB:158',
+    source: {
+      id: 'PHB',
+      page: 158,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3396,7 +4182,10 @@ const dndItemRawList = [
     nameEn: '',
     description: 'ломоть',
     cost: 2,
-    source: 'PHB:158',
+    source: {
+      id: 'PHB',
+      page: 158,
+    },
     category: CAT_FOOD,
   },
   {
@@ -3415,7 +4204,10 @@ const dndItemRawList = [
     cost: 15000,
     damageType: DAMAGE_POISON,
     poisonType: 'ingested',
-    source: 'DMG 257',
+    source: {
+      id: 'DMG',
+      page: 257,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3435,7 +4227,10 @@ const dndItemRawList = [
     cost: 50000,
     damageType: DAMAGE_POISON,
     poisonType: 'inhaled',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3450,7 +4245,10 @@ const dndItemRawList = [
     },
     cost: 20000,
     poisonType: 'contact',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3465,7 +4263,10 @@ const dndItemRawList = [
     },
     cost: 20000,
     poisonType: 'injury',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3480,7 +4281,10 @@ const dndItemRawList = [
     },
     cost: 30000,
     poisonType: 'inhaled',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3495,7 +4299,10 @@ const dndItemRawList = [
     },
     cost: 25000,
     poisonType: 'inhaled',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3515,7 +4322,10 @@ const dndItemRawList = [
     cost: 150000,
     damageType: DAMAGE_POISON,
     poisonType: 'ingested',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3530,7 +4340,10 @@ const dndItemRawList = [
     },
     cost: 40000,
     poisonType: 'contact',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3550,7 +4363,10 @@ const dndItemRawList = [
     cost: 25000,
     damageType: DAMAGE_POISON,
     poisonType: 'ingested',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3570,7 +4386,10 @@ const dndItemRawList = [
     cost: 200000,
     damageType: DAMAGE_POISON,
     poisonType: 'injury',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3590,7 +4409,10 @@ const dndItemRawList = [
     cost: 20000,
     damageType: DAMAGE_POISON,
     poisonType: 'injury',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3605,7 +4427,10 @@ const dndItemRawList = [
     },
     cost: 60000,
     poisonType: 'ingested',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3620,7 +4445,10 @@ const dndItemRawList = [
     },
     cost: 15000,
     poisonType: 'ingested',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },
@@ -3640,7 +4468,10 @@ const dndItemRawList = [
     cost: 120000,
     damageType: DAMAGE_POISON,
     poisonType: 'injury',
-    source: 'DMG:258',
+    source: {
+      id: 'DMG',
+      page: 258,
+    },
     category: CAT_EQUIPMENT,
     subcategory: CAT_POISONS,
   },

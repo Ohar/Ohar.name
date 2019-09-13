@@ -9,7 +9,7 @@ const {
   MAGIC_ILLUSION,
   MAGIC_NECROMANCY,
   MAGIC_TRANSMUTATION,
-} = require( './dndMagicList')
+} = require('./dndMagicList')
 const {
   PC_CLASS_BARBARIAN,
   PC_CLASS_BARD,
@@ -23,12 +23,12 @@ const {
   PC_CLASS_SORCERER,
   PC_CLASS_WARLOCK,
   PC_CLASS_WIZARD,
-} = require( './dndPcClassList')
+} = require('./dndPcClassList')
 const {
   CAST_VERBAL,
   CAST_SOMATIC,
   CAST_MATERIAL,
-} = require( './dndCastComponentList')
+} = require('./dndCastComponentList')
 
 const SPELL_ALTER_SELF = 'alter_self'
 const SPELL_ANIMATE_DEAD = 'animate_dead'
@@ -188,7 +188,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_MATERIAL],
     materialText: 'светлячок или фосфоресцирующий мох',
     duration: '1 час',
-    source: 'PHB:275',
+    source: {
+      id: 'PHB',
+      page: 275,
+    },
     classList: [
       PC_CLASS_PRIEST,
       PC_CLASS_BARD,
@@ -209,7 +212,10 @@ const dndSpellList = [
     magicSchool: MAGIC_EVOCATION,
     range: 60,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
-    source: 'PHB:276',
+    source: {
+      id: 'PHB',
+      page: 276,
+    },
     classList: [PC_CLASS_PRIEST],
   },
   {
@@ -229,7 +235,10 @@ const dndSpellList = [
     range: 30,
     componentList: [CAST_VERBAL],
     duration: 'вплоть до 1 минуты',
-    source: 'PHB:289',
+    source: {
+      id: 'PHB',
+      page: 289,
+    },
     classList: [PC_CLASS_PRIEST],
   },
   {
@@ -245,7 +254,10 @@ const dndSpellList = [
     materialText: 'капля святой воды',
     duration: 'вплоть до 1 минуты',
     needConcentration: true,
-    source: 'PHB:213',
+    source: {
+      id: 'PHB',
+      page: 213,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_PALADIN],
   },
   {
@@ -258,7 +270,10 @@ const dndSpellList = [
     magicSchool: MAGIC_EVOCATION,
     range: 0,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
-    source: 'PHB:236',
+    source: {
+      id: 'PHB',
+      page: 236,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_BARD, PC_CLASS_PALADIN, PC_CLASS_RANGER, PC_CLASS_DRUID],
   },
   {
@@ -274,7 +289,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'маленькое серебряное зеркало',
     duration: '1 минута',
-    source: 'PHB:285',
+    source: {
+      id: 'PHB',
+      page: 285,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_MONK],
   },
   {
@@ -292,7 +310,10 @@ const dndSpellList = [
     materialText: 'благовоние и флакон святой или нечестивой воды',
     duration: '1 минута',
     ritual: true,
-    source: 'PHB:247',
+    source: {
+      id: 'PHB',
+      page: 247,
+    },
     classList: [PC_CLASS_PRIEST],
   },
   {
@@ -309,7 +330,10 @@ const dndSpellList = [
     range: 0,
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'бриллиант, стоящий как минимум 500 зм, расходуемый заклинанием',
-    source: 'PHB:250',
+    source: {
+      id: 'PHB',
+      page: 250,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_PRIEST, PC_CLASS_PALADIN],
   },
   {
@@ -324,7 +348,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: 'вплоть до 10 минут',
     needConcentration: true,
-    source: 'PHB:245',
+    source: {
+      id: 'PHB',
+      page: 245,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_PALADIN],
   },
   {
@@ -340,7 +367,10 @@ const dndSpellList = [
     materialText: 'ресница в смоле',
     duration: 'вплоть до 1 часа',
     needConcentration: true,
-    source: 'PHB:243',
+    source: {
+      id: 'PHB',
+      page: 243,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -354,7 +384,10 @@ const dndSpellList = [
     range: 60,
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'щепотка серы',
-    source: 'PHB:243',
+    source: {
+      id: 'PHB',
+      page: 243,
+    },
     classList: [PC_CLASS_PRIEST],
   },
   {
@@ -372,7 +405,10 @@ const dndSpellList = [
     materialText: 'святая вода или порошок серебра и железа',
     duration: 'вплоть до 1 минуты',
     needConcentration: true,
-    source: 'PHB:274',
+    source: {
+      id: 'PHB',
+      page: 274,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_PALADIN],
   },
   {
@@ -387,7 +423,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: 'вплоть до 10 минут',
     needConcentration: true,
-    source: 'PHB:282',
+    source: {
+      id: 'PHB',
+      page: 282,
+    },
     classList: [PC_CLASS_PRIEST],
   },
   {
@@ -427,7 +466,10 @@ const dndSpellList = [
     materialText: 'горящее благовоние и кусочки земли и дерева, смешанные с водой',
     duration: 'вплоть до 8 часов',
     needConcentration: true,
-    source: 'PHB:216',
+    source: {
+      id: 'PHB',
+      page: 216,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -443,7 +485,10 @@ const dndSpellList = [
     materialText: 'несколько крупинок сахара, немного зёрнышек и капля жира',
     duration: 'вплоть до 10 минут',
     needConcentration: true,
-    source: 'PHB:243',
+    source: {
+      id: 'PHB',
+      page: 243,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_SORCERER, PC_CLASS_DRUID],
   },
   {
@@ -461,7 +506,10 @@ const dndSpellList = [
     range: 0,
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'бриллиант, стоящий как минимум 1 000 зм, расходуемый заклинанием',
-    source: 'PHB:218',
+    source: {
+      id: 'PHB',
+      page: 218,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_BARD],
   },
   {
@@ -475,7 +523,10 @@ const dndSpellList = [
     magicSchool: MAGIC_CONJURATION,
     range: 30,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
-    source: 'PHB:216',
+    source: {
+      id: 'PHB',
+      page: 216,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -488,7 +539,10 @@ const dndSpellList = [
     magicSchool: MAGIC_EVOCATION,
     range: 60,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
-    source: 'PHB:236',
+    source: {
+      id: 'PHB',
+      page: 236,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -509,7 +563,10 @@ const dndSpellList = [
     range: 10,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: 'Вплоть до 1 часа',
-    source: 'PHB:287',
+    source: {
+      id: 'PHB',
+      page: 287,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -525,7 +582,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'щепотка сажи и соли',
     duration: '1 час',
-    source: 'PHB:262',
+    source: {
+      id: 'PHB',
+      page: 262,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -540,7 +600,10 @@ const dndSpellList = [
     range: 120,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: 'вплоть до 1 часа',
-    source: 'PHB:284',
+    source: {
+      id: 'PHB',
+      page: 284,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -557,7 +620,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'щепотка мелкого песка, лепестки розы или сверчок',
     duration: '1 минута',
-    source: 'PHB:286',
+    source: {
+      id: 'PHB',
+      page: 286,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -576,7 +642,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'медная монетка',
     duration: 'вплоть до 1 минуты',
-    source: 'PHB:246',
+    source: {
+      id: 'PHB',
+      page: 246,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -593,7 +662,10 @@ const dndSpellList = [
     range: -1,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: '1 минута',
-    source: 'PHB:252',
+    source: {
+      id: 'PHB',
+      page: 252,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -611,7 +683,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'семя гороха',
     duration: 'вплоть до 1 минуты',
-    source: 'PHB:263',
+    source: {
+      id: 'PHB',
+      page: 263,
+    },
     classList: [],
   },
   {
@@ -628,7 +703,10 @@ const dndSpellList = [
     range: 10,
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'капля крови, кусочек плоти и щепотка костной пыли',
-    source: 'PHB:218',
+    source: {
+      id: 'PHB',
+      page: 218,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_WIZARD],
   },
   {
@@ -642,7 +720,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'щепотка алмазной пыли, стоящая 25 зм, которой посыпается цель, расходуемая заклинанием',
     duration: '8 часов',
-    source: 'PHB:244',
+    source: {
+      id: 'PHB',
+      page: 244,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_RANGER, PC_CLASS_ROGUE, PC_CLASS_WIZARD],
   },
   {
@@ -663,7 +744,10 @@ const dndSpellList = [
     range: 0,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: 'вплоть до 1 минуты',
-    source: 'PHB:269',
+    source: {
+      id: 'PHB',
+      page: 269,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_PRIEST, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_WIZARD],
   },
   {
@@ -677,7 +761,10 @@ const dndSpellList = [
     range: 0,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: 'вплоть до 1 минуты',
-    source: 'PHB:219',
+    source: {
+      id: 'PHB',
+      page: 219,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -690,7 +777,10 @@ const dndSpellList = [
     magicSchool: MAGIC_NECROMANCY,
     range: 30,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
-    source: 'PHB:287',
+    source: {
+      id: 'PHB',
+      page: 287,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -708,7 +798,10 @@ const dndSpellList = [
     range: 60,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: 'вплоть до 1 минуты',
-    source: 'PHB:260',
+    source: {
+      id: 'PHB',
+      page: 260,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -724,7 +817,10 @@ const dndSpellList = [
     range: -1,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: 'вплоть до 10 минут',
-    source: 'PHB:245',
+    source: {
+      id: 'PHB',
+      page: 245,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_PRIEST, PC_CLASS_FIGHTER, PC_CLASS_PALADIN, PC_CLASS_RANGER, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -739,7 +835,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'небольшое перо или кусочек пуха',
     duration: '1 минута',
-    source: 'PHB:254',
+    source: {
+      id: 'PHB',
+      page: 254,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -755,7 +854,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'перо из крыла любой птицы',
     duration: 'вплоть до 10 минут',
-    source: 'PHB:262',
+    source: {
+      id: 'PHB',
+      page: 262,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_MONK, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -774,7 +876,10 @@ const dndSpellList = [
     range: 60,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: 'вплоть до 10 минут',
-    source: 'PHB:282',
+    source: {
+      id: 'PHB',
+      page: 282,
+    },
     classList: [PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -787,7 +892,10 @@ const dndSpellList = [
     castTime: '1 бонусное действие',
     range: -1,
     componentList: [CAST_VERBAL],
-    source: 'PHB:285',
+    source: {
+      id: 'PHB',
+      page: 285,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -804,7 +912,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'кусок марли и клуб дыма',
     duration: 'вплоть до 1 часа',
-    source: 'PHB:220',
+    source: {
+      id: 'PHB',
+      page: 220,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_MONK, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -821,7 +932,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'либо маленькая кожаная петля, либо кусочек золотой проволоки, согнутый в форме кубка с длинной ножкой',
     duration: 'вплоть до 10 минут',
-    source: 'PHB:235',
+    source: {
+      id: 'PHB',
+      page: 235,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -836,7 +950,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'камыш или соломинка',
     duration: '24 часа',
-    source: 'PHB:258',
+    source: {
+      id: 'PHB',
+      page: 258,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_RANGER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -853,7 +970,10 @@ const dndSpellList = [
     componentList: [CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'кусок овечьей шерсти',
     duration: '1 минута',
-    source: 'PHB:238',
+    source: {
+      id: 'PHB',
+      page: 238,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_MONK, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -869,7 +989,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'кусочек фосфора, гнилушка или светлячок',
     duration: 'вплоть до 1 минуты',
-    source: 'PHB:258',
+    source: {
+      id: 'PHB',
+      page: 258,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -884,7 +1007,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'щепотка порошка или песка, окрашенного в красный, желтый и синий цвет',
     duration: '1 раунд',
-    source: 'PHB:275',
+    source: {
+      id: 'PHB',
+      page: 275,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -899,7 +1025,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_MATERIAL],
     materialText: 'язык змеи и либо кусочек медовых сот, либо капля сладкого масла',
     duration: 'вплоть до 8 часов',
-    source: 'PHB:216',
+    source: {
+      id: 'PHB',
+      page: 216,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -917,7 +1046,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'кусок овечьей шерсти',
     duration: 'вплоть до 10 минут',
-    source: 'PHB:246',
+    source: {
+      id: 'PHB',
+      page: 246,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -932,7 +1064,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'камень, ветка, и кусочек зеленого растения',
     duration: '24 часа',
-    source: 'PHB:240',
+    source: {
+      id: 'PHB',
+      page: 240,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_WARLOCK, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -951,7 +1086,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'кокон гусеницы',
     duration: 'вплоть до 1 часа',
-    source: 'PHB:264',
+    source: {
+      id: 'PHB',
+      page: 264,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -964,7 +1102,10 @@ const dndSpellList = [
     range: 0,
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'мягкая глина, из которой делается грубая копия желаемого каменного предмета',
-    source: 'PHB:231',
+    source: {
+      id: 'PHB',
+      page: 231,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -983,7 +1124,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'железный клинок и небольшая сумка со смесью из глины, перегноя и песка',
     duration: 'вплоть до 2 часов',
-    source: 'PHB:222',
+    source: {
+      id: 'PHB',
+      page: 222,
+    },
     classList: [PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -998,7 +1142,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'щепотка кунжутного семени',
     duration: '1 час',
-    source: 'PHB:279',
+    source: {
+      id: 'PHB',
+      page: 279,
+    },
     classList: [PC_CLASS_WIZARD],
   },
   {
@@ -1012,7 +1159,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_MATERIAL],
     materialText: 'маленькая глиняная модель зиккурата',
     duration: '1 час',
-    source: 'PHB:290',
+    source: {
+      id: 'PHB',
+      page: 290,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_PRIEST, PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WARLOCK, PC_CLASS_WIZARD],
   },
   {
@@ -1027,7 +1177,10 @@ const dndSpellList = [
     range: 120,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
     duration: 'вплоть до 1 минуты',
-    source: 'PHB:218',
+    source: {
+      id: 'PHB',
+      page: 218,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_WIZARD],
   },
   {
@@ -1047,7 +1200,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'небольшой кусочек гранита',
     duration: 'вплоть до 10 минут',
-    source: 'PHB:233',
+    source: {
+      id: 'PHB',
+      page: 233,
+    },
     classList: [PC_CLASS_MONK, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -1067,7 +1223,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'вода и песок для водяного, горящее благовоние для воздушного, мягкая глина для земляного или сера и фосфор для огненного',
     duration: 'вплоть до 1 часа',
-    source: 'PHB:267',
+    source: {
+      id: 'PHB',
+      page: 267,
+    },
     classList: [PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -1082,7 +1241,10 @@ const dndSpellList = [
     range: 0,
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'раздвоенный металлический прут, стоящий как минимум 250 зм, настроенный на конкретный план существования',
-    source: 'PHB:287',
+    source: {
+      id: 'PHB',
+      page: 287,
+    },
     classList: [PC_CLASS_SORCERER, PC_CLASS_PRIEST, PC_CLASS_WARLOCK, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -1096,7 +1258,10 @@ const dndSpellList = [
     magicSchool: MAGIC_EVOCATION,
     range: 'На себя (15-фт. куб)',
     componentList: [CAST_VERBAL, CAST_SOMATIC],
-    source: 'PHB:216',
+    source: {
+      id: 'PHB',
+      page: 216,
+    },
     classList: [PC_CLASS_BARD, PC_CLASS_FIGHTER, PC_CLASS_MONK, PC_CLASS_SORCERER, PC_CLASS_WIZARD, PC_CLASS_DRUID],
   },
   {
@@ -1108,7 +1273,10 @@ const dndSpellList = [
     magicSchool: MAGIC_CONJURATION,
     range: 30,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
-    source: 'PHB:280',
+    source: {
+      id: 'PHB',
+      page: 280,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_PALADIN],
   },
   {
@@ -1123,7 +1291,10 @@ const dndSpellList = [
     range: 30,
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'огонь и святая вода',
-    source: 'PHB:288',
+    source: {
+      id: 'PHB',
+      page: 288,
+    },
     classList: [PC_CLASS_DRUID],
   },
   {
@@ -1150,7 +1321,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'крошечный кусочек материи того же вида, из которого вы планируете создать предмет',
     duration: 'Особая',
-    source: 'PHB:280',
+    source: {
+      id: 'PHB',
+      page: 280,
+    },
     classList: [PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -1167,7 +1341,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'щепотка толченого железа',
     duration: 'вплоть до 1 минуты',
-    source: 'PHB:285',
+    source: {
+      id: 'PHB',
+      page: 285,
+    },
     classList: [PC_CLASS_FIGHTER, PC_CLASS_ROGUE, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -1185,7 +1362,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'небольшой кусочек фосфора',
     duration: 'вплоть до 1 минуты',
-    source: 'PHB:147',
+    source: {
+      id: 'PHB',
+      page: 147,
+    },
     classList: [PC_CLASS_DRUID, PC_CLASS_SORCERER, PC_CLASS_WIZARD],
   },
   {
@@ -1198,7 +1378,10 @@ const dndSpellList = [
     ritual: true,
     range: 10,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
-    source: 'PHB:254',
+    source: {
+      id: 'PHB',
+      page: 254,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_PALADIN, PC_CLASS_DRUID],
   },
   {
@@ -1214,7 +1397,10 @@ const dndSpellList = [
     range: 30,
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'капля воды, если вода создаётся, или несколько песчинок, если вода уничтожается',
-    source: 'PHB:280',
+    source: {
+      id: 'PHB',
+      page: 280,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_DRUID],
   },
   {
@@ -1230,7 +1416,10 @@ const dndSpellList = [
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL],
     materialText: 'кусочек пробки',
     duration: '1 час',
-    source: 'PHB:288',
+    source: {
+      id: 'PHB',
+      page: 288,
+    },
     classList: [PC_CLASS_PRIEST, PC_CLASS_RANGER, PC_CLASS_SORCERER, PC_CLASS_DRUID],
   },
   {
@@ -1244,7 +1433,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1258,7 +1450,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1272,7 +1467,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1286,7 +1484,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1300,7 +1501,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1314,7 +1518,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1328,7 +1535,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1342,7 +1552,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1356,7 +1569,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1370,7 +1586,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1384,7 +1603,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1398,7 +1620,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1412,7 +1637,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1426,7 +1654,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1440,7 +1671,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1454,7 +1688,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1468,7 +1705,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1482,7 +1722,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1496,7 +1739,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1510,7 +1756,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1524,7 +1773,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1538,7 +1790,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1552,7 +1807,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1566,7 +1824,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1580,7 +1841,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1594,7 +1858,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1608,7 +1875,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1622,7 +1892,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1636,7 +1909,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1650,7 +1926,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1664,7 +1943,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1677,7 +1959,10 @@ const dndSpellList = [
     range: 60,
     ritual: false,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1690,7 +1975,10 @@ const dndSpellList = [
     range: 60,
     ritual: false,
     componentList: [CAST_VERBAL, CAST_SOMATIC],
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1704,7 +1992,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1718,7 +2009,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1732,7 +2026,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1746,7 +2043,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1760,7 +2060,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1774,7 +2077,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1788,7 +2094,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1802,7 +2111,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1816,7 +2128,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1830,7 +2145,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1844,7 +2162,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1858,7 +2179,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1872,7 +2196,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1886,7 +2213,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1900,7 +2230,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1914,7 +2247,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1928,7 +2264,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1942,7 +2281,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1956,7 +2298,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1970,7 +2315,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1984,7 +2332,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -1998,7 +2349,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2012,7 +2366,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2026,7 +2383,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2040,7 +2400,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2054,7 +2417,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2068,7 +2434,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2082,7 +2451,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2096,7 +2468,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2110,7 +2485,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2124,7 +2502,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2138,7 +2519,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2152,7 +2536,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2166,7 +2553,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2180,7 +2570,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2194,7 +2587,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2208,7 +2604,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2222,7 +2621,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2236,7 +2638,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2250,7 +2655,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2264,7 +2672,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2278,7 +2689,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2292,7 +2706,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2306,7 +2723,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
   {
@@ -2320,7 +2740,10 @@ const dndSpellList = [
     ritual: false, // TODO
     componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
     materialText: '', // TODO
-    source: 'PHB:', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
     classList: [], // TODO
   },
 ].map(
@@ -2330,7 +2753,7 @@ const dndSpellList = [
     duration: spell.duration || defaultDuration,
     needConcentration: Boolean(spell.needConcentration),
     ritual: Boolean(spell.ritual),
-  })
+  }),
 )
 
 module.exports = dndSpellList

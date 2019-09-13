@@ -689,7 +689,7 @@ const {
     CREATURE_YOUNG_SILVER_DRAGON,
     CREATURE_YOUNG_WHITE_DRAGON,
     CREATURE_ZOMBIE,
-} = require('./dndCreatureIdList');
+  } = require('./dndCreatureIdList')
 
 
 module.exports = [
@@ -699,7 +699,10 @@ module.exports = [
     id: CREATURE_COMMONER,
     description: '**Обыватели** включают в себя крестьян, крепостных, рабов, слуг, пилигримов, торговцев, ремесленников и отшельников.',
     aligmentId: ALIGMENT_ANY,
-    source: 'MM:348',
+    source: {
+      id: 'MM',
+      page: 348,
+    },
     speed: {
       [SPEED_WALK]: 30,
     },
@@ -755,7 +758,10 @@ module.exports = [
     description: `**Разбойники** рыщут бандами, возглавляемыми головорезами, ветеранами или заклинателями. Не все разбойники злы. Угнетения, засуха, болезни или голод могут подтолкнуть самых честных жителей на путь разбоя.\n
 **Пираты** это разбойники открытых морей. Они могут быть флибустьерами, заинтересованными лишь в сокровищах и убийствах, или могут быть каперами, которым правитель разрешил нападать на суда вражеской страны с целью грабежа.`,
     aligmentId: ALIGMENT_NOT_LAWFUL,
-    source: 'MM:348',
+    source: {
+      id: 'MM',
+      page: 348,
+    },
     speed: {
       [SPEED_WALK]: 30,
     },
@@ -833,7 +839,10 @@ module.exports = [
     id: CREATURE_ACOLYTE,
     description: `**Прислужник** это младший представитель духовенства, обычно, помогающий священникам. Он выполняет в храме множество дел и получает от божества незначительные магические способности.`,
     aligmentId: ALIGMENT_ANY,
-    source: 'MM:348',
+    source: {
+      id: 'MM',
+      page: 348,
+    },
     speed: {
       [SPEED_WALK]: 30,
     },
@@ -951,7 +960,10 @@ module.exports = [
       LANG_AURAN,
     ],
     cr: CR_1_4,
-    source: 'MM:14',
+    source: {
+      id: 'MM',
+      page: 14,
+    },
     featureList: [
       {
         name: 'Пикирующая атака',
@@ -1077,7 +1089,10 @@ module.exports = [
       },
     ],
     cr: CR_10,
-    source: 'MM:13',
+    source: {
+      id: 'MM',
+      page: 13,
+    },
     featureList: [
       {
         name: 'Амфибия',
@@ -1211,7 +1226,10 @@ module.exports = [
       DAMAGE_FIRE,
     ],
     cr: CR_3,
-    source: 'MM:15',
+    source: {
+      id: 'MM',
+      page: 15,
+    },
     featureList: [
       {
         name: 'Острый слух и тонкий нюх',
@@ -1326,7 +1344,10 @@ module.exports = [
       },
     ],
     cr: CR_10,
-    source: 'MM:19',
+    source: {
+      id: 'MM',
+      page: 19,
+    },
     featureList: [
       {
         name: 'Оружие ангела',
@@ -1472,7 +1493,10 @@ module.exports = [
       },
     ],
     cr: CR_16,
-    source: 'MM:20',
+    source: {
+      id: 'MM',
+      page: 20,
+    },
     featureList: [
       {
         name: 'Оружие ангела',
@@ -1636,7 +1660,10 @@ module.exports = [
       },
     ],
     cr: CR_21,
-    source: 'MM:21',
+    source: {
+      id: 'MM',
+      page: 21,
+    },
     featureList: [
       {
         name: 'Оружие ангела',
@@ -1804,7 +1831,10 @@ module.exports = [
 **Проклятье лесов и полей.** Несмотря на то, что анхеги получают часть питательных вещей из почвы, в которой они прячутся, они должны дополнять свой рацион свежим мясом. Пастбища, изобилующие пасущимся скотом, и леса, полные дичи, это основные охотничьи угодья анхегов. Поэтому анхеги это проклятье фермеров и охотников.\n
 **Земляные туннели.** Когда анхег копает под землёй, он оставляет за собой узкий, частично обвалившийся туннель. В этих туннелях можно обнаружить частички сброшенного хитина, остатки яиц анхегов или кошмарные останки жертв анхегов, в том числе монеты и другие сокровища, разбросанные во время нападения. `,
     aligmentId: ALIGMENT_NO,
-    source: 'MM:22',
+    source: {
+      id: 'MM',
+      page: 22,
+    },
     speed: {
       [SPEED_WALK]: 30,
       [SPEED_DIG]: 10,
@@ -1896,7 +1926,10 @@ module.exports = [
 **Собиратели прекрасного.** Тщеславие, являющееся основополагающей силой проклятья баньши, не пропадает после смерти. Эти существа жаждут красивых предметов: ювелирные украшения, картины, статуи и другие предметы искусства. В то же время баньши не переносят каких-либо зеркальных поверхностей, потому что не могут вынести ужаса своего внешнего вида. Одного беглого взгляда бывает достаточно, чтобы баньши впала в ярость.\n
 **Природа нежити.** Баньши не нуждается в воздухе, еде, питье и сне. `,
     aligmentId: ALIGMENT_CE,
-    source: 'MM:23',
+    source: {
+      id: 'MM',
+      page: 23,
+    },
     speed: {
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
@@ -2024,7 +2057,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:24',
+    source: {
+      id: 'MM',
+      page: 24,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -2147,7 +2183,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:25',
+    source: {
+      id: 'MM',
+      page: 25,
+    },
     armor: 19,
     hp: {
       cubeCount: 9,
@@ -2256,7 +2295,10 @@ module.exports = [
       CREATURE_TYPE_ABERRATION,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:26',
+    source: {
+      id: 'MM',
+      page: 26,
+    },
     armor: 9,
     hp: {
       cubeCount: 9,
@@ -2349,7 +2391,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:27',
+    source: {
+      id: 'MM',
+      page: 27,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -2457,7 +2502,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:30',
+    source: {
+      id: 'MM',
+      page: 30,
+    },
     armor: {
       ac: 16,
       type: 'природный доспех',
@@ -2628,7 +2676,10 @@ module.exports = [
     nameEn: 'Vampire Warrior',
     id: CREATURE_VAMPIRE_WARRIOR,
     parentId: CREATURE_VAMPIRE,
-    source: 'MM:31',
+    source: {
+      id: 'MM',
+      page: 31,
+    },
     armor: {
       ac: 18,
       type: 'латы',
@@ -2668,7 +2719,10 @@ module.exports = [
     nameEn: 'Vampire Spellcaster',
     id: CREATURE_VAMPIRE_SPELLCASTER,
     parentId: CREATURE_VAMPIRE,
-    source: 'MM:31',
+    source: {
+      id: 'MM',
+      page: 31,
+    },
     cr: CR_15,
     spellCast: {
       spellCasterLevel: 9,
@@ -2713,7 +2767,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:31',
+    source: {
+      id: 'MM',
+      page: 31,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -2847,7 +2904,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:32',
+    source: {
+      id: 'MM',
+      page: 32,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -2932,7 +2992,10 @@ module.exports = [
       CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:38',
+    source: {
+      id: 'MM',
+      page: 38,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -3054,7 +3117,10 @@ module.exports = [
       CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:38',
+    source: {
+      id: 'MM',
+      page: 38,
+    },
     armor: {
       ac: 15,
       type: 'лоскутный доспех',
@@ -3165,7 +3231,10 @@ module.exports = [
         comment: '50%',
       },
     ],
-    source: 'MM:39',
+    source: {
+      id: 'MM',
+      page: 39,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -3314,7 +3383,10 @@ module.exports = [
       CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:39',
+    source: {
+      id: 'MM',
+      page: 39,
+    },
     armor: {
       ac: 18,
       type: 'латный доспех',
@@ -3420,7 +3492,10 @@ module.exports = [
       CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:40',
+    source: {
+      id: 'MM',
+      page: 40,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -3513,7 +3588,10 @@ module.exports = [
       CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:40',
+    source: {
+      id: 'MM',
+      page: 40,
+    },
     armor: {
       ac: 16,
       type: 'чешуйчатый доспех',
@@ -3659,7 +3737,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:41',
+    source: {
+      id: 'MM',
+      page: 41,
+    },
     armor: {
       ac: 20,
       type: 'природный доспех',
@@ -3761,7 +3842,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:42',
+    source: {
+      id: 'MM',
+      page: 42,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -3868,7 +3952,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:43',
+    source: {
+      id: 'MM',
+      page: 43,
+    },
     armor: 13,
     hp: {
       cubeCount: 9,
@@ -3968,7 +4055,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:44',
+    source: {
+      id: 'MM',
+      page: 44,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -4106,7 +4196,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:45',
+    source: {
+      id: 'MM',
+      page: 45,
+    },
     armor: 15,
     hp: {
       cubeCount: 4,
@@ -4384,7 +4477,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:46',
+    source: {
+      id: 'MM',
+      page: 46,
+    },
     armor: {
       ac: 16,
       type: 'природный доспех',
@@ -4492,7 +4588,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:47',
+    source: {
+      id: 'MM',
+      page: 47,
+    },
     armor: 11,
     hp: {
       cubeCount: 7,
@@ -4586,7 +4685,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:50',
+    source: {
+      id: 'MM',
+      page: 50,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -4746,7 +4848,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:51',
+    source: {
+      id: 'MM',
+      page: 51,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -4903,7 +5008,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:52',
+    source: {
+      id: 'MM',
+      page: 52,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -5062,7 +5170,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_CN,
-    source: 'MM:53',
+    source: {
+      id: 'MM',
+      page: 53,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -5237,7 +5348,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:54',
+    source: {
+      id: 'MM',
+      page: 54,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -5324,7 +5438,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:55',
+    source: {
+      id: 'MM',
+      page: 55,
+    },
     armor: 11,
     hp: {
       cubeCount: 3,
@@ -5411,7 +5528,10 @@ module.exports = [
       CREATURE_TYPE_GITH,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:58',
+    source: {
+      id: 'MM',
+      page: 58,
+    },
     armor: 17,
     hp: {
       cubeCount: 13,
@@ -5541,7 +5661,10 @@ module.exports = [
       CREATURE_TYPE_GITH,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:58',
+    source: {
+      id: 'MM',
+      page: 58,
+    },
     armor: 14,
     hp: {
       cubeCount: 7,
@@ -5658,7 +5781,10 @@ module.exports = [
       CREATURE_TYPE_GITH,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:59',
+    source: {
+      id: 'MM',
+      page: 59,
+    },
     armor: {
       ac: 17,
       type: 'полулаты',
@@ -5768,7 +5894,10 @@ module.exports = [
       CREATURE_TYPE_GITH,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:59',
+    source: {
+      id: 'MM',
+      page: 59,
+    },
     armor: {
       ac: 18,
       type: 'латный доспех',
@@ -5891,7 +6020,10 @@ module.exports = [
       CREATURE_TYPE_GNOLL,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:61',
+    source: {
+      id: 'MM',
+      page: 61,
+    },
     armor: {
       ac: 15,
       type: 'кольчужная рубаха',
@@ -6011,7 +6143,10 @@ module.exports = [
       CREATURE_TYPE_GNOLL,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:61',
+    source: {
+      id: 'MM',
+      page: 61,
+    },
     armor: {
       ac: 15,
       type: 'шкурный доспех, щит',
@@ -6150,7 +6285,10 @@ module.exports = [
       CREATURE_TYPE_GNOLL,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:61',
+    source: {
+      id: 'MM',
+      page: 61,
+    },
     armor: {
       ac: 14,
       type: 'шкурный доспех',
@@ -6257,7 +6395,10 @@ module.exports = [
       CREATURE_TYPE_GNOME,
     ],
     aligmentId: ALIGMENT_NG,
-    source: 'MM:62',
+    source: {
+      id: 'MM',
+      page: 62,
+    },
     armor: {
       ac: 15,
       type: 'кольчужная рубаха',
@@ -6393,7 +6534,10 @@ module.exports = [
       CREATURE_TYPE_GOBLINOID,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:64',
+    source: {
+      id: 'MM',
+      page: 64,
+    },
     armor: {
       ac: 17,
       type: 'кольчужная рубаха, щит',
@@ -6440,7 +6584,7 @@ module.exports = [
     actionList: [
       {
         name: 'Мультиатака',
-        description: `Гоблин совершает две атаки скимитаром. Вторая атака совершается с помехой.`
+        description: `Гоблин совершает две атаки скимитаром. Вторая атака совершается с помехой.`,
       },
       {
         name: 'Скимитар',
@@ -6492,7 +6636,7 @@ module.exports = [
     reactionList: [
       {
         name: 'Перенаправление атаки',
-        description: `Если существо, видимое гоблином, нацеливается на него атакой, гоблин выбирает другого гоблина в пределах 5 футов от себя. Эти два гоблина меняются местами, и целью становится выбранный гоблин.`
+        description: `Если существо, видимое гоблином, нацеливается на него атакой, гоблин выбирает другого гоблина в пределах 5 футов от себя. Эти два гоблина меняются местами, и целью становится выбранный гоблин.`,
       },
     ],
   },
@@ -6511,7 +6655,10 @@ module.exports = [
       CREATURE_TYPE_GOBLINOID,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:64',
+    source: {
+      id: 'MM',
+      page: 64,
+    },
     armor: {
       ac: 15,
       type: 'кожаный доспех, щит',
@@ -6609,7 +6756,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:66',
+    source: {
+      id: 'MM',
+      page: 66,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -6732,7 +6882,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:67',
+    source: {
+      id: 'MM',
+      page: 67,
+    },
     armor: {
       ac: 20,
       type: 'природный доспех',
@@ -6861,7 +7014,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:67',
+    source: {
+      id: 'MM',
+      page: 67,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -6975,7 +7131,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:68',
+    source: {
+      id: 'MM',
+      page: 68,
+    },
     armor: 9,
     hp: {
       cubeCount: 11,
@@ -7084,7 +7243,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:69',
+    source: {
+      id: 'MM',
+      page: 69,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -7169,7 +7331,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:70',
+    source: {
+      id: 'MM',
+      page: 70,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -7270,7 +7435,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:71',
+    source: {
+      id: 'MM',
+      page: 71,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -7377,7 +7545,10 @@ module.exports = [
       CREATURE_TYPE_ABERRATION,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:72',
+    source: {
+      id: 'MM',
+      page: 72,
+    },
     armor: 12,
     hp: {
       cubeCount: 10,
@@ -7487,7 +7658,10 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:74',
+    source: {
+      id: 'MM',
+      page: 74,
+    },
     armor: 5,
     hp: {
       cubeCount: 3,
@@ -7548,7 +7722,10 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:74',
+    source: {
+      id: 'MM',
+      page: 74,
+    },
     armor: 5,
     hp: {
       cubeCount: 1,
@@ -7640,7 +7817,10 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:74',
+    source: {
+      id: 'MM',
+      page: 74,
+    },
     armor: 5,
     hp: {
       cubeCount: 4,
@@ -7716,7 +7896,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:75',
+    source: {
+      id: 'MM',
+      page: 75,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -7820,7 +8003,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:75',
+    source: {
+      id: 'MM',
+      page: 75,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -7915,7 +8101,10 @@ module.exports = [
       CREATURE_TYPE_GRIMLOCK,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:76',
+    source: {
+      id: 'MM',
+      page: 76,
+    },
     armor: 11,
     hp: {
       cubeCount: 2,
@@ -8011,7 +8200,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:77',
+    source: {
+      id: 'MM',
+      page: 77,
+    },
     armor: 12,
     hp: {
       cubeCount: 7,
@@ -8104,7 +8296,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:78',
+    source: {
+      id: 'MM',
+      page: 78,
+    },
     armor: {
       ac: 20,
       type: 'природный доспех',
@@ -8239,7 +8434,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:85',
+    source: {
+      id: 'MM',
+      page: 85,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -8387,7 +8585,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:86',
+    source: {
+      id: 'MM',
+      page: 86,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -8543,7 +8744,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:87',
+    source: {
+      id: 'MM',
+      page: 87,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -8673,7 +8877,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:87',
+    source: {
+      id: 'MM',
+      page: 87,
+    },
     armor: {
       ac: 11,
       type: 'природный доспех',
@@ -8782,7 +8989,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:88',
+    source: {
+      id: 'MM',
+      page: 88,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -8924,7 +9134,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:89',
+    source: {
+      id: 'MM',
+      page: 89,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -9067,7 +9280,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:90',
+    source: {
+      id: 'MM',
+      page: 90,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -9262,7 +9478,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:91',
+    source: {
+      id: 'MM',
+      page: 91,
+    },
     armor: 13,
     hp: {
       cubeCount: 3,
@@ -9389,7 +9608,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:92',
+    source: {
+      id: 'MM',
+      page: 92,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -9530,7 +9752,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:93',
+    source: {
+      id: 'MM',
+      page: 93,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -9658,7 +9883,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:94',
+    source: {
+      id: 'MM',
+      page: 94,
+    },
     armor: 9,
     hp: {
       cubeCount: 2,
@@ -9728,7 +9956,7 @@ module.exports = [
     nameEn: 'Shadow demon',
     id: CREATURE_SHADOW_DEMON,
     description: [
-  `Если тело демона уничтожено, но исчадие не смогло заново воплотиться в Бездне, его сущность может принять частично бесплотную форму. Теневые демоны существуют вне привычной демонической иерархии, так как их появление зачастую идёт от магии смертных, а не посредством превращения или роста. Теневые демоны исчезают во тьме и двигаются, не издавая ни звука. Бесплотными когтями они вырывают и пожирают страхи жертв, пробуют на вкус воспоминания и упиваются сомненьями. Яркий свет — их враг, он являет их настоящую форму, рассеивая размытую тьму и освещая крылатого гуманоида, нижняя часть которого рассеивается дымом, и чьи страшные когти рвут разум жертвы.\n
+      `Если тело демона уничтожено, но исчадие не смогло заново воплотиться в Бездне, его сущность может принять частично бесплотную форму. Теневые демоны существуют вне привычной демонической иерархии, так как их появление зачастую идёт от магии смертных, а не посредством превращения или роста. Теневые демоны исчезают во тьме и двигаются, не издавая ни звука. Бесплотными когтями они вырывают и пожирают страхи жертв, пробуют на вкус воспоминания и упиваются сомненьями. Яркий свет — их враг, он являет их настоящую форму, рассеивая размытую тьму и освещая крылатого гуманоида, нижняя часть которого рассеивается дымом, и чьи страшные когти рвут разум жертвы.\n
 **Теневая натура.** Теневому демону не нужен воздух, еда, питьё и сон. `,
       demonDescription,
     ],
@@ -9738,7 +9966,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:94',
+    source: {
+      id: 'MM',
+      page: 94,
+    },
     armor: 13,
     hp: {
       cubeCount: 12,
@@ -9865,7 +10096,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:95',
+    source: {
+      id: 'MM',
+      page: 95,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -9983,7 +10217,10 @@ module.exports = [
       CREATURE_TYPE_DEMON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:95',
+    source: {
+      id: 'MM',
+      page: 95,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -10100,7 +10337,10 @@ module.exports = [
       CREATURE_TYPE_BEAST,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:96',
+    source: {
+      id: 'MM',
+      page: 96,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -10183,7 +10423,10 @@ module.exports = [
       CREATURE_TYPE_BEAST,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:96',
+    source: {
+      id: 'MM',
+      page: 96,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -10243,7 +10486,10 @@ module.exports = [
       CREATURE_TYPE_BEAST,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:97',
+    source: {
+      id: 'MM',
+      page: 97,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -10307,7 +10553,10 @@ module.exports = [
       CREATURE_TYPE_BEAST,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:97',
+    source: {
+      id: 'MM',
+      page: 97,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -10375,7 +10624,10 @@ module.exports = [
       CREATURE_TYPE_BEAST,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:97',
+    source: {
+      id: 'MM',
+      page: 97,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -10457,7 +10709,10 @@ module.exports = [
       CREATURE_TYPE_BEAST,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:97',
+    source: {
+      id: 'MM',
+      page: 97,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -10544,7 +10799,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:98',
+    source: {
+      id: 'MM',
+      page: 98,
+    },
     armor: 14,
     hp: {
       cubeCount: 8,
@@ -10633,7 +10891,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:103',
+    source: {
+      id: 'MM',
+      page: 103,
+    },
     armor: {
       ac: 20,
       type: 'природный доспех',
@@ -10800,7 +11061,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:104',
+    source: {
+      id: 'MM',
+      page: 104,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -10967,7 +11231,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:104',
+    source: {
+      id: 'MM',
+      page: 104,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -11091,7 +11358,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:105',
+    source: {
+      id: 'MM',
+      page: 105,
+    },
     armor: {
       ac: 16,
       type: 'природный доспех',
@@ -11193,7 +11463,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:107',
+    source: {
+      id: 'MM',
+      page: 107,
+    },
     armor: {
       ac: 21,
       type: 'природный доспех',
@@ -11365,7 +11638,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:108',
+    source: {
+      id: 'MM',
+      page: 108,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -11537,7 +11813,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:108',
+    source: {
+      id: 'MM',
+      page: 108,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -11664,7 +11943,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:109',
+    source: {
+      id: 'MM',
+      page: 109,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -11770,7 +12052,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:111',
+    source: {
+      id: 'MM',
+      page: 111,
+    },
     armor: {
       ac: 22,
       type: 'природный доспех',
@@ -11932,7 +12217,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:112',
+    source: {
+      id: 'MM',
+      page: 112,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -12094,7 +12382,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:112',
+    source: {
+      id: 'MM',
+      page: 112,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -12211,7 +12502,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:112',
+    source: {
+      id: 'MM',
+      page: 112,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -12308,7 +12602,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:114',
+    source: {
+      id: 'MM',
+      page: 114,
+    },
     armor: {
       ac: 22,
       type: 'природный доспех',
@@ -12470,7 +12767,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:115',
+    source: {
+      id: 'MM',
+      page: 115,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -12632,7 +12932,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:115',
+    source: {
+      id: 'MM',
+      page: 115,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -12749,7 +13052,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:115',
+    source: {
+      id: 'MM',
+      page: 115,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -12846,7 +13152,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:117',
+    source: {
+      id: 'MM',
+      page: 117,
+    },
     armor: {
       ac: 22,
       type: 'природный доспех',
@@ -13012,7 +13321,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:118',
+    source: {
+      id: 'MM',
+      page: 118,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -13178,7 +13490,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:118',
+    source: {
+      id: 'MM',
+      page: 118,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -13301,7 +13616,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:118',
+    source: {
+      id: 'MM',
+      page: 118,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -13404,7 +13722,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:121',
+    source: {
+      id: 'MM',
+      page: 121,
+    },
     armor: {
       ac: 22,
       type: 'природный доспех',
@@ -13571,7 +13892,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:122',
+    source: {
+      id: 'MM',
+      page: 122,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -13738,7 +14062,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:122',
+    source: {
+      id: 'MM',
+      page: 122,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -13857,7 +14184,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:123',
+    source: {
+      id: 'MM',
+      page: 123,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -13955,7 +14285,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:124',
+    source: {
+      id: 'MM',
+      page: 124,
+    },
     armor: {
       ac: 22,
       type: 'природный доспех',
@@ -14123,7 +14456,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:125',
+    source: {
+      id: 'MM',
+      page: 125,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -14291,7 +14627,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:126',
+    source: {
+      id: 'MM',
+      page: 126,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -14411,7 +14750,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:126',
+    source: {
+      id: 'MM',
+      page: 126,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -14509,7 +14851,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:127',
+    source: {
+      id: 'MM',
+      page: 127,
+    },
     armor: {
       ac: 20,
       type: 'природный доспех',
@@ -14673,7 +15018,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:128',
+    source: {
+      id: 'MM',
+      page: 128,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -14832,7 +15180,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:128',
+    source: {
+      id: 'MM',
+      page: 128,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -14945,7 +15296,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:129',
+    source: {
+      id: 'MM',
+      page: 129,
+    },
     armor: {
       ac: 16,
       type: 'природный доспех',
@@ -15203,7 +15557,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:131',
+    source: {
+      id: 'MM',
+      page: 131,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -15361,7 +15718,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:131',
+    source: {
+      id: 'MM',
+      page: 131,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -15474,7 +15834,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:132',
+    source: {
+      id: 'MM',
+      page: 132,
+    },
     armor: {
       ac: 16,
       type: 'природный доспех',
@@ -15566,7 +15929,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:133',
+    source: {
+      id: 'MM',
+      page: 133,
+    },
     armor: {
       ac: 22,
       type: 'природный доспех',
@@ -15729,7 +16095,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:134',
+    source: {
+      id: 'MM',
+      page: 134,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -15892,7 +16261,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:135',
+    source: {
+      id: 'MM',
+      page: 135,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -16005,7 +16377,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:135',
+    source: {
+      id: 'MM',
+      page: 135,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -16101,7 +16476,10 @@ module.exports = [
       CREATURE_TYPE_DRAGON,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:136',
+    source: {
+      id: 'MM',
+      page: 136,
+    },
     armor: {
       ac: 20,
       type: 'природный доспех',
@@ -16214,7 +16592,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:137',
+    source: {
+      id: 'MM',
+      page: 137,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -16433,7 +16814,10 @@ module.exports = [
       CREATURE_TYPE_FEY,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:138',
+    source: {
+      id: 'MM',
+      page: 138,
+    },
     armor: {
       ac: 11,
       type: '16 c Дубовой корой',
@@ -16576,7 +16960,10 @@ module.exports = [
       CREATURE_TYPE_DWARF,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:139',
+    source: {
+      id: 'MM',
+      page: 139,
+    },
     armor: {
       ac: 16,
       type: 'чешуйчатый доспех, щит',
@@ -16752,7 +17139,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:144',
+    source: {
+      id: 'MM',
+      page: 144,
+    },
     armor: 13,
     hp: {
       cubeCount: 3,
@@ -16868,7 +17258,10 @@ module.exports = [
 Бывает, что бесы состоят на службе у смертных заклинателей, помогая им как советники, шпионы или фамильяры. Бес подталкивает хозяина к совершению злых поступков, зная, что в результате душа смертного может достаться ему. Бесы демонстрируют необыкновенную верность своим хозяевам, и могут быть довольно опасными, если хозяину что-то угрожает.`,
       ...devilsDescriptionList,
     ],
-    source: 'MM:143',
+    source: {
+      id: 'MM',
+      page: 143,
+    },
     extendPropCollection: {
       featureList: [
         {
@@ -16895,7 +17288,10 @@ module.exports = [
       CREATURE_TYPE_DEVIL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:144',
+    source: {
+      id: 'MM',
+      page: 144,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -17044,7 +17440,10 @@ module.exports = [
       CREATURE_TYPE_DEVIL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:145',
+    source: {
+      id: 'MM',
+      page: 145,
+    },
     armor: {
       ac: 16,
       type: 'природный доспех',
@@ -17162,7 +17561,10 @@ module.exports = [
       CREATURE_TYPE_DEVIL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:146',
+    source: {
+      id: 'MM',
+      page: 146,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -17312,7 +17714,10 @@ module.exports = [
       CREATURE_TYPE_DEVIL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:147',
+    source: {
+      id: 'MM',
+      page: 147,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -17517,7 +17922,10 @@ module.exports = [
       CREATURE_TYPE_DEVIL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:148',
+    source: {
+      id: 'MM',
+      page: 148,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -17693,7 +18101,10 @@ module.exports = [
       CREATURE_TYPE_DEVIL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:149',
+    source: {
+      id: 'MM',
+      page: 149,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -17912,7 +18323,10 @@ module.exports = [
       CREATURE_TYPE_DEVIL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:150',
+    source: {
+      id: 'MM',
+      page: 150,
+    },
     armor: 7,
     hp: {
       cubeCount: 3,
@@ -18002,7 +18416,10 @@ module.exports = [
       CREATURE_TYPE_DEVIL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:150',
+    source: {
+      id: 'MM',
+      page: 150,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -18166,7 +18583,10 @@ module.exports = [
       CREATURE_TYPE_DEVIL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:151',
+    source: {
+      id: 'MM',
+      page: 151,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -18324,7 +18744,10 @@ module.exports = [
       CREATURE_TYPE_DEVIL,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:152',
+    source: {
+      id: 'MM',
+      page: 152,
+    },
     armor: {
       ac: 18,
       type: 'латный доспех',
@@ -18503,7 +18926,10 @@ module.exports = [
       CREATURE_TYPE_CELESTIAL,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:154',
+    source: {
+      id: 'MM',
+      page: 154,
+    },
     armor: 12,
     hp: {
       cubeCount: 9,
@@ -18652,7 +19078,10 @@ module.exports = [
       CREATURE_TYPE_BULLYWUG,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:155',
+    source: {
+      id: 'MM',
+      page: 155,
+    },
     armor: {
       ac: 15,
       type: 'шкурный доспех, щит',
@@ -18785,7 +19214,10 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:157',
+    source: {
+      id: 'MM',
+      page: 157,
+    },
     armor: {
       ac: 12,
       type: 'природный доспех',
@@ -18879,7 +19311,10 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:157',
+    source: {
+      id: 'MM',
+      page: 157,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -18967,7 +19402,10 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:157',
+    source: {
+      id: 'MM',
+      page: 157,
+    },
     armor: {
       ac: 12,
       type: 'природный доспех',
@@ -19065,7 +19503,10 @@ module.exports = [
       CREATURE_TYPE_ABERRATION,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:160',
+    source: {
+      id: 'MM',
+      page: 160,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -19183,7 +19624,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:161',
+    source: {
+      id: 'MM',
+      page: 161,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -19308,7 +19752,10 @@ module.exports = [
       CREATURE_TYPE_ABERRATION,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:162',
+    source: {
+      id: 'MM',
+      page: 162,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -19408,7 +19855,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:164',
+    source: {
+      id: 'MM',
+      page: 164,
+    },
     armor: 8,
     hp: {
       cubeCount: 3,
@@ -19486,7 +19936,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:164',
+    source: {
+      id: 'MM',
+      page: 164,
+    },
     armor: 8,
     hp: {
       cubeCount: 9,
@@ -19565,7 +20018,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:164',
+    source: {
+      id: 'MM',
+      page: 164,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -19670,7 +20126,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:165',
+    source: {
+      id: 'MM',
+      page: 165,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -19787,7 +20246,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:166',
+    source: {
+      id: 'MM',
+      page: 166,
+    },
     armor: {
       ac: 12,
       type: 'природный доспех',
@@ -19887,7 +20349,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:167',
+    source: {
+      id: 'MM',
+      page: 167,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -20002,7 +20467,10 @@ module.exports = [
       CREATURE_TYPE_FIEND,
     ],
     aligmentId: ALIGMENT_ANY_EVIL,
-    source: 'MM:168',
+    source: {
+      id: 'MM',
+      page: 168,
+    },
     armor: {
       ac: 19,
       type: 'чешуйчатый доспех',
@@ -20183,7 +20651,10 @@ module.exports = [
       CREATURE_TYPE_FEY,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:170',
+    source: {
+      id: 'MM',
+      page: 170,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -20301,7 +20772,10 @@ module.exports = [
       CREATURE_TYPE_FEY,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:171',
+    source: {
+      id: 'MM',
+      page: 171,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -20400,7 +20874,10 @@ module.exports = [
       CREATURE_TYPE_FIEND,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:172',
+    source: {
+      id: 'MM',
+      page: 172,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -20551,7 +21028,10 @@ module.exports = [
       CREATURE_TYPE_QUAGGOTH,
     ],
     aligmentId: ALIGMENT_CN,
-    source: 'MM:173',
+    source: {
+      id: 'MM',
+      page: 173,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -20679,7 +21159,10 @@ module.exports = [
       CREATURE_TYPE_KENKU,
     ],
     aligmentId: ALIGMENT_CN,
-    source: 'MM:174',
+    source: {
+      id: 'MM',
+      page: 174,
+    },
     armor: 13,
     hp: {
       cubeCount: 3,
@@ -20778,7 +21261,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NG,
-    source: 'MM:175',
+    source: {
+      id: 'MM',
+      page: 175,
+    },
     armor: 12,
     hp: {
       cubeCount: 6,
@@ -20821,7 +21307,7 @@ module.exports = [
     actionList: [
       {
         name: 'Мультиатака',
-        description: `Кентавр совершает две атаки: одну пикой и одну копытами, либо две атаки длинным луком.`
+        description: `Кентавр совершает две атаки: одну пикой и одну копытами, либо две атаки длинным луком.`,
       },
       {
         name: 'Пика',
@@ -20888,7 +21374,10 @@ module.exports = [
       CREATURE_TYPE_CELESTIAL,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:176',
+    source: {
+      id: 'MM',
+      page: 176,
+    },
     armor: {
       ac: 19,
       type: 'природный доспех',
@@ -20943,11 +21432,11 @@ module.exports = [
     featureList: [
       {
         name: 'Магическое оружие',
-        description: `Атаки оружием коатля являются магическими.`
+        description: `Атаки оружием коатля являются магическими.`,
       },
       {
         name: 'Защищённое сознание',
-        description: `Коатль обладает иммунитетом к удалённому наблюдению, а также ко всем эффектам, чувствующим его эмоции, читающим его мысли и обнаруживающим его местонахождение.`
+        description: `Коатль обладает иммунитетом к удалённому наблюдению, а также ко всем эффектам, чувствующим его эмоции, читающим его мысли и обнаруживающим его местонахождение.`,
       },
     ],
     spellCast: {
@@ -21058,7 +21547,10 @@ module.exports = [
       CREATURE_TYPE_KOBOLD,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:177',
+    source: {
+      id: 'MM',
+      page: 177,
+    },
     armor: 12,
     hp: {
       cubeCount: 2,
@@ -21094,12 +21586,12 @@ module.exports = [
     featureList: [
       {
         name: 'Чувствительность к солнечному свету',
-        description: `Находясь на солнечном свету, кобольд совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`
+        description: `Находясь на солнечном свету, кобольд совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`,
       },
       {
         name: 'Тактика стаи',
         description: `Кобольд совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа 
-находится как минимум один дееспособный союзник кобольда.`
+находится как минимум один дееспособный союзник кобольда.`,
       },
     ],
     actionList: [
@@ -21151,7 +21643,10 @@ module.exports = [
       CREATURE_TYPE_KOBOLD,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:177',
+    source: {
+      id: 'MM',
+      page: 177,
+    },
     armor: 13,
     hp: {
       cubeCount: 3,
@@ -21188,12 +21683,12 @@ module.exports = [
     featureList: [
       {
         name: 'Чувствительность к солнечному свету',
-        description: `Находясь на солнечном свету, кобольд совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`
+        description: `Находясь на солнечном свету, кобольд совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`,
       },
       {
         name: 'Тактика стаи',
         description: `Кобольд совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа 
-находится как минимум один дееспособный союзник кобольда.`
+находится как минимум один дееспособный союзник кобольда.`,
       },
     ],
     actionList: [
@@ -21248,7 +21743,10 @@ module.exports = [
       CREATURE_TYPE_FIEND,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:178',
+    source: {
+      id: 'MM',
+      page: 178,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -21289,11 +21787,11 @@ module.exports = [
     featureList: [
       {
         name: 'Дарование сопротивления к огню',
-        description: `Кошмар может предоставить сопротивление к урону огнём всем, кто на нём едет.`
+        description: `Кошмар может предоставить сопротивление к урону огнём всем, кто на нём едет.`,
       },
       {
         name: 'Свечение',
-        description: `Кошмар испускает яркий свет в радиусе 10 футов и тусклый свет в пределах ещё 10 футов.`
+        description: `Кошмар испускает яркий свет в радиусе 10 футов и тусклый свет в пределах ещё 10 футов.`,
       },
     ],
     actionList: [
@@ -21338,7 +21836,10 @@ module.exports = [
       CREATURE_TYPE_TITAN,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:180',
+    source: {
+      id: 'MM',
+      page: 180,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -21399,15 +21900,15 @@ module.exports = [
     featureList: [
       {
         name: 'Амфибия',
-        description: `Кракен может дышать и воздухом и под водой.`
+        description: `Кракен может дышать и воздухом и под водой.`,
       },
       {
         name: 'Свобода перемещений',
-        description: `Кракен игнорирует труднопроходиую местность, и магические эффекты не могут ни уменьшить его скорость, ни сделать опутанным. Он может потратить 5 футов перемещения, чтобы избавиться от немагического опутывания или перестать быть схваченным.`
+        description: `Кракен игнорирует труднопроходиую местность, и магические эффекты не могут ни уменьшить его скорость, ни сделать опутанным. Он может потратить 5 футов перемещения, чтобы избавиться от немагического опутывания или перестать быть схваченным.`,
       },
       {
         name: 'Осадное чудовище',
-        description: `Кракен причиняет двойной урон предметам и строениям.`
+        description: `Кракен причиняет двойной урон предметам и строениям.`,
       },
     ],
     actionList: [
@@ -21487,7 +21988,10 @@ module.exports = [
       CREATURE_TYPE_BEAST,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:181',
+    source: {
+      id: 'MM',
+      page: 181,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -21559,7 +22063,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:181',
+    source: {
+      id: 'MM',
+      page: 181,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -21605,11 +22112,11 @@ module.exports = [
     featureList: [
       {
         name: 'Эхолокация',
-        description: `Крюкастый ужас не может использовать слепое зрение, будучи оглохшим.`
+        description: `Крюкастый ужас не может использовать слепое зрение, будучи оглохшим.`,
       },
       {
         name: 'Острый слух',
-        description: `Крюкастый ужас совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух.`
+        description: `Крюкастый ужас совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух.`,
       },
     ],
     actionList: [
@@ -21645,7 +22152,10 @@ module.exports = [
       CREATURE_TYPE_KUO_TOA,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:184',
+    source: {
+      id: 'MM',
+      page: 184,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех, щит',
@@ -21785,7 +22295,10 @@ module.exports = [
       CREATURE_TYPE_KUO_TOA,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:185',
+    source: {
+      id: 'MM',
+      page: 185,
+    },
     armor: {
       ac: 11,
       type: 'природный доспех',
@@ -21890,7 +22403,10 @@ module.exports = [
       ac: 13,
       type: 'природный доспех',
     },
-    source: 'MM:183',
+    source: {
+      id: 'MM',
+      page: 183,
+    },
     cr: CR_3,
     spellCast: null,
     actionList: [
@@ -22079,7 +22595,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:186',
+    source: {
+      id: 'MM',
+      page: 186,
+    },
     armor: 11,
     hp: {
       cubeCount: 6,
@@ -22150,7 +22669,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:187',
+    source: {
+      id: 'MM',
+      page: 187,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -22298,7 +22820,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:190',
+    source: {
+      id: 'MM',
+      page: 190,
+    },
     armor: [
       {
         ac: 10,
@@ -22421,7 +22946,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:190',
+    source: {
+      id: 'MM',
+      page: 190,
+    },
     armor: 12,
     hp: {
       cubeCount: 6,
@@ -22554,7 +23082,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:190',
+    source: {
+      id: 'MM',
+      page: 190,
+    },
     armor: [
       {
         ac: 11,
@@ -22733,7 +23264,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_NG,
-    source: 'MM:192',
+    source: {
+      id: 'MM',
+      page: 192,
+    },
     armor: [
       {
         ac: 10,
@@ -22869,7 +23403,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:193',
+    source: {
+      id: 'MM',
+      page: 193,
+    },
     armor: 12,
     hp: {
       cubeCount: 16,
@@ -23019,7 +23556,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:194',
+    source: {
+      id: 'MM',
+      page: 194,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -23133,7 +23673,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_ANY_EVIL,
-    source: 'MM:195',
+    source: {
+      id: 'MM',
+      page: 195,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -23318,7 +23861,10 @@ module.exports = [
       CREATURE_TYPE_LIZARDFOLK,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:197',
+    source: {
+      id: 'MM',
+      page: 197,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех, щит',
@@ -23457,7 +24003,10 @@ module.exports = [
       CREATURE_TYPE_LIZARDFOLK,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:198',
+    source: {
+      id: 'MM',
+      page: 198,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -23594,7 +24143,10 @@ module.exports = [
       CREATURE_TYPE_LIZARDFOLK,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:198',
+    source: {
+      id: 'MM',
+      page: 198,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -23744,7 +24296,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_CN,
-    source: 'MM:199',
+    source: {
+      id: 'MM',
+      page: 199,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -23825,7 +24380,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:200',
+    source: {
+      id: 'MM',
+      page: 200,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -23934,7 +24492,10 @@ module.exports = [
       CREATURE_TYPE_GOBLINOID,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:201',
+    source: {
+      id: 'MM',
+      page: 201,
+    },
     armor: {
       ac: 16,
       type: 'шкурный доспех, щит',
@@ -24047,7 +24608,10 @@ module.exports = [
       CREATURE_TYPE_GOBLINOID,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:201',
+    source: {
+      id: 'MM',
+      page: 201,
+    },
     armor: {
       ac: 17,
       type: 'кольчужная рубаха, щит',
@@ -24170,7 +24734,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:202',
+    source: {
+      id: 'MM',
+      page: 202,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -24307,7 +24874,10 @@ module.exports = [
       CREATURE_TYPE_MERFOLK,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:203',
+    source: {
+      id: 'MM',
+      page: 203,
+    },
     armor: 11,
     hp: {
       cubeCount: 2,
@@ -24401,7 +24971,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:204',
+    source: {
+      id: 'MM',
+      page: 204,
+    },
     armor: 11,
     hp: {
       cubeCount: 6,
@@ -24499,7 +25072,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:204',
+    source: {
+      id: 'MM',
+      page: 204,
+    },
     armor: 12,
     hp: {
       cubeCount: 5,
@@ -24602,7 +25178,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:205',
+    source: {
+      id: 'MM',
+      page: 205,
+    },
     armor: 11,
     hp: {
       cubeCount: 6,
@@ -24719,7 +25298,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:205',
+    source: {
+      id: 'MM',
+      page: 205,
+    },
     armor: 11,
     hp: {
       cubeCount: 5,
@@ -24835,7 +25417,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:206',
+    source: {
+      id: 'MM',
+      page: 206,
+    },
     armor: 10,
     hp: {
       cubeCount: 6,
@@ -24939,7 +25524,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:206',
+    source: {
+      id: 'MM',
+      page: 206,
+    },
     armor: 12,
     hp: {
       cubeCount: 5,
@@ -25045,7 +25633,7 @@ module.exports = [
           },
           description: `У мефита есть 25% шанс призвать 1к4 грязевых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
         },
-      ]
+      ],
     },
   },
   {
@@ -25063,7 +25651,7 @@ module.exports = [
           },
           description: `У мефита есть 25% шанс призвать 1к4 дымовых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
         },
-      ]
+      ],
     },
   },
   {
@@ -25081,7 +25669,7 @@ module.exports = [
           },
           description: `У мефита есть 25% шанс призвать 1к4 ледяных мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
         },
-      ]
+      ],
     },
   },
   {
@@ -25099,7 +25687,7 @@ module.exports = [
           },
           description: `У мефита есть 25% шанс призвать 1к4 магмовых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
         },
-      ]
+      ],
     },
   },
   {
@@ -25117,7 +25705,7 @@ module.exports = [
           },
           description: `У мефита есть 25% шанс призвать 1к4 паровых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
         },
-      ]
+      ],
     },
   },
   {
@@ -25135,7 +25723,7 @@ module.exports = [
           },
           description: `У мефита есть 25% шанс призвать 1к4 пылевых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
         },
-      ]
+      ],
     },
   },
   {
@@ -25148,7 +25736,10 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:207',
+    source: {
+      id: 'MM',
+      page: 207,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -25249,7 +25840,10 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:207',
+    source: {
+      id: 'MM',
+      page: 207,
+    },
     armor: {
       ac: 12,
       type: 'природный доспех',
@@ -25337,7 +25931,10 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:209',
+    source: {
+      id: 'MM',
+      page: 209,
+    },
     armor: 10,
     hp: {
       cubeCount: 2,
@@ -25426,7 +26023,10 @@ module.exports = [
       CREATURE_TYPE_SHAPESHIFTER,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:210',
+    source: {
+      id: 'MM',
+      page: 210,
+    },
     armor: {
       ac: 12,
       type: 'природный доспех',
@@ -25545,7 +26145,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:211',
+    source: {
+      id: 'MM',
+      page: 211,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -25644,7 +26247,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:212',
+    source: {
+      id: 'MM',
+      page: 212,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -25753,7 +26359,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:213',
+    source: {
+      id: 'MM',
+      page: 213,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -25866,7 +26475,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:213',
+    source: {
+      id: 'MM',
+      page: 213,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -25980,7 +26592,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:214',
+    source: {
+      id: 'MM',
+      page: 214,
+    },
     armor: {
       ac: 16,
       type: 'природный доспех',
@@ -26083,7 +26698,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_LN,
-    source: 'MM:214',
+    source: {
+      id: 'MM',
+      page: 214,
+    },
     armor: {
       ac: 16,
       type: 'природный доспех',
@@ -26172,7 +26790,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:216',
+    source: {
+      id: 'MM',
+      page: 216,
+    },
     armor: {
       ac: 11,
       type: 'природный доспех',
@@ -26280,7 +26901,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:217',
+    source: {
+      id: 'MM',
+      page: 217,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -26460,7 +27084,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:218',
+    source: {
+      id: 'MM',
+      page: 218,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -26583,7 +27210,10 @@ module.exports = [
       CREATURE_TYPE_UNDEAD,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:219',
+    source: {
+      id: 'MM',
+      page: 219,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -26727,7 +27357,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_LG,
-    source: 'MM:219',
+    source: {
+      id: 'MM',
+      page: 219,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -26837,7 +27470,7 @@ module.exports = [
               cubeType: 8,
               cubeBonus: 4,
             },
-            `цель должна совершить спасбросок Телосложения со Сл 15, получая урон ядом 45 (10к8) при провале, или половину этого урона при успехе`
+            `цель должна совершить спасбросок Телосложения со Сл 15, получая урон ядом 45 (10к8) при провале, или половину этого урона при успехе`,
           ],
         },
       },
@@ -26876,7 +27509,10 @@ module.exports = [
       CREATURE_TYPE_ELEMENTAL,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:220',
+    source: {
+      id: 'MM',
+      page: 220,
+    },
     armor: 14,
     hp: {
       cubeCount: 16,
@@ -26981,7 +27617,10 @@ module.exports = [
       CREATURE_TYPE_ABERRATION,
     ],
     aligmentId: ALIGMENT_NE,
-    source: 'MM:221',
+    source: {
+      id: 'MM',
+      page: 221,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -27080,7 +27719,10 @@ module.exports = [
       CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:222',
+    source: {
+      id: 'MM',
+      page: 222,
+    },
     armor: {
       ac: 11,
       type: 'шкурный доспех',
@@ -27180,7 +27822,10 @@ module.exports = [
       CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_ANY_CHAOTIC,
-    source: 'MM:223',
+    source: {
+      id: 'MM',
+      page: 223,
+    },
     armor: {
       ac: 12,
       type: 'шкурный доспех',
@@ -27225,7 +27870,7 @@ module.exports = [
           range: 5,
           target: 1,
           hit: [
-              [
+            [
               {
                 type: DAMAGE_SLASHING,
                 cubeCount: 2,
@@ -27293,7 +27938,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:224',
+    source: {
+      id: 'MM',
+      page: 224,
+    },
     armor: 12,
     hp: {
       cubeCount: 6,
@@ -27387,7 +28035,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:225',
+    source: {
+      id: 'MM',
+      page: 225,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -27481,7 +28132,10 @@ module.exports = [
       CREATURE_TYPE_CONSTRUCT,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:225',
+    source: {
+      id: 'MM',
+      page: 225,
+    },
     armor: {
       ac: 18,
       type: 'природный доспех',
@@ -27584,7 +28238,10 @@ module.exports = [
       CREATURE_TYPE_GIANT,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:226',
+    source: {
+      id: 'MM',
+      page: 226,
+    },
     armor: {
       ac: 16,
       type: 'кольчуга',
@@ -27738,7 +28395,10 @@ module.exports = [
       CREATURE_TYPE_ORC,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:229',
+    source: {
+      id: 'MM',
+      page: 229,
+    },
     armor: {
       ac: 13,
       type: 'шкурный доспех',
@@ -27860,7 +28520,10 @@ module.exports = [
       CREATURE_TYPE_ORC,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:229',
+    source: {
+      id: 'MM',
+      page: 229,
+    },
     armor: {
       ac: 16,
       type: 'кольчуга',
@@ -28022,7 +28685,10 @@ module.exports = [
       CREATURE_TYPE_ORC,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:230',
+    source: {
+      id: 'MM',
+      page: 230,
+    },
     armor: {
       ac: 16,
       type: 'колечный доспех, щит',
@@ -28174,7 +28840,10 @@ module.exports = [
       CREATURE_TYPE_ORC,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:230',
+    source: {
+      id: 'MM',
+      page: 230,
+    },
     armor: {
       ac: 18,
       type: 'латный доспех',
@@ -28290,7 +28959,10 @@ module.exports = [
       CREATURE_TYPE_ABERRATION,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:231',
+    source: {
+      id: 'MM',
+      page: 231,
+    },
     armor: {
       ac: 14,
       type: 'природный доспех',
@@ -28400,7 +29072,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_N,
-    source: 'MM:232',
+    source: {
+      id: 'MM',
+      page: 232,
+    },
     armor: {
       ac: 17,
       type: 'природный доспех',
@@ -28485,7 +29160,10 @@ module.exports = [
       CREATURE_TYPE_CELESTIAL,
     ],
     aligmentId: ALIGMENT_CG,
-    source: 'MM:233',
+    source: {
+      id: 'MM',
+      page: 233,
+    },
     armor: 12,
     hp: {
       cubeCount: 7,
@@ -28563,7 +29241,10 @@ module.exports = [
       CREATURE_TYPE_MONSTER,
     ],
     aligmentId: ALIGMENT_CE,
-    source: 'MM:234',
+    source: {
+      id: 'MM',
+      page: 234,
+    },
     armor: {
       ac: 13,
       type: 'природный доспех',
@@ -28682,7 +29363,10 @@ module.exports = [
       CREATURE_TYPE_FEY,
     ],
     aligmentId: ALIGMENT_NG,
-    source: 'MM:235',
+    source: {
+      id: 'MM',
+      page: 235,
+    },
     armor: 15,
     hp: {
       cubeCount: 1,
@@ -28776,7 +29460,10 @@ module.exports = [
       CREATURE_TYPE_ABERRATION,
     ],
     aligmentId: ALIGMENT_CN,
-    source: 'MM:236',
+    source: {
+      id: 'MM',
+      page: 236,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',
@@ -28906,7 +29593,10 @@ module.exports = [
       CREATURE_TYPE_ABERRATION,
     ],
     aligmentId: ALIGMENT_LE,
-    source: 'MM:237',
+    source: {
+      id: 'MM',
+      page: 237,
+    },
     armor: 12,
     hp: {
       cubeCount: 6,
@@ -29007,7 +29697,10 @@ module.exports = [
       CREATURE_TYPE_PLANT,
     ],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:238',
+    source: {
+      id: 'MM',
+      page: 238,
+    },
     armor: {
       ac: 15,
       type: 'природный доспех',

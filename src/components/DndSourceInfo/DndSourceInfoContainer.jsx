@@ -1,55 +1,77 @@
 import React from 'react'
-
-import DndSourceInfoComponent from './DndSourceInfoComponent'
-import { dndManualCollection } from '@/constants/dnd/dndManualList';
+import arrify from 'arrify'
 import PropTypes from 'prop-types';
 
-const DndSourceInfoContainer = ({ source, useFullName }) => {
-  if (source) {
-    let url = ''
-    let title = ''
-    let text = ''
+import { dndManualCollection } from '@/constants/dnd/dndManualList';
 
-    if (typeof source === 'string') {
-      const [manualId, ...pageList] = source.split(':')
-      const page = [...pageList].join(':')
-      const manual = dndManualCollection[manualId]
+import DndSourceInfoComponent from './DndSourceInfoComponent'
 
-      if (manual) {
-        const {name, shortName} = manual
-        const pageText = page
-          ? `, ${page}`
-          : ''
+const DndSourceInfoContainer = ({ source, useFullName }) => (
+  <>
+    {
+      arrify(source)
+        .filter(e => e)
+        .map(
+          sourceItem => {
+            if (sourceItem) {
+              let url = ''
+              let title = ''
+              let text = ''
 
-        title = `${name}${pageText} страница`
+              if (typeof sourceItem === 'string' || (sourceItem.id && sourceItem.page)) {
+                let page = ''
+                let manualId = null
+                let manual = null
 
-        text = useFullName
-          ? `${name}${pageText}`
-          : `${shortName}${pageText}`
-      }
+                if (typeof sourceItem === 'string') {
+                  const [idItem, ...rest] = sourceItem.split(':')
+                  manualId = idItem
+                  page = [...rest].join(':')
+                }
+
+                if (sourceItem.id && sourceItem.page) {
+                  manualId = sourceItem.id
+                  page = sourceItem.page
+                }
+
+                if (manualId) {
+                  const {name, shortName} = dndManualCollection[manualId]
+                  const pageText = page
+                    ? `, ${page}`
+                    : ''
+
+                  title = `${name}${pageText} страница`
+
+                  text = useFullName
+                    ? `${name}${pageText}`
+                    : `${shortName}${pageText}`
+                }
+              }
+
+              if (sourceItem.url && sourceItem.problemText) {
+                url = sourceItem.url
+
+                const {problemText} = sourceItem
+                const {host} = new URL(url)
+
+                text = host
+                title = `Почему ${host}?\n\n${problemText}`
+              }
+
+              return (
+                <DndSourceInfoComponent
+                  url={url}
+                  title={title}
+                  text={text}
+                />
+              )
+            }
+          }
+        )
+        .filter(e => e)
     }
-
-    if (source.url) {
-      url = source.url
-
-      const {problemText} = source
-      const {host} = new URL(url)
-
-      text = host
-      title = `Почему ${host}?\n\n${problemText}`
-    }
-
-    return (
-      <DndSourceInfoComponent
-        url={url}
-        title={title}
-        text={text}
-      />
-    )
-  }
-
-  return null
-}
+  </>
+)
 
 DndSourceInfoContainer.propTypes = {
   source: PropTypes.oneOfType([

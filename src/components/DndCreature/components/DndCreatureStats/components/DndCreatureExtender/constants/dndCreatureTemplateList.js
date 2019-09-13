@@ -1,4 +1,4 @@
-import arrify from "arrify"
+import arrify from 'arrify'
 import { faDizzy, faSkullCrossbones, faMehBlank, faRobot } from '@fortawesome/free-solid-svg-icons'
 
 import generateTextLinks from '@/utils/generateTextLinks'
@@ -7,7 +7,7 @@ import {
   SIZE_MEDIUM,
   SIZE_LARGE,
   SIZE_SMALL,
-  SIZE_TINY
+  SIZE_TINY,
 } from '@/constants/dnd/dndSizeList'
 import {
   CREATURE_TYPE_AARAKOCRA,
@@ -61,13 +61,13 @@ import {
   SPEED_DIG,
   SPEED_FLY,
   SPEED_SWIM,
-  SPEED_WALK
+  SPEED_WALK,
 } from '@/constants/dnd/dndSpeedList'
 import {
   ACTION_MELEE_WEAPON_ATTACK,
   ACTION_MELEE_SPELL_ATTACK,
   ACTION_RANGE_WEAPON_ATTACK,
-  ACTION_RANGE_SPELL_ATTACK
+  ACTION_RANGE_SPELL_ATTACK,
 } from '@/constants/dnd/dndActionTypeList'
 import {
   dndDamageTypeCollection,
@@ -86,11 +86,11 @@ import {
   DAMAGE_PSYCHIC,
   DAMAGE_RADIANT,
   DAMAGE_SLASHING,
-  DAMAGE_THUNDER
+  DAMAGE_THUNDER,
 } from '@/constants/dnd/dndDamageTypeList'
 import {
   SENSE_BLIND_VISION,
-  SENSE_PASSIVE_PERCEPTION
+  SENSE_PASSIVE_PERCEPTION,
 } from '@/constants/dnd/dndSenseList'
 import {
   PARAM_STR,
@@ -172,7 +172,7 @@ import {
   SKILL_SURVIVAL,
 } from '@/constants/dnd/dndSkillList'
 
-import {dndCrCollection} from "@/constants/dnd/dndCrList"
+import { dndCrCollection } from '@/constants/dnd/dndCrList'
 
 import calcParamBonus from '@/utils/calcParamBonus'
 
@@ -187,7 +187,7 @@ export default [
           SIZE_TINY,
           SIZE_SMALL,
           SIZE_MEDIUM,
-          SIZE_LARGE
+          SIZE_LARGE,
         ],
         creatureTypeIdList: [
           CREATURE_TYPE_AARAKOCRA,
@@ -228,7 +228,7 @@ export default [
           CREATURE_TYPE_TROGLODYTE,
           CREATURE_TYPE_XVART,
           CREATURE_TYPE_YOAN_TI,
-          CREATURE_TYPE_YUGOLOT
+          CREATURE_TYPE_YUGOLOT,
         ],
       },
       exclude: {
@@ -238,7 +238,10 @@ export default [
 
     creatureTypeIdList: [CREATURE_TYPE_PLANT],
     aligmentId: ALIGMENT_NO,
-    source: 'MM:209',
+    source: {
+      id: 'MM',
+      page: 209,
+    },
     saveThrowCollection: null,
     skillCollection: null,
     featureList: [
@@ -254,12 +257,12 @@ export default [
       {
         id: SENSE_BLIND_VISION,
         value: 30,
-        comment: 'слеп за пределами этого радиуса'
+        comment: 'слеп за пределами этого радиуса',
       },
       {
         id: SENSE_PASSIVE_PERCEPTION,
-        value: 8
-      }
+        value: 8,
+      },
     ],
     description: [
       {
@@ -279,8 +282,8 @@ export default [
     ],
 
     editPropCollection: {
-      name: ({name}) => `${name} споровый слуга`,
-      speed: ({speed: speedCollection}) => Object
+      name: ({ name }) => `${name} споровый слуга`,
+      speed: ({ speed: speedCollection }) => Object
         .keys(speedCollection)
         .reduce(
           (resultSpeed, speedId) => {
@@ -299,8 +302,8 @@ export default [
                 : editedValue,
             }
           },
-          {}
-        )
+          {},
+        ),
     },
 
     filterPropCollection: {
@@ -334,21 +337,21 @@ export default [
       params: {
         [PARAM_INT]: 2,
         [PARAM_WIT]: 6,
-        [PARAM_CHA]: 1
+        [PARAM_CHA]: 1,
       },
       immunityConditionList: [
         CONDITION_FRIGHTENED,
         CONDITION_BLINDED,
         CONDITION_CHARMED,
-        CONDITION_PARALYZED
+        CONDITION_PARALYZED,
       ],
     },
 
     replaceEmptyPropCollection: {
-      actionList: ({params, sizeType, cr}) => {
+      actionList: ({ params, sizeType, cr }) => {
         const strBonus = calcParamBonus(params[PARAM_STR])
         const cubeCount = sizeType === SIZE_LARGE ? 2 : 1
-        const {profBonus} = dndCrCollection[cr]
+        const { profBonus } = dndCrCollection[cr]
         const bonus = strBonus + profBonus
 
         return [
@@ -409,7 +412,10 @@ export default [
     },
 
     creatureTypeIdList: [CREATURE_TYPE_UNDEAD],
-    source: 'MM:99',
+    source: {
+      id: 'MM',
+      page: 99,
+    },
     description: [
       {
         header: 'Шаблон драколича',
@@ -432,9 +438,9 @@ export default [
     ],
 
     editPropCollection: {
-      name: ({name}) => name.replace('дракон', 'драколич'),
-      featureList: ({featureList = []}) => featureList.filter(
-        ({name}) => name !== 'Амфибия'
+      name: ({ name }) => name.replace('дракон', 'драколич'),
+      featureList: ({ featureList = [] }) => featureList.filter(
+        ({ name }) => name !== 'Амфибия',
       ),
     },
 
@@ -515,7 +521,10 @@ export default [
       },
     },
 
-    source: 'MM:100',
+    source: {
+      id: 'MM',
+      page: 100,
+    },
     description: [
       {
         header: 'Шаблон теневого дракона',
@@ -540,11 +549,11 @@ export default [
     ],
 
     editPropCollection: {
-      name: ({name}) => name.includes('Вирмлинг')
+      name: ({ name }) => name.includes('Вирмлинг')
         ? name.replace('Вирмлинг', 'Теневой вирмлинг')
         : name.replace('дракон', 'теневой дракон'),
-      skillCollection: ({skillCollection, cr, params}) => {
-        const {profBonus} = dndCrCollection[cr]
+      skillCollection: ({ skillCollection, cr, params }) => {
+        const { profBonus } = dndCrCollection[cr]
         const dexBonus = calcParamBonus(params[PARAM_DEX])
 
         return {
@@ -552,7 +561,7 @@ export default [
           [SKILL_STEALTH]: dexBonus + profBonus * 2,
         }
       },
-      actionList: ({actionList}) => actionList.map(
+      actionList: ({ actionList }) => actionList.map(
         action => {
           if (action.name === 'Укус') {
             const hit = arrify(action.attack.hit)
@@ -577,8 +586,8 @@ export default [
                       }
 
                       return item
-                    }
-                  )
+                    },
+                  ),
               )
 
             return {
@@ -594,11 +603,11 @@ export default [
             const changedDescription = action.description
               .replace(
                 /(огонь)|(волну ледяного воздуха)|(молнию)|(кислоту)|(ядовитый газ)/g,
-                'некротическую энергию'
+                'некротическую энергию',
               )
               .replace(
                 /(огнём)|(холодом)|(электричеством)|(кислотой)|(ядом)/g,
-                'некротической энергией'
+                'некротической энергией',
               )
             const description = generateTextLinks(`${changedDescription}. Гуманоид, хиты которого уменьшились до 0 от этого урона, умирает, и из его трупа выходит [тень](CREATURE:shadow) — нежить, действующая сразу после дракона по инициативе. Эта тень находится под контролем дракона.`)
 
@@ -610,7 +619,7 @@ export default [
           }
 
           return action
-        }
+        },
       ),
     },
 
@@ -654,7 +663,10 @@ export default [
     },
 
     aligmentId: ALIGMENT_NOT_LN,
-    source: 'MM:212',
+    source: {
+      id: 'MM',
+      page: 212,
+    },
     description: [
       {
         header: 'Вариант: Модроны-ренегаты',
@@ -664,9 +676,9 @@ export default [
     ],
 
     editPropCollection: {
-      name: ({name}) => `${name}-ренегат`,
-      featureList: ({featureList}) => featureList.filter(
-        ({name}) => name !== 'Косное сознание'
+      name: ({ name }) => `${name}-ренегат`,
+      featureList: ({ featureList }) => featureList.filter(
+        ({ name }) => name !== 'Косное сознание',
       ),
     },
   },

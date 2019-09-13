@@ -36,7 +36,7 @@ const DndCreatureFilterListComponent = ({filterCollection, ...rest}) => {
                   list.map(
                     filterName => (
                       <li
-                        className='DndCreatureFilterList_blockItem'
+                        className={`DndCreatureFilterList_blockItem DndCreatureFilterList_blockItem-${type}`}
                         key={filterName}
                       >
                         <DndCreatureFilter

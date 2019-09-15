@@ -3,8 +3,11 @@ import dndSizeList from '@/constants/dnd/dndSizeList';
 import dndAligmentList from '@/constants/dnd/dndAligmentList';
 import dndLanguageList from '@/constants/dnd/dndLanguageList';
 import dndCreatureTypeList from '@/constants/dnd/dndCreatureTypeList';
+import dndDamageTypeList from '@/constants/dnd/dndDamageTypeList';
 import SEARCH_PROP_NAME from '@/constants/SEARCH_PROP_NAME';
 import { GENDER_MALE } from '@/constants/genderList';
+
+const sortByText = ({ text: A }, { text: B }) => A > B ? 1: -1
 
 export default {
   [SEARCH_PROP_NAME]: {
@@ -59,9 +62,7 @@ export default {
         .map(
           ({ name: {nominative: text}, id, children }) => ({ value: [id, ...children], text })
         )
-        .sort(
-          ({ text: A }, { text: B }) => A > B ? 1: -1
-        )
+        .sort(sortByText)
     ]
   },
   creatureTypeIdList: {
@@ -80,6 +81,7 @@ export default {
         .map(
           ({ name: {singular: {nominative: text}}, id: value }) => ({ value, text })
         )
+        .sort(sortByText)
     ]
   },
   languageList: {
@@ -98,9 +100,39 @@ export default {
         .map(
           ({ name: {nominative: text}, id: value }) => ({ value, text })
         )
-        .sort(
-          ({ text: A }, { text: B }) => A > B ? 1: -1
-        )
+        .sort(sortByText)
     ]
+  },
+  resistanceList: {
+    label: 'Сопротивление',
+    type: 'select',
+    value: '',
+    list: [
+      {
+        value: '',
+        text: 'Любое'
+      },
+      ...dndDamageTypeList
+        .map(
+          ({ fullName, id: value }) => ({ value, text: fullName })
+        )
+        .sort(sortByText)
+    ],
+  },
+  immunityList: {
+    label: 'Иммунитет',
+    type: 'select',
+    value: '',
+    list: [
+      {
+        value: '',
+        text: 'Любой'
+      },
+      ...dndDamageTypeList
+        .map(
+          ({ fullName, id: value }) => ({ value, text: fullName })
+        )
+        .sort(sortByText)
+    ],
   },
 };

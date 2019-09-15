@@ -1,1 +1,1 @@
-export default from './DndCreatureFilterComponent'
+export default from './DndCreatureFilterContainer'

@@ -76,8 +76,8 @@ class DndCreatureCatalogContainer extends Component {
                 return list.filter(
                   item => {
                     const propToCheck = type === 'input'
-                      ? item[filterName]
-                      : arrify(item[filterName]);
+                      ? prepareForSearch(item[filterName])
+                      : arrify(item[filterName]).map(prepareForSearch);
 
                     return arrify(value).some(
                       valueItem => !valueItem || propToCheck.includes(prepareForSearch(valueItem))

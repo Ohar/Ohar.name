@@ -57,7 +57,7 @@ export default {
           ({ showInList }) => showInList
         )
         .map(
-          ({ name: {nominative: text}, id: value }) => ({ value, text })
+          ({ name: {nominative: text}, id, children }) => ({ value: [id, ...children], text })
         )
         .sort(
           ({ text: A }, { text: B }) => A > B ? 1: -1

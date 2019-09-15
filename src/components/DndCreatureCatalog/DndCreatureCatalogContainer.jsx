@@ -79,7 +79,9 @@ class DndCreatureCatalogContainer extends Component {
                       ? item[filterName]
                       : arrify(item[filterName]);
 
-                    return propToCheck.includes(prepareForSearch(value));
+                    return arrify(value).some(
+                      valueItem => !valueItem || propToCheck.includes(prepareForSearch(valueItem))
+                    )
                   }
                 )
               }

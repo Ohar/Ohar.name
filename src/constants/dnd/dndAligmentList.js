@@ -409,9 +409,6 @@ const dndAligmentList = dndAligmentRawList.reduce(
   []
 )
 
-console.log('dndAligmentRawList', dndAligmentRawList);
-console.log('dndAligmentList', dndAligmentList);
-
 module.exports = dndAligmentList
 
 module.exports.dndAligmentCollection = listToCollectionById(dndAligmentList)

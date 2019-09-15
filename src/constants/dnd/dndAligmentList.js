@@ -23,7 +23,7 @@ const ALIGMENT_LE = 'le'
 const ALIGMENT_NE = 'ne'
 const ALIGMENT_CE = 'ce'
 
-const dndAligmentList = [
+const dndAligmentRawList = [
   {
     id: ALIGMENT_NO,
     showInList: true,
@@ -379,6 +379,38 @@ const dndAligmentList = [
     ],
   },
 ]
+
+const dndAligmentRawCollection = listToCollectionById(dndAligmentRawList)
+
+function concatChildAligmentIds (aligment) {
+  const { children } = aligment
+
+  if (children && children.length) {
+    return children.reduce(
+      (list, id) => [
+        ...list,
+        ...concatChildAligmentIds(dndAligmentRawCollection[id]),
+      ],
+      children
+    )
+  }
+
+  return []
+}
+
+const dndAligmentList = dndAligmentRawList.reduce(
+  (list, aligment) => [
+    ...list,
+    {
+      ...aligment,
+      children: concatChildAligmentIds(aligment),
+    },
+  ],
+  []
+)
+
+console.log('dndAligmentRawList', dndAligmentRawList);
+console.log('dndAligmentList', dndAligmentList);
 
 module.exports = dndAligmentList
 

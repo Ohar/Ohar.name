@@ -60,21 +60,24 @@ const DndAbilityListComponent = (
           spellCastTogether,
         ]
           .map(
-            item => (
+            (item, i) => (
               item && (
-                <DndAbility header={
-                  (
-                    item.title || (
-                      item.spellCasterLevel
-                        ? 'Использование заклинаний'
-                        : 'Врождённое колдовство'
+                <DndAbility
+                  key={i}
+                  header={
+                    (
+                      item.title || (
+                        item.spellCasterLevel
+                          ? 'Использование заклинаний'
+                          : 'Врождённое колдовство'
+                      )
+                    ) + (
+                      item.comment
+                        ? ` (${item.comment})`
+                        : ''
                     )
-                  ) + (
-                    item.comment
-                      ? ` (${item.comment})`
-                      : ''
-                  )
-                }>
+                  }
+                >
                   {formatSpellCastDescription({spellCast: item, isFemale, name})}
                 </DndAbility>
               )

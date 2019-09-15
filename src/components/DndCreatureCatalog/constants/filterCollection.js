@@ -4,6 +4,7 @@ import dndAligmentList from '@/constants/dnd/dndAligmentList';
 import dndLanguageList from '@/constants/dnd/dndLanguageList';
 import dndCreatureTypeList from '@/constants/dnd/dndCreatureTypeList';
 import dndDamageTypeList from '@/constants/dnd/dndDamageTypeList';
+import dndConditionList from '@/constants/dnd/dndConditionList';
 import SEARCH_PROP_NAME from '@/constants/SEARCH_PROP_NAME';
 import { GENDER_MALE } from '@/constants/genderList';
 
@@ -131,6 +132,22 @@ export default {
       ...dndDamageTypeList
         .map(
           ({ fullName, id: value }) => ({ value, text: fullName })
+        )
+        .sort(sortByText)
+    ],
+  },
+  immunityConditionList: {
+    label: 'Иммунитет к состоянию',
+    type: 'select',
+    value: '',
+    list: [
+      {
+        value: '',
+        text: 'Любой'
+      },
+      ...dndConditionList
+        .map(
+          ({ name, id: value }) => ({ value, text: name })
         )
         .sort(sortByText)
     ],

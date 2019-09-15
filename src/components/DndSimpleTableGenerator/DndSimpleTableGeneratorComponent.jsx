@@ -7,16 +7,18 @@ import './DndSimpleTableGenerator.css'
 
 const DndSimpleTableGeneratorComponent = (
   {
-    title,
+    children,
     diceRollList,
     generate,
     rollCount,
     rollCountMax,
+    title,
     updateRollCount,
   }
 ) => (
   <section className='DndSimpleTableGenerator'>
     <PageTitle>{title}</PageTitle>
+    {children || null}
     <label className='DndSimpleTableGenerator_label'>
       <p>Сгенерировать раз: {rollCount}</p>
       <input

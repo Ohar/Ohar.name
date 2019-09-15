@@ -22,6 +22,7 @@ const DndCreatureDescriptionListComponent = ({description}) => (
 DndCreatureDescriptionListComponent.propTypes = {
   description: PropTypes.oneOfType([
     PropTypes.array,
+    PropTypes.object,
     PropTypes.string,
   ]),
 }

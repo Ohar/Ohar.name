@@ -158,7 +158,11 @@ DndCreatureStatsComponent.propTypes = {
     senseList: PropTypes.array,
     sizeType: PropTypes.string.isRequired,
     skillCollection: PropTypes.object,
-    source: PropTypes.string.isRequired,
+    source: PropTypes.PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.array,
+      PropTypes.object,
+    ]).isRequired,
     speed: PropTypes.object.isRequired,
     spellCast: PropTypes.object,
     spellCastTogether: PropTypes.object,

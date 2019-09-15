@@ -12,8 +12,9 @@ const DndSourceInfoContainer = ({ source, useFullName }) => (
       arrify(source)
         .filter(e => e)
         .map(
-          sourceItem => {
+          (sourceItem) => {
             if (sourceItem) {
+              const key = sourceItem.id || sourceItem.url || sourceItem
               let url = ''
               let title = ''
               let text = ''
@@ -21,7 +22,6 @@ const DndSourceInfoContainer = ({ source, useFullName }) => (
               if (typeof sourceItem === 'string' || (sourceItem.id && sourceItem.page)) {
                 let page = ''
                 let manualId = null
-                let manual = null
 
                 if (typeof sourceItem === 'string') {
                   const [idItem, ...rest] = sourceItem.split(':')
@@ -60,6 +60,7 @@ const DndSourceInfoContainer = ({ source, useFullName }) => (
 
               return (
                 <DndSourceInfoComponent
+                  key={key}
                   url={url}
                   title={title}
                   text={text}
@@ -76,9 +77,14 @@ const DndSourceInfoContainer = ({ source, useFullName }) => (
 DndSourceInfoContainer.propTypes = {
   source: PropTypes.oneOfType([
     PropTypes.string.isRequired,
+    PropTypes.array.isRequired,
     PropTypes.shape({
-      url: PropTypes.string.isRequired,
+      url: PropTypes.string,
       problemText: PropTypes.string,
+    }),
+    PropTypes.shape({
+      id: PropTypes.string,
+      page: PropTypes.number,
     }),
   ]).isRequired,
   useFullName: PropTypes.bool,

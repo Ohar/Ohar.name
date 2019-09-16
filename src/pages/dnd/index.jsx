@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "gatsby"
 
 import {
   faAngry,
@@ -12,9 +11,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '@/components/Layout'
-import Icon from '@/components/Icon'
 import PageTitle from '@/components/PageTitle'
 import Seo from '@/components/Seo'
+import DndSubpageList from '@/components/DndSubpageList'
 
 const dndSubpageList = [
   {
@@ -70,20 +69,7 @@ const DndPage = () => (
       ]}
     />
     <PageTitle>Генераторы для Dungeons & Dragons</PageTitle>
-    <ul>
-      {
-        dndSubpageList.map(
-          ({title, url, icon}) => (
-            <li key={url}>
-              <Link to={url}>
-                <Icon icon={icon}/>
-                {title}
-              </Link>
-            </li>
-          )
-        )
-      }
-    </ul>
+    <DndSubpageList list={dndSubpageList}/>
   </Layout>
 )
 

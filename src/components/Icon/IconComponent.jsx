@@ -5,11 +5,11 @@ import './IconStyles.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const IconComponent = ({icon}) => icon
+const IconComponent = ({icon, className = ''}) => icon
   ? (
     typeof icon === 'string'
-      ? <span className={`${icon} Icon`}/>
-      : <FontAwesomeIcon icon={icon} className='Icon'/>
+      ? <span className={`${icon} Icon ${className}`}/>
+      : <FontAwesomeIcon icon={icon} className={`Icon ${className}`}/>
   )
   : null
 

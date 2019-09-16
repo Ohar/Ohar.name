@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react"
+import PropTypes from 'prop-types'
 
 import calcListProbabilitySumm from '@/utils/calcListProbabilitySumm'
 import listToCollectionById from '@/utils/listToCollectionById'
@@ -88,6 +89,14 @@ class DndSimpleTableGeneratorContainer extends PureComponent {
       />
     )
   }
+}
+
+DndSimpleTableGeneratorContainer.defaultProps = {
+  list: [],
+}
+
+DndSimpleTableGeneratorContainer.propTypes = {
+  list: PropTypes.array,
 }
 
 export default DndSimpleTableGeneratorContainer

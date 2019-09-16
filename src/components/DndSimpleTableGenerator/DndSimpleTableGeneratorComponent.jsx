@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import BtnGenerate from "@/components/BtnGenerate"
 import PageTitle from "@/components/PageTitle"
@@ -61,5 +62,19 @@ const DndSimpleTableGeneratorComponent = (
     </table>
   </section>
 )
+
+DndSimpleTableGeneratorComponent.defaultProps = {
+  children: null,
+}
+
+DndSimpleTableGeneratorComponent.propTypes = {
+  children: PropTypes.any,
+  diceRollList: PropTypes.array.isRequired,
+  generate: PropTypes.func.isRequired,
+  rollCount: PropTypes.number.isRequired,
+  rollCountMax: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  updateRollCount: PropTypes.func.isRequired,
+}
 
 export default DndSimpleTableGeneratorComponent

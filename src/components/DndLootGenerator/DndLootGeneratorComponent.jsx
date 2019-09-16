@@ -4,13 +4,12 @@ import DndSimpleTableGenerator from '@/components/DndSimpleTableGenerator'
 
 import RadioSet from "@/components/RadioSet"
 
-import {tierCollection} from './constants/tierList'
 import tierFieldList from './constants/tierFieldList'
 
-const DndLootGeneratorComponent = ({tier, onChangeTier}) => (
+const DndLootGeneratorComponent = ({tier, list, onChangeTier}) => (
   <DndSimpleTableGenerator
     title='Индивидуальные сокровища'
-    list={tierCollection[tier].list}
+    list={list}
     showDiceRolls={false}
     showRowNumber={true}
   >

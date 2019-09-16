@@ -1,15 +1,11 @@
 import React from 'react'
 
 import {
-  dndMonetCollection,
-  MONET_COPPER,
   MONET_ELECTRUM,
   MONET_GOLD,
   MONET_PLATINUM,
   MONET_SILVER,
 } from '@/constants/dnd/dndMonetTypeList'
-
-import addGenerateDescription from './../utils/addGenerateDescription'
 
 export default [
   {
@@ -101,4 +97,3 @@ export default [
     ],
   },
 ]
-  .map(addGenerateDescription)

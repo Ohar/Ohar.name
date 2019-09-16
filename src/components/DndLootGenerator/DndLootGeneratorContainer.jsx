@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import tierList from './constants/tierList'
+import tierList, {tierCollection} from './constants/tierList'
 
 import DndLootGeneratorComponent from './DndLootGeneratorComponent'
 
@@ -15,10 +15,12 @@ class DndLootGeneratorContainer extends Component {
 
   render () {
     const {tier} = this.state
+    const {list} = tierCollection[tier]
 
     return (
       <DndLootGeneratorComponent
         tier={tier}
+        list={list}
         onChangeTier={this.onChangeTier}
       />
     )

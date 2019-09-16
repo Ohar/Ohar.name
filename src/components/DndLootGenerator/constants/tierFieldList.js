@@ -1,7 +1,5 @@
 import tierList from './tierList'
 
-const tierFieldList = tierList.map(
+export default tierList.map(
   ({id: value, name: text}) => ({text, value})
 )
-
-export default tierFieldList

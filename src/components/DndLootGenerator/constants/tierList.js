@@ -1,5 +1,7 @@
 import listToCollectionById from '@/utils/listToCollectionById'
 
+import addGenerateDescription from './../utils/addGenerateDescription'
+
 import listTier1 from './listTier1'
 import listTier2 from './listTier2'
 import listTier3 from './listTier3'
@@ -27,6 +29,12 @@ const tierList = [
     list: listTier4,
   },
 ]
+  .map(
+    ({list, ...rest}) => ({
+      ...rest,
+      list: list.map(addGenerateDescription)
+    })
+  )
 
 export const tierCollection = listToCollectionById(tierList)
 

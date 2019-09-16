@@ -40,13 +40,11 @@ export default ({ list, ...rest }) => ({
       costItems -= lootCost
     }
 
-    console.log('cost', cost)
-
     return (
-      <>
+      <ol>
         <MonetList list={monetList}/>
         <LootList list={_.uniq(lootIdList)}/>
-      </>
+      </ol>
     )
   },
 })

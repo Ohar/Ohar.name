@@ -6,7 +6,7 @@ import './LootListStyles.less'
 
 const LootList = ({ list }) => list && list.length
   ? (
-    <ul className='LootList'>
+    <>
       {list.map(
         id => (
           <li
@@ -17,7 +17,7 @@ const LootList = ({ list }) => list && list.length
           </li>
         ),
       )}
-    </ul>
+    </>
   )
   : null
 

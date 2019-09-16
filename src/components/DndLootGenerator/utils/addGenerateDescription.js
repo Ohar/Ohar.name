@@ -29,15 +29,21 @@ export default ({ list, ...rest }) => ({
 
     const countItemToCheck = generateItemCountToCheck()
 
-    for (let i = 1; i < countItemToCheck; i++) {
-      const { id, cost: lootCost } = _.sample(dndLootList)
+    for (let i = 1; i <= countItemToCheck; i++) {
+      const loot = _.sample(
+        dndLootList.filter(
+          item => item.cost <= costItems,
+        ),
+      )
 
-      if (lootCost > cost) {
+      if (loot) {
+        const { id, cost: lootCost } = loot
+
+        lootIdList.push(id)
+        costItems -= lootCost
+      } else {
         break
       }
-
-      lootIdList.push(id)
-      costItems -= lootCost
     }
 
     return (

@@ -1,1 +1,1 @@
-export default from './DndCreatureDescriptionListComponent'
+export default from './DndCreatureDescriptionListContainer'

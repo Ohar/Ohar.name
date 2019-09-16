@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 import DndCreatureDescription from './../DndCreatureDescription'
-import arrify from 'arrify';
 
-const DndCreatureDescriptionListComponent = ({description}) => (
+const DndCreatureDescriptionListComponent = ({list}) => (
   <>
     {
-      arrify(description).map(
+      list.map(
         (item, i) => (
           <DndCreatureDescription
             key={i}

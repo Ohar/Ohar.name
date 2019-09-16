@@ -1,7 +1,15 @@
 import React from 'react'
 import { Link } from "gatsby"
 
-import { faAngry, faDice, faMagic, faSkull, faUserTag, faBookOpen } from '@fortawesome/free-solid-svg-icons'
+import {
+  faAngry,
+  faBookOpen,
+  faDice,
+  faGem,
+  faMagic,
+  faSkull,
+  faUserTag,
+} from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '@/components/Layout'
 import Icon from '@/components/Icon'
@@ -43,6 +51,11 @@ const dndSubpageList = [
     icon: faBookOpen,
     title: 'Каталог существ (в разработке)',
     url: '/dnd/creature-catalog',
+  },
+  {
+    icon: faGem,
+    title: 'Генератор лута',
+    url: '/dnd/generator-loot',
   },
 ]
 

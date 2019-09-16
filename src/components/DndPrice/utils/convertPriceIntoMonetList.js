@@ -1,4 +1,4 @@
-import {goldType, silverType, copperType} from '@/components/DndMonet'
+import {MONET_GOLD, MONET_SILVER, MONET_COPPER} from '@/components/DndMonet'
 
 const GOLD_KOEF = 100
 const SILVER_KOEF = 10
@@ -18,15 +18,15 @@ const convertPriceIntoMonetList = price => {
 
     return [
         {
-            type: goldType,
+            type: MONET_GOLD,
             monet: gold,
         },
         {
-            type: silverType,
+            type: MONET_SILVER,
             monet: silver,
         },
         {
-            type: copperType,
+            type: MONET_COPPER,
             monet: copper,
         },
     ]

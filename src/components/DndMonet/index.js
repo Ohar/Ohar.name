@@ -1,3 +1,3 @@
 export default from './DndMonetComponent'
 
-export {copperType, silverType, goldType} from './constants/monetTypes'
+export {MONET_COPPER, MONET_SILVER, MONET_GOLD} from './constants/monetTypes'

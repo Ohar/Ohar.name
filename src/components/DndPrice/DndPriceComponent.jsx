@@ -1,31 +1,31 @@
 import React from 'react'
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 
-import DndMonet, {copperType, goldType, silverType} from '@/components/DndMonet'
+import DndMonet from '@/components/DndMonet'
 
-const DndPriceComponent = ({monetList}) => (
-    <section className='DndPrice'>
-        {
-            monetList.map(
-                ({type, monet}, i) => monet
-                    ? (
-                        <DndMonet
-                            key={i}
-                            count={monet}
-                            type={type}
-                        />
-                    )
-                    : null
-            )
-        }
-    </section>
+const DndPriceComponent = ({ monetList }) => (
+  <section className='DndPrice'>
+    {
+      monetList
+        .filter(({ monet }) => monet)
+        .map(
+          ({ type, monet }, i) => (
+            <DndMonet
+              key={i}
+              count={monet}
+              type={type}
+            />
+          )
+        )
+    }
+  </section>
 )
 
 DndPriceComponent.propTypes = {
-    monetList: PropTypes.arrayOf(PropTypes.shape({
-        type: PropTypes.string,
-        monet: PropTypes.number,
-    })).isRequired,
+  monetList: PropTypes.arrayOf(PropTypes.shape({
+    type: PropTypes.string,
+    monet: PropTypes.number,
+  })).isRequired,
 }
 
 export default DndPriceComponent

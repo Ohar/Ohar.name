@@ -1,3 +1,5 @@
-export const copperType = 'copper'
-export const silverType = 'silver'
-export const goldType = 'gold'
+export const MONET_COPPER = 'copper'
+export const MONET_ELECTRUM = 'electrum'
+export const MONET_GOLD = 'gold'
+export const MONET_PLATINUM = 'platinum'
+export const MONET_SILVER = 'silver'

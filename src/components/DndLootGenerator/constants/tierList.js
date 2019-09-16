@@ -28,8 +28,6 @@ const tierList = [
   },
 ]
 
-console.log('tierList', tierList);
-
 export const tierCollection = listToCollectionById(tierList)
 
 export default tierList

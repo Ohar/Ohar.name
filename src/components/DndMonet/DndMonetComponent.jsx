@@ -1,11 +1,14 @@
 import React from 'react'
 
-import './DndMonetStyles.css'
+import './DndMonetStyles.less'
 
-const DndMonetComponent = ({count, type}) => (
-    <span className={`DndMonet DndMonet-${type}`}>
-        {count}
-    </span>
+const DndMonetComponent = ({ title, type, text }) => (
+  <span
+    className={`DndMonet DndMonet-${type}`}
+    title={title}
+  >
+    {text}
+  </span>
 )
 
 export default DndMonetComponent

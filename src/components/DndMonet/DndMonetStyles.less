@@ -1,0 +1,36 @@
+.DndMonet {
+    white-space: nowrap;
+
+    & + & {
+        margin-left: .4rem;
+    }
+
+    &:before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        border-radius: 100%;
+        margin-right: .2rem;
+    }
+
+    &-platinum:before {
+        background-color: grey;
+    }
+
+    &-gold:before {
+        background-color: gold;
+    }
+
+    &-electrum:before {
+        background-color: lemonchiffon;
+    }
+
+    &-silver:before {
+        background-color: silver;
+    }
+
+    &-copper:before {
+        background-color: chocolate;
+    }
+}

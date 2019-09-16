@@ -1,4 +1,4 @@
-import {MONET_GOLD, MONET_SILVER, MONET_COPPER} from '@/components/DndMonet'
+import {MONET_GOLD, MONET_SILVER, MONET_COPPER} from '@/constants/dnd/dndMonetTypeList'
 
 const GOLD_KOEF = 100
 const SILVER_KOEF = 10

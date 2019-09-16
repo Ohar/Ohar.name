@@ -52,20 +52,29 @@ class DndSimpleTableGeneratorContainer extends PureComponent {
   generate = () => {
     let {rollCount} = this.state
     const {collection, idListToPick, probabilitySumm} = this.state
+    const {emptyKoef} = this.props
 
     const makeRoll = rollDice(probabilitySumm)
     const diceRollList = []
 
     while (rollCount) {
-      const diceRoll = makeRoll()
-      const treasureId = idListToPick[diceRoll]
-      const treasureObj = collection[treasureId]
-      const treasure = treasureObj.description
-        ? treasureObj
-        : {
-          ...treasureObj,
-          description: treasureObj.generateDescription()
-        }
+      let diceRoll = ' — '
+      let treasure = {
+        id: 'empty',
+        description: ' — ',
+      }
+
+      if (Math.random() >= emptyKoef) {
+        diceRoll = makeRoll()
+        const treasureId = idListToPick[diceRoll]
+        const treasureObj = collection[treasureId]
+        treasure = treasureObj.description
+          ? treasureObj
+          : {
+            ...treasureObj,
+            description: treasureObj.generateDescription()
+          }
+      }
 
       diceRollList.push({
         diceRoll,
@@ -93,10 +102,12 @@ class DndSimpleTableGeneratorContainer extends PureComponent {
 
 DndSimpleTableGeneratorContainer.defaultProps = {
   list: [],
+  emptyKoef: 0,
 }
 
 DndSimpleTableGeneratorContainer.propTypes = {
   list: PropTypes.array,
+  emptyKoef: PropTypes.number,
 }
 
 export default DndSimpleTableGeneratorContainer

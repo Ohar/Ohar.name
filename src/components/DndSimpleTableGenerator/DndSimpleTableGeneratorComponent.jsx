@@ -82,7 +82,7 @@ const DndSimpleTableGeneratorComponent = (
         diceRollList.map(
           ({diceRoll, treasure: {id, description}}, i) => (
             <tr
-              className='DndSimpleTableGenerator_row'
+              className={`DndSimpleTableGenerator_row DndSimpleTableGenerator_row-${id}`}
               key={`${i}_${diceRoll}_${id}`}
             >
               {
@@ -92,7 +92,11 @@ const DndSimpleTableGeneratorComponent = (
               }
               {
                 showRowNumber
-                  ? <td className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-rowNum'>{i}</td>
+                  ? (
+                    <td className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-rowNum'>
+                      {i + 1}
+                    </td>
+                  )
                   : null
               }
               <td className='DndSimpleTableGenerator_cell'>{description}</td>

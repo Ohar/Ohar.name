@@ -1,25 +1,38 @@
 .DndSimpleTableGenerator_cell {
-    padding: .4rem;
-    border: 1px solid #fff;
+  padding: .4rem;
+  border: 1px solid #fff;
 
-    &-rowNum {
-        font-size: 1.2em;
-    }
+  &-rowNum {
+    font-size: 1.2em;
+    text-align: center;
+  }
 }
 
 .DndSimpleTableGenerator_controls {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  & > * {
+    margin-right: 2rem;
+  }
 }
 
 .DndSimpleTableGenerator_label {
-    margin-right: 2rem;
+  margin-right: 2rem;
 }
 
 .DndSimpleTableGenerator_btnGenerate {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
+  padding: .4rem .8rem;
 }
 
 .DndSimpleTableGenerator_table {
-    margin-top: 1rem;
+  margin: 1rem;
+}
+
+.DndSimpleTableGenerator_row {
+  &-empty {
+    text-align: center;
+  }
 }

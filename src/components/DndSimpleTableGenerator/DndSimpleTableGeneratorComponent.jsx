@@ -13,9 +13,10 @@ const DndSimpleTableGeneratorComponent = (
     generate,
     rollCount,
     rollCountMax,
+    showDiceRolls,
+    showTableHeader,
     title,
     updateRollCount,
-    showDiceRolls,
   }
 ) => (
   <section className='DndSimpleTableGenerator'>
@@ -39,16 +40,29 @@ const DndSimpleTableGeneratorComponent = (
     />
 
     <table className='DndSimpleTableGenerator_table'>
-      <thead className='DndSimpleTableGenerator_thead'>
-      <tr className='DndSimpleTableGenerator_row'>
-        {
-          showDiceRolls
-            ? <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>Бросок к100</th>
-            : null
-        }
-        <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>Результат</th>
-      </tr>
-      </thead>
+      {
+        showTableHeader
+          ? (
+            <thead className='DndSimpleTableGenerator_thead'>
+            <tr className='DndSimpleTableGenerator_row'>
+              {
+                showDiceRolls
+                  ? (
+                    <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>
+                      Бросок к100
+                    </th>
+                  )
+                  : null
+              }
+              <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>
+                Результат
+              </th>
+            </tr>
+            </thead>
+          )
+          : null
+      }
+
       <tbody>
       {
         diceRollList.map(
@@ -75,15 +89,17 @@ const DndSimpleTableGeneratorComponent = (
 DndSimpleTableGeneratorComponent.defaultProps = {
   children: null,
   showDiceRolls: true,
+  showTableHeader: true,
 }
 
 DndSimpleTableGeneratorComponent.propTypes = {
-  showDiceRolls: PropTypes.bool,
   children: PropTypes.any,
   diceRollList: PropTypes.array.isRequired,
   generate: PropTypes.func.isRequired,
   rollCount: PropTypes.number.isRequired,
   rollCountMax: PropTypes.number.isRequired,
+  showDiceRolls: PropTypes.bool,
+  showTableHeader: PropTypes.bool,
   title: PropTypes.string.isRequired,
   updateRollCount: PropTypes.func.isRequired,
 }

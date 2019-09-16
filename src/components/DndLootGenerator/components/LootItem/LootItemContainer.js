@@ -1,19 +1,29 @@
 import React from 'react'
-import { dndLootCollection } from '@/constants/dnd/dndLootList'
+
+import {dndLootCollection} from '@/constants/dnd/dndLootList'
+import {dndLootTypeCollection} from '@/constants/dnd/dndLootTypeList'
 
 import LootItemComponent from './LootItemComponent'
 
 const LootItemContainer = ({ id }) => {
-  const { name, description, cost } = dndLootCollection[id]
+  const { name, description, cost, type } = dndLootCollection[id]
+  const {icon, name: typeName} = dndLootTypeCollection[type]
+  const nameText = `${name} (${typeName})`
+
   const title = description
-    ? `${name}\n\n${description}`
-    : null
+    ? `${nameText}\n\n${description}`
+    : nameText
+
+  const text = description
+    ? `${name}, ${description}`
+    : name
 
   return (
     <LootItemComponent
-      text={name}
-      title={title}
       cost={cost}
+      icon={icon}
+      text={text}
+      title={title}
     />
   )
 }

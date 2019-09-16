@@ -1,8 +1,5 @@
 import listToCollectionById from '@/utils/listToCollectionById'
-
-export const LOOT_TYPE_ART = 'art'
-export const LOOT_TYPE_GEM = 'gem'
-export const LOOT_TYPE_TRINKET = 'trinket'
+import {LOOT_TYPE_ART, LOOT_TYPE_TRINKET, LOOT_TYPE_GEM} from '@/constants/dnd/dndLootTypeList'
 
 const dndLootList = [
   {

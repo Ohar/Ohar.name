@@ -4,7 +4,7 @@ import DndPrice from '@/components/DndPrice'
 
 import Icon from '@/components/Icon'
 
-const LootItem = ({ text, title, cost, icon }) => (
+const LootItem = ({ name, description, title, cost, icon }) => (
   <span
     title={title}
     className='LootItem'
@@ -14,7 +14,9 @@ const LootItem = ({ text, title, cost, icon }) => (
         ? <Icon icon={icon}/>
         : null
     }
-    {text} (<DndPrice price={cost}/>)
+    <b>{name}</b>{description ? ', ' : ' '}
+    {`${description} `}
+    (<DndPrice price={cost}/>)
   </span>
 )
 

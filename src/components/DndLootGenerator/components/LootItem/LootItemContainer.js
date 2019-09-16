@@ -14,15 +14,12 @@ const LootItemContainer = ({ id }) => {
     ? `${nameText}\n\n${description}`
     : nameText
 
-  const text = description
-    ? `${name}, ${description}`
-    : name
-
   return (
     <LootItemComponent
       cost={cost}
       icon={icon}
-      text={text}
+      name={name}
+      description={description}
       title={title}
     />
   )

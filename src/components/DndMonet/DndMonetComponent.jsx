@@ -11,7 +11,7 @@ const DndMonetComponent = ({ title, type, text, src, alt }) => (
     <img
       className='DndMonet_image'
       src={src}
-      alt={alt}
+      alt={` ${alt}`}
     />
   </span>
 )

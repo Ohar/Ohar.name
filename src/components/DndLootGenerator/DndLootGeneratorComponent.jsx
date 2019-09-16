@@ -12,7 +12,7 @@ const DndLootGeneratorComponent = ({tier, onChangeTier}) => (
     title='Индивидуальные сокровища'
     list={tierCollection[tier].list}
     showDiceRolls={false}
-    showTableHeader={false}
+    showRowNumber={true}
   >
     <RadioSet
       chosen={tier}

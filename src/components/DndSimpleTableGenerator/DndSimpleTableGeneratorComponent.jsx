@@ -31,7 +31,10 @@ const DndSimpleTableGeneratorComponent = (
       />
     </label>
 
-    <BtnGenerate onClick={generate}/>
+    <BtnGenerate
+      onClick={generate}
+      className='DndSimpleTableGenerator_btnGenerate'
+    />
 
     <table className='DndSimpleTableGenerator_table'>
       <thead className='DndSimpleTableGenerator_thead'>

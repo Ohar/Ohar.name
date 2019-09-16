@@ -8,5 +8,9 @@
 }
 
 .DndSimpleTableGenerator_btnGenerate {
-    font-size: 2rem;
+    font-size: 1.6rem;
+}
+
+.DndSimpleTableGenerator_table {
+    margin-top: 1rem;
 }

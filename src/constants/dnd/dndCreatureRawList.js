@@ -7484,6 +7484,9 @@ module.exports = [
       },
     ],
     cr: CR_2,
+    languageList: [
+      LANG_TERRAN,
+    ],
     featureList: [
       {
         name: 'Обманчивая внешность',

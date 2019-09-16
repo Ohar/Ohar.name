@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import DndMonet from '@/components/DndMonet'
 
 const DndPriceComponent = ({ monetList }) => (
-  <section className='DndPrice'>
+  <span className='DndPrice'>
     {
       monetList
         .filter(({ monet }) => monet)
@@ -18,7 +18,7 @@ const DndPriceComponent = ({ monetList }) => (
           )
         )
     }
-  </section>
+  </span>
 )
 
 DndPriceComponent.propTypes = {

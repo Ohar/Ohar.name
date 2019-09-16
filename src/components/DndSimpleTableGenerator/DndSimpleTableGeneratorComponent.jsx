@@ -15,6 +15,7 @@ const DndSimpleTableGeneratorComponent = (
     rollCountMax,
     title,
     updateRollCount,
+    showDiceRolls,
   }
 ) => (
   <section className='DndSimpleTableGenerator'>
@@ -40,7 +41,11 @@ const DndSimpleTableGeneratorComponent = (
     <table className='DndSimpleTableGenerator_table'>
       <thead className='DndSimpleTableGenerator_thead'>
       <tr className='DndSimpleTableGenerator_row'>
-        <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>Бросок к100</th>
+        {
+          showDiceRolls
+            ? <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>Бросок к100</th>
+            : null
+        }
         <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>Результат</th>
       </tr>
       </thead>
@@ -52,7 +57,11 @@ const DndSimpleTableGeneratorComponent = (
               className='DndSimpleTableGenerator_row'
               key={`${i}_${diceRoll}_${id}`}
             >
-              <td className='DndSimpleTableGenerator_cell'>{diceRoll}</td>
+              {
+                showDiceRolls
+                  ? <td className='DndSimpleTableGenerator_cell'>{diceRoll}</td>
+                  : null
+              }
               <td className='DndSimpleTableGenerator_cell'>{description}</td>
             </tr>
           )
@@ -65,9 +74,11 @@ const DndSimpleTableGeneratorComponent = (
 
 DndSimpleTableGeneratorComponent.defaultProps = {
   children: null,
+  showDiceRolls: true,
 }
 
 DndSimpleTableGeneratorComponent.propTypes = {
+  showDiceRolls: PropTypes.bool,
   children: PropTypes.any,
   diceRollList: PropTypes.array.isRequired,
   generate: PropTypes.func.isRequired,

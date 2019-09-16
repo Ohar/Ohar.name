@@ -58,7 +58,13 @@ class DndSimpleTableGeneratorContainer extends PureComponent {
     while (rollCount) {
       const diceRoll = makeRoll()
       const treasureId = idListToPick[diceRoll]
-      const treasure = collection[treasureId]
+      const treasureObj = collection[treasureId]
+      const treasure = treasureObj.description
+        ? treasureObj
+        : {
+          ...treasureObj,
+          description: treasureObj.generateDescription()
+        }
 
       diceRollList.push({
         diceRoll,

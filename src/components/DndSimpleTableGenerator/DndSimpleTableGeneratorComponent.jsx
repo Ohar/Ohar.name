@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import BtnGenerate from "@/components/BtnGenerate"
 import PageTitle from "@/components/PageTitle"
 
-import './DndSimpleTableGenerator.css'
+import './DndSimpleTableGenerator.less'
 
 const DndSimpleTableGeneratorComponent = (
   {
@@ -14,6 +14,7 @@ const DndSimpleTableGeneratorComponent = (
     rollCount,
     rollCountMax,
     showDiceRolls,
+    showRowNumber,
     showTableHeader,
     title,
     updateRollCount,
@@ -54,6 +55,15 @@ const DndSimpleTableGeneratorComponent = (
                   )
                   : null
               }
+              {
+                showRowNumber
+                  ? (
+                    <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>
+                      №
+                    </th>
+                  )
+                  : null
+              }
               <th className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-head'>
                 Результат
               </th>
@@ -76,6 +86,11 @@ const DndSimpleTableGeneratorComponent = (
                   ? <td className='DndSimpleTableGenerator_cell'>{diceRoll}</td>
                   : null
               }
+              {
+                showRowNumber
+                  ? <td className='DndSimpleTableGenerator_cell DndSimpleTableGenerator_cell-rowNum'>{i}</td>
+                  : null
+              }
               <td className='DndSimpleTableGenerator_cell'>{description}</td>
             </tr>
           )
@@ -89,6 +104,7 @@ const DndSimpleTableGeneratorComponent = (
 DndSimpleTableGeneratorComponent.defaultProps = {
   children: null,
   showDiceRolls: true,
+  showRowNumber: false,
   showTableHeader: true,
 }
 
@@ -99,6 +115,7 @@ DndSimpleTableGeneratorComponent.propTypes = {
   rollCount: PropTypes.number.isRequired,
   rollCountMax: PropTypes.number.isRequired,
   showDiceRolls: PropTypes.bool,
+  showRowNumber: PropTypes.bool,
   showTableHeader: PropTypes.bool,
   title: PropTypes.string.isRequired,
   updateRollCount: PropTypes.func.isRequired,

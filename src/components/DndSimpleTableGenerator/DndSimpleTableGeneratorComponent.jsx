@@ -22,23 +22,27 @@ const DndSimpleTableGeneratorComponent = (
 ) => (
   <section className='DndSimpleTableGenerator'>
     <PageTitle>{title}</PageTitle>
-    {children || null}
-    <label className='DndSimpleTableGenerator_label'>
-      <p>Сгенерировать раз: {rollCount}</p>
-      <input
-        className='DndSimpleTableGenerator_range'
-        type='range'
-        min='1'
-        max={rollCountMax}
-        value={rollCount}
-        onChange={updateRollCount}
-      />
-    </label>
 
-    <BtnGenerate
-      onClick={generate}
-      className='DndSimpleTableGenerator_btnGenerate'
-    />
+    <div className='DndSimpleTableGenerator_controls'>
+      {children}
+
+      <label className='DndSimpleTableGenerator_label'>
+        <p>Сгенерировать раз: {rollCount}</p>
+        <input
+          className='DndSimpleTableGenerator_range'
+          type='range'
+          min='1'
+          max={rollCountMax}
+          value={rollCount}
+          onChange={updateRollCount}
+        />
+      </label>
+
+      <BtnGenerate
+        onClick={generate}
+        className='DndSimpleTableGenerator_btnGenerate'
+      />
+    </div>
 
     <table className='DndSimpleTableGenerator_table'>
       {

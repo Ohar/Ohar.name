@@ -701,6 +701,7 @@ const {
     CREATURE_YOUNG_GOLD_DRAGON,
     CREATURE_YOUNG_GREEN_DRAGON,
     CREATURE_YOUNG_RED_DRAGON,
+    CREATURE_YOUNG_REMORHAZ,
     CREATURE_YOUNG_SILVER_DRAGON,
     CREATURE_YOUNG_WHITE_DRAGON,
     CREATURE_ZOMBIE,
@@ -31059,6 +31060,92 @@ module.exports = [
         name: `Проглатывание`,
         description: `Ремораз совершает одну атаку укусом по существу с размером не больше Среднего, схваченному им. Если эта атака попадает, существо получает урон от укуса, становится проглоченным и перестаёт быть схваченным. Будучи проглоченным, существо ослеплено и опутано, и обладает полным укрытием от атак и прочих эффектов, исходящих снаружи ремораза, и получает урон кислотой 21 (6к6) в начале каждого хода ремораза.\n
 Если ремораз получает за один ход 30 или больше урона от существа, находящегося внутри, ремораз должен в конце этого хода преуспеть в спасброске Телосложения со Сл 15, иначе отрыгнёт всех проглоченных существ, которые падают ничком в пространстве в пределах 10 футов от ремораза. Если ремораз умирает, проглоченное существо перестаёт быть опутанным им, и может высвободиться из трупа, потратив 15 футов перемещения, падая при выходе ничком. `,
+      },
+    ],
+  },
+  {
+    name: 'Молодой ремораз',
+    nameEn: 'Young remorhaz',
+    id: CREATURE_YOUNG_REMORHAZ,
+    description: remorhazDescription,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 250,
+    },
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 11,
+      cubeType: 10,
+      cubeBonus: 33,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_DIG]: 20,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 17,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 4,
+    },
+    immunityList: [
+      DAMAGE_COLD,
+      DAMAGE_FIRE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_VIBRATION_SENSE,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: `Раскалённое тело`,
+        description: `Существо, касающееся ремораза или попадающее по нему рукопашной атакой, находясь в пределах 5 футов от него, получает урон огнём 7 (2к6).`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 3,
+              cubeType: 10,
+              cubeBonus: 4,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
       },
     ],
   },

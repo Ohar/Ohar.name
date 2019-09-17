@@ -415,6 +415,7 @@ const {
     orcsDescription,
     quasitText,
     redDragonDescriptionList,
+    remorhazDescription,
     seaHagDescriptionList,
     silverDragonDescriptionList,
     vampireDescriptionList,
@@ -640,6 +641,7 @@ const {
     CREATURE_QUASIT_FAMILIAR,
     CREATURE_RAKSHASA,
     CREATURE_RED_DRAGON_WYRMLING,
+    CREATURE_REMORHAZ,
     CREATURE_REVENANT,
     CREATURE_RIDING_HORSE,
     CREATURE_ROPER,
@@ -30965,6 +30967,98 @@ module.exports = [
       {
         name: `Мстительный взор`,
         description: `Ревенант нацеливается на одно существо, которое видит в пределах 30 футов от себя, которому он поклялся отомстить. Цель должна совершить спасбросок Мудрости со Сл 15. При провале цель становится парализованной, пока ревенант не причинит ей урон, или до конца следующего хода ревенанта. Когда паралич оканчивается, цель становится испуганной ревенантом на 1 минуту. Испуганная цель может повторять этот спасбросок в конце каждого своего хода, с помехой, если видит ревенанта, оканчивая испуг на себе при успехе.`,
+      },
+    ],
+  },
+  {
+    name: 'Ремораз',
+    nameEn: 'Remorhaz',
+    id: CREATURE_REMORHAZ,
+    description: remorhazDescription,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 250,
+    },
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 17,
+      cubeType: 12,
+      cubeBonus: 85,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_DIG]: 20,
+    },
+    params: {
+      [PARAM_STR]: 24,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 21,
+      [PARAM_INT]: 4,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 5,
+    },
+    immunityList: [
+      DAMAGE_COLD,
+      DAMAGE_FIRE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_VIBRATION_SENSE,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_11,
+    featureList: [
+      {
+        name: `Раскалённое тело`,
+        description: `Существо, касающееся ремораза или попадающее по нему рукопашной атакой, находясь в пределах 5 футов от него, получает урон огнём 10 (3к6).`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Укус`,
+        description: `Если цель — существо, она становится схваченной (Сл высвобождения 17). Пока цель схвачена, она опутана, и ремораз не может кусать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 11,
+          range: 10,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 6,
+              cubeType: 10,
+              cubeBonus: 7,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 3,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: `Проглатывание`,
+        description: `Ремораз совершает одну атаку укусом по существу с размером не больше Среднего, схваченному им. Если эта атака попадает, существо получает урон от укуса, становится проглоченным и перестаёт быть схваченным. Будучи проглоченным, существо ослеплено и опутано, и обладает полным укрытием от атак и прочих эффектов, исходящих снаружи ремораза, и получает урон кислотой 21 (6к6) в начале каждого хода ремораза.\n
+Если ремораз получает за один ход 30 или больше урона от существа, находящегося внутри, ремораз должен в конце этого хода преуспеть в спасброске Телосложения со Сл 15, иначе отрыгнёт всех проглоченных существ, которые падают ничком в пространстве в пределах 10 футов от ремораза. Если ремораз умирает, проглоченное существо перестаёт быть опутанным им, и может высвободиться из трупа, потратив 15 футов перемещения, падая при выходе ничком. `,
       },
     ],
   },

@@ -19,6 +19,10 @@ const covenDescription = {
 Шабаш — это три карги, и конфликт между двумя всегда может решить третья. Если встречается больше трёх карг, например, когда возникает конфликт между несколькими шабашами, всё погружается в хаос.`,
 }
 
+const remorhazDescription = `Взрывая толщу снега и льда, в облаке пара на поверхность прорывается пульсирующее внутренним огнём тело ремораза. Расположенные за головой похожие на крылья плавники ярко пышут, а широкая пасть до краёв наполнена острыми зубами.\n
+**Арктический охотник.** Ремораз живёт в арктическом климате, охотясь на [лосей](CREATURE:elk), [белых медведей](CREATURE:polar_bear) и других существ, делящих с ним территорию обитания. Он не переносит тёплой погоды, приспособившись к холоду путём генерации внутри своего тела тепла, сопоставимого с жаром печи. Во время охоты ремораз зарывается глубоко под снег и лёд, ожидая малейших вибраций, создаваемых существами над ним. Находясь в засаде, он понижает температуру тела, чтобы не плавить слой снега над собой.\n
+**Молодняк.** Охотники [ледяных великанов](CREATURE:frost_giant) прочёсывают ледяные пустоши в поисках гнёзд и яиц реморазов. Молодой ремораз является трофеем для великанов, так как его можно научить исполнять команды и охранять чертоги своих хозяев. В отличие от взрослых особей, молодой ремораз вгрызается в свою жертву, а не проглатывает её целиком.`
+
 const coven = {
   extendPropCollection: {
     featureList: [
@@ -765,6 +769,7 @@ module.exports.nightHagDescriptionList = nightHagDescriptionList
 module.exports.orcsDescription = orcsDescription
 module.exports.quasitText = quasitText
 module.exports.redDragonDescriptionList = redDragonDescriptionList
+module.exports.remorhazDescription = remorhazDescription
 module.exports.seaHagDescriptionList = seaHagDescriptionList
 module.exports.silverDragonDescriptionList = silverDragonDescriptionList
 module.exports.vampireDescriptionList = vampireDescriptionList

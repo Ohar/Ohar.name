@@ -11,7 +11,7 @@ const generateExcludeComponentText = ({componentExclude, componentInstead, spell
     if (spellCasterClass) {
       const componentText = componentExclude === CAST_NONE
         ? 'не нужны никакие'
-        : `нужны только ${dndCastComponentCollection[componentExclude].name.plural.genitive}`
+        : `не нужны ${dndCastComponentCollection[componentExclude].name.plural.genitive}`
 
       return `, которому для накладывания заклинаний ${componentText} компоненты`
     } else {

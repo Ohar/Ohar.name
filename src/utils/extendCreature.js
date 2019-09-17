@@ -32,19 +32,23 @@ const extendCreature = ({creature, parent}) => {
     .keys(creature.extendPropCollection || {})
     .reduce(
       (result, listName) => {
-        const {extendPropCollection} = creature
+        const extendProp = creature.extendPropCollection[listName]
+        const shouldArrify = (
+          typeof extendProp === 'string'
+          || Array.isArray(extendProp)
+        )
 
-        return extendPropCollection[listName]
+        return extendProp
           ? {
             ...result,
-            [listName]: Array.isArray(extendPropCollection[listName])
+            [listName]: shouldArrify
               ? [
                 ...(filteredParent[listName] || []),
-                ...extendPropCollection[listName],
+                ...extendProp,
               ]
               : {
                 ...(filteredParent[listName] || {}),
-                ...extendPropCollection[listName],
+                ...extendProp,
               },
           }
           : result

@@ -96,8 +96,8 @@ const dndLanguageList = [
   {
     id: LANG_ITS_CREATOR,
     name: {
-      nominative: 'Язык своего создателя',
-      instrumental: 'Язык своего создателя',
+      nominative: 'Языки своего создателя',
+      instrumental: 'Языки своего создателя',
     },
   },
   {

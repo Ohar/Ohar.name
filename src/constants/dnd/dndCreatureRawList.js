@@ -1942,7 +1942,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 40,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     hp: {
@@ -2205,7 +2205,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 50,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -7570,7 +7570,7 @@ module.exports = [
       [SPEED_WALK]: 10,
       [SPEED_FLY]: {
         value: 30,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -7747,7 +7747,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 10,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -8324,7 +8324,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 30,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -19531,7 +19531,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 20,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -19652,7 +19652,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 20,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -19780,7 +19780,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 30,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -20046,7 +20046,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 20,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -27534,7 +27534,7 @@ module.exports = [
       [SPEED_WALK]: 50,
       [SPEED_FLY]: {
         value: 50,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -28062,7 +28062,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 50,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -30028,7 +30028,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 40,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {
@@ -30151,7 +30151,7 @@ module.exports = [
       [SPEED_WALK]: 0,
       [SPEED_FLY]: {
         value: 60,
-        comment: 'парит',
+        isFloating: true,
       },
     },
     params: {

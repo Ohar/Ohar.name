@@ -20,11 +20,14 @@ const DndCreatureSpeedContainer = ({ speed }) => {
         const {name} = dndSpeedCollection[type]
         const value = speed[type]
         const range = value.value || value
+        const floatingText = value && value.isFloating
+          ? ' (парит)'
+          : ''
         const comment = typeof value === 'object'
           ? ` (${value.comment})`
           : ''
 
-        return `${name} ${range} фт.${comment}`
+        return `${name} ${range} фт.${comment}${floatingText}`
       },
     )
     .join(', ')

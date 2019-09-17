@@ -62,6 +62,11 @@ const contactList = [
     ),
   },
   {
+    url: 'https://www.hackerrank.com/oharr',
+    type: 'hackerrank',
+    text: 'Hackerrank',
+  },
+  {
     url: 'https://linkedin.com/in/oharr',
     type: 'linkedin',
     text: 'LinkedIn',

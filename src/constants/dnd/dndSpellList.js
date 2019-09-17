@@ -85,6 +85,7 @@ const SPELL_FEATHER_FALL = 'feather_fall'
 const SPELL_FINGER_OF_DEATH = 'finger_of_death'
 const SPELL_FIREBALL = 'fireball'
 const SPELL_FLAME_STRIKE = 'flame_strike'
+const SPELL_FLAMING_SPHERE = 'flaming_sphere'
 const SPELL_FLY = 'fly'
 const SPELL_FOG_CLOUD = 'fog_cloud'
 const SPELL_FREEDOM_OF_MOVEMENT = 'freedom_of_movement'
@@ -2746,6 +2747,23 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_FLAMING_SPHERE,
+    name: 'Пылающий шар',
+    nameEn: 'Flaming sphere',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 60,
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2816,6 +2834,7 @@ module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
 module.exports.SPELL_FINGER_OF_DEATH = SPELL_FINGER_OF_DEATH
 module.exports.SPELL_FIREBALL = SPELL_FIREBALL
 module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE
+module.exports.SPELL_FLAMING_SPHERE = SPELL_FLAMING_SPHERE
 module.exports.SPELL_FLY = SPELL_FLY
 module.exports.SPELL_FOG_CLOUD = SPELL_FOG_CLOUD
 module.exports.SPELL_FREEDOM_OF_MOVEMENT = SPELL_FREEDOM_OF_MOVEMENT

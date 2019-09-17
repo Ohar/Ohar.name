@@ -150,6 +150,7 @@ const {
     DAMAGE_COLD,
     DAMAGE_ELECTRICITY,
     DAMAGE_FIRE,
+    DAMAGE_MAGIC_PIERCING_GOOD,
     DAMAGE_MAGIC_WEAPON,
     DAMAGE_NECROTIC,
     DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
@@ -637,6 +638,7 @@ const {
     CREATURE_QUAGGOTH_THONOT,
     CREATURE_QUASIT,
     CREATURE_QUASIT_FAMILIAR,
+    CREATURE_RAKSHASA,
     CREATURE_RED_DRAGON_WYRMLING,
     CREATURE_RIDING_HORSE,
     CREATURE_ROPER,
@@ -30698,6 +30700,145 @@ module.exports = [
             cubeCount: 3,
             cubeType: 6,
             cubeBonus: 0,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Ракшас',
+    nameAlt: 'Ракшаса',
+    nameEn: 'Rakshasa',
+    id: CREATURE_RAKSHASA,
+    description: `Ракшасы в своём стремлении к господству над другими используют слабости и обман. Мало кто когда-либо видел этих исчадий в истинном облике, ибо они могут принимать любое обличие, какое только захотят, хотя предпочитают маскироваться под кого-нибудь могущественного или влиятельного, например, дворянина, кардинала или богатого купца. Истинный облик ракшаса сочетает в себе черты человека и тигра с одним примечательным недостатком: их ладони вывернуты в другую сторону, в отличие от человеческих.\n
+**Злые духи в смертной плоти.** Ракшасы возникли давным-давно в Девяти Преисподних, когда могущественные дьяволы провели тёмный ритуал для освобождения своих сущностей из тел, чтобы сбежать с Нижних Планов. Ракшасы вошли на Материальный План для утоления своей тяги к человеческой плоти и злодейским интригам. Они выбирают свою жертву с осторожностью, стараясь сохранить своё присутствие в этом мире в тайне.\n
+**Зло возрождается.** Для ракшаса смерть на Материальном Плане означает страшное и мучительное возвращение в Девять Преисподних, где его сущность остаётся в ловушке, пока его тело перерождается — процесс может занять месяцы или годы. Когда ракшас перерождается, он обладает всей памятью и знаниями своей прошлой жизни, и будет мстить тому, кто убил его. Если цели каким-то образом удалось избежать его хватки, ракшас может наказать семью убийцы, его друзей или потомков.\n
+Как и дьяволы, ракшасы, убитые в Девяти Преисподних, уничтожаются навсегда.`,
+    note: {
+      text: `Позор тебе, коль убьёшь меня однажды.\n
+Позор мне, коль убьёшь меня дважды.`,
+      author: `принцип Ракшас`,
+    },
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: {
+      id: 'MM',
+      page: 248,
+    },
+    armor: {
+      ac: 16,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 8,
+      cubeBonus: 52,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 16,
+      [PARAM_CHA]: 20,
+    },
+    skillCollection: {
+      [SKILL_DECEPTION]: 10,
+      [SKILL_INSIGHT]: 8,
+    },
+    vulnerabilityList: [
+      DAMAGE_MAGIC_PIERCING_GOOD,
+    ],
+    immunityList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_INFERNAL,
+      LANG_COMMON,
+    ],
+    cr: CR_13,
+    featureList: [
+      {
+        name: `Ограниченный иммунитет к магии`,
+        description: `На ракшаса не действуют заклинания 6 уровня или ниже, и они же не могут его обнаружить, если только он сам не желает, чтобы они на него подействовали. Он совершает с преимуществом спасброски от всех остальных заклинаний и магических эффектов.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      spellAttackBonus: 10,
+      saveThrowDc: 18,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_MAGE_HAND,
+            SPELL_MINOR_ILLUSION,
+            SPELL_DISGUISE_SELF,
+            SPELL_DETECT_THOUGHTS,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_SUGGESTION,
+            SPELL_INVISIBILITY,
+            SPELL_DETECT_MAGIC,
+            SPELL_MAJOR_IMAGE,
+            SPELL_CHARM_PERSON,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_TRUE_SEEING,
+            SPELL_DOMINATE_PERSON,
+            SPELL_FLY,
+            SPELL_PLANE_SHIFT,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Ракшас совершает две атаки когтём.`,
+      },
+      {
+        name: `Коготь`,
+        description: `Если цель — существо, она становится проклятой. Магическое проклятье вступает в действие каждый раз, когда существо совершает короткий или продолжительный отдых, наполняя мысли цели ужасными образами и грёзами. Проклятая цель не получает преимуществ от окончания короткого и продолжительного отдыха. Проклятье длится до тех пор, пока не будет снято заклинанием _Снятие проклятья_ (Remove curse) или подобной магией.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 2,
           },
         },
       },

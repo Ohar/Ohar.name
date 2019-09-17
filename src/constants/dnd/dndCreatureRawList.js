@@ -639,6 +639,7 @@ const {
     CREATURE_RIDING_HORSE,
     CREATURE_ROPER,
     CREATURE_RUG_OF_SMOTHERING,
+    CREATURE_SCARECROW,
     CREATURE_SEA_HAG,
     CREATURE_SEA_HAG_COVEN,
     CREATURE_SHADOW_DEMON,
@@ -30463,5 +30464,107 @@ module.exports = [
         },
       ],
     },
+  },
+  {
+    name: 'Пугало',
+    nameEn: 'Scarecrow',
+    id: CREATURE_SCARECROW,
+    description: `Во время сбора урожая, когда смерть снова навещает увядающий мир, а летние цветы склоняют свои засохшие головы, жуткие пугала безмолвно маячат на пустых полях. С бесконечным терпением они стойко стерегут свои посты, несмотря на ветра, шторма и наводнения, следуя указаниям своего хозяина. Они наводят ужас на жертв своим внешним видом и раздирают их острыми как бритва когтями.\n
+**Конструкты, движимые духом.** Пугало оживает за счёт привязанного к нему духа убитого злого существа, наделяющего его стремлениями и способностью двигаться. Именно благодаря жуткому внешнему виду пугало зарождает страх в тех, на кого падает его взгляд. Карги и ведьмы часто связывают пугала с душами демонов, но подойдёт любой злой дух. Заточённый в пугале не помнит своей жизни, а его воля сосредоточена исключительно на служении создателю. Но даже при этом некоторые черты характера могут просачиваться наружу. В случае смерти создателя дух, заточённый в пугале, продолжает следовать последним командам создателя, пытается отомстить за его смерть или уничтожить себя.\n
+**Натура конструкта. **Пугалу не нужен воздух, еда, питьё и сон.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: {
+      id: 'MM',
+      page: 246,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 13,
+    },
+    vulnerabilityList: [
+      DAMAGE_FIRE,
+    ],
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_UNCONSCIOUS,
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: `Обманчивая внешность`,
+        description: `Пока пугало остаётся без движения, оно неотличимо от обычного, неоживлённого пугала.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Пугало совершает две атаки когтём.`,
+      },
+      {
+        name: `Коготь`,
+        description: `Если цель — существо, она должна преуспеть в спасброске Мудрости со Сл 11, иначе станет испуганной до конца следующего хода пугала.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: `Ужасающий взор`,
+        description: `Пугало нацеливается на одно существо, которое видит в пределах 30 футов от себя. Если цель видит пугало, она должна преуспеть в спасброске Мудрости со Сл 11, иначе станет магическим образом напуганной до конца следующего хода пугала. Пока цель испугана, она также парализована. `,
+      },
+    ],
   },
 ]

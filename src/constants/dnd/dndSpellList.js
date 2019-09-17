@@ -32,6 +32,7 @@ const {
 
 const SPELL_ALTER_SELF = 'alter_self'
 const SPELL_ANIMATE_DEAD = 'animate_dead'
+const SPELL_AUGURY = 'augury'
 const SPELL_BANE = 'bane'
 const SPELL_BANISHMENT = 'banishment'
 const SPELL_BARKSKIN = 'barkskin'
@@ -48,6 +49,7 @@ const SPELL_CLOUDKILL = 'cloudkill'
 const SPELL_COLOR_SPRAY = 'color_spray'
 const SPELL_COMMAND = 'command'
 const SPELL_COMMUNE = 'commune'
+const SPELL_COMPELLED_DUEL = 'compelled_duel'
 const SPELL_COMPREHEND_LANGUAGES = 'comprehend_languages'
 const SPELL_CONE_OF_COLD = 'cone_of_cold'
 const SPELL_CONFUSION = 'confusion'
@@ -64,6 +66,7 @@ const SPELL_CREATION = 'creation'
 const SPELL_CURE_WOUNDS = 'cure_wounds'
 const SPELL_DANCING_LIGHTS = 'dancing_lights'
 const SPELL_DARKNESS = 'darkness'
+const SPELL_DESTRUCTIVE_WAVE = 'destructive_wave'
 const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
 const SPELL_DETECT_MAGIC = 'detect_magic'
 const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
@@ -77,6 +80,7 @@ const SPELL_DOMINATE_MONSTER = 'dominate_monster'
 const SPELL_DOMINATE_PERSON = 'dominate_person'
 const SPELL_DREAM = 'dream'
 const SPELL_DRUIDCRAFT = 'druidcraft'
+const SPELL_ELEMENTAL_WEAPON = 'elemental_weapon'
 const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 const SPELL_ENTANGLE = 'entangle'
 const SPELL_EYEBITE = 'eyebite'
@@ -115,6 +119,7 @@ const SPELL_LIGHTNING_BOLT = 'lightning_bolt'
 const SPELL_LOCATE_OBJECT = 'locate_object'
 const SPELL_MAGE_HAND = 'mage_hand'
 const SPELL_MAGIC_MISSILE = 'magic_missile'
+const SPELL_MAGIC_WEAPON = 'magic_weapon'
 const SPELL_MAJOR_IMAGE = 'major_image'
 const SPELL_MASS_CURE_WOUNDS = 'mass_cure_wounds'
 const SPELL_MELFS_ACID_ARROW = 'melfs_acid_arrow'
@@ -142,10 +147,12 @@ const SPELL_RAISE_DEAD = 'raise_dead'
 const SPELL_RAY_OF_ENFEEBLEMENT = 'ray_of_enfeeblement'
 const SPELL_RAY_OF_FROST = 'ray_of_frost'
 const SPELL_RAY_OF_SICKNESS = 'ray_of_sickness'
+const SPELL_RESISTANCE = 'resistance'
 const SPELL_RESSURECTION = 'ressurection'
 const SPELL_SACRED_FLAME = 'sacred_flame'
 const SPELL_SANCTUARY = 'sanctuary'
 const SPELL_SCRYING = 'scrying'
+const SPELL_SEARING_SMITE = 'searing_smite'
 const SPELL_SEE_INVISIBILITY = 'see_invisibility'
 const SPELL_SHIELD = 'shield'
 const SPELL_SHIELD_OF_FAITH = 'shield_of_faith'
@@ -155,6 +162,7 @@ const SPELL_SLEEP = 'sleep'
 const SPELL_SPIKE_GROWTH = 'spike_growth'
 const SPELL_SPIRIT_GUARDIANS = 'spirit_guardians'
 const SPELL_SPIRITUAL_WEAPON = 'spiritual_weapon'
+const SPELL_STAGGERING_SMITE = 'staggering_smite'
 const SPELL_STONE_SHAPE = 'stone_shape'
 const SPELL_SUGGESTION = 'suggestion'
 const SPELL_TELEKINESIS = 'telekinesis'
@@ -170,8 +178,6 @@ const SPELL_WATER_BREATHING = 'water_breathing'
 const SPELL_WATER_WALK = 'water_walk'
 const SPELL_WEB = 'web'
 const SPELL_WIND_WALK = 'wind_walk'
-const SPELL_AUGURY = 'augury'
-const SPELL_RESISTANCE = 'resistance'
 
 const defaultCastTime = '1 действие'
 const defaultDuration = 'мгновенная'
@@ -2764,6 +2770,108 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_COMPELLED_DUEL,
+    name: 'Вызов на дуэль',
+    nameEn: 'Compelled duel',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_SEARING_SMITE,
+    name: 'Палящая кара',
+    nameEn: 'Searing smite',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_MAGIC_WEAPON,
+    name: 'Магическое оружие',
+    nameEn: 'Magic weapon',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_ELEMENTAL_WEAPON,
+    name: 'Стихийное оружие',
+    nameEn: 'Elemental weapon',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_STAGGERING_SMITE,
+    name: 'Оглушающая кара',
+    nameEn: 'Staggering smite',
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_DESTRUCTIVE_WAVE,
+    name: 'Разрушительная волна',
+    nameEn: 'Destructive wave',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2797,6 +2905,7 @@ module.exports.SPELL_CLOUDKILL = SPELL_CLOUDKILL
 module.exports.SPELL_COLOR_SPRAY = SPELL_COLOR_SPRAY
 module.exports.SPELL_COMMAND = SPELL_COMMAND
 module.exports.SPELL_COMMUNE = SPELL_COMMUNE
+module.exports.SPELL_COMPELLED_DUEL = SPELL_COMPELLED_DUEL
 module.exports.SPELL_COMPREHEND_LANGUAGES = SPELL_COMPREHEND_LANGUAGES
 module.exports.SPELL_CONE_OF_COLD = SPELL_CONE_OF_COLD
 module.exports.SPELL_CONFUSION = SPELL_CONFUSION
@@ -2813,6 +2922,7 @@ module.exports.SPELL_CREATION = SPELL_CREATION
 module.exports.SPELL_CURE_WOUNDS = SPELL_CURE_WOUNDS
 module.exports.SPELL_DANCING_LIGHTS = SPELL_DANCING_LIGHTS
 module.exports.SPELL_DARKNESS = SPELL_DARKNESS
+module.exports.SPELL_DESTRUCTIVE_WAVE = SPELL_DESTRUCTIVE_WAVE
 module.exports.SPELL_DETECT_EVIL_AND_GOOD = SPELL_DETECT_EVIL_AND_GOOD
 module.exports.SPELL_DETECT_MAGIC = SPELL_DETECT_MAGIC
 module.exports.SPELL_DETECT_THOUGHTS = SPELL_DETECT_THOUGHTS
@@ -2826,6 +2936,7 @@ module.exports.SPELL_DOMINATE_MONSTER = SPELL_DOMINATE_MONSTER
 module.exports.SPELL_DOMINATE_PERSON = SPELL_DOMINATE_PERSON
 module.exports.SPELL_DREAM = SPELL_DREAM
 module.exports.SPELL_DRUIDCRAFT = SPELL_DRUIDCRAFT
+module.exports.SPELL_ELEMENTAL_WEAPON = SPELL_ELEMENTAL_WEAPON
 module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
 module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
 module.exports.SPELL_EYEBITE = SPELL_EYEBITE
@@ -2864,6 +2975,7 @@ module.exports.SPELL_LIGHTNING_BOLT = SPELL_LIGHTNING_BOLT
 module.exports.SPELL_LOCATE_OBJECT = SPELL_LOCATE_OBJECT
 module.exports.SPELL_MAGE_HAND = SPELL_MAGE_HAND
 module.exports.SPELL_MAGIC_MISSILE = SPELL_MAGIC_MISSILE
+module.exports.SPELL_MAGIC_WEAPON = SPELL_MAGIC_WEAPON
 module.exports.SPELL_MAJOR_IMAGE = SPELL_MAJOR_IMAGE
 module.exports.SPELL_MASS_CURE_WOUNDS = SPELL_MASS_CURE_WOUNDS
 module.exports.SPELL_MELFS_ACID_ARROW = SPELL_MELFS_ACID_ARROW
@@ -2896,6 +3008,7 @@ module.exports.SPELL_RESSURECTION = SPELL_RESSURECTION
 module.exports.SPELL_SACRED_FLAME = SPELL_SACRED_FLAME
 module.exports.SPELL_SANCTUARY = SPELL_SANCTUARY
 module.exports.SPELL_SCRYING = SPELL_SCRYING
+module.exports.SPELL_SEARING_SMITE = SPELL_SEARING_SMITE
 module.exports.SPELL_SEE_INVISIBILITY = SPELL_SEE_INVISIBILITY
 module.exports.SPELL_SHIELD = SPELL_SHIELD
 module.exports.SPELL_SHIELD_OF_FAITH = SPELL_SHIELD_OF_FAITH
@@ -2905,6 +3018,7 @@ module.exports.SPELL_SLEEP = SPELL_SLEEP
 module.exports.SPELL_SPIKE_GROWTH = SPELL_SPIKE_GROWTH
 module.exports.SPELL_SPIRIT_GUARDIANS = SPELL_SPIRIT_GUARDIANS
 module.exports.SPELL_SPIRITUAL_WEAPON = SPELL_SPIRITUAL_WEAPON
+module.exports.SPELL_STAGGERING_SMITE = SPELL_STAGGERING_SMITE
 module.exports.SPELL_STONE_SHAPE = SPELL_STONE_SHAPE
 module.exports.SPELL_SUGGESTION = SPELL_SUGGESTION
 module.exports.SPELL_TELEKINESIS = SPELL_TELEKINESIS

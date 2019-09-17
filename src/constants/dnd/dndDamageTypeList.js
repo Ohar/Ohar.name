@@ -6,7 +6,8 @@ const DAMAGE_COLD = 'cold'
 const DAMAGE_ELECTRICITY = 'lightning'
 const DAMAGE_FIRE = 'fire'
 const DAMAGE_FORCE = 'force'
-const DAMAGE_MAGIC_WEAPON = 'magic_weapon'
+const DAMAGE_MAGIC_PIERCING_GOOD = 'magic_good'
+const DAMAGE_MAGIC_WEAPON = 'magic_piercing_weapon'
 const DAMAGE_NECROTIC = 'necrotic'
 const DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON = 'nonmagic_nonadamantine_weapon'
 const DAMAGE_NONMAGIC_NONSILVER_WEAPON = 'nonmagic_nonsilver_weapon'
@@ -51,6 +52,12 @@ const dndDamageTypeList = [
     id: DAMAGE_NONMAGIC_NONSILVER_WEAPON,
     name: 'Дробящий, колющий и рубящий урон от немагических атак, а также от немагического оружия, которое при этом не посеребрено',
     fullName: 'Дробящий, колющий и рубящий урон от немагических атак, а также от немагического оружия, которое при этом не посеребрено',
+    isEnumeration: true,
+  },
+  {
+    id: DAMAGE_MAGIC_PIERCING_GOOD,
+    name: 'Колющий от магического оружия, используемого добрыми существами',
+    fullName: 'Колющий от магического оружия, используемого добрыми существами',
     isEnumeration: true,
   },
   {

@@ -1,1 +1,1 @@
-export default from './DndCreatureSpeedComponent'
+export default from './DndCreatureSpeedContainer'

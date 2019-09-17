@@ -10,6 +10,7 @@ export default action => {
     const {
       bonus,
       hit,
+      miss,
       range,
       target,
       type,
@@ -17,13 +18,18 @@ export default action => {
 
     const typeText = dndActionTypeCollection[type].name
     const hitText = generateHitText(hit)
+    const missText = generateHitText(miss)
     const bonusText = showDigitSign(bonus)
     const targetText = generateTargetLimitText(target)
     const rangeText = formatRangeText({type, range})
 
+    const missFullText = missText
+      ? ` *Промах:* ${missText}.`
+      : ''
+
     return `
 *${typeText}*: ${bonusText} к попаданию, ${rangeText}, ${targetText}.
-*Попадание:* ${hitText}.`
+*Попадание:* ${hitText}.${missFullText}`
   }
 
   return ''

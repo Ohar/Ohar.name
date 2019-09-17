@@ -187,6 +187,7 @@ const {
   } = require('./dndSkillList'),
   {
     PC_CLASS_DRUID,
+    PC_CLASS_PALADIN,
     PC_CLASS_PRIEST,
     PC_CLASS_WIZARD,
   } = require('./dndPcClassList'),
@@ -218,6 +219,7 @@ const {
     SPELL_COLOR_SPRAY,
     SPELL_COMMAND,
     SPELL_COMMUNE,
+    SPELL_COMPELLED_DUEL,
     SPELL_COMPREHEND_LANGUAGES,
     SPELL_CONE_OF_COLD,
     SPELL_CONFUSION,
@@ -234,6 +236,7 @@ const {
     SPELL_CURE_WOUNDS,
     SPELL_DANCING_LIGHTS,
     SPELL_DARKNESS,
+    SPELL_DESTRUCTIVE_WAVE,
     SPELL_DETECT_EVIL_AND_GOOD,
     SPELL_DETECT_MAGIC,
     SPELL_DETECT_THOUGHTS,
@@ -247,6 +250,7 @@ const {
     SPELL_DOMINATE_PERSON,
     SPELL_DREAM,
     SPELL_DRUIDCRAFT,
+    SPELL_ELEMENTAL_WEAPON,
     SPELL_ENLARGE_REDUCE,
     SPELL_ENTANGLE,
     SPELL_EYEBITE,
@@ -285,6 +289,7 @@ const {
     SPELL_LOCATE_OBJECT,
     SPELL_MAGE_HAND,
     SPELL_MAGIC_MISSILE,
+    SPELL_MAGIC_WEAPON,
     SPELL_MAJOR_IMAGE,
     SPELL_MASS_CURE_WOUNDS,
     SPELL_MELFS_ACID_ARROW,
@@ -317,6 +322,7 @@ const {
     SPELL_SACRED_FLAME,
     SPELL_SANCTUARY,
     SPELL_SCRYING,
+    SPELL_SEARING_SMITE,
     SPELL_SEE_INVISIBILITY,
     SPELL_SHIELD,
     SPELL_SHIELD_OF_FAITH,
@@ -326,6 +332,7 @@ const {
     SPELL_SPIKE_GROWTH,
     SPELL_SPIRIT_GUARDIANS,
     SPELL_SPIRITUAL_WEAPON,
+    SPELL_STAGGERING_SMITE,
     SPELL_STONE_SHAPE,
     SPELL_SUGGESTION,
     SPELL_TELEKINESIS,
@@ -491,6 +498,7 @@ const {
     CREATURE_COUATL,
     CREATURE_CRAWLING_CLAW,
     CREATURE_DAO,
+    CREATURE_DEATH_KNIGHT,
     CREATURE_DEATH_TYRANT,
     CREATURE_DEMILICH,
     CREATURE_DEVA,
@@ -31327,6 +31335,170 @@ module.exports = [
             cubeBonus: 9,
           },
         },
+      },
+    ],
+  },
+  {
+    name: 'Рыцарь смерти',
+    nameEn: 'Death knight',
+    id: CREATURE_DEATH_KNIGHT,
+    description: [
+      `Когда падший паладин умирает, не получив искупления, тёмные силы могут превратить некогда рыцаря в ужасную нежить. Рыцарь смерти — скелет, одетый в жуткие латы. Под шлемом виден череп со злыми, горящими в пустых глазницах, огнями.\n
+**Мистические силы.** Рыцарь смерти сохраняет способность накладывать божественные заклинания. Однако, ни один рыцарь смерти не может исцелять своей магией. Рыцарь смерти может привлекать младшую нежить и командовать ей, хотя, если он служит могущественным исчадиям, скорее всего вместо нежити будут их миньоны. Часто рыцарь смерти в качестве скакуна использует [кошмара](CREATURE:${CREATURE_NIGHTMARE}) или [скелет боевого коня](CREATURE:warhorse_skeleton).\n
+**Бессмертный до искупления.** Рыцарь смерти восстанет, даже если его уничтожить. Только после искупления грехов он может сбежать из темницы нежизни и действительно погибнуть.\n
+**Натура нежити.** Рыцарю смерти не нужен воздух, еда, питьё и сон.`,
+      {
+        header: `Лорд Сот`,
+        text: `Лорд Сот начал своё грехопадение с акта героизма, спася эльфийку Изольду от [огра](CREATURE:${CREATURE_OGRE}). Сот и Изольда влюбились, но Сот уже был женат. Он убил свою жену, но слуга это заметил и публично обвинил его, но он бежал с Изольдой. Когда его замок пал под осадой, он взмолился о помощи, и ему было сказано, что он должен искупить свои проступки, выполнив задание, но растущие опасения по поводу верности Изольды заставили его отказаться от этого задания. Из-за того, что его миссия не была выполнена, великий катаклизм охватил землю. Когда Изольда родила сына, Сот отказался верить, что ребёнок был его, и убил их обоих. Все они сгорели во время пожара, охватившего замок, но Сот не нашёл покоя, лишившись жизни, став рыцарем смерти.`,
+      },
+    ],
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: {
+      id: 'MM',
+      page: 253,
+    },
+    armor: {
+      ac: 20,
+      type: 'латный доспех, щит',
+    },
+    hp: {
+      cubeCount: 19,
+      cubeType: 8,
+      cubeBonus: 95,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 16,
+      [PARAM_CHA]: 18,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 6,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 10,
+    },
+    immunityList: [
+      DAMAGE_NECROTIC,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_COMMON,
+    ],
+    cr: CR_17,
+    featureList: [
+      {
+        name: `Сопротивление магии`,
+        description: `Рыцарь смерти совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: `Предводитель нежити`,
+        description: `Если рыцарь смерти дееспособен, он и все существа-нежить по его выбору в пределах 60 футов от него совершают с преимуществом спасброски от эффектов, изгоняющих нежить.`,
+      },
+    ],
+    spellCast: {
+      spellCasterLevel: 19,
+      spellCasterClass: PC_CLASS_PALADIN,
+      baseStat: PARAM_CHA,
+      spellAttackBonus: 10,
+      saveThrowDc: 18,
+      spellIdList: [
+        SPELL_BANISHMENT,
+        SPELL_COMMAND,
+        SPELL_COMPELLED_DUEL,
+        {
+          id: SPELL_DESTRUCTIVE_WAVE,
+          comment: 'некротическая энергия',
+        },
+        SPELL_DISPEL_MAGIC,
+        SPELL_ELEMENTAL_WEAPON,
+        SPELL_HOLD_PERSON,
+        SPELL_MAGIC_WEAPON,
+        SPELL_SEARING_SMITE,
+        SPELL_STAGGERING_SMITE,
+      ],
+      slotCountList: [
+        4,
+        3,
+        3,
+        3,
+        2,
+      ],
+    },
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Рыцарь смерти совершает три атаки длинным мечом.`,
+      },
+      {
+        name: `Длинный меч`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 11,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 5,
+              },
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 10,
+                cubeBonus: 5,
+                comment: 'если используется двумя руками',
+              },
+            ],
+            {
+              type: DAMAGE_NECROTIC,
+              cubeCount: 4,
+              cubeType: 8,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: `Сгусток адского пламени`,
+        limit: {
+          count: 1,
+          period: 'день',
+        },
+        description: `Рыцарь смерти бросает шар магического огня, который взрывается в точке, которую он видит в пределах 120 футов от себя. Все существа в сфере с радиусом 20 футов с центром на этой точке должны совершить спасбросок Ловкости со Сл 18. Эта сфера огибает углы. Существо получает урон огнём 35 (10к6) и урон некротической энергией 35 (10к6) при провале, или половину этого урона при успехе. `,
+      },
+    ],
+    reactionList: [
+      {
+        name: `Парирование`,
+        description: `Рыцарь смерти добавляет 6 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого рыцарь смерти должен видеть атакующего, и должен использовать рукопашное оружие.`,
       },
     ],
   },

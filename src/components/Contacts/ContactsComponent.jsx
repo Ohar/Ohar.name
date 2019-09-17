@@ -54,12 +54,7 @@ const contactList = [
   {
     url: 'https://github.com/Ohar',
     type: 'github',
-    text:  (
-      <React.Fragment>
-        <Icon icon={faGithub}/>
-        GitHub
-      </React.Fragment>
-    ),
+    text:  'GitHub',
   },
   {
     url: 'https://www.hackerrank.com/oharr',

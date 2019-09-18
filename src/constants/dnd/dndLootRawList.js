@@ -583,7 +583,7 @@ export default [
     description: ``,
   },
   {
-    cost: 5,
+    cost: 90,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,

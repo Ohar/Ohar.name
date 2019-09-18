@@ -682,9 +682,6 @@ export default [
           CREATURE_PENTADRONE,
         ],
       },
-      exclude: {
-        templateName: ['Модрон-ренегат'],
-      },
     },
 
     aligmentId: ALIGMENT_NOT_LN,
@@ -721,9 +718,6 @@ export default [
           CREATURE_STEAM_MEPHIT,
           CREATURE_DUST_MEPHIT,
         ],
-      },
-      exclude: {
-        templateName: ['Мефит-призыватель'],
       },
     },
     source: {
@@ -770,9 +764,6 @@ export default [
           CREATURE_ICE_DEVIL,
           CREATURE_PIT_FIEND,
         ],
-      },
-      exclude: {
-        templateName: ['Дьявол-призыватель'],
       },
     },
     source: {
@@ -996,3 +987,20 @@ export default [
 //     },
 //   },
 ]
+  .map(
+    ({templateName, templateLimitations = {}, extendPropCollection = {}, ...rest}) => ({
+      ...rest,
+      templateName,
+      extendPropCollection: {
+        ...extendPropCollection,
+        templateName,
+      },
+      templateLimitations: {
+        ...templateLimitations,
+        exclude: {
+          ...templateLimitations.exclude,
+          templateName,
+        },
+      },
+    })
+  )

@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import ReactMarkdown from 'react-markdown';
+import arrify from "arrify"
 
 import formatSpellCastDescription from './utils/formatSpellCastDescription'
 import generateAbilityHeader from './utils/generateAbilityHeader'
@@ -55,13 +56,11 @@ const DndAbilityListComponent = (
       }
 
       {
-        [
-          spellCast,
-          spellCastTogether,
-        ]
+        arrify(spellCast)
+          .concat(spellCastTogether)
           .map(
-            (item, i) => (
-              item && (
+            (item, i) => item
+              ? (
                 <DndAbility
                   key={i}
                   header={
@@ -75,13 +74,13 @@ const DndAbilityListComponent = (
                       item.comment
                         ? ` (${item.comment})`
                         : ''
-                    )
+                    ) + '.'
                   }
                 >
-                  {formatSpellCastDescription({spellCast: item, isFemale, name})}
+                  {formatSpellCastDescription({ spellCast: item, isFemale, name })}
                 </DndAbility>
               )
-            )
+              : null,
           )
       }
     </ul>

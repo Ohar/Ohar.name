@@ -9,6 +9,7 @@ import {
   faUserFriends,
   faBroom,
   faMusic,
+  faHatWizard,
 } from '@fortawesome/free-solid-svg-icons'
 
 import generateTextLinks from '@/utils/generateTextLinks'
@@ -160,6 +161,7 @@ import {
   CREATURE_ICE_MEPHIT,
   CREATURE_IMP,
   CREATURE_MAGMA_MEPHIT,
+  CREATURE_MIND_FLAYER,
   CREATURE_MONODRONE,
   CREATURE_MUD_MEPHIT,
   CREATURE_NIGHT_HAG,
@@ -208,18 +210,37 @@ import {
 } from '@/constants/dnd/dndLanguageList'
 import {
   SPELL_BESTOW_CURSE,
+  SPELL_BLADE_WARD,
+  SPELL_BLUR,
+  SPELL_CLAIRVOYANCE,
+  SPELL_CONFUSION,
   SPELL_CONTACT_OTHER_PLANE,
   SPELL_COUNTERSPELL,
+  SPELL_DANCING_LIGHTS,
+  SPELL_DETECT_MAGIC,
+  SPELL_DISGUISE_SELF,
   SPELL_EYEBITE,
+  SPELL_HALLUCINATORY_TERRAIN,
   SPELL_HOLD_PERSON,
   SPELL_IDENTIFY,
+  SPELL_INVISIBILITY,
   SPELL_LIGHTNING_BOLT,
   SPELL_LOCATE_OBJECT,
+  SPELL_MAGE_HAND,
   SPELL_PHANTASMAL_KILLER,
   SPELL_POLYMORPH,
   SPELL_RAY_OF_SICKNESS,
   SPELL_SCRYING,
+  SPELL_SENDING,
+  SPELL_SHIELD,
+  SPELL_SHOCKING_GRASP,
+  SPELL_SLEEP,
+  SPELL_TELEKINESIS,
+  SPELL_WALL_OF_FORCE,
 } from '@/constants/dnd/dndSpellList'
+import {
+  PC_CLASS_WIZARD,
+} from '@/constants/dnd/dndPcClassList'
 import {
   CR_0,
   CR_1_8,
@@ -1236,6 +1257,76 @@ _Чарующая мелодия._ Существо становится оча�
 
     editPropCollection: {
       name: ({ name }) => name.replace('Сатир', 'Сатир c панфлейтой'),
+    },
+  },
+  {
+    templateName: 'Свежеватель разума заклинатель',
+    templateIcon: faHatWizard,
+    cr: CR_8,
+
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_MIND_FLAYER,
+        ],
+      },
+    },
+
+    extendPropCollection: {
+      description: [
+        {
+          header: 'Вариант: Свежеватель разума заклинатель',
+          text: `Некоторые свежеватели разума дополняют свою псионическую силу магическими заклинаниями. Однако другие иллитиды воспринимают их как психически больных и стараются избегать. Свежеватель разума заклинатель обладает показателем опасности 8 (3900 опыта) и имеет следующую особенность:\n
+**Использование заклинаний.** Свежеватель разума является заклинателем 10 уровня. Его базовой характеристикой является Интеллект (Сл спасброска от заклинания 15, +7 к попаданию атаками заклинаниями). У него подготовлены следующие заклинания волшебника:\n
+Заговоры (неограниченно): _Волшебная рука_ (Mage hand), _Защита от оружия_ (Blade ward), _Пляшущие огоньки_ (Dancing lights), _Электрошок_ (Shocking grasp)\n
+* 1 уровень (4 ячейки): _Маскировка_ (Disguise self), _Обнаружение магии_ (Detect magic), _Усыпление_ (Sleep), _Щит_ (Shield)\n
+* 2 уровень (3 ячейки): _Размытый образ_ (Blur), _Луч слабости_ (Ray of enfeeblement), _Невидимость_ (Invisibility)\n
+* 3 уровень (3 ячейки): _Молния_ (Lightning bolt), _Подсматривание_ (Clairvoyance), _Послание_ (Sending)\n
+* 4 уровень (3 ячейки): _Мираж_ (Hallucinatory terrain), _Смятение_ (Confusion)\n
+* 5 уровень (2 ячейки): _Силовая стена_ (Wall of force), _Телекинез_ (Telekinesis)`,
+        },
+      ],
+      spellCast: [
+        {
+          spellCasterLevel: 10,
+          spellCasterClass: PC_CLASS_WIZARD,
+          baseStat: PARAM_INT,
+          spellAttackBonus: 7,
+          saveThrowDc: 15,
+          spellIdList: [
+            SPELL_MAGE_HAND,
+            SPELL_BLADE_WARD,
+            SPELL_DANCING_LIGHTS,
+            SPELL_SHOCKING_GRASP,
+            SPELL_DISGUISE_SELF,
+            SPELL_DETECT_MAGIC,
+            SPELL_SLEEP,
+            SPELL_SHIELD,
+            SPELL_BLUR,
+            SPELL_RAY_OF_SICKNESS,
+            SPELL_INVISIBILITY,
+            SPELL_LIGHTNING_BOLT,
+            SPELL_CLAIRVOYANCE,
+            SPELL_SENDING,
+            SPELL_HALLUCINATORY_TERRAIN,
+            SPELL_CONFUSION,
+            SPELL_WALL_OF_FORCE,
+            SPELL_TELEKINESIS,
+          ],
+          slotCountList: [
+            Infinity,
+            4,
+            3,
+            3,
+            3,
+            2,
+          ],
+        },
+      ],
+    },
+
+    editPropCollection: {
+      name: ({ name }) => name.replace('Свежеватель разума', `Свежеватель разума заклинатель`),
     },
   },
   // NOT READY

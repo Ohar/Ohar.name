@@ -171,7 +171,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: false,
     isDumbItem: true,
@@ -210,7 +210,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -275,7 +275,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: false,
     isDumbItem: true,
@@ -301,7 +301,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -366,7 +366,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: false,
@@ -457,7 +457,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 10,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -535,7 +535,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -583,7 +583,7 @@ export default [
     description: ``,
   },
   {
-    cost: 1,
+    cost: 5,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -648,7 +648,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -674,7 +674,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: false,
     isDumbItem: true,
@@ -687,7 +687,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -921,7 +921,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -960,7 +960,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: false,
     isDumbItem: true,
@@ -986,10 +986,10 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 20,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
-    isDumbItem: true,
+    isDumbItem: false,
     isOnlyLargeCreatureItem: false,
     name: `Камея с резным портретом ужасного лица`,
     description: ``,
@@ -1103,7 +1103,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1181,7 +1181,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 5,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1220,7 +1220,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1233,7 +1233,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 10,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1246,7 +1246,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 10,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1272,7 +1272,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 100,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1285,7 +1285,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 100,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1324,7 +1324,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 500,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1337,7 +1337,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 4,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1350,7 +1350,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 10000,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1376,7 +1376,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 1000,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1389,7 +1389,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 1000,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1402,7 +1402,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 200,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1415,7 +1415,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 2000,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1441,7 +1441,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -1493,7 +1493,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 5000,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,

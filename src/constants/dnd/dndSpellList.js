@@ -122,6 +122,7 @@ const SPELL_MAGIC_MISSILE = 'magic_missile'
 const SPELL_MAGIC_WEAPON = 'magic_weapon'
 const SPELL_MAJOR_IMAGE = 'major_image'
 const SPELL_MASS_CURE_WOUNDS = 'mass_cure_wounds'
+const SPELL_MASS_HEALING_WORD = 'mass_healing_word'
 const SPELL_MELFS_ACID_ARROW = 'melfs_acid_arrow'
 const SPELL_MENDING = 'mending'
 const SPELL_MINOR_ILLUSION = 'minor_illusion'
@@ -2872,6 +2873,23 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_MASS_HEALING_WORD,
+    name: 'множественное лечащее слово',
+    nameEn: 'Mass healing word',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2978,6 +2996,7 @@ module.exports.SPELL_MAGIC_MISSILE = SPELL_MAGIC_MISSILE
 module.exports.SPELL_MAGIC_WEAPON = SPELL_MAGIC_WEAPON
 module.exports.SPELL_MAJOR_IMAGE = SPELL_MAJOR_IMAGE
 module.exports.SPELL_MASS_CURE_WOUNDS = SPELL_MASS_CURE_WOUNDS
+module.exports.SPELL_MASS_HEALING_WORD = SPELL_MASS_HEALING_WORD
 module.exports.SPELL_MELFS_ACID_ARROW = SPELL_MELFS_ACID_ARROW
 module.exports.SPELL_MENDING = SPELL_MENDING
 module.exports.SPELL_MINOR_ILLUSION = SPELL_MINOR_ILLUSION

@@ -597,6 +597,7 @@ const {
     CREATURE_MIMIC,
     CREATURE_MIND_FLAYER,
     CREATURE_MINOTAUR,
+    CREATURE_MINOTAUR_SKELETON,
     CREATURE_MONODRONE,
     CREATURE_MUD_MEPHIT,
     CREATURE_MUMMY,
@@ -32268,6 +32269,106 @@ module.exports = [
             type: DAMAGE_BLUDGEONING,
             cubeCount: 2,
             cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: `Скелет минотавра`,
+    nameEn: 'Minotaur skeleton',
+    id: CREATURE_MINOTAUR_SKELETON,
+    description: skeletonDescription,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: {
+      id: 'MM',
+      page: 262,
+    },
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 10,
+      cubeBonus: 18,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 5,
+    },
+    vulnerabilityList: [
+      DAMAGE_BLUDGEONING,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_EXHAUSTION,
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ABYSSAL,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: `Атака в броске`,
+        description: `Если скелет переместится как минимум на 10 футов по прямой к цели, а затем в том же ходу попадёт по нему атакой _бодания_, цель получает от атаки дополнительный колющий урон 9 (2к8). Если цель — существо, она должна преуспеть в спасброске Силы со Сл 14, иначе будет оттолкнута на расстояние до 10 футов и сбита с ног.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Секира`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 12,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Бодание`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 8,
             cubeBonus: 4,
           },
         },

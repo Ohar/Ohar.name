@@ -4,6 +4,7 @@ import numberList from '@/constants/numberList'
 import {dndTargetCollection} from '@/constants/dnd/dndTargetList'
 import {dndSizeCollection} from '@/constants/dnd/dndSizeList'
 import {dndConditionCollection} from '@/constants/dnd/dndConditionList'
+import {dndCreatureTypeCollection} from '@/constants/dnd/dndCreatureTypeList'
 import {GENDER_FEMALE, GENDER_MALE} from '@/constants/genderList'
 
 const getGoalWord = proschet(['цель', 'цели', 'целей'])
@@ -16,29 +17,54 @@ export default target => {
     const numberWordObj = numberList[targetCount]
 
     let conditionText = ''
+    let genderId = ''
     let limitText = ''
     let commentText = ''
     let numberText = numberWordObj[GENDER_FEMALE]
     let targetText = getGoalWord(targetCount)
 
     if (target.limit) {
-      const {
-        genderId,
-        name: {
-          singular: {
-            nominative: singularTypeWord,
-            genitive: dualTypeWord,
+      if (target.limit.type) {
+        const dataObj = dndTargetCollection[target.limit.type]
+        const {
+          name: {
+            singular: {
+              nominative: singularTypeWord,
+              genitive: dualTypeWord,
+            },
+            plural: {
+              genitive: multipleTypeWord,
+            },
           },
-          plural: {
-            genitive: multipleTypeWord,
+        } = dataObj
+        genderId = dataObj.genderId
+
+        const getTargetTypeWord = proschet([singularTypeWord, dualTypeWord, multipleTypeWord])
+
+        numberText = numberWordObj[genderId]
+        targetText = getTargetTypeWord(target.count)
+      }
+
+      if (target.limit.creatureType) {
+        const dataObj = dndCreatureTypeCollection[target.limit.creatureType]
+        const {
+          name: {
+            singular: {
+              nominative: singularTypeWord,
+              genitive: dualTypeWord,
+            },
+            plural: {
+              genitive: multipleTypeWord,
+            },
           },
-        },
-      } = dndTargetCollection[target.limit.type]
+        } = dndCreatureTypeCollection[target.limit.creatureType]
+        genderId = dataObj.genderId
 
-      const getTargetTypeWord = proschet([singularTypeWord, dualTypeWord, multipleTypeWord])
+        const getTargetTypeWord = proschet([singularTypeWord, dualTypeWord, multipleTypeWord])
 
-      numberText = numberWordObj[genderId]
-      targetText = getTargetTypeWord(target.count)
+        numberText = numberWordObj[genderId]
+        targetText = getTargetTypeWord(target.count)
+      }
 
       if (target.limit.size) {
         if (target.limit.size.max) {
@@ -55,7 +81,9 @@ export default target => {
         const {
           nominative: singularConditionWord,
           genitive: dualConditionWord,
-        } = singular[genderId]
+        } = genderId
+          ? singular[genderId]
+          : singular[GENDER_MALE]
         const {
           genitive: multipleConditionWord,
         } = plural

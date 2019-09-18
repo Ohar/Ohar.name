@@ -8,7 +8,7 @@ const DndCreatureExtenderComponent = ({ list, className, extend }) => (
   <span className={`DndCreatureExtender ${className}`}>
     {
       list.length
-        ? 'Превратить в'
+        ? 'Применить шаблон'
         : null
     }
     {

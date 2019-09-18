@@ -38,6 +38,7 @@ const SPELL_BANISHMENT = 'banishment'
 const SPELL_BARKSKIN = 'barkskin'
 const SPELL_BESTOW_CURSE = 'bestow_curse'
 const SPELL_BLADE_BARRIER = 'blade_barrier'
+const SPELL_BLADE_WARD = 'blade_ward'
 const SPELL_BLESS = 'bless'
 const SPELL_BLIGHT = 'blight'
 const SPELL_BLINDNESS_DEAFNESS = 'blindness_deafness'
@@ -155,9 +156,11 @@ const SPELL_SANCTUARY = 'sanctuary'
 const SPELL_SCRYING = 'scrying'
 const SPELL_SEARING_SMITE = 'searing_smite'
 const SPELL_SEE_INVISIBILITY = 'see_invisibility'
+const SPELL_SENDING = 'sending'
 const SPELL_SHIELD = 'shield'
 const SPELL_SHIELD_OF_FAITH = 'shield_of_faith'
 const SPELL_SHILLELAGH = 'shillelagh'
+const SPELL_SHOCKING_GRASP = 'shocking_grasp'
 const SPELL_SILENCE = 'silence'
 const SPELL_SLEEP = 'sleep'
 const SPELL_SPIKE_GROWTH = 'spike_growth'
@@ -174,6 +177,7 @@ const SPELL_TONGUES = 'tongues'
 const SPELL_TRUE_SEEING = 'true_seeing'
 const SPELL_VICIOUS_MOCKERY = 'vicious_mockery'
 const SPELL_WALL_OF_FIRE = 'wall_of_fire'
+const SPELL_WALL_OF_FORCE = 'wall_of_force'
 const SPELL_WALL_OF_STONE = 'wall_of_stone'
 const SPELL_WATER_BREATHING = 'water_breathing'
 const SPELL_WATER_WALK = 'water_walk'
@@ -2890,6 +2894,74 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_SHOCKING_GRASP,
+    name: 'Электрошок',
+    nameEn: 'Shocking grasp',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_WALL_OF_FORCE,
+    name: 'Силовая стена',
+    nameEn: 'Wall of force',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_BLADE_WARD,
+    name: 'Защита от оружия',
+    nameEn: 'Blade ward',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_SENDING,
+    name: 'Послание',
+    nameEn: 'Sending',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -2912,6 +2984,7 @@ module.exports.SPELL_BANISHMENT = SPELL_BANISHMENT
 module.exports.SPELL_BARKSKIN = SPELL_BARKSKIN
 module.exports.SPELL_BESTOW_CURSE = SPELL_BESTOW_CURSE
 module.exports.SPELL_BLADE_BARRIER = SPELL_BLADE_BARRIER
+module.exports.SPELL_BLADE_WARD = SPELL_BLADE_WARD
 module.exports.SPELL_BLESS = SPELL_BLESS
 module.exports.SPELL_BLIGHT = SPELL_BLIGHT
 module.exports.SPELL_BLINDNESS_DEAFNESS = SPELL_BLINDNESS_DEAFNESS
@@ -3029,9 +3102,11 @@ module.exports.SPELL_SANCTUARY = SPELL_SANCTUARY
 module.exports.SPELL_SCRYING = SPELL_SCRYING
 module.exports.SPELL_SEARING_SMITE = SPELL_SEARING_SMITE
 module.exports.SPELL_SEE_INVISIBILITY = SPELL_SEE_INVISIBILITY
+module.exports.SPELL_SENDING = SPELL_SENDING
 module.exports.SPELL_SHIELD = SPELL_SHIELD
 module.exports.SPELL_SHIELD_OF_FAITH = SPELL_SHIELD_OF_FAITH
 module.exports.SPELL_SHILLELAGH = SPELL_SHILLELAGH
+module.exports.SPELL_SHOCKING_GRASP = SPELL_SHOCKING_GRASP
 module.exports.SPELL_SILENCE = SPELL_SILENCE
 module.exports.SPELL_SLEEP = SPELL_SLEEP
 module.exports.SPELL_SPIKE_GROWTH = SPELL_SPIKE_GROWTH
@@ -3048,6 +3123,7 @@ module.exports.SPELL_TONGUES = SPELL_TONGUES
 module.exports.SPELL_TRUE_SEEING = SPELL_TRUE_SEEING
 module.exports.SPELL_VICIOUS_MOCKERY = SPELL_VICIOUS_MOCKERY
 module.exports.SPELL_WALL_OF_FIRE = SPELL_WALL_OF_FIRE
+module.exports.SPELL_WALL_OF_FORCE = SPELL_WALL_OF_FORCE
 module.exports.SPELL_WALL_OF_STONE = SPELL_WALL_OF_STONE
 module.exports.SPELL_WATER_BREATHING = SPELL_WATER_BREATHING
 module.exports.SPELL_WATER_WALK = SPELL_WATER_WALK

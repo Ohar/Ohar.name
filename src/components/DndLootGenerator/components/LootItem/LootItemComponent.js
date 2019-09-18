@@ -16,7 +16,11 @@ const LootItem = ({ name, description, title, cost, icon }) => (
     }
     <b>{name}</b>{description ? ', ' : ' '}
     {`${description} `}
-    (<DndPrice price={cost}/>)
+    {
+      cost
+        ? <>(<DndPrice price={cost}/>)</>
+        : null
+    }
   </span>
 )
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 import extendCreature from '@/utils/extendCreature'
 
@@ -26,14 +26,14 @@ class DndCreatureExtenderContainer extends Component {
       ({templateName, templateLimitations: {include, exclude}}) => {
         const isSameTemplate = creature.templateName === templateName
         const shouldExclude = exclude
-          ? !Object.keys(exclude).some(checkInCollection({creature, collection: exclude}))
-          : false
+          ? Object.keys(exclude).some(checkInCollection({creature, collection: exclude}))
+          : true
         const shouldInclude = include
           ? Object.keys(include).every(checkInCollection({creature, collection: include}))
           : true
 
         return shouldInclude && !shouldExclude && !isSameTemplate
-      }
+      },
     )
   }
 

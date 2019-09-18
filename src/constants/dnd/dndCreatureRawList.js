@@ -678,6 +678,7 @@ const {
     CREATURE_VINE_BLIGHT,
     CREATURE_VIOLET_FUNGUS,
     CREATURE_VROCK,
+    CREATURE_WARHORSE_SKELETON,
     CREATURE_WATER_WEIRD,
     CREATURE_WEREBEAR,
     CREATURE_WEREBOAR,
@@ -30931,7 +30932,7 @@ module.exports = [
     id: CREATURE_DEATH_KNIGHT,
     description: [
       `Когда падший паладин умирает, не получив искупления, тёмные силы могут превратить некогда рыцаря в ужасную нежить. Рыцарь смерти — скелет, одетый в жуткие латы. Под шлемом виден череп со злыми, горящими в пустых глазницах, огнями.\n
-**Мистические силы.** Рыцарь смерти сохраняет способность накладывать божественные заклинания. Однако, ни один рыцарь смерти не может исцелять своей магией. Рыцарь смерти может привлекать младшую нежить и командовать ей, хотя, если он служит могущественным исчадиям, скорее всего вместо нежити будут их миньоны. Часто рыцарь смерти в качестве скакуна использует [кошмара](CREATURE:${CREATURE_NIGHTMARE}) или [скелет боевого коня](CREATURE:warhorse_skeleton).\n
+**Мистические силы.** Рыцарь смерти сохраняет способность накладывать божественные заклинания. Однако, ни один рыцарь смерти не может исцелять своей магией. Рыцарь смерти может привлекать младшую нежить и командовать ей, хотя, если он служит могущественным исчадиям, скорее всего вместо нежити будут их миньоны. Часто рыцарь смерти в качестве скакуна использует [кошмара](CREATURE:${CREATURE_NIGHTMARE}) или [скелет боевого коня](CREATURE:${CREATURE_WARHORSE_SKELETON}).\n
 **Бессмертный до искупления.** Рыцарь смерти восстанет, даже если его уничтожить. Только после искупления грехов он может сбежать из темницы нежизни и действительно погибнуть.\n
 **Натура нежити.** Рыцарю смерти не нужен воздух, еда, питьё и сон.`,
       {
@@ -32195,6 +32196,79 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: 2,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: `Скелет боевого коня`,
+    nameEn: 'Warhorse skeleton',
+    id: CREATURE_WARHORSE_SKELETON,
+    description: skeletonDescription,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: {
+      id: 'MM',
+      page: 262,
+    },
+    armor: {
+      ac: 13,
+      type: 'обломки доспеха для коня',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 60,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 5,
+    },
+    vulnerabilityList: [
+      DAMAGE_BLUDGEONING,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_EXHAUSTION,
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    cr: CR_1_2,
+    actionList: [
+      {
+        name: `Копыта`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
           },
         },
       },

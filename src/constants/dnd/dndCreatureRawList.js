@@ -423,6 +423,7 @@ const {
     quasitText,
     redDragonDescriptionList,
     remorhazDescription,
+    salamanderDescription,
     seaHagDescriptionList,
     silverDragonDescriptionList,
     vampireDescriptionList,
@@ -525,6 +526,7 @@ const {
     CREATURE_FAERIE_DRAGON_VIOLET,
     CREATURE_FAERIE_DRAGON_YELLOW,
     CREATURE_FIRE_GIANT,
+    CREATURE_FIRE_SNAKE,
     CREATURE_FLAMESKULL,
     CREATURE_FLESH_GOLEM,
     CREATURE_FLYING_SWORD,
@@ -31499,6 +31501,125 @@ module.exports = [
       {
         name: `Парирование`,
         description: `Рыцарь смерти добавляет 6 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого рыцарь смерти должен видеть атакующего, и должен использовать рукопашное оружие.`,
+      },
+    ],
+  },
+  {
+    name: 'Огненная змея',
+    nameEn: 'Fire snake',
+    id: CREATURE_FIRE_SNAKE,
+    description: salamanderDescription,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 254,
+    },
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 8,
+    },
+    vulnerabilityList: [
+      DAMAGE_COLD,
+    ],
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_FIRE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_IGNAN,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: `Раскалённое тело`,
+        description: `Существо, касающееся змеи или попадающее по ней рукопашной атакой, находясь в пределах 5 футов от неё, получает урон огнём 3 (1к6).`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Змея совершает две атаки: одну укусом, и одну хвостом.`,
+      },
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 4,
+              cubeBonus: 1,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: `Хвост`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 1,
+              cubeType: 4,
+              cubeBonus: 1,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
       },
     ],
   },

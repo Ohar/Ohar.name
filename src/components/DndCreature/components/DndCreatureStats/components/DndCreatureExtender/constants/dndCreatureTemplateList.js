@@ -7,6 +7,7 @@ import {
   faUserPlus,
   faCandyCane,
   faUserFriends,
+  faBroom,
 } from '@fortawesome/free-solid-svg-icons'
 
 import generateTextLinks from '@/utils/generateTextLinks'
@@ -152,6 +153,7 @@ import {
   CREATURE_ERINYES,
   CREATURE_GOLD_DRAGON_WYRMLING,
   CREATURE_GREEN_DRAGON_WYRMLING,
+  CREATURE_GREEN_HAG,
   CREATURE_HORNED_DEVIL,
   CREATURE_ICE_DEVIL,
   CREATURE_ICE_MEPHIT,
@@ -159,11 +161,13 @@ import {
   CREATURE_MAGMA_MEPHIT,
   CREATURE_MONODRONE,
   CREATURE_MUD_MEPHIT,
+  CREATURE_NIGHT_HAG,
   CREATURE_PENTADRONE,
   CREATURE_PIT_FIEND,
   CREATURE_QUADRONE,
   CREATURE_QUASIT,
   CREATURE_RED_DRAGON_WYRMLING,
+  CREATURE_SEA_HAG,
   CREATURE_SILVER_DRAGON_WYRMLING,
   CREATURE_SMOKE_MEPHIT,
   CREATURE_SPINED_DEVIL,
@@ -199,10 +203,61 @@ import {
 import {
   LANG_DRACONIC,
 } from '@/constants/dnd/dndLanguageList'
+import {
+  SPELL_BESTOW_CURSE,
+  SPELL_CONTACT_OTHER_PLANE,
+  SPELL_COUNTERSPELL,
+  SPELL_EYEBITE,
+  SPELL_HOLD_PERSON,
+  SPELL_IDENTIFY,
+  SPELL_LIGHTNING_BOLT,
+  SPELL_LOCATE_OBJECT,
+  SPELL_PHANTASMAL_KILLER,
+  SPELL_POLYMORPH,
+  SPELL_RAY_OF_SICKNESS,
+  SPELL_SCRYING,
+} from '@/constants/dnd/dndSpellList'
+import {
+  CR_0,
+  CR_1_8,
+  CR_1_4,
+  CR_1_2,
+  CR_1,
+  CR_2,
+  CR_3,
+  CR_4,
+  CR_5,
+  CR_6,
+  CR_7,
+  CR_8,
+  CR_9,
+  CR_10,
+  CR_11,
+  CR_12,
+  CR_13,
+  CR_14,
+  CR_15,
+  CR_16,
+  CR_17,
+  CR_18,
+  CR_19,
+  CR_20,
+  CR_21,
+  CR_22,
+  CR_23,
+  CR_24,
+  CR_25,
+  CR_26,
+  CR_27,
+  CR_28,
+  CR_29,
+  CR_30,
+} from '@/constants/dnd/dndCrList'
 
 import { dndCrCollection } from '@/constants/dnd/dndCrList'
 
 import calcParamBonus from '@/utils/calcParamBonus'
+import formatBonus from '@/utils/formatBonus'
 
 export default [
   {
@@ -1035,6 +1090,79 @@ export default [
 
     editPropCollection: {
       name: ({ name }) => name.replace('Квазит', 'Квазит-фамильяр'),
+    },
+  },
+  {
+    templateName: 'Карга в шабаше',
+    templateIcon: faBroom,
+
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_GREEN_HAG,
+          CREATURE_SEA_HAG,
+          CREATURE_NIGHT_HAG,
+        ],
+      },
+    },
+
+    extendPropCollection: {
+      description: [
+        {
+          header: 'Шабаш карг',
+          text: `Когда нужно работать сообща, несмотря на эгоизм, карги собираются в шабаши. В шабаш могут входить разные ведьмы, в нём они считаются равными. Тем не менее, каждая жаждет личной власти.\n
+Шабаш — это три карги, и конфликт между двумя всегда может решить третья. Если встречается больше трёх карг, например, когда возникает конфликт между несколькими шабашами, всё погружается в хаос.`,
+        },
+      ],
+      featureList: [
+        {
+          name: 'Глаз карги',
+          description: `Шабаш может создать магический предмет, называемый _глазом карги_, который делают из настоящего глаза, покрытого лаком, подвешенного на манер кулона. Обычно глаз доверяют помощнику, для сохранения и переноски. Карга в шабаше может действием посмотреть через этот глаз, если он находится на одном с ней плане. У _глаза карги_ КД 10, 1 хит и тёмное зрение в радиусе 60 футов. Если его разрушить, все члены шабаша получают 3к10 психического урона и становятся ослеплёнными на 24 часа.\n
+У шабаша может быть только один _глаз_ одновременно, и создание нового требует проведения ритуала всеми тремя участницами. Ритуал занимает 1 час, и карги не смогут совершить его, будучи слепыми. Если во время совершения ритуала какая-нибудь карга совершает любое лишнее действие, шабаш должен начинать ритуал заново.`,
+        },
+      ],
+    },
+
+    editPropCollection: {
+      name: ({ name }) => name.replace('арга', `арга в шабаше`),
+      cr: ({ id, cr }) => {
+        switch (id) {
+          case CREATURE_GREEN_HAG:
+            return CR_5
+          case CREATURE_SEA_HAG:
+            return CR_4
+          case CREATURE_NIGHT_HAG:
+            return CR_7
+          default:
+            return cr
+        }
+      },
+      spellCastTogether: ({ params }) => {
+        const intBonus = calcParamBonus(params[PARAM_INT])
+        const saveThrowDc = 12 + intBonus
+        const spellAttackBonus = formatBonus(4 + intBonus)
+
+        return {
+          title: 'Совместное колдовство',
+          preText: `Если все три представительницы шабаша находятся в пределах 30 футов друг от друга, каждая может накладывать следующие заклинания из списка волшебника, но ячейки заклинаний у них общие на всех.`,
+          postText: `При накладывании этих заклинаний карга считается заклинателем 12 уровня, использующим Интеллект в качестве базовой характеристики. Её Сл спасброска от заклинания ${saveThrowDc}, ${spellAttackBonus} к попаданию атаками заклинаниями.`,
+          spellIdList: [
+            SPELL_BESTOW_CURSE,
+            SPELL_CONTACT_OTHER_PLANE,
+            SPELL_COUNTERSPELL,
+            SPELL_EYEBITE,
+            SPELL_HOLD_PERSON,
+            SPELL_IDENTIFY,
+            SPELL_LIGHTNING_BOLT,
+            SPELL_LOCATE_OBJECT,
+            SPELL_PHANTASMAL_KILLER,
+            SPELL_POLYMORPH,
+            SPELL_RAY_OF_SICKNESS,
+            SPELL_SCRYING,
+          ],
+          slotCountList: [0, 4, 3, 3, 3, 2, 1],
+        }
+      },
     },
   },
   // NOT READY

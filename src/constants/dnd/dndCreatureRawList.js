@@ -74,6 +74,7 @@ const {
     CREATURE_TYPE_ORC,
     CREATURE_TYPE_PLANT,
     CREATURE_TYPE_QUAGGOTH,
+    CREATURE_TYPE_SAHUAGIN,
     CREATURE_TYPE_SHAPESHIFTER,
     CREATURE_TYPE_TITAN,
     CREATURE_TYPE_UNDEAD,
@@ -137,6 +138,7 @@ const {
     LANG_ORC,
     LANG_OTYUGH,
     LANG_PRIMORDIAL,
+    LANG_SAHUAGIN,
     LANG_SYLVAN,
     LANG_TELEPATHY,
     LANG_TERRAN,
@@ -424,6 +426,8 @@ const {
     quasitText,
     redDragonDescriptionList,
     remorhazDescription,
+    sahuaginDescription,
+    sahuaginNote,
     salamanderDescription,
     seaHagDescriptionList,
     silverDragonDescriptionList,
@@ -639,6 +643,7 @@ const {
     CREATURE_ROPER,
     CREATURE_RUG_OF_SMOTHERING,
     CREATURE_RUST_MONSTER,
+    CREATURE_SAHUAGIN,
     CREATURE_SALAMANDER,
     CREATURE_SATYR,
     CREATURE_SCARECROW,
@@ -31485,6 +31490,155 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Сахуагин',
+    nameEn: 'Sahuagin',
+    id: CREATURE_SAHUAGIN,
+    description: sahuaginDescription,
+    note: sahuaginNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_SAHUAGIN,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: {
+      id: 'MM',
+      page: 257,
+    },
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 8,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 9,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      LANG_SAHUAGIN,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: `Кровавое бешенство`,
+        description: `Сахуагин совершает с преимуществом броски рукопашных атак по существам, у которых хиты ниже максимума.`,
+      },
+      {
+        name: `Ограниченная амфибийность`,
+        description: `Сахуагин может дышать и воздухом и под водой, но чтобы не задохнуться, ему нужно погружаться в воду хотя бы раз каждые 4 часа.`,
+      },
+      {
+        name: `Акулья телепатия`,
+        description: `Сахуагин может магическим образом командовать всеми акулами, находящимися в пределах 120 футов от него, при помощи ограниченной телепатии.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Сахуагин совершает две рукопашные атаки: одну укусом, и одну либо когтями, либо копьём. `,
+      },
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: `Когти`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: `Копьё`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 1,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 1,
+                comment: ', если используется двумя руками для совершения рукопашной атаки',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: `Копьё`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
           },
         },
       },

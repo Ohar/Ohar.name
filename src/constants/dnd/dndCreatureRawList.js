@@ -18027,36 +18027,6 @@ module.exports = [
     ],
   },
   {
-    name: 'Костяной дьявол c копьём',
-    nameEn: 'Bone Devil with a Spear',
-    id: CREATURE_BONE_DEVIL_WITH_A_SPEAR,
-    parentId: CREATURE_BONE_DEVIL,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Мультиатака',
-          description: `Дьявол совершает две атаки: одну гвизармой, и одну жалом.`,
-        },
-        {
-          name: 'Гвизарма',
-          description: `Если цель — существо с размером не больше Огромного, оно становится схваченным (Сл высвобождения 14). Пока цель схвачена, дьявол не может использовать свою гвизарму против другой цели.`,
-          attack: {
-            type: ACTION_MELEE_WEAPON_ATTACK,
-            bonus: 8,
-            range: 10,
-            target: 1,
-            hit: {
-              type: DAMAGE_PIERCING,
-              cubeCount: 2,
-              cubeType: 12,
-              cubeBonus: 4,
-            },
-          },
-        },
-      ],
-    },
-  },
-  {
     name: 'Ледяной дьявол',
     nameAlt: 'Гелюгон',
     nameEn: 'Ice Devil',

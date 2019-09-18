@@ -5,6 +5,7 @@ import {
   faMehBlank,
   faRobot,
   faUserPlus,
+  faCandyCane,
 } from '@fortawesome/free-solid-svg-icons'
 
 import generateTextLinks from '@/utils/generateTextLinks'
@@ -854,6 +855,66 @@ export default [
           },
         ]
       },
+    },
+  },
+  {
+    templateName: 'Костяной дьявол c копьём',
+    templateIcon: faCandyCane,
+
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_BONE_DEVIL,
+        ],
+      },
+      exclude: {
+        templateName: ['Костяной дьявол c копьём'],
+      },
+    },
+    source: {
+      id: 'MM',
+      page: 148,
+    },
+    extendPropCollection: {
+      description: [
+        {
+          header: 'Вариант: Копья костяных дьяволов',
+          text: generateTextLinks(`
+Некоторые [костяные дьяволы](CREATURE:${CREATURE_BONE_DEVIL}) обладают следующими вариантами действий:\n
+**Мультиатака.** Дьявол совершает две атаки: одну гвизармой, и одну жалом.\n
+**Гвизарма.** Рукопашная атака оружием: +8 к попаданию, досягаемость 10 фт., одна цель. Попадание: Колющий урон 17 (2к12 + 4). Если цель — существо с размером не больше Огромного, оно становится схваченным (Сл высвобождения 14). Пока цель схвачена, дьявол не может использовать свою гвизарму против другой цели.`),
+        },
+      ],
+      actionList: [
+        {
+          name: 'Гвизарма',
+          description: `Если цель — существо с размером не больше Огромного, оно становится схваченным (Сл высвобождения 14). Пока цель схвачена, дьявол не может использовать свою гвизарму против другой цели.`,
+          attack: {
+            type: ACTION_MELEE_WEAPON_ATTACK,
+            bonus: 8,
+            range: 10,
+            target: 1,
+            hit: {
+              type: DAMAGE_PIERCING,
+              cubeCount: 2,
+              cubeType: 12,
+              cubeBonus: 4,
+            },
+          },
+        },
+      ],
+    },
+
+    editPropCollection: {
+      name: ({ name }) => name.replace('дьявол', 'дьявол c копьём'),
+      actionList: ({ actionList }) => actionList.map(
+        action => action.name === 'Мультиатака'
+          ? {
+            ...action,
+            description: `Дьявол совершает три атаки: две когтями, и одну жалом. Он может совершить одну атаку гвизармой вместо двух атак когтями`,
+          }
+          : action
+      ),
     },
   },
   // NOT READY

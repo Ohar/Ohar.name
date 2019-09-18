@@ -18200,43 +18200,6 @@ module.exports = [
     ],
   },
   {
-    name: 'Ледяной дьявол c копьём',
-    nameEn: 'Ice Devil with a Spear',
-    id: CREATURE_ICE_DEVIL_WITH_A_SPEAR,
-    parentId: CREATURE_ICE_DEVIL,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Мультиатака',
-          description: `Дьявол совершает две атаки: одну ледяным копьём, и одну хвостом.`,
-        },
-        {
-          name: 'Ледяное копьё',
-          description: `Если цель — существо, она должна преуспеть в спасброске Телосложения со Сл 15, иначе её скорость на 1 минуту снижается на 10 футов; в каждом своём ходу она сможет совершать либо действие, либо бонусное действие, но не то и другое; и оно не может совершать реакции. Цель может повторять спасбросок в конце каждого своего хода, при успехе завершая этот эффект на себе.`,
-          attack: {
-            type: ACTION_MELEE_WEAPON_ATTACK,
-            bonus: 10,
-            range: 10,
-            target: 1,
-            hit: [
-              {
-                type: DAMAGE_PIERCING,
-                cubeCount: 2,
-                cubeType: 8,
-                cubeBonus: 5,
-              },
-              {
-                type: DAMAGE_COLD,
-                cubeCount: 3,
-                cubeType: 6,
-              },
-            ],
-          },
-        },
-      ],
-    },
-  },
-  {
     name: 'Лемур',
     nameEn: 'Lemure',
     id: CREATURE_LEMURE,

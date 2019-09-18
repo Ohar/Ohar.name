@@ -29,12 +29,14 @@ const {
   CREATURE_ANKHEG,
   CREATURE_BARBED_DEVIL,
   CREATURE_BEARDED_DEVIL,
+  CREATURE_BLUE_SLAAD,
   CREATURE_BONE_DEVIL,
   CREATURE_BRASS_DRAGON_WYRMLING,
   CREATURE_BRONZE_DRAGON_WYRMLING,
   CREATURE_BUGBEAR,
   CREATURE_CHAIN_DEVIL,
   CREATURE_CLOUD_GIANT,
+  CREATURE_DEATH_SLAAD,
   CREATURE_DRAGON_TURTLE,
   CREATURE_EFREETI,
   CREATURE_ERINYES,
@@ -45,6 +47,8 @@ const {
   CREATURE_GOBLIN,
   CREATURE_GOBLIN_BOSS,
   CREATURE_GOLD_DRAGON_WYRMLING,
+  CREATURE_GREEN_SLAAD,
+  CREATURE_GREY_SLAAD,
   CREATURE_GRICK,
   CREATURE_GRICK_ALPHA,
   CREATURE_HALF_OGRE,
@@ -63,10 +67,12 @@ const {
   CREATURE_LIZARDFOLK,
   CREATURE_MAGMA_MEPHIT,
   CREATURE_MIND_FLAYER,
+  CREATURE_MONODRONE,
   CREATURE_OGRE,
   CREATURE_ORC_WAR_CHIEF,
   CREATURE_OROG,
   CREATURE_PIT_FIEND,
+  CREATURE_RED_SLAAD,
   CREATURE_REMORHAZ,
   CREATURE_SALAMANDER,
   CREATURE_SHAMBLING_MOUND,
@@ -796,6 +802,15 @@ const skeletonDescription = {
 **Натура нежити.** Скелету не нужен воздух, еда, питьё и сон. `,
 }
 
+const slaadDescription = {
+  header: 'Слаады',
+  text: `В вечно бурлящем хаосе Лимбо куски лесов и лугов, руин замков и изолированных островов плывут через мешанину огня, воды, земли и ветра. Главные обитатели этого негостеприимного плана — слаады. У них нет дисциплины, и нет формальной иерархии, хотя более слабые слаады повинуются более сильным из страха уничтожения.\n
+**Нерестильный камень.** Когда-то давно Праймус, повелитель модронов, создал гигантский геометрически сложный камень, насыщенный энергией порядка. Затем он запустил его в Лимбо, веря, что камень принесёт порядок в хаос этого плана и задержит распространение этого хаоса на другие планы. С ростом силы камня существа с упорядоченным разумом, такие как [модроны](CREATURE:${CREATURE_MONODRONE}) и [гитцераи](CREATURE:${CREATURE_GITHZERAI_MONK}), смогли создавать анклавы в Лимбо. Однако творение Праймуса имело один непредвиденный побочный эффект: хаотичная энергия, вобранная в себя камнем, породила ужасы, которые впоследствии стали известны как слаады. Именно поэтому мудрецы назвали творение Праймуса Нерестильным камнем.\n
+Слаады уничтожили все анклавы модронов в Лимбо. Как существа полнейшего хаоса слаады ненавидят модронов и нападают на них при встрече. Тем не менее, Праймус не уничтожает своё творение, то ли не считая слаадов угрозой, то ли просто игнорируя их.\n
+**Рождение и трансформация.** У слаадов ужасающий репродуктивный цикл. Они размножаются либо откладывая яйца в гуманоидных носителей, либо заражая их трансформирующей болезнью под названием «вирус хаоса». Слаады разного цвета воспроизводятся и трансформируются по-своему, при этом [красные слаады](CREATURE:${CREATURE_RED_SLAAD}) порождают [синих](CREATURE:${CREATURE_BLUE_SLAAD}) и [зелёных](CREATURE:${CREATURE_GREEN_SLAAD}), а синие — красных и зелёных. Зелёные слаады в течение жизни превращаются в более сильных [серых](CREATURE:${CREATURE_GREY_SLAAD}) и [смертельных слаадов](CREATURE:${CREATURE_DEATH_SLAAD}). При каждой трансформации слаад сохраняет воспоминания.\n
+**Перевёртыши.** Некоторые слаады могут превращаться в гуманоидных существ, из которых они появились. Такие слаады возвращаются на Материальный План, чтобы сеять раздор в своём бывшем облике.`,
+}
+
 module.exports.angelDescription = angelDescription
 module.exports.animatedThingsDescription = animatedThingsDescription
 module.exports.blackDragonDescriptionList = blackDragonDescriptionList
@@ -845,6 +860,7 @@ module.exports.salamanderDescription = salamanderDescription
 module.exports.seaHagDescriptionList = seaHagDescriptionList
 module.exports.silverDragonDescriptionList = silverDragonDescriptionList
 module.exports.skeletonDescription = skeletonDescription
+module.exports.slaadDescription = slaadDescription
 module.exports.vampireDescriptionList = vampireDescriptionList
 module.exports.whiteDragonDescriptionList = whiteDragonDescriptionList
 module.exports.zombieDesciption = zombieDesciption

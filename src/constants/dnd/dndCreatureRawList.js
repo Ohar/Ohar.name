@@ -139,6 +139,7 @@ const {
     LANG_OTYUGH,
     LANG_PRIMORDIAL,
     LANG_SAHUAGIN,
+    LANG_SLAAD,
     LANG_SYLVAN,
     LANG_TELEPATHY,
     LANG_TERRAN,
@@ -258,6 +259,7 @@ const {
     SPELL_ENTANGLE,
     SPELL_EYEBITE,
     SPELL_FAERIE_FIRE,
+    SPELL_FEAR,
     SPELL_FEATHER_FALL,
     SPELL_FINGER_OF_DEATH,
     SPELL_FIREBALL,
@@ -429,6 +431,7 @@ const {
     seaHagDescriptionList,
     silverDragonDescriptionList,
     skeletonDescription,
+    slaadDescription,
     vampireDescriptionList,
     whiteDragonDescriptionList,
     zombieDesciption,
@@ -474,6 +477,7 @@ const {
     CREATURE_BEHOLDER_ZOMBIE,
     CREATURE_BLACK_DRAGON_WYRMLING,
     CREATURE_BLUE_DRAGON_WYRMLING,
+    CREATURE_BLUE_SLAAD,
     CREATURE_BONE_DEVIL,
     CREATURE_BONE_NAGA_GUARDIAN,
     CREATURE_BONE_NAGA_SPIRIT,
@@ -498,6 +502,7 @@ const {
     CREATURE_CRAWLING_CLAW,
     CREATURE_DAO,
     CREATURE_DEATH_KNIGHT,
+    CREATURE_DEATH_SLAAD,
     CREATURE_DEATH_TYRANT,
     CREATURE_DEMILICH,
     CREATURE_DEVA,
@@ -546,8 +551,10 @@ const {
     CREATURE_GOLD_DRAGON_WYRMLING,
     CREATURE_GORGON,
     CREATURE_GORISTRO,
+    CREATURE_GRAY_SLAAD,
     CREATURE_GREEN_DRAGON_WYRMLING,
     CREATURE_GREEN_HAG,
+    CREATURE_GREEN_SLAAD,
     CREATURE_GRELL,
     CREATURE_GRICK,
     CREATURE_GRICK_ALPHA,
@@ -636,6 +643,7 @@ const {
     CREATURE_QUASIT,
     CREATURE_RAKSHASA,
     CREATURE_RED_DRAGON_WYRMLING,
+    CREATURE_RED_SLAAD,
     CREATURE_REMORHAZ,
     CREATURE_REVENANT,
     CREATURE_RIDING_HORSE,
@@ -32370,6 +32378,198 @@ module.exports = [
             cubeCount: 2,
             cubeType: 8,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: `Зелёный слаад`,
+    nameEn: 'Green slaad',
+    id: CREATURE_GREEN_SLAAD,
+    description: [
+      `Зелёные слаады удивительно интеллектуальны и обладают врождёнными способностями к колдовству. Зелёный слаад может изменить свой облик и предстать в виде гуманоида. Если он был рождён от носителя-гуманоида, то часто принимает его облик. В какой-то непредвиденный момент существования зелёный слаад магически, мгновенно и навсегда превращается в серого слаада. Изучение тайны этого превращения может занять года и даже десятилетия.`,
+      slaadDescription,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ABERRATION,
+      CREATURE_TYPE_SHAPESHIFTER,
+    ],
+    aligmentId: ALIGMENT_CN,
+    source: {
+      id: 'MM',
+      page: 265,
+    },
+    armor: {
+      ac: 16,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 15,
+      cubeType: 10,
+      cubeBonus: 45,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 12,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+      [SKILL_ARCANA]: 3,
+    },
+    resistanceList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ACID,
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_SLAAD,
+      {
+        id: LANG_TELEPATHY,
+        range: 60,
+      },
+    ],
+    cr: CR_8,
+    featureList: [
+      {
+        name: `Перевёртыш`,
+        description: `Слаад может действием превратиться в гуманоида Маленького или Среднего размера, или принять свой истинный облик. Все его статистики, кроме размера, одинаковы во всех обликах. Всё несомое и носимое им снаряжение не превращается. Он принимает свой истинный облик, если умирает.`,
+      },
+      {
+        name: `Сопротивление магии`,
+        description: `Слаад совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: `Регенерация`,
+        description: `Слаад восстанавливает 10 хитов в начале своего хода, если у него есть хотя бы 1 хит.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 12,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_MAGE_HAND,
+            SPELL_DETECT_MAGIC,
+            SPELL_DETECT_THOUGHTS,
+          ],
+        },
+        {
+          limit: {
+            count: 2,
+            period: 'день',
+          },
+          list: [
+            {
+              id: SPELL_INVISIBILITY,
+              comment: 'только на себя',
+            },
+            SPELL_FEAR,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_FIREBALL,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Слаад совершает три атаки: одну укусом, и две либо когтями, либо посохом. В качестве альтернативы, он два раза использует Метание пламени.`,
+      },
+      {
+        name: `Укус`,
+        comment: `только в облике слаада`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Коготь`,
+        comment: `только в облике слаада`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Посох`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Метание пламени`,
+        description: `Этот огонь воспламеняет горючие предметы, которые никто не несёт и не носит.`,
+        attack: {
+          type: ACTION_RANGE_SPELL_ATTACK,
+          bonus: 4,
+          range: 60,
+          target: 1,
+          hit: {
+            type: DAMAGE_FIRE,
+            cubeCount: 3,
+            cubeType: 6,
+            cubeBonus: 0,
           },
         },
       },

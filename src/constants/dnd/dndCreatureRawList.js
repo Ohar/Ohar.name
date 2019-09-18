@@ -428,6 +428,7 @@ const {
     salamanderDescription,
     seaHagDescriptionList,
     silverDragonDescriptionList,
+    skeletonDescription,
     vampireDescriptionList,
     whiteDragonDescriptionList,
     zombieDesciption,
@@ -652,6 +653,7 @@ const {
     CREATURE_SHAMBLING_MOUND,
     CREATURE_SHRIEKER,
     CREATURE_SILVER_DRAGON_WYRMLING,
+    CREATURE_SKELETON,
     CREATURE_SMOKE_MEPHIT,
     CREATURE_SOLAR,
     CREATURE_SPECTATOR,
@@ -32098,6 +32100,103 @@ module.exports = [
           to: 6,
         },
         description: `Свежеватель разума магическим образом испускает психическую энергию 60-футовым конусом. Все существа в этой области должны преуспеть в спасброске Интеллекта со Сл 15, иначе получат урон психической энергией 22 (4к8+4) и станут ошеломлёнными на 1 минуту. Существо может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
+      },
+    ],
+  },
+  {
+    name: `Скелет`,
+    nameEn: 'Skeleton',
+    id: CREATURE_SKELETON,
+    description: skeletonDescription,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: {
+      id: 'MM',
+      page: 261,
+    },
+    armor: {
+      ac: 13,
+      type: 'обломки доспеха',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 5,
+    },
+    vulnerabilityList: [
+      DAMAGE_BLUDGEONING,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_EXHAUSTION,
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ALL_KNOWN_AT_LIFE,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1_4,
+    actionList: [
+      {
+        name: `Короткий меч`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: `Короткий лук`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 80,
+            max: 320,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
       },
     ],
   },

@@ -48,14 +48,16 @@ const DndSourceInfoContainer = ({ source, useFullName }) => (
                 }
               }
 
-              if (sourceItem.url && sourceItem.problemText) {
+              if (sourceItem.url) {
                 url = sourceItem.url
-
-                const {problemText} = sourceItem
                 const {host} = new URL(url)
 
                 text = host
-                title = `Почему ${host}?\n\n${problemText}`
+
+                if (sourceItem.problemText) {
+                  const {problemText} = sourceItem
+                  title = `Почему ${host}?\n\n${problemText}`
+                }
               }
 
               return (

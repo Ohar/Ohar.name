@@ -1,4 +1,11 @@
-import {LOOT_TYPE_ART, LOOT_TYPE_TRINKET, LOOT_TYPE_GEM} from '@/constants/dnd/dndLootTypeList'
+import {
+  LOOT_TYPE_ART, LOOT_TYPE_CLOTH,
+  LOOT_TYPE_FOOD,
+  LOOT_TYPE_GEM,
+  LOOT_TYPE_TOOL,
+  LOOT_TYPE_TRINKET,
+  LOOT_TYPE_WEAPON,
+} from '@/constants/dnd/dndLootTypeList'
 
 export default [
   {
@@ -3196,7 +3203,7 @@ export default [
     },
   },
   {
-    cost: 1,
+    cost: 0,
     type: LOOT_TYPE_TRINKET,
     isCleverItem: true,
     isDumbItem: true,
@@ -3209,7 +3216,7 @@ export default [
   },
   {
     cost: 2,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3233,7 +3240,7 @@ export default [
   },
   {
     cost: 180,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3245,7 +3252,7 @@ export default [
   },
   {
     cost: 5,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_FOOD,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3305,7 +3312,7 @@ export default [
   },
   {
     cost: 180,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_WEAPON,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3317,7 +3324,7 @@ export default [
   },
   {
     cost: 180,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_WEAPON,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3329,7 +3336,7 @@ export default [
   },
   {
     cost: 180,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_WEAPON,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3341,7 +3348,7 @@ export default [
   },
   {
     cost: 40,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_WEAPON,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3353,7 +3360,7 @@ export default [
   },
   {
     cost: 50,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_WEAPON,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3365,7 +3372,7 @@ export default [
   },
   {
     cost: 60,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_WEAPON,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3389,7 +3396,7 @@ export default [
   },
   {
     cost: 0,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_ART,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3401,7 +3408,7 @@ export default [
   },
   {
     cost: 0,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_ART,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3413,7 +3420,7 @@ export default [
   },
   {
     cost: 5,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_ART,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3425,7 +3432,7 @@ export default [
   },
   {
     cost: 10000,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_ART,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3557,7 +3564,7 @@ export default [
   },
   {
     cost: 200,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_ART,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3581,7 +3588,7 @@ export default [
   },
   {
     cost: 40,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_CLOTH,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3593,7 +3600,7 @@ export default [
   },
   {
     cost: 1,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3605,7 +3612,7 @@ export default [
   },
   {
     cost: 3,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3617,7 +3624,7 @@ export default [
   },
   {
     cost: 15,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3629,7 +3636,7 @@ export default [
   },
   {
     cost: 40,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3641,7 +3648,7 @@ export default [
   },
   {
     cost: 30,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3653,7 +3660,7 @@ export default [
   },
   {
     cost: 40,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3665,7 +3672,7 @@ export default [
   },
   {
     cost: 1000,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3677,7 +3684,7 @@ export default [
   },
   {
     cost: 35,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3689,7 +3696,7 @@ export default [
   },
   {
     cost: 100,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3701,7 +3708,7 @@ export default [
   },
   {
     cost: 400,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3713,7 +3720,7 @@ export default [
   },
   {
     cost: 300,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_FOOD,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3761,7 +3768,7 @@ export default [
   },
   {
     cost: 50,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3773,7 +3780,7 @@ export default [
   },
   {
     cost: 50,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3785,7 +3792,7 @@ export default [
   },
   {
     cost: 30000,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3797,7 +3804,7 @@ export default [
   },
   {
     cost: 3,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3809,7 +3816,7 @@ export default [
   },
   {
     cost: 2,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3833,7 +3840,7 @@ export default [
   },
   {
     cost: 100,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3845,7 +3852,7 @@ export default [
   },
   {
     cost: 2000,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3857,7 +3864,7 @@ export default [
   },
   {
     cost: 2000,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3869,7 +3876,7 @@ export default [
   },
   {
     cost: 2000,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3881,7 +3888,7 @@ export default [
   },
   {
     cost: 10,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3893,7 +3900,7 @@ export default [
   },
   {
     cost: 15,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_CLOTH,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3905,7 +3912,7 @@ export default [
   },
   {
     cost: 20,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_CLOTH,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3917,7 +3924,7 @@ export default [
   },
   {
     cost: 20,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_CLOTH,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3929,7 +3936,7 @@ export default [
   },
   {
     cost: 0,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3941,7 +3948,7 @@ export default [
   },
   {
     cost: 5,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_TOOL,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -3989,7 +3996,7 @@ export default [
   },
   {
     cost: 1,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_WEAPON,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -4013,7 +4020,7 @@ export default [
   },
   {
     cost: 0,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_CLOTH,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,
@@ -4025,7 +4032,7 @@ export default [
   },
   {
     cost: 0,
-    type: LOOT_TYPE_TRINKET,
+    type: LOOT_TYPE_CLOTH,
     isCleverItem: true,
     isDumbItem: true,
     isOnlyLargeCreatureItem: false,

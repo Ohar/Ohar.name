@@ -791,7 +791,7 @@ export default [
     },
 
     editPropCollection: {
-      name: ({ name }) => `${name}-призыватель`,
+      name: ({ name }) => name.replace(/(дьявол|Эриния|Исчадие)/, '$1-призыватель'),
       actionList: ({ id, name, actionList }) => {
         let preText = ``
 

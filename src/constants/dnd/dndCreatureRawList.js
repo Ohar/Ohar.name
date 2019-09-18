@@ -17433,25 +17433,6 @@ module.exports = [
     ],
   },
   {
-    name: 'Бородатый дьявол-призыватель',
-    nameEn: 'Bearded devil summoner',
-    id: CREATURE_BEARDED_DEVIL_SUMMONER,
-    parentId: CREATURE_BEARDED_DEVIL,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв дьявола',
-          description: `Дьявол пытается призвать одного бородатого дьявола с шансом 30%.\n
-Призванный дьявол появляется в свободном пространстве в пределах 60 футов от призывателя, и действует как его союзник, не имеющий способности призывать дьяволов. Он помогает в течение 1 минуты или пока призыватель не умрёт или действием его не отпустит.`,
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-        },
-      ],
-    },
-  },
-  {
     name: 'Дьявол цепей',
     nameAlt: 'Китон',
     nameEn: 'Chain devil',
@@ -17910,29 +17891,6 @@ module.exports = [
     ],
   },
   {
-    name: 'Исчадие-призыватель преисподней',
-    nameAlt: 'Исчадие-призыватель из ямы',
-    nameEn: 'Pit Fiend summoner',
-    id: CREATURE_PIT_FIEND_SUMMONER,
-    parentId: CREATURE_PIT_FIEND,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв дьявола',
-          description: `Исчадие преисподней выбирает, кого призвать, и пытается это сделать без шанса провала.\n
-* 2к4 [бородатых дьявола](CREATURE:${CREATURE_BEARDED_DEVIL})
-* 1к4 [шипастых дьявола](CREATURE:${CREATURE_BARBED_DEVIL})
-* одну [эринию](CREATURE:${CREATURE_ERINYES})\n
-Призванные существа появляются в свободном пространстве в пределах 60 футов от исчадия преисподней, и действуют как его союзники, не имеющие способности призывать дьяволов. Они помогает в течение 1 минуты или пока исчадие преисподней не умрёт или действием их не отпустит.`,
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-        },
-      ],
-    },
-  },
-  {
     name: 'Костяной дьявол',
     nameAlt: 'Осилут',
     nameEn: 'Bone Devil',
@@ -18069,13 +18027,6 @@ module.exports = [
     ],
   },
   {
-    name: 'Костяной дьявол-призыватель',
-    nameEn: 'Bone devil summoner',
-    id: CREATURE_BONE_DEVIL_SUMMONER,
-    parentId: CREATURE_BONE_DEVIL,
-    ...boneDevilSummoner,
-  },
-  {
     name: 'Костяной дьявол c копьём',
     nameEn: 'Bone Devil with a Spear',
     id: CREATURE_BONE_DEVIL_WITH_A_SPEAR,
@@ -18104,13 +18055,6 @@ module.exports = [
         },
       ],
     },
-  },
-  {
-    name: 'Костяной дьявол-призыватель c копьём',
-    nameEn: 'Bone devil summoner with a Spear',
-    id: CREATURE_BONE_DEVIL_SUMMONER_WITH_A_SPEAR,
-    parentId: CREATURE_BONE_DEVIL_WITH_A_SPEAR,
-    ...boneDevilSummoner,
   },
   {
     name: 'Ледяной дьявол',
@@ -18286,13 +18230,6 @@ module.exports = [
     ],
   },
   {
-    name: 'Ледяной дьявол-призыватель',
-    nameEn: 'Ice devil summoner',
-    id: CREATURE_ICE_DEVIL_SUMMONER,
-    parentId: CREATURE_ICE_DEVIL,
-    ...iceDevilSummoner,
-  },
-  {
     name: 'Ледяной дьявол c копьём',
     nameEn: 'Ice Devil with a Spear',
     id: CREATURE_ICE_DEVIL_WITH_A_SPEAR,
@@ -18328,13 +18265,6 @@ module.exports = [
         },
       ],
     },
-  },
-  {
-    name: 'Ледяной дьявол-призыватель c копьём',
-    nameEn: 'Ice devil summoner with a Spear',
-    id: CREATURE_ICE_DEVIL_SUMMONER_WITH_A_SPEAR,
-    parentId: CREATURE_ICE_DEVIL_WITH_A_SPEAR,
-    ...iceDevilSummoner,
   },
   {
     name: 'Лемур',
@@ -18575,25 +18505,6 @@ module.exports = [
     ],
   },
   {
-    name: 'Шипастый дьявол-призыватель',
-    nameEn: 'Barbed devil summoner',
-    id: CREATURE_BARBED_DEVIL_SUMMONER,
-    parentId: CREATURE_BARBED_DEVIL,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв дьявола',
-          description: `Дьявол пытается призвать одного [шипастого дьявола](CREATURE:${CREATURE_BARBED_DEVIL}) с шансом 30%.\n
-Призванный дьявол появляется в свободном пространстве в пределах 60 футов от призывателя, и действует как его союзник, не имеющий способности призывать дьяволов. Он помогает в течение 1 минуты или пока призыватель не умрёт или действием его не отпустит.`,
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-        },
-      ],
-    },
-  },
-  {
     name: 'Рогатый дьявол',
     nameAlt: 'Мальбранш',
     nameEn: 'Horned devil',
@@ -18733,25 +18644,6 @@ module.exports = [
         },
       },
     ],
-  },
-  {
-    name: 'Рогатый дьявол-призыватель',
-    nameEn: 'Horned devil summoner',
-    id: CREATURE_HORNED_DEVIL_SUMMONER,
-    parentId: CREATURE_HORNED_DEVIL,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв дьявола',
-          description: `Дьявол пытается призвать одного [рогатого дьявола](CREATURE:${CREATURE_HORNED_DEVIL}) с шансом 30%.\n
-Призванный дьявол появляется в свободном пространстве в пределах 60 футов от призывателя, и действует как его союзник, не имеющий способности призывать дьяволов. Он помогает в течение 1 минуты или пока призыватель не умрёт или действием его не отпустит.`,
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-        },
-      ],
-    },
   },
   {
     name: 'Эриния',
@@ -18913,28 +18805,6 @@ module.exports = [
       },
     ],
     isFemale: true,
-  },
-  {
-    name: 'Эриния-призыватель',
-    nameEn: 'Erinyes summoner',
-    id: CREATURE_ERINYES_SUMMONER,
-    parentId: CREATURE_ERINYES,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв дьявола',
-          description: `Эриния выбирает, кого призвать, и пытается это сделать с шансом 50%.\n
-* 3к6 [игольчатых дьяволов](CREATURE:${CREATURE_SPINED_DEVIL})
-* 1к6 [бородатых дьяволов](CREATURE:${CREATURE_BEARDED_DEVIL})
-* одну [эринию](CREATURE:${CREATURE_ERINYES})\n
-Призванные существа появляются в свободном пространстве в пределах 60 футов от исчадия преисподней, и действуют как его союзники, не имеющие способности призывать дьяволов. Они помогает в течение 1 минуты или пока исчадие преисподней не умрёт или действием их не отпустит.`,
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-        },
-      ],
-    },
   },
   {
     name: 'Единорог',

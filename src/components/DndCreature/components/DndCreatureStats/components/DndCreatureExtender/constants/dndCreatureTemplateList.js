@@ -137,24 +137,32 @@ import {
   CREATURE_ANCIENT_RED_DRAGON,
   CREATURE_ANCIENT_SILVER_DRAGON,
   CREATURE_ANCIENT_WHITE_DRAGON,
+  CREATURE_BARBED_DEVIL,
+  CREATURE_BEARDED_DEVIL,
   CREATURE_BLACK_DRAGON_WYRMLING,
   CREATURE_BLUE_DRAGON_WYRMLING,
+  CREATURE_BONE_DEVIL,
   CREATURE_BRASS_DRAGON_WYRMLING,
   CREATURE_BRONZE_DRAGON_WYRMLING,
   CREATURE_COPPER_DRAGON_WYRMLING,
   CREATURE_DUODRONE,
   CREATURE_DUST_MEPHIT,
+  CREATURE_ERINYES,
   CREATURE_GOLD_DRAGON_WYRMLING,
   CREATURE_GREEN_DRAGON_WYRMLING,
+  CREATURE_HORNED_DEVIL,
+  CREATURE_ICE_DEVIL,
   CREATURE_ICE_MEPHIT,
   CREATURE_MAGMA_MEPHIT,
   CREATURE_MONODRONE,
   CREATURE_MUD_MEPHIT,
   CREATURE_PENTADRONE,
+  CREATURE_PIT_FIEND,
   CREATURE_QUADRONE,
   CREATURE_RED_DRAGON_WYRMLING,
   CREATURE_SILVER_DRAGON_WYRMLING,
   CREATURE_SMOKE_MEPHIT,
+  CREATURE_SPINED_DEVIL,
   CREATURE_STEAM_MEPHIT,
   CREATURE_TRIDRONE,
   CREATURE_WHITE_DRAGON_WYRMLING,
@@ -744,6 +752,108 @@ export default [
           description: `У мефита есть 25% шанс призвать 1к4 одной с ним разновидности. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
         },
       ],
+    },
+  },
+  {
+    templateName: 'Дьявол-призыватель',
+    templateIcon: faUserPlus,
+
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_BARBED_DEVIL,
+          CREATURE_BEARDED_DEVIL,
+          CREATURE_BONE_DEVIL,
+          CREATURE_ERINYES,
+          CREATURE_HORNED_DEVIL,
+          CREATURE_ICE_DEVIL,
+          CREATURE_PIT_FIEND,
+        ],
+      },
+      exclude: {
+        templateName: ['Дьявол-призыватель'],
+      },
+    },
+    source: {
+      id: 'MM',
+      page: 142,
+    },
+    extendPropCollection: {
+      description: [
+        {
+          header: 'Вариант: Призыв дьявола',
+          text: generateTextLinks(`У некоторых дьяволов может быть действие, позволяющее им призывать других дьяволов.\n
+**Призыв дьявола (1/день).** Дьявол выбирает, кого призвать, и пытается это сделать.\n
+\n
+* [Бородатый дьявол](CREATURE:${CREATURE_BEARDED_DEVIL}) получает 30% шанс призыва одного [бородатого дьявола](CREATURE:${CREATURE_BEARDED_DEVIL}).\n
+* [Исчадие преисподней](CREATURE:${CREATURE_PIT_FIEND}) призывает 2к4 [бородатых дьявола](CREATURE:${CREATURE_BEARDED_DEVIL}), 1к4 [шипастых дьявола](CREATURE:${CREATURE_BARBED_DEVIL}) или одну [эринию](CREATURE:${CREATURE_ERINYES}) без шанса провала.\n
+* [Костяной дьявол](CREATURE:${CREATURE_BONE_DEVIL}) получает 40% шанс призыва 2к6 [игольчатых дьяволов](CREATURE:${CREATURE_SPINED_DEVIL}) или одного [костяного дьявола](CREATURE:${CREATURE_BONE_DEVIL}).\n
+* [Ледяной дьявол](CREATURE:${CREATURE_ICE_DEVIL}) получает 60% шанс призыва одного [ледяного дьявола](CREATURE:${CREATURE_ICE_DEVIL}).\n
+* [Рогатый дьявол](CREATURE:${CREATURE_HORNED_DEVIL}) получает 30% шанс призыва одного [рогатого дьявола](CREATURE:${CREATURE_HORNED_DEVIL}).\n
+* [Шипастый дьявол](CREATURE:${CREATURE_BARBED_DEVIL}) получает 30% шанс призыва одного [шипастого дьявола](CREATURE:${CREATURE_BARBED_DEVIL}).\n
+* [Эриния](CREATURE:${CREATURE_ERINYES}) получает 50% шанс призыва 3к6 [игольчатых дьяволов](CREATURE:${CREATURE_SPINED_DEVIL}), 1к6 [бородатых дьяволов](CREATURE:${CREATURE_BEARDED_DEVIL}) или одной [эринии](CREATURE:${CREATURE_ERINYES}).\n
+\n
+Призванный дьявол появляется в свободном пространстве в пределах 60 футов от призывателя, и действует как его союзник, не имеющий способности призывать дьяволов. Он помогает в течение 1 минуты или пока призыватель не умрёт или действием его не отпустит.`),
+        },
+      ],
+    },
+
+    editPropCollection: {
+      name: ({ name }) => `${name}-призыватель`,
+      actionList: ({ id, name, actionList }) => {
+        let preText = ``
+
+        switch (id) {
+          case CREATURE_BARBED_DEVIL:
+            preText = `Шипастый дьявол пытается призвать одного [шипастого дьявола](CREATURE:${CREATURE_BARBED_DEVIL}) с шансом 30%.`
+            break
+
+          case CREATURE_BEARDED_DEVIL:
+            preText = `Бородатый дьявол пытается призвать одного [бородатого дьявола](CREATURE:${CREATURE_BEARDED_DEVIL}) с шансом 30%.`
+            break
+
+          case CREATURE_BONE_DEVIL:
+            preText = `Костяной дьявол выбирает, кого призвать, и пытается это сделать с шансом 30%.\n
+ * 2к6 [игольчатых дьяволов](CREATURE:${CREATURE_SPINED_DEVIL})
+ * одного [костяного дьявола](CREATURE:${CREATURE_BONE_DEVIL})`
+            break
+
+          case CREATURE_ERINYES:
+            preText = `Эриния выбирает, кого призвать, и пытается это сделать с шансом 50%.\n
+* 3к6 [игольчатых дьяволов](CREATURE:${CREATURE_SPINED_DEVIL})
+* 1к6 [бородатых дьяволов](CREATURE:${CREATURE_BEARDED_DEVIL})
+* одну [эринию](CREATURE:${CREATURE_ERINYES})`
+            break
+
+          case CREATURE_HORNED_DEVIL:
+            preText = `Рогатый дьявол пытается призвать одного [рогатого дьявола](CREATURE:${CREATURE_HORNED_DEVIL}) с шансом 30%.`
+            break
+
+          case CREATURE_ICE_DEVIL:
+            preText = `Ледяной дьявол пытается призвать одного [ледяного дьявола](CREATURE:${CREATURE_ICE_DEVIL}) с шансом 60%.`
+            break
+
+          case CREATURE_PIT_FIEND:
+            preText = `Исчадие преисподней выбирает, кого призвать, и пытается это сделать без шанса провала.\n
+* 2к4 [бородатых дьявола](CREATURE:${CREATURE_BEARDED_DEVIL})
+* 1к4 [шипастых дьявола](CREATURE:${CREATURE_BARBED_DEVIL})
+* одну [эринию](CREATURE:${CREATURE_ERINYES})`
+            break
+        }
+
+        return [
+          ...actionList,
+          {
+            name: 'Призыв дьявола',
+            description: generateTextLinks(`${preText}\n
+Призванный дьявол появляется в свободном пространстве в пределах 60 футов от призывателя, и действует как его союзник, не имеющий способности призывать дьяволов. Он помогает в течение 1 минуты или пока призыватель не умрёт или действием его не отпустит.`),
+            limit: {
+              count: 1,
+              period: 'день',
+            },
+          },
+        ]
+      },
     },
   },
   // NOT READY

@@ -658,6 +658,7 @@ const {
     CREATURE_ROPER,
     CREATURE_RUG_OF_SMOTHERING,
     CREATURE_RUST_MONSTER,
+    CREATURE_SALAMANDER,
     CREATURE_SCARECROW,
     CREATURE_SEA_HAG,
     CREATURE_SEA_HAG_COVEN,
@@ -31617,6 +31618,163 @@ module.exports = [
             {
               type: DAMAGE_FIRE,
               cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+    ],
+    isFemale: true,
+  },
+  {
+    name: 'Саламандра',
+    nameEn: 'Salamander',
+    id: CREATURE_SALAMANDER,
+    description: salamanderDescription,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 255,
+    },
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 10,
+      cubeBonus: 24,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 12,
+    },
+    vulnerabilityList: [
+      DAMAGE_COLD,
+    ],
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_FIRE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_IGNAN,
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: `Раскалённое тело`,
+        description: `Существо, касающееся саламандры или попадающее по ней рукопашной атакой, находясь в пределах 5 футов от неё, получает урон огнём 7 (2к6).`,
+      },
+      {
+        name: `Раскалённое оружие`,
+        description: `Всё металлическое рукопашное оружие, используемое саламандрой, причиняет дополнительный урон огнём 3 (1к6) при попадании (уже учтено в атаках).`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Змея совершает две атаки: одну копьём, и одну хвостом.`,
+      },
+      {
+        name: `Копьё`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 6,
+                cubeBonus: 4,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 8,
+                cubeBonus: 4,
+                comment: `, если используется двумя руками для совершения рукопашной атаки`,
+              },
+            ],
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: `Копьё`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 7,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 4,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: `Хвост`,
+        description: `Цель становится схваченной (Сл высвобождения 14). Пока цель схвачена, она опутана, саламандра может автоматически попадать по ней хвостом, и не может совершать атаки хвостом по другим целям.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 4,
+            },
+            {
+              type: DAMAGE_FIRE,
+              cubeCount: 2,
               cubeType: 6,
               cubeBonus: 0,
             },

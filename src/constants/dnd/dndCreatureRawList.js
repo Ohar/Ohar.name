@@ -644,6 +644,7 @@ const {
     CREATURE_RUG_OF_SMOTHERING,
     CREATURE_RUST_MONSTER,
     CREATURE_SAHUAGIN,
+    CREATURE_SAHUAGIN_BARON,
     CREATURE_SALAMANDER,
     CREATURE_SATYR,
     CREATURE_SCARECROW,
@@ -31639,6 +31640,161 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: 'Барон сахуагинов',
+    nameEn: 'Sahuagin baron',
+    id: CREATURE_SAHUAGIN_BARON,
+    description: sahuaginDescription,
+    note: sahuaginNote,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_SAHUAGIN,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: {
+      id: 'MM',
+      page: 258,
+    },
+    armor: {
+      ac: 16,
+      type: 'кираса',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 10,
+      cubeBonus: 27,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 50,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 17,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 5,
+      [PARAM_CON]: 6,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 4,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 17,
+      },
+    ],
+    languageList: [
+      LANG_SAHUAGIN,
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: `Кровавое бешенство`,
+        description: `Сахуагин совершает с преимуществом броски рукопашных атак по существам, у которых хиты ниже максимума.`,
+      },
+      {
+        name: `Ограниченная амфибийность`,
+        description: `Сахуагин может дышать и воздухом и под водой, но чтобы не задохнуться, ему нужно погружаться в воду хотя бы раз каждые 4 часа.`,
+      },
+      {
+        name: `Акулья телепатия`,
+        description: `Сахуагин может магическим образом командовать всеми акулами, находящимися в пределах 120 футов от него, при помощи ограниченной телепатии.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Сахуагин совершает три атаки: одну укусом, и две либо когтями, либо трезубцем.`,
+      },
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Когти`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Трезубец`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 6,
+                cubeBonus: 4,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 8,
+                cubeBonus: 4,
+                comment: ', если используется двумя руками для совершения рукопашной атаки',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: `Трезубец`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 7,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
           },
         },
       },

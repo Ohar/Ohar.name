@@ -1,5 +1,11 @@
 import arrify from 'arrify'
-import { faDizzy, faSkullCrossbones, faMehBlank, faRobot, faDragon } from '@fortawesome/free-solid-svg-icons'
+import {
+  faDizzy,
+  faSkullCrossbones,
+  faMehBlank,
+  faRobot,
+  faUserPlus,
+} from '@fortawesome/free-solid-svg-icons'
 
 import generateTextLinks from '@/utils/generateTextLinks'
 
@@ -137,13 +143,19 @@ import {
   CREATURE_BRONZE_DRAGON_WYRMLING,
   CREATURE_COPPER_DRAGON_WYRMLING,
   CREATURE_DUODRONE,
+  CREATURE_DUST_MEPHIT,
   CREATURE_GOLD_DRAGON_WYRMLING,
   CREATURE_GREEN_DRAGON_WYRMLING,
+  CREATURE_ICE_MEPHIT,
+  CREATURE_MAGMA_MEPHIT,
   CREATURE_MONODRONE,
+  CREATURE_MUD_MEPHIT,
   CREATURE_PENTADRONE,
   CREATURE_QUADRONE,
   CREATURE_RED_DRAGON_WYRMLING,
   CREATURE_SILVER_DRAGON_WYRMLING,
+  CREATURE_SMOKE_MEPHIT,
+  CREATURE_STEAM_MEPHIT,
   CREATURE_TRIDRONE,
   CREATURE_WHITE_DRAGON_WYRMLING,
   CREATURE_YOUNG_BLACK_DRAGON,
@@ -684,6 +696,54 @@ export default [
       featureList: ({ featureList }) => featureList.filter(
         ({ name }) => name !== 'Косное сознание',
       ),
+    },
+  },
+  {
+    templateName: 'Мефит-призыватель',
+    templateIcon: faUserPlus,
+
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_MUD_MEPHIT,
+          CREATURE_SMOKE_MEPHIT,
+          CREATURE_ICE_MEPHIT,
+          CREATURE_MAGMA_MEPHIT,
+          CREATURE_STEAM_MEPHIT,
+          CREATURE_DUST_MEPHIT,
+        ],
+      },
+      exclude: {
+        templateName: ['Мефит-призыватель'],
+      },
+    },
+    source: {
+      id: 'MM',
+      page: 206,
+    },
+    extendPropCollection: {
+      description: [
+        {
+          header: 'Вариант: Призыв мефита',
+          text: `У некоторых мефитов может быть действие, позволяющее им призывать других мефитов.\n
+**Призыв мефитов (1/день)**. У мефита есть 25% шанс призвать 1к4 мефита одной с ним разновидности. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
+        },
+      ],
+    },
+
+    editPropCollection: {
+      name: ({ name }) => `${name}-призыватель`,
+      actionList: ({ actionList }) => [
+        ...actionList,
+        {
+          name: 'Призыв мефитов',
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          description: `У мефита есть 25% шанс призвать 1к4 одной с ним разновидности. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
+        },
+      ],
     },
   },
   // NOT READY

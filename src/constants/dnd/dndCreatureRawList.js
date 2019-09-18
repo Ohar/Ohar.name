@@ -514,7 +514,6 @@ const {
     CREATURE_DUERGAR,
     CREATURE_DUODRONE,
     CREATURE_DUST_MEPHIT,
-    CREATURE_DUST_MEPHIT_SUMMONER,
     CREATURE_EAGLE,
     CREATURE_EFREETI,
     CREATURE_ERINYES,
@@ -577,7 +576,6 @@ const {
     CREATURE_ICE_DEVIL_SUMMONER_WITH_A_SPEAR,
     CREATURE_ICE_DEVIL_WITH_A_SPEAR,
     CREATURE_ICE_MEPHIT,
-    CREATURE_ICE_MEPHIT_SUMMONER,
     CREATURE_IMP,
     CREATURE_IMP_FAMILIAR,
     CREATURE_INTELLECT_DEVOURER,
@@ -598,7 +596,6 @@ const {
     CREATURE_LIZARDFOLK_KING_QUEEN,
     CREATURE_LIZARDFOLK_SHAMAN,
     CREATURE_MAGMA_MEPHIT,
-    CREATURE_MAGMA_MEPHIT_SUMMONER,
     CREATURE_MAGMIN,
     CREATURE_MANES,
     CREATURE_MANTICORE,
@@ -611,7 +608,6 @@ const {
     CREATURE_MINOTAUR,
     CREATURE_MONODRONE,
     CREATURE_MUD_MEPHIT,
-    CREATURE_MUD_MEPHIT_SUMMONER,
     CREATURE_MUMMY,
     CREATURE_MUMMY_LORD,
     CREATURE_MYCONID_ADULT,
@@ -669,13 +665,11 @@ const {
     CREATURE_SHRIEKER,
     CREATURE_SILVER_DRAGON_WYRMLING,
     CREATURE_SMOKE_MEPHIT,
-    CREATURE_SMOKE_MEPHIT_SUMMONER,
     CREATURE_SOLAR,
     CREATURE_SPECTATOR,
     CREATURE_SPINED_DEVIL,
     CREATURE_SPIRIT_NAGA,
     CREATURE_STEAM_MEPHIT,
-    CREATURE_STEAM_MEPHIT_SUMMONER,
     CREATURE_STIRGE,
     CREATURE_STONE_GIANT,
     CREATURE_STONE_GOLEM,
@@ -25651,114 +25645,6 @@ module.exports = [
         description: `Мефит выдыхает ослепляющую пыль 15-футовым конусом. Все существа в этой области должны преуспеть в спасброске Ловкости со Сл 10, иначе станут ослеплёнными на 1 минуту. Существо может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.`,
       },
     ],
-  },
-  {
-    name: 'Грязевой мефит-призыватель',
-    nameEn: 'Mud mephit summoner',
-    id: CREATURE_MUD_MEPHIT_SUMMONER,
-    parentId: CREATURE_MUD_MEPHIT,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв мефитов',
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-          description: `У мефита есть 25% шанс призвать 1к4 грязевых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
-        },
-      ],
-    },
-  },
-  {
-    name: 'Дымовой мефит-призыватель',
-    nameEn: 'Smoke mephit summoner',
-    id: CREATURE_SMOKE_MEPHIT_SUMMONER,
-    parentId: CREATURE_SMOKE_MEPHIT,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв мефитов',
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-          description: `У мефита есть 25% шанс призвать 1к4 дымовых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
-        },
-      ],
-    },
-  },
-  {
-    name: 'Ледяной мефит-призыватель',
-    nameEn: 'Ice mephit summoner',
-    id: CREATURE_ICE_MEPHIT_SUMMONER,
-    parentId: CREATURE_ICE_MEPHIT,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв мефитов',
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-          description: `У мефита есть 25% шанс призвать 1к4 ледяных мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
-        },
-      ],
-    },
-  },
-  {
-    name: 'Магмовый мефит-призыватель',
-    nameEn: 'Magma mephit summoner',
-    id: CREATURE_MAGMA_MEPHIT_SUMMONER,
-    parentId: CREATURE_MAGMA_MEPHIT,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв мефитов',
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-          description: `У мефита есть 25% шанс призвать 1к4 магмовых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
-        },
-      ],
-    },
-  },
-  {
-    name: 'Паровый мефит-призыватель',
-    nameEn: 'Steam mephit summoner',
-    id: CREATURE_STEAM_MEPHIT_SUMMONER,
-    parentId: CREATURE_STEAM_MEPHIT,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв мефитов',
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-          description: `У мефита есть 25% шанс призвать 1к4 паровых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
-        },
-      ],
-    },
-  },
-  {
-    name: 'Пылевой мефит-призыватель',
-    nameEn: 'Dust mephit summoner',
-    id: CREATURE_DUST_MEPHIT_SUMMONER,
-    parentId: CREATURE_DUST_MEPHIT,
-    extendPropCollection: {
-      actionList: [
-        {
-          name: 'Призыв мефитов',
-          limit: {
-            count: 1,
-            period: 'день',
-          },
-          description: `У мефита есть 25% шанс призвать 1к4 пылевых мефита. Призванные мефиты появляются в свободном пространстве в пределах 60 футов от призывателя, действуют как союзники призывателя, и не могут призывать других мефитов. Они остаются в течение 1 минуты, либо до тех пор, пока не убьют их или призвавшего их, или пока призыватель не отпустит их действием.`,
-        },
-      ],
-    },
   },
   {
     name: 'Верховный миконид',

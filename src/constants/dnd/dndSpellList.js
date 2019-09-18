@@ -86,6 +86,7 @@ const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 const SPELL_ENTANGLE = 'entangle'
 const SPELL_EYEBITE = 'eyebite'
 const SPELL_FAERIE_FIRE = 'faerie_fire'
+const SPELL_FEAR = 'fear'
 const SPELL_FEATHER_FALL = 'feather_fall'
 const SPELL_FINGER_OF_DEATH = 'finger_of_death'
 const SPELL_FIREBALL = 'fireball'
@@ -2962,6 +2963,23 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_FEAR,
+    name: 'Ужас',
+    nameEn: 'Fear',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -3033,6 +3051,7 @@ module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
 module.exports.SPELL_EYEBITE = SPELL_EYEBITE
 module.exports.SPELL_FAERIE_FIRE = SPELL_FAERIE_FIRE
 module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
+module.exports.SPELL_FEAR = SPELL_FEAR
 module.exports.SPELL_FINGER_OF_DEATH = SPELL_FINGER_OF_DEATH
 module.exports.SPELL_FIREBALL = SPELL_FIREBALL
 module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE

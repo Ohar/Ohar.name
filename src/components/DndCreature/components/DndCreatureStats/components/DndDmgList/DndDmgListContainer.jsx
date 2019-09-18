@@ -9,7 +9,7 @@ export default class DndDmgListContainer extends Component {
     const {list, ...rest} = this.props
 
     if (list && list.length) {
-      const joiner = list.find(item => dndDamageTypeCollection[item].isEnumeration)
+      const joiner = list.some(item => dndDamageTypeCollection[item].isEnumeration)
         ? ';'
         : ','
 

@@ -858,9 +858,6 @@ export default [
           CREATURE_BONE_DEVIL,
         ],
       },
-      exclude: {
-        templateName: ['Костяной дьявол c копьём'],
-      },
     },
     source: {
       id: 'MM',

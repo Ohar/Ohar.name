@@ -180,6 +180,7 @@ const {
     SKILL_INVESTIGATION,
     SKILL_MEDICINE,
     SKILL_PERCEPTION,
+    SKILL_PERFORMANCE,
     SKILL_PERSUASION,
     SKILL_RELIGION,
     SKILL_STEALTH,
@@ -659,6 +660,7 @@ const {
     CREATURE_RUG_OF_SMOTHERING,
     CREATURE_RUST_MONSTER,
     CREATURE_SALAMANDER,
+    CREATURE_SATYR,
     CREATURE_SCARECROW,
     CREATURE_SEA_HAG,
     CREATURE_SEA_HAG_COVEN,
@@ -31783,5 +31785,136 @@ module.exports = [
       },
     ],
     isFemale: true,
+  },
+  {
+    name: 'Сатир',
+    nameEn: 'Satyr',
+    id: CREATURE_SATYR,
+    description: `Сатиры — шумные феи, которые резвятся в диких лесах, движимые любопытством и гедонизмом в равной мере.\n
+Сатиры напоминают крепких мужчин с мохнатой нижней половиной тела и раздвоенными козьими копытами. На их головах растут рога, имеющие размер от пары небольших шишечек до крупных витых бараньих рогов. Они, как правило, отращивают бороду.\n
+**Гедонистические гуляки.** Сатиры жаждут крепчайших напитков, ароматнейших специй и головокружительных танцев. Сатир чувствует голод, когда он не может побаловать себя, и он может пройти большие расстояния, чтобы удовлетворить свои желания. Он может похитить хорошего менестреля, чтобы услышать прекрасные песни, проскользнуть в хорошо защищённый сад, чтобы созерцать красивого паренька или девушку, или может проникнуть во дворец, чтобы попробовать лучшие блюда. Сатиры не позволяют веселью пройти мимо них. Они примут участие в любом празднике, про который услышали. В мире достаточно праздников и святых дней, чтобы оправдать бесконечное празднование.\n
+Опьянённые напитками и удовольствиями, сатиры не думают о последствиях гедонизма, к которому они подталкивают других. После них такие существа сами удивляются своему поведению. Таким гулякам, возможно, придётся выпрашивать извинения, чтобы оправдать своё хаотичное поведение перед родителями, нанимателями, семьёй или друзьями.`,
+    note: {
+      text: `Меж ночью и днем меня духи гоняли,\n
+По чистым сердцам они так тосковали,\n
+И тут вдруг уверенность всю растеряли,\n
+И в уши мне, тотчас, смеясь, закричали.\n
+\n
+Не раз ты мне чашу наполни, а три\n
+Пляшу я с графином — к устам он прилип.\n
+Да скиньте же платья, незримые феи,\n
+Пусть Похоти Царь собирает трофеи.\n
+\n
+Поникнув ветвями вдаль тренты уходят,\n
+Так шустро с девиц корсетики сходят.\n
+Бриз песни моей их всех веселит,\n
+А чаше в руках опустеть не грозит.\n
+\n
+Солнце станет луной, а она солнцем станет.\n
+Коротать так часы никогда не устану`,
+      author: `сонет Озорного Сатира`,
+    },
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FEY,
+    ],
+    aligmentId: ALIGMENT_CN,
+    source: {
+      id: 'MM',
+      page: 256,
+    },
+    armor: {
+      ac: 14,
+      type: 'кожаный доспех',
+    },
+    hp: {
+      cubeCount: 7,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 14,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+      [SKILL_PERFORMANCE]: 6,
+      [SKILL_STEALTH]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_COMMON,
+      LANG_SYLVAN,
+      LANG_ELVEN,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: `Сопротивление магии`,
+        description: `Сатир совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Таран`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: `Короткий меч`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: `Короткий лук`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 5,
+          range: {
+            normal: 80,
+            max: 320,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
   },
 ]

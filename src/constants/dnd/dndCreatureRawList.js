@@ -295,6 +295,7 @@ const {
     SPELL_MAGIC_WEAPON,
     SPELL_MAJOR_IMAGE,
     SPELL_MASS_CURE_WOUNDS,
+    SPELL_MASS_HEALING_WORD,
     SPELL_MELFS_ACID_ARROW,
     SPELL_MENDING,
     SPELL_MINOR_ILLUSION,
@@ -645,6 +646,7 @@ const {
     CREATURE_RUST_MONSTER,
     CREATURE_SAHUAGIN,
     CREATURE_SAHUAGIN_BARON,
+    CREATURE_SAHUAGIN_PRIESTESS,
     CREATURE_SALAMANDER,
     CREATURE_SATYR,
     CREATURE_SCARECROW,
@@ -31799,5 +31801,139 @@ module.exports = [
         },
       },
     ],
+  },
+  {
+    name: 'Жрица сахуагинов',
+    nameEn: 'Sahuagin priestess',
+    id: CREATURE_SAHUAGIN_PRIESTESS,
+    description: sahuaginDescription,
+    note: sahuaginNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_SAHUAGIN,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: {
+      id: 'MM',
+      page: 258,
+    },
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 8,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 13,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 6,
+      [SKILL_RELIGION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 16,
+      },
+    ],
+    languageList: [
+      LANG_SAHUAGIN,
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: `Кровавое бешенство`,
+        description: `Сахуагин совершает с преимуществом броски рукопашных атак по существам, у которых хиты ниже максимума.`,
+      },
+      {
+        name: `Ограниченная амфибийность`,
+        description: `Сахуагин может дышать и воздухом и под водой, но чтобы не задохнуться, ей нужно погружаться в воду хотя бы раз каждые 4 часа.`,
+      },
+      {
+        name: `Акулья телепатия`,
+        description: `Сахуагин может магическим образом командовать всеми акулами, находящимися в пределах 120 футов от неё, при помощи ограниченной телепатии.`,
+      },
+    ],
+    spellCast: {
+      spellCasterLevel: 6,
+      spellCasterClass: PC_CLASS_PRIEST,
+      baseStat: PARAM_WIT,
+      spellAttackBonus: 4,
+      saveThrowDc: 12,
+      spellIdList: [
+        SPELL_BLESS,
+        SPELL_DETECT_MAGIC,
+        SPELL_GUIDANCE,
+        SPELL_GUIDING_BOLT,
+        SPELL_HOLD_PERSON,
+        SPELL_MASS_HEALING_WORD,
+        {
+          id: SPELL_SPIRITUAL_WEAPON,
+          comment: 'трезубец',
+        },
+        SPELL_THAUMATURGY,
+        SPELL_TONGUES,
+      ],
+      slotCountList: [
+        Infinity,
+        4,
+        3,
+        3,
+      ],
+    },
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Сахуагин совершает две атаки: одну укусом, и одну когтем.`,
+      },
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: `Когти`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    isFemale: true,
   },
 ]

@@ -141,6 +141,11 @@ const contactList = [
     type: 'xing',
     text: 'XING',
   },
+  {
+    url: 'https://www.worldanvil.com/author/Ohar',
+    type: 'worldanvil',
+    text: 'WorldAnvil',
+  },
 ]
 
 // TODO: use here LinkList

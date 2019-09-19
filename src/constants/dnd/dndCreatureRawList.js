@@ -484,6 +484,7 @@ const {
     CREATURE_BEHOLDER,
     CREATURE_BEHOLDER_ZOMBIE,
     CREATURE_BLACK_DRAGON_WYRMLING,
+    CREATURE_BLACK_PUDDING,
     CREATURE_BLUE_DRAGON_WYRMLING,
     CREATURE_BLUE_SLAAD,
     CREATURE_BONE_DEVIL,
@@ -33844,5 +33845,129 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: `Чёрная слизь`,
+    nameAlt: `Чёрный пудинг`,
+    nameEn: 'Black pudding',
+    id: CREATURE_BLACK_PUDDING,
+    description: [
+      `Чёрная слизь напоминает вздымающуюся кучу чёрной густой грязи. В тёмных проходах он выглядит просто пятном тени.\n
+Плоть, древесина, металл и кости растворяются, когда на них наползает эта слизь. За ней остаётся только голый камень.`,
+      oozeDescription,
+    ],
+    note: oozeNote,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_OOZE,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 271,
+    },
+    armor: {
+      ac: 7,
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 10,
+      cubeBonus: 30,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_CLIMB]: 20,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 5,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 6,
+      [PARAM_CHA]: 1,
+    },
+    immunityList: [
+      DAMAGE_ACID,
+      DAMAGE_SLASHING,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+    ],
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_BLINDED,
+      CONDITION_CHARMED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        isBlindOutside: true,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 8,
+      },
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: `Аморфный`,
+        description: `Слизь может перемещаться сквозь пространство шириной в 1 дюйм без протискивания.`,
+      },
+      {
+        name: `Едкое тело`,
+        description: `Существо, касающееся слизи или попадающее по
+ней рукопашной атакой, находясь в пределах 5 футов от неё,
+получает урон кислотой 4 (1к8). Немагическое оружие, изготов-
+ленное из металла или дерева, попадающее по слизи, начи-
+нает разъедаться. После причинения урона оружие получает
+постоянный накопительный штраф −1 к броскам урона. Если
+этот штраф дойдёт до −5, оружие будет уничтожено. Немагиче-
+ские боеприпасы, изготовленные из металла или дерева, попа-
+дающие по слизи, уничтожаются после причинения урона.
+Слизь может разъесть 2 дюйма немагического металла или
+дерева за 1 раунд.`,
+      },
+      {
+        name: `Паучье лазание`,
+        description: `Слизь может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Ложноножка`,
+        description: `Кроме того, немагический доспех, носимый целью, частично растворяется и получает постоянный накопительный штраф −1 к КД, который он предлагает. Доспех уничтожается, если штраф уменьшает его КД до 10. `,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_ACID,
+              cubeCount: 4,
+              cubeType: 8,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: `Разделение`,
+        description: `Если слизь с размером не меньше Среднего получает рубящий урон или урон электричеством, она разделяется на две новые слизи, если у неё есть как минимум 10 хитов. У каждой новой слизи хитов в два раза меньше, чем у исходной, округляя в меньшую сторону. Новые слизи на один размер меньше чем исходная. `,
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

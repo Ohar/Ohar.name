@@ -679,6 +679,7 @@ const {
     CREATURE_SMOKE_MEPHIT,
     CREATURE_SOLAR,
     CREATURE_SPECTATOR,
+    CREATURE_SPECTER,
     CREATURE_SPINED_DEVIL,
     CREATURE_SPIRIT_NAGA,
     CREATURE_STEAM_MEPHIT,
@@ -34063,6 +34064,122 @@ module.exports = [
             cubeCount: 2,
             cubeType: 8,
             cubeBonus: 5,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Спектр`,
+    nameEn: 'Specter',
+    id: CREATURE_SPECTER,
+    description: `Спектр это злой свободный дух человека, который был удержан на пути в загробную жизнь. Спектры не имеют представления о том, кем или чем они были раньше, и обречены вечно блуждать по миру. Некоторые из них появились при помощи тёмной магии или от касания [призрака](CREATURE:${CREATURE_WRAITH}), который вырвал душу из живого тела.\n
+**Отсутствие искупления.** Когда незавершённые дела [привидения](CREATURE:${CREATURE_GHOST}), наконец, решаются, оно обретает покой. Но этого не могут испытать спектры. Они обречены бродить по Материальному Плану, и только уничтожение души может принести им забвение. До тех пор они одиноко существуют в заброшенных местах, неся своё бремя в течение многих веков.\n
+**Неумолимая ненависть.** Живые существа напоминают спектрам, что их жизнь никогда не сможет стать другой. Один лишь вид живого существа переполняет спектра горем и гневом, который утихает только после угасания жизни в существе. Призрак убивает быстро и безжалостно, так как только от быстрого лишения жизни спектр получает облегчение. Однако сколько бы целей спектр не убил — это никогда не потушит огонь ненависти внутри него.\n
+**Обитатели тьмы.** Солнечный свет — это источник жизни, который не может терпеть ни один спектр. Этот свет причиняет им боль. Когда наступает ночь, они покидают место отдыха в поисках живых существ для убийства, осознавая, что мало какое оружие может навредить им. После первых лучей рассвета они возвращаются в темноту, где остаются до наступления следующей ночи.\n
+**Натура нежити.** Спектру не нужен воздух, еда, питьё и сон. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: {
+      id: 'MM',
+      page: 273,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_FLY]: {
+        value: 50,
+        isFloating: true,
+      },
+    },
+    params: {
+      [PARAM_STR]: 1,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 11,
+    },
+    resistanceList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ACID,
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_NECROTIC,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_UNCONSCIOUS,
+      CONDITION_GRAPPLED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ALL_KNOWN_AT_LIFE,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: `Бестелесное перемещение`,
+        description: `Спектр может перемещаться сквозь других существ и предметы, как если бы они были труднопроходимой местностью. Он получает урон силовым полем 5 (1к10), если оканчивает ход внутри предмета.`,
+      },
+      {
+        name: `Чувствительность к солнечному свету`,
+        description: `Находясь на солнечном свету, спектр совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Вытягивание жизни`,
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 10, иначе максимум её хитов уменьшится на количество, равное полученному урону. Это уменьшение длится до тех пор, пока существо не окончит продолжительный отдых. Цель умирает, если этот эффект уменьшает максимум её хитов до 0.`,
+        attack: {
+          type: ACTION_MELEE_SPELL_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_NECROTIC,
+            cubeCount: 3,
+            cubeType: 6,
+            cubeBonus: 0,
           },
         },
       },

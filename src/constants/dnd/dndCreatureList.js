@@ -1,5 +1,3 @@
-const arrify = require('arrify')
-
 const prepareForSearch = require('./../../utils/prepareForSearch')
 const extendCreature = require('./../../utils/extendCreature')
 const generateTextLinks = require('./../../utils/generateTextLinks')
@@ -14,31 +12,6 @@ const dndCreatureRawCollection = dndCreatureRawList.reduce(
   }),
   {}
 )
-
-const handleDescription = (
-  {
-    description,
-    name,
-    nameAlt,
-    nameEn,
-    nameEnAlt,
-  }
-) => arrify(description)
-  .map(
-    item => typeof item === 'string'
-      ? {
-        header: `${name}${nameAlt ? ` (${nameAlt})` : ''}`,
-        subHeader: `${nameEn}${nameEnAlt ? ` (${nameEnAlt})` : ''}`,
-        text: item,
-      }
-      : item
-  )
-  .map(
-    ({ text, ...rest }) => ({
-      text: generateTextLinks(text),
-      ...rest
-    })
-  )
 
 const handleListWithDescriptions = list => list
   ? list.map(

@@ -1,8 +1,8 @@
 import React from 'react'
 import arrify from "arrify"
+import PropTypes from 'prop-types';
 
 import DndCreatureDescriptionListComponent from './DndCreatureDescriptionListComponent'
-import PropTypes from 'prop-types';
 
 const DndCreatureDescriptionListContainer = ({name, nameAlt, nameEn, nameEnAlt, description}) => {
   if (description) {

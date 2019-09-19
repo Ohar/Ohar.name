@@ -663,6 +663,7 @@ const {
     CREATURE_SHRIEKER,
     CREATURE_SILVER_DRAGON_WYRMLING,
     CREATURE_SKELETON,
+    CREATURE_SLAAD_TADPOLE,
     CREATURE_SMOKE_MEPHIT,
     CREATURE_SOLAR,
     CREATURE_SPECTATOR,
@@ -32570,6 +32571,121 @@ module.exports = [
             cubeCount: 3,
             cubeType: 6,
             cubeBonus: 0,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: `Красный слаад`,
+    nameEn: 'Red slaad',
+    id: CREATURE_RED_SLAAD,
+    description: [
+      `Когда красный слаад впивается в гуманоидное существо когтями, он может ввести в него яйцо из железы под одним из своих когтей. Яйцо проникает в носителя и начинает развиваться, со временем превращаясь в [головастика](CREATURE:${CREATURE_SLAAD_TADPOLE}). Этот головастик начинает прогрызать тело носителя, потом питается его останками, а потом начинает искать любое другое свежее мясо. Головастик превращается в полностью выросшего [синего слаада](CREATURE:${CREATURE_BLUE_SLAAD}) (либо [зелёного слаада](CREATURE:${CREATURE_GREEN_SLAAD}), если носитель мог накладывать заклинания 3 уровня и выше) через 2к12 часов.`,
+      slaadDescription,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ABERRATION,
+    ],
+    aligmentId: ALIGMENT_CN,
+    source: {
+      id: 'MM',
+      page: 265,
+    },
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 11,
+      cubeType: 10,
+      cubeBonus: 33,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 6,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 1,
+    },
+    resistanceList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ACID,
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_SLAAD,
+      {
+        id: LANG_TELEPATHY,
+        range: 60,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: `Сопротивление магии`,
+        description: `Слаад совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: `Регенерация`,
+        description: `Слаад восстанавливает 10 хитов в начале своего хода, если у него есть хотя бы 1 хит.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Слаад совершает три атаки: одну укусом, и две когтями.`,
+      },
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: `Коготь`,
+        description: `Если цель — гуманоид, она должна преуспеть в спасброске Телосложения со Сл 14, иначе заразится болезнью — крошечным яйцом слаада.\n
+В гуманоиде одновременно может находиться только одно яйцо. Через три месяца яйцо перемещается в грудную клетку, созревает и формирует [головастика слаада](CREATURE:${CREATURE_SLAAD_TADPOLE}). За 24 часа до появления головастика на свет носитель начинает чувствовать себя нехорошо, его скорость уменьшается вдвое, и он совершает с помехой броски атаки, проверки характеристик и спасброски. При рождении головастик проедает свой путь через внутренние органы и выходит из грудной клетки носителя за 1 раунд, убивая тем самым носителя.\n
+Если болезнь вылечить до рождения головастика, слаад рассосётся внутри носителя. `,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 3,
           },
         },
       },

@@ -33076,4 +33076,214 @@ module.exports = [
       },
     ],
   },
+  {
+    name: `Смертельный слаад`,
+    nameEn: 'Death slaad',
+    id: CREATURE_DEATH_SLAAD,
+    description: [
+      `Слаады смерти пропитаны энергией Плана Негативной Энергии и представляют собой злых развращённых существ, которым нравится вредить другим. Они плодят представителей своей расы, принуждая толпы [красных](CREATURE:${CREATURE_RED_SLAAD}) и [синих](CREATURE:${CREATURE_BLUE_SLAAD}) слаадов нападать на другие планы. Гуманоиды, пережившие вторжение, становятся инкубаторами для новых слаадов. `,
+      slaadDescription,
+    ],
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ABERRATION,
+      CREATURE_TYPE_SHAPESHIFTER,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: {
+      id: 'MM',
+      page: 267,
+    },
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 20,
+      cubeType: 8,
+      cubeBonus: 80,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 19,
+      [PARAM_INT]: 15,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 16,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 8,
+      [SKILL_ARCANA]: 6,
+    },
+    resistanceList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ACID,
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 18,
+      },
+    ],
+    languageList: [
+      LANG_SLAAD,
+      {
+        id: LANG_TELEPATHY,
+        range: 60,
+      },
+    ],
+    cr: CR_10,
+    featureList: [
+      {
+        name: `Перевёртыш`,
+        description: `Слаад может действием превратиться в гуманоида Маленького или Среднего размера, или принять свой истинный облик. Все его статистики, кроме размера, одинаковы во всех обликах. Всё несомое и носимое им снаряжение не превращается. Он принимает свой истинный облик, если умирает.`,
+      },
+      {
+        name: `Сопротивление магии`,
+        description: `Слаад совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: `Регенерация`,
+        description: `Слаад восстанавливает 10 хитов в начале своего хода, если у него есть хотя бы 1 хит.`,
+      },
+      {
+        name: `Магическое оружие`,
+        description: `Атаки оружием слаада являются магическими.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      saveThrowDc: 15,
+      spellAttackBonus: 7,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_MAGE_HAND,
+            {
+              id: SPELL_INVISIBILITY,
+              comment: 'только на себя',
+            },
+            SPELL_DETECT_MAGIC,
+            SPELL_DETECT_THOUGHTS,
+            SPELL_MAJOR_IMAGE,
+          ],
+        },
+        {
+          limit: {
+            count: 2,
+            period: 'день',
+          },
+          list: [
+            SPELL_FEAR,
+            SPELL_FIREBALL,
+            SPELL_FLY,
+            SPELL_TONGUES,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_PLANE_SHIFT,
+            SPELL_CLOUDKILL,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Слаад совершает три атаки: одну укусом, и две либо когтями, либо двуручным мечом.`,
+      },
+      {
+        name: `Укус`,
+        comment: `только в облике слаада`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 8,
+              cubeBonus: 5,
+            },
+            {
+              type: DAMAGE_NECROTIC,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: `Коготь`,
+        comment: `только в облике слаада`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 1,
+              cubeType: 10,
+              cubeBonus: 5,
+            },
+            {
+              type: DAMAGE_NECROTIC,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: `Двуручный меч`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_SLASHING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 5,
+            },
+            {
+              type: DAMAGE_NECROTIC,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+    ],
+  },
 ]

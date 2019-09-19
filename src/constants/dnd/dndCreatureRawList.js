@@ -71,6 +71,7 @@ const {
     CREATURE_TYPE_LIZARDFOLK,
     CREATURE_TYPE_MERFOLK,
     CREATURE_TYPE_MONSTER,
+    CREATURE_TYPE_OOZE,
     CREATURE_TYPE_ORC,
     CREATURE_TYPE_PLANT,
     CREATURE_TYPE_QUAGGOTH,
@@ -432,6 +433,8 @@ const {
     silverDragonDescriptionList,
     skeletonDescription,
     slaadDescription,
+    slimeDescription,
+    slimeNote,
     vampireDescriptionList,
     whiteDragonDescriptionList,
     zombieDesciption,
@@ -617,6 +620,7 @@ const {
     CREATURE_NIGHT_HAG,
     CREATURE_NIGHTMARE,
     CREATURE_NOTHIC,
+    CREATURE_OCHRE_JELLY,
     CREATURE_OGRE,
     CREATURE_OGRE_ZOMBIE,
     CREATURE_ONI,
@@ -33284,6 +33288,115 @@ module.exports = [
             },
           ],
         },
+      },
+    ],
+  },
+  {
+    name: `Золотистый студень`,
+    nameAlt: `Охристое желе`,
+    nameEn: 'Ochre jelly',
+    id: CREATURE_OCHRE_JELLY,
+    description: [
+      `Золотистый студень — это желтоватое пятно слизи, проникающее под дверями и через щели в поисках существ для поглощения. Он обладает достаточным звериным разумом и избегает больших скоплений врагов.\n
+Золотистый студень преследует свою жертву на безопасном расстоянии. Его пищеварительные ферменты быстро растворяют плоть, но не воздействуют на такие материалы как кость, древесина и металл. `,
+      slimeDescription,
+    ],
+    note: slimeNote,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_OOZE,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 269,
+    },
+    armor: {
+      ac: 8,
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 10,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_CLIMB]: 10,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 6,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 6,
+      [PARAM_CHA]: 1,
+    },
+    resistanceList: [
+      DAMAGE_ACID,
+    ],
+    immunityList: [
+      DAMAGE_SLASHING,
+      DAMAGE_ELECTRICITY,
+    ],
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_BLINDED,
+      CONDITION_CHARMED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        isBlindOutside: true,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 8,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: `Аморфный`,
+        description: `Студень может перемещаться сквозь пространство шириной в 1 дюйм без протискивания.`,
+      },
+      {
+        name: `Паучье лазание`,
+        description: `Студень может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Ложноножка`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_ACID,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: `Разделение`,
+        description: `Если студень с размером не меньше Среднего получает рубящий урон или урон электричеством, он разделяется на два новых студня, если у него есть как минимум 10 хитов. У каждого нового студня хитов в два раза меньше, чем у исходного, округляя в меньшую сторону. Новые студни на один размер меньше чем исходный. `,
       },
     ],
   },

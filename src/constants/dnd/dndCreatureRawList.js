@@ -559,6 +559,7 @@ const {
     CREATURE_GOLD_DRAGON_WYRMLING,
     CREATURE_GORGON,
     CREATURE_GORISTRO,
+    CREATURE_GRAY_OOZE,
     CREATURE_GRAY_SLAAD,
     CREATURE_GREEN_DRAGON_WYRMLING,
     CREATURE_GREEN_HAG,
@@ -33632,5 +33633,113 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: `Серая слизь`,
+    nameEn: 'Gray ooze',
+    id: CREATURE_GRAY_OOZE,
+    description: [
+      `Серая слизь — это камень, ставший жидким из-за воздействия хаоса. Она движется как жидкая змея, приподнимаясь для атаки.`,
+      slimeDescription,
+    ],
+    note: slimeNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_OOZE,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 269,
+    },
+    armor: {
+      ac: 8,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+      cubeBonus: 9,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_CLIMB]: 10,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 6,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 6,
+      [PARAM_CHA]: 2,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 2,
+    },
+    resistanceList: [
+      DAMAGE_ACID,
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+    ],
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_BLINDED,
+      CONDITION_CHARMED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        isBlindOutside: true,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 8,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: `Аморфный`,
+        description: `Слизь может перемещаться сквозь пространство шириной в 1 дюйм без протискивания.`,
+      },
+      {
+        name: `Разъедание металла`,
+        description: `Любое немагическое оружие, изготовленное из металла, попадающее по слизи, начинает разъедаться. После причинения урона оружие получает постоянный накопительный штраф −1 к броскам урона. Если этот штраф дойдёт до −5, оружие будет уничтожено. Немагические боеприпасы, изготовленные из металла или дерева, попадающие по слизи, уничтожаются после причинения урона. Слизь может разъесть 2 дюйма немагического металла за 1 раунд.`,
+      },
+      {
+        name: `Обманчивая внешность`,
+        description: `Пока слизь остаётся без движения, она неотличима от маслянистой лужи или мокрого камня.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Ложноножка`,
+        description: `Если цель носит немагический металлический доспех, он частично растворяется и получает постоянный накопительный штраф −1 к КД, который он предлагает. Доспех уничтожается, если штраф уменьшает его КД до 10. `,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_BLUDGEONING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 1,
+            },
+            {
+              type: DAMAGE_ACID,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

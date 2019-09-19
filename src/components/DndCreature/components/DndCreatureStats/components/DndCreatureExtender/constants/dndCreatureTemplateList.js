@@ -370,7 +370,7 @@ export default [
       {
         id: SENSE_BLIND_VISION,
         value: 30,
-        comment: 'слеп за пределами этого радиуса',
+        isBlindOutside: true,
       },
       {
         id: SENSE_PASSIVE_PERCEPTION,

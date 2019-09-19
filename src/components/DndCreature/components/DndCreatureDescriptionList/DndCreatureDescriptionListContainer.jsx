@@ -2,18 +2,27 @@ import React from 'react'
 import arrify from "arrify"
 import PropTypes from 'prop-types';
 
+import formatAltName from '@/utils/formatAltName'
+
 import DndCreatureDescriptionListComponent from './DndCreatureDescriptionListComponent'
 
 const DndCreatureDescriptionListContainer = ({name, nameAlt, nameEn, nameEnAlt, description}) => {
   if (description) {
     const list = arrify(description).map(
-      item => typeof item === 'string'
-        ? {
-          header: `${name}${nameAlt ? ` (${nameAlt})` : ''}`,
-          subHeader: `${nameEn}${nameEnAlt ? ` (${nameEnAlt})` : ''}`,
-          text: item,
+      item => {
+        if (typeof item === 'string') {
+          const nameAltText = formatAltName(nameAlt)
+          const nameEnAltText = formatAltName(nameEnAlt)
+
+          return {
+            header: `${name}${nameAltText}`,
+            subHeader: `${nameEn}${nameEnAltText}`,
+            text: item,
+          }
         }
-        : item
+
+        return item
+      }
     )
 
     return (
@@ -26,8 +35,14 @@ const DndCreatureDescriptionListContainer = ({name, nameAlt, nameEn, nameEnAlt, 
 
 DndCreatureDescriptionListContainer.propTypes = {
   name: PropTypes.string.isRequired,
-  nameAlt: PropTypes.string,
-  nameEn: PropTypes.string.isRequired,
+  nameAlt: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
+  nameEn: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
   nameEnAlt: PropTypes.string,
   description: PropTypes.oneOfType([
     PropTypes.string,

@@ -1,3 +1,4 @@
+const arrify = require('arrify')
 const prepareForSearch = require('./../../utils/prepareForSearch')
 const extendCreature = require('./../../utils/extendCreature')
 const generateTextLinks = require('./../../utils/generateTextLinks')
@@ -50,9 +51,9 @@ const dndCreatureList = dndCreatureRawList
     [SEARCH_PROP_NAME]: prepareForSearch(
       [
         creature.name,
-        creature.nameAlt || '',
         creature.nameEn,
-        creature.nameEnAlt || '',
+        arrify(creature.nameAlt).join(' ') || '',
+        arrify(creature.nameEnAlt).join(' ') || '',
       ]
         .filter(e => e)
         .join('\n')

@@ -1,3 +1,5 @@
+import formatAltName from '@/utils/formatAltName'
+
 export default (
   {
     name,
@@ -6,12 +8,9 @@ export default (
     nameEnAlt,
   }
 ) => {
-  const nameEnAltText = nameEnAlt
-    ? ` (${nameEnAlt})`
-    : ''
-  const nameAltText = nameAlt
-    ? ` (${nameAlt})`
-    : ''
+  const nameEnAltText = formatAltName(nameEnAlt)
+  const nameAltText = formatAltName(nameAlt)
+
   const header = `${name}${nameAltText}`
   const title = `${header} [${nameEn}${nameEnAltText}]`
 

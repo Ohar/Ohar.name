@@ -811,7 +811,7 @@ const slaadDescription = {
 **Перевёртыши.** Некоторые слаады могут превращаться в гуманоидных существ, из которых они появились. Такие слаады возвращаются на Материальный План, чтобы сеять раздор в своём бывшем облике.`,
 }
 
-const slimeDescription = {
+const oozeDescription = {
   header: 'Слизь',
   text: `Слизь хорошо чувствует себя в темноте, избегая солнечных областей и экстремальных температур. Она течёт по влажным подземельям, питаясь всем, что можно растворить, крадётся по земле, капает со стен и потолков, собирается у краёв подземных бассейнов и просачивается через щели. Первым предупреждением для искателя приключений о присутствия слизи является жгучая боль от её кислотного касания.\n
 Слизи тянутся в сторону движения и тепла. Они питаются органикой, но в отсутствие добычи они могут поглощать грязь, грибы и отбросы. Бывалые искатели приключений знают, что вычищенные проходы подземелий — признак близкого расположения логова слизи.\n
@@ -822,7 +822,7 @@ const slimeDescription = {
 **Натура слизи.** Слизь не нуждается во сне.`,
 }
 
-const slimeNote ={
+const oozeNote ={
   text: `Полы подземелья были чистыми. Это должно было стать для нас первой подсказкой`,
   author: `Из дневника Джастера Холлоуквилла о своем первом исследовании Подгорья`,
 }
@@ -876,8 +876,8 @@ module.exports.salamanderDescription = salamanderDescription
 module.exports.seaHagDescriptionList = seaHagDescriptionList
 module.exports.silverDragonDescriptionList = silverDragonDescriptionList
 module.exports.skeletonDescription = skeletonDescription
-module.exports.slimeDescription = slimeDescription
-module.exports.slimeNote = slimeNote
+module.exports.oozeDescription = oozeDescription
+module.exports.oozeNote = oozeNote
 module.exports.slaadDescription = slaadDescription
 module.exports.vampireDescriptionList = vampireDescriptionList
 module.exports.whiteDragonDescriptionList = whiteDragonDescriptionList

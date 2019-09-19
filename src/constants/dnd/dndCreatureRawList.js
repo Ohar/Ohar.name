@@ -438,8 +438,8 @@ const {
     silverDragonDescriptionList,
     skeletonDescription,
     slaadDescription,
-    slimeDescription,
-    slimeNote,
+    oozeDescription,
+    oozeNote,
     vampireDescriptionList,
     whiteDragonDescriptionList,
     zombieDesciption,
@@ -33532,9 +33532,9 @@ module.exports = [
     description: [
       `Золотистый студень — это желтоватое пятно слизи, проникающее под дверями и через щели в поисках существ для поглощения. Он обладает достаточным звериным разумом и избегает больших скоплений врагов.\n
 Золотистый студень преследует свою жертву на безопасном расстоянии. Его пищеварительные ферменты быстро растворяют плоть, но не воздействуют на такие материалы как кость, древесина и металл. `,
-      slimeDescription,
+      oozeDescription,
     ],
-    note: slimeNote,
+    note: oozeNote,
     sizeType: SIZE_LARGE,
     creatureTypeIdList: [
       CREATURE_TYPE_OOZE,
@@ -33640,9 +33640,9 @@ module.exports = [
     id: CREATURE_GRAY_OOZE,
     description: [
       `Серая слизь — это камень, ставший жидким из-за воздействия хаоса. Она движется как жидкая змея, приподнимаясь для атаки.`,
-      slimeDescription,
+      oozeDescription,
     ],
-    note: slimeNote,
+    note: oozeNote,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
       CREATURE_TYPE_OOZE,

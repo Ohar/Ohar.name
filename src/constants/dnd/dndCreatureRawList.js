@@ -2765,7 +2765,7 @@ module.exports = [
           },
         },
       ],
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Вампир заклинатель',
@@ -2808,7 +2808,7 @@ module.exports = [
         3,
         1,
       ],
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Порождение вампира',
@@ -4389,7 +4389,7 @@ module.exports = [
           },
         ],
       },
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Жёлтый волшебный дракончик',
@@ -4414,7 +4414,7 @@ module.exports = [
           },
         ],
       },
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Зелёный волшебный дракончик',
@@ -4441,7 +4441,7 @@ module.exports = [
           },
         ],
       },
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Голубой волшебный дракончик',
@@ -4468,7 +4468,7 @@ module.exports = [
           },
         ],
       },
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Синий волшебный дракончик',
@@ -4496,7 +4496,7 @@ module.exports = [
           },
         ],
       },
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Фиолетовый волшебный дракончик',
@@ -4525,7 +4525,7 @@ module.exports = [
           },
         ],
       },
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Галеб дур',
@@ -16935,7 +16935,7 @@ module.exports = [
       params: {
         [PARAM_WIT]: 16,
       },
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Дриада',
@@ -21042,7 +21042,7 @@ module.exports = [
           ],
         },
       ],
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Кенку',
@@ -22370,7 +22370,6 @@ module.exports = [
         },
       },
     ],
-    genderId: GENDER_MALE,
   },
   {
     name: 'Верховный жрец куо-тоа',
@@ -27187,7 +27186,7 @@ module.exports = [
         3,
         2,
       ],
-    },genderId: GENDER_MALE,
+    },
   },
   {
     name: 'Охранная нага',

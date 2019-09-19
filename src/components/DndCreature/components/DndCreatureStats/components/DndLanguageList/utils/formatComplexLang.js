@@ -1,6 +1,7 @@
 import arrify from "arrify"
 
 import {dndLanguageCollection} from "@/constants/dnd/dndLanguageList"
+import {GENDER_FEMALE} from "@/constants/genderList"
 
 export default lang => {
   const langIdList = arrify(
@@ -28,7 +29,7 @@ export default lang => {
       .join(' и ')
 
   const pronoun = langIdList.length === 1
-    ? langList[0].isFemale ? 'ней' : 'нём'
+    ? langList[0].genderId === GENDER_FEMALE ? 'ней' : 'нём'
     : 'них'
 
   const rangeText = lang.range

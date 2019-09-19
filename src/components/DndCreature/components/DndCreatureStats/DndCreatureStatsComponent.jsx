@@ -36,10 +36,10 @@ const DndCreatureStatsComponent = (
       cr,
       creatureTypeIdList,
       featureList = [],
+      genderId,
       hp,
       immunityConditionList = [],
       immunityList = [],
-      isFemale = false,
       languageList = [],
       legendaryActionList = [],
       legendaryPoints = 0,
@@ -49,7 +49,6 @@ const DndCreatureStatsComponent = (
       resistanceList = [],
       saveThrowCollection = null,
       senseList = [],
-      sizeType,
       skillCollection = null,
       source,
       speed,
@@ -58,7 +57,6 @@ const DndCreatureStatsComponent = (
       vulnerabilityList = [],
     },
     columnCount,
-    genderId,
     extendCreature,
   },
 ) => (
@@ -73,14 +71,7 @@ const DndCreatureStatsComponent = (
     </header>
 
     <p className='DndCreatureStats_info'>
-      <DndCreatureSize
-        genderId={genderId}
-        sizeType={sizeType}
-      /> <DndCreatureType
-      list={creatureTypeIdList}
-    />, <DndCreatureAligment
-      aligmentId={aligmentId}
-    />
+      <DndCreatureSize creature={creature} /> <DndCreatureType list={creatureTypeIdList}/>, <DndCreatureAligment aligmentId={aligmentId}/>
     </p>
 
     <section className='DndCreatureStats_infoBlock'>
@@ -113,7 +104,7 @@ const DndCreatureStatsComponent = (
     <DndFeatureList
       list={featureList}
       name={name}
-      isFemale={isFemale}
+      genderId={genderId}
       spellCast={spellCast}
       spellCastTogether={spellCastTogether}
     />
@@ -129,7 +120,6 @@ const DndCreatureStatsComponent = (
 
 DndCreatureStatsComponent.propTypes = {
   columnCount: PropTypes.number,
-  genderId: PropTypes.string.isRequired,
   creature: PropTypes.shape({
     actionList: PropTypes.array,
     aligmentId: PropTypes.oneOfType([
@@ -149,8 +139,8 @@ DndCreatureStatsComponent.propTypes = {
     extendCreature: PropTypes.func,
     featureList: PropTypes.array,
     hp: PropTypes.object.isRequired,
+    genderId: PropTypes.string.isRequired,
     immunityList: PropTypes.array,
-    isFemale: PropTypes.bool,
     languageList: PropTypes.array,
     legendaryActionList: PropTypes.array,
     legendaryPoints: PropTypes.number,
@@ -159,7 +149,6 @@ DndCreatureStatsComponent.propTypes = {
     reactionList: PropTypes.array,
     saveThrowCollection: PropTypes.object,
     senseList: PropTypes.array,
-    sizeType: PropTypes.string.isRequired,
     skillCollection: PropTypes.object,
     source: PropTypes.PropTypes.oneOfType([
       PropTypes.string,

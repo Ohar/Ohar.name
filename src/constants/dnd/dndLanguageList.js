@@ -1,4 +1,8 @@
 const listToCollectionById = require('./../../utils/listToCollectionById')
+const {
+  GENDER_MALE,
+  GENDER_FEMALE,
+} = require('./../genderList')
 
 const LANG_AARAKOCRA = 'aarakocra'
 const LANG_ABYSSAL = 'abyssal'
@@ -194,7 +198,7 @@ const dndLanguageList = [
       instrumental: 'Глубинную речь',
     },
     isRealLang: true,
-    isFemale: true,
+    genderId: GENDER_FEMALE,
   },
   {
     id: LANG_UNDERCOMMON,
@@ -299,7 +303,7 @@ const dndLanguageList = [
       instrumental: 'Телепатию',
     },
     isRealLang: true,
-    isFemale: true,
+    genderId: GENDER_FEMALE,
   },
   {
     id: LANG_SAHUAGIN,
@@ -494,6 +498,12 @@ const dndLanguageList = [
     isRealLang: true,
   },
 ]
+  .map(
+    ({genderId = GENDER_MALE, ...rest}) => ({
+      ...rest,
+      genderId,
+    })
+  )
 
 module.exports = dndLanguageList
 

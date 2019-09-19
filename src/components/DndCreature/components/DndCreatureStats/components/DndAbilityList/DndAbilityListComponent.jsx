@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import ReactMarkdown from 'react-markdown';
 import arrify from "arrify"
 
+import {GENDER_MALE} from '@/constants/genderList'
+
 import formatSpellCastDescription from './utils/formatSpellCastDescription'
 import generateAbilityHeader from './utils/generateAbilityHeader'
 
@@ -14,7 +16,7 @@ const DndAbilityListComponent = (
   {
     entry,
     header,
-    isFemale,
+    genderId,
     list,
     name,
     spellCast,
@@ -77,7 +79,7 @@ const DndAbilityListComponent = (
                     ) + '.'
                   }
                 >
-                  {formatSpellCastDescription({ spellCast: item, isFemale, name })}
+                  {formatSpellCastDescription({ spellCast: item, genderId, name })}
                 </DndAbility>
               )
               : null,
@@ -90,7 +92,7 @@ const DndAbilityListComponent = (
 DndAbilityListComponent.propTypes = {
   entry: PropTypes.string,
   header: PropTypes.string,
-  isFemale: PropTypes.bool,
+  genderId: PropTypes.string,
   list: PropTypes.array,
   name: PropTypes.string,
   spellCast: PropTypes.object,
@@ -100,7 +102,7 @@ DndAbilityListComponent.propTypes = {
 DndAbilityListComponent.defaultProps = {
   entry: '',
   header: '',
-  isFemale: false,
+  genderId: GENDER_MALE,
   list: [],
   name: '',
   spellCast: null,

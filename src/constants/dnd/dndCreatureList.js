@@ -45,7 +45,6 @@ const dndCreatureList = dndCreatureRawList
   .map(
   creature => ({
     ...creature,
-    isFemale: Boolean(creature.isFemale),
     actionList: handleListWithDescriptions(creature.actionList),
     featureList: handleListWithDescriptions(creature.featureList),
     [SEARCH_PROP_NAME]: prepareForSearch(

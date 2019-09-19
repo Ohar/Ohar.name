@@ -1,5 +1,7 @@
 import formatBonus from '@/utils/formatBonus'
 
+import { GENDER_FEMALE } from '@/constants/genderList'
+
 import { dndCastComponentCollection, CAST_NONE } from '@/constants/dnd/dndCastComponentList'
 import { dndParamCollection } from '@/constants/dnd/dndParamList'
 import { dndPcClassCollection } from '@/constants/dnd/dndPcClassList'
@@ -47,8 +49,8 @@ export default (
       preText = '',
       postText = '',
     },
-    isFemale,
-    name
+    genderId,
+    name,
   }
 ) => {
   const spellText = generateSpellText({slotCountList, spellIdByCountList, spellIdList})
@@ -81,14 +83,14 @@ export default (
     const introText = spellCasterLevel
       ? `${name} является заклинателем ${spellCasterLevel} уровня${spellComponentText}.`
       : ''
-    const baseStatText = `${isFemale ? 'Её' : 'Его'} базовой характеристикой является ${statName}`
+    const baseStatText = `${genderId === GENDER_FEMALE ? 'Её' : 'Его'} базовой характеристикой является ${statName}`
 
     const spellCasterClassText = spellCasterClass
       ? dndPcClassCollection[spellCasterClass].name.singular.genitive
       : ''
 
     const spellCastText = spellCasterClass
-      ? `У ${isFemale ? 'неё' : 'него'}  приготовлены следующие заклинания ${spellCasterClassText}`
+      ? `У ${genderId === GENDER_FEMALE ? 'неё' : 'него'}  приготовлены следующие заклинания ${spellCasterClassText}`
       : `. ${name} может накладывать следующие заклинания${spellComponentOnlyText}${spellComponentExcludeText}`
 
     preTextResult = `${introText} ${baseStatText}${spellAdditionalInfoText}. ${spellCastText}:`

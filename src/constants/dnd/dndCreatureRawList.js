@@ -32992,4 +32992,88 @@ module.exports = [
       },
     ],
   },
+  {
+    name: `Слаад-головастик`,
+    nameEn: 'Slaad tadpole',
+    id: CREATURE_SLAAD_TADPOLE,
+    description: slaadDescription,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ABERRATION,
+    ],
+    aligmentId: ALIGMENT_CN,
+    source: {
+      id: 'MM',
+      page: 266,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 4,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 7,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 5,
+      [PARAM_CHA]: 3,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 4,
+    },
+    resistanceList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ACID,
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 7,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_SLAAD,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: `Сопротивление магии`,
+        description: `Слаад совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+  },
 ]

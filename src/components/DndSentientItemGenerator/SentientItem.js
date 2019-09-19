@@ -2,6 +2,7 @@ import dndStatBaseValue from '@/constants/dnd/dndStatBaseValue'
 import {dndAligmentCollection} from "@/constants/dnd/dndAligmentList"
 import {dndCreatureTypeCollection} from '@/constants/dnd/dndCreatureTypeList'
 import {dndLanguageCollection} from "@/constants/dnd/dndLanguageList"
+import {GENDER_MIDDLE} from "@/constants/genderList"
 
 import checkIfAligmentPossible from "@/utils/checkIfAligmentPossible"
 import dndCalcStatBonus from "@/utils/dndCalcStatBonus"
@@ -230,7 +231,7 @@ export default class SentientItem {
 
         return goal.description.replace(
           'тех, чьё мировоззрение диаметрально противоположно его собственному (такой предмет не может быть нейтральным)',
-          `существ с *${oppositeAligment.name.instrumental}* мировоззрением`,
+          `существ с *${oppositeAligment.name[GENDER_MIDDLE].instrumental}* мировоззрением`,
         )
       }
 

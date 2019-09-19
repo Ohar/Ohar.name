@@ -3,15 +3,16 @@ import arrify from "arrify"
 
 import getAligmentNameById from "./utils/getAligmentNameById"
 
-export default ({aligmentId}) => {
+export default ({creature: {aligmentId, genderId}}) => {
   const textList = arrify(aligmentId).map(
     item => {
       if (typeof item === 'string') {
-        return getAligmentNameById(item)
+        return getAligmentNameById({genderId, aligmentId: item})
       }
 
       if (typeof item === 'object') {
-        const aligmentText = getAligmentNameById(item.id)
+        const {id: aligmentId} = item
+        const aligmentText = getAligmentNameById({genderId, aligmentId})
         const commentText = item.comment
           ? ` (${item.comment})`
           : ''

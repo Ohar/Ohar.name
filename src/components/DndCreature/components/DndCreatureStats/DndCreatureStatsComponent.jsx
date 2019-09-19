@@ -71,7 +71,7 @@ const DndCreatureStatsComponent = (
     </header>
 
     <p className='DndCreatureStats_info'>
-      <DndCreatureSize creature={creature} /> <DndCreatureType list={creatureTypeIdList}/>, <DndCreatureAligment aligmentId={aligmentId}/>
+      <DndCreatureSize creature={creature} /> <DndCreatureType list={creatureTypeIdList}/>, <DndCreatureAligment creature={creature}/>
     </p>
 
     <section className='DndCreatureStats_infoBlock'>

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { dndAligmentCollection } from '@/constants/dnd/dndAligmentList'
 import { dndItemCollection } from '@/constants/dnd/dndItemList'
 import { dndParamCollection } from '@/constants/dnd/dndParamList'
+import { GENDER_MIDDLE } from '@/constants/genderList'
 
 import DndSentientItemComponent from './DndSentientItemComponent'
 
@@ -90,7 +91,7 @@ export default class DndSentientItemContainer extends Component {
         },
         {
           header: 'Мировоззрение',
-          content: dndAligmentCollection[aligmentId].name.nominative,
+          content: dndAligmentCollection[aligmentId].name[GENDER_MIDDLE].nominative,
         },
         {
           header: 'Чувства',

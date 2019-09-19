@@ -32879,4 +32879,117 @@ module.exports = [
       },
     ],
   },
+  {
+    name: `Синий слаад`,
+    nameEn: 'Blue slaad',
+    id: CREATURE_BLUE_SLAAD,
+    description: [
+      `Синие костяные наросты, выступающие из локтей синих слаадов, наносят гуманоидам страшные заражённые раны, от которых те превращаются в слаадов. Эта инфекция, называемая «вирусом хаоса», превращает цель во взрослого [красного слаада](CREATURE:${CREATURE_RED_SLAAD}) (или в [зелёного слаада](CREATURE:${CREATURE_GREEN_SLAAD}), если цель была заклинателем, способным накладывать заклинания 3 уровня и выше).`,
+      slaadDescription,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ABERRATION,
+    ],
+    aligmentId: ALIGMENT_CN,
+    source: {
+      id: 'MM',
+      page: 266,
+    },
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 10,
+      cubeBonus: 52,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 9,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 1,
+    },
+    resistanceList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ACID,
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_SLAAD,
+      {
+        id: LANG_TELEPATHY,
+        range: 60,
+      },
+    ],
+    cr: CR_7,
+    featureList: [
+      {
+        name: `Сопротивление магии`,
+        description: `Слаад совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: `Регенерация`,
+        description: `Слаад восстанавливает 10 хитов в начале своего хода, если у него есть хотя бы 1 хит.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Слаад совершает три атаки: одну укусом, и две когтями.`,
+      },
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: `Коготь`,
+        description: `Если цель — гуманоид, она должна преуспеть в спасброске Телосложения со Сл 15, иначе заразится вирусом хаоса. Будучи больной, цель не может восстанавливать хиты, и максимум её хитов уменьшается на 10 (3к6) каждые 24 часа. Если болезнь уменьшает максимум хитов до 0, цель мгновенно превращается в [красного слаада](CREATURE:${CREATURE_RED_SLAAD}) или, если могла накладывать заклинания как минимум 3 уровня, в [зелёного слаада](CREATURE:${CREATURE_GREEN_SLAAD}). Только заклинание _Исполнение желаний_ (Wish) может обратить это превращение.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 5,
+          },
+        },
+      },
+    ],
+  },
 ]

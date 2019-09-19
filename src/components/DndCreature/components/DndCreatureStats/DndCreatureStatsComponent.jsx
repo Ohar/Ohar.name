@@ -101,7 +101,10 @@ const DndCreatureStatsComponent = (
       <DndResistanceList list={resistanceList}/>
       <DndImmunityList list={immunityList}/>
       <DndImmunityConditionList list={immunityConditionList}/>
-      <DndSenseList list={senseList}/>
+      <DndSenseList
+        list={senseList}
+        genderId={genderId}
+      />
       <DndLanguageList list={languageList}/>
       <DndCreatureCr cr={cr}/>
       <DndCreatureSource source={source}/>

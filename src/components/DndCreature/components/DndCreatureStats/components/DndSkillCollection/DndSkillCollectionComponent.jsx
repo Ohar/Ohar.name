@@ -13,9 +13,16 @@ export default ({list}) => (
         .map(
           ([id, value]) => {
             const {name} = dndSkillCollection[id]
-            const bonus = formatBonus(value)
 
-            return `${name} ${bonus}`
+            const bonus = typeof value === 'object'
+              ? formatBonus(value.value)
+              : formatBonus(value)
+
+            const commentText = value.comment
+              ? ` (${value.comment})`
+              : ''
+
+            return `${name} ${bonus}${commentText}`
           }
         )
         .join(', ')

@@ -34473,4 +34473,11 @@ module.exports = [
     ],
     genderId: GENDER_FEMALE,
   },
+  {
+    name: 'Инкуб',
+    nameEn: 'Incubus',
+    id: CREATURE_INCUBUS,
+    parentId: CREATURE_SUCCUBUS,
+    genderId: GENDER_MALE,
+  },
 ]

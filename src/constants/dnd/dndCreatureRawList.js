@@ -34814,7 +34814,7 @@ module.exports = [
     genderId: GENDER_FEMALE,
   },
   {
-    name: `Тарраска`,
+    name: `Тарраск`,
     nameAlt: `Тарраска`,
     nameEn: 'Tarrasque',
     id: CREATURE_TARRASQUE,
@@ -35038,7 +35038,7 @@ module.exports = [
     featureList: [
       {
         name: `Эхолокация`,
-        description: `. Тёмная мантия не может использовать слепое зрение, будучи оглохшей.`,
+        description: `Тёмная мантия не может использовать слепое зрение, будучи оглохшей.`,
       },
       {
         name: `Обманчивая внешность`,
@@ -35063,9 +35063,9 @@ module.exports = [
           },
           hit: {
             type: DAMAGE_BLUDGEONING,
-            cubeCount: 4,
-            cubeType: 12,
-            cubeBonus: 10,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
             comment: `, и тёмная мантия охватывает цель`,
           },
         },

@@ -1,18 +1,19 @@
 import arrify from 'arrify'
 import {
-  faDizzy,
-  faSkullCrossbones,
-  faMehBlank,
-  faRobot,
-  faUserPlus,
-  faCandyCane,
-  faUserFriends,
-  faBroom,
-  faMusic,
-  faHatWizard,
-  faGem,
   faBrain,
+  faBroom,
+  faCandyCane,
+  faDizzy,
+  faGavel,
+  faGem,
+  faHatWizard,
+  faMehBlank,
+  faMusic,
+  faRobot,
+  faSkullCrossbones,
   faTree,
+  faUserFriends,
+  faUserPlus,
 } from '@fortawesome/free-solid-svg-icons'
 
 import generateTextLinks from '@/utils/generateTextLinks'
@@ -1463,7 +1464,7 @@ _Чарующая мелодия._ Существо становится оча�
   },
   {
     templateName: 'Три-кин с оружием',
-    templateIcon: faBrain,
+    templateIcon: faGavel,
     templateLimitations: {
       include: {
         id: [

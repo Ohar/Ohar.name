@@ -965,7 +965,8 @@ module.exports = [
         Infinity,
         3,
       ],
-    },genderId: GENDER_MALE,
+    },
+    genderId: GENDER_MALE,
   },
   {
     name: 'Ааракокра',

@@ -1,3 +1,7 @@
+import generateTextLinks from '@/utils/generateTextLinks'
+import {
+  CREATURE_THRI_KREEN,
+} from '@/constants/dnd/dndCreatureIdList'
 import {
   DAMAGE_ACID,
   DAMAGE_BLUDGEONING,
@@ -56,6 +60,7 @@ export const ITEM_BLOWGUN = 'blowgun'
 export const ITEM_BREASTPLATE = 'breastplate'
 export const ITEM_CHAIN_MAIL = 'chain⁠_mail'
 export const ITEM_CHAIN_SHIRT = 'chain⁠_s⁠hirt'
+export const ITEM_CHATKCHA = 'chatkcha'
 export const ITEM_CLUB = 'club'
 export const ITEM_CROSSBOW_HAND = 'crossbow_hand'
 export const ITEM_CROSSBOW_HEAVY = 'crossbow_heavy'
@@ -67,6 +72,7 @@ export const ITEM_GLAIVE = 'glaive'
 export const ITEM_GREATAXE = 'greataxe'
 export const ITEM_GREATCLUB = 'greatclub'
 export const ITEM_GREATSWORD = 'greatsword'
+export const ITEM_GYTHKA = 'gythka'
 export const ITEM_HALBERD = 'halberd'
 export const ITEM_HALF_PLATE = 'half_plate'
 export const ITEM_HANDAXE = 'handaxe'
@@ -440,6 +446,54 @@ const dndItemRawList = [
     ],
     category: CAT_WEAPON,
     subcategory: CAT_SIMPLE_MELEE_WEAPON,
+  },
+  {
+    id: ITEM_GYTHKA,
+    name: 'Гитка',
+    nameEn: 'Gythka',
+    description: generateTextLinks(`Гитка это особое двуручное древковое оружие [три-кринов](CREATURE:${CREATURE_THRI_KREEN}) с клинками на каждом конце.`),
+    damage: {
+      cubeCount: 1,
+      cubeType: 8,
+    },
+    damageType: DAMAGE_SLASHING,
+    source: {
+      id: 'MM',
+      page: 284,
+    },
+    weaponPropList: [
+      WEAPON_TWO_HANDED,
+    ],
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
+  },
+  {
+    id: ITEM_CHATKCHA,
+    name: 'Чаткча',
+    nameEn: 'Chatkcha',
+    description: generateTextLinks(`Чаткча это особое плоское оружие [три-кринов](CREATURE:${CREATURE_THRI_KREEN}) с тремя треугольными лезвиями (лёгкое метательное оружие).`),
+    damage: {
+      cubeCount: 1,
+      cubeType: 6,
+    },
+    damageType: DAMAGE_SLASHING,
+    source: {
+      id: 'MM',
+      page: 284,
+    },
+    weaponPropList: [
+      WEAPON_LIGHT,
+      WEAPON_THROWN,
+      {
+        id: WEAPON_RANGE,
+        value: {
+          normal: 30,
+          max: 120,
+        },
+      },
+    ],
+    category: CAT_WEAPON,
+    subcategory: CAT_MARTIAL_MELEE_WEAPON,
   },
   {
     id: ITEM_SPEAR,

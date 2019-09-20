@@ -291,6 +291,7 @@ const {
     SPELL_INSECT_PLAGUE,
     SPELL_INVISIBILITY,
     SPELL_JUMP,
+    SPELL_LEGEND_LORE,
     SPELL_LESSER_RESTORATION,
     SPELL_LEVITATE,
     SPELL_LIGHT,
@@ -327,6 +328,7 @@ const {
     SPELL_RAY_OF_ENFEEBLEMENT,
     SPELL_RAY_OF_FROST,
     SPELL_RAY_OF_SICKNESS,
+    SPELL_REMOVE_CURSE,
     SPELL_RESISTANCE,
     SPELL_RESSURECTION,
     SPELL_SACRED_FLAME,
@@ -580,6 +582,7 @@ const {
     CREATURE_GRIFFON,
     CREATURE_GRIMLOCK,
     CREATURE_GUARDIAN_NAGA,
+    CREATURE_GYNOSPHINX,
     CREATURE_HALF_OGRE,
     CREATURE_HARPY,
     CREATURE_HELL_HOUND,
@@ -34655,5 +34658,157 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: `Гиносфинкс`,
+    nameEn: 'Gynosphinx',
+    id: CREATURE_GYNOSPHINX,
+    description: [
+      `Тело гиносфинкса венчает голова гуманоидной женщины. Многие обладают благородными ликами земных цариц, но некоторые обладают дикими, львиными чертами. Глаза гиносфинкса взирают сквозь пространство и время, видя через завесы невидимости и магии. Гости, слишком глубоко заглянувшие в эти глаза, могут обнаружить себя магическим образом перенесёнными на какой-то далёкий план, где их ожидают сложные испытания.\n
+Гиносфинксы являют собой кладези знаний и легенд. Они загадывают загадки и головоломки, чтобы проверить смекалку своих гостей, которые приходят вызнать их секреты. Некоторые из них готовы заключить с такими гостями сделку в обмен на сокровища или услуги.`,
+      sphinxDescription,
+    ],
+    note: sphinxNote,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_LN,
+    source: {
+      id: 'MM',
+      page: 278,
+    },
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 16,
+      cubeType: 10,
+      cubeBonus: 48,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 18,
+      [PARAM_WIT]: 18,
+      [PARAM_CHA]: 18,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 8,
+      [SKILL_HISTORY]: 12,
+      [SKILL_ARCANA]: 12,
+      [SKILL_RELIGION]: 8,
+    },
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_PSYCHIC,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_CHARMED,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 18,
+      },
+    ],
+    languageList: [
+      LANG_COMMON,
+      LANG_SPHINX,
+    ],
+    cr: CR_11,
+    featureList: [
+      {
+        name: `Непостижимая`,
+        description: `Сфинкс обладает иммунитетом ко всем эффектам, которые чувствуют её эмоции или читают мысли, а также заклинаниям школы Прорицания, неугодным ей. Проверки Мудрости (Проницательность), совершённые для определения намерений и искренности сфинкса, совершаются с помехой.`,
+      },
+      {
+        name: `Магическое оружие`,
+        description: `Атаки оружием сфинкса являются магическими.`,
+      },
+    ],
+    spellCast: {
+      spellCasterLevel: 9,
+      spellCasterClass: PC_CLASS_WIZARD,
+      baseStat: PARAM_INT,
+      componentExclude: CAST_MATERIAL,
+      spellAttackBonus: 8,
+      saveThrowDc: 16,
+      spellIdList: [
+        SPELL_BANISHMENT,
+        SPELL_DARKNESS,
+        SPELL_DISPEL_MAGIC,
+        SPELL_GREATER_INVISIBILITY,
+        SPELL_LEGEND_LORE,
+        SPELL_LOCATE_OBJECT,
+        SPELL_MAGE_HAND,
+        SPELL_MINOR_ILLUSION,
+        SPELL_PRESTIDIGITATION,
+        SPELL_REMOVE_CURSE,
+        SPELL_SUGGESTION,
+        SPELL_TONGUES,
+      ],
+      slotCountList: [
+        Infinity,
+        4,
+        3,
+        3,
+        3,
+        2,
+        1,
+      ],
+    },
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Сфинкс совершает две атаки когтём.`,
+      },
+      {
+        name: `Коготь`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    legendaryPoints: 3,
+    legendaryActionList: [
+      {
+        name: `Атака когтём`,
+        description: `Сфинкс совершает одну атаку когтём.`,
+      },
+      {
+        name: `Телепортация`,
+        cost: 2,
+        description: `Сфинкс магическим образом телепортируется вместе со всем несомым и носимым снаряжением, на расстояние до 120 футов в свободное пространство, которое она видит.`,
+      },
+      {
+        name: `Накладывание заклинания`,
+        cost: 3,
+        description: `Сфинкс накладывает заклинание из списка подготовленных заклинаний, используя ячейку заклинаний, как обычно.`,
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

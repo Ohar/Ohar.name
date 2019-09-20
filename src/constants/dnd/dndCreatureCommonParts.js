@@ -832,6 +832,26 @@ const oozeNote ={
   author: `Из дневника Джастера Холлоуквилла о своем первом исследовании Подгорья`,
 }
 
+const sphinxDescription = {
+  header: 'Сфинксы',
+  text: `В священной изоляции сфинксы охраняют секреты и сокровища богов. Спокойствие и уважение, с которым они принимают новых посетителей, не вяжется с разбросанными по логову костями прошлых гостей и искателей приключений, которые не смогли пройти их испытания. Огромные крылья простираются с обеих сторон их рыжевато-бурого львиного тела, на котором поигрывают мускулы. Передние лапы их настолько мощные, что могут разорвать человека пополам.\n
+**Божественные охранники.** Сфинксы испытывают тех, кто ищут сокровища богов, будь то забытые секреты или могучие заклятья, артефакты или волшебные проходы. Существа, идущие на испытания сфинкса, либо умирают, оказавшись недостойными, либо остаются в живых, доказав своё право на это.\n
+Некоторые сфинксы являются верховными жрецами богов, которые их создали, но большинство из них — это воплощённые духи, пришедшие в земли смертных в ответ на истовую молитву или из-за прямого вмешательства высших сил. Сфинкс, которому не нужно ни есть, ни спать, неустанно несёт свой дозор. Они редко встречаются с другими сфинксами, и не ведают иной жизни кроме своей священной миссии.\n
+**Волшебные испытания.** Секреты и сокровища, которые охраняет сфинкс, находятся под божественной защитой, и для всякого существа, не прошедшего испытания сфинкса, путь к предмету или знанию исчезает. Даже если напасть на сфинкса и одержать победу, искатель не только не получит того, что искал, но и обретёт врага в лице бога, который поставил сфинкса на стражу.\n
+Божества добра иногда даруют сфинксам возможность удалять посетителей, не прошедших испытания, просто перемещая их подальше и делая так, чтобы они никогда более не вернулись. Впрочем, обычно те, кто не проходят испытания, встречают свой конец от его лап.\n
+**Существа иных миров.** Смертные чаще всего встречают сфинксов в древних гробницах и руинах, но некоторым сфинксам доступны иные миры. Разговор со сфинксом, начавшийся среди обвалившихся колонн, может внезапно перенестись в странное место, вроде шахматной доски огромных размеров или устрашающей скалы, по которой придётся взбираться, пока вокруг бушует буря. Иногда сфинкса, находящегося в таком месте вне мира, необходимо призвать в пустующее логово. И лишь те, кого сфинкс сочтёт достойными, удостоятся его присутствия.\n
+**Падшие сфинксы.** Будь то из-за груза лет, раскаяния за убийства невинных или жажды поклонения просителей, которые так хотят выторговать себе путь к знаниям, некоторые сфинксы освобождаются от оков божественного приказа. Впрочем, даже если их мировоззрение и верность и меняются, они никогда не покидают своего поста и не выдают секретов никому кроме достойных этого существ.`,
+}
+
+const sphinxNote ={
+  text: `Круглая, но плоская\n
+Алтарь Собачьих Владык\n
+Самоцвет на черном бархате\n
+Жемчужина в темном море\n
+Переменчивая, но вечно неизменная`,
+  author: `Загадка гиносфинкса из горы Белый Шлейф`,
+}
+
 module.exports.angelDescription = angelDescription
 module.exports.animatedThingsDescription = animatedThingsDescription
 module.exports.blackDragonDescriptionList = blackDragonDescriptionList
@@ -871,6 +891,8 @@ module.exports.mushroomsDescription = mushroomsDescription
 module.exports.myconidDescription = myconidDescription
 module.exports.nagaDescription = nagaDescription
 module.exports.nightHagDescriptionList = nightHagDescriptionList
+module.exports.oozeDescription = oozeDescription
+module.exports.oozeNote = oozeNote
 module.exports.orcsDescription = orcsDescription
 module.exports.quasitText = quasitText
 module.exports.redDragonDescriptionList = redDragonDescriptionList
@@ -881,9 +903,9 @@ module.exports.salamanderDescription = salamanderDescription
 module.exports.seaHagDescriptionList = seaHagDescriptionList
 module.exports.silverDragonDescriptionList = silverDragonDescriptionList
 module.exports.skeletonDescription = skeletonDescription
-module.exports.oozeDescription = oozeDescription
-module.exports.oozeNote = oozeNote
 module.exports.slaadDescription = slaadDescription
+module.exports.sphinxDescription = sphinxDescription
+module.exports.sphinxNote = sphinxNote
 module.exports.vampireDescriptionList = vampireDescriptionList
 module.exports.whiteDragonDescriptionList = whiteDragonDescriptionList
 module.exports.zombieDesciption = zombieDesciption

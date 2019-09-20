@@ -141,6 +141,7 @@ const {
     LANG_PRIMORDIAL,
     LANG_SAHUAGIN,
     LANG_SLAAD,
+    LANG_SPHINX,
     LANG_SYLVAN,
     LANG_TELEPATHY,
     LANG_TERRAN,
@@ -283,6 +284,7 @@ const {
     SPELL_HALLUCINATORY_TERRAIN,
     SPELL_HARM,
     SPELL_HEAT_METAL,
+    SPELL_HEROES_FEAST,
     SPELL_HOLD_MONSTER,
     SPELL_HOLD_PERSON,
     SPELL_IDENTIFY,
@@ -337,6 +339,7 @@ const {
     SPELL_SHILLELAGH,
     SPELL_SILENCE,
     SPELL_SLEEP,
+    SPELL_SPARE_THE_DYING,
     SPELL_SPIKE_GROWTH,
     SPELL_SPIRIT_GUARDIANS,
     SPELL_SPIRITUAL_WEAPON,
@@ -356,6 +359,7 @@ const {
     SPELL_WATER_WALK,
     SPELL_WEB,
     SPELL_WIND_WALK,
+    SPELL_ZONE_OF_TRUTH,
   } = require('./dndSpellList'),
   {
     CAST_MATERIAL,
@@ -412,6 +416,8 @@ const {
     goldDragonDescriptionList,
     golemDescription,
     greenDragonDescriptionList,
+    sphinxDescription,
+    sphinxNote,
     greenHagDescriptionList,
     grickDescription,
     impDescription,
@@ -471,6 +477,7 @@ const {
     CREATURE_ANCIENT_RED_DRAGON,
     CREATURE_ANCIENT_SILVER_DRAGON,
     CREATURE_ANCIENT_WHITE_DRAGON,
+    CREATURE_ANDROSPHINX,
     CREATURE_ANIMATED_ARMOR,
     CREATURE_ANKHEG,
     CREATURE_ANKYLOSAURUS,
@@ -34478,6 +34485,174 @@ module.exports = [
     nameEn: 'Incubus',
     id: CREATURE_INCUBUS,
     parentId: CREATURE_SUCCUBUS,
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Андросфинкс`,
+    nameEn: 'Androsphinx',
+    id: CREATURE_ANDROSPHINX,
+    description: [
+      `Львиное тело андросфинкса венчает голова гуманоидного мужчины. Внешне угрюмый и расстроенный, он часто начинает разговор с оскорблений и язвительных замечаний. Но под грубой наружностью у андросфинкса скрывается благородное сердце. Он не склонен лгать или обманывать, но и информацией не делится так просто, он подбирает слова так же тщательно, как охраняет свои секреты.\n
+Андросфинксы проверяют своих гостей на смелость и отвагу не только заставляя их выполнять задачи, но и своим ужасным рыком, который разносится эхом на мили окрест, вселяя страх и оглушая существ, которые находятся неподалёку. Те, кто справятся с проверками, могут быть вознаграждены пиром героев.`,
+      sphinxDescription,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_LN,
+    source: {
+      id: 'MM',
+      page: 277,
+    },
+    armor: {
+      ac: 17,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 19,
+      cubeType: 10,
+      cubeBonus: 95,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 22,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 16,
+      [PARAM_WIT]: 18,
+      [PARAM_CHA]: 23,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 6,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 10,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 10,
+      [SKILL_ARCANA]: 9,
+      [SKILL_RELIGION]: 15,
+    },
+    immunityList: [
+      DAMAGE_PSYCHIC,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityConditionList: [
+      CONDITION_FRIGHTENED,
+      CONDITION_CHARMED,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 20,
+      },
+    ],
+    languageList: [
+      LANG_COMMON,
+      LANG_SPHINX,
+    ],
+    cr: CR_17,
+    featureList: [
+      {
+        name: `Непостижимый`,
+        description: `Сфинкс обладает иммунитетом ко всем эффектам, которые чувствуют его эмоции или читают мысли, а также заклинаниям школы Прорицания, неугодным ему. Проверки Мудрости (Проницательность), совершённые для определения намерений и искренности сфинкса, совершаются с помехой.`,
+      },
+      {
+        name: `Магическое оружие`,
+        description: `Атаки оружием сфинкса являются магическими.`,
+      },
+    ],
+    spellCast: {
+      spellCasterLevel: 12,
+      spellCasterClass: PC_CLASS_PRIEST,
+      baseStat: PARAM_WIT,
+      componentExclude: CAST_MATERIAL,
+      spellAttackBonus: 10,
+      saveThrowDc: 18,
+      spellIdList: [
+        SPELL_BANISHMENT,
+        SPELL_COMMAND,
+        SPELL_DETECT_EVIL_AND_GOOD,
+        SPELL_DETECT_MAGIC,
+        SPELL_DISPEL_MAGIC,
+        SPELL_FLAME_STRIKE,
+        SPELL_FREEDOM_OF_MOVEMENT,
+        SPELL_GREATER_RESTORATION,
+        SPELL_HEROES_FEAST,
+        SPELL_LESSER_RESTORATION,
+        SPELL_SACRED_FLAME,
+        SPELL_SPARE_THE_DYING,
+        SPELL_THAUMATURGY,
+        SPELL_TONGUES,
+        SPELL_ZONE_OF_TRUTH,
+      ],
+      slotCountList: [
+        Infinity,
+        4,
+        3,
+        3,
+        3,
+        2,
+        1,
+      ],
+    },
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Сфинкс совершает две атаки когтём.`,
+      },
+      {
+        name: `Коготь`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 12,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 10,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: `Рык`,
+        limit: {
+          count: 3,
+          period: 'день',
+        },
+        description: `Сфинкс испускает магический рык. Каждый раз, когда он рычит до окончания продолжительного отдыха, рык звучит всё громче, и эффекты у него разные. Все существа в пределах 500 футов от сфинкса, слышащие рык, должны совершить спасбросок.\n
+1. Первый рык. Все существа, провалившие спасбросок Мудрости со Сл 18, становятся испуганными на 1 минуту. Испуганное существо может повторять спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.\n
+2. Второй рык. Все существа, провалившие спасбросок Мудрости со Сл 18, становятся оглохшими и испуганными на 1 минуту. Испуганное существо также парализовано и может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе.\n
+3. Третий рык. Все существа совершают спасбросок Телосложения со Сл 18. При провале существо получает урон звуком 44 (8к10) и сбивается с ног. При успешном спасброске существо получает половину этого урона и не сбивается с ног.`,
+      },
+    ],
+    legendaryPoints: 3,
+    legendaryActionList: [
+      {
+        name: `Атака когтём`,
+        description: `Сфинкс совершает одну атаку когтём.`,
+      },
+      {
+        name: `Телепортация`,
+        cost: 2,
+        description: `Сфинкс магическим образом телепортируется вместе со всем несомым и носимым снаряжением, на расстояние до 120 футов в свободное пространство, которое он видит.`,
+      },
+      {
+        name: `Накладывание заклинания`,
+        cost: 3,
+        description: `Сфинкс накладывает заклинание из списка подготовленных заклинаний, используя ячейку заклинаний, как обычно.`,
+      },
+    ],
     genderId: GENDER_MALE,
   },
 ]

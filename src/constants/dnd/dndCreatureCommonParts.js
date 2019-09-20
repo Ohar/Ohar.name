@@ -661,7 +661,7 @@ const devilsDescriptionList = [
   },
 ]
 
-const blightsDesciption = {
+const blightsDescription = {
   header: 'Заразы',
   text: `Пробуждённые тьмой растения, наделённые разумом и возможностью передвижения, подобно чуме губят землю. Подпитываемые тьмой через почву, заразы несут в себе древнее зло и пытаются распространить его везде, где это возможно.\n
 **Корни древа Галтиаса.** Легенды рассказывают о [вампире](CREATURE:${CREATURE_VAMPIRE}) по имени Галтиас, которые занимался ужасной магией и воздвиг мерзкую башню, которую навали Шпиль Ночного Когтя. Галтиас был умерщвлён, когда герой проткнул ему сердце деревянным колом, но когда вампир был уничтожен, его кровь проникла в кол, наполнив его ужасной силой. Через некоторое время этот кол дал побеги и стал деревом, полным злой сущности вампира.\n
@@ -855,7 +855,7 @@ const sphinxNote ={
 module.exports.angelDescription = angelDescription
 module.exports.animatedThingsDescription = animatedThingsDescription
 module.exports.blackDragonDescriptionList = blackDragonDescriptionList
-module.exports.blightsDesciption = blightsDesciption
+module.exports.blightsDescription = blightsDescription
 module.exports.blueDragonDescriptionList = blueDragonDescriptionList
 module.exports.boneDevilSummoner = boneDevilSummoner
 module.exports.brassDragonDescriptionList = brassDragonDescriptionList

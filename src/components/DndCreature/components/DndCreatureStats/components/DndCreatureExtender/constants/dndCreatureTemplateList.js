@@ -289,6 +289,7 @@ import {
 } from '@/constants/dnd/dndCrList'
 
 import { dndCrCollection } from '@/constants/dnd/dndCrList'
+import { GENDER_MIDDLE } from '@/constants/genderList'
 
 import calcParamBonus from '@/utils/calcParamBonus'
 import formatBonus from '@/utils/formatBonus'
@@ -1437,6 +1438,7 @@ _Чарующая мелодия._ Существо становится оча�
     },
 
     languageList: null,
+    genderId: GENDER_MIDDLE,
 
     extendPropCollection: {
       params: {

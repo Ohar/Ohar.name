@@ -542,6 +542,7 @@ const {
     CREATURE_EAGLE,
     CREATURE_EFREETI,
     CREATURE_ERINYES,
+    CREATURE_ETTIN,
     CREATURE_FAERIE_DRAGON_BLUE,
     CREATURE_FAERIE_DRAGON_GREEN,
     CREATURE_FAERIE_DRAGON_LIGHT_BLUE,
@@ -35430,6 +35431,107 @@ module.exports = [
             cubeCount: 2,
             cubeType: 4,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Тролль`,
+    nameEn: 'Troll',
+    id: CREATURE_TROLL,
+    description: `Родившиеся с чудовищным аппетитом, тролли едят всё, что могут поймать и запихнуть в пасть. У них нет никакого общества, о котором стоит упомянуть, но они служат наёмниками у [орков](CREATURE:${CREATURE_ORC}), [огров](CREATURE:${CREATURE_OGRE}), [эттинов](CREATURE:${CREATURE_ETTIN}), [карг](CREATURE:${CREATURE_GREEN_HAG}) и [великанов](CREATURE:${CREATURE_HILL_GIANT}). В качестве платы тролли требуют пищу и сокровища. Троллей трудно контролировать, и они делают то, что им заблагорассудится, даже когда работают на более могущественных существ.\n
+**Регенерация.** Ломание тролльих костей и разрубание его упругой шкуры только злит тролля. Его раны быстро затягиваются. Если чудище теряет руку, ногу или даже голову, эти части иногда начинают жить своей жизнью. Тролль даже может прикрепить отрубленный орган обратно, при этом временная травма его совершенно не будет беспокоить. Только огонь или кислота могут остановить регенерацию плоти тролля. Разъярённые тролли будут в первую очередь атаковать тех, кто использовал против них огонь и кислоту.\n
+**Тролли-уроды.** Регенеративная природа троллей делает их подверженными мутациям. Эти нечастые явления могут происходить в результате того, что сделал тролль, или что сделали с ним другие. Из обрубка шеи тролля, которому срубили голову, может вырасти две новые, а если тролль съест фейское существо, он может получить одну или несколько особенностей этого существа. `,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_GIANT,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: {
+      id: 'MM',
+      page: 286,
+    },
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 10,
+      cubeBonus: 40,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_GIANT,
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: `Тонкий нюх`,
+        description: `Тролль совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+      {
+        name: `Регенерация`,
+        description: `Тролль восстанавливает 10 хитов в начале своего хода. Если тролль получает урон кислотой или огнём, эта особенность не действует в начале его следующего хода. Тролль умирает только если начинает ход с 0 хитов и не может регенерировать.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Тролль совершает три атаки: одну укусом, и две когтями.`,
+      },
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Коготь`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
           },
         },
       },

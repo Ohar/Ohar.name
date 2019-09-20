@@ -115,6 +115,7 @@ const SPELL_IDENTIFY = 'identify'
 const SPELL_INSECT_PLAGUE = 'insect_plague'
 const SPELL_INVISIBILITY = 'invisibility'
 const SPELL_JUMP = 'jump'
+const SPELL_LEGEND_LORE = 'legend_lore'
 const SPELL_LESSER_RESTORATION = 'lesser_restoration'
 const SPELL_LEVITATE = 'levitate'
 const SPELL_LIGHT = 'light'
@@ -151,6 +152,7 @@ const SPELL_RAISE_DEAD = 'raise_dead'
 const SPELL_RAY_OF_ENFEEBLEMENT = 'ray_of_enfeeblement'
 const SPELL_RAY_OF_FROST = 'ray_of_frost'
 const SPELL_RAY_OF_SICKNESS = 'ray_of_sickness'
+const SPELL_REMOVE_CURSE = 'remove_curse'
 const SPELL_RESISTANCE = 'resistance'
 const SPELL_RESSURECTION = 'ressurection'
 const SPELL_SACRED_FLAME = 'sacred_flame'
@@ -3034,6 +3036,40 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_LEGEND_LORE,
+    name: 'Знание легенд',
+    nameEn: 'Legend lore',
+    description: ``, // TODO
+    lvl: 5,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_REMOVE_CURSE,
+    name: 'Снятик проклятия',
+    nameEn: 'Remove curse',
+    description: ``, // TODO
+    lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -3133,6 +3169,7 @@ module.exports.SPELL_IDENTIFY = SPELL_IDENTIFY
 module.exports.SPELL_INSECT_PLAGUE = SPELL_INSECT_PLAGUE
 module.exports.SPELL_INVISIBILITY = SPELL_INVISIBILITY
 module.exports.SPELL_JUMP = SPELL_JUMP
+module.exports.SPELL_LEGEND_LORE = SPELL_LEGEND_LORE
 module.exports.SPELL_LESSER_RESTORATION = SPELL_LESSER_RESTORATION
 module.exports.SPELL_LEVITATE = SPELL_LEVITATE
 module.exports.SPELL_LIGHT = SPELL_LIGHT
@@ -3169,6 +3206,7 @@ module.exports.SPELL_RAISE_DEAD = SPELL_RAISE_DEAD
 module.exports.SPELL_RAY_OF_ENFEEBLEMENT = SPELL_RAY_OF_ENFEEBLEMENT
 module.exports.SPELL_RAY_OF_FROST = SPELL_RAY_OF_FROST
 module.exports.SPELL_RAY_OF_SICKNESS = SPELL_RAY_OF_SICKNESS
+module.exports.SPELL_REMOVE_CURSE = SPELL_REMOVE_CURSE
 module.exports.SPELL_RESISTANCE = SPELL_RESISTANCE
 module.exports.SPELL_RESSURECTION = SPELL_RESSURECTION
 module.exports.SPELL_SACRED_FLAME = SPELL_SACRED_FLAME

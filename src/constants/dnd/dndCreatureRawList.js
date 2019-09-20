@@ -561,6 +561,7 @@ const {
     CREATURE_GARGOYLE,
     CREATURE_GAS_SPORE,
     CREATURE_GELATINOUS_CUBE,
+    CREATURE_GHAST,
     CREATURE_GHOST,
     CREATURE_GHOUL,
     CREATURE_GIBBERING_MOUTHER,
@@ -35690,9 +35691,9 @@ module.exports = [
     genderId: GENDER_MIDDLE,
   },
   {
-    name: `Упырь`,
-    nameEn: 'Ghoul',
-    id: CREATURE_GHOUL,
+    name: `Вурдалак`,
+    nameEn: 'Ghast',
+    id: CREATURE_GHAST,
     description: ghoulDescription,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [

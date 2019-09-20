@@ -164,7 +164,7 @@ export default [
     probabilityWeight: 1,
   },
   {
-    id: 'jelly',
+    id: 'ooze',
     probabilityWeight: 1,
   },
 ]

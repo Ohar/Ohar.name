@@ -684,6 +684,7 @@ const {
     CREATURE_SATYR,
     CREATURE_SCARECROW,
     CREATURE_SEA_HAG,
+    CREATURE_SHADOW,
     CREATURE_SHADOW_DEMON,
     CREATURE_SHAMBLING_MOUND,
     CREATURE_SHRIEKER,
@@ -35077,6 +35078,125 @@ module.exports = [
           period: 'день',
         },
         description: `От тёмной мантии исходит магическая тьма с радиусом 15 футов, перемещающаяся вместе с ней, и огибающая углы. Тьма существует, пока тёмная мантия поддерживает концентрацию, вплоть до 10 минут (как при концентрации на заклинании). Тёмное зрение не проникает через эту тьму, и никакой естественный свет не может её разогнать. Если часть этой тьмы пересечётся со светом, созданным заклинанием с уровнем не больше 2, заклинание, создавшее свет, рассеивается. `,
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: `Тень`,
+    nameEn: 'Shadow',
+    id: CREATURE_SHADOW,
+    description: `Тень это нежить, напоминающая гипертрофированную человеческую тень.\n
+**Тёмный нрав.** Тень тянется к жизненной силе живых существ из тьмы. Тени могут поглотить энергию любого существа, но их особенно тянет к незапятнанным злом созданиям. Существо, которое живёт добром и праведностью, вызывает у голодной тени самую сильную тягу. По мере того, как тень высасывает жизненную силу существа, тень жертвы становится темнее, и начинает двигаться по собственной воле. После смерти тень существа вырывается на свободу, становясь новой нежитью, стремящейся поглотить ещё чью-нибудь жизнь.\n
+Если существо, из которого сформировалась новая тень, каким-то образом вернётся к жизни, его тень-нежить чувствует это возвращение. Тень может начать искать своего «родителя», чтобы убить. Вне зависимости от того, преследует ли тень свою живую часть, существо, из которого она была создана, больше не отбрасывает тень, пока это чудовище не будет уничтожено.\n
+**Натура нежити.** Тени не нужен воздух, еда, питьё и сон. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: {
+      id: 'MM',
+      page: 282,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 6,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: {
+        value: 4,
+        comment: `+6 при тусклом освещении и в темноте`,
+      },
+    },
+    vulnerabilityList: [
+      DAMAGE_RADIANT,
+    ],
+    resistanceList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ACID,
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_NECROTIC,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_GRAPPLED,
+      CONDITION_FRIGHTENED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: `Аморфный`,
+        description: `Тень может перемещаться сквозь пространство шириной в 1 дюйм без протискивания.`,
+      },
+      {
+        name: `Скрытность в тени`,
+        description: `Находясь в области тусклого света или тьмы, тень может совершать действие Засада бонусным действием.`,
+      },
+      {
+        name: `Слабость на солнечном свете`,
+        description: `Находясь на солнечном свету, тень совершает с помехой броски атаки, проверки характеристик и спасброски.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Вытягивание силы`,
+        description: `Цель умирает, если её Силы уменьшается до 0. Уменьшение длится до тех пор, пока цель не окончит короткий или продолжительный отдых.\n
+Если от этой атаки умрёт гуманоид с незлым мировоззрением, через 1к4 часа из трупа выйдет новая тень.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_NECROTIC,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 2,
+            comment: `, и значение Силы цели уменьшается на 1к4`,
+          },
+        },
       },
     ],
     genderId: GENDER_FEMALE,

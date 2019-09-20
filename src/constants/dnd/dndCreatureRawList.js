@@ -413,6 +413,7 @@ const {
     devilsDescriptionList,
     dinoDescription,
     geniusDescription,
+    ghoulDescription,
     giantDescriptionList,
     githDescription,
     gitNote,
@@ -421,8 +422,6 @@ const {
     goldDragonDescriptionList,
     golemDescription,
     greenDragonDescriptionList,
-    sphinxDescription,
-    sphinxNote,
     greenHagDescriptionList,
     grickDescription,
     impDescription,
@@ -452,6 +451,8 @@ const {
     silverDragonDescriptionList,
     skeletonDescription,
     slaadDescription,
+    sphinxDescription,
+    sphinxNote,
     vampireDescriptionList,
     whiteDragonDescriptionList,
     zombieDesciption,
@@ -561,6 +562,7 @@ const {
     CREATURE_GAS_SPORE,
     CREATURE_GELATINOUS_CUBE,
     CREATURE_GHOST,
+    CREATURE_GHOUL,
     CREATURE_GIBBERING_MOUTHER,
     CREATURE_GITHYANKI_KNIGHT,
     CREATURE_GITHYANKI_WARRIOR,
@@ -35686,5 +35688,113 @@ module.exports = [
       },
     ],
     genderId: GENDER_MIDDLE,
+  },
+  {
+    name: `Упырь`,
+    nameEn: 'Ghoul',
+    id: CREATURE_GHOUL,
+    description: ghoulDescription,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_UNDEAD,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: {
+      id: 'MM',
+      page: 288,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 8,
+    },
+    resistanceList: [
+      DAMAGE_NECROTIC,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_EXHAUSTION,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_COMMON,
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: `Вонь`,
+        description: `Все существа, начинающие ход в пределах 5 футов от вурдалака, должны преуспеть в спасброске Телосложения со Сл 10, иначе станут отравленными до начала своего следующего хода. При успешном спасброске существо получает иммунитет к _Вони_ этого упыря на 24 часа.`,
+      },
+      {
+        name: `Отрицание изгнания`,
+        description: `Вурдалак и все упыри в пределах 30 футов от него совершают с преимуществом спасброски от эффектов, изгоняющих нежить.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: `Когти`,
+        description: `Если цель — существо, не являющееся нежитью, она должна преуспеть в спасброске Телосложения со Сл 10, иначе станет парализованной на 1 минуту. Цель может повторять этот спасбросок в конце каждого своего хода, оканчивая эффект на себе при успехе. `,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

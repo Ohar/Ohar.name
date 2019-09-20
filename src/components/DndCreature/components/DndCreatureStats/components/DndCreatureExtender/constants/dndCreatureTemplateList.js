@@ -219,6 +219,7 @@ import {
 } from '@/constants/dnd/dndSkillList'
 import {
   LANG_DRACONIC,
+  LANG_TELEPATHY,
 } from '@/constants/dnd/dndLanguageList'
 import {
   SPELL_BESTOW_CURSE,
@@ -239,6 +240,7 @@ import {
   SPELL_LIGHTNING_BOLT,
   SPELL_LOCATE_OBJECT,
   SPELL_MAGE_HAND,
+  SPELL_MAGIC_WEAPON,
   SPELL_PHANTASMAL_KILLER,
   SPELL_POLYMORPH,
   SPELL_RAY_OF_SICKNESS,
@@ -295,6 +297,7 @@ import { GENDER_MIDDLE } from '@/constants/genderList'
 
 import calcParamBonus from '@/utils/calcParamBonus'
 import formatBonus from '@/utils/formatBonus'
+import { CAST_NONE } from '@/constants/dnd/dndCastComponentList'
 
 export default [
   {
@@ -1532,6 +1535,77 @@ _Чарующая мелодия._ Существо становится оча�
           }
           : item
       ),
+    },
+  },
+  {
+    templateName: 'Три-кин с псионикой',
+    templateIcon: faBrain,
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_THRI_KREEN,
+        ],
+      },
+    },
+
+    name: 'Три-кин с псионикой',
+    spellCast: {
+      comment: 'псионика',
+      baseStat: PARAM_WIT,
+      componentExclude: CAST_NONE,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_MAGE_HAND,
+              comment: 'рука невидима',
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 2,
+            period: 'день',
+          },
+          list: [
+            SPELL_MAGIC_WEAPON,
+            SPELL_BLUR,
+          ],
+        },
+        {
+          limit: {
+            count: 2,
+            period: 'день',
+          },
+          list: [
+            {
+              id: SPELL_INVISIBILITY,
+              comment: 'только на себя',
+            },
+          ],
+        },
+      ],
+    },
+
+    extendPropCollection: {
+      description: [
+        {
+          header: `Вариант: Псионика три-кринов`,
+          text: generateTextLinks(`У некоторых [три-кринов](CREATURE:${CREATURE_THRI_KREEN}) есть псионические способности, помогающие им охотиться и общаться с чужаками.\n
+У псионического три-крина есть телепатия с радиусом 60 футов и следующая дополнительная особенность:\n
+**Врождённое колдовство (псионика).** Базовой характеристикой три-крина является Мудрость. Три-крин может накладывать следующие заклинания, не нуждаясь ни в каких компонентах:\n
+* Неограниченно: _Волшебная рука_ (Mage hand) (рука невидима)\n
+* 2/день каждое: _Магическое оружие_ (Magic weapon), _Размытый образ_ (Blur)\n
+* 1/день: _Невидимость_ (Invisibility) (только на себя)`),
+        },
+      ],
+      languageList: [
+        {
+          id: LANG_TELEPATHY,
+          range: 60,
+        },
+      ],
     },
   },
   // NOT READY

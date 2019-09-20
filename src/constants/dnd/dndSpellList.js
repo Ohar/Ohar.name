@@ -108,6 +108,7 @@ const SPELL_GUST_OF_WIND = 'gust_of_wind'
 const SPELL_HALLUCINATORY_TERRAIN = 'hallucinatory_terrain'
 const SPELL_HARM = 'harm'
 const SPELL_HEAT_METAL = 'heat_metal'
+const SPELL_HEROES_FEAST = 'heroes_feast'
 const SPELL_HOLD_MONSTER = 'hold_monster'
 const SPELL_HOLD_PERSON = 'hold_person'
 const SPELL_IDENTIFY = 'identify'
@@ -164,6 +165,7 @@ const SPELL_SHILLELAGH = 'shillelagh'
 const SPELL_SHOCKING_GRASP = 'shocking_grasp'
 const SPELL_SILENCE = 'silence'
 const SPELL_SLEEP = 'sleep'
+const SPELL_SPARE_THE_DYING = 'spare_the_dying'
 const SPELL_SPIKE_GROWTH = 'spike_growth'
 const SPELL_SPIRIT_GUARDIANS = 'spirit_guardians'
 const SPELL_SPIRITUAL_WEAPON = 'spiritual_weapon'
@@ -184,6 +186,7 @@ const SPELL_WATER_BREATHING = 'water_breathing'
 const SPELL_WATER_WALK = 'water_walk'
 const SPELL_WEB = 'web'
 const SPELL_WIND_WALK = 'wind_walk'
+const SPELL_ZONE_OF_TRUTH = 'zone_of_truth'
 
 const defaultCastTime = '1 действие'
 const defaultDuration = 'мгновенная'
@@ -2980,6 +2983,57 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_ZONE_OF_TRUTH,
+    name: 'Область истины',
+    nameEn: 'Zone of truth',
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_SPARE_THE_DYING,
+    name: 'Уход за умирающим',
+    nameEn: 'Spare the dying',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_HEROES_FEAST,
+    name: 'Пир героев',
+    nameEn: 'Heroes feast',
+    description: ``, // TODO
+    lvl: 6,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -3050,8 +3104,8 @@ module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
 module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
 module.exports.SPELL_EYEBITE = SPELL_EYEBITE
 module.exports.SPELL_FAERIE_FIRE = SPELL_FAERIE_FIRE
-module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
 module.exports.SPELL_FEAR = SPELL_FEAR
+module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
 module.exports.SPELL_FINGER_OF_DEATH = SPELL_FINGER_OF_DEATH
 module.exports.SPELL_FIREBALL = SPELL_FIREBALL
 module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE
@@ -3072,6 +3126,7 @@ module.exports.SPELL_GUST_OF_WIND = SPELL_GUST_OF_WIND
 module.exports.SPELL_HALLUCINATORY_TERRAIN = SPELL_HALLUCINATORY_TERRAIN
 module.exports.SPELL_HARM = SPELL_HARM
 module.exports.SPELL_HEAT_METAL = SPELL_HEAT_METAL
+module.exports.SPELL_HEROES_FEAST = SPELL_HEROES_FEAST
 module.exports.SPELL_HOLD_MONSTER = SPELL_HOLD_MONSTER
 module.exports.SPELL_HOLD_PERSON = SPELL_HOLD_PERSON
 module.exports.SPELL_IDENTIFY = SPELL_IDENTIFY
@@ -3128,6 +3183,7 @@ module.exports.SPELL_SHILLELAGH = SPELL_SHILLELAGH
 module.exports.SPELL_SHOCKING_GRASP = SPELL_SHOCKING_GRASP
 module.exports.SPELL_SILENCE = SPELL_SILENCE
 module.exports.SPELL_SLEEP = SPELL_SLEEP
+module.exports.SPELL_SPARE_THE_DYING = SPELL_SPARE_THE_DYING
 module.exports.SPELL_SPIKE_GROWTH = SPELL_SPIKE_GROWTH
 module.exports.SPELL_SPIRIT_GUARDIANS = SPELL_SPIRIT_GUARDIANS
 module.exports.SPELL_SPIRITUAL_WEAPON = SPELL_SPIRITUAL_WEAPON
@@ -3148,3 +3204,4 @@ module.exports.SPELL_WATER_BREATHING = SPELL_WATER_BREATHING
 module.exports.SPELL_WATER_WALK = SPELL_WATER_WALK
 module.exports.SPELL_WEB = SPELL_WEB
 module.exports.SPELL_WIND_WALK = SPELL_WIND_WALK
+module.exports.SPELL_ZONE_OF_TRUTH = SPELL_ZONE_OF_TRUTH

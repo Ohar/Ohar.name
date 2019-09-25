@@ -517,6 +517,7 @@ const {
     CREATURE_CENTAUR,
     CREATURE_CHAIN_DEVIL,
     CREATURE_CHASME,
+    CREATURE_CHIMERA,
     CREATURE_CLAY_GOLEM,
     CREATURE_CLOACKER,
     CREATURE_CLOUD_GIANT,
@@ -579,6 +580,7 @@ const {
     CREATURE_GNOLL_FANG_OF_YEENOGHU,
     CREATURE_GNOLL_PACK_LORD,
     CREATURE_GNOME_DEEP,
+    CREATURE_GOAT,
     CREATURE_GOBLIN,
     CREATURE_GOBLIN_BOSS,
     CREATURE_GOLD_DRAGON_WYRMLING,
@@ -36207,5 +36209,126 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: `Химера`,
+    nameEn: 'Chimera',
+    id: CREATURE_CHIMERA,
+    description: `Химеры были созданы после того как смертные призвали в мир Демогоргона. Князь Демонов, не впечатлённый окружающими его существами, превратил их в ужасных многоголовых чудовищ. Так появились первые химеры.\n
+Наделённые демонической жестокостью, химеры служат ужасным напоминанием о том, что случается, когда князья демонов находят путь на Материальный План. Типичный образец выглядит следующим образом: задняя часть крупного [козла](CREATURE:${CREATURE_GOAT}), передняя часть [льва](CREATURE:${CREATURE_LION}), кожистые крылья [дракона](CREATURE:${CREATURE_YOUNG_RED_DRAGON}), и головы всех трёх существ. Монстр атакует своих жертв внезапно, бросаясь с неба и окутывая жертву своим огненным дыханием, перед тем как приземлиться.\n
+**Противоречивое существо.** Химера сочетает худшие аспекты трёх разных существ. Голова дракона отвечает за набеги, грабежи и накопление значительных богатств. Львиная натура заставляет охотиться и убивать сильных существ, которые вторгаются на её территорию. Голова козла придаёт злобность и упрямство, заставляя сражаться до смерти.\n
+Все эти мотивы движут химерой, считающей территорию более 10 миль в поперечнике своей территорией. Она охотится на дичь, присматриваясь к более могущественным созданиям как к соперникам, которых нужно победить и унизить. Их самыми опасными врагами являются [виверны](CREATURE:${CREATURE_WYVERN}), [грифоны](CREATURE:${CREATURE_GRIFFON}), драконы, [мантикоры](CREATURE:${CREATURE_MANTICORE}) и [перитоны](CREATURE:${CREATURE_PERYTON}).\n
+Во время охоты химера отыскивает какие-нибудь несложные способы себя развлечь. Она наслаждается, пугая и мучая более слабых существ. Этот монстр часто играет со своей жертвой, неожиданно прекратив нападение, оставляя раненое и напуганное существо только для того, чтобы потом вернуться и прикончить его.\n
+**Прислужник зла.** Несмотря на то, что химеры далеки от хитрости, их драконье эго делает их восприимчивыми к лести и подаркам. Если предложить еду и сокровища, химера может пощадить путешественника. Злодей может привлечь химеру к себе на службу, если будет поддерживать её сокровищницу полной, а саму её хорошо накормленной. `,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+    ],
+    aligmentId: ALIGMENT_CE,
+    source: {
+      id: 'MM',
+      page: 292,
+    },
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 10,
+      cubeBonus: 48,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 19,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 8,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 18,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_DRACONIC,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_6,
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Химера совершает три атаки: одну укусом, одну рогами, и одну когтями. Если Огненное дыхание доступно, она может использовать его вместо укуса или рогов.`,
+      },
+      {
+        name: `Укус`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Рога`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 12,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Когти`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Огненное дыхание`,
+        restore: {
+          from: 5,
+          to: 6,
+        },
+        description: `Драконья голова выдыхает огонь 15-футовым конусом. Все существа в этой области должны совершить спасбросок Ловкости со Сл 15, получая урон огнём 31 (7к8) при провале, или половину этого урона при успехе.`,
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

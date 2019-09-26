@@ -424,6 +424,8 @@ const {
     greenDragonDescriptionList,
     greenHagDescriptionList,
     grickDescription,
+    hobgoblinDescription,
+    hobgoblinNote,
     impDescription,
     kuoToaFeaturesList,
     kuoToaTexts,
@@ -605,6 +607,7 @@ const {
     CREATURE_HILL_GIANT,
     CREATURE_HIPPOGRIFF,
     CREATURE_HOBGOBLIN,
+    CREATURE_HOBGOBLIN_CAPTAIN,
     CREATURE_HOMUNCULUS,
     CREATURE_HOOK_HORROR,
     CREATURE_HORNED_DEVIL,
@@ -36330,5 +36333,123 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: `Капитан хобгоблинов`,
+    nameEn: 'Hobgoblin captain',
+    id: CREATURE_HOBGOBLIN_CAPTAIN,
+    description: hobgoblinDescription,
+    note: hobgoblinNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GOBLINOID,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: {
+      id: 'MM',
+      page: 294,
+    },
+    armor: {
+      ac: 17,
+      type: 'полулаты',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 8,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 13,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_GOBLIN,
+      LANG_COMMON,
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: `Воинское превосходство`,
+        description: `Один раз в ход хобгоблин может причинить дополнительный урон 10 (3к6) существу, по которому он попал атакой оружием, если это существо находится в пределах 5 футов от дееспособного союзника хобгоблина.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: ` Хобгоблин совершает две атаки двуручным мечом.`,
+      },
+      {
+        name: `Двуручный меч`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: `Метательное копьё`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: `Метательное копьё`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: `Лидерство`,
+        comment: `перезаряжается после короткого или продолжительного отдыха`,
+        description: `В течение 1 минуты хобгоблин может отдавать особые приказы и предупреждения, когда невраждебные существа, видимые им в пределах 30 футов, совершают бросок атаки или спасбросок. Это существо может добавить к4 к своему броску, если слышит и понимает хобгоблина. Существо может получать выгоду только от одного Лидерства одновременно. Этот эффект оканчивается, если хобгоблин становится недееспособным.`,
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

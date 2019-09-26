@@ -608,6 +608,7 @@ const {
     CREATURE_HIPPOGRIFF,
     CREATURE_HOBGOBLIN,
     CREATURE_HOBGOBLIN_CAPTAIN,
+    CREATURE_HOBGOBLIN_WARLORD,
     CREATURE_HOMUNCULUS,
     CREATURE_HOOK_HORROR,
     CREATURE_HORNED_DEVIL,
@@ -36553,6 +36554,167 @@ module.exports = [
             cubeBonus: 1,
           },
         },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Хобгоблин военачальник`,
+    nameEn: 'Hobgoblin warlord',
+    id: CREATURE_HOBGOBLIN_WARLORD,
+    description: hobgoblinDescription,
+    note: hobgoblinNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GOBLINOID,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: {
+      id: 'MM',
+      page: 295,
+    },
+    armor: {
+      ac: 20,
+      type: 'латный доспех, щит',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 8,
+      cubeBonus: 39,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 15,
+    },
+    savethrowCollection: {
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 3,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_GOBLIN,
+      LANG_COMMON,
+    ],
+    cr: CR_6,
+    featureList: [
+      {
+        name: `Воинское превосходство`,
+        description: `Один раз в ход хобгоблин может причинить дополнительный урон 14 (4к6) существу, по которому он попал атакой оружием, если это существо находится в пределах 5 футов от дееспособного союзника хобгоблина.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Хобгоблин совершает три рукопашные атаки. В качестве альтернативы, он может совершить две дальнобойные атаки метательными копьями.`,
+      },
+      {
+        name: `Длинный меч`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 3,
+              },
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 10,
+                cubeBonus: 3,
+                comment: ', если используется двумя руками',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: `Удар щитом`,
+        description: `Если размер цели не больше Большого, она должна преуспеть в спасброске Силы со Сл 14, иначе будет сбита с ног.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: `Метательное копьё`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: `Метательное копьё`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 9,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: `Лидерство`,
+        comment: `перезаряжается после короткого или продолжительного отдыха`,
+        description: `В течение 1 минуты хобгоблин может отдавать особые приказы и предупреждения, когда невраждебные существа, видимые им в пределах 30 футов, совершают бросок атаки или спасбросок. Это существо может добавить к4 к своему броску, если слышит и понимает хобгоблина. Существо может получать выгоду только от одного Лидерства одновременно. Этот эффект оканчивается, если хобгоблин становится недееспособным.`,
+      },
+    ],
+    reactionList: [
+      {
+        name: `Парирование`,
+        description: `Хобгоблин добавляет 3 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого хобгоблин должен видеть атакующего, и должен использовать рукопашное оружие.`,
       },
     ],
     genderId: GENDER_MALE,

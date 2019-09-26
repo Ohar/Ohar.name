@@ -9,7 +9,7 @@
     "dev": "npm run gatsby:develop",
     "zip": "cd ./public && bestzip ./../dist/ohar.name.zip ./* && cd ./.. && echo 'SPA Zipped'",
     "deploy": "bash ./shell_scripts/deploy.sh && echo 'Deployed'",
-    "build": "npm run gatsby:build && npm run zip echo 'Builded'",
+    "build": "npm run gatsby:build && npm run zip && echo 'Builded'",
     "update_site": "npm run build && npm run deploy && echo 'Site is updated'",
     "release": "npm version patch && npm run update_site && git push origin --tags && git push && echo 'Released'",
     "gatsby:build": "gatsby build",

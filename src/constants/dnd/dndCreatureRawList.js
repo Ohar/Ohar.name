@@ -36452,4 +36452,109 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: `Хобгоблин`,
+    nameEn: 'Hobgoblin',
+    id: CREATURE_HOBGOBLIN,
+    description: hobgoblinDescription,
+    note: hobgoblinNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_GOBLINOID,
+    ],
+    aligmentId: ALIGMENT_LE,
+    source: {
+      id: 'MM',
+      page: 294,
+    },
+    armor: {
+      ac: 18,
+      type: 'кольчуга, щит',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 9,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_GOBLIN,
+      LANG_COMMON,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: `Воинское превосходство`,
+        description: `Один раз в ход хобгоблин может причинить дополнительный урон 7 (2к6) существу, по которому он попал атакой оружием, если это существо находится в пределах 5 футов от дееспособного союзника хобгоблина.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Длинный меч`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 1,
+              },
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 10,
+                cubeBonus: 1,
+                comment: ', если используется двумя руками',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: `Длинный лук`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

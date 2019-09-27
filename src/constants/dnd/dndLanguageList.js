@@ -66,6 +66,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Всеобщий',
       instrumental: 'Всеобщий',
+      prepositional: 'Всеобщем',
     },
     isRealLang: true,
   },
@@ -74,6 +75,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Любой один язык (обычно — Всеобщий)',
       instrumental: 'Любой один язык (обычно — Всеобщий)',
+      prepositional: 'Любом одном языке (обычно — Всеобщем)',
     },
   },
   {
@@ -81,6 +83,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Любые два языка',
       instrumental: 'Любые два языка',
+      prepositional: 'Любых двух языках',
     },
   },
   {
@@ -88,6 +91,7 @@ const dndLanguageList = [
     name: {
       nominative: 'до пяти других языков',
       instrumental: 'до пяти других языков',
+      prepositional: 'до пяти других языков',
     },
   },
   {
@@ -95,6 +99,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Все языки, известные при жизни',
       instrumental: 'Все языки, известные при жизни',
+      prepositional: 'Всех языках, известных при жизни',
     },
   },
   {
@@ -102,6 +107,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Языки своего создателя',
       instrumental: 'Языки своего создателя',
+      prepositional: 'Языках своего создателя',
     },
   },
   {
@@ -109,6 +115,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Все',
       instrumental: 'Все',
+      prepositional: 'Всех',
     },
   },
   {
@@ -116,6 +123,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Первичный',
       instrumental: 'Первичный',
+      prepositional: 'Первичном',
     },
     isRealLang: true,
   },
@@ -124,6 +132,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Эльфийский',
       instrumental: 'Эльфийский',
+      prepositional: 'Эльфийском',
     },
     isRealLang: true,
   },
@@ -132,6 +141,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Сильван',
       instrumental: 'Сильван',
+      prepositional: 'Сильване',
     },
     isRealLang: true,
   },
@@ -140,6 +150,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык Бездны',
       instrumental: 'Язык Бездны',
+      prepositional: 'Языке Бездны',
     },
     isRealLang: true,
   },
@@ -148,6 +159,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Инфернальный',
       instrumental: 'Инфернальный',
+      prepositional: 'Инфернальном',
     },
     isRealLang: true,
   },
@@ -156,6 +168,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Акван',
       instrumental: 'Акван',
+      prepositional: 'Акване',
     },
     isRealLang: true,
   },
@@ -164,6 +177,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Дварфийский',
       instrumental: 'Дварфийский',
+      prepositional: 'Дварфийском',
     },
     isRealLang: true,
   },
@@ -172,6 +186,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Великаний',
       instrumental: 'Великаний',
+      prepositional: 'Великаньем',
     },
     isRealLang: true,
   },
@@ -180,6 +195,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Ауран',
       instrumental: 'Ауран',
+      prepositional: 'Ауране',
     },
     isRealLang: true,
   },
@@ -188,6 +204,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Небесный',
       instrumental: 'Небесный',
+      prepositional: 'Небесном',
     },
     isRealLang: true,
   },
@@ -196,6 +213,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Глубинная речь',
       instrumental: 'Глубинную речь',
+      prepositional: 'Глубинной речи',
     },
     isRealLang: true,
     genderId: GENDER_FEMALE,
@@ -205,6 +223,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Подземный',
       instrumental: 'Подземный',
+      prepositional: 'Подземном',
     },
     isRealLang: true,
   },
@@ -213,6 +232,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Драконий',
       instrumental: 'Драконий',
+      prepositional: 'Драконьем',
     },
     isRealLang: true,
   },
@@ -221,6 +241,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Друидский',
       instrumental: 'Друидский',
+      prepositional: 'Друидском',
     },
     isRealLang: true,
   },
@@ -229,6 +250,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Гномий',
       instrumental: 'Гномий',
+      prepositional: 'Гномьем',
     },
     isRealLang: true,
   },
@@ -237,6 +259,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Гоблинский',
       instrumental: 'Гоблинский',
+      prepositional: 'Гоблинском',
     },
     isRealLang: true,
   },
@@ -245,6 +268,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Гноллий',
       instrumental: 'Гноллий',
+      prepositional: 'Гнолльем',
     },
     isRealLang: true,
   },
@@ -253,6 +277,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык полуросликов',
       instrumental: 'Язык полуросликов',
+      prepositional: 'Языке полуросликов',
     },
     isRealLang: true,
   },
@@ -261,6 +286,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык бурых увальней',
       instrumental: 'Язык бурых увальней',
+      prepositional: 'Языке бурых увальней',
     },
     isRealLang: true,
   },
@@ -269,6 +295,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Игнан',
       instrumental: 'Игнан',
+      prepositional: 'Игнане',
     },
     isRealLang: true,
   },
@@ -277,6 +304,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Орочий',
       instrumental: 'Орочий',
+      prepositional: 'Орочьем',
     },
     isRealLang: true,
   },
@@ -285,6 +313,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Терран',
       instrumental: 'Терран',
+      prepositional: 'Терране',
     },
     isRealLang: true,
   },
@@ -293,6 +322,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Воровской жаргон',
       instrumental: 'Воровской жаргон',
+      prepositional: 'Воровском жаргоне',
     },
     isRealLang: true,
   },
@@ -301,6 +331,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Телепатия',
       instrumental: 'Телепатию',
+      prepositional: 'Телепатии',
     },
     isRealLang: true,
     genderId: GENDER_FEMALE,
@@ -310,6 +341,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Сахуагинский',
       instrumental: 'Сахуагинский',
+      prepositional: 'Сахуагинском',
     },
     isRealLang: true,
   },
@@ -318,6 +350,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Вегепигмейский',
       instrumental: 'Вегепигмейский',
+      prepositional: 'Вегепигмейском',
     },
     isRealLang: true,
   },
@@ -326,6 +359,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык воргов',
       instrumental: 'Язык воргов',
+      prepositional: 'Языке воргов',
     },
     isRealLang: true,
   },
@@ -334,6 +368,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык гигантских сов',
       instrumental: 'Язык гигантских сов',
+      prepositional: 'Языке гигантских сов',
     },
     isRealLang: true,
   },
@@ -342,6 +377,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык гигантских орлов',
       instrumental: 'Язык гигантских орлов',
+      prepositional: 'Языке гигантских орлов',
     },
     isRealLang: true,
   },
@@ -350,6 +386,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык сфинксов',
       instrumental: 'Язык сфинксов',
+      prepositional: 'Языке сфинксов',
     },
     isRealLang: true,
   },
@@ -358,6 +395,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Гитский',
       instrumental: 'Гитский',
+      prepositional: 'Гитском',
     },
     isRealLang: true,
   },
@@ -366,6 +404,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Грелльский',
       instrumental: 'Грелльский',
+      prepositional: 'Грелльском',
     },
     isRealLang: true,
   },
@@ -374,6 +413,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Грунгский',
       instrumental: 'Грунгский',
+      prepositional: 'Грунгском',
     },
     isRealLang: true,
   },
@@ -382,6 +422,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Модронский',
       instrumental: 'Модронский',
+      prepositional: 'Модронском',
     },
     isRealLang: true,
   },
@@ -390,6 +431,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Жаболюдский',
       instrumental: 'Жаболюдский',
+      prepositional: 'Жаболюдском',
     },
     isRealLang: true,
   },
@@ -398,6 +440,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Слаадский',
       instrumental: 'Слаадский',
+      prepositional: 'Слаадском',
     },
     isRealLang: true,
   },
@@ -406,6 +449,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык йети',
       instrumental: 'Язык йети',
+      prepositional: 'Языке йети',
     },
     isRealLang: true,
   },
@@ -414,6 +458,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык крюкастых ужасов',
       instrumental: 'Язык крюкастых ужасов',
+      prepositional: 'Языке крюкастых ужасов',
     },
     isRealLang: true,
   },
@@ -422,6 +467,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык ледяных жаб',
       instrumental: 'Язык ледяных жаб',
+      prepositional: 'Языке ледяных жаб',
     },
     isRealLang: true,
   },
@@ -430,6 +476,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык мерцающих псов',
       instrumental: 'Язык мерцающих псов',
+      prepositional: 'Языке мерцающих псов',
     },
     isRealLang: true,
   },
@@ -438,6 +485,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Отиджский',
       instrumental: 'Отиджский',
+      prepositional: 'Отиджском',
     },
     isRealLang: true,
   },
@@ -446,6 +494,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык полярных волков',
       instrumental: 'Язык полярных волков',
+      prepositional: 'Языке полярных волков',
     },
     isRealLang: true,
   },
@@ -454,6 +503,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Тэйский',
       instrumental: 'Тэйский',
+      prepositional: 'Тэйском',
     },
     isRealLang: true,
   },
@@ -462,6 +512,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык тлинкалли',
       instrumental: 'Язык тлинкалли',
+      prepositional: 'Языке тлинкалли',
     },
     isRealLang: true,
   },
@@ -470,6 +521,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Три-кринский',
       instrumental: 'Три-кринский',
+      prepositional: 'Три-кринском',
     },
     isRealLang: true,
   },
@@ -478,6 +530,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Троглодитский',
       instrumental: 'Троглодитский',
+      prepositional: 'Троглодитском',
     },
     isRealLang: true,
   },
@@ -486,6 +539,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык икситксачитлов',
       instrumental: 'Язык икситксачитлов',
+      prepositional: 'Языке икситксачитлов',
     },
     isRealLang: true,
   },
@@ -494,6 +548,7 @@ const dndLanguageList = [
     name: {
       nominative: 'Язык ааракокр',
       instrumental: 'Язык ааракокр',
+      prepositional: 'Языке ааракокр',
     },
     isRealLang: true,
   },

@@ -35,8 +35,10 @@ export default lang => {
   const rangeText = lang.range
     ? ` ${lang.range} фт.`
     : ''
-  const doNotSpeakText1st = lang.doNotSpeak || lang.featureName
-    ? `понимает `
+  const doNotSpeakText1st = lang.doNotSpeak || lang.featureName || lang.onlyCommands
+    ? lang.onlyCommands
+      ? `понимает команды, отданные на `
+      : `понимает `
     : ''
   const doNotSpeakText2nd = lang.doNotSpeak
     ? `, но не говорит на ${pronoun}`

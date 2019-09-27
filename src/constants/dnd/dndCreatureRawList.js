@@ -605,6 +605,7 @@ const {
     CREATURE_HALF_OGRE,
     CREATURE_HARPY,
     CREATURE_HELL_HOUND,
+    CREATURE_HELMED_HORROR,
     CREATURE_HEZROU,
     CREATURE_HILL_GIANT,
     CREATURE_HIPPOGRIFF,
@@ -37032,6 +37033,127 @@ module.exports = [
       {
         name: `Усыпляющий взгляд`,
         description: `Шакальник пристально смотрит на одно существо, видимое в пределах 30 футов. Цель должна совершить спасбросок Мудрости со Сл 10. При провале цель впадает в магическую дрёму и теряет сознание на 10 минут, или пока кто-нибудь не разбудит её действием. Успешно спасшееся от этого эффекта существо получает иммунитет к взгляду этого шакальника на следующие 24 часа. Нежить и существа, обладающие иммунитетом к очарованию, не попадают под его действие.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Шлемоносный ужас`,
+    nameEn: 'Helmed horror',
+    id: CREATURE_HELMED_HORROR,
+    description: `Этот конструкт обладает интеллектом, умениями рассуждать и приспосабливать свою тактику, и он отвечает преданностью своему создателю, которая остаётся даже после кончины последнего. Похожий на оживлённые латы шлемоносный ужас служит без стремлений и эмоций.\n
+**Порождение магии.** Создание шлемоносного ужаса это сложный процесс, тут не отделаешься простым оживлённым комплектом лат, но зато его нужно меньше направлять и обслуживать, ведь он сам выполняет назначенные задания. Шлемоносный ужас исполняет приказы с максимальной верностью, и его разума достаточно, чтобы понять разницу между целью приказа и его точной формулировкой. В отличие от многих конструктов он скорее стремится следовать смыслу поручения, чем раболепно подчиняться формальному приказу.\n
+**Тактическое коварство.** Шлемоносный ужас сражается с хитростью опытного воина, и, взлетая в воздух, он в первую очередь атакует слабых персонажей и заклинателей. Тем не менее, шлемоносному ужасу не хватает знаний для изменения своего окружения, чтобы укрепиться или иным образом улучшить свою оборонительную позицию.\n
+**Натура конструкта.** Шлемоносному ужасу не нужен воздух, еда, питьё и сон.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CONSTRUCT,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: {
+      id: 'MM',
+      page: 299,
+    },
+    armor: {
+      ac: 20,
+      type: `латный доспех, щит`,
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+    },
+    resistanceList: [
+      DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_NECROTIC,
+      DAMAGE_FORCE,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_DEAFENED,
+      CONDITION_FRIGHTENED,
+      CONDITION_PETRIFIED,
+      CONDITION_BLINDED,
+      CONDITION_POISONED,
+      CONDITION_CHARMED,
+      CONDITION_STUNNED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+        isBlindOutside: true,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ITS_CREATOR,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: `Сопротивление магии`,
+        description: `Шлемоносный ужас совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: `Иммунитет к заклинаниям`,
+        description: `Шлемоносный ужас обладает иммунитетом к трём заклинаниям, выбираемым его создателем. Обычно это _Молния_ (Lightning bolt), _Огненный шар_ (Fireball) и _Раскалённый металл_ (Heat metal).`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Шлемоносный ужас совершает две атаки длинным мечом.`,
+      },
+      {
+        name: `Длинный меч`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 4,
+              },
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 10,
+                cubeBonus: 4,
+                comment: `, если используется двумя руками`,
+              },
+            ],
+          ],
+        },
       },
     ],
     genderId: GENDER_MALE,

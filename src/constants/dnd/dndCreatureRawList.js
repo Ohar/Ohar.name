@@ -476,6 +476,7 @@ const {
     CREATURE_ADULT_RED_DRAGON,
     CREATURE_ADULT_SILVER_DRAGON,
     CREATURE_ADULT_WHITE_DRAGON,
+    CREATURE_AIR_ELEMENTAL,
     CREATURE_ALLOSAURUS,
     CREATURE_ANCIENT_BLACK_DRAGON,
     CREATURE_ANCIENT_BLUE_DRAGON,
@@ -37497,6 +37498,117 @@ module.exports = [
         },
         description: `Все существа в пространстве элементаля должны совершить спасбросок Силы со Сл 15. При провале цель получает дробящий урон 13 (2к8+4). Если размер цели не больше Большого, она также становится схваченной (Сл высвобождения 14). Пока цель схвачена, она опутана и не может дышать, если только не может дышать под водой. Если спасбросок был успешным, цель выталкивается из пространства элементаля.\n
 Элементаль может одновременно держать в захвате одно существо Большого размера или до двух существ Среднего размера. В начале каждого хода элементаля каждая схваченная им цель получает дробящий урон 13 (2к8 + 4). Существо, находящееся в пределах 5 футов от элементаля, может вытянуть существо или предмет, если совершит действием проверку Силы со Сл 14 и преуспеет.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Воздушный элементаль`,
+    nameEn: 'Air elemental',
+    id: CREATURE_AIR_ELEMENTAL,
+    description: [
+      elementalDescription,
+      `Воздушный элементаль представляет собой клубящееся облако воздуха с неким подобием лица. Хотя он любит нестись вдоль земли, вздымая вверх пыль и мусор, он также может взлететь в воздух и атаковать сверху.\n
+Элементаль воздуха может превращаться в ревущий ураган, создавая вихрь, который, затягивая в себя существ, молотит их на лету.`,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: {
+      id: 'MM',
+      page: 303,
+    },
+    armor: {
+      ac: 15,
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 10,
+      cubeBonus: 24,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_FLY]: {
+        value: 90,
+        isFloating: true,
+      },
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 20,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 6,
+    },
+    resistanceList: [
+      DAMAGE_THUNDER,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_UNCONSCIOUS,
+      CONDITION_GRAPPLED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_AURAN,
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: `Воздушное тело`,
+        description: `Элементаль может входить в пространство враждебных существ и останавливаться там. Он может перемещаться сквозь пространство шириной в 1 дюйм без протискивания.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Элементаль совершает два размашистых удара.`,
+      },
+      {
+        name: `Размашистый удар`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: `Вихрь`,
+        restore: {
+          from: 4,
+          to: 6,
+        },
+        description: `Все существа в пространстве элементаля должны совершить спасбросок Силы со Сл 13. При провале цель получает дробящий урон 15 (3к8+2) и отбрасывается на расстояние до 20 футов от элементаля в случайном направлении, после чего сбивается с ног. Если отброшенная цель ударяется о предмет, такой как стена или пол, цель получает дробящий урон 3 (1к6) за каждые 10 футов перемещения. Если цель отброшена в другое существо, это существо должно преуспеть в спасброске Ловкости со Сл 13, иначе получит такой же урон и будет сбито с ног.\n
+Если исходный спасбросок был успешным, цель получает половину дробящего урона, не отбрасывается и не сбивается с ног.`,
       },
     ],
     genderId: GENDER_MALE,

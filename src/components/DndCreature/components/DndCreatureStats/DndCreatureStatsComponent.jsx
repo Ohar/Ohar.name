@@ -156,7 +156,7 @@ DndCreatureStatsComponent.propTypes = {
       PropTypes.object,
     ]).isRequired,
     speed: PropTypes.object.isRequired,
-    spellCast: PropTypes.object,
+    spellCast: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     spellCastTogether: PropTypes.object,
     vulnerabilityList: PropTypes.array,
   }).isRequired,

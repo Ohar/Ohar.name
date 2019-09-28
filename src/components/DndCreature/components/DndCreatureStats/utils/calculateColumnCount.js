@@ -1,3 +1,5 @@
+import arrify from 'arrify'
+
 const COEF_ITEM_PER_COLUMN = 10
 const MAX_COLUMN = 4
 const DESCRIPTION_COEF = 1/200
@@ -40,7 +42,11 @@ export default (
   }
 
   if (spellCast) {
-    total += SPELLCAST_WEIGNT
+    arrify(spellCast).forEach(
+      () => {
+        total += SPELLCAST_WEIGNT
+      }
+    )
   }
 
   if (spellCastTogether) {

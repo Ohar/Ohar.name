@@ -95,7 +95,7 @@ DndAbilityListComponent.propTypes = {
   genderId: PropTypes.string,
   list: PropTypes.array,
   name: PropTypes.string,
-  spellCast: PropTypes.object,
+  spellCast: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   spellCastTogether: PropTypes.object,
 }
 

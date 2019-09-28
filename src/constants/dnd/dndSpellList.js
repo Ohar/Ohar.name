@@ -30,6 +30,8 @@ const {
   CAST_MATERIAL,
 } = require('./dndCastComponentList')
 
+const SPELL_ANIMAL_FRIENDSHIP = 'animal_friendship'
+const SPELL_DETECT_POISON_AND_DISEASE = 'detect_poison_and_disease'
 const SPELL_ALTER_SELF = 'alter_self'
 const SPELL_ANIMATE_DEAD = 'animate_dead'
 const SPELL_AUGURY = 'augury'
@@ -3055,10 +3057,44 @@ const dndSpellList = [
   },
   {
     id: SPELL_REMOVE_CURSE,
-    name: 'Снятик проклятия',
+    name: 'Снятие проклятия',
     nameEn: 'Remove curse',
     description: ``, // TODO
     lvl: 3,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_ANIMAL_FRIENDSHIP,
+    name: 'Дружба с животными',
+    nameEn: 'Animal friendship',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_DETECT_POISON_AND_DISEASE,
+    name: 'Обнаружение болезней и яда',
+    nameEn: 'Detect poison and disease',
+    description: ``, // TODO
+    lvl: 1,
     magicSchool: MAGIC_TRANSMUTATION, // TODO
     range: 0, // TODO
     ritual: false, // TODO
@@ -3085,6 +3121,7 @@ module.exports = dndSpellList
 module.exports.dndSpellCollection = listToCollectionById(dndSpellList)
 
 module.exports.SPELL_ALTER_SELF = SPELL_ALTER_SELF
+module.exports.SPELL_ANIMAL_FRIENDSHIP = SPELL_ANIMAL_FRIENDSHIP
 module.exports.SPELL_ANIMATE_DEAD = SPELL_ANIMATE_DEAD
 module.exports.SPELL_AUGURY = SPELL_AUGURY
 module.exports.SPELL_BANE = SPELL_BANE
@@ -3124,6 +3161,7 @@ module.exports.SPELL_DARKNESS = SPELL_DARKNESS
 module.exports.SPELL_DESTRUCTIVE_WAVE = SPELL_DESTRUCTIVE_WAVE
 module.exports.SPELL_DETECT_EVIL_AND_GOOD = SPELL_DETECT_EVIL_AND_GOOD
 module.exports.SPELL_DETECT_MAGIC = SPELL_DETECT_MAGIC
+module.exports.SPELL_DETECT_POISON_AND_DISEASE = SPELL_DETECT_POISON_AND_DISEASE
 module.exports.SPELL_DETECT_THOUGHTS = SPELL_DETECT_THOUGHTS
 module.exports.SPELL_DIMENSION_DOOR = SPELL_DIMENSION_DOOR
 module.exports.SPELL_DISGUISE_SELF = SPELL_DISGUISE_SELF

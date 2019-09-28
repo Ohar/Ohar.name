@@ -564,6 +564,7 @@ const {
     CREATURE_FAERIE_DRAGON_RED,
     CREATURE_FAERIE_DRAGON_VIOLET,
     CREATURE_FAERIE_DRAGON_YELLOW,
+    CREATURE_FIRE_ELEMENTAL,
     CREATURE_FIRE_GIANT,
     CREATURE_FIRE_SNAKE,
     CREATURE_FLAMESKULL,
@@ -37714,6 +37715,111 @@ module.exports = [
             cubeCount: 2,
             cubeType: 8,
             cubeBonus: 5,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Огненный элементаль`,
+    nameEn: 'Fire elemental',
+    id: CREATURE_FIRE_ELEMENTAL,
+    description: [
+      elementalDescription,
+      `В середине этого дикого, ревущего пламени можно разглядеть человекоподобную фигуру. Огненный элементаль это чистая мощь разрушения. Куда бы он не двигался, всё вокруг полыхает, мир превращается в пепел, дым и тлеющие угли. Только вода прекратит разрушения, заставляя элементаля шипя и пуская клубы дыма отступить в боли и ярости.`,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: {
+      id: 'MM',
+      page: 304,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 10,
+      cubeBonus: 36,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 7,
+    },
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_FIRE,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_UNCONSCIOUS,
+      CONDITION_GRAPPLED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_IGNAN,
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: `Огненное тело`,
+        description: `Элементаль может перемещаться сквозь пространство шириной в 1 дюйм без протискивания. Существо, касающееся элементаля или попадающее по нему рукопашной атакой, находясь в пределах 5 футов от него, получает урон огнём 5 (1к10). Кроме того, элементаль может входить в пространство враждебных существ и останавливаться там. Когда он впервые за ход входит в пространство существа, это существо получает урон огнём 5 (1к10) и загорается; пока кто-нибудь не потушит огонь действием, это существо получает урон огнём 5 (1к10) в начале каждого своего хода.`,
+      },
+      {
+        name: `Свечение`,
+        description: `Элементаль испускает яркий свет в радиусе 30 футов и тусклый свет в пределах ещё 30 футов.`,
+      },
+      {
+        name: `Восприимчивость к воде`,
+        description: `За каждые 5 футов перемещения в воде, или за каждый вылитый на него галлон воды, элементаль получает урон холодом 1.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Элементаль совершает две атаки касанием.`,
+      },
+      {
+        name: `Касание`,
+        description: `Если цель — существо или горючий предмет, она вспыхивает. Пока какое-нибудь существо не потушит огонь действием, цель получает урон огнём 5 (1к10) в начале каждого своего хода.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_FIRE,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
           },
         },
       },

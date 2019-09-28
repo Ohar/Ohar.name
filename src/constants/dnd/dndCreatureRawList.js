@@ -213,6 +213,7 @@ const {
   } = require('./dndParamList'),
   {
     SPELL_ALTER_SELF,
+    SPELL_ANIMAL_FRIENDSHIP,
     SPELL_ANIMATE_DEAD,
     SPELL_AUGURY,
     SPELL_BANE,
@@ -251,6 +252,7 @@ const {
     SPELL_DESTRUCTIVE_WAVE,
     SPELL_DETECT_EVIL_AND_GOOD,
     SPELL_DETECT_MAGIC,
+    SPELL_DETECT_POISON_AND_DISEASE,
     SPELL_DETECT_THOUGHTS,
     SPELL_DIMENSION_DOOR,
     SPELL_DISGUISE_SELF,
@@ -553,6 +555,7 @@ const {
     CREATURE_DRIDER,
     CREATURE_DRIDER_SPELLCASTER,
     CREATURE_DROW,
+    CREATURE_DROW_PRIESTESS_OF_LOLTH,
     CREATURE_DRYAD,
     CREATURE_DUERGAR,
     CREATURE_DUODRONE,
@@ -585,6 +588,7 @@ const {
     CREATURE_GHAST,
     CREATURE_GHOST,
     CREATURE_GHOUL,
+    CREATURE_GIANT_SPIDER,
     CREATURE_GIBBERING_MOUTHER,
     CREATURE_GITHYANKI_KNIGHT,
     CREATURE_GITHYANKI_WARRIOR,
@@ -37957,5 +37961,187 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: `Дроу жрица Лолс`,
+    nameEn: 'Drow priestess of Lolth',
+    id: CREATURE_DROW_PRIESTESS_OF_LOLTH,
+    description: [
+      drowDescription,
+      `Женщины дроу родом из благородного дома с рождения воспитываются и обучаются с единой целью — стать жрицами Лолс. Паучья Королева не позволяет мужчинам дроу занимать такие должности.\n
+Эти жрицы исполняют волю Паучьей Королевы, и потому обладают огромной силой и влиянием в обществе дроу. Матроны, которые правят домами дроу, — самые могущественные из жриц Лолс, но при этом они обязаны поддерживать баланс между преданностью Паучьей Королеве и преданностью своей семье.`,
+    ],
+    note: drowNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ELF,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 307,
+    },
+    armor: {
+      ac: 16,
+      type: 'чешуйчатый доспех',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 8,
+      cubeBonus: 13,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 17,
+      [PARAM_CHA]: 18,
+    },
+    saeThrowCollection: {
+      [PARAM_CON]: 4,
+      [PARAM_WIT]: 6,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 6,
+      [SKILL_INSIGHT]: 6,
+      [SKILL_RELIGION]: 4,
+      [SKILL_STEALTH]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 16,
+      },
+    ],
+    languageList: [
+      LANG_UNDERCOMMON,
+      LANG_ELVEN,
+    ],
+    cr: CR_8,
+    featureList: [
+      {
+        name: `Наследие фей`,
+        description: `Дроу совершает с преимуществом спасброски от очарования, и магия не может её усыпить.`,
+      },
+      {
+        name: `Чувствительность к солнечному свету`,
+        description: `Находясь на солнечном свету, дроу совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+    ],
+    spellCast: [
+      {
+        baseStat: PARAM_CHA,
+        componentExclude: CAST_MATERIAL,
+        saveThrowDc: 15,
+        spellIdByCountList: [
+          {
+            limit: Infinity,
+            list: [
+              SPELL_DANCING_LIGHTS,
+            ],
+          },
+          {
+            limit: {
+              count: 1,
+              period: 'день',
+            },
+            list: [
+              {
+                id: SPELL_LEVITATE,
+                comment: 'только на себя',
+              },
+              SPELL_FAERIE_FIRE,
+              SPELL_DARKNESS,
+            ],
+          },
+        ],
+      },
+      {
+        spellCasterLevel: 10,
+        spellCasterClass: PC_CLASS_PRIEST,
+        baseStat: PARAM_WIT,
+        spellAttackBonus: 6,
+        saveThrowDc: 14,
+        spellIdList: [
+          SPELL_ANIMAL_FRIENDSHIP,
+          {
+            id: SPELL_CONJURE_ANIMALS,
+            comment: `два [гигантских паука](CREATURE:${CREATURE_GIANT_SPIDER})`,
+          },
+          SPELL_CURE_WOUNDS,
+          SPELL_DETECT_POISON_AND_DISEASE,
+          SPELL_DISPEL_MAGIC,
+          SPELL_DIVINATION,
+          SPELL_FREEDOM_OF_MOVEMENT,
+          SPELL_GUIDANCE,
+          SPELL_INSECT_PLAGUE,
+          SPELL_LESSER_RESTORATION,
+          SPELL_MASS_CURE_WOUNDS,
+          SPELL_POISON_SPRAY,
+          SPELL_PROTECTION_FROM_POISON,
+          SPELL_RAY_OF_SICKNESS,
+          SPELL_RESISTANCE,
+          SPELL_SPARE_THE_DYING,
+          SPELL_THAUMATURGY,
+          SPELL_WEB,
+        ],
+        slotCountList: [
+          Infinity,
+          4,
+          3,
+          3,
+          3,
+          2,
+        ],
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Дроу совершает две атаки плетью.`,
+      },
+      {
+        name: `Плеть`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 5,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: `Призыв демона`,
+        limit: {
+          count: 1,
+          period: 'день',
+        },
+        description: `Дроу пытается магическим образом призвать [Йоклол](CREATURE:${CREATURE_YOCHLOL}) с 30-процентным шансом успеха. При провале попытки дроу получает урон психической энергией 5 (1к10). В противном случае призванный демон появляется в свободном пространстве в пределах 60 футов от призывателя, действует как его союзник, и не может призывать других демонов. Он присутствует в течение 10 минут, пока он, либо призыватель, не умрут, или пока призыватель не отпустит его действием.`,
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

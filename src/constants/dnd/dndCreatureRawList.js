@@ -413,6 +413,7 @@ const {
     demonDescription,
     devilsDescriptionList,
     dinoDescription,
+    elementalDescription,
     geniusDescription,
     ghoulDescription,
     giantDescriptionList,
@@ -748,6 +749,7 @@ const {
     CREATURE_VIOLET_FUNGUS,
     CREATURE_VROCK,
     CREATURE_WARHORSE_SKELETON,
+    CREATURE_WATER_ELEMENTAL,
     CREATURE_WATER_WEIRD,
     CREATURE_WEREBEAR,
     CREATURE_WEREBOAR,
@@ -37384,6 +37386,117 @@ module.exports = [
             },
           ],
         },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Водяной элементаль`,
+    nameEn: 'Water elemental',
+    id: CREATURE_WATER_ELEMENTAL,
+    description: [
+      elementalDescription,
+      `Водяной элементаль вздымающейся волной катится по земле, становясь почти невидимым в водоёме. Он поглощает существ, которые стоят у него на пути, заполняет их рот и лёгкие, так же легко, как тушит пламя.`,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: {
+      id: 'MM',
+      page: 303,
+    },
+    armor: {
+      ac: 14,
+      type: `природный доспех`,
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 10,
+      cubeBonus: 48,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 90,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 8,
+    },
+    resistanceList: [
+      DAMAGE_ACID,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_UNCONSCIOUS,
+      CONDITION_GRAPPLED,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_AQUAN,
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: `Водяное тело`,
+        description: `Элементаль может входить в пространство враждебных существ и останавливаться там. Он может перемещаться сквозь пространство шириной в 1 дюйм без протискивания.`,
+      },
+      {
+        name: `Замерзание`,
+        description: `Если элементаль получает урон холодом, он частично замерзает; его скорость уменьшается на 20 футов до конца его следующего хода.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Элементаль совершает два размашистых удара.`,
+      },
+      {
+        name: `Размашистый удар`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: `Захлёст`,
+        restore: {
+          from: 4,
+          to: 6,
+        },
+        description: `Все существа в пространстве элементаля должны совершить спасбросок Силы со Сл 15. При провале цель получает дробящий урон 13 (2к8+4). Если размер цели не больше Большого, она также становится схваченной (Сл высвобождения 14). Пока цель схвачена, она опутана и не может дышать, если только не может дышать под водой. Если спасбросок был успешным, цель выталкивается из пространства элементаля.\n
+Элементаль может одновременно держать в захвате одно существо Большого размера или до двух существ Среднего размера. В начале каждого хода элементаля каждая схваченная им цель получает дробящий урон 13 (2к8 + 4). Существо, находящееся в пределах 5 футов от элементаля, может вытянуть существо или предмет, если совершит действием проверку Силы со Сл 14 и преуспеет.`,
       },
     ],
     genderId: GENDER_MALE,

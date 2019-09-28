@@ -553,6 +553,7 @@ const {
     CREATURE_DUODRONE,
     CREATURE_DUST_MEPHIT,
     CREATURE_EAGLE,
+    CREATURE_EARTH_ELEMENTAL,
     CREATURE_EFREETI,
     CREATURE_ERINYES,
     CREATURE_ETTIN,
@@ -37609,6 +37610,112 @@ module.exports = [
         },
         description: `Все существа в пространстве элементаля должны совершить спасбросок Силы со Сл 13. При провале цель получает дробящий урон 15 (3к8+2) и отбрасывается на расстояние до 20 футов от элементаля в случайном направлении, после чего сбивается с ног. Если отброшенная цель ударяется о предмет, такой как стена или пол, цель получает дробящий урон 3 (1к6) за каждые 10 футов перемещения. Если цель отброшена в другое существо, это существо должно преуспеть в спасброске Ловкости со Сл 13, иначе получит такой же урон и будет сбито с ног.\n
 Если исходный спасбросок был успешным, цель получает половину дробящего урона, не отбрасывается и не сбивается с ног.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Земляной элементаль`,
+    nameEn: 'Earth elemental',
+    id: CREATURE_EARTH_ELEMENTAL,
+    description: [
+      elementalDescription,
+      `Земляной элементаль подобен движущемуся холму, упрямо идущему вперёд, с похожими на дубины руками, качающимися вдоль тела. Голова и тело его состоят из земли и камней, иногда попадаются вкрапления металла, самоцветов и ярких минералов.\n
+Земляной элементаль может скользить сквозь скалы и землю, словно это жидкая вода. Ходящие по земле существа должны бояться земляного элементаля, поскольку он может определить местоположение любого врага, который стоит рядом на твёрдой поверхности.`,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_ELEMENTAL,
+    ],
+    aligmentId: ALIGMENT_N,
+    source: {
+      id: 'MM',
+      page: 304,
+    },
+    armor: {
+      ac: 17,
+      type: `природный доспех`,
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 10,
+      cubeBonus: 60,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_DIG]: 30,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 8,
+      [PARAM_CON]: 20,
+      [PARAM_INT]: 5,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 5,
+    },
+    vulnerabilityList: [
+      DAMAGE_THUNDER,
+    ],
+    resistanceList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_UNCONSCIOUS,
+      CONDITION_EXHAUSTION,
+      CONDITION_PETRIFIED,
+      CONDITION_POISONED,
+      CONDITION_PARALYZED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_VIBRATION_SENSE,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_TERRAN,
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: `Скольжение сквозь землю`,
+        description: `Элементаль может перемещаться, копая, сквозь немагические и необработанные землю и камень. При этом элементаль не беспокоит материал, через который перемещается.`,
+      },
+      {
+        name: `Осадное чудовище`,
+        description: `Элементаль причиняет двойной урон предметам и строениям.`,
+      },
+    ],
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Элементаль совершает два размашистых удара.`,
+      },
+      {
+        name: `Размашистый удар`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 5,
+          },
+        },
       },
     ],
     genderId: GENDER_MALE,

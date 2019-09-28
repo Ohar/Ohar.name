@@ -38002,7 +38002,7 @@ module.exports = [
       [PARAM_WIT]: 17,
       [PARAM_CHA]: 18,
     },
-    saeThrowCollection: {
+    saveThrowCollection: {
       [PARAM_CON]: 4,
       [PARAM_WIT]: 6,
       [PARAM_CHA]: 7,

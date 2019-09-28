@@ -55,6 +55,7 @@ const {
     CREATURE_TYPE_DRAGON,
     CREATURE_TYPE_DWARF,
     CREATURE_TYPE_ELEMENTAL,
+    CREATURE_TYPE_ELF,
     CREATURE_TYPE_FEY,
     CREATURE_TYPE_FIEND,
     CREATURE_TYPE_GIANT,
@@ -413,6 +414,8 @@ const {
     demonDescription,
     devilsDescriptionList,
     dinoDescription,
+    drowDescription,
+    drowNote,
     elementalDescription,
     geniusDescription,
     ghoulDescription,
@@ -548,6 +551,7 @@ const {
     CREATURE_DRETCH,
     CREATURE_DRIDER,
     CREATURE_DRIDER_SPELLCASTER,
+    CREATURE_DROW,
     CREATURE_DRYAD,
     CREATURE_DUERGAR,
     CREATURE_DUODRONE,
@@ -37820,6 +37824,133 @@ module.exports = [
             cubeCount: 2,
             cubeType: 6,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Дроу`,
+    nameEn: 'Drow',
+    id: CREATURE_DROW,
+    description: drowDescription,
+    note: drowNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ELF,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 307,
+    },
+    armor: {
+      ac: 15,
+      type: 'кольчужная рубаха',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 12,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      LANG_UNDERCOMMON,
+      LANG_ELVEN,
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: `Наследие фей`,
+        description: `Дроу совершает с преимуществом спасброски от очарования, и магия не может его усыпить.`,
+      },
+      {
+        name: `Чувствительность к солнечному свету`,
+        description: `Находясь на солнечном свету, дроу совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_MATERIAL,
+      saveThrowDc: 11,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DANCING_LIGHTS,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_FAERIE_FIRE,
+            SPELL_DARKNESS,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: `Короткий меч`,
+        description: ``,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: `Ручной арбалет`,
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 13, иначе станет отравленной на 1 час. Если спасбросок провален на 5 или больше единиц, цель также лишена сознания, пока отравлена таким образом. Цель просыпается, если получает урон или другое существо разбудит её действием.`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
           },
         },
       },

@@ -39364,4 +39364,97 @@ module.exports = [
       },
     ],
   },
+  {
+    name: 'Юань-ти проклинатель, вид 3',
+    nameEn: 'Yuan-ti Malison, Type 3',
+    id: CREATURE_YUAN_TI_MALISON_3,
+    parentId: CREATURE_YUAN_TI_MALISON_1,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        comment: 'только в облике юань-ти',
+        description: `Юань-ти совершает две дальнобойные атаки или две рукопашные атаки, но _Сжимание_ может использовать только раз.`,
+      },
+      {
+        name: 'Укус',
+        comment: 'только в облике змеи',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 4,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Сжимание',
+        description: `Цель становится схваченной (Сл высвобождения 13). Пока цель схвачена, она опутана, и юань-ти не может сжимать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Скимитар',
+        comment: 'только в облике юань-ти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Длинный лук',
+        comment: 'только в облике юань-ти',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+  },
 ]

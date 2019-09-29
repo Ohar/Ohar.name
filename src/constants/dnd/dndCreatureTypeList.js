@@ -47,7 +47,7 @@ const CREATURE_TYPE_TITAN = 'titan'
 const CREATURE_TYPE_TROGLODYTE = 'troglodyte'
 const CREATURE_TYPE_UNDEAD = 'undead'
 const CREATURE_TYPE_XVART = 'xvart'
-const CREATURE_TYPE_YOAN_TI = 'yoan_ti'
+const CREATURE_TYPE_YUAN_TI = 'yuan_ti'
 const CREATURE_TYPE_YUGOLOT = 'yugolot'
 
 const dndCreatureTypeList = [
@@ -971,7 +971,7 @@ const dndCreatureTypeList = [
     },
   },
   {
-    id: CREATURE_TYPE_YOAN_TI,
+    id: CREATURE_TYPE_YUAN_TI,
     genderId: GENDER_MALE,
     isRealRace: true,
     name: {
@@ -1128,5 +1128,5 @@ module.exports.CREATURE_TYPE_TITAN = CREATURE_TYPE_TITAN
 module.exports.CREATURE_TYPE_TROGLODYTE = CREATURE_TYPE_TROGLODYTE
 module.exports.CREATURE_TYPE_UNDEAD = CREATURE_TYPE_UNDEAD
 module.exports.CREATURE_TYPE_XVART = CREATURE_TYPE_XVART
-module.exports.CREATURE_TYPE_YOAN_TI = CREATURE_TYPE_YOAN_TI
+module.exports.CREATURE_TYPE_YUAN_TI = CREATURE_TYPE_YUAN_TI
 module.exports.CREATURE_TYPE_YUGOLOT = CREATURE_TYPE_YUGOLOT

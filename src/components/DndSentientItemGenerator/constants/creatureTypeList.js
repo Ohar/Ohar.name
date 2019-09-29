@@ -156,7 +156,7 @@ export default [
     probabilityWeight: 1,
   },
   {
-    id: 'yoan_ti',
+    id: 'yuan_ti',
     probabilityWeight: 1,
   },
   {

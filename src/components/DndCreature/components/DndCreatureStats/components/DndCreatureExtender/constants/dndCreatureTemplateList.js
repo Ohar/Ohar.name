@@ -67,7 +67,7 @@ import {
   CREATURE_TYPE_TROGLODYTE,
   CREATURE_TYPE_UNDEAD,
   CREATURE_TYPE_XVART,
-  CREATURE_TYPE_YOAN_TI,
+  CREATURE_TYPE_YUAN_TI,
   CREATURE_TYPE_YUGOLOT,
 } from '@/constants/dnd/dndCreatureTypeList'
 import {
@@ -361,7 +361,7 @@ export default [
           CREATURE_TYPE_TITAN,
           CREATURE_TYPE_TROGLODYTE,
           CREATURE_TYPE_XVART,
-          CREATURE_TYPE_YOAN_TI,
+          CREATURE_TYPE_YUAN_TI,
           CREATURE_TYPE_YUGOLOT,
         ],
       },

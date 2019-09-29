@@ -86,6 +86,7 @@ const SPELL_DRUIDCRAFT = 'druidcraft'
 const SPELL_ELEMENTAL_WEAPON = 'elemental_weapon'
 const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 const SPELL_ENTANGLE = 'entangle'
+const SPELL_EVARDS_BLACK_TENTACLES = 'evards_black_tentacles'
 const SPELL_EYEBITE = 'eyebite'
 const SPELL_FAERIE_FIRE = 'faerie_fire'
 const SPELL_FEAR = 'fear'
@@ -123,6 +124,7 @@ const SPELL_LEVITATE = 'levitate'
 const SPELL_LIGHT = 'light'
 const SPELL_LIGHTNING_BOLT = 'lightning_bolt'
 const SPELL_LOCATE_OBJECT = 'locate_object'
+const SPELL_MAGE_ARMOR = 'mage_armor'
 const SPELL_MAGE_HAND = 'mage_hand'
 const SPELL_MAGIC_MISSILE = 'magic_missile'
 const SPELL_MAGIC_WEAPON = 'magic_weapon'
@@ -190,6 +192,7 @@ const SPELL_WATER_BREATHING = 'water_breathing'
 const SPELL_WATER_WALK = 'water_walk'
 const SPELL_WEB = 'web'
 const SPELL_WIND_WALK = 'wind_walk'
+const SPELL_WITCH_BOLT = 'witch_bolt'
 const SPELL_ZONE_OF_TRUTH = 'zone_of_truth'
 
 const defaultCastTime = '1 действие'
@@ -3106,6 +3109,57 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_WITCH_BOLT,
+    name: 'Ведьмин снаряд',
+    nameEn: 'Witch_bolt',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_MAGE_ARMOR,
+    name: 'Доспехи мага',
+    nameEn: 'Mage armor',
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_EVARDS_BLACK_TENTACLES,
+    name: 'Эвардовы чёрные щупальца',
+    nameEn: 'Evard`s black tentacles',
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -3176,6 +3230,7 @@ module.exports.SPELL_DRUIDCRAFT = SPELL_DRUIDCRAFT
 module.exports.SPELL_ELEMENTAL_WEAPON = SPELL_ELEMENTAL_WEAPON
 module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
 module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
+module.exports.SPELL_EVARDS_BLACK_TENTACLES = SPELL_EVARDS_BLACK_TENTACLES
 module.exports.SPELL_EYEBITE = SPELL_EYEBITE
 module.exports.SPELL_FAERIE_FIRE = SPELL_FAERIE_FIRE
 module.exports.SPELL_FEAR = SPELL_FEAR
@@ -3213,6 +3268,7 @@ module.exports.SPELL_LEVITATE = SPELL_LEVITATE
 module.exports.SPELL_LIGHT = SPELL_LIGHT
 module.exports.SPELL_LIGHTNING_BOLT = SPELL_LIGHTNING_BOLT
 module.exports.SPELL_LOCATE_OBJECT = SPELL_LOCATE_OBJECT
+module.exports.SPELL_MAGE_ARMOR = SPELL_MAGE_ARMOR
 module.exports.SPELL_MAGE_HAND = SPELL_MAGE_HAND
 module.exports.SPELL_MAGIC_MISSILE = SPELL_MAGIC_MISSILE
 module.exports.SPELL_MAGIC_WEAPON = SPELL_MAGIC_WEAPON
@@ -3280,4 +3336,5 @@ module.exports.SPELL_WATER_BREATHING = SPELL_WATER_BREATHING
 module.exports.SPELL_WATER_WALK = SPELL_WATER_WALK
 module.exports.SPELL_WEB = SPELL_WEB
 module.exports.SPELL_WIND_WALK = SPELL_WIND_WALK
+module.exports.SPELL_WITCH_BOLT = SPELL_WITCH_BOLT
 module.exports.SPELL_ZONE_OF_TRUTH = SPELL_ZONE_OF_TRUTH

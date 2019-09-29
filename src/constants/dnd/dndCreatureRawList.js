@@ -264,6 +264,7 @@ const {
     SPELL_DOMINATE_PERSON,
     SPELL_DREAM,
     SPELL_DRUIDCRAFT,
+    SPELL_EARTHQUAKE,
     SPELL_ELEMENTAL_WEAPON,
     SPELL_ENLARGE_REDUCE,
     SPELL_ENTANGLE,
@@ -273,6 +274,7 @@ const {
     SPELL_FEAR,
     SPELL_FEATHER_FALL,
     SPELL_FINGER_OF_DEATH,
+    SPELL_FIRE_STORM,
     SPELL_FIREBALL,
     SPELL_FLAME_STRIKE,
     SPELL_FLAMING_SPHERE,
@@ -567,6 +569,7 @@ const {
     CREATURE_DUST_MEPHIT,
     CREATURE_EAGLE,
     CREATURE_EARTH_ELEMENTAL,
+    CREATURE_EMPYREAN,
     CREATURE_EFREETI,
     CREATURE_ERINYES,
     CREATURE_ETTIN,
@@ -38477,6 +38480,190 @@ module.exports = [
       {
         name: `Парирование`,
         description: `Дроу добавляет 3 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого дроу должен видеть атакующего, и должен использовать рукопашное оружие.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Эмпирей',
+    nameEn: 'Empyrean',
+    id: CREATURE_EMPYREAN,
+    description: ``,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_CELESTIAL,
+      CREATURE_TYPE_TITAN,
+    ],
+    aligmentId: [
+      {
+        id: ALIGMENT_CG,
+        comment: '75%',
+      },
+      {
+        id: ALIGMENT_NE,
+        comment: '25%',
+      },
+    ],
+    source: {
+      id: 'MM',
+      page: 309,
+    },
+    armor: {
+      ac: 22,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 19,
+      cubeType: 12,
+      cubeBonus: 190,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+      [SPEED_FLY]: 50,
+      [SPEED_SWIM]: 50,
+    },
+    params: {
+      [PARAM_STR]: 30,
+      [PARAM_DEX]: 21,
+      [PARAM_CON]: 30,
+      [PARAM_INT]: 21,
+      [PARAM_WIT]: 22,
+      [PARAM_CHA]: 27,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 17,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 15,
+    },
+    skillCollection: {
+      [SKILL_INSIGHT]: 13,
+      [SKILL_PERSUASION]: 13,
+    },
+    immunityList: [
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 16,
+      },
+    ],
+    languageList: [
+      LANG_ALL,
+    ],
+    cr: CR_23,
+    featureList: [
+      {
+        name: 'Легендарное сопротивление',
+        limit: {
+          count: 3,
+          period: 'день',
+        },
+        description: `Если эмпирей проваливает спасбросок, он может вместо этого сделать спасбросок успешным.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Эмпирей совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием эмпирея являются магическими`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_MATERIAL,
+      saveThrowDc: 23,
+      spellAttackBonus: 15,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_GREATER_RESTORATION,
+            SPELL_PASS_WITHOUT_TRACE,
+            SPELL_WATER_BREATHING,
+            SPELL_WATER_WALK,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_COMMUNE,
+            SPELL_DISPEL_EVIL_AND_GOOD,
+            SPELL_EARTHQUAKE,
+            SPELL_FIRE_STORM,
+            {
+              id: SPELL_PLANE_SHIFT,
+              comment: `только на себя`,
+            },
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Молот',
+        description: ` Если цель — существо, она должна преуспеть в спасброске Телосложения со Сл 15, иначе станет ошеломлённой до конца следующего хода эмпирея.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 17,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 6,
+            cubeType: 6,
+            cubeBonus: 10,
+          },
+        },
+      },
+      {
+        name: 'Снаряд',
+        attack: {
+          type: ACTION_RANGE_SPELL_ATTACK,
+          bonus: 15,
+          range: 600,
+          target: 1,
+          hit: {
+            typeList: [
+              DAMAGE_THUNDER,
+              DAMAGE_RADIANT,
+              DAMAGE_ACID,
+              DAMAGE_FIRE,
+              DAMAGE_FORCE,
+              DAMAGE_COLD,
+              DAMAGE_ELECTRICITY,
+            ],
+            cubeCount: 7,
+            cubeType: 6,
+            cubeBonus: 0,
+            comment: ' (на выбор эмпирея)',
+          },
+        },
+      },
+    ],
+    legendaryPoints: 3,
+    legendaryActionList: [
+      {
+        name: 'Атака',
+        description: ` Эмпирей совершает одну атаку.`,
+      },
+      {
+        name: 'Поддержка',
+        description: `Эмпирей приободряет всех невраждебных существ в пределах 120 футов от себя до концов их следующих ходов. Приободрённые существа до конца следующего хода эмпирея не могут быть очарованными и напуганными, а также совершают с преимуществом проверки характеристик и спасброски.`,
+      },
+      {
+        name: 'Сотрясающий удар',
+        cost: 2,
+        description: `Эмпирей бьёт молотом по полу, вызывая сотрясение. Все остальные существа, находящиеся в контакте с полом, и находящиеся в пределах 60 футов от эмпирея, должны преуспеть в спасброске Силы со Сл 25, иначе будут сбиты с ног.`,
       },
     ],
     genderId: GENDER_MALE,

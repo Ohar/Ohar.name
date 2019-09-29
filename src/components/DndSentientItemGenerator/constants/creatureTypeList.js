@@ -46,55 +46,7 @@ import {
 
 export default [
   {
-    id: CREATURE_TYPE_HUMANOID,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_GOBLINOID,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_MERFOLK,
-    probabilityWeight: 1,
-  },
-  {
     id: CREATURE_TYPE_AARAKOCRA,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_SHAPESHIFTER,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_BEAST,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_FIEND,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_CELESTIAL,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_MONSTER,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_PLANT,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_CONSTRUCT,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_UNDEAD,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_DRAGON,
     probabilityWeight: 1,
   },
   {
@@ -102,19 +54,7 @@ export default [
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_DEVIL,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_DEMON,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_KOBOLD,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_TITAN,
+    id: CREATURE_TYPE_BEAST,
     probabilityWeight: 1,
   },
   {
@@ -122,31 +62,23 @@ export default [
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_GNOLL,
+    id: CREATURE_TYPE_CELESTIAL,
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_GITH,
+    id: CREATURE_TYPE_CONSTRUCT,
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_GNOME,
+    id: CREATURE_TYPE_DEMON,
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_GRIMLOCK,
+    id: CREATURE_TYPE_DEVIL,
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_ORC,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_GRUNG,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_YUGOLOT,
+    id: CREATURE_TYPE_DRAGON,
     probabilityWeight: 1,
   },
   {
@@ -154,7 +86,7 @@ export default [
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_SAHUAGIN,
+    id: CREATURE_TYPE_ELEMENTAL,
     probabilityWeight: 1,
   },
   {
@@ -162,27 +94,11 @@ export default [
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_QUAGGOTH,
+    id: CREATURE_TYPE_FEY,
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_LIZARDFOLK,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_XVART,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_THRI_KREEN,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_TROGLODYTE,
-    probabilityWeight: 1,
-  },
-  {
-    id: CREATURE_TYPE_GIANT,
+    id: CREATURE_TYPE_FIEND,
     probabilityWeight: 1,
   },
   {
@@ -190,7 +106,31 @@ export default [
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_FEY,
+    id: CREATURE_TYPE_GIANT,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_GITH,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_GNOLL,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_GNOME,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_GOBLINOID,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_GRIMLOCK,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_GRUNG,
     probabilityWeight: 1,
   },
   {
@@ -198,7 +138,7 @@ export default [
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_KUO_TOA,
+    id: CREATURE_TYPE_HUMANOID,
     probabilityWeight: 1,
   },
   {
@@ -206,15 +146,75 @@ export default [
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_YUAN_TI,
+    id: CREATURE_TYPE_KOBOLD,
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_ELEMENTAL,
+    id: CREATURE_TYPE_KUO_TOA,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_LIZARDFOLK,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_MERFOLK,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_MONSTER,
     probabilityWeight: 1,
   },
   {
     id: CREATURE_TYPE_OOZE,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_ORC,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_PLANT,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_QUAGGOTH,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_SAHUAGIN,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_SHAPESHIFTER,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_THRI_KREEN,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_TITAN,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_TROGLODYTE,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_UNDEAD,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_XVART,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_YUAN_TI,
+    probabilityWeight: 1,
+  },
+  {
+    id: CREATURE_TYPE_YUGOLOT,
     probabilityWeight: 1,
   },
 ]

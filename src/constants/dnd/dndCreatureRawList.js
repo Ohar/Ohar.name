@@ -38937,7 +38937,7 @@ module.exports = [
     id: CREATURE_YUAN_TI_ABOMINATION,
     description: [
       `Отродья юань-ти — чудовищные змеи с крепкими гуманоидными торсами и руками. Отродья формируют наивысшую касту в обществе юань-ти, и они ближе остальных приблизились к расе, которую змеиные боги уготовали им. Они руководят подготовкой планов и выполнением тёмных обрядов в надежде однажды стать правителями мира.`,
-      yuantiDescription
+      ...yuantiDescription,
     ],
     note: yuantiNote,
     sizeType: SIZE_LARGE,
@@ -39148,7 +39148,7 @@ module.exports = [
 1. [Вид 1](CREATURE:${CREATURE_YUAN_TI_MALISON_1}): Человеческое тело со змеиной головой.
 2. [Вид 2](CREATURE:${CREATURE_YUAN_TI_MALISON_2}): Человеческая голова и тело со змеями вместо рук.
 3. [Вид 3](CREATURE:${CREATURE_YUAN_TI_MALISON_3}): Человеческая голова и торс со змеиным телом вместо ног.`,
-      yuantiDescription
+      ...yuantiDescription,
     ],
     note: yuantiNote,
     sizeType: SIZE_MEDIUM,

@@ -38972,6 +38972,12 @@ module.exports = [
       [SKILL_PERCEPTION]: 5,
       [SKILL_STEALTH]: 6,
     },
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
     senseList: [
       {
         id: SENSE_DARK_VISION,
@@ -39002,6 +39008,7 @@ module.exports = [
       baseStat: PARAM_CHA,
       componentExclude: CAST_MATERIAL,
       saveThrowDc: 15,
+      comment: 'только в облике отродья',
       spellIdByCountList: [
         {
           limit: Infinity,

@@ -1,11 +1,13 @@
 import proschet from 'proschet';
 
+import joinText from "@/utils/joinText"
+
 import numberList from '@/constants/numberList'
 import {dndTargetCollection} from '@/constants/dnd/dndTargetList'
 import {dndSizeCollection} from '@/constants/dnd/dndSizeList'
 import {dndConditionCollection} from '@/constants/dnd/dndConditionList'
 import {dndCreatureTypeCollection} from '@/constants/dnd/dndCreatureTypeList'
-import {GENDER_FEMALE, GENDER_MALE} from '@/constants/genderList'
+import { GENDER_FEMALE, GENDER_MALE, GENDER_MIDDLE } from '@/constants/genderList'
 
 const getGoalWord = proschet(['цель', 'цели', 'целей'])
 
@@ -18,7 +20,8 @@ export default target => {
 
     let conditionText = ''
     let genderId = ''
-    let limitText = ''
+    let limitSizeSingleText = ''
+    let limitSizeMultipleText = ''
     let commentText = ''
     let numberText = numberWordObj[GENDER_FEMALE]
     let targetText = getGoalWord(targetCount)
@@ -67,9 +70,20 @@ export default target => {
       }
 
       if (target.limit.size) {
-        if (target.limit.size.max) {
-          const sizeText = dndSizeCollection[target.limit.size.max].name.singular[GENDER_MALE].genitive
-          limitText = ` c размером не больше ${sizeText}`
+        const {size} = target.limit
+
+        if (Array.isArray(size)) {
+          const sizeText = joinText(
+            size.map(
+              sizeItem => dndSizeCollection[sizeItem].name.singular[GENDER_MIDDLE].nominative
+            )
+          )
+          limitSizeMultipleText = ` ${sizeText}`
+        }
+
+        if (size.max) {
+          const sizeText = dndSizeCollection[size.max].name.singular[GENDER_MALE].genitive
+          limitSizeSingleText = ` c размером не больше ${sizeText}`
         }
       }
 
@@ -100,8 +114,9 @@ export default target => {
     return [
       numberText,
       conditionText,
+      limitSizeMultipleText,
       targetText,
-      limitText,
+      limitSizeSingleText,
       commentText,
     ]
       .filter(e => e)

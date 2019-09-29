@@ -13,6 +13,7 @@ import {
   faMusic,
   faRobot,
   faSkullCrossbones,
+  faSpider,
   faTree,
   faUserFriends,
   faUserPlus,
@@ -164,6 +165,7 @@ import {
   CREATURE_DUODRONE,
   CREATURE_DUST_MEPHIT,
   CREATURE_ERINYES,
+  CREATURE_ETTERCAP,
   CREATURE_GOLD_DRAGON_WYRMLING,
   CREATURE_GRAY_OOZE,
   CREATURE_GRAY_SLAAD,
@@ -304,6 +306,7 @@ import { GENDER_MIDDLE } from '@/constants/genderList'
 import calcParamBonus from '@/utils/calcParamBonus'
 import formatBonus from '@/utils/formatBonus'
 import { CAST_NONE } from '@/constants/dnd/dndCastComponentList'
+import { TARGET_CREATURE } from '@/constants/dnd/dndTargetList'
 
 import enchantWeapon from './../utils/enchantWeapon'
 
@@ -1738,6 +1741,61 @@ _Чарующая мелодия._ Существо становится оча�
             return actionList
         }
       },
+    },
+  },
+  {
+    templateName: 'Разновидность: Паутинная удавка',
+    templateIcon: faSpider,
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_ETTERCAP,
+        ],
+      },
+    },
+
+    extendPropCollection: {
+      description: [
+        {
+          header: `Разновидность: Паутинная удавка`,
+          text: `Некоторые эттеркапы любят душить жертву, используя удавку, созданную из тонких нитей паутины. Эттеркап с таким оружием получает описанный ниже вариант действия, которое использует вместо атаки когтями.\n
+**Паутинная удавка.** Рукопашная атака оружием: +4 к попаданию, досягаемость 5 фт., одно Среднее или Маленькое существо, бросок атаки по которому эттеркап совершает с преимуществом. Попадание: Дробящий урон 4 (1к4 + 2), и цель становится схваченной (Сл. высвобождения 12). Пока цель схвачена, она не может дышать, и эттеркап совершает броски атаки по ней с преимуществом.`,
+        },
+      ],
+    },
+
+    editPropCollection: {
+      name: ({ name }) => `${name} с паутинной удавкой`,
+      actionList: ({ actionList }) => actionList.map(
+        action => action.name === 'Когти'
+          ? {
+            name: 'Паутинная удавка',
+            description: `Цель становится схваченной (Сл. высвобождения 12). Пока цель схвачена, она не может дышать, и эттеркап совершает броски атаки по ней с преимуществом.`,
+            attack: {
+              type: ACTION_MELEE_WEAPON_ATTACK,
+              bonus: 4,
+              range: 5,
+              target: {
+                count: 1,
+                limit: {
+                  type: TARGET_CREATURE,
+                  size: [
+                    SIZE_SMALL,
+                    SIZE_MEDIUM,
+                  ],
+                  comment: `, бросок атаки по которому эттеркап совершает с преимуществом`,
+                },
+              },
+              hit: {
+                type: DAMAGE_BLUDGEONING,
+                cubeCount: 1,
+                cubeType: 4,
+                cubeBonus: 0,
+              },
+            },
+          }
+          : action,
+      ),
     },
   },
   // NOT READY

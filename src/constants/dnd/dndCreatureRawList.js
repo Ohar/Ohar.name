@@ -267,6 +267,7 @@ const {
     SPELL_ELEMENTAL_WEAPON,
     SPELL_ENLARGE_REDUCE,
     SPELL_ENTANGLE,
+    SPELL_EVARDS_BLACK_TENTACLES,
     SPELL_EYEBITE,
     SPELL_FAERIE_FIRE,
     SPELL_FEAR,
@@ -304,6 +305,7 @@ const {
     SPELL_LIGHT,
     SPELL_LIGHTNING_BOLT,
     SPELL_LOCATE_OBJECT,
+    SPELL_MAGE_ARMOR,
     SPELL_MAGE_HAND,
     SPELL_MAGIC_MISSILE,
     SPELL_MAGIC_WEAPON,
@@ -368,6 +370,7 @@ const {
     SPELL_WATER_WALK,
     SPELL_WEB,
     SPELL_WIND_WALK,
+    SPELL_WITCH_BOLT,
     SPELL_ZONE_OF_TRUTH,
   } = require('./dndSpellList'),
   {
@@ -555,6 +558,7 @@ const {
     CREATURE_DRIDER,
     CREATURE_DRIDER_SPELLCASTER,
     CREATURE_DROW,
+    CREATURE_DROW_MAGE,
     CREATURE_DROW_PRIESTESS_OF_LOLTH,
     CREATURE_DRYAD,
     CREATURE_DUERGAR,
@@ -38143,5 +38147,181 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: `Маг дроу`,
+    nameEn: 'Drow mage',
+    id: CREATURE_DROW_MAGE,
+    description: [
+      drowDescription,
+      `Привилегированные мужчины дроу, которым не хватает силы и боевой доблести для тренировок в качестве воителей, не имеют другого выбора, кроме как начать изучать магию. Для них это вопрос выживания. Женщины дроу с естественной склонностью к магии также могут становиться магами, хотя это и происходит гораздо реже.`,
+    ],
+    note: drowNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ELF,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 308,
+    },
+    armor: {
+      ac: 12,
+      type: '15 с _Доспехами мага_ (Mage armor)',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 9,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 17,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 12,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_ARCANA]: 6,
+      [SKILL_DECEPTION]: 5,
+      [SKILL_STEALTH]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_UNDERCOMMON,
+      LANG_ELVEN,
+    ],
+    cr: CR_7,
+    featureList: [
+      {
+        name: `Наследие фей`,
+        description: `Дроу совершает с преимуществом спасброски от очарования, и магия не может его усыпить.`,
+      },
+      {
+        name: `Чувствительность к солнечному свету`,
+        description: `Находясь на солнечном свету, дроу совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+    ],
+    spellCast: [
+      {
+        baseStat: PARAM_CHA,
+        componentExclude: CAST_MATERIAL,
+        saveThrowDc: 12,
+        spellIdByCountList: [
+          {
+            limit: Infinity,
+            list: [
+              SPELL_DANCING_LIGHTS,
+            ],
+          },
+          {
+            limit: {
+              count: 1,
+              period: 'день',
+            },
+            list: [
+              {
+                id: SPELL_LEVITATE,
+                comment: 'только на себя',
+              },
+              SPELL_FAERIE_FIRE,
+              SPELL_DARKNESS,
+            ],
+          },
+        ],
+      },
+      {
+        spellCasterLevel: 10,
+        spellCasterClass: PC_CLASS_WIZARD,
+        baseStat: PARAM_INT,
+        spellAttackBonus: 6,
+        saveThrowDc: 14,
+        spellIdList: [
+          SPELL_ALTER_SELF,
+          SPELL_CLOUDKILL,
+          SPELL_EVARDS_BLACK_TENTACLES,
+          SPELL_FLY,
+          SPELL_GREATER_INVISIBILITY,
+          SPELL_LIGHTNING_BOLT,
+          SPELL_MAGE_ARMOR,
+          SPELL_MAGE_HAND,
+          SPELL_MAGIC_MISSILE,
+          SPELL_MINOR_ILLUSION,
+          SPELL_MISTY_STEP,
+          SPELL_POISON_SPRAY,
+          SPELL_RAY_OF_FROST,
+          SPELL_SHIELD,
+          SPELL_WEB,
+          SPELL_WITCH_BOLT,
+        ],
+        slotCountList: [
+          Infinity,
+          4,
+          3,
+          3,
+          3,
+          2,
+        ],
+      },
+    ],
+    actionList: [
+      {
+        name: `Посох`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_BLUDGEONING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: -1,
+              },
+              {
+                type: DAMAGE_BLUDGEONING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: -1,
+                comment: `, если используется двумя руками`,
+              },
+            ],
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: `Призыв демона`,
+        limit: {
+          count: 1,
+          period: 'день',
+        },
+        description: `Дроу магическим образом призывает [квазита](CREATURE:${CREATURE_QUASIT}), или пытается призвать [теневого демона](CREATURE:${CREATURE_SHADOW_DEMON}) с 50-процентным шансом успеха. Призванный демон появляется в свободном пространстве в пределах 60 футов от призывателя, действует как его союзник, и не может призывать других демонов. Он присутствует в течение 10 минут, пока он, либо призыватель, не умрут, или пока призыватель не отпустит его действием.`,
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

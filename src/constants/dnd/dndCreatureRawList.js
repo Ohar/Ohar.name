@@ -39323,4 +39323,45 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Юань-ти проклинатель, вид 2',
+    nameEn: 'Yuan-ti Malison, Type 2',
+    id: CREATURE_YUAN_TI_MALISON_2,
+    parentId: CREATURE_YUAN_TI_MALISON_1,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        comment: 'только в облике юань-ти',
+        description: `Юань-ти совершает две атаки укусом, используя свои змеиные руки.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 4,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+    ],
+  },
 ]

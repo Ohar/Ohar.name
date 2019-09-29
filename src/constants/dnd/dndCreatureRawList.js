@@ -558,6 +558,7 @@ const {
     CREATURE_DRIDER,
     CREATURE_DRIDER_SPELLCASTER,
     CREATURE_DROW,
+    CREATURE_DROW_ELITE_WARRIOR,
     CREATURE_DROW_MAGE,
     CREATURE_DROW_PRIESTESS_OF_LOLTH,
     CREATURE_DRYAD,
@@ -38320,6 +38321,163 @@ module.exports = [
           period: 'день',
         },
         description: `Дроу магическим образом призывает [квазита](CREATURE:${CREATURE_QUASIT}), или пытается призвать [теневого демона](CREATURE:${CREATURE_SHADOW_DEMON}) с 50-процентным шансом успеха. Призванный демон появляется в свободном пространстве в пределах 60 футов от призывателя, действует как его союзник, и не может призывать других демонов. Он присутствует в течение 10 минут, пока он, либо призыватель, не умрут, или пока призыватель не отпустит его действием.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: `Элитный воитель дроу`,
+    nameEn: 'Drow elite warrior',
+    id: CREATURE_DROW_ELITE_WARRIOR,
+    description: [
+      drowDescription,
+      `Элитные воители дроу защищают свои дома и вышестоящих от всех врагов, хотя они и специализируются на боях с дварфами, гномами и эльфами (включая других дроу). Они часто совершают набеги на надземные поселения под покровом ночи, возвращаясь с пленниками и награбленным ещё до рассвета.\n
+Элитными воителями дроу могут быть как женщины, так и мужчины`,
+    ],
+    note: drowNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ELF,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 308,
+    },
+    armor: {
+      ac: 18,
+      type: 'проклёпанная кожа, щит',
+    },
+    hp: {
+      cubeCount: 11,
+      cubeType: 8,
+      cubeBonus: 22,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 18,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 12,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 7,
+      [PARAM_CON]: 5,
+      [PARAM_WIT]: 4,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_STEALTH]: 10,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_UNDERCOMMON,
+      LANG_ELVEN,
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: `Наследие фей`,
+        description: `Дроу совершает с преимуществом спасброски от очарования, и магия не может его усыпить.`,
+      },
+      {
+        name: `Чувствительность к солнечному свету`,
+        description: `Находясь на солнечном свету, дроу совершает с помехой броски атаки, а также проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_MATERIAL,
+      saveThrowDc: 12,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DANCING_LIGHTS,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            {
+              id: SPELL_LEVITATE,
+              comment: 'только на себя',
+            },
+            SPELL_FAERIE_FIRE,
+            SPELL_DARKNESS,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: `Мультиатака`,
+        description: `Дроу совершает две атаки коротким мечом`,
+      },
+      {
+        name: `Короткий меч`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 4,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 3,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: `Ручной арбалет`,
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 13, иначе станет отравленной на 1 час. Если спасбросок провален на 5 или больше единиц, цель также лишена сознания, пока отравлена таким образом. Цель просыпается, если получает урон или другое существо разбудит её действием.`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 7,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: `Парирование`,
+        description: `Дроу добавляет 3 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого дроу должен видеть атакующего, и должен использовать рукопашное оружие.`,
       },
     ],
     genderId: GENDER_MALE,

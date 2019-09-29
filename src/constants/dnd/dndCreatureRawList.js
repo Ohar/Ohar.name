@@ -804,6 +804,7 @@ const {
     CREATURE_YUAN_TI_MALISON_1,
     CREATURE_YUAN_TI_MALISON_2,
     CREATURE_YUAN_TI_MALISON_3,
+    CREATURE_YUAN_TI_PUREBLOOD,
     CREATURE_ZOMBIE,
   } = require('./dndCreatureIdList')
 
@@ -39456,5 +39457,150 @@ module.exports = [
         },
       },
     ],
+  },
+  {
+    name: 'Чистокровный юань-ти',
+    nameEn: 'Yuan-ti Pureblood',
+    id: CREATURE_YUAN_TI_PUREBLOOD,
+    description: [
+      `Чистокровные образуют низшую касту в обществе юань-ти. Они очень похожи на людей, но при тщательном осмотре разница заметна, потому что у них всегда есть какие-то намёки на их истинную природу, как, например, чешуйчатые пятна на руках, змеиные глаза, заострённые зубы или раздвоенный язык. Одевая накидки и капюшоны, они притворяются людьми и просачиваются в цивилизованные земли для сбора информации, похищений заключённых ради допроса и жертвоприношения, и для торговли с теми, у кого есть что-то, что может помочь воплощению их бесчисленных планов.`,
+      ...yuantiDescription,
+    ],
+    note: yuantiNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_YUAN_TI,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 315,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 14,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_DECEPTION]: 6,
+      [SKILL_STEALTH]: 3,
+    },
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_DRACONIC,
+      LANG_COMMON,
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Сопротивление магии',
+        description: `Юань-ти совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_MATERIAL,
+      saveThrowDc: 12,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_ANIMAL_FRIENDSHIP,
+              comment: `только змеи`,
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_SUGGESTION,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Юань-ти совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Скимитар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Короткий лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 80,
+            max: 320,
+          },
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 1,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

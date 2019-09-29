@@ -189,7 +189,7 @@ export default class SentientItem {
     switch (id) {
       case 'Iazyk': {
         const langId = pickByPropability(withoutCommonLanguageList).id
-        const {name} = dndLanguageCollection[langId]
+        const {name} = dndLanguageCollection[langId].name.nominative
 
         return description.replace(
           'на одном дополнительном языке (по выбору Мастера)',

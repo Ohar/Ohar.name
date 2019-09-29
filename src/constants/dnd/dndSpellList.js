@@ -83,6 +83,7 @@ const SPELL_DOMINATE_MONSTER = 'dominate_monster'
 const SPELL_DOMINATE_PERSON = 'dominate_person'
 const SPELL_DREAM = 'dream'
 const SPELL_DRUIDCRAFT = 'druidcraft'
+const SPELL_EARTHQUAKE = 'earthquake'
 const SPELL_ELEMENTAL_WEAPON = 'elemental_weapon'
 const SPELL_ENLARGE_REDUCE = 'enlarge_reduce'
 const SPELL_ENTANGLE = 'entangle'
@@ -92,6 +93,7 @@ const SPELL_FAERIE_FIRE = 'faerie_fire'
 const SPELL_FEAR = 'fear'
 const SPELL_FEATHER_FALL = 'feather_fall'
 const SPELL_FINGER_OF_DEATH = 'finger_of_death'
+const SPELL_FIRE_STORM = 'fire_storm'
 const SPELL_FIREBALL = 'fireball'
 const SPELL_FLAME_STRIKE = 'flame_strike'
 const SPELL_FLAMING_SPHERE = 'flaming_sphere'
@@ -3160,6 +3162,40 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_EARTHQUAKE,
+    name: 'Землетрясение',
+    nameEn: 'Earthquake',
+    description: ``, // TODO
+    lvl: 8,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_FIRE_STORM,
+    name: 'Огненная буря',
+    nameEn: 'Fire storm',
+    description: ``, // TODO
+    lvl: 7,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -3227,6 +3263,7 @@ module.exports.SPELL_DOMINATE_MONSTER = SPELL_DOMINATE_MONSTER
 module.exports.SPELL_DOMINATE_PERSON = SPELL_DOMINATE_PERSON
 module.exports.SPELL_DREAM = SPELL_DREAM
 module.exports.SPELL_DRUIDCRAFT = SPELL_DRUIDCRAFT
+module.exports.SPELL_EARTHQUAKE = SPELL_EARTHQUAKE
 module.exports.SPELL_ELEMENTAL_WEAPON = SPELL_ELEMENTAL_WEAPON
 module.exports.SPELL_ENLARGE_REDUCE = SPELL_ENLARGE_REDUCE
 module.exports.SPELL_ENTANGLE = SPELL_ENTANGLE
@@ -3236,6 +3273,7 @@ module.exports.SPELL_FAERIE_FIRE = SPELL_FAERIE_FIRE
 module.exports.SPELL_FEAR = SPELL_FEAR
 module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
 module.exports.SPELL_FINGER_OF_DEATH = SPELL_FINGER_OF_DEATH
+module.exports.SPELL_FIRE_STORM = SPELL_FIRE_STORM
 module.exports.SPELL_FIREBALL = SPELL_FIREBALL
 module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE
 module.exports.SPELL_FLAMING_SPHERE = SPELL_FLAMING_SPHERE

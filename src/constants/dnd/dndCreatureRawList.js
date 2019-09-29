@@ -81,6 +81,7 @@ const {
     CREATURE_TYPE_THRI_KREEN,
     CREATURE_TYPE_TITAN,
     CREATURE_TYPE_UNDEAD,
+    CREATURE_TYPE_YUAN_TI,
   } = require('./dndCreatureTypeList'),
   {
     ALIGMENT_ANY,
@@ -469,6 +470,8 @@ const {
     sphinxNote,
     vampireDescriptionList,
     whiteDragonDescriptionList,
+    yuantiDescription,
+    yuantiNote,
     zombieDesciption,
   } = require('./dndCreatureCommonParts'),
   {
@@ -797,6 +800,7 @@ const {
     CREATURE_YOUNG_REMORHAZ,
     CREATURE_YOUNG_SILVER_DRAGON,
     CREATURE_YOUNG_WHITE_DRAGON,
+    CREATURE_YUAN_TI_ABOMINATION,
     CREATURE_ZOMBIE,
   } = require('./dndCreatureIdList')
 
@@ -38923,5 +38927,205 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Отродье юань-ти',
+    nameEn: 'Yuan-ti Abomination',
+    id: CREATURE_YUAN_TI_ABOMINATION,
+    description: [
+      `Отродья юань-ти — чудовищные змеи с крепкими гуманоидными торсами и руками. Отродья формируют наивысшую касту в обществе юань-ти, и они ближе остальных приблизились к расе, которую змеиные боги уготовали им. Они руководят подготовкой планов и выполнением тёмных обрядов в надежде однажды стать правителями мира.`,
+      yuantiDescription
+    ],
+    note: yuantiNote,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+      CREATURE_TYPE_SHAPESHIFTER,
+      CREATURE_TYPE_YUAN_TI,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 313,
+    },
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 15,
+      cubeType: 10,
+      cubeBonus: 45,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 17,
+      [PARAM_INT]: 17,
+      [PARAM_WIT]: 15,
+      [PARAM_CHA]: 18,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+      [SKILL_STEALTH]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_DRACONIC,
+      LANG_COMMON,
+    ],
+    cr: CR_7,
+    featureList: [
+      {
+        name: 'Перевёртыш',
+        description: `Юань-ти может действием превратиться в Большую змею или принять свой истинный облик. Во всех обликах его характеристики остаются теми же самыми. Всё несомое и носимое им снаряжение не превращается. Он не меняет облик, если умирает.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Юань-ти совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_MATERIAL,
+      saveThrowDc: 15,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_ANIMAL_FRIENDSHIP,
+              comment: `только змеи`,
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_SUGGESTION,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_FEAR,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        comment: 'только в облике отродья',
+        description: `Юань-ти совершает две дальнобойные атаки или три рукопашные атаки, но _Укус_ и _Сжимание_ может использовать только по одному разу.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 4,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 3,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Сжимание',
+        description: `Цель становится схваченной (Сл высвобождения 14). Пока цель схвачена, она опутана, и юань-ти не может сжимать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Скимитар',
+        comment: 'только в облике отродья',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Длинный лук',
+        comment: 'только в облике отродья',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 6,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 2,
+              cubeType: 8,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 3,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_MIDDLE,
   },
 ]

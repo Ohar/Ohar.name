@@ -38710,12 +38710,6 @@ module.exports = [
       [PARAM_WIT]: 12,
       [PARAM_CHA]: 8,
     },
-    saveThrowCollection: {
-      [PARAM_STR]: 17,
-      [PARAM_INT]: 12,
-      [PARAM_WIT]: 13,
-      [PARAM_CHA]: 15,
-    },
     skillCollection: {
       [SKILL_PERCEPTION]: 3,
       [SKILL_SURVIVAL]: 3,

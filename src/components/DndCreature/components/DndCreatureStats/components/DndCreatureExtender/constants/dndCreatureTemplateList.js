@@ -8,6 +8,7 @@ import {
   faGem,
   faHandMiddleFinger,
   faHatWizard,
+  faMagic,
   faMehBlank,
   faMusic,
   faRobot,
@@ -157,6 +158,9 @@ import {
   CREATURE_BRONZE_DRAGON_WYRMLING,
   CREATURE_COPPER_DRAGON_WYRMLING,
   CREATURE_DEATH_SLAAD,
+  CREATURE_DROW,
+  CREATURE_DROW_ELITE_WARRIOR,
+  CREATURE_DROW_PRIESTESS_OF_LOLTH,
   CREATURE_DUODRONE,
   CREATURE_DUST_MEPHIT,
   CREATURE_ERINYES,
@@ -300,6 +304,8 @@ import { GENDER_MIDDLE } from '@/constants/genderList'
 import calcParamBonus from '@/utils/calcParamBonus'
 import formatBonus from '@/utils/formatBonus'
 import { CAST_NONE } from '@/constants/dnd/dndCastComponentList'
+
+import enchantWeapon from './../utils/enchantWeapon'
 
 export default [
   {
@@ -1655,6 +1661,83 @@ _Чарующая мелодия._ Существо становится оча�
 Если тролль потерял ногу, его скорость снижается вдвое. Если обе ноги — он падает ничком. Если при этом у него есть руки, он может ползти. Если рука при этом осталась только одна, он по-прежнему может ползти, но скорость уменьшается вдвое. Без рук и без ног его скорость становится равной 0, и тролль не получает никаких бонусов к скорости.`,
         },
       ],
+    },
+  },
+  {
+    templateName: 'Дроу с магическими доспехами и оружием',
+    templateIcon: faMagic,
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_DROW,
+          CREATURE_DROW_ELITE_WARRIOR,
+          CREATURE_DROW_PRIESTESS_OF_LOLTH,
+        ],
+      },
+    },
+
+    extendPropCollection: {
+      description: [
+        {
+          header: `Вариант: Дроу с магическими доспехами и оружием`,
+          text: `Дроу часто носят магические доспехи и магическое оружие, которые при длительном воздействии солнечного света (от 1 часа и дольше) теряют бонусы улучшения.\n
+* У [дроу](CREATURE:${CREATURE_DROW}), носящего кольчугу +1 и короткий меч +1, КД 19 и бонус +1 к броскам атаки и урона коротким мечом.\n
+* У [элитного воина дроу](CREATURE:${CREATURE_DROW_ELITE_WARRIOR}), носящего проклёпанный кожаный доспех +2 и короткий меч +2, КД 20 и бонус +2 к броскам атаки и урону коротким мечом.\n
+* У [дроу жрицы Лолс](CREATURE:${CREATURE_DROW_PRIESTESS_OF_LOLTH}), носящей чешуйчатый доспех +3, КД 19.`,
+        },
+      ],
+    },
+
+    editPropCollection: {
+      name: ({ name, id }) => {
+        switch (id) {
+          case CREATURE_DROW:
+          case CREATURE_DROW_ELITE_WARRIOR:
+            return `${name} с магическими доспехами и оружием`
+
+          case CREATURE_DROW_PRIESTESS_OF_LOLTH:
+            return `${name} с магическими доспехами`
+
+          default:
+            return name
+        }
+      },
+      armor: ({ armor, id }) => {
+        switch (id) {
+          case CREATURE_DROW:
+            return {
+              ac: 19,
+              type: 'кольчуга +1',
+            }
+
+          case CREATURE_DROW_ELITE_WARRIOR:
+            return {
+              ac: 20,
+              type: 'проклёпанный кожаный доспех +2',
+            }
+
+          case CREATURE_DROW_PRIESTESS_OF_LOLTH:
+            return {
+              ac: 19,
+              type: 'чешуйчатый доспех +3',
+            }
+
+          default:
+            return armor
+        }
+      },
+      actionList: ({ actionList, id }) => {
+        switch (id) {
+          case CREATURE_DROW:
+            return enchantWeapon({weaponName: 'Короткий меч', enchantBonus: 1, actionList})
+
+          case CREATURE_DROW_ELITE_WARRIOR:
+            return enchantWeapon({weaponName: 'Короткий меч', enchantBonus: 2, actionList})
+
+          default:
+            return actionList
+        }
+      },
     },
   },
   // NOT READY

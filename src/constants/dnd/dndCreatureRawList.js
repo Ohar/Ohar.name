@@ -37931,7 +37931,6 @@ module.exports = [
     actionList: [
       {
         name: `Короткий меч`,
-        description: ``,
         attack: {
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 4,

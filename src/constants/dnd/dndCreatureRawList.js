@@ -801,6 +801,9 @@ const {
     CREATURE_YOUNG_SILVER_DRAGON,
     CREATURE_YOUNG_WHITE_DRAGON,
     CREATURE_YUAN_TI_ABOMINATION,
+    CREATURE_YUAN_TI_MALISON_1,
+    CREATURE_YUAN_TI_MALISON_2,
+    CREATURE_YUAN_TI_MALISON_3,
     CREATURE_ZOMBIE,
   } = require('./dndCreatureIdList')
 
@@ -39134,5 +39137,190 @@ module.exports = [
       },
     ],
     genderId: GENDER_MIDDLE,
+  },
+  {
+    name: 'Юань-ти проклинатель, вид 1',
+    nameEn: 'Yuan-ti Malison, Type 1',
+    id: CREATURE_YUAN_TI_MALISON_1,
+    description: [
+      `Проклинатель — ужасная смесь человеческих и змеиных черт. Известны три типа проклинателей, хотя и другие типы также возможны. Проклинатели формируют среднюю касту в обществе юань-ти, и охотятся со стрелами, смазанными собственным ядом. Они используют магическую силу внушения, чтобы принудить врагов сдаться.\n
+**Вид проклинателя.** Юань-ти может быть нескольких видов:\n
+1. [Вид 1](CREATURE:${CREATURE_YUAN_TI_MALISON_1}): Человеческое тело со змеиной головой.
+2. [Вид 2](CREATURE:${CREATURE_YUAN_TI_MALISON_2}): Человеческая голова и тело со змеями вместо рук.
+3. [Вид 3](CREATURE:${CREATURE_YUAN_TI_MALISON_3}): Человеческая голова и торс со змеиным телом вместо ног.`,
+      yuantiDescription
+    ],
+    note: yuantiNote,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_MONSTER,
+      CREATURE_TYPE_SHAPESHIFTER,
+      CREATURE_TYPE_YUAN_TI,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 314,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 8,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 16,
+    },
+    skillCollection: {
+      [SKILL_DECEPTION]: 5,
+      [SKILL_STEALTH]: 4,
+    },
+    immunityList: [
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_DRACONIC,
+      LANG_COMMON,
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Перевёртыш',
+        description: `Юань-ти может действием превратиться в Среднюю змею или принять свой истинный облик. Во всех обликах его характеристики остаются теми же самыми. Всё несомое и носимое им снаряжение не превращается. Он не меняет облик, если умирает.`,
+      },
+      {
+        name: 'Сопротивление магии',
+        description: `Юань-ти совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_MATERIAL,
+      saveThrowDc: 15,
+      comment: 'только в облике юань-ти',
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            {
+              id: SPELL_ANIMAL_FRIENDSHIP,
+              comment: `только змеи`,
+            },
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_SUGGESTION,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        comment: 'только в облике юань-ти',
+        description: `Юань-ти совершает две дальнобойные атаки или две рукопашные атаки, но _Укус_ может использовать только раз.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 4,
+              cubeBonus: 3,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Скимитар',
+        comment: 'только в облике юань-ти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Длинный лук',
+        comment: 'только в облике юань-ти',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 8,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

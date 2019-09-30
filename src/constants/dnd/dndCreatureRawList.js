@@ -519,6 +519,7 @@ const {
     CREATURE_BARBED_DEVIL,
     CREATURE_BARLGURA,
     CREATURE_BASILISK,
+    CREATURE_BAT,
     CREATURE_BEARDED_DEVIL,
     CREATURE_BEHIR,
     CREATURE_BEHOLDER,
@@ -699,6 +700,7 @@ const {
     CREATURE_NIGHT_HAG,
     CREATURE_NIGHTMARE,
     CREATURE_NOTHIC,
+    CREATURE_NYCALOTH,
     CREATURE_OCHRE_JELLY,
     CREATURE_OGRE,
     CREATURE_OGRE_ZOMBIE,
@@ -39978,6 +39980,156 @@ module.exports = [
       {
         name: 'Телепортация',
         description: `Меззолот магическим образом телепортируется вместе со всем несомым и носимым снаряжением на расстояние до 60 футов в свободное пространство, которое он видит.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Никалот',
+    nameEn: 'Nycaloth',
+    id: CREATURE_NYCALOTH,
+    description: [
+      `Никалоты, элитные воздушные штурмовики юголотов, выглядят как мускулистые [горгульи](CREATURE:${CREATURE_GARGOYLE}). Они стремительно взмывают в небо на своих мощных крыльях, похожих на крылья [летучих мышей](CREATURE:${CREATURE_BAT}), а их бритвенно-острые когти на руках и ногах с лёгкостью рассекают плоть и кость. Никалот — кошмарный враг, он внезапно и безо всякого предупреждения наносит мощный удар, а потом телепортируется прочь. Он использует врождённые магические способности, чтобы становиться невидимым или создавать свою иллюзорную копию, таким образом ещё больше вводя в замешательство своих врагов.\n
+Никалоты — наиболее лояльные из юголотов. Если они находят злобного хозяина, который хорошо к ним относится, они вряд ли нарушат соглашение с ним, если только им не пообещают действительно хорошую награду`,
+      yugolothDescription,
+    ],
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_YUGOLOTH,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 319,
+    },
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 13,
+      cubeType: 10,
+      cubeBonus: 52,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 19,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 15,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_INTIMIDATION]: 6,
+      [SKILL_STEALTH]: 4,
+    },
+    resistanceList: [
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_ACID,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 60,
+      },
+    ],
+    cr: CR_9,
+    featureList: [
+      {
+        name: 'Сопротивление магии',
+        description: `Никалот совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием никалота являются магическими.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_MATERIAL,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_DARKNESS,
+            SPELL_DETECT_MAGIC,
+            SPELL_DISPEL_MAGIC,
+            SPELL_INVISIBILITY,
+            SPELL_MIRROR_IMAGE,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Никалот совершает две рукопашные атаки, либо одну рукопашную атаку и телепортируется до или после атаки.`,
+      },
+      {
+        name: 'Коготь',
+        description: `Если цель — существо, она должна преуспеть в спасброске Телосложения со Сл 16, иначе будет получать рубящий урон 5 (2к4) в начале каждого своего хода из-за инфернальной раны. Каждый раз, когда никалот попадает этой атакой по цели инфернальной раной, урон, причиняемый раной, увеличивается на 5 (2к4). Любое существо может действием закрыть рану успешной проверкой Мудрости (Медицина) со Сл 13. Рана также закрывается, если цель получает магическое лечение`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Секира',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 12,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Телепортация',
+        description: `Никалот магическим образом телепортируется вместе со всем несомым и носимым снаряжением на расстояние до 60 футов в свободное пространство, которое он видит.`,
       },
     ],
     genderId: GENDER_MALE,

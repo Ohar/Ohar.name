@@ -82,6 +82,7 @@ const {
     CREATURE_TYPE_TITAN,
     CREATURE_TYPE_UNDEAD,
     CREATURE_TYPE_YUAN_TI,
+    CREATURE_TYPE_YUGOLOTH,
   } = require('./dndCreatureTypeList'),
   {
     ALIGMENT_ANY,

@@ -318,6 +318,7 @@ const {
     SPELL_MAJOR_IMAGE,
     SPELL_MASS_CURE_WOUNDS,
     SPELL_MASS_HEALING_WORD,
+    SPELL_MASS_SUGGESTION,
     SPELL_MELFS_ACID_ARROW,
     SPELL_MENDING,
     SPELL_MIND_BLANK,
@@ -773,6 +774,7 @@ const {
     CREATURE_TROLL,
     CREATURE_TWIG_BLIGHT,
     CREATURE_TYRANNOSAURUS_REX,
+    CREATURE_ULTROLOTH,
     CREATURE_UMBER_HULK,
     CREATURE_UNICORN,
     CREATURE_VAMPIRE,
@@ -40130,6 +40132,182 @@ module.exports = [
       {
         name: 'Телепортация',
         description: `Никалот магическим образом телепортируется вместе со всем несомым и носимым снаряжением на расстояние до 60 футов в свободное пространство, которое он видит.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Ультролот',
+    nameEn: 'Ultroloth',
+    id: CREATURE_ULTROLOTH,
+    description: [
+      `Ультролоты командуют армиями юголотов в Войне Крови. Ультролот выглядит как худощавый серокожий гуманоид с вытянутой головой. Он безлик, если не считать двух овальных глаз. Эти глаза могут становиться сверкающими резервуарами света, который сковывает других существ, заставляет трепетать и делает беспомощными.\n
+Ультролоты постоянно разрабатывают планы по дальнейшему увеличению личной власти, и не прочь вцепиться друг другу в горло. В те моменты, когда они не наняты сражаться в Войне Крови, ультролоты во главе отрядов юголотов бродят по планам, действуя как криминальные главари или предводители злых наёмников.\n
+Имея репутацию жестоких существ, ультролоты обычно командуют в бою своими подчинёнными, а сами при этом не сражаются. Младшие юголоты знают своё место, и когда их призывает юголот, они не требуют награды за службу.`,
+      yugolothDescription,
+    ],
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_YUGOLOTH,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 319,
+    },
+    armor: {
+      ac: 19,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 18,
+      cubeType: 8,
+      cubeBonus: 72,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 18,
+      [PARAM_WIT]: 15,
+      [PARAM_CHA]: 19,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 7,
+      [SKILL_INTIMIDATION]: 9,
+      [SKILL_STEALTH]: 8,
+    },
+    resistanceList: [
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_ACID,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+      CONDITION_FRIGHTENED,
+      CONDITION_CHARMED,
+    ],
+    senseList: [
+      {
+        id: SENSE_TRUE_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 17,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 120,
+      },
+    ],
+    cr: CR_13,
+    featureList: [
+      {
+        name: 'Сопротивление магии',
+        description: `Ультролот совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием ультролота являются магическими.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_MATERIAL,
+      saveThrowDc: 17,
+      spellIdByCountList: [
+        {
+          limit: Infinity,
+          list: [
+            SPELL_ALTER_SELF,
+            SPELL_CLAIRVOYANCE,
+            SPELL_DARKNESS,
+            SPELL_DETECT_MAGIC,
+            SPELL_DETECT_THOUGHTS,
+            SPELL_DISPEL_MAGIC,
+            {
+              id: SPELL_INVISIBILITY,
+              comment: `только на себя`,
+            },
+            SPELL_SUGGESTION,
+          ],
+        },
+        {
+          limit: {
+            count: 3,
+            period: 'день',
+          },
+          list: [
+            SPELL_DIMENSION_DOOR,
+            SPELL_FEAR,
+            SPELL_WALL_OF_FIRE,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_FIRE_STORM,
+            SPELL_MASS_SUGGESTION,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: ` Ультролот может использовать Гипнотический взгляд и совершает три рукопашные атаки.`,
+      },
+      {
+        name: 'Длинный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 3,
+              },
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 10,
+                cubeBonus: 3,
+                comment: `, если используется двумя руками.`,
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Гипнотический взгляд',
+        description: `Глаза ультролота наливаются опалесцирующим светом, и он нацеливается на одно существо, которое видит в пределах 30 футов от себя. Если цель видит ультролота, она должна преуспеть в спасброске Мудрости со Сл 17 от этой магии, иначе станет очарованной до конца следующего хода ультролота. Очарованная цель является ошеломлённой. Если спасбросок был успешным, цель получает иммунитет к взгляду этого ультролота на следующие 24 часа.`,
+      },
+      {
+        name: 'Телепортация',
+        description: `Ультролот магическим образом телепортируется вместе со всем несомым и носимым снаряжением, на расстояние до 60 футов в свободное пространство, которое он видит.`,
       },
     ],
     genderId: GENDER_MALE,

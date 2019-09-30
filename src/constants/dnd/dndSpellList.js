@@ -46,6 +46,7 @@ const SPELL_BLIGHT = 'blight'
 const SPELL_BLINDNESS_DEAFNESS = 'blindness_deafness'
 const SPELL_BLUR = 'blur'
 const SPELL_CALM_EMOTIONS = 'calm_emotions'
+const SPELL_CHAIN_LIGHTNING = 'chain_lightning'
 const SPELL_CHARM_PERSON = 'charm_person'
 const SPELL_CLAIRVOYANCE = 'clairvoyance'
 const SPELL_CLOUDKILL = 'cloudkill'
@@ -93,6 +94,7 @@ const SPELL_FAERIE_FIRE = 'faerie_fire'
 const SPELL_FEAR = 'fear'
 const SPELL_FEATHER_FALL = 'feather_fall'
 const SPELL_FINGER_OF_DEATH = 'finger_of_death'
+const SPELL_FIRE_BOLT = 'fire_bolt'
 const SPELL_FIRE_STORM = 'fire_storm'
 const SPELL_FIREBALL = 'fireball'
 const SPELL_FLAME_STRIKE = 'flame_strike'
@@ -135,6 +137,7 @@ const SPELL_MASS_CURE_WOUNDS = 'mass_cure_wounds'
 const SPELL_MASS_HEALING_WORD = 'mass_healing_word'
 const SPELL_MELFS_ACID_ARROW = 'melfs_acid_arrow'
 const SPELL_MENDING = 'mending'
+const SPELL_MIND_BLANK = 'mind_blank'
 const SPELL_MINOR_ILLUSION = 'minor_illusion'
 const SPELL_MIRROR_IMAGE = 'mirror_image'
 const SPELL_MISTY_STEP = 'misty_step'
@@ -181,6 +184,7 @@ const SPELL_STAGGERING_SMITE = 'staggering_smite'
 const SPELL_STONE_SHAPE = 'stone_shape'
 const SPELL_SUGGESTION = 'suggestion'
 const SPELL_TELEKINESIS = 'telekinesis'
+const SPELL_TENSERS_FLOATING_DISK = 'tensers_floating_disk'
 const SPELL_THAUMATURGY = 'thaumaturgy'
 const SPELL_THORN_WHIP = 'thorn_whip'
 const SPELL_THUNDERWAVE = 'thunderwave'
@@ -3196,6 +3200,74 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_FIRE_BOLT,
+    name: 'Огненный снаряд',
+    nameEn: 'Fire bolt',
+    description: ``, // TODO
+    lvl: 0,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_TENSERS_FLOATING_DISK,
+    name: 'Тензеров парящий диск',
+    nameEn: `Tenser's floating disk`,
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_CHAIN_LIGHTNING,
+    name: 'Пляшущая молния',
+    nameEn: `Chain_lightning`,
+    description: ``, // TODO
+    lvl: 6,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_MIND_BLANK,
+    name: 'Сокрытие разума',
+    nameEn: `Mind blank`,
+    description: ``, // TODO
+    lvl: 8,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -3225,6 +3297,7 @@ module.exports.SPELL_BLIGHT = SPELL_BLIGHT
 module.exports.SPELL_BLINDNESS_DEAFNESS = SPELL_BLINDNESS_DEAFNESS
 module.exports.SPELL_BLUR = SPELL_BLUR
 module.exports.SPELL_CALM_EMOTIONS = SPELL_CALM_EMOTIONS
+module.exports.SPELL_CHAIN_LIGHTNING = SPELL_CHAIN_LIGHTNING
 module.exports.SPELL_CHARM_PERSON = SPELL_CHARM_PERSON
 module.exports.SPELL_CLAIRVOYANCE = SPELL_CLAIRVOYANCE
 module.exports.SPELL_CLOUDKILL = SPELL_CLOUDKILL
@@ -3273,6 +3346,7 @@ module.exports.SPELL_FAERIE_FIRE = SPELL_FAERIE_FIRE
 module.exports.SPELL_FEAR = SPELL_FEAR
 module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
 module.exports.SPELL_FINGER_OF_DEATH = SPELL_FINGER_OF_DEATH
+module.exports.SPELL_FIRE_BOLT = SPELL_FIRE_BOLT
 module.exports.SPELL_FIRE_STORM = SPELL_FIRE_STORM
 module.exports.SPELL_FIREBALL = SPELL_FIREBALL
 module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE
@@ -3315,6 +3389,7 @@ module.exports.SPELL_MASS_CURE_WOUNDS = SPELL_MASS_CURE_WOUNDS
 module.exports.SPELL_MASS_HEALING_WORD = SPELL_MASS_HEALING_WORD
 module.exports.SPELL_MELFS_ACID_ARROW = SPELL_MELFS_ACID_ARROW
 module.exports.SPELL_MENDING = SPELL_MENDING
+module.exports.SPELL_MIND_BLANK = SPELL_MIND_BLANK
 module.exports.SPELL_MINOR_ILLUSION = SPELL_MINOR_ILLUSION
 module.exports.SPELL_MIRROR_IMAGE = SPELL_MIRROR_IMAGE
 module.exports.SPELL_MISTY_STEP = SPELL_MISTY_STEP
@@ -3361,6 +3436,7 @@ module.exports.SPELL_STAGGERING_SMITE = SPELL_STAGGERING_SMITE
 module.exports.SPELL_STONE_SHAPE = SPELL_STONE_SHAPE
 module.exports.SPELL_SUGGESTION = SPELL_SUGGESTION
 module.exports.SPELL_TELEKINESIS = SPELL_TELEKINESIS
+module.exports.SPELL_TENSERS_FLOATING_DISK = SPELL_TENSERS_FLOATING_DISK
 module.exports.SPELL_THAUMATURGY = SPELL_THAUMATURGY
 module.exports.SPELL_THORN_WHIP = SPELL_THORN_WHIP
 module.exports.SPELL_THUNDERWAVE = SPELL_THUNDERWAVE

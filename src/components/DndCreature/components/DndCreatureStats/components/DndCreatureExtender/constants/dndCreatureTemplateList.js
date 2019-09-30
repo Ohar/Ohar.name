@@ -68,7 +68,7 @@ import {
   CREATURE_TYPE_UNDEAD,
   CREATURE_TYPE_XVART,
   CREATURE_TYPE_YUAN_TI,
-  CREATURE_TYPE_YUGOLOT,
+  CREATURE_TYPE_YUGOLOTH,
 } from '@/constants/dnd/dndCreatureTypeList'
 import {
   ALIGMENT_NO,
@@ -362,7 +362,7 @@ export default [
           CREATURE_TYPE_TROGLODYTE,
           CREATURE_TYPE_XVART,
           CREATURE_TYPE_YUAN_TI,
-          CREATURE_TYPE_YUGOLOT,
+          CREATURE_TYPE_YUGOLOTH,
         ],
       },
       exclude: {

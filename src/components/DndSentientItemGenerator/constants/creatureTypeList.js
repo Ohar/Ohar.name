@@ -41,7 +41,7 @@ import {
   CREATURE_TYPE_UNDEAD,
   CREATURE_TYPE_XVART,
   CREATURE_TYPE_YUAN_TI,
-  CREATURE_TYPE_YUGOLOT,
+  CREATURE_TYPE_YUGOLOTH,
 } from '@/constants/dnd/dndCreatureTypeList'
 
 export default [
@@ -214,7 +214,7 @@ export default [
     probabilityWeight: 1,
   },
   {
-    id: CREATURE_TYPE_YUGOLOT,
+    id: CREATURE_TYPE_YUGOLOTH,
     probabilityWeight: 1,
   },
 ]

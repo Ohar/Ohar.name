@@ -36643,7 +36643,7 @@ module.exports = [
       [PARAM_WIT]: 11,
       [PARAM_CHA]: 15,
     },
-    savethrowCollection: {
+    saveThrowCollection: {
       [PARAM_INT]: 5,
       [PARAM_WIT]: 3,
       [PARAM_CHA]: 5,
@@ -39658,7 +39658,7 @@ module.exports = [
       [PARAM_WIT]: 16,
       [PARAM_CHA]: 17,
     },
-    savethrowCollection: {
+    saveThrowCollection: {
       [PARAM_DEX]: 5,
       [PARAM_INT]: 9,
       [PARAM_WIT]: 7,

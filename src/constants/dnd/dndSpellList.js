@@ -135,6 +135,7 @@ const SPELL_MAGIC_WEAPON = 'magic_weapon'
 const SPELL_MAJOR_IMAGE = 'major_image'
 const SPELL_MASS_CURE_WOUNDS = 'mass_cure_wounds'
 const SPELL_MASS_HEALING_WORD = 'mass_healing_word'
+const SPELL_MASS_SUGGESTION = 'mass_suggestion'
 const SPELL_MELFS_ACID_ARROW = 'melfs_acid_arrow'
 const SPELL_MENDING = 'mending'
 const SPELL_MIND_BLANK = 'mind_blank'
@@ -3268,6 +3269,23 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_MASS_SUGGESTION,
+    name: 'Массовое внушение',
+    nameEn: `Mass suggestion`,
+    description: ``, // TODO
+    lvl: 6,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -3387,6 +3405,7 @@ module.exports.SPELL_MAGIC_WEAPON = SPELL_MAGIC_WEAPON
 module.exports.SPELL_MAJOR_IMAGE = SPELL_MAJOR_IMAGE
 module.exports.SPELL_MASS_CURE_WOUNDS = SPELL_MASS_CURE_WOUNDS
 module.exports.SPELL_MASS_HEALING_WORD = SPELL_MASS_HEALING_WORD
+module.exports.SPELL_MASS_SUGGESTION = SPELL_MASS_SUGGESTION
 module.exports.SPELL_MELFS_ACID_ARROW = SPELL_MELFS_ACID_ARROW
 module.exports.SPELL_MENDING = SPELL_MENDING
 module.exports.SPELL_MIND_BLANK = SPELL_MIND_BLANK

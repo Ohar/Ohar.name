@@ -682,6 +682,7 @@ const {
     CREATURE_MEDUSA,
     CREATURE_MERFOLK,
     CREATURE_MERROW,
+    CREATURE_MEZZOLOTH,
     CREATURE_MIMIC,
     CREATURE_MIND_FLAYER,
     CREATURE_MINOTAUR,
@@ -39792,6 +39793,191 @@ module.exports = [
       {
         name: 'Телепортация',
         description: `Арканалот магическим образом телепортируется вместе со всем несомым и носимым снаряжением на расстояние до 60 футов в свободное пространство, которое он видит.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Меззолот',
+    nameEn: 'Mezzoloth',
+    id: CREATURE_MEZZOLOTH,
+    description: [
+      `Значительная часть популяции юголотов состоит из меззолотов, насекомоподобных существ размером с человека, покрытых хитиновыми пластинами. Меззолоты — пехотинцы армий юголотов; их широко посаженные глаза сияют красным светом, когда они бросаются на врагов.\n
+Меззолотом движет жажда награды и насилия, и если могущественное существо предложит хотя бы что-то одно из двух, меззолота можно будет привлечь на службу. Хотя на всех четырёх руках у него смертоносные когти, обычно в двух из них меззолот держит трезубец. Если его окружат враги, меззолот может выдохнуть токсичные пары, которые вызывают удушье и могут убить целую группу существ.`,
+      yugolothDescription,
+    ],
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FIEND,
+      CREATURE_TYPE_YUGOLOTH,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 318,
+    },
+    armor: {
+      ac: 18,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 8,
+      cubeBonus: 30,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    resistanceList: [
+      DAMAGE_FIRE,
+      DAMAGE_COLD,
+      DAMAGE_ELECTRICITY,
+      DAMAGE_NONMAGIC_WEAPON,
+    ],
+    immunityList: [
+      DAMAGE_ACID,
+      DAMAGE_POISON,
+    ],
+    immunityConditionList: [
+      CONDITION_POISONED,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_ABYSSAL,
+      LANG_INFERNAL,
+      {
+        id: LANG_TELEPATHY,
+        range: 60,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Сопротивление магии',
+        description: `Меззолот совершает с преимуществом спасброски от заклинаний и прочих магических эффектов.`,
+      },
+      {
+        name: 'Магическое оружие',
+        description: `Атаки оружием меззолота являются магическими.`,
+      },
+    ],
+    spellCast: {
+      baseStat: PARAM_CHA,
+      componentExclude: CAST_MATERIAL,
+      saveThrowDc: 11,
+      spellIdByCountList: [
+        {
+          limit: {
+            count: 2,
+            period: 'день',
+          },
+          list: [
+            SPELL_DISPEL_MAGIC,
+            SPELL_DARKNESS,
+          ],
+        },
+        {
+          limit: {
+            count: 1,
+            period: 'день',
+          },
+          list: [
+            SPELL_CLOUDKILL,
+          ],
+        },
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Меззолот совершает две атаки: одну когтями, и одну трезубцем.`,
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Трезубец',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 4,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 4,
+                comment: ', если используется двумя руками',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Трезубец',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 7,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Телепортация',
+        description: `Меззолот магическим образом телепортируется вместе со всем несомым и носимым снаряжением на расстояние до 60 футов в свободное пространство, которое он видит.`,
       },
     ],
     genderId: GENDER_MALE,

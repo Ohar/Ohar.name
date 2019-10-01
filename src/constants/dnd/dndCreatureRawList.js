@@ -616,6 +616,7 @@ const {
     CREATURE_GHAST,
     CREATURE_GHOST,
     CREATURE_GHOUL,
+    CREATURE_GIANT_APE,
     CREATURE_GIANT_BAT,
     CREATURE_GIANT_CENTIPEDE,
     CREATURE_GIANT_FROG,
@@ -41758,5 +41759,90 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантская человекообразная обезьяна',
+    nameEn: 'Giant Ape',
+    id: CREATURE_GIANT_APE,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 324,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 15,
+      cubeType: 12,
+      cubeBonus: 60,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_CLIMB]: 40,
+    },
+    params: {
+      [PARAM_STR]: 23,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 18,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 9,
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    cr: CR_7,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Обезьяна совершает две атаки кулаком.`,
+      },
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 10,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: 'Камень',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 9,
+          range: {
+            normal: 50,
+            max: 100,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 7,
+            cubeType: 6,
+            cubeBonus: 6,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

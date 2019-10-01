@@ -631,6 +631,7 @@ const {
     CREATURE_GIANT_GOAT,
     CREATURE_GIANT_HYENA,
     CREATURE_GIANT_LIZARD,
+    CREATURE_GIANT_OCTOPUS,
     CREATURE_GIANT_OWL,
     CREATURE_GIANT_POISONOUS_SNAKE,
     CREATURE_GIANT_RAT,
@@ -42821,6 +42822,93 @@ module.exports = [
             cubeBonus: 3,
           },
         },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантский осьминог',
+    nameEn: 'Giant Octopus',
+    id: CREATURE_GIANT_OCTOPUS,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 327,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 10,
+      cubeBonus: 8,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_SWIM]: 60,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 4,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 4,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_STEALTH]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Задержка дыхания',
+        description: `Находясь вне воды, осьминог может задержать дыхание на 1 час.`,
+      },
+      {
+        name: 'Подводный камуфляж',
+        description: `Осьминог совершает с преимуществом проверки Ловкости (Скрытность), когда находится под водой.`,
+      },
+      {
+        name: 'Подводное дыхание',
+        description: `Осьминог может дышать только под водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Щупальца',
+        description: `Если цель — существо, она становится захваченной (Сл высвобождения 16). Пока цель схвачена, она опутана, а осьминог не может использовать щупальца на другой цели.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 15,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Чернильное облако',
+        comment: 'перезаряжается после короткого или продолжительного отдыха',
+        description: `Чернильное облако с радиусом 20 футов исходит от осьминога, если он находится под водой. Эта местность становится сильно заслонённой на 1 минуту, хотя сильное течение может развеять это облако. Выпустив чернила, осьминог может бонусным действием совершить действие Рывок.`,
       },
     ],
     genderId: GENDER_MALE,

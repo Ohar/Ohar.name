@@ -564,6 +564,7 @@ const {
     CREATURE_COMMONER,
     CREATURE_COPPER_DRAGON_WYRMLING,
     CREATURE_COUATL,
+    CREATURE_CRAB,
     CREATURE_CRAWLING_CLAW,
     CREATURE_CROCODILE,
     CREATURE_CYCLOPS,
@@ -43957,5 +43958,78 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Краб',
+    nameEn: 'Crab',
+    id: CREATURE_CRAB,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 331,
+    },
+    armor: {
+      ac: 11,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_SWIM]: 20,
+    },
+    params: {
+      [PARAM_STR]: 2,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 2,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Амфибия',
+        description: `Краб может дышать и воздухом и под водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Клешня',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 0,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

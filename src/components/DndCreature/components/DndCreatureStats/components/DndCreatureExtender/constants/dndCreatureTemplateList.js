@@ -314,6 +314,8 @@ import { TARGET_CREATURE } from '@/constants/dnd/dndTargetList'
 
 import enchantWeapon from './../utils/enchantWeapon'
 
+import warhorseTemplateList from './warhorseTemplateList'
+
 export default [
   {
     templateName: 'Споровый слуга',
@@ -1882,6 +1884,7 @@ _Чарующая мелодия._ Существо становится оча�
       },
     },
   },
+  ...warhorseTemplateList,
   // NOT READY
 //   {
 //     templateName: 'Полудракон',

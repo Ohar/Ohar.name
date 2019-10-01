@@ -544,6 +544,7 @@ const {
     CREATURE_CAMBION,
     CREATURE_CARRION_CRAWLER,
     CREATURE_CAT,
+    CREATURE_CAVE_BEAR,
     CREATURE_CENTAUR,
     CREATURE_CHAIN_DEVIL,
     CREATURE_CHASME,
@@ -40536,5 +40537,23 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Пещерный медведь',
+    nameEn: 'Cave bear',
+    id: CREATURE_CAVE_BEAR,
+    parentId: CREATURE_POLAR_BEAR,
+    description: {
+      header: 'Вариант: Пещерный медведь',
+      text: `Некоторые медведи адаптировались к жизни под землёй, где они питаются подземными лишайниками и слепой рыбой. Известные как пещерные медведи, эти агрессивные чудища с грубой тёмной шерстью наделены тёмным зрением с радиусом 60 футов. В остальном у них статистика как у [белого медведя](CREATURE:${CREATURE_POLAR_BEAR}).`,
+    },
+    extendPropCollection: {
+      senseList: [
+        {
+          id: SENSE_DARK_VISION,
+          value: 60,
+        },
+      ],
+    },
   },
 ]

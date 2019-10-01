@@ -617,6 +617,7 @@ const {
     CREATURE_GHOST,
     CREATURE_GHOUL,
     CREATURE_GIANT_APE,
+    CREATURE_GIANT_BADGER,
     CREATURE_GIANT_BAT,
     CREATURE_GIANT_CENTIPEDE,
     CREATURE_GIANT_FROG,
@@ -41978,5 +41979,93 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантский барсук',
+    nameEn: 'Giant Badger',
+    id: CREATURE_GIANT_BADGER,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 325,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_DIG]: 10,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Барсук совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Барсук совершает две атаки: одну укусом, и одну когтями.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

@@ -616,6 +616,7 @@ const {
     CREATURE_GHOST,
     CREATURE_GHOUL,
     CREATURE_GIANT_BAT,
+    CREATURE_GIANT_CENTIPEDE,
     CREATURE_GIANT_FROG,
     CREATURE_GIANT_HYENA,
     CREATURE_GIANT_RAT,
@@ -41527,6 +41528,76 @@ module.exports = [
         name: 'Проглатывание',
         description: `Лягушка совершает одну атаку укусом по цели с размером не больше Маленького, которую схватила. Если атака попадает, цель становится проглоченной, а захват оканчивается. Проглоченная цель ослеплена и опутана, и обладает полным укрытием от атак и прочих эффектов, исходящих снаружи лягушки, а также получает урон кислотой 5 (2к4) в начале каждого хода лягушки. У лягушки может быть проглоченной только одна цель одновременно.\n
 Если лягушка умирает, проглоченное существо перестаёт быть опутанным ей, и может высвободиться из трупа, потратив 5 футов перемещения, падая при выходе ничком.`,
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантская многоножка',
+    nameEn: 'Giant Centipede',
+    id: CREATURE_GIANT_CENTIPEDE,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 324,
+    },
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 6,
+      cubeBonus: 1,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 5,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 8,
+      },
+    ],
+    cr: CR_1_4,
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 11, иначе получит урон ядом 10 (3к6). Если урон ядом уменьшает хиты цели до 0, цель остаётся стабилизированной, но отравленной на 1 час, даже после восстановления хитов, и цель парализована, пока отравлена таким образом.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
       },
     ],
     genderId: GENDER_FEMALE,

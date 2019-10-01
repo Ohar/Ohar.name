@@ -699,6 +699,7 @@ const {
     CREATURE_JACKAL,
     CREATURE_JACKALWERE,
     CREATURE_KENKU,
+    CREATURE_KILLER_WHALE,
     CREATURE_KOBOLD,
     CREATURE_KRAKEN,
     CREATURE_KUO_TOA,
@@ -43806,5 +43807,86 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Косатка',
+    nameEn: 'Killer Whale',
+    id: CREATURE_KILLER_WHALE,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 331,
+    },
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 12,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_SWIM]: 60,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Эхолокация',
+        description: `Косатка не может использовать слепое зрение, будучи оглохшей.`,
+      },
+      {
+        name: 'Задержка дыхания',
+        description: `Косатка может задержать дыхание на 30 минут.`,
+      },
+      {
+        name: 'Острый слух',
+        description: `Косатка совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 5,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

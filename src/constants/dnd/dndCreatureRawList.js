@@ -43445,4 +43445,62 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Ездовая лошадь',
+    nameEn: 'Riding Horse',
+    id: CREATURE_RIDING_HORSE,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 329,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 10,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 60,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_4,
+    actionList: [
+      {
+        name: 'Копыта',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
 ]

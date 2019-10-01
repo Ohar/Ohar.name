@@ -616,10 +616,11 @@ const {
     CREATURE_GHOST,
     CREATURE_GHOUL,
     CREATURE_GIANT_HYENA,
+    CREATURE_GIANT_RAT,
     CREATURE_GIANT_SHARK,
     CREATURE_GIANT_SPIDER,
-    CREATURE_GIANT_RAT,
     CREATURE_GIANT_TOAD,
+    CREATURE_GIANT_WEASEL,
     CREATURE_GIBBERING_MOUTHER,
     CREATURE_GITHYANKI_KNIGHT,
     CREATURE_GITHYANKI_WARRIOR,
@@ -41293,6 +41294,74 @@ module.exports = [
             cubeCount: 1,
             cubeType: 4,
             cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантская куница',
+    nameEn: 'Giant Weasel',
+    id: CREATURE_GIANT_WEASEL,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 323,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 4,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: `Куница совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 3,
           },
         },
       },

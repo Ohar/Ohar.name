@@ -15,6 +15,7 @@ import {
   faRobot,
   faSkullCrossbones,
   faSpider,
+  faSwimmer,
   faTree,
   faUserFriends,
   faUserPlus,
@@ -168,6 +169,7 @@ import {
   CREATURE_DUST_MEPHIT,
   CREATURE_ERINYES,
   CREATURE_ETTERCAP,
+  CREATURE_GIANT_LIZARD,
   CREATURE_GIANT_RAT,
   CREATURE_GOLD_DRAGON_WYRMLING,
   CREATURE_GRAY_OOZE,
@@ -317,6 +319,15 @@ import { TARGET_CREATURE } from '@/constants/dnd/dndTargetList'
 import enchantWeapon from './../utils/enchantWeapon'
 
 import warhorseTemplateList from './warhorseTemplateList'
+
+const giantLizardDescription = [
+  {
+    header: 'Вариант: Особенности гигантских ящериц',
+    text: generateTextLinks(`У некоторых [гигантских ящериц](CREATURE:${CREATURE_GIANT_LIZARD}) есть одна или обе из следующих особенностей:\n
+**Задержка дыхания.** Ящерица может задержать дыхание на 15 минут (ящерица с этой особенностью также обладает скоростью плавания 30 футов).\n
+**Паучье лазание.** Ящерица может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`),
+  },
+]
 
 export default [
   {
@@ -1931,6 +1942,62 @@ _Чарующая мелодия._ Существо становится оча�
           }
           : action,
       ),
+    },
+  },
+  {
+    templateName: 'Плавающая гигантская ящерица',
+    templateIcon: faSwimmer,
+
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_GIANT_LIZARD,
+        ],
+      },
+    },
+
+    extendPropCollection: {
+      description: giantLizardDescription,
+      featureList: [
+        {
+          name: 'Задержка дыхания',
+          text: `Ящерица может задержать дыхание на 15 минут.`,
+        },
+      ],
+    },
+
+    editPropCollection: {
+      name: ({name}) => `Плавающая ${name.toLowerCase()}`,
+      speed: ({speed}) => ({
+        ...speed,
+        [SPEED_SWIM]: 30,
+      }),
+    },
+  },
+  {
+    templateName: 'Лазающая гигантская ящерица',
+    templateIcon: faSpider,
+
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_GIANT_LIZARD,
+        ],
+      },
+    },
+
+    extendPropCollection: {
+      description: giantLizardDescription,
+      featureList: [
+        {
+          name: 'Паучье лазание',
+          text: `Ящерица может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`,
+        },
+      ],
+    },
+
+    editPropCollection: {
+      name: ({name}) => `Лазающая ${name.toLowerCase()}`,
     },
   },
   // NOT READY

@@ -132,6 +132,7 @@ const {
     LANG_DWARVISH,
     LANG_ELVEN,
     LANG_GIANT,
+    LANG_GIANT_OWL,
     LANG_GITH,
     LANG_GNOLL,
     LANG_GNOMISH,
@@ -619,6 +620,7 @@ const {
     CREATURE_GIANT_CENTIPEDE,
     CREATURE_GIANT_FROG,
     CREATURE_GIANT_HYENA,
+    CREATURE_GIANT_OWL,
     CREATURE_GIANT_RAT,
     CREATURE_GIANT_SHARK,
     CREATURE_GIANT_SPIDER,
@@ -41662,6 +41664,95 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантская сова',
+    nameEn: 'Giant Owl',
+    id: CREATURE_GIANT_OWL,
+    description: `Гигантские совы часто дружат с феями и другими лесными существами, и являются защитниками лесного мира.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 324,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 5,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 8,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      LANG_GIANT_OWL,
+      {
+        id: [
+          LANG_COMMON,
+          LANG_SYLVAN,
+          LANG_ELVEN,
+        ],
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Облёт',
+        description: `Сова не провоцирует атаки, когда вылетает из досягаемости врага.`,
+      },
+      {
+        name: 'Острые зрение и слух',
+        description: `Сова совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух или зрение.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 1,
           },
         },
       },

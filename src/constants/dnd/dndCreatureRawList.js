@@ -621,6 +621,7 @@ const {
     CREATURE_GIANT_BAT,
     CREATURE_GIANT_BOAR,
     CREATURE_GIANT_CENTIPEDE,
+    CREATURE_GIANT_CROCODILE,
     CREATURE_GIANT_FROG,
     CREATURE_GIANT_GOAT,
     CREATURE_GIANT_HYENA,
@@ -42376,6 +42377,101 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантский крокодил',
+    nameEn: 'Giant Crocodile',
+    id: CREATURE_GIANT_CROCODILE,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 326,
+    },
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 12,
+      cubeBonus: 27,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 50,
+    },
+    params: {
+      [PARAM_STR]: 21,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 17,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Задержка дыхания',
+        description: `Крокодил может задержать дыхание на 30 минут.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Крокодил совершает две атаки: одну укусом, и одну хвостом.`,
+      },
+      {
+        name: 'Укус',
+        description: `Цель становится схваченной (Сл высвобождения 16). Пока цель схвачена, она опутана, и крокодил не может кусать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 3,
+            cubeType: 10,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Хвост',
+        description: `Если цель — существо, она должна преуспеть в спасброске Силы со Сл 16, иначе будет сбита с ног.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 10,
+          target: {
+            count: 1,
+            limit: {
+              comment: `, не схваченная крокодилом`,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 5,
           },
         },
       },

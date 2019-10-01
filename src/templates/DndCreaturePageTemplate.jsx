@@ -24,7 +24,8 @@ const DndCreaturePageTemplate = ({creatureId: creatureIdInput, pageContext: {slu
   }
 
   if (creatureId) {
-    const {description: [descriptionText], name} = dndCreatureCollection[creatureId]
+    const {description, name} = dndCreatureCollection[creatureId]
+    const [descriptionText] = description || []
 
     seoData = {
       title: name,

@@ -687,6 +687,7 @@ const {
     CREATURE_HOOK_HORROR,
     CREATURE_HORNED_DEVIL,
     CREATURE_HYDRA,
+    CREATURE_HYENA,
     CREATURE_ICE_DEVIL,
     CREATURE_ICE_MEPHIT,
     CREATURE_IMP,
@@ -43303,5 +43304,72 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гиена',
+    nameEn: 'Hyena',
+    id: CREATURE_HYENA,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 329,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 8,
+      cubeBonus: 1,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 5,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Тактика стаи',
+        description: `Гиена совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник гиены.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 0,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

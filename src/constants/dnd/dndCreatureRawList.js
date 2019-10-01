@@ -788,6 +788,7 @@ const {
     CREATURE_VINE_BLIGHT,
     CREATURE_VIOLET_FUNGUS,
     CREATURE_VROCK,
+    CREATURE_WARHORSE,
     CREATURE_WARHORSE_SKELETON,
     CREATURE_WATER_ELEMENTAL,
     CREATURE_WATER_WEIRD,
@@ -40555,5 +40556,69 @@ module.exports = [
         },
       ],
     },
+  },
+  {
+    name: 'Боевой конь',
+    nameEn: 'Warhorse',
+    id: CREATURE_WARHORSE,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 320,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 60,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Растаптывающий рывок',
+        description: `Если конь переместится как минимум на 20 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой копытами, эта цель должна преуспеть в спасброске Силы со Сл 14, иначе будет сбита с ног. Если цель сбита с ног, конь может бонусным действием совершить по ней ещё одну атаку копытами.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Копыта',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

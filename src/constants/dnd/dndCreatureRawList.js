@@ -615,6 +615,7 @@ const {
     CREATURE_GHAST,
     CREATURE_GHOST,
     CREATURE_GHOUL,
+    CREATURE_GIANT_HYENA,
     CREATURE_GIANT_SHARK,
     CREATURE_GIANT_SPIDER,
     CREATURE_GIBBERING_MOUTHER,
@@ -41061,6 +41062,73 @@ module.exports = [
             cubeCount: 3,
             cubeType: 10,
             cubeBonus: 6,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантская гиена',
+    nameEn: 'Giant Hyena',
+    id: CREATURE_GIANT_HYENA,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 322,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 10,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Буйство',
+        description: `Если гиена в свой ход опускает рукопашной атакой хиты существа до 0, она может бонусным действием переместиться на расстояние до половины своей скорости и совершить атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
           },
         },
       },

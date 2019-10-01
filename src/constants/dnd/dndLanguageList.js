@@ -25,6 +25,7 @@ const LANG_DWARVISH = 'dwarvish'
 const LANG_ELVEN = 'elven'
 const LANG_GIANT = 'giant'
 const LANG_GIANT_EAGLE = 'giant_eagle'
+const LANG_GIANT_ELK = 'giant_elk'
 const LANG_GIANT_OWL = 'giant_owl'
 const LANG_GITH = 'gith'
 const LANG_GNOLL = 'gnoll'
@@ -391,6 +392,15 @@ const dndLanguageList = [
     isRealLang: true,
   },
   {
+    id: LANG_GIANT_ELK,
+    name: {
+      nominative: 'Язык гигантских лосей',
+      instrumental: 'Язык гигантских лосей',
+      prepositional: 'Языке гигантских лосей',
+    },
+    isRealLang: true,
+  },
+  {
     id: LANG_SPHINX,
     name: {
       nominative: 'Язык сфинксов',
@@ -593,6 +603,7 @@ module.exports.LANG_DWARVISH = LANG_DWARVISH
 module.exports.LANG_ELVEN = LANG_ELVEN
 module.exports.LANG_GIANT = LANG_GIANT
 module.exports.LANG_GIANT_EAGLE = LANG_GIANT_EAGLE
+module.exports.LANG_GIANT_ELK = LANG_GIANT_ELK
 module.exports.LANG_GIANT_OWL = LANG_GIANT_OWL
 module.exports.LANG_GITH = LANG_GITH
 module.exports.LANG_GNOLL = LANG_GNOLL

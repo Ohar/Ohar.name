@@ -14,6 +14,7 @@ import {
   LANG_ELVEN,
   LANG_GIANT,
   LANG_GIANT_EAGLE,
+  LANG_GIANT_ELK,
   LANG_GIANT_OWL,
   LANG_GITH,
   LANG_GNOLL,
@@ -165,6 +166,10 @@ export const withoutCommonLanguageList = [
   },
   {
     id: LANG_GIANT_EAGLE,
+    probabilityWeight: 1,
+  },
+  {
+    id: LANG_GIANT_ELK,
     probabilityWeight: 1,
   },
   {

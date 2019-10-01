@@ -132,6 +132,8 @@ const {
     LANG_DWARVISH,
     LANG_ELVEN,
     LANG_GIANT,
+    LANG_GIANT_EAGLE,
+    LANG_GIANT_ELK,
     LANG_GIANT_OWL,
     LANG_GITH,
     LANG_GNOLL,
@@ -622,6 +624,7 @@ const {
     CREATURE_GIANT_BOAR,
     CREATURE_GIANT_CENTIPEDE,
     CREATURE_GIANT_CROCODILE,
+    CREATURE_GIANT_ELK,
     CREATURE_GIANT_FROG,
     CREATURE_GIANT_GOAT,
     CREATURE_GIANT_HYENA,
@@ -42472,6 +42475,107 @@ module.exports = [
             cubeCount: 2,
             cubeType: 8,
             cubeBonus: 5,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантский лось',
+    nameEn: 'Giant Elk',
+    id: CREATURE_GIANT_ELK,
+    description: `Величественные гигантские лоси встречаются так редко, что считаются предвестниками важных событий, таких как рождение короля. Легенды гласят, что боги, посещающие Материальный План, принимают облик гигантских лосей. Во многих культурах считается, что охота на этих существ навлекает гнев богов.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 326,
+    },
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 12,
+      cubeBonus: 1,
+    },
+    speed: {
+      [SPEED_WALK]: 60,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_GIANT_ELK,
+      {
+        id: [
+          LANG_COMMON,
+          LANG_SYLVAN,
+          LANG_ELVEN,
+        ],
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Атака в броске',
+        description: `Если лось переместится как минимум на 20 футов по прямой к цели, а затем в том же ходу попадёт по ней атакой тараном, цель получает от атаки дополнительный урон 7 (2к6). Если цель — существо, она должна преуспеть в спасброске Силы со Сл 14, иначе будет сбита с ног.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Таран',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Копыта',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              condition: CONDITION_PRONE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 4,
+            cubeType: 8,
+            cubeBonus: 4,
           },
         },
       },

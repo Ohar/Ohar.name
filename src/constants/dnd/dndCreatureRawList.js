@@ -622,6 +622,7 @@ const {
     CREATURE_GIANT_BOAR,
     CREATURE_GIANT_CENTIPEDE,
     CREATURE_GIANT_FROG,
+    CREATURE_GIANT_GOAT,
     CREATURE_GIANT_HYENA,
     CREATURE_GIANT_LIZARD,
     CREATURE_GIANT_OWL,
@@ -42231,6 +42232,75 @@ module.exports = [
             type: DAMAGE_SLASHING,
             cubeCount: 2,
             cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантский козёл',
+    nameEn: 'Giant Goat',
+    id: CREATURE_GIANT_GOAT,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 325,
+    },
+    armor: {
+      ac: 11,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Атака в броске',
+        description: `Если козёл переместится как минимум на 20 футов по прямой к цели, а затем в том же ходу попадёт по ней атакой тараном, цель получает от атаки дополнительный дробящий урон 5 (2к4). Если цель — существо, она должна преуспеть в спасброске Силы со Сл 13, иначе будет сбита с ног.`,
+      },
+      {
+        name: 'Устойчивый',
+        description: `Козёл совершает с преимуществом спасброски Силы и Ловкости против эффектов, сбивающих его с ног.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Таран',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 4,
             cubeBonus: 3,
           },
         },

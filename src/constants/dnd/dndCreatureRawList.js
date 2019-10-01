@@ -615,6 +615,7 @@ const {
     CREATURE_GHAST,
     CREATURE_GHOST,
     CREATURE_GHOUL,
+    CREATURE_GIANT_SHARK,
     CREATURE_GIANT_SPIDER,
     CREATURE_GIBBERING_MOUTHER,
     CREATURE_GITHYANKI_KNIGHT,
@@ -40987,5 +40988,83 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантская акула',
+    nameEn: 'Giant Shark',
+    id: CREATURE_GIANT_SHARK,
+    description: `Длина гигантской акулы достигает 30 футов, и обычно она водится в глубоких океанах. Они отчаянны и бесстрашны, и охотятся на всё, что им встретится, включая китов и кораблей.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 322,
+    },
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 11,
+      cubeType: 12,
+      cubeBonus: 55,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_SWIM]: 50,
+    },
+    params: {
+      [PARAM_STR]: 23,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 21,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 5,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Кровавое бешенство',
+        description: `Акула совершает с преимуществом броски рукопашных атак по существам, у которых хиты ниже максимума.`,
+      },
+      {
+        name: 'Подводное дыхание',
+        description: `Акула может дышать только под водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 9,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 3,
+            cubeType: 10,
+            cubeBonus: 6,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

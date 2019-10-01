@@ -536,6 +536,7 @@ const {
     CREATURE_BLINK_DOG,
     CREATURE_BLUE_DRAGON_WYRMLING,
     CREATURE_BLUE_SLAAD,
+    CREATURE_BOAR,
     CREATURE_BONE_DEVIL,
     CREATURE_BONE_NAGA_GUARDIAN,
     CREATURE_BONE_NAGA_SPIRIT,
@@ -43586,6 +43587,76 @@ module.exports = [
             cubeCount: 1,
             cubeType: 10,
             cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Кабан',
+    nameEn: 'Boar',
+    id: CREATURE_BOAR,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 330,
+    },
+    armor: {
+      ac: 11,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Атака в броске',
+        description: `Если кабан переместится как минимум на 20 футов по прямой к цели, а затем в том же ходу попадёт по ней атакой клыком, цель получает от атаки дополнительный рубящий урон 3 (1к6). Если цель — существо, она должна преуспеть в спасброске Силы со Сл 11, иначе будет сбита с ног.`,
+      },
+      {
+        name: 'Неумолимый',
+        comment: 'перезаряжается после короткого или продолжительного отдыха',
+        description: `Если кабан получает урон 7 или меньше, уменьшающий его хиты до 0, на самом деле его хиты опускаются лишь до 1.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Клык',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
           },
         },
       },

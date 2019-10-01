@@ -534,6 +534,7 @@ const {
     CREATURE_BLACK_DRAGON_WYRMLING,
     CREATURE_BLACK_PUDDING,
     CREATURE_BLINK_DOG,
+    CREATURE_BLOOD_HAWK,
     CREATURE_BLUE_DRAGON_WYRMLING,
     CREATURE_BLUE_SLAAD,
     CREATURE_BOAR,
@@ -44026,6 +44027,79 @@ module.exports = [
             cubeCount: 0,
             cubeType: 0,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Кровавый ястреб',
+    nameEn: 'Blood Hawk',
+    id: CREATURE_BLOOD_HAWK,
+    description: `Получивший своё название за алые перья и агрессивный характер, кровавый ястреб бесстрашно нападает практически на всех животных, орудуя похожим на кинжал клювом. Кровавые ястребы нападают на добычу большими стаями.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 331,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 6,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 6,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 5,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Острое зрение',
+        description: `Ястреб совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+      {
+        name: 'Тактика стаи',
+        description: `Ястреб совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник ястреба.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
           },
         },
       },

@@ -41447,4 +41447,87 @@ module.exports = [
     ],
     genderId: GENDER_FEMALE,
   },
+  {
+    name: 'Гигантская лягушка',
+    nameEn: 'Giant Frog',
+    id: CREATURE_GIANT_FROG,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 323,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 3,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+      [SKILL_STEALTH]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Амфибия',
+        description: `Лягушка может дышать и воздухом и под водой.`,
+      },
+      {
+        name: 'Прыжок с места',
+        description: `Лягушка совершает прыжки в длину на расстояние до 20 футов и прыжки в высоту на расстояние до 10 футов, хоть с разбегом, хоть без него.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель становится схваченной (Сл высвобождения 11). Пока цель схвачена, она опутана, а лягушка не может кусать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Проглатывание',
+        description: `Лягушка совершает одну атаку укусом по цели с размером не больше Маленького, которую схватила. Если атака попадает, цель становится проглоченной, а захват оканчивается. Проглоченная цель ослеплена и опутана, и обладает полным укрытием от атак и прочих эффектов, исходящих снаружи лягушки, а также получает урон кислотой 5 (2к4) в начале каждого хода лягушки. У лягушки может быть проглоченной только одна цель одновременно.\n
+Если лягушка умирает, проглоченное существо перестаёт быть опутанным ей, и может высвободиться из трупа, потратив 5 футов перемещения, падая при выходе ничком.`,
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
 ]

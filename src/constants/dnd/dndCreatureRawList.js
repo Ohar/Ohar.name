@@ -722,6 +722,7 @@ const {
     CREATURE_PIXIE,
     CREATURE_PLANETAR,
     CREATURE_PLESIOSAURUS,
+    CREATURE_POLAR_BEAR,
     CREATURE_POLTERGEIST,
     CREATURE_PSEUDODRAGON,
     CREATURE_PTERANODON,
@@ -40442,6 +40443,94 @@ module.exports = [
             cubeCount: 0,
             cubeType: 0,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Белый медведь',
+    nameEn: 'Polar bear',
+    id: CREATURE_POLAR_BEAR,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 320,
+    },
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 10,
+      cubeBonus: 15,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 20,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Медведь совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Медведь совершает две атаки: одну укусом, и одну когтями.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 5,
           },
         },
       },

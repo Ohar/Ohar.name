@@ -154,6 +154,7 @@ const {
     LANG_THRI_KREEN,
     LANG_UMBER_HULK,
     LANG_UNDERCOMMON,
+    LANG_WORGEN,
     LANG_YETI,
   } = require('./dndLanguageList'),
   {
@@ -804,6 +805,7 @@ const {
     CREATURE_WILL_O_WISP,
     CREATURE_WINGED_KOBOLD,
     CREATURE_WOLF,
+    CREATURE_WORG,
     CREATURE_WRAITH,
     CREATURE_WYVERN,
     CREATURE_XORN,
@@ -40835,6 +40837,82 @@ module.exports = [
             cubeCount: 2,
             cubeType: 4,
             cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Ворг',
+    nameEn: 'Worg',
+    id: CREATURE_WORG,
+    description: `Ворг это злой хищник, наслаждающийся охотой и пожиранием тех, кто слабее его. Хитрые и злобные ворги рыщут по дикой местности или выращиваются [гоблинами](CREATURE:${CREATURE_GOBLIN}) и [хобгоблинами](CREATURE:${CREATURE_HOBGOBLIN}), которые используют воргов в качестве скакунов, но ворг растерзает всадника, если почувствует голод или плохое обращение. Ворги говорят на своём собственном языке и Гоблинском, а некоторые из них говорят и на Общем языке.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 321,
+    },
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 10,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_GOBLIN,
+      LANG_WORGEN,
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: `Ворг совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+      {
+        name: 'Укус',
+        description: `Если цель — существо, она должна преуспеть в спасброске Силы со Сл 13, иначе будет сбита с ног.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
           },
         },
       },

@@ -42148,9 +42148,10 @@ module.exports = [
     actionList: [
       {
         name: 'Мультиатака',
+        description: `Гриф совершает две атаки: одну клювом, и одну когтями.`,
       },
       {
-        name: 'клюв',
+        name: 'Клюв',
         attack: {
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 4,

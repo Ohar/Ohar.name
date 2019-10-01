@@ -623,6 +623,7 @@ const {
     CREATURE_GIANT_SHARK,
     CREATURE_GIANT_SPIDER,
     CREATURE_GIANT_TOAD,
+    CREATURE_GIANT_WASP,
     CREATURE_GIANT_WEASEL,
     CREATURE_GIBBERING_MOUTHER,
     CREATURE_GITHYANKI_KNIGHT,
@@ -41595,6 +41596,71 @@ module.exports = [
             type: DAMAGE_PIERCING,
             cubeCount: 1,
             cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантская оса',
+    nameEn: 'Giant Wasp',
+    id: CREATURE_GIANT_WASP,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 324,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 50,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_2,
+    actionList: [
+      {
+        name: 'Жало',
+        description: `Цель должна совершить спасбросок Телосложения со Сл 11, получая урон ядом 10 (3к6) при провале, или половину этого урона при успехе. Если урон ядом уменьшает хиты цели до 0, цель остаётся стабилизированной, но отравленной на 1 час, даже если позже восстановит хиты, и она парализована, пока отравлена таким образом.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
             cubeBonus: 2,
           },
         },

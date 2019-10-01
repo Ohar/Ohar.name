@@ -629,6 +629,7 @@ const {
     CREATURE_GIANT_SHARK,
     CREATURE_GIANT_SPIDER,
     CREATURE_GIANT_TOAD,
+    CREATURE_GIANT_VULTURE,
     CREATURE_GIANT_WASP,
     CREATURE_GIANT_WEASEL,
     CREATURE_GIBBERING_MOUTHER,
@@ -807,6 +808,7 @@ const {
     CREATURE_VINE_BLIGHT,
     CREATURE_VIOLET_FUNGUS,
     CREATURE_VROCK,
+    CREATURE_VULTURE,
     CREATURE_WARHORSE,
     CREATURE_WARHORSE_SKELETON,
     CREATURE_WATER_ELEMENTAL,
@@ -42062,6 +42064,103 @@ module.exports = [
             cubeCount: 2,
             cubeType: 4,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантский гриф',
+    nameEn: 'Giant Vulture',
+    id: CREATURE_GIANT_VULTURE,
+    sizeType: SIZE_LARGE,
+    description: `У гигантского грифа сильный интеллект и злобный характер. В отличие от [младших родственников](CREATURE:${CREATURE_VULTURE}), он может напасть на раненое существо, чтобы приблизить его конец. Гигантские грифы известны тем, что специально выискивают существ, страдающих от жажды или голода, и радуются их страданиям.`,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 325,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_COMMON,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Острое зрение и тонкий нюх',
+        description: `Гриф совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на зрение или обоняние.`,
+      },
+      {
+        name: 'Тактика стаи',
+        description: `Гриф совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник грифа.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+      },
+      {
+        name: 'клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 2,
           },
         },
       },

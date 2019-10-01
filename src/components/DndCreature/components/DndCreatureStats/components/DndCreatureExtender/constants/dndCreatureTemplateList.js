@@ -149,6 +149,7 @@ import {
   CREATURE_ANCIENT_RED_DRAGON,
   CREATURE_ANCIENT_SILVER_DRAGON,
   CREATURE_ANCIENT_WHITE_DRAGON,
+  CREATURE_ARCANALOTH,
   CREATURE_BARBED_DEVIL,
   CREATURE_BEARDED_DEVIL,
   CREATURE_BLACK_DRAGON_WYRMLING,
@@ -177,10 +178,12 @@ import {
   CREATURE_ICE_MEPHIT,
   CREATURE_IMP,
   CREATURE_MAGMA_MEPHIT,
+  CREATURE_MEZZOLOTH,
   CREATURE_MIND_FLAYER,
   CREATURE_MONODRONE,
   CREATURE_MUD_MEPHIT,
   CREATURE_NIGHT_HAG,
+  CREATURE_NYCALOTH,
   CREATURE_PENTADRONE,
   CREATURE_PIT_FIEND,
   CREATURE_PSEUDODRAGON,
@@ -198,6 +201,7 @@ import {
   CREATURE_TREANT,
   CREATURE_TRIDRONE,
   CREATURE_TROLL,
+  CREATURE_ULTROLOTH,
   CREATURE_WHITE_DRAGON_WYRMLING,
   CREATURE_YOUNG_BLACK_DRAGON,
   CREATURE_YOUNG_BLUE_DRAGON,
@@ -1796,6 +1800,86 @@ _Чарующая мелодия._ Существо становится оча�
           }
           : action,
       ),
+    },
+  },
+  {
+    templateName: 'Юголот-призыватель',
+    templateIcon: faUserPlus,
+
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_ARCANALOTH,
+          CREATURE_MEZZOLOTH,
+          CREATURE_NYCALOTH,
+          CREATURE_ULTROLOTH,
+        ],
+      },
+    },
+    source: {
+      id: 'MM',
+      page: 317,
+    },
+    extendPropCollection: {
+      description: [
+        {
+          header: 'Вариант: Призыв юголотов',
+          text: generateTextLinks(`У некоторых юголотов может быть действие, позволяющее им призывать других юголотов.\n
+**Призыв юголота (1/день).** Юголот выбирает, кого призвать, и пытается это сделать.\n
+\n
+* [Арканалот](CREATURE:${CREATURE_ARCANALOTH}) получает 40% шанс призыва одного [арканалота](CREATURE:${CREATURE_ARCANALOTH}).\n
+* [Меззолот](CREATURE:${CREATURE_MEZZOLOTH}) получает 30% шанс призыва одного [меззолота](CREATURE:${CREATURE_MEZZOLOTH}).\n
+* [Никалот](CREATURE:${CREATURE_NYCALOTH}) получает 50% шанс призыва одного 1к4 [меззолотов](CREATURE:${CREATURE_MEZZOLOTH}) или одного [никалота](CREATURE:${CREATURE_NYCALOTH}).\n
+* [Ультролот](CREATURE:${CREATURE_ULTROLOTH}) шанс призыва 1к6 [меззолотов](CREATURE:${CREATURE_MEZZOLOTH}), 1к4 [никалотов](CREATURE:${CREATURE_NYCALOTH}) или одного [ультролота](CREATURE:${CREATURE_ULTROLOTH}).\n
+\n
+Призванный юголот появляется в свободном пространстве в пределах 60 футов от призывателя, действует самостоятельно (кроме случая, когда призывающим был ультролот, так как в этом случае призванный юголот действует как его союзник), и не имеет способности призывать других юголотов. Призванный юголот существует в течение 1 минуты, или пока призыватель не умрёт или бонусным действием его не отпустит.`),
+        },
+      ],
+    },
+
+    editPropCollection: {
+      name: ({ name }) => `${name}-призыватель`,
+      actionList: ({ id, name, actionList }) => {
+        let preText = ``
+        let actionWayText = 'самостоятельно'
+
+        switch (id) {
+          case CREATURE_ARCANALOTH:
+            preText = `${name} пытается призвать одного [арканалота](CREATURE:${CREATURE_ARCANALOTH}) с шансом 40%.`
+            break
+
+          case CREATURE_MEZZOLOTH:
+            preText = `${name} пытается призвать одного [меззолота](CREATURE:${CREATURE_MEZZOLOTH}) с шансом 30%.`
+            break
+
+          case CREATURE_NYCALOTH:
+            preText = `${name} выбирает, кого призвать, и пытается это сделать с шансом 50%.\n
+ * 1к4 [меззолотов](CREATURE:${CREATURE_MEZZOLOTH})
+ * одного [никалота](CREATURE:${CREATURE_NYCALOTH})`
+            break
+
+          case CREATURE_ULTROLOTH:
+            preText = `${name} выбирает, кого призвать, и пытается это сделать без шанса провала.\n
+* 1к6 [меззолотов](CREATURE:${CREATURE_MEZZOLOTH})
+* 1к4 [никалотов](CREATURE:${CREATURE_NYCALOTH})
+* одного [ультролота](CREATURE:${CREATURE_ULTROLOTH})`
+            actionWayText = 'как его союзник'
+            break
+        }
+
+        return [
+          ...actionList,
+          {
+            name: 'Призыв юголота',
+            description: generateTextLinks(`${preText}\n
+Призванный юголот появляется в свободном пространстве в пределах 60 футов от призывателя, действует ${actionWayText}, и не имеет способности призывать других юголотов. Призванный юголот существует в течение 1 минуты, или пока призыватель не умрёт или бонусным действием его не отпустит.`),
+            limit: {
+              count: 1,
+              period: 'день',
+            },
+          },
+        ]
+      },
     },
   },
   // NOT READY

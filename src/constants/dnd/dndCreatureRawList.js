@@ -42308,4 +42308,78 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Гигантский краб',
+    nameEn: 'Giant Crab',
+    id: CREATURE_GIANT_CRAB,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 326,
+    },
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 3,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Амфибия',
+        description: `Краб может дышать и воздухом и под водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Клешня',
+        description: `Цель становится схваченной (Сл высвобождения 11). У краба две клешни, и каждая может держать по одной цели.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

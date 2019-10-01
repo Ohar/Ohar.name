@@ -618,6 +618,7 @@ const {
     CREATURE_GIANT_HYENA,
     CREATURE_GIANT_SHARK,
     CREATURE_GIANT_SPIDER,
+    CREATURE_GIANT_RAT,
     CREATURE_GIANT_TOAD,
     CREATURE_GIBBERING_MOUTHER,
     CREATURE_GITHYANKI_KNIGHT,
@@ -41219,6 +41220,81 @@ module.exports = [
         name: 'Проглатывание',
         description: `Жаба совершает одну атаку укусом по цели с размером не больше Среднего, которую уже держит в захвате. Если эта атака попадает, цель становится проглоченной, а захват оканчивается. Проглоченная цель ослеплена и опутана, и обладает полным укрытием от атак и прочих эффектов, исходящих снаружи жабы, а также получает урон кислотой 10 (3к6) в начале каждого хода жабы. У жабы может быть проглоченной только одна цель одновременно.\n
 Если жаба умирает, проглоченное существо перестаёт быть опутанным ей, и может высвободиться из трупа, потратив 5 футов перемещения, падая при выходе ничком.`,
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантская крыса',
+    nameEn: 'Giant Rat',
+    id: CREATURE_GIANT_RAT,
+    note: `ОБЪЯВЛЕНИЕ\n
+В городе были замечены гигантские крысы. Все, кого они укусят, должны пойти в храм для обработки ран и молитвы.\n
+Настоящим город объявляет награду в одну серебряную монету за каждую убитую в стенах города гигантскую крысу. Оплата производится капитаном стражи в доках между полуднем и закатом при предъявлении доказательств.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 323,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 6,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 7,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Крыса совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+      {
+        name: 'Тактика стаи',
+        description: `Крыса совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник крысы.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
       },
     ],
     genderId: GENDER_FEMALE,

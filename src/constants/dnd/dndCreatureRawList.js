@@ -543,6 +543,7 @@ const {
     CREATURE_BULETTE,
     CREATURE_BULLYWUG,
     CREATURE_CAMBION,
+    CREATURE_CAMEL,
     CREATURE_CARRION_CRAWLER,
     CREATURE_CAT,
     CREATURE_CAVE_BEAR,
@@ -40704,6 +40705,64 @@ module.exports = [
             cubeCount: 2,
             cubeType: 6,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Верблюд',
+    nameEn: 'Camel',
+    id: CREATURE_CAMEL,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 321,
+    },
+    armor: {
+      ac: 9,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 10,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 8,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    cr: CR_1_8,
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 0,
           },
         },
       },

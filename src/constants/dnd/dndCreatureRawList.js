@@ -43889,4 +43889,73 @@ module.exports = [
     ],
     genderId: GENDER_FEMALE,
   },
+  {
+    name: 'Кошка',
+    nameEn: 'Cat',
+    id: CREATURE_CAT,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 331,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 3,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Кошка совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 0,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
 ]

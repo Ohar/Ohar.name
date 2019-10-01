@@ -42913,4 +42913,119 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Гигантский паук',
+    nameEn: 'Giant Spider',
+    id: CREATURE_GIANT_SPIDER,
+    description: `При охоте на добычу гигантский паук плетёт хитрые полотнища из паутины и стреляет липкими нитями из желёз, расположенных внизу брюшка. Гигантские пауки чаще всего встречаются под землёй, в логовах под потолком или в тёмных, заполненных паутиной трещинах. В таких логовах часто находятся коконы с предыдущими жертвами.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 328,
+    },
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 10,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 4,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 10,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Паучье лазание',
+        description: `Паук может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`,
+      },
+      {
+        name: 'Чувство паутины',
+        description: `Находясь в контакте с паутиной, паук знает точное местоположение всех других существ, находящихся в контакте с той же паутиной.`,
+      },
+      {
+        name: 'Хождение по паутине',
+        description: `Паук игнорирует ограничения перемещения, вызванные паутиной.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель должна совершить спасбросок Телосложения со Сл 11, получая урон ядом 9 (2к8) при провале, или половину этого урона при успехе. Если урон ядом уменьшает хиты цели до 0, цель остаётся стабилизированной, но отравленной на 1 час, даже если позже восстановит хиты, и она парализована, пока отравлена таким образом.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Паутина',
+        restore: {
+          from: 5,
+          to: 6,
+        },
+        description: `Опутанная цель может действием совершить проверку Силы со Сл 12, разрывая паутину при успехе. Паутину можно атаковать и уничтожить (КД 10; 5 хитов; уязвимость к урону огнём; иммунитет к дробящему урону, а также урону ядом и психической энергией).`,
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 5,
+          range: {
+            normal: 30,
+            max: 30,
+          },
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: `Цель становится опутанной паутиной.`,
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

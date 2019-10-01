@@ -6,7 +6,7 @@ import dndCreatureTypeList from '@/constants/dnd/dndCreatureTypeList';
 import dndDamageTypeList from '@/constants/dnd/dndDamageTypeList';
 import dndConditionList from '@/constants/dnd/dndConditionList';
 import SEARCH_PROP_NAME from '@/constants/SEARCH_PROP_NAME';
-import { GENDER_MALE } from '@/constants/genderList';
+import { GENDER_MALE, GENDER_ANY } from '@/constants/genderList';
 
 const sortByText = ({ text: A }, { text: B }) => A > B ? 1: -1
 
@@ -61,7 +61,14 @@ export default {
           ({ showInList }) => showInList
         )
         .map(
-          ({ name: {nominative: text}, id, children }) => ({ value: [id, ...children], text })
+          ({ name, id, children }) => {
+            const {nominative: text} = (name[GENDER_MALE] || name[GENDER_ANY])
+
+            return {
+              text,
+              value: [id, ...children],
+            }
+          }
         )
         .sort(sortByText)
     ]
@@ -80,7 +87,14 @@ export default {
           ({ isRealRace }) => isRealRace
         )
         .map(
-          ({ name: {singular: {nominative: text}}, id: value }) => ({ value, text })
+          ({ name: {singular: {nominative: str}}, id: value }) => {
+            const start = str.slice(0, 1).toUpperCase()
+            const end = str.slice(1)
+
+            const text = `${start}${end}`
+
+            return { value, text }
+          }
         )
         .sort(sortByText)
     ]

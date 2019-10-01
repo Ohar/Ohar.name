@@ -537,6 +537,7 @@ const {
     CREATURE_BONE_NAGA_SPIRIT,
     CREATURE_BRASS_DRAGON_WYRMLING,
     CREATURE_BRONZE_DRAGON_WYRMLING,
+    CREATURE_BROWN_BEAR,
     CREATURE_BUGBEAR,
     CREATURE_BUGBEAR_CHIEF,
     CREATURE_BULETTE,
@@ -40612,6 +40613,94 @@ module.exports = [
           target: 1,
           hit: {
             type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Бурый медведь',
+    nameEn: 'Brown bear',
+    id: CREATURE_BROWN_BEAR,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 321,
+    },
+    armor: {
+      ac: 11,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 10,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Медведь совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Медведь совершает две атаки: одну укусом, и одну когтями.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
             cubeCount: 2,
             cubeType: 6,
             cubeBonus: 4,

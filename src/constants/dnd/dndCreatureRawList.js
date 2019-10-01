@@ -632,6 +632,7 @@ const {
     CREATURE_GIANT_OWL,
     CREATURE_GIANT_POISONOUS_SNAKE,
     CREATURE_GIANT_RAT,
+    CREATURE_GIANT_SEA_HORSE,
     CREATURE_GIANT_SHARK,
     CREATURE_GIANT_SPIDER,
     CREATURE_GIANT_TOAD,
@@ -775,6 +776,7 @@ const {
     CREATURE_SATYR,
     CREATURE_SCARECROW,
     CREATURE_SEA_HAG,
+    CREATURE_SEA_HORSE,
     CREATURE_SHADOW,
     CREATURE_SHADOW_DEMON,
     CREATURE_SHAMBLING_MOUND,
@@ -42576,6 +42578,77 @@ module.exports = [
             cubeCount: 4,
             cubeType: 8,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантский морской конёк',
+    nameEn: 'Giant Sea Horse',
+    id: CREATURE_GIANT_SEA_HORSE,
+    description: `Так же, как и их [младшие родственники](CREATURE:${CREATURE_SEA_HORSE}), гигантские морские коньки – это тихие разноцветные рыбы с длинными телами и изогнутыми хвостами. Водные эльфы тренируют из них скакунов.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 326,
+    },
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Атака в броске',
+        description: `Если морской конёк переместится как минимум на 20 футов по прямой к цели, а затем в том же ходу попадёт по ней атакой тараном, цель получает от атаки дополнительный дробящий урон 7 (2к6). Если цель — существо, она должна преуспеть в спасброске Силы со Сл 11, иначе будет сбита с ног.`,
+      },
+      {
+        name: 'Подводное дыхание',
+        description: `Морской конёк может дышать только под водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Таран',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
           },
         },
       },

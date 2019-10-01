@@ -615,6 +615,7 @@ const {
     CREATURE_GHAST,
     CREATURE_GHOST,
     CREATURE_GHOUL,
+    CREATURE_GIANT_BAT,
     CREATURE_GIANT_HYENA,
     CREATURE_GIANT_RAT,
     CREATURE_GIANT_SHARK,
@@ -41362,6 +41363,84 @@ module.exports = [
             cubeCount: 1,
             cubeType: 4,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантская летучая мышь',
+    nameEn: 'Giant Bat',
+    id: CREATURE_GIANT_BAT,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 323,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 10,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Эхолокация',
+        description: `Летучая мышь не может использовать слепое зрение, будучи оглохшей.`,
+      },
+      {
+        name: 'Острый слух',
+        description: `Летучая мышь совершает с преимуществом проверки Мудрость (Внимательность), полагающиеся на слух.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
           },
         },
       },

@@ -751,6 +751,7 @@ const {
     CREATURE_PEGASUS,
     CREATURE_PENTADRONE,
     CREATURE_PERYTON,
+    CREATURE_PHASE_SPIDER,
     CREATURE_PIERCER,
     CREATURE_PIT_FIEND,
     CREATURE_PIXIE,
@@ -43502,5 +43503,93 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Исчезающий паук',
+    nameEn: 'Phase spider',
+    id: CREATURE_PHASE_SPIDER,
+    description: `Исчезающий паук обладает магической способностью переходить на Эфирный План и возвращаться обратно. Он появляется из ниоткуда и быстро исчезает после нападения. Из-за того, что он перемещается по Эфирному Плану перед возвращением на Материальный План, кажется, что он телепортируется.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 330,
+    },
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 10,
+      cubeBonus: 5,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Эфирный скачок',
+        description: `Паук может бонусным действием магическим образом переместиться с Материального Плана на Эфирный План, или наоборот.`,
+      },
+      {
+        name: 'Паучье лазание',
+        description: `Паук может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`,
+      },
+      {
+        name: 'Хождение по паутине',
+        description: `Паук игнорирует ограничения перемещения, вызванные паутиной.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель должна совершить спасбросок Телосложения со Сл 11, получая урон ядом 18 (4к8) при провале, или половину этого урона при успехе. Если урон ядом уменьшает хиты цели до 0, цель остаётся стабилизированной, но отравленной на 1 час, даже если позже восстановит хиты, и она парализована, пока отравлена таким образом.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

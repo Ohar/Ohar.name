@@ -625,6 +625,7 @@ const {
     CREATURE_GIANT_CENTIPEDE,
     CREATURE_GIANT_CROCODILE,
     CREATURE_GIANT_ELK,
+    CREATURE_GIANT_FIRE_BEETLE,
     CREATURE_GIANT_FROG,
     CREATURE_GIANT_GOAT,
     CREATURE_GIANT_HYENA,
@@ -42649,6 +42650,76 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантский огненный жук',
+    nameEn: 'Giant Fire Beetle',
+    id: CREATURE_GIANT_FIRE_BEETLE,
+    description: `Гигантский огненный жук это ночное существо, получившее название из-за пары светящихся желёз, испускающих свет. Шахтёры и искатели приключений ценят этих существ, так как железы испускают свет в течение 1к6 дней после смерти жука. Чаще всего гигантские огненные жуки встречаются под землёй, а также в тёмных лесах.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 327,
+    },
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 6,
+      cubeBonus: 1,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 8,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 8,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Свечение',
+        description: `Жук испускает яркий свет в радиусе 10 футов и тусклый свет в пределах ещё 10 футов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 1,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: -1,
           },
         },
       },

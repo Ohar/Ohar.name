@@ -43373,4 +43373,76 @@ module.exports = [
     ],
     genderId: GENDER_FEMALE,
   },
+  {
+    name: 'Гриф',
+    nameEn: 'Vulture',
+    id: CREATURE_VULTURE,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 329,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 8,
+      cubeBonus: 1,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 50,
+    },
+    params: {
+      [PARAM_STR]: 7,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 4,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Острое зрение и тонкий нюх',
+        description: `Гриф совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на зрение или обоняние.`,
+      },
+      {
+        name: 'Тактика стаи',
+        description: `Гриф совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник грифа.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 0,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

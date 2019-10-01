@@ -767,6 +767,7 @@ const {
     CREATURE_QUAGGOTH,
     CREATURE_QUAGGOTH_THONOT,
     CREATURE_QUASIT,
+    CREATURE_QUIPPER,
     CREATURE_RAKSHASA,
     CREATURE_RAVEN,
     CREATURE_RED_DRAGON_WYRMLING,
@@ -807,6 +808,7 @@ const {
     CREATURE_STONE_GOLEM,
     CREATURE_STORM_GIANT,
     CREATURE_SUCCUBUS,
+    CREATURE_SWARM_OF_QUIPPERS,
     CREATURE_TARRASQUE,
     CREATURE_THRI_KREEN,
     CREATURE_TREANT,
@@ -43656,6 +43658,80 @@ module.exports = [
             type: DAMAGE_SLASHING,
             cubeCount: 1,
             cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Квиппер',
+    nameEn: 'Quipper',
+    id: CREATURE_QUIPPER,
+    description: `Квиппер это плотоядная рыба с острыми зубами. Квипперы могут адаптироваться к любой водной среде, включая холодные подземные озёра. Они часто собираются в рои; статистика [роя квипперов](CREATURE:${CREATURE_SWARM_OF_QUIPPERS}) представлена ниже.`,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 330,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      [PARAM_STR]: 2,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 9,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 8,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Кровавое бешенство',
+        description: `Квиппер совершает с преимуществом броски рукопашных атак по существам, у которых хиты ниже максимума.`,
+      },
+      {
+        name: 'Подводное дыхание',
+        description: `Квиппер может дышать только под водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
             cubeBonus: 1,
           },
         },

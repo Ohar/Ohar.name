@@ -635,6 +635,7 @@ const {
     CREATURE_GIANT_OWL,
     CREATURE_GIANT_POISONOUS_SNAKE,
     CREATURE_GIANT_RAT,
+    CREATURE_GIANT_SCORPION,
     CREATURE_GIANT_SEA_HORSE,
     CREATURE_GIANT_SHARK,
     CREATURE_GIANT_SPIDER,
@@ -43115,6 +43116,95 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантский скорпион',
+    nameEn: 'Giant Scorpion',
+    id: CREATURE_GIANT_SCORPION,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 328,
+    },
+    armor: {
+      ac: 15,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 7,
+      cubeType: 10,
+      cubeBonus: 14,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 9,
+      [PARAM_CHA]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    cr: CR_3,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Скорпион совершает три атаки: две клешнями, и одну жалом.`,
+      },
+      {
+        name: 'Клешня',
+        description: `Цель становится схваченной (Сл высвобождения 12). У скорпиона две клешни, и в каждой он может держать в захвате только по одной цели.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Жало',
+        description: `Цель должна совершить спасбросок Телосложения со Сл 12, получая урон ядом 22 (4к10) при провале, или половину этого урона при успехе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 2,
           },
         },
       },

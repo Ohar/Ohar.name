@@ -515,6 +515,7 @@ const {
     CREATURE_ARCANALOTH,
     CREATURE_AZER,
     CREATURE_BABOON,
+    CREATURE_BADGER,
     CREATURE_BALOR,
     CREATURE_BANDIT,
     CREATURE_BANSHEE,
@@ -40372,6 +40373,75 @@ module.exports = [
             cubeCount: 1,
             cubeType: 4,
             cubeBonus: -1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Барсук',
+    nameEn: 'Badger',
+    id: CREATURE_BADGER,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 320,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: 1,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_DIG]: 5,
+    },
+    params: {
+      [PARAM_STR]: 4,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Барсук совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
           },
         },
       },

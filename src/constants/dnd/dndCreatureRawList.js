@@ -618,6 +618,7 @@ const {
     CREATURE_GIANT_HYENA,
     CREATURE_GIANT_SHARK,
     CREATURE_GIANT_SPIDER,
+    CREATURE_GIANT_TOAD,
     CREATURE_GIBBERING_MOUTHER,
     CREATURE_GITHYANKI_KNIGHT,
     CREATURE_GITHYANKI_WARRIOR,
@@ -41131,6 +41132,93 @@ module.exports = [
             cubeBonus: 3,
           },
         },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантская жаба',
+    nameEn: 'Giant Toad',
+    id: CREATURE_GIANT_TOAD,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 322,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 10,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Амфибия',
+        description: `Жаба может дышать и воздухом и под водой.`,
+      },
+      {
+        name: 'Прыжок с места',
+        description: `Жаба совершает прыжки в длину на расстояние до 20 футов и прыжки в высоту на расстояние до 10 футов, хоть с разбегом, хоть без него.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель становится схваченной (Сл высвобождения 13). Пока цель схвачена, она опутана, а жаба не может кусать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 10,
+              cubeBonus: 2,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 1,
+              cubeType: 10,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+      {
+        name: 'Проглатывание',
+        description: `Жаба совершает одну атаку укусом по цели с размером не больше Среднего, которую уже держит в захвате. Если эта атака попадает, цель становится проглоченной, а захват оканчивается. Проглоченная цель ослеплена и опутана, и обладает полным укрытием от атак и прочих эффектов, исходящих снаружи жабы, а также получает урон кислотой 10 (3к6) в начале каждого хода жабы. У жабы может быть проглоченной только одна цель одновременно.\n
+Если жаба умирает, проглоченное существо перестаёт быть опутанным ей, и может высвободиться из трупа, потратив 5 футов перемещения, падая при выходе ничком.`,
       },
     ],
     genderId: GENDER_FEMALE,

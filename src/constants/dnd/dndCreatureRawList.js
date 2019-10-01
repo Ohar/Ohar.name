@@ -514,6 +514,7 @@ const {
     CREATURE_ANKYLOSAURUS,
     CREATURE_ARCANALOTH,
     CREATURE_AZER,
+    CREATURE_BABOON,
     CREATURE_BALOR,
     CREATURE_BANDIT,
     CREATURE_BANSHEE,
@@ -40308,6 +40309,71 @@ module.exports = [
       {
         name: 'Телепортация',
         description: `Ультролот магическим образом телепортируется вместе со всем несомым и носимым снаряжением, на расстояние до 60 футов в свободное пространство, которое он видит.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Бабуин',
+    nameEn: 'Baboon',
+    id: CREATURE_BABOON,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 320,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 6,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 8,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 4,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Тактика стаи',
+        description: `Бабуин совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник бабуина.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 1,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: -1,
+          },
+        },
       },
     ],
     genderId: GENDER_MALE,

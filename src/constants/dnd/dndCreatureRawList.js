@@ -642,6 +642,7 @@ const {
     CREATURE_GIANT_VULTURE,
     CREATURE_GIANT_WASP,
     CREATURE_GIANT_WEASEL,
+    CREATURE_GIANT_WOLF_SPIDER,
     CREATURE_GIBBERING_MOUTHER,
     CREATURE_GITHYANKI_KNIGHT,
     CREATURE_GITHYANKI_WARRIOR,
@@ -43023,6 +43024,98 @@ module.exports = [
             },
           },
           hit: `Цель становится опутанной паутиной.`,
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантский паук-волк',
+    nameEn: 'Giant Wolf Spider',
+    id: CREATURE_GIANT_WOLF_SPIDER,
+    description: `Гигантский паук-волк, чей размер меньше, чем у обычного [гигантского паука](CREATURE:${CREATURE_GIANT_SPIDER}), охотится на открытой местности, скрываясь в ямах, трещинах или кучах мусора.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 328,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_CLIMB]: 40,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 4,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 10,
+      },
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Паучье лазание',
+        description: `Паук может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`,
+      },
+      {
+        name: 'Чувство паутины',
+        description: `Находясь в контакте с паутиной, паук знает точное местоположение всех других существ, находящихся в контакте с той же паутиной.`,
+      },
+      {
+        name: 'Хождение по паутине',
+        description: `Паук игнорирует ограничения перемещения, вызванные паутиной.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель должна совершить спасбросок Телосложения со Сл 11, получая урон ядом 7 (2к6) при провале, или половину этого урона при успехе. Если урон ядом уменьшает хиты цели до 0, цель остаётся стабилизированной, но отравленной на 1 час, даже если позже восстановит хиты, и она парализована, пока отравлена таким образом.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
         },
       },
     ],

@@ -621,6 +621,7 @@ const {
     CREATURE_GIANT_CENTIPEDE,
     CREATURE_GIANT_FROG,
     CREATURE_GIANT_HYENA,
+    CREATURE_GIANT_LIZARD,
     CREATURE_GIANT_OWL,
     CREATURE_GIANT_POISONOUS_SNAKE,
     CREATURE_GIANT_RAT,
@@ -41907,6 +41908,71 @@ module.exports = [
             cubeCount: 1,
             cubeType: 4,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Гигантская ящерица',
+    nameEn: 'Giant Lizard',
+    id: CREATURE_GIANT_LIZARD,
+    description: `Гигантских ящериц можно сделать ездовыми или упряжными животными. [Людоящеры](CREATURE:${CREATURE_LIZARDFOLK}) держат их в качестве питомцев, а подземные гигантские ящерицы служат скакунами и вьючными животными [дроу](CREATURE:${CREATURE_DROW}), [дуэргарам](CREATURE:${CREATURE_DUERGAR}) и прочим обитателям Подземья.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 324,
+    },
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_4,
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
           },
         },
       },

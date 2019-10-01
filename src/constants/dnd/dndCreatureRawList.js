@@ -736,6 +736,7 @@ const {
     CREATURE_QUAGGOTH_THONOT,
     CREATURE_QUASIT,
     CREATURE_RAKSHASA,
+    CREATURE_RAVEN,
     CREATURE_RED_DRAGON_WYRMLING,
     CREATURE_RED_SLAAD,
     CREATURE_REMORHAZ,
@@ -40913,6 +40914,74 @@ module.exports = [
             cubeCount: 2,
             cubeType: 6,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Ворон',
+    nameEn: 'Raven',
+    id: CREATURE_RAVEN,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 322,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 50,
+    },
+    params: {
+      [PARAM_STR]: 2,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 8,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Подражание',
+        description: `Ворон может подражать простым звукам, которые когда-либо слышал, таким как чей-то шёпот, плач ребёнка или звуки животных. Существо, слышащее эти звуки, может понять, что это подражание, если совершит успешную проверку Мудрости (Проницательность) со Сл 10.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
           },
         },
       },

@@ -624,6 +624,7 @@ const {
     CREATURE_GIANT_BOAR,
     CREATURE_GIANT_CENTIPEDE,
     CREATURE_GIANT_CROCODILE,
+    CREATURE_GIANT_EAGLE,
     CREATURE_GIANT_ELK,
     CREATURE_GIANT_FIRE_BEETLE,
     CREATURE_GIANT_FROG,
@@ -42720,6 +42721,104 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: -1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гигантский орёл',
+    nameEn: 'Giant Eagle',
+    id: CREATURE_GIANT_EAGLE,
+    description: `Гигантские орлы – это благородные существа, обладающие своим собственным языком, и понимающие речь на Общем. У пары гигантских орлов в гнезде обычно находится до четырёх яиц или птенцов (птенцов считайте обычными [орлами](CREATURE:${CREATURE_EAGLE})).`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NG,
+    source: {
+      id: 'MM',
+      page: 327,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 10,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 80,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 8,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_GIANT_EAGLE,
+      {
+        id: [
+          LANG_AURAN,
+          LANG_COMMON,
+        ],
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Острое зрение',
+        description: `Орёл совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Орёл совершает две атаки: одну клювом, и одну когтями.`,
+      },
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
           },
         },
       },

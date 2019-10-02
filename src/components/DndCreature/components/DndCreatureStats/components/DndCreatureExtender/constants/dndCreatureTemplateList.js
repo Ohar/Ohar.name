@@ -14,6 +14,7 @@ import {
   faMusic,
   faPills,
   faRobot,
+  faShoePrints,
   faSkullCrossbones,
   faSpider,
   faSwimmer,
@@ -2044,6 +2045,35 @@ _Чарующая мелодия._ Существо становится оча�
       speed: {
         [SPEED_DIG]: 5,
       },
+    },
+  },
+  {
+    templateName: 'Рой многоножек',
+    templateIcon: faShoePrints,
+
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_SWARM_OF_INSECTS,
+        ],
+      },
+    },
+
+    name: 'Рой многоножек',
+
+    extendPropCollection: {
+      description: insectSwarmDescription,
+    },
+
+    editPropCollection: {
+      actionList: ({ actionList }) => actionList.map(
+        action => action.name === 'Укусы'
+          ? {
+            ...action,
+            description: `Существо, хиты которого опускаются до 0 роем многоножек, остаётся стабилизированным, но отравленным на 1 час, даже если восстановит хиты, и пока оно отравлено из-за этого, оно ещё и парализовано.`,
+          }
+          : action,
+      ),
     },
   },
   // NOT READY

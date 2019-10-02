@@ -819,6 +819,7 @@ const {
     CREATURE_SOLAR,
     CREATURE_SPECTATOR,
     CREATURE_SPECTER,
+    CREATURE_SPIDER,
     CREATURE_SPINED_DEVIL,
     CREATURE_SPIRIT_NAGA,
     CREATURE_SPRITE,
@@ -45611,5 +45612,91 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Паук',
+    nameEn: 'Spider',
+    id: CREATURE_SPIDER,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 336,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_CLIMB]: 20,
+    },
+    params: {
+      [PARAM_STR]: 2,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 8,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 2,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Паучье лазание',
+        description: `Паук может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик.`,
+      },
+      {
+        name: 'Чувство паутины',
+        description: `Находясь в контакте с паутиной, паук знает точное местоположение всех других существ, находящихся в контакте с той же паутиной.`,
+      },
+      {
+        name: 'Хождение по паутине',
+        description: `Паук игнорирует ограничения перемещения, вызванные паутиной.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 9, иначе получит урон ядом 2 (1к4).`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

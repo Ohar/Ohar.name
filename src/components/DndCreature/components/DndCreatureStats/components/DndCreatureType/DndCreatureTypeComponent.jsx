@@ -1,21 +1,10 @@
-import React from "react"
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import getCreatureTypeName from './utils/getCreatureTypeName';
+const DndCreatureTypeComponent = ({ text }) => <span>{text}</span>
 
-export default ({list}) => {
-  const creatureType = [
-    getCreatureTypeName(list[0]),
-    list.length > 1
-      ? list
-        .slice(1)
-        .map(getCreatureTypeName)
-        .join(', ')
-        .replace(/^/, '(')
-        .replace(/$/, ')')
-      : ''
-  ]
-    .filter(e => e)
-    .join(' ')
-
-  return <span>{creatureType}</span>
+DndCreatureTypeComponent.propTypes = {
+  text: PropTypes.string.isRequired,
 }
+
+export default DndCreatureTypeComponent

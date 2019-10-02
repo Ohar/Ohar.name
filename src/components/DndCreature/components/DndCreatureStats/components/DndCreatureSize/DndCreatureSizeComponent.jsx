@@ -4,9 +4,19 @@ import {dndSizeCollection} from "@/constants/dnd/dndSizeList"
 
 import getCreatureTypeGenderId from "./../../utils/getCreatureTypeGenderId"
 
-export default ({creature: {creatureTypeIdList, sizeType}}) => {
+export default ({creatureTypeIdList, sizeType, swarmSizeType = null}) => {
   const genderId = getCreatureTypeGenderId(creatureTypeIdList)
-  const size = dndSizeCollection[sizeType].name.singular[genderId].nominative
 
-  return <span>{size}</span>
+  let text = ''
+
+  if (swarmSizeType) {
+    const size = dndSizeCollection[sizeType].name.singular[genderId].nominative
+    const swarmSize = dndSizeCollection[swarmSizeType].name.plural[genderId].genitive
+    text = `${size} рой ${swarmSize}`
+  } else {
+    text = dndSizeCollection[sizeType].name.singular[genderId].nominative
+  }
+
+
+  return <span>{text}</span>
 }

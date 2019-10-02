@@ -31,10 +31,8 @@ const DndCreatureStatsComponent = (
     creature,
     creature: {
       actionList = [],
-      aligmentId,
       armor,
       cr,
-      creatureTypeIdList,
       featureList = [],
       genderId,
       hp,
@@ -71,7 +69,7 @@ const DndCreatureStatsComponent = (
     </header>
 
     <p className='DndCreatureStats_info'>
-      <DndCreatureSize creature={creature} /> <DndCreatureType list={creatureTypeIdList}/>, <DndCreatureAligment creature={creature}/>
+      <DndCreatureSize {...creature} /> <DndCreatureType {...creature}/>, <DndCreatureAligment {...creature}/>
     </p>
 
     <section className='DndCreatureStats_infoBlock'>
@@ -122,10 +120,6 @@ DndCreatureStatsComponent.propTypes = {
   columnCount: PropTypes.number,
   creature: PropTypes.shape({
     actionList: PropTypes.array,
-    aligmentId: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.array,
-    ]).isRequired,
     armor: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.array,
@@ -135,7 +129,6 @@ DndCreatureStatsComponent.propTypes = {
       }),
     ]).isRequired,
     cr: PropTypes.string.isRequired,
-    creatureTypeIdList: PropTypes.array.isRequired,
     extendCreature: PropTypes.func,
     featureList: PropTypes.array,
     hp: PropTypes.object.isRequired,

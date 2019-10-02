@@ -772,6 +772,7 @@ const {
     CREATURE_QUASIT,
     CREATURE_QUIPPER,
     CREATURE_RAKSHASA,
+    CREATURE_RAT,
     CREATURE_RAVEN,
     CREATURE_RED_DRAGON_WYRMLING,
     CREATURE_RED_SLAAD,
@@ -44180,5 +44181,73 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Крыса',
+    nameEn: 'Rat',
+    id: CREATURE_RAT,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 332,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 2,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 9,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Крыса совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 0,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

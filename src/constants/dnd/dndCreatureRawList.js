@@ -46358,8 +46358,8 @@ module.exports = [
           range: 0,
           target: {
             count: 1,
-            type: TARGET_CREATURE,
             limit: {
+              type: TARGET_CREATURE,
               comment: ` в пространстве роя`,
             },
           },

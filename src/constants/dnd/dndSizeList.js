@@ -1,3 +1,4 @@
+const generateFullAdjectiveList = require('./../../utils/generateFullAdjectiveList')
 const listToCollectionById = require('./../../utils/listToCollectionById')
 const {
   GENDER_MALE,
@@ -175,7 +176,7 @@ const dndSizeList = [
       }
     },
   }
-]
+].map(generateFullAdjectiveList)
 
 module.exports = dndSizeList
 

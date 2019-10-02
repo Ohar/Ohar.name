@@ -611,6 +611,7 @@ const {
     CREATURE_FLAMESKULL,
     CREATURE_FLESH_GOLEM,
     CREATURE_FLUMPH,
+    CREATURE_FLYING_SNAKE,
     CREATURE_FLYING_SWORD,
     CREATURE_FOMORIAN,
     CREATURE_FROST_GIANT,
@@ -44413,5 +44414,84 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Летающая змея',
+    nameEn: 'Flying Snake',
+    description: `Летающая змея это яркая змея с крыльями, обитающая в далёких джунглях. Племенные народы, а также культисты иногда приручают летающих змей, делая из них посланников, переносящих в своих кольцах свитки.`,
+    id: CREATURE_FLYING_SNAKE,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 332,
+    },
+    armor: {
+      ac: 14,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 4,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_FLY]: 60,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 4,
+      [PARAM_DEX]: 18,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 10,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Облёт',
+        description: `Змея не провоцирует атаки, когда вылетает из досягаемости врага.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 0,
+              cubeType: 0,
+              cubeBonus: 1,
+            },
+            {
+              type: DAMAGE_POISON,
+              cubeCount: 3,
+              cubeType: 4,
+              cubeBonus: 0,
+            },
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

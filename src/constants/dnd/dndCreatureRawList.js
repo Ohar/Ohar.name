@@ -788,6 +788,7 @@ const {
     CREATURE_RED_SLAAD,
     CREATURE_REMORHAZ,
     CREATURE_REVENANT,
+    CREATURE_RHINOCEROS,
     CREATURE_RIDING_HORSE,
     CREATURE_ROC,
     CREATURE_ROPER,
@@ -45153,6 +45154,71 @@ module.exports = [
             cubeCount: 1,
             cubeType: 4,
             cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Носорог',
+    nameEn: 'Rhinoceros',
+    id: CREATURE_RHINOCEROS,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 335,
+    },
+    armor: {
+      ac: 11,
+      type: `природный доспех`,
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 10,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 21,
+      [PARAM_DEX]: 8,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Атака в броске',
+        description: `Если носорог переместится как минимум на 20 футов по прямой к цели, а затем в том же ходу попадёт по ней атакой бодания, цель получает от атаки дополнительный дробящий урон 9 (2к8). Если цель — существо, она должна преуспеть в спасброске Силы со Сл 15, иначе будет сбита с ног.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Бодание',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 5,
           },
         },
       },

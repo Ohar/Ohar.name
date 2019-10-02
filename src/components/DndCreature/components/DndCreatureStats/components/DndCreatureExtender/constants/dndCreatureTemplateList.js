@@ -24,8 +24,10 @@ import {
 import generateTextLinks from '@/utils/generateTextLinks'
 
 import {
-  SIZE_MEDIUM,
+  SIZE_GARGANTUA,
+  SIZE_HUGE,
   SIZE_LARGE,
+  SIZE_MEDIUM,
   SIZE_SMALL,
   SIZE_TINY,
 } from '@/constants/dnd/dndSizeList'
@@ -386,6 +388,14 @@ export default [
       },
       exclude: {
         templateName: ['Теневой дракон'],
+        swarmSizeType: [
+          SIZE_GARGANTUA,
+          SIZE_HUGE,
+          SIZE_LARGE,
+          SIZE_MEDIUM,
+          SIZE_SMALL,
+          SIZE_TINY,
+        ],
       },
     },
 

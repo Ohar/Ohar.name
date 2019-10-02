@@ -1968,6 +1968,9 @@ _Чарующая мелодия._ Существо становится оча�
 
     extendPropCollection: {
       description: giantLizardDescription,
+      speed: {
+        [SPEED_SWIM]: 30,
+      },
       featureList: [
         {
           name: 'Задержка дыхания',
@@ -1978,10 +1981,6 @@ _Чарующая мелодия._ Существо становится оча�
 
     editPropCollection: {
       name: ({name}) => `Плавающая ${name.toLowerCase()}`,
-      speed: ({speed}) => ({
-        ...speed,
-        [SPEED_SWIM]: 30,
-      }),
     },
   },
   {

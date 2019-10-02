@@ -41,6 +41,7 @@ const LANG_INFERNAL = 'infernal'
 const LANG_ITS_CREATOR = 'its_creator'
 const LANG_IXITXACHITL = 'ixitxachitl'
 const LANG_MODRONE = 'modrone'
+const LANG_ONE_OF_ITS_CREATOR = 'one_of_its_creator'
 const LANG_ORC = 'orc'
 const LANG_OTYUGH = 'otyugh'
 const LANG_PRIMORDIAL = 'primordial'
@@ -118,6 +119,14 @@ const dndLanguageList = [
       nominative: 'Языки своего создателя',
       instrumental: 'Языки своего создателя',
       prepositional: 'Языках своего создателя',
+    },
+  },
+  {
+    id: LANG_ONE_OF_ITS_CREATOR,
+    name: {
+      nominative: 'Один из языков создателя',
+      instrumental: 'Одним из языков создателя',
+      prepositional: 'Одном из языков создателя',
     },
   },
   {
@@ -619,6 +628,7 @@ module.exports.LANG_INFERNAL = LANG_INFERNAL
 module.exports.LANG_ITS_CREATOR = LANG_ITS_CREATOR
 module.exports.LANG_IXITXACHITL = LANG_IXITXACHITL
 module.exports.LANG_MODRONE = LANG_MODRONE
+module.exports.LANG_ONE_OF_ITS_CREATOR = LANG_ONE_OF_ITS_CREATOR
 module.exports.LANG_ORC = LANG_ORC
 module.exports.LANG_OTYUGH = LANG_OTYUGH
 module.exports.LANG_PRIMORDIAL = LANG_PRIMORDIAL

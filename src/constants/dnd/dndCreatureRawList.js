@@ -520,6 +520,7 @@ const {
     CREATURE_ANKHEG,
     CREATURE_ANKYLOSAURUS,
     CREATURE_ARCANALOTH,
+    CREATURE_AWAKENED_SHRUB,
     CREATURE_AWAKENED_TREE,
     CREATURE_AZER,
     CREATURE_BABOON,
@@ -46011,5 +46012,79 @@ module.exports = [
       },
     ],
     genderId: GENDER_MIDDLE,
+  },
+  {
+    name: 'Пробуждённый куст',
+    nameEn: 'Awakened Shrub',
+    id: CREATURE_AWAKENED_SHRUB,
+    description: `Пробуждённый куст это обычный куст, получивший сознание и подвижность заклинанием _Пробуждение разума_ (Awaken) или подобной магией.`,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_PLANT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 337,
+    },
+    armor: {
+      ac: 9,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 6,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 3,
+      [PARAM_DEX]: 8,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 6,
+    },
+    vulnerabilityList: [
+      DAMAGE_FIRE,
+    ],
+    resistanceList: [
+      DAMAGE_PIERCING,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_ONE_OF_ITS_CREATOR,
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока куст остаётся без движения, он неотличим от обычного куста.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Разрывание',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 1,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: -1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

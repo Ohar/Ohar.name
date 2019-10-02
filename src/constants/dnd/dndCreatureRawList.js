@@ -146,6 +146,7 @@ const {
     LANG_INFERNAL,
     LANG_ITS_CREATOR,
     LANG_MODRONE,
+    LANG_ONE_OF_ITS_CREATOR,
     LANG_ORC,
     LANG_OTYUGH,
     LANG_PRIMORDIAL,
@@ -519,6 +520,7 @@ const {
     CREATURE_ANKHEG,
     CREATURE_ANKYLOSAURUS,
     CREATURE_ARCANALOTH,
+    CREATURE_AWAKENED_TREE,
     CREATURE_AZER,
     CREATURE_BABOON,
     CREATURE_BADGER,
@@ -45933,5 +45935,81 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Пробуждённое дерево',
+    nameEn: 'Awakened Tree',
+    id: CREATURE_AWAKENED_TREE,
+    description: `Пробуждённое дерево это обычное дерево, получившее сознание и подвижность заклинанием _Пробуждение разума_ (Awaken) или подобной магией.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_PLANT,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 337,
+    },
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 7,
+      cubeType: 12,
+      cubeBonus: 14,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+    },
+    params: {
+      [PARAM_STR]: 19,
+      [PARAM_DEX]: 6,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 7,
+    },
+    vulnerabilityList: [
+      DAMAGE_FIRE,
+    ],
+    resistanceList: [
+      DAMAGE_BLUDGEONING,
+      DAMAGE_PIERCING,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      LANG_ONE_OF_ITS_CREATOR,
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Обманчивая внешность',
+        description: `Пока дерево остаётся без движения, оно неотличимо от обычного дерева.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Размашистый удар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MIDDLE,
   },
 ]

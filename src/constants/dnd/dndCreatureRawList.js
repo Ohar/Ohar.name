@@ -46493,4 +46493,116 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Рой летучих мышей',
+    nameAlt: 'Стая летучих мышей',
+    nameEn: 'Swarm of Bats',
+    id: CREATURE_SWARM_OF_BATS,
+    description: swarmDescription,
+    sizeType: SIZE_TINY,
+    swarmSizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 339,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 5,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 4,
+    },
+    resistanceList: [
+      DAMAGE_BLUDGEONING,
+      DAMAGE_PIERCING,
+      DAMAGE_SLASHING,
+    ],
+    immunityConditionList: [
+      CONDITION_GRAPPLED,
+      CONDITION_FRIGHTENED,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_CHARMED,
+      CONDITION_STUNNED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Эхолокация',
+        description: `Рой не может использовать слепое зрение, будучи оглохшим.`,
+      },
+      {
+        name: 'Острый слух',
+        description: `Рой совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух.`,
+      },
+      {
+        name: 'Рой',
+        description: `Рой может занимать пространство другого существа, и наоборот, и рой может перемещаться через любой проход, достаточный для Крохотной [летучей мыши](CREATURE:${CREATURE_BAT}). Рой не может восстанавливать хиты и получать временные хиты.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укусы',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 0,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              comment: ` в пространстве роя`,
+            },
+          },
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 4,
+                cubeBonus: 0,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 4,
+                cubeBonus: 0,
+                comment: `, если у роя половина хитов или меньше`,
+              },
+            ],
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

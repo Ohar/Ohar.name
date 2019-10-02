@@ -765,6 +765,7 @@ const {
     CREATURE_OROG,
     CREATURE_OTYUGH,
     CREATURE_OWLBEAR,
+    CREATURE_PANTHER,
     CREATURE_PEGASUS,
     CREATURE_PENTADRONE,
     CREATURE_PERYTON,
@@ -45514,6 +45515,97 @@ module.exports = [
             cubeCount: 2,
             cubeType: 8,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Пантера',
+    nameEn: 'Panther',
+    id: CREATURE_PANTHER,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 336,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+      [SPEED_CLIMB]: 40,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Пантера совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+      {
+        name: 'Наскок',
+        description: `Если пантера переместится как минимум на 20 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой когтём, эта цель должна преуспеть в спасброске Силы со Сл 12, иначе будет сбита с ног. Если цель сбита с ног, пантера может бонусным действием совершить по ней одну атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
           },
         },
       },

@@ -783,6 +783,7 @@ const {
     CREATURE_PIXIE,
     CREATURE_PLANETAR,
     CREATURE_PLESIOSAURUS,
+    CREATURE_POISONOUS_SNAKE,
     CREATURE_POLAR_BEAR,
     CREATURE_POLTERGEIST,
     CREATURE_PONY,
@@ -46698,6 +46699,110 @@ module.exports = [
                 type: DAMAGE_PIERCING,
                 cubeCount: 2,
                 cubeType: 4,
+                cubeBonus: 0,
+                comment: `, если у роя половина хитов или меньше`,
+              },
+            ],
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Рой ядовитых змей',
+    nameEn: 'Swarm of Poisonous Snakes',
+    id: CREATURE_SWARM_OF_POISONOUS_SNAKES,
+    description: swarmDescription,
+    sizeType: SIZE_TINY,
+    swarmSizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 339,
+    },
+    armor: {
+      ac: 14,
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 8,
+      [PARAM_DEX]: 18,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 3,
+    },
+    resistanceList: [
+      DAMAGE_BLUDGEONING,
+      DAMAGE_PIERCING,
+      DAMAGE_SLASHING,
+    ],
+    immunityConditionList: [
+      CONDITION_GRAPPLED,
+      CONDITION_FRIGHTENED,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_CHARMED,
+      CONDITION_STUNNED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 10,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Рой',
+        description: `Рой может занимать пространство другого существа, и наоборот, и рой может перемещаться через любой проход, достаточный для  Крохотных [змей](CREATURE:${CREATURE_POISONOUS_SNAKE}). Рой не может восстанавливать хиты и получать временные хиты.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укусы',
+        comment: `Цель должна совершить спасбросок Телосложения со Сл 10, получая урон ядом 14 (4к6) при провале, или половину этого урона при успехе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 0,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              comment: ` в пространстве роя`,
+            },
+          },
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 6,
+                cubeBonus: 0,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
                 cubeBonus: 0,
                 comment: `, если у роя половина хитов или меньше`,
               },

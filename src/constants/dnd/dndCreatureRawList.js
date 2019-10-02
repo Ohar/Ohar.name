@@ -740,6 +740,7 @@ const {
     CREATURE_MINOTAUR_SKELETON,
     CREATURE_MONODRONE,
     CREATURE_MUD_MEPHIT,
+    CREATURE_MULE,
     CREATURE_MUMMY,
     CREATURE_MUMMY_LORD,
     CREATURE_MYCONID_ADULT,
@@ -45086,6 +45087,74 @@ module.exports = [
       {
         name: 'Подводное дыхание',
         description: `Морской конёк может дышать только под водой.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Мул',
+    nameEn: 'Mule',
+    id: CREATURE_MULE,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 335,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Вьючное животное',
+        description: `Мул считается Большим животным при определении его грузоподъёмности.`,
+      },
+      {
+        name: 'Устойчивый',
+        description: `Мул совершает с преимуществом спасброски Силы и Ловкости против эффектов, сбивающих его с ног.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Копыта',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
       },
     ],
     genderId: GENDER_MALE,

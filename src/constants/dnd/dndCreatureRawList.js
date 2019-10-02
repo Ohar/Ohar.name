@@ -46383,4 +46383,108 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Рой крыс',
+    nameAlt: 'Стая крыс',
+    nameEn: 'Swarm of Rats',
+    id: CREATURE_SWARM_OF_RATS,
+    description: swarmDescription,
+    sizeType: SIZE_TINY,
+    swarmSizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 339,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 7,
+      cubeType: 8,
+      cubeBonus: -7,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 9,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 9,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 3,
+    },
+    resistanceList: [
+      DAMAGE_BLUDGEONING,
+      DAMAGE_PIERCING,
+      DAMAGE_SLASHING,
+    ],
+    immunityConditionList: [
+      CONDITION_GRAPPLED,
+      CONDITION_FRIGHTENED,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_CHARMED,
+      CONDITION_STUNNED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Рой совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+      {
+        name: 'Рой',
+        description: `Рой может занимать пространство другого существа, и наоборот, и рой может перемещаться через любой проход, достаточный для Крохотных [крыс](CREATURE:${CREATURE_RAT}). Рой не может восстанавливать хиты и получать временные хиты.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укусы',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 0,
+          target: {
+            count: 1,
+            limit: {
+              comment: ` в пространстве роя`,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 0,
+              comment: `, если у роя половина хитов или меньше`,
+            },
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

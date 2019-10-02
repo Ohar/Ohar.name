@@ -351,6 +351,15 @@ const insectSwarmDescription = [
   },
 ]
 
+const insectSwarmExclude = {
+  templateName: [
+    'Рой жуков',
+    'Рой многоножек',
+    'Рой ос',
+    'Рой пауков',
+  ],
+}
+
 export default [
   {
     templateName: 'Споровый слуга',
@@ -2039,6 +2048,7 @@ _Чарующая мелодия._ Существо становится оча�
           CREATURE_SWARM_OF_INSECTS,
         ],
       },
+      exclude: insectSwarmExclude,
     },
 
     name: 'Рой жуков',
@@ -2060,6 +2070,7 @@ _Чарующая мелодия._ Существо становится оча�
           CREATURE_SWARM_OF_INSECTS,
         ],
       },
+      exclude: insectSwarmExclude,
     },
 
     name: 'Рой многоножек',
@@ -2089,6 +2100,7 @@ _Чарующая мелодия._ Существо становится оча�
           CREATURE_SWARM_OF_INSECTS,
         ],
       },
+      exclude: insectSwarmExclude,
     },
 
     name: 'Рой ос',
@@ -2112,6 +2124,7 @@ _Чарующая мелодия._ Существо становится оча�
           CREATURE_SWARM_OF_INSECTS,
         ],
       },
+      exclude: insectSwarmExclude,
     },
 
     name: 'Рой пауков',

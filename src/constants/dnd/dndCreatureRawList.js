@@ -697,6 +697,7 @@ const {
     CREATURE_HOMUNCULUS,
     CREATURE_HOOK_HORROR,
     CREATURE_HORNED_DEVIL,
+    CREATURE_HUNTER_SHARK,
     CREATURE_HYDRA,
     CREATURE_HYENA,
     CREATURE_ICE_DEVIL,
@@ -788,6 +789,7 @@ const {
     CREATURE_RAVEN,
     CREATURE_RED_DRAGON_WYRMLING,
     CREATURE_RED_SLAAD,
+    CREATURE_REEF_SHARK,
     CREATURE_REMORHAZ,
     CREATURE_REVENANT,
     CREATURE_RHINOCEROS,
@@ -45439,5 +45441,83 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Охотничья акула',
+    nameEn: 'Hunter Shark',
+    id: CREATURE_HUNTER_SHARK,
+    description: `Охотничья акула, которая меньше [гигантской акулы](CREATURE:${CREATURE_GIANT_SHARK}), но крупнее и яростнее [рифовой акулы](CREATURE:${CREATURE_REEF_SHARK}), обитает в глубоких водах. Обычно она охотится в одиночку, но в одной области может кормиться сразу несколько охотничьих акул. Вырастают охотничьи акулы от 15 до 20 футов в длину.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 336,
+    },
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 10,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 4,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Кровавое бешенство',
+        description: `Акула совершает с преимуществом броски рукопашных атак по существам, у которых хиты ниже максимума.`,
+      },
+      {
+        name: 'Подводное дыхание',
+        description: `Акула может дышать только под водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 8,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

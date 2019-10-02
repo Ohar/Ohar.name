@@ -43708,7 +43708,7 @@ module.exports = [
     name: 'Квиппер',
     nameEn: 'Quipper',
     id: CREATURE_QUIPPER,
-    description: `Квиппер это плотоядная рыба с острыми зубами. Квипперы могут адаптироваться к любой водной среде, включая холодные подземные озёра. Они часто собираются в рои; статистика [роя квипперов](CREATURE:${CREATURE_SWARM_OF_QUIPPERS}) представлена ниже.`,
+    description: `Квиппер это плотоядная рыба с острыми зубами. Квипперы могут адаптироваться к любой водной среде, включая холодные подземные озёра. Они часто собираются в [рои](CREATURE:${CREATURE_SWARM_OF_QUIPPERS}).`,
     sizeType: SIZE_TINY,
     creatureTypeIdList: [
       CREATURE_TYPE_BEAST,

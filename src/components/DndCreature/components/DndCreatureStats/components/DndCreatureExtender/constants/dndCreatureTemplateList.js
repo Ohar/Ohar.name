@@ -22,6 +22,9 @@ import {
   faUserFriends,
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons'
+import {
+  faForumbee,
+} from '@fortawesome/free-brands-svg-icons'
 
 import generateTextLinks from '@/utils/generateTextLinks'
 
@@ -2074,6 +2077,29 @@ _Чарующая мелодия._ Существо становится оча�
           }
           : action,
       ),
+    },
+  },
+  {
+    templateName: 'Рой ос',
+    templateIcon: faForumbee,
+
+    templateLimitations: {
+      include: {
+        id: [
+          CREATURE_SWARM_OF_INSECTS,
+        ],
+      },
+    },
+
+    name: 'Рой ос',
+
+    extendPropCollection: {
+      description: insectSwarmDescription,
+      speed: {
+        [SPEED_WALK]: 5,
+        [SPEED_FLY]: 5,
+        [SPEED_CLIMB]: 0,
+      },
     },
   },
   // NOT READY

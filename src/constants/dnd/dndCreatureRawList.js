@@ -616,6 +616,7 @@ const {
     CREATURE_FLYING_SNAKE,
     CREATURE_FLYING_SWORD,
     CREATURE_FOMORIAN,
+    CREATURE_FROG,
     CREATURE_FROST_GIANT,
     CREATURE_GALEB_DUHR,
     CREATURE_GARGOYLE,
@@ -44735,5 +44736,66 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Лягушка',
+    nameEn: 'Frog',
+    id: CREATURE_FROG,
+    description: `У лягушки нет эффективных атак. Она питается крохотными насекомыми и обычно обитает у воды, в деревьях или под землёй. Статистику лягушки можно использовать для изображения жабы.`,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 333,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_SWIM]: 20,
+    },
+    params: {
+      [PARAM_STR]: 1,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 8,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 3,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 1,
+      [SKILL_STEALTH]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Амфибия',
+        description: `Лягушка может дышать и воздухом и под водой.`,
+      },
+      {
+        name: 'Прыжок с места',
+        description: `Лягушка совершает прыжки в длину на расстояние до 10 футов и прыжки в высоту на расстояние до 5 футов, хоть с разбегом, хоть без него.`,
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

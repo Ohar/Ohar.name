@@ -6,22 +6,26 @@ import generateAttackDescription from "./utils/generateAttackDescription"
 import DndActionListComponent from './DndActionListComponent'
 
 const DndActionListContainer = ({ list }) => {
-  const abilityList = list.map(
-    (
-      {
-        attack,
-        description = '',
+  if (list && list.length) {
+    const abilityList = list.map(
+      (
+        {
+          attack,
+          description = '',
+          ...rest,
+        }
+      ) => ({
         ...rest,
-      }
-    ) => ({
-      ...rest,
-      description: `${generateAttackDescription(attack)} ${description}`,
-    })
-  )
+        description: `${generateAttackDescription(attack)} ${description}`,
+      })
+    )
 
-  return (
-    <DndActionListComponent list={abilityList}/>
-  )
+    return (
+      <DndActionListComponent list={abilityList}/>
+    )
+  }
+
+  return null
 }
 
 DndActionListContainer.propTypes = {

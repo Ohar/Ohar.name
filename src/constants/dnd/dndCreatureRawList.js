@@ -595,6 +595,7 @@ const {
     CREATURE_EAGLE,
     CREATURE_EARTH_ELEMENTAL,
     CREATURE_EFREETI,
+    CREATURE_ELEPHANT,
     CREATURE_ELK,
     CREATURE_EMPYREAN,
     CREATURE_ERINYES,
@@ -722,6 +723,7 @@ const {
     CREATURE_LIZARDFOLK_SHAMAN,
     CREATURE_MAGMA_MEPHIT,
     CREATURE_MAGMIN,
+    CREATURE_MAMMOTH,
     CREATURE_MANES,
     CREATURE_MANTICORE,
     CREATURE_MARID,
@@ -44797,5 +44799,92 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Мамонт',
+    nameEn: 'Mammoth',
+    id: CREATURE_MAMMOTH,
+    description: `Мамонт это похожее на слона существо с толстым мехом и длинными бивнями. Более коренастые и свирепые чем обычные [слоны](CREATURE:${CREATURE_ELEPHANT}), мамонты обитают в самых разных климатических районах, от субарктики до субтропиков.`,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 334,
+    },
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 11,
+      cubeType: 12,
+      cubeBonus: 55,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 24,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 21,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_6,
+    featureList: [
+      {
+        name: 'Растаптывающий рывок',
+        description: `Если мамонт переместится как минимум на 20 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой бодания, эта цель должна преуспеть в спасброске Силы со Сл 18, иначе будет сбита с ног. Если цель сбита с ног, мамонт может бонусным действием совершить по ней одну атаку растаптыванием.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Бодание',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 10,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 4,
+            cubeType: 8,
+            cubeBonus: 7,
+          },
+        },
+      },
+      {
+        name: 'Растаптывание',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 10,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              condition: CONDITION_PRONE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 4,
+            cubeType: 10,
+            cubeBonus: 7,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

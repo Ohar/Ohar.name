@@ -728,6 +728,7 @@ const {
     CREATURE_MANTICORE,
     CREATURE_MARID,
     CREATURE_MARILITH,
+    CREATURE_MASTIFF,
     CREATURE_MEDUSA,
     CREATURE_MERFOLK,
     CREATURE_MERROW,
@@ -44881,6 +44882,75 @@ module.exports = [
             cubeCount: 4,
             cubeType: 10,
             cubeBonus: 7,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Мастифф',
+    nameEn: 'Mastiff',
+    id: CREATURE_MASTIFF,
+    description: `Мастиффы это внушительные собаки, ценящиеся гуманоидами за преданность и острые чувства. Мастиффов можно дрессировать как сторожевых, охотничьих или боевых псов. Полурослики и другие Маленькие гуманоиды используют их в качестве скакунов.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 334,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 8,
+      cubeBonus: 1,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: `Мастифф совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Если цель — существо, она должна преуспеть в спасброске Силы со Сл 11, иначе будет сбита с ног.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
           },
         },
       },

@@ -572,6 +572,7 @@ const {
     CREATURE_CYCLOPS,
     CREATURE_DAO,
     CREATURE_DARKMANTLE,
+    CREATURE_DEATH_DOG,
     CREATURE_DEATH_KNIGHT,
     CREATURE_DEATH_SLAAD,
     CREATURE_DEATH_TYRANT,
@@ -45693,6 +45694,84 @@ module.exports = [
             cubeCount: 0,
             cubeType: 0,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Пёс смерти',
+    nameEn: 'Death Dog',
+    id: CREATURE_DEATH_DOG,
+    description: `Пёс смерти это уродливая двуглавая гончая, обитающая на равнинах, в пустынях и в Подземье. Ненависть пылает в его сердце, а любовь к пожиранию гуманоидной плоти заставляет нападать на путников и исследователей. Слюна пса смерти переносит болезнь, из-за которой плоть жертвы медленно отгнивает от костей.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 336,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 8,
+      cubeBonus: 12,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Двуглавость',
+        description: `Пёс совершает с преимуществом проверки Мудрости (Внимательность), а также спасброски от глухоты, испуги, лишения сознания, ослепления, очарования и ошеломления.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Пёс совершает две атаки укусом`,
+      },
+      {
+        name: 'Укус',
+        description: `Если цель — существо, она должна преуспеть в спасброске Телосложения со Сл 12 от болезни, иначе станет отравленной, пока не вылечится от болезни. За каждые прошедшие 24 часа существо должно повторить этот спасбросок, уменьшая максимум хитов на 5 (1к10) при провале. Это уменьшение длится до тех пор, пока болезнь не будет вылечена. Существо умирает, если болезнь уменьшает максимум хитов до 0.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
           },
         },
       },

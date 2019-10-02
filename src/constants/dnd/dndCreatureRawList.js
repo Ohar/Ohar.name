@@ -45042,4 +45042,52 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Морской конёк',
+    nameEn: 'Sea Horse',
+    id: CREATURE_SEA_HORSE,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 334,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_SWIM]: 20,
+    },
+    params: {
+      [PARAM_STR]: 1,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 8,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Подводное дыхание',
+        description: `Морской конёк может дышать только под водой.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

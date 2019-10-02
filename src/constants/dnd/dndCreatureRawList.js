@@ -576,6 +576,7 @@ const {
     CREATURE_DEATH_TYRANT,
     CREATURE_DEMILICH,
     CREATURE_DEVA,
+    CREATURE_DIRE_WOLF,
     CREATURE_DISPLACER_BEAST,
     CREATURE_DJINNI,
     CREATURE_DOPPELGANGER,
@@ -44654,6 +44655,80 @@ module.exports = [
             type: DAMAGE_BLUDGEONING,
             cubeCount: 2,
             cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Лютый волк',
+    nameEn: 'Dire Wolf',
+    id: CREATURE_DIRE_WOLF,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 333,
+    },
+    armor: {
+      ac: 14,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 10,
+      cubeBonus: 10,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: `Волк совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+      {
+        name: 'Тактика стаи',
+        description: `Волк совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник волка.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Если цель — существо, она должна преуспеть в спасброске Силы со Сл 13, иначе будет сбита с ног.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
             cubeBonus: 3,
           },
         },

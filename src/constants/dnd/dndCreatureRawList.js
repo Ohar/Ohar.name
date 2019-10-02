@@ -44319,4 +44319,99 @@ module.exports = [
     ],
     genderId: GENDER_FEMALE,
   },
+  {
+    name: 'Лев',
+    nameEn: 'Lion',
+    id: CREATURE_LION,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 332,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 10,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Лев совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+      {
+        name: 'Тактика стаи',
+        description: `Лев совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник льва.`,
+      },
+      {
+        name: 'Наскок',
+        description: `Если лев переместится как минимум на 20 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой когтём, эта цель должна преуспеть в спасброске Силы со Сл 13, иначе будет сбита с ног. Если цель сбита с ног, лев может бонусным действием совершить по ней одну атаку укусом.`,
+      },
+      {
+        name: 'Прыжок с разбега',
+        description: `При разбеге в 10 футов лев может прыгнуть в длину на 25 футов.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

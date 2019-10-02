@@ -46605,4 +46605,107 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Рой насекомых',
+    nameEn: 'Swarm of Insects',
+    id: CREATURE_SWARM_OF_INSECTS,
+    description: swarmDescription,
+    sizeType: SIZE_TINY,
+    swarmSizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 339,
+    },
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_CLIMB]: 20,
+    },
+    params: {
+      [PARAM_STR]: 3,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 1,
+    },
+    resistanceList: [
+      DAMAGE_BLUDGEONING,
+      DAMAGE_PIERCING,
+      DAMAGE_SLASHING,
+    ],
+    immunityConditionList: [
+      CONDITION_GRAPPLED,
+      CONDITION_FRIGHTENED,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_CHARMED,
+      CONDITION_STUNNED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 10,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 8,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Рой',
+        description: `Рой может занимать пространство другого существа, и наоборот, и рой может перемещаться через любой проход, достаточный для  Крохотных насекомых. Рой не может восстанавливать хиты и получать временные хиты.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укусы',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 0,
+          target: {
+            count: 1,
+            limit: {
+              comment: ` в пространстве роя`,
+            },
+          },
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 4,
+                cubeType: 4,
+                cubeBonus: 0,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 4,
+                cubeBonus: 0,
+                comment: `, если у роя половина хитов или меньше`,
+              },
+            ],
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

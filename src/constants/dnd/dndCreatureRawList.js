@@ -123,6 +123,7 @@ const {
     LANG_ANY_UP_TO_FIVE,
     LANG_AQUAN,
     LANG_AURAN,
+    LANG_BLINK_DOG,
     LANG_BULLYWUG,
     LANG_CELESTIAL,
     LANG_COMMON,
@@ -44953,6 +44954,90 @@ module.exports = [
             cubeBonus: 1,
           },
         },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Мерцающий пёс',
+    nameEn: 'Blink Dog',
+    id: CREATURE_BLINK_DOG,
+    description: `Мерцающий пёс получил своё название за способность исчезать и возникать в другом месте. Он использует это умение и для нападения и для уклонения от чужих атак. У мерцающих псов старая вражда с [ускользающими зверьми](CREATURE:${CREATURE_DISPLACER_BEAST}), и они сразу нападают на них, как только заметят.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_FEY,
+    ],
+    aligmentId: ALIGMENT_LG,
+    source: {
+      id: 'MM',
+      page: 334,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 8,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 12,
+      [PARAM_DEX]: 17,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_BLINK_DOG,
+      {
+        id: LANG_SYLVAN,
+        doNotSpeak: true,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: `Пёс совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+      {
+        name: 'Телепортация',
+        restore: {
+          from: 4,
+          to: 6,
+        },
+        description: `Пёс магическим образом телепортируется вместе со всем несомым и носимым снаряжением, на расстояние до 40 футов в свободное пространство, которое он видит. До или после телепортации пёс может совершить одну атаку укусом.`,
       },
     ],
     genderId: GENDER_MALE,

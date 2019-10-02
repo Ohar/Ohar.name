@@ -44106,4 +44106,79 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Крокодил',
+    nameEn: 'Crocodile',
+    id: CREATURE_CROCODILE,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 331,
+    },
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 5,
+    },
+    skillCollection: {
+      [SKILL_STEALTH]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Задержка дыхания',
+        description: `Крокодил может задержать дыхание на 15 минут.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель становится схваченной (Сл высвобождения 12). Пока цель схвачена, она опутана, и крокодил не может кусать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

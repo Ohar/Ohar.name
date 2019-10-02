@@ -46254,19 +46254,21 @@ module.exports = [
             },
           },
           hit: [
-            {
-              type: DAMAGE_PIERCING,
-              cubeCount: 2,
-              cubeType: 6,
-              cubeBonus: 0,
-            },
-            {
-              type: DAMAGE_PIERCING,
-              cubeCount: 1,
-              cubeType: 6,
-              cubeBonus: 0,
-              comment: `, если у роя половина хитов или меньше`,
-            },
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 6,
+                cubeBonus: 0,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 0,
+                comment: `, если у роя половина хитов или меньше`,
+              },
+            ],
           ],
         },
       },
@@ -46364,19 +46366,21 @@ module.exports = [
             },
           },
           hit: [
-            {
-              type: DAMAGE_PIERCING,
-              cubeCount: 4,
-              cubeType: 6,
-              cubeBonus: 0,
-            },
-            {
-              type: DAMAGE_PIERCING,
-              cubeCount: 2,
-              cubeType: 6,
-              cubeBonus: 0,
-              comment: `, если у роя половина хитов или меньше`,
-            },
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 4,
+                cubeType: 6,
+                cubeBonus: 0,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 6,
+                cubeBonus: 0,
+                comment: `, если у роя половина хитов или меньше`,
+              },
+            ],
           ],
         },
       },
@@ -46468,19 +46472,21 @@ module.exports = [
             },
           },
           hit: [
-            {
-              type: DAMAGE_PIERCING,
-              cubeCount: 2,
-              cubeType: 6,
-              cubeBonus: 0,
-            },
-            {
-              type: DAMAGE_PIERCING,
-              cubeCount: 1,
-              cubeType: 6,
-              cubeBonus: 0,
-              comment: `, если у роя половина хитов или меньше`,
-            },
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 2,
+                cubeType: 6,
+                cubeBonus: 0,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 0,
+                comment: `, если у роя половина хитов или меньше`,
+              },
+            ],
           ],
         },
       },

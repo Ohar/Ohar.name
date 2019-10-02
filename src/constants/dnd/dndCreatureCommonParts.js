@@ -41,15 +41,16 @@ const {
   CREATURE_DEATH_SLAAD,
   CREATURE_DRAFT_HORSE,
   CREATURE_DRAGON_TURTLE,
+  CREATURE_DROW,
+  CREATURE_DROW_ELITE_WARRIOR,
+  CREATURE_DROW_PRIESTESS_OF_LOLTH,
+  CREATURE_DRUID,
   CREATURE_EFREETI,
   CREATURE_ERINYES,
   CREATURE_FIRE_GIANT,
   CREATURE_FROST_GIANT,
-  CREATURE_GITHYANKI_WARRIOR,
-  CREATURE_DROW,
   CREATURE_GIANT_SPIDER,
-  CREATURE_DROW_PRIESTESS_OF_LOLTH,
-  CREATURE_DROW_ELITE_WARRIOR,
+  CREATURE_GITHYANKI_WARRIOR,
   CREATURE_GITHZERAI_MONK,
   CREATURE_GOBLIN,
   CREATURE_GOBLIN_BOSS,
@@ -78,6 +79,7 @@ const {
   CREATURE_MAGMA_MEPHIT,
   CREATURE_MIND_FLAYER,
   CREATURE_MONODRONE,
+  CREATURE_MUMMY_LORD,
   CREATURE_NIGHT_HAG,
   CREATURE_OGRE,
   CREATURE_ORC,
@@ -94,11 +96,17 @@ const {
   CREATURE_STONE_GIANT,
   CREATURE_STORM_GIANT,
   CREATURE_SUCCUBUS,
+  CREATURE_SWARM_OF_BATS,
+  CREATURE_SWARM_OF_INSECTS,
+  CREATURE_SWARM_OF_POISONOUS_SNAKES,
+  CREATURE_SWARM_OF_RATS,
+  CREATURE_SWARM_OF_RAVENS,
   CREATURE_VAMPIRE,
   CREATURE_VAMPIRE_SPAWN,
   CREATURE_WOLF,
   CREATURE_WORG,
   CREATURE_WYVERN,
+  CREATURE_YUAN_TI_ABOMINATION,
 } = require('./dndCreatureIdList')
 
 const remorhazDescription = `Взрывая толщу снега и льда, в облаке пара на поверхность прорывается пульсирующее внутренним огнём тело ремораза. Расположенные за головой похожие на крылья плавники ярко пышут, а широкая пасть до краёв наполнена острыми зубами.\n
@@ -973,6 +981,11 @@ const yugolothDescription = {
 Как бы то ни было, ни одно исчадие не сможет найти Генерала Геенны, если он сам того не пожелает. Его истинное имя неизвестно, и даже _Книги Перечёта_ не содержат упоминания об этом могущественном воплощении истинного зла.`,
 }
 
+const swarmDescription = {
+  header: `Природа роёв`,
+  text: `Рои — это не просто обычные скопления крошечных существ. Они формируются в результате какого-то зловещего или нездорового воздействия. [Вампир](CREATURE:${CREATURE_VAMPIRE}) может призывать [рои летучих мышей](CREATURE:${CREATURE_SWARM_OF_BATS}) или [крыс](CREATURE:${CREATURE_SWARM_OF_RATS}) из темнейших уголков ночи, а одно лишь присутствие [лорд-мумии](CREATURE:${CREATURE_MUMMY_LORD}) может заставить [скарабеев](CREATURE:${CREATURE_SWARM_OF_INSECTS}) массово выкопаться из песчаных глубин её гробницы. У [карги](CREATURE:${CREATURE_NIGHT_HAG}) может быть способность использовать [рой воронов](CREATURE:${CREATURE_SWARM_OF_RAVENS}) против своих врагов, а за [отродьем юань-ти](CREATURE:${CREATURE_YUAN_TI_ABOMINATION}) может по пятам ползти несколько [роёв ядовитых змей](CREATURE:${CREATURE_SWARM_OF_POISONOUS_SNAKES}). Даже [друиды](CREATURE:${CREATURE_DRUID}) не могут успокоить такие рои, а их агрессивность практически противоестественна.`,
+}
+
 module.exports.angelDescription = angelDescription
 module.exports.animatedThingsDescription = animatedThingsDescription
 module.exports.blackDragonDescriptionList = blackDragonDescriptionList
@@ -1033,6 +1046,7 @@ module.exports.skeletonDescription = skeletonDescription
 module.exports.slaadDescription = slaadDescription
 module.exports.sphinxDescription = sphinxDescription
 module.exports.sphinxNote = sphinxNote
+module.exports.swarmDescription = swarmDescription
 module.exports.vampireDescriptionList = vampireDescriptionList
 module.exports.whiteDragonDescriptionList = whiteDragonDescriptionList
 module.exports.yuantiDescription = yuantiDescription

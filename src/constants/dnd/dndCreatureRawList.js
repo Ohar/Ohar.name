@@ -481,6 +481,7 @@ const {
     slaadDescription,
     sphinxDescription,
     sphinxNote,
+    swarmDescription,
     vampireDescriptionList,
     whiteDragonDescriptionList,
     yuantiDescription,
@@ -595,6 +596,7 @@ const {
     CREATURE_DROW_ELITE_WARRIOR,
     CREATURE_DROW_MAGE,
     CREATURE_DROW_PRIESTESS_OF_LOLTH,
+    CREATURE_DRUID,
     CREATURE_DRYAD,
     CREATURE_DUERGAR,
     CREATURE_DUODRONE,
@@ -729,6 +731,7 @@ const {
     CREATURE_LIZARDFOLK,
     CREATURE_LIZARDFOLK_KING_QUEEN,
     CREATURE_LIZARDFOLK_SHAMAN,
+    CREATURE_MAGE,
     CREATURE_MAGMA_MEPHIT,
     CREATURE_MAGMIN,
     CREATURE_MAMMOTH,
@@ -835,7 +838,12 @@ const {
     CREATURE_STONE_GOLEM,
     CREATURE_STORM_GIANT,
     CREATURE_SUCCUBUS,
+    CREATURE_SWARM_OF_BATS,
+    CREATURE_SWARM_OF_INSECTS,
+    CREATURE_SWARM_OF_POISONOUS_SNAKES,
     CREATURE_SWARM_OF_QUIPPERS,
+    CREATURE_SWARM_OF_RATS,
+    CREATURE_SWARM_OF_RAVENS,
     CREATURE_TARRASQUE,
     CREATURE_THRI_KREEN,
     CREATURE_TREANT,
@@ -4698,7 +4706,7 @@ module.exports = [
     id: CREATURE_GALEB_DUHR,
     description: `Галеб дур — существо, похожее на валун с массивными выступами, которые используются как руки и ноги. Он способен оживлять находящиеся рядом с ним камни, и обычно встречается в горной местности.\n
 Могущественная магия позволяет заклинателям призывать галеб дура с Плана Земли, хотя некоторые из них могут появиться и без помощи магии — в тех местах, что соприкасаются с этим планом. По сравнению с другими элементалями, галеб дур обладает большим интеллектом, что позволяет ему лучше оценивать степень угрозы и вступать в диалог с существами, зашедшими на охраняемую им территорию.\n
-**Каменный страж.** Галеб дур не стареет, не ест и не пьёт, что делает его великолепным охранником. Могущественный друид может поручить ему охрану каменного круга или священного холма. Другой галеб дур может быть создан для охраны подземной гробницы или башни волшебника. По своему усмотрению он может принять облик обычного валуна и находиться в нём годами.\n
+**Каменный страж.** Галеб дур не стареет, не ест и не пьёт, что делает его великолепным охранником. Могущественный [друид](CREATURE:${CREATURE_DRUID}) может поручить ему охрану каменного круга или священного холма. Другой галеб дур может быть создан для охраны подземной гробницы или башни [волшебника](CREATURE:${CREATURE_MAGE}). По своему усмотрению он может принять облик обычного валуна и находиться в нём годами.\n
 Галеб дур навечно связан с Материальным Планом, поэтому после смерти не возвращается на План Земли. У него великолепная память, и он всегда рад поделиться информацией о местности с существами, которых не расценивает как угрозу.\n
 **Связь с камнем.** Галеб дур способен слиться воедино с землёй вокруг себя, что позволяет ему наполнить близлежащие камни и валуны неким подобием жизни. Он использует оживлённые камни, чтобы отпугивать чужаков и защищать то, что ему поручено. Чтобы приблизиться к нарушителям, он прижимает конечности к телу и с бешеной скоростью катится вперёд.`,
     sizeType: SIZE_MEDIUM,
@@ -46164,5 +46172,105 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Рой воронов',
+    nameAlt: 'Стая воронов',
+    nameEn: 'Swarm of Ravens',
+    id: CREATURE_SWARM_OF_RAVENS,
+    description: swarmDescription,
+    sizeType: SIZE_TINY,
+    swarmSizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 338,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 7,
+      cubeType: 8,
+      cubeBonus: -7,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 50,
+    },
+    params: {
+      [PARAM_STR]: 6,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 8,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+    },
+    resistanceList: [
+      DAMAGE_BLUDGEONING,
+      DAMAGE_PIERCING,
+      DAMAGE_SLASHING,
+    ],
+    immunityConditionList: [
+      CONDITION_GRAPPLED,
+      CONDITION_FRIGHTENED,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_CHARMED,
+      CONDITION_STUNNED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Рой',
+        description: `Рой может занимать пространство другого существа, и наоборот, и рой может перемещаться через любой проход, достаточный для Крохотных [воронов](CREATURE:${CREATURE_RAVEN}). Рой не может восстанавливать хиты и получать временные хиты.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Клювы',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              comment: ` в пространстве роя`,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 1,
+              cubeType: 6,
+              cubeBonus: 0,
+              comment: `, если у роя половина хитов или меньше`,
+            },
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

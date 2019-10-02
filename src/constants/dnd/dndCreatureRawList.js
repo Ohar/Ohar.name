@@ -46273,4 +46273,114 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Рой квипперов',
+    nameAlt: 'Стая квипперов',
+    nameEn: 'Swarm of Quippers',
+    id: CREATURE_SWARM_OF_QUIPPERS,
+    description: swarmDescription,
+    sizeType: SIZE_TINY,
+    swarmSizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 338,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 8,
+      cubeBonus: -8,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 9,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 7,
+      [PARAM_CHA]: 2,
+    },
+    resistanceList: [
+      DAMAGE_BLUDGEONING,
+      DAMAGE_PIERCING,
+      DAMAGE_SLASHING,
+    ],
+    immunityConditionList: [
+      CONDITION_GRAPPLED,
+      CONDITION_FRIGHTENED,
+      CONDITION_PETRIFIED,
+      CONDITION_RESTRAINED,
+      CONDITION_CHARMED,
+      CONDITION_STUNNED,
+      CONDITION_PARALYZED,
+      CONDITION_PRONE,
+    ],
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 8,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Кровавое бешенство',
+        description: `Рой совершает с преимуществом броски рукопашных атак по существам, у которых хиты ниже максимума`,
+      },
+      {
+        name: 'Рой',
+        description: `Рой может занимать пространство другого существа, и наоборот, и рой может перемещаться через любой проход, достаточный для Крохотных [квипперов](CREATURE:${CREATURE_QUIPPER}). Рой не может восстанавливать хиты и получать временные хиты.`,
+      },
+      {
+        name: 'Подводное дыхание',
+        description: `Рой может дышать только под водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укусы',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 0,
+          target: {
+            count: 1,
+            type: TARGET_CREATURE,
+            limit: {
+              comment: ` в пространстве роя`,
+            },
+          },
+          hit: [
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 4,
+              cubeType: 6,
+              cubeBonus: 0,
+            },
+            {
+              type: DAMAGE_PIERCING,
+              cubeCount: 2,
+              cubeType: 6,
+              cubeBonus: 0,
+              comment: `, если у роя половина хитов или меньше`,
+            },
+          ],
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

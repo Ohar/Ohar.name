@@ -779,6 +779,7 @@ const {
     CREATURE_PLESIOSAURUS,
     CREATURE_POLAR_BEAR,
     CREATURE_POLTERGEIST,
+    CREATURE_PONY,
     CREATURE_PSEUDODRAGON,
     CREATURE_PTERANODON,
     CREATURE_PURPLE_WORM,
@@ -45874,5 +45875,63 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Пони',
+    nameEn: 'Pony',
+    id: CREATURE_PONY,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 337,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_8,
+    actionList: [
+      {
+        name: 'Копыта',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

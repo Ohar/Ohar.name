@@ -594,6 +594,7 @@ const {
     CREATURE_EAGLE,
     CREATURE_EARTH_ELEMENTAL,
     CREATURE_EFREETI,
+    CREATURE_ELK,
     CREATURE_EMPYREAN,
     CREATURE_ERINYES,
     CREATURE_ETTERCAP,
@@ -44572,5 +44573,90 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Лось',
+    nameEn: 'Elk',
+    id: CREATURE_ELK,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 333,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 10,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_4,
+    featureList: [
+      {
+        name: 'Атака в броске',
+        description: `Если лось переместится как минимум на 20 футов по прямой к цели, а затем в том же ходу попадёт по ней атакой тараном, цель получает от атаки дополнительный урон 7 (2к6). Если цель — существо, она должна преуспеть в спасброске Силы со Сл 13, иначе будет сбита с ног.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Таран',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Копыта',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              condition: CONDITION_PRONE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

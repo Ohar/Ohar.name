@@ -158,6 +158,7 @@ const {
     LANG_THRI_KREEN,
     LANG_UMBER_HULK,
     LANG_UNDERCOMMON,
+    LANG_WINTER_WOLF,
     LANG_WORGEN,
     LANG_YETI,
   } = require('./dndLanguageList'),
@@ -864,6 +865,7 @@ const {
     CREATURE_WIGHT,
     CREATURE_WILL_O_WISP,
     CREATURE_WINGED_KOBOLD,
+    CREATURE_WINTER_WOLF,
     CREATURE_WOLF,
     CREATURE_WORG,
     CREATURE_WRAITH,
@@ -45774,6 +45776,101 @@ module.exports = [
             cubeBonus: 2,
           },
         },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Полярный волк',
+    nameEn: 'Winter Wolf',
+    id: CREATURE_WINTER_WOLF,
+    description: `Обитающие на севере полярные волки велики как [лютые волки](CREATURE:${CREATURE_DIRE_WOLF}), но у них белый мех и бледно-голубые глаза. [Ледяные великаны](CREATURE:${CREATURE_FROST_GIANT}) используют этих злых существ в качестве охранников и спутников на охоте, и используют смертельное дыхание этих волков против врагов. Полярные волки общаются друг с другом рыком и лаем, но они также могут поддерживать несложную беседу на Великаньем и Общем языках.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NE,
+    source: {
+      id: 'MM',
+      page: 337,
+    },
+    armor: {
+      ac: 13,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 10,
+      cubeBonus: 20,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 7,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+      [SKILL_STEALTH]: 3,
+    },
+    immunityList: [
+      DAMAGE_COLD,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      LANG_GIANT,
+      LANG_COMMON,
+      LANG_WINTER_WOLF,
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: `Волк совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+      {
+        name: 'Тактика стаи',
+        description: `Волк совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник волка.`,
+      },
+      {
+        name: 'Снежный камуфляж',
+        description: `Волк совершает с преимуществом проверки Ловкости (Скрытность), когда пытается спрятаться на заснеженной местности.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Если цель — существо, она должна преуспеть в спасброске Силы со Сл 14, иначе будет сбита с ног.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Холодное дыхание',
+        restore: {
+          from: 5,
+          to: 6,
+        },
+        description: `Волк выдыхает ледяной ветер 15-футовым конусом. Все существа в этой области должны совершить спасбросок Ловкости со Сл 12, получая урон холодом 18 (4к8) при провале, или половину этого урона при успехе.`,
       },
     ],
     genderId: GENDER_MALE,

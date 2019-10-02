@@ -575,6 +575,7 @@ const {
     CREATURE_DEATH_KNIGHT,
     CREATURE_DEATH_SLAAD,
     CREATURE_DEATH_TYRANT,
+    CREATURE_DEER,
     CREATURE_DEMILICH,
     CREATURE_DEVA,
     CREATURE_DIRE_WOLF,
@@ -45219,6 +45220,64 @@ module.exports = [
             cubeCount: 2,
             cubeType: 8,
             cubeBonus: 5,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Олень',
+    nameEn: 'Deer',
+    id: CREATURE_DEER,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 335,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    cr: CR_0,
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 0,
           },
         },
       },

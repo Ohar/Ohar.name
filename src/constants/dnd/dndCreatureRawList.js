@@ -836,6 +836,7 @@ const {
     CREATURE_WARHORSE_SKELETON,
     CREATURE_WATER_ELEMENTAL,
     CREATURE_WATER_WEIRD,
+    CREATURE_WEASEL,
     CREATURE_WEREBEAR,
     CREATURE_WEREBOAR,
     CREATURE_WERERAT,
@@ -44237,6 +44238,74 @@ module.exports = [
         attack: {
           type: ACTION_MELEE_WEAPON_ATTACK,
           bonus: 0,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Куница',
+    nameEn: 'Weasel',
+    id: CREATURE_WEASEL,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 332,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 3,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 8,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 3,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: `Куница совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
           range: 5,
           target: 1,
           hit: {

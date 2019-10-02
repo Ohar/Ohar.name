@@ -44495,4 +44495,82 @@ module.exports = [
     ],
     genderId: GENDER_FEMALE,
   },
+  {
+    name: 'Летучая мышь',
+    nameEn: 'Bat',
+    id: CREATURE_BAT,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 333,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 5,
+      [SPEED_FLY]: 30,
+    },
+    params: {
+      [PARAM_STR]: 2,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 8,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 60,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Эхолокация',
+        description: `Летучая мышь не может использовать слепое зрение, будучи оглохшей.`,
+      },
+      {
+        name: 'Острый слух',
+        description: `Летучая мышь совершает с преимуществом проверки Мудрость (Внимательность), полагающиеся на слух.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 0,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
 ]

@@ -46087,4 +46087,82 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Рифовая акула',
+    nameEn: 'Reef Shark',
+    id: CREATURE_REEF_SHARK,
+    description: `Менее крупная, чем [гигантская](CREATURE:${CREATURE_GIANT_SHARK}) и [охотничья акулы](CREATURE:${CREATURE_HUNTER_SHARK}), рифовая акула обитает у побережий и в коралловых рифах, собираясь для охоты в небольшие стаи. Взрослые особи достигают в длину от 6 до 10 футов.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 338,
+    },
+    armor: {
+      ac: 12,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 4,
+      cubeType: 8,
+      cubeBonus: 4,
+    },
+    speed: {
+      [SPEED_WALK]: 0,
+      [SPEED_SWIM]: 40,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 4,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Тактика стаи',
+        description: `Акула совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник акулы.`,
+      },
+      {
+        name: 'Подводное дыхание',
+        description: `Акула может дышать только под водой.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
 ]

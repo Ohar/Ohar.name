@@ -849,6 +849,7 @@ const {
     CREATURE_SWARM_OF_RAVENS,
     CREATURE_TARRASQUE,
     CREATURE_THRI_KREEN,
+    CREATURE_TIGER,
     CREATURE_TREANT,
     CREATURE_TRICERATOPS,
     CREATURE_TRIDRONE,
@@ -47133,5 +47134,96 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Тигр',
+    nameEn: 'Tiger',
+    id: CREATURE_TIGER,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 341,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 10,
+      cubeBonus: 10,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 17,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Тигр совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+      {
+        name: 'Наскок',
+        description: `Если тигр переместится как минимум на 20 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой когтём, эта цель должна преуспеть в спасброске Силы со Сл 13, иначе будет сбита с ног. Если цель сбита с ног, тигр может бонусным действием совершить по ней одну атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

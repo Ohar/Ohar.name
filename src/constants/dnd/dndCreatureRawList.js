@@ -682,6 +682,7 @@ const {
     CREATURE_GITHZERAI_MONK,
     CREATURE_GITHZERAI_ZERTH,
     CREATURE_GLABREZU,
+    CREATURE_GLADIATOR,
     CREATURE_GNOLL,
     CREATURE_GNOLL_FANG_OF_YEENOGHU,
     CREATURE_GNOLL_PACK_LORD,
@@ -48362,6 +48363,151 @@ module.exports = [
             cubeBonus: 1,
           },
         },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Гладиатор',
+    nameEn: 'Gladiator',
+    id: CREATURE_GLADIATOR,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY,
+    source: {
+      id: 'MM',
+      page: 344,
+    },
+    armor: {
+      ac: 16,
+      type: 'проклёпанная кожа, щит',
+    },
+    hp: {
+      cubeCount: 15,
+      cubeType: 8,
+      cubeBonus: 45,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 16,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 15,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 7,
+      [PARAM_DEX]: 5,
+      [PARAM_CON]: 6,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 10,
+      [SKILL_INTIMIDATION]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
+    ],
+    cr: CR_5,
+    featureList: [
+      {
+        name: 'Храбрый',
+        description: `Гладиатор совершает с преимуществом спасброски от испуга.`,
+      },
+      {
+        name: 'Жестокость',
+        description: `Рукопашное оружие причиняет одну дополнительную кость своего урона, когда гладиатор попадает им (уже включено в атаку).`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Гладиатор совершает три рукопашные атаки или две дальнобойные атаки.`,
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 2,
+                cubeType: 6,
+                cubeBonus: 4,
+              },
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 2,
+                cubeType: 8,
+                cubeBonus: 4,
+                comment: ', если используется двумя руками',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 7,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 4,
+          },
+        },
+      },
+      {
+        name: 'Удар щитом',
+        description: `Если цель — существо с размером не больше Среднего, она должна преуспеть в спасброске Силы со Сл 15, иначе будет сбита с ног.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 7,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Парирование',
+        description: `Гладиатор добавляет 3 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого гладиатор должен видеть атакующего, и должен использовать рукопашное оружие.`,
       },
     ],
     genderId: GENDER_MALE,

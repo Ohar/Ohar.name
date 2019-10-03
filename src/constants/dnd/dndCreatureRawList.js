@@ -48144,4 +48144,123 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Ветеран',
+    nameEn: 'Veteran',
+    id: CREATURE_VETERAN,
+    description: `Ветераны это профессиональные воители, состоящие в армии за отдельную плату или защищающие то, что им дорого. В их ряды входят как солдаты, прошедшие службу, так и воители, никогда не служившие никому кроме себя.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY,
+    source: {
+      id: 'MM',
+      page: 344,
+    },
+    armor: {
+      ac: 17,
+      type: 'наборный доспех',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 8,
+      cubeBonus: 18,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 5,
+      [SKILL_PERCEPTION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
+    ],
+    cr: CR_3,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Ветеран совершает две атаки длинным мечом. Если у него вынут короткий меч, он может также совершить атаку коротким мечом.`,
+      },
+      {
+        name: 'Длинный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 3,
+              },
+              {
+                type: DAMAGE_SLASHING,
+                cubeCount: 1,
+                cubeType: 10,
+                cubeBonus: 3,
+                comment: ', если используется двумя руками',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Короткий меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Тяжёлый арбалет',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 100,
+            max: 400,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

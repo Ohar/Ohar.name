@@ -98,6 +98,7 @@ const {
     ALIGMENT_NG,
     ALIGMENT_N,
     ALIGMENT_NO,
+    ALIGMENT_NOT_GOOD,
     ALIGMENT_NOT_LAWFUL,
   } = require('./dndAligmentList'),
   {
@@ -48508,6 +48509,109 @@ module.exports = [
       {
         name: 'Парирование',
         description: `Гладиатор добавляет 3 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого гладиатор должен видеть атакующего, и должен использовать рукопашное оружие.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Головорез',
+    nameEn: 'Thug',
+    id: CREATURE_THUG,
+    description: `Головорезы это безжалостные громилы, умеющие запугивать и заниматься насилием. Они работают за деньги, и практически лишены моральных принципов.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_NOT_GOOD,
+    source: {
+      id: 'MM',
+      page: 345,
+    },
+    armor: {
+      ac: 11,
+      type: 'кожаный доспех',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+      cubeBonus: 10,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_INTIMIDATION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Тактика стаи',
+        description: `Головорез совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник головореза.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Головорез совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Булава',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Тяжёлый арбалет',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 2,
+          range: {
+            normal: 100,
+            max: 400,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 0,
+          },
+        },
       },
     ],
     genderId: GENDER_MALE,

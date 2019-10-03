@@ -3,6 +3,11 @@ const {
   GENDER_MALE,
   GENDER_FEMALE,
 } = require('./../genderList')
+const {
+  LANG_TYPE_EXOTIC,
+  LANG_TYPE_HIDDEN,
+  LANG_TYPE_STANDARD,
+} = require('./dndLanguageTypeList')
 
 const LANG_AARAKOCRA = 'aarakocra'
 const LANG_ABYSSAL = 'abyssal'
@@ -65,6 +70,7 @@ const LANG_YETI = 'yeti'
 const dndLanguageList = [
   {
     id: LANG_COMMON,
+    type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Всеобщий',
       instrumental: 'Всеобщий',
@@ -106,6 +112,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_ITS_CREATOR,
+    type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Языки своего создателя',
       instrumental: 'Языки своего создателя',
@@ -130,6 +137,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_PRIMORDIAL,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Первичный',
       instrumental: 'Первичный',
@@ -139,6 +147,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_ELVEN,
+    type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Эльфийский',
       instrumental: 'Эльфийский',
@@ -148,6 +157,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_SYLVAN,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Сильван',
       instrumental: 'Сильван',
@@ -157,6 +167,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_ABYSSAL,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Язык Бездны',
       instrumental: 'Язык Бездны',
@@ -166,6 +177,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_INFERNAL,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Инфернальный',
       instrumental: 'Инфернальный',
@@ -175,6 +187,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_AQUAN,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Акван',
       instrumental: 'Акван',
@@ -184,6 +197,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_DWARVISH,
+    type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Дварфийский',
       instrumental: 'Дварфийский',
@@ -193,6 +207,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GIANT,
+    type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Великаний',
       instrumental: 'Великаний',
@@ -202,6 +217,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_AURAN,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Ауран',
       instrumental: 'Ауран',
@@ -211,6 +227,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_CELESTIAL,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Небесный',
       instrumental: 'Небесный',
@@ -220,6 +237,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_DEEP_SPEECH,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Глубинная речь',
       instrumental: 'Глубинную речь',
@@ -230,6 +248,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_UNDERCOMMON,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Подземный',
       instrumental: 'Подземный',
@@ -239,6 +258,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_DRACONIC,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Драконий',
       instrumental: 'Драконий',
@@ -248,6 +268,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_DRUIDIC,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Друидский',
       instrumental: 'Друидский',
@@ -257,6 +278,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GNOMISH,
+    type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Гномий',
       instrumental: 'Гномий',
@@ -266,6 +288,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GOBLIN,
+    type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Гоблинский',
       instrumental: 'Гоблинский',
@@ -275,6 +298,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GNOLL,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Гноллий',
       instrumental: 'Гноллий',
@@ -284,6 +308,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_HALFLING,
+    type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Язык полуросликов',
       instrumental: 'Язык полуросликов',
@@ -293,6 +318,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_UMBER_HULK,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык бурых увальней',
       instrumental: 'Язык бурых увальней',
@@ -302,6 +328,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_IGNAN,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Игнан',
       instrumental: 'Игнан',
@@ -311,6 +338,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_ORC,
+    type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Орочий',
       instrumental: 'Орочий',
@@ -320,6 +348,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_TERRAN,
+    type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Терран',
       instrumental: 'Терран',
@@ -329,6 +358,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_THUG_JARGON,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Воровской жаргон',
       instrumental: 'Воровской жаргон',
@@ -348,6 +378,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_SAHUAGIN,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Сахуагинский',
       instrumental: 'Сахуагинский',
@@ -357,6 +388,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_VEGEPYGMY,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Вегепигмейский',
       instrumental: 'Вегепигмейский',
@@ -366,6 +398,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_WORGEN,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык воргов',
       instrumental: 'Язык воргов',
@@ -375,6 +408,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GIANT_OWL,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык гигантских сов',
       instrumental: 'Язык гигантских сов',
@@ -384,6 +418,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GIANT_EAGLE,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык гигантских орлов',
       instrumental: 'Язык гигантских орлов',
@@ -393,6 +428,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GIANT_ELK,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык гигантских лосей',
       instrumental: 'Язык гигантских лосей',
@@ -402,6 +438,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_SPHINX,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык сфинксов',
       instrumental: 'Язык сфинксов',
@@ -411,6 +448,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GITH,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Гитский',
       instrumental: 'Гитский',
@@ -420,6 +458,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GRELL,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Грелльский',
       instrumental: 'Грелльский',
@@ -429,6 +468,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GRUNG,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Грунгский',
       instrumental: 'Грунгский',
@@ -438,6 +478,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_MODRONE,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Модронский',
       instrumental: 'Модронский',
@@ -447,6 +488,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_BULLYWUG,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Жаболюдский',
       instrumental: 'Жаболюдский',
@@ -456,6 +498,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_SLAAD,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Слаадский',
       instrumental: 'Слаадский',
@@ -465,6 +508,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_YETI,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык йети',
       instrumental: 'Язык йети',
@@ -474,6 +518,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_HOOK_HORROR,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык крюкастых ужасов',
       instrumental: 'Язык крюкастых ужасов',
@@ -483,6 +528,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_ICE_TOAD,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык ледяных жаб',
       instrumental: 'Язык ледяных жаб',
@@ -492,6 +538,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_BLINK_DOG,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык мерцающих псов',
       instrumental: 'Язык мерцающих псов',
@@ -501,6 +548,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_OTYUGH,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Отиджский',
       instrumental: 'Отиджский',
@@ -510,6 +558,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_WINTER_WOLF,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык полярных волков',
       instrumental: 'Язык полярных волков',
@@ -519,6 +568,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_THAY,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Тэйский',
       instrumental: 'Тэйский',
@@ -528,6 +578,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_TLINCALLI,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык тлинкалли',
       instrumental: 'Язык тлинкалли',
@@ -537,6 +588,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_THRI_KREEN,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Три-кринский',
       instrumental: 'Три-кринский',
@@ -546,6 +598,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_TROGLODYTE,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Троглодитский',
       instrumental: 'Троглодитский',
@@ -555,6 +608,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_IXITXACHITL,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык икситксачитлов',
       instrumental: 'Язык икситксачитлов',
@@ -564,6 +618,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_AARAKOCRA,
+    type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Язык ааракокр',
       instrumental: 'Язык ааракокр',

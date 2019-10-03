@@ -47057,4 +47057,81 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Сова',
+    nameEn: 'Owl',
+    id: CREATURE_OWL,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 340,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 5,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 3,
+      [PARAM_DEX]: 13,
+      [PARAM_CON]: 8,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 120,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Облёт',
+        description: `Сова не провоцирует атаки, когда вылетает из досягаемости врага.`,
+      },
+      {
+        name: 'Острые зрение и слух',
+        description: `Сова совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух или зрение.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
 ]

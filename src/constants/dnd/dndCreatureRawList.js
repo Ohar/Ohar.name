@@ -520,6 +520,7 @@ const {
     CREATURE_ANIMATED_ARMOR,
     CREATURE_ANKHEG,
     CREATURE_ANKYLOSAURUS,
+    CREATURE_APE,
     CREATURE_ARCANALOTH,
     CREATURE_AWAKENED_SHRUB,
     CREATURE_AWAKENED_TREE,
@@ -47430,6 +47431,91 @@ module.exports = [
             cubeCount: 2,
             cubeType: 4,
             cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Человекообразная обезьяна',
+    nameEn: 'Ape',
+    id: CREATURE_APE,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 341,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 6,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 5,
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    cr: CR_7,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Обезьяна совершает две атаки кулаком.`,
+      },
+      {
+        name: 'Кулак',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Камень',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 5,
+          range: {
+            normal: 25,
+            max: 50,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
           },
         },
       },

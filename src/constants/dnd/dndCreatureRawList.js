@@ -46971,4 +46971,90 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Слон',
+    nameEn: 'Elephant',
+    id: CREATURE_ELEPHANT,
+    sizeType: SIZE_HUGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 340,
+    },
+    armor: {
+      ac: 12,
+      type: `природный доспех`,
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 12,
+      cubeBonus: 24,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 22,
+      [PARAM_DEX]: 9,
+      [PARAM_CON]: 17,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_4,
+    featureList: [
+      {
+        name: 'Растаптывающий рывок',
+        description: `Если слон переместится как минимум на 20 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой бодания, цель должна преуспеть в спасброске Силы со Сл 12, иначе будет сбита с ног. Если цель сбита с ног, слон может бонусным действием совершить по ней одну атаку растаптыванием.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Бодание',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 3,
+            cubeType: 8,
+            cubeBonus: 6,
+          },
+        },
+      },
+      {
+        name: 'Растаптывание',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 8,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+              condition: CONDITION_PRONE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 3,
+            cubeType: 10,
+            cubeBonus: 6,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

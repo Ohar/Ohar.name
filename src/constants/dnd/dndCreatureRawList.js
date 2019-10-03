@@ -47611,4 +47611,75 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Шакал',
+    nameEn: 'Jackal',
+    id: CREATURE_JACKAL,
+    sizeType: SIZE_SMALL,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 342,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 6,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 8,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Острый слух и тонкий нюх',
+        description: `Шакал совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние.`,
+      },
+      {
+        name: 'Тактика стаи',
+        description: `Шакал совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник шакала.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 1,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: -1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

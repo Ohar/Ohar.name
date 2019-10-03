@@ -809,6 +809,7 @@ const {
     CREATURE_ROPER,
     CREATURE_RUG_OF_SMOTHERING,
     CREATURE_RUST_MONSTER,
+    CREATURE_SABER_TOOTHED_TIGER,
     CREATURE_SAHUAGIN,
     CREATURE_SAHUAGIN_BARON,
     CREATURE_SAHUAGIN_PRIESTESS,
@@ -46808,6 +46809,93 @@ module.exports = [
               },
             ],
           ],
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Саблезубый тигр',
+    nameEn: 'Saber-Toothed Tiger',
+    id: CREATURE_SABER_TOOTHED_TIGER,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 340,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 7,
+      cubeType: 10,
+      cubeBonus: 14,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 15,
+      [PARAM_INT]: 3,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 8,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Тигр совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+      {
+        name: 'Наскок',
+        description: `Если тигр переместится как минимум на 20 футов по прямой к существу, а затем в том же ходу попадёт по нему атакой когтём, эта цель должна преуспеть в спасброске Силы со Сл 14, иначе будет сбита с ног. Если цель сбита с ног, тигр может бонусным действием совершить по ней одну атаку укусом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 5,
+          },
+        },
+      },
+      {
+        name: 'Коготь',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 5,
+          },
         },
       },
     ],

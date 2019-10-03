@@ -20,6 +20,7 @@ const DAMAGE_FORCE = 'force'
 const DAMAGE_MAGIC_PIERCING_GOOD = 'magic_good'
 const DAMAGE_MAGIC_WEAPON = 'magic_piercing_weapon'
 const DAMAGE_NECROTIC = 'necrotic'
+const DAMAGE_NONMAGIC = 'nonmagic'
 const DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON = 'nonmagic_nonadamantine_weapon'
 const DAMAGE_NONMAGIC_NONSILVER_WEAPON = 'nonmagic_nonsilver_weapon'
 const DAMAGE_NONMAGIC_WEAPON = 'nonmagic_weapon'
@@ -48,6 +49,13 @@ const dndDamageTypeList = [
     name: 'Дробящий, колющий и рубящий урон от магического оружия',
     fullName: 'Дробящий, колющий и рубящий урон от магического оружия',
     description: `Дробящий, колющий и рубящий урон от магического оружия`,
+    isEnumeration: true,
+  },
+  {
+    id: DAMAGE_NONMAGIC,
+    name: 'Немагический  дробящий, колющий и рубящий урон',
+    fullName: 'Немагический  дробящий, колющий и рубящий урон',
+    description: `Немагический  дробящий, колющий и рубящий урон`,
     isEnumeration: true,
   },
   {
@@ -160,6 +168,7 @@ module.exports.DAMAGE_FORCE = DAMAGE_FORCE
 module.exports.DAMAGE_MAGIC_WEAPON = DAMAGE_MAGIC_WEAPON
 module.exports.DAMAGE_NECROTIC = DAMAGE_NECROTIC
 module.exports.DAMAGE_MAGIC_PIERCING_GOOD = DAMAGE_MAGIC_PIERCING_GOOD
+module.exports.DAMAGE_NONMAGIC = DAMAGE_NONMAGIC
 module.exports.DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON = DAMAGE_NONMAGIC_NONADAMANTINE_WEAPON
 module.exports.DAMAGE_NONMAGIC_NONSILVER_WEAPON = DAMAGE_NONMAGIC_NONSILVER_WEAPON
 module.exports.DAMAGE_NONMAGIC_WEAPON = DAMAGE_NONMAGIC_WEAPON

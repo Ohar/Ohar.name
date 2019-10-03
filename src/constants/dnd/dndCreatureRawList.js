@@ -704,6 +704,7 @@ const {
     CREATURE_GRICK_ALPHA,
     CREATURE_GRIFFON,
     CREATURE_GRIMLOCK,
+    CREATURE_GUARD,
     CREATURE_GUARDIAN_NAGA,
     CREATURE_GYNOSPHINX,
     CREATURE_HALF_OGRE,
@@ -777,6 +778,7 @@ const {
     CREATURE_NEEDLE_BLIGHT,
     CREATURE_NIGHT_HAG,
     CREATURE_NIGHTMARE,
+    CREATURE_NOBLE,
     CREATURE_NOTHIC,
     CREATURE_NYCALOTH,
     CREATURE_OCHRE_JELLY,
@@ -48612,6 +48614,85 @@ module.exports = [
             cubeBonus: 0,
           },
         },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Дворянин',
+    nameEn: 'Noble',
+    id: CREATURE_NOBLE,
+    description: `Дворяне обладают большой властью и влиянием, будучи представителями высшего класса. У них есть богатство и связи, делающие их такими же влиятельными как монархи и генералы. Дворяне часто путешествуют в сопровождении [стражей](CREATURE:${CREATURE_GUARD}), а также слуг, являющихся [обывателями](CREATURE:${CREATURE_COMMONER}).\n
+Статистику дворянина можно использовать для отыгрыша придворного без благородного происхождения.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY,
+    source: {
+      id: 'MM',
+      page: 345,
+    },
+    armor: {
+      ac: 15,
+      type: 'кираса',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 16,
+    },
+    skillCollection: {
+      [SKILL_DECEPTION]: 5,
+      [SKILL_INSIGHT]: 4,
+      [SKILL_PERSUASION]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 2,
+      },
+    ],
+    cr: CR_1_8,
+    actionList: [
+      {
+        name: 'Рапира',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Парирование',
+        description: `Дворянин добавляет 2 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого дворянин должен видеть атакующего, и должен использовать рукопашное оружие.`,
       },
     ],
     genderId: GENDER_MALE,

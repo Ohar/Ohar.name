@@ -523,6 +523,7 @@ const {
     CREATURE_ARCANALOTH,
     CREATURE_AWAKENED_SHRUB,
     CREATURE_AWAKENED_TREE,
+    CREATURE_AXE_BEAK,
     CREATURE_AZER,
     CREATURE_BABOON,
     CREATURE_BADGER,
@@ -47220,6 +47221,65 @@ module.exports = [
             cubeCount: 1,
             cubeType: 8,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Топороклюв',
+    nameEn: 'Axe Beak',
+    id: CREATURE_AXE_BEAK,
+    description: `Топороклюв это крупная нелетающая птица с сильными ногами и крепким клиновидным клювом. У неё скверный характер и склонность нападать на незнакомых существ, подошедших слишком близко.`,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 341,
+    },
+    armor: {
+      ac: 11,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 50,
+    },
+    params: {
+      [PARAM_STR]: 14,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_4,
+    actionList: [
+      {
+        name: 'Клюв',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
           },
         },
       },

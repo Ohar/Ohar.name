@@ -546,6 +546,7 @@ const {
     CREATURE_BEHIR,
     CREATURE_BEHOLDER,
     CREATURE_BEHOLDER_ZOMBIE,
+    CREATURE_BERSERKER,
     CREATURE_BLACK_BEAR,
     CREATURE_BLACK_DRAGON_WYRMLING,
     CREATURE_BLACK_PUDDING,
@@ -48061,6 +48062,79 @@ module.exports = [
             cubeCount: 1,
             cubeType: 4,
             cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Берсерк',
+    nameEn: 'Berserker',
+    id: CREATURE_BERSERKER,
+    description: `Непредсказуемые берсерки из варварских земель объединяются в боевые отряды и ищут вооружённые конфликты везде, где могут.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY_CHAOTIC,
+    source: {
+      id: 'MM',
+      page: 344,
+    },
+    armor: {
+      ac: 13,
+      type: 'шкурный доспех',
+    },
+    hp: {
+      cubeCount: 9,
+      cubeType: 8,
+      cubeBonus: 27,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 17,
+      [PARAM_INT]: 9,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 9,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Безрассудство',
+        description: `В начале своего хода берсерк может решить, что в этом ходу все рукопашные атаки оружием будет совершать с преимуществом, но в этом случае до начала его следующего хода все броски атаки по нему тоже будут совершаться с преимуществом.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Секира',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 12,
+            cubeBonus: 3,
           },
         },
       },

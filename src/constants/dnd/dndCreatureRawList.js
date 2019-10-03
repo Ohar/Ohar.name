@@ -734,6 +734,7 @@ const {
     CREATURE_LEMURE,
     CREATURE_LICH,
     CREATURE_LION,
+    CREATURE_LIZARD,
     CREATURE_LIZARDFOLK,
     CREATURE_LIZARDFOLK_KING_QUEEN,
     CREATURE_LIZARDFOLK_SHAMAN,
@@ -47814,5 +47815,69 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Ящерица',
+    nameEn: 'Lizard',
+    id: CREATURE_LIZARD,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 342,
+    },
+    armor: {
+      ac: 10,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 20,
+      [SPEED_CLIMB]: 20,
+    },
+    params: {
+      [PARAM_STR]: 2,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_DARK_VISION,
+        value: 30,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 9,
+      },
+    ],
+    cr: CR_0,
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 0,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

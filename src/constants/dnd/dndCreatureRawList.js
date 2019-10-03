@@ -47682,4 +47682,68 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Ядовитая змея',
+    nameEn: 'Poisonous Snake',
+    id: CREATURE_POISONOUS_SNAKE,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 342,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 2,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 11,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 10,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_8,
+    actionList: [
+      {
+        name: 'Укус',
+        description: `Цель должна преуспеть в спасброске Телосложения со Сл 10, иначе получит урон ядом 5 (2к4), или половину этого урона при успехе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
+  },
 ]

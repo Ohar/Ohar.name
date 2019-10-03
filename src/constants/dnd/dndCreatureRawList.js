@@ -816,6 +816,7 @@ const {
     CREATURE_SALAMANDER,
     CREATURE_SATYR,
     CREATURE_SCARECROW,
+    CREATURE_SCORPION,
     CREATURE_SEA_HAG,
     CREATURE_SEA_HORSE,
     CREATURE_SHADOW,
@@ -46895,6 +46896,75 @@ module.exports = [
             cubeCount: 2,
             cubeType: 6,
             cubeBonus: 5,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Скорпион',
+    nameEn: 'Scorpion',
+    id: CREATURE_SCORPION,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 340,
+    },
+    armor: {
+      ac: 11,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+    },
+    params: {
+      [PARAM_STR]: 2,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 8,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 8,
+      [PARAM_CHA]: 2,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_STEALTH]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_0,
+    actionList: [
+      {
+        name: 'Жало',
+        description: `Цель должна совершить спасбросок Телосложения со Сл 9, получая урон ядом 4 (8) при провале, или половину этого урона при успехе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
           },
         },
       },

@@ -118,8 +118,7 @@ const {
     LANG_ABYSSAL,
     LANG_ALL,
     LANG_ALL_KNOWN_AT_LIFE,
-    LANG_ANY_ONE,
-    LANG_ANY_UP_TO_FIVE,
+    LANG_ANY,
     LANG_AQUAN,
     LANG_AURAN,
     LANG_BLINK_DOG,
@@ -959,7 +958,10 @@ module.exports = [
       [PARAM_CHA]: 10,
     },
     languageList: [
-      LANG_ANY_ONE,
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
     ],
     senseList: [
       {
@@ -1023,7 +1025,10 @@ module.exports = [
       [PARAM_CHA]: 10,
     },
     languageList: [
-      LANG_ANY_ONE,
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
     ],
     senseList: [
       {
@@ -1101,7 +1106,10 @@ module.exports = [
       [PARAM_CHA]: 11,
     },
     languageList: [
-      LANG_ANY_ONE,
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
     ],
     senseList: [
       {
@@ -23855,7 +23863,10 @@ module.exports = [
     ],
     languageList: [
       LANG_COMMON,
-      LANG_ANY_UP_TO_FIVE,
+      {
+        id: LANG_ANY,
+        count: 5,
+      },
     ],
     cr: CR_21,
     featureList: [
@@ -27293,7 +27304,10 @@ module.exports = [
     ],
     languageList: [
       LANG_COMMON,
-      LANG_ANY_ONE,
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
     ],
     cr: CR_4,
     spellCast: {
@@ -47946,7 +47960,10 @@ module.exports = [
       },
     ],
     languageList: [
-      LANG_ALL, // TODO
+      {
+        id: LANG_ANY,
+        count: 6,
+      },
     ],
     cr: CR_12,
     featureList: [

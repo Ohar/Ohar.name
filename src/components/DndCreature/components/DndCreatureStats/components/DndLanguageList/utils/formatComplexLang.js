@@ -11,11 +11,17 @@ export default lang => {
   )
 
   const langList = langIdList.map(
-    langId => dndLanguageCollection[langId].name[
-      lang.doNotSpeak
+    langId => {
+      const { name } = dndLanguageCollection[langId]
+      const nameObj = typeof name === 'function'
+        ? name(lang.count || 1)
+        : name
+      const caseName = lang.doNotSpeak
         ? 'instrumental'
         : 'nominative'
-    ]
+
+      return nameObj[caseName]
+    },
   )
 
   const name = langList.length === 1

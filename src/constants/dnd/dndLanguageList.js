@@ -1,4 +1,7 @@
+const proschet = require('proschet')
+
 const listToCollectionById = require('./../../utils/listToCollectionById')
+const numberList = require('./../nameGeneration/wordDicts/numberList')
 const {
   GENDER_MALE,
   GENDER_FEMALE,
@@ -13,9 +16,7 @@ const LANG_AARAKOCRA = 'aarakocra'
 const LANG_ABYSSAL = 'abyssal'
 const LANG_ALL = 'all'
 const LANG_ALL_KNOWN_AT_LIFE = 'all_known_at_life'
-const LANG_ANY_ONE = 'any_one'
-const LANG_ANY_TWO = 'any_two'
-const LANG_ANY_UP_TO_FIVE = 'any_up_to_five'
+const LANG_ANY = 'any'
 const LANG_AQUAN = 'aquan'
 const LANG_AURAN = 'auran'
 const LANG_BLINK_DOG = 'blink_dog'
@@ -80,27 +81,27 @@ const dndLanguageList = [
     isRealLang: true,
   },
   {
-    id: LANG_ANY_ONE,
-    name: {
-      nominative: 'Любой один язык',
-      instrumental: 'Любой один язык',
-      prepositional: 'Любом одном языке',
-    },
-  },
-  {
-    id: LANG_ANY_TWO,
-    name: {
-      nominative: 'Любые два языка',
-      instrumental: 'Любые два языка',
-      prepositional: 'Любых двух языках',
-    },
-  },
-  {
-    id: LANG_ANY_UP_TO_FIVE,
-    name: {
-      nominative: 'до пяти других языков',
-      instrumental: 'до пяти других языков',
-      prepositional: 'до пяти других языков',
+    id: LANG_ANY,
+    name: (count = 1) => {
+      const {nominative, instrumental, prepositional} = numberList[count]
+
+      return {
+        nominative: proschet([
+          `Любой ${nominative} язык`,
+          `Любые ${nominative} языка`,
+          `Любые ${nominative} языков`,
+        ])(count),
+        instrumental: proschet([
+          `Любым ${instrumental} языком`,
+          `Любыми ${instrumental} языками`,
+          `Любыми ${instrumental} языками`,
+        ])(count),
+        prepositional: proschet([
+          `Любом ${prepositional} языке`,
+          `Любых ${prepositional} языках`,
+          `Любых ${prepositional} языках`,
+        ])(count),
+      }
     },
   },
   {
@@ -664,9 +665,7 @@ module.exports.LANG_AARAKOCRA = LANG_AARAKOCRA
 module.exports.LANG_ABYSSAL = LANG_ABYSSAL
 module.exports.LANG_ALL = LANG_ALL
 module.exports.LANG_ALL_KNOWN_AT_LIFE = LANG_ALL_KNOWN_AT_LIFE
-module.exports.LANG_ANY_ONE = LANG_ANY_ONE
-module.exports.LANG_ANY_TWO = LANG_ANY_TWO
-module.exports.LANG_ANY_UP_TO_FIVE = LANG_ANY_UP_TO_FIVE
+module.exports.LANG_ANY = LANG_ANY
 module.exports.LANG_AQUAN = LANG_AQUAN
 module.exports.LANG_AURAN = LANG_AURAN
 module.exports.LANG_BLINK_DOG = LANG_BLINK_DOG

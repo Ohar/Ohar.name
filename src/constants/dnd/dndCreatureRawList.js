@@ -47920,7 +47920,7 @@ module.exports = [
     },
     armor: {
       ac: 12,
-      comment: '15 с _Доспехами мага_ (Mage armor)))',
+      comment: '15 с _Доспехами мага_ (Mage armor)',
     },
     hp: {
       cubeCount: 18,

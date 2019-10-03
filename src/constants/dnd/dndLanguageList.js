@@ -70,6 +70,7 @@ const LANG_YETI = 'yeti'
 const dndLanguageList = [
   {
     id: LANG_COMMON,
+    scriptId: LANG_COMMON,
     type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Всеобщий',
@@ -129,6 +130,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_ALL,
+    scriptId: LANG_ALL,
     name: {
       nominative: 'Все языки',
       instrumental: 'Все языками',
@@ -137,6 +139,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_PRIMORDIAL,
+    scriptId: LANG_DWARVISH,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Первичный',
@@ -147,6 +150,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_ELVEN,
+    scriptId: LANG_ELVEN,
     type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Эльфийский',
@@ -157,6 +161,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_SYLVAN,
+    scriptId: LANG_ELVEN,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Сильван',
@@ -167,6 +172,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_ABYSSAL,
+    scriptId: LANG_INFERNAL,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Язык Бездны',
@@ -177,6 +183,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_INFERNAL,
+    scriptId: LANG_INFERNAL,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Инфернальный',
@@ -187,6 +194,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_AQUAN,
+    scriptId: LANG_DWARVISH,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Акван',
@@ -197,6 +205,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_DWARVISH,
+    scriptId: LANG_DWARVISH,
     type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Дварфийский',
@@ -207,6 +216,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GIANT,
+    scriptId: LANG_DWARVISH,
     type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Великаний',
@@ -217,6 +227,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_AURAN,
+    scriptId: LANG_DWARVISH,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Ауран',
@@ -227,6 +238,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_CELESTIAL,
+    scriptId: LANG_CELESTIAL,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Небесный',
@@ -248,6 +260,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_UNDERCOMMON,
+    scriptId: LANG_ELVEN,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Подземный',
@@ -258,6 +271,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_DRACONIC,
+    scriptId: LANG_DRACONIC,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Драконий',
@@ -268,6 +282,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_DRUIDIC,
+    scriptId: LANG_DRUIDIC,
     type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Друидский',
@@ -278,6 +293,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GNOMISH,
+    scriptId: LANG_DWARVISH,
     type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Гномий',
@@ -288,6 +304,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_GOBLIN,
+    scriptId: LANG_DWARVISH,
     type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Гоблинский',
@@ -308,6 +325,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_HALFLING,
+    scriptId: LANG_COMMON,
     type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Язык полуросликов',
@@ -328,6 +346,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_IGNAN,
+    scriptId: LANG_DWARVISH,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Игнан',
@@ -338,6 +357,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_ORC,
+    scriptId: LANG_DWARVISH,
     type: LANG_TYPE_STANDARD,
     name: {
       nominative: 'Орочий',
@@ -348,6 +368,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_TERRAN,
+    scriptId: LANG_DWARVISH,
     type: LANG_TYPE_EXOTIC,
     name: {
       nominative: 'Терран',
@@ -568,6 +589,7 @@ const dndLanguageList = [
   },
   {
     id: LANG_THAY,
+    scriptId: LANG_INFERNAL,
     type: LANG_TYPE_HIDDEN,
     name: {
       nominative: 'Тэйский',

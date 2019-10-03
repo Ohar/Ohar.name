@@ -3,6 +3,8 @@ import proschet from 'proschet'
 
 import { dndSpellCollection } from '@/constants/dnd/dndSpellList'
 
+import formatSpellText from './formatSpellText'
+
 const getSlotWord = proschet(['ячейка', 'ячейки', 'ячеек'])
 
 export default (
@@ -16,10 +18,7 @@ export default (
       spellIdList.map(
         item => typeof item === 'string'
           ? dndSpellCollection[item]
-          : {
-            ...dndSpellCollection[item.id],
-            nameEn: `${dndSpellCollection[item.id].nameEn} (${item.comment})`
-          }
+          : dndSpellCollection[item.id]
       ),
       'lvl'
     )
@@ -33,11 +32,7 @@ export default (
       const countText = count === Infinity
         ? 'неограниченно'
         : `${count} ${getSlotWord(count)}`
-      const spellStr = list
-        .map(
-          ({ name, nameEn }) => `_${name}_ (${nameEn})`
-        )
-        .join(', ')
+      const spellStr = list.map(formatSpellText).join(', ')
 
       return `* ${lvlText} (${countText}): ${spellStr}`
     }

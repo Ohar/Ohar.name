@@ -1,4 +1,4 @@
-import { dndSpellCollection } from '@/constants/dnd/dndSpellList'
+import formatSpellText from './formatSpellText'
 
 export default spellIdByCountList => spellIdByCountList
   .map(
@@ -8,19 +8,7 @@ export default spellIdByCountList => spellIdByCountList
         : ` ${limit.count}/${limit.period} каждое`
 
       const spellStr = list
-        .map(
-          item => {
-            const spell = typeof item === 'string'
-              ? dndSpellCollection[item]
-              : dndSpellCollection[item.id]
-            const {name, nameEn} = spell
-            const commentText = typeof item === 'string'
-              ? ''
-              : ` (${item.comment})`
-
-            return `_${name}_ (${nameEn})${commentText}`
-          }
-        )
+        .map(formatSpellText)
         .join(', ')
 
       return `* ${count}: ${spellStr}`

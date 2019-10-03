@@ -698,6 +698,7 @@ const {
     CREATURE_GYNOSPHINX,
     CREATURE_HALF_OGRE,
     CREATURE_HARPY,
+    CREATURE_HAWK,
     CREATURE_HELL_HOUND,
     CREATURE_HELMED_HORROR,
     CREATURE_HEZROU,
@@ -47745,5 +47746,73 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Ястреб',
+    nameEn: 'Hawk',
+    id: CREATURE_HAWK,
+    sizeType: SIZE_TINY,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 342,
+    },
+    armor: {
+      ac: 13,
+    },
+    hp: {
+      cubeCount: 1,
+      cubeType: 4,
+      cubeBonus: -1,
+    },
+    speed: {
+      [SPEED_WALK]: 10,
+      [SPEED_FLY]: 60,
+    },
+    params: {
+      [PARAM_STR]: 5,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 8,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 6,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    cr: CR_0,
+    featureList: [
+      {
+        name: 'Острое зрение',
+        description: `Ястреб совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на зрение.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 0,
+            cubeType: 0,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

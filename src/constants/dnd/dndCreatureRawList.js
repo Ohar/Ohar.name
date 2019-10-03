@@ -118,7 +118,6 @@ const {
     LANG_ABYSSAL,
     LANG_ALL,
     LANG_ALL_KNOWN_AT_LIFE,
-    LANG_ANY,
     LANG_ANY_ONE,
     LANG_ANY_UP_TO_FIVE,
     LANG_AQUAN,
@@ -37365,7 +37364,7 @@ module.exports = [
     ],
     languageList: [
       {
-        id: LANG_ANY,
+        id: LANG_ALL,
         onlyCommands: true,
       },
     ],

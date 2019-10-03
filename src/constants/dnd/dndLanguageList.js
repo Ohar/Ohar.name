@@ -8,7 +8,6 @@ const LANG_AARAKOCRA = 'aarakocra'
 const LANG_ABYSSAL = 'abyssal'
 const LANG_ALL = 'all'
 const LANG_ALL_KNOWN_AT_LIFE = 'all_known_at_life'
-const LANG_ANY = 'any_one'
 const LANG_ANY_ONE = 'any_one'
 const LANG_ANY_TWO = 'any_two'
 const LANG_ANY_UP_TO_FIVE = 'any_up_to_five'
@@ -74,19 +73,11 @@ const dndLanguageList = [
     isRealLang: true,
   },
   {
-    id: LANG_ANY,
-    name: {
-      nominative: 'Любой язык',
-      instrumental: 'Любой язык',
-      prepositional: 'Любом языке',
-    },
-  },
-  {
     id: LANG_ANY_ONE,
     name: {
-      nominative: 'Любой один язык (обычно — Всеобщий)',
-      instrumental: 'Любой один язык (обычно — Всеобщий)',
-      prepositional: 'Любом одном языке (обычно — Всеобщем)',
+      nominative: 'Любой один язык',
+      instrumental: 'Любой один язык',
+      prepositional: 'Любом одном языке',
     },
   },
   {
@@ -132,9 +123,9 @@ const dndLanguageList = [
   {
     id: LANG_ALL,
     name: {
-      nominative: 'Все',
-      instrumental: 'Все',
-      prepositional: 'Всех',
+      nominative: 'Все языки',
+      instrumental: 'Все языками',
+      prepositional: 'Всех языках',
     },
   },
   {

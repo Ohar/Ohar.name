@@ -570,6 +570,7 @@ const {
     CREATURE_CLOUD_GIANT,
     CREATURE_COCKATRICE,
     CREATURE_COMMONER,
+    CREATURE_CONSTRICTOR_SNAKE,
     CREATURE_COPPER_DRAGON_WYRMLING,
     CREATURE_COUATL,
     CREATURE_CRAB,
@@ -47277,6 +47278,95 @@ module.exports = [
           target: 1,
           hit: {
             type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Удав',
+    nameEn: 'Constrictor Snake',
+    id: CREATURE_CONSTRICTOR_SNAKE,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 341,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 10,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+      [SPEED_SWIM]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 1,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_BLIND_VISION,
+        value: 10,
+      },
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_4,
+    actionList: [
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Сжимание',
+        description: `Цель становится схваченной (Сл высвобождения 14). Пока цель схвачена, она опутана, и удав не может сжимать другую цель.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_BLUDGEONING,
             cubeCount: 1,
             cubeType: 8,
             cubeBonus: 2,

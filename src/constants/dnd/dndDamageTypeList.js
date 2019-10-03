@@ -29,6 +29,7 @@ const DAMAGE_POISON = 'poison'
 const DAMAGE_PSYCHIC = 'psychic'
 const DAMAGE_RADIANT = 'radiant'
 const DAMAGE_SLASHING = 'slashing'
+const DAMAGE_SPELLS = 'spells'
 const DAMAGE_THUNDER = 'thunder'
 
 const dndDamageTypeList = [
@@ -153,6 +154,12 @@ const dndDamageTypeList = [
     fullName: 'Урон звуком',
     description: `**Звук.** Оглушительные звуковые волны, такие как от заклинания _Волна грома_, причиняют урон звуком.`,
   },
+  {
+    id: DAMAGE_SPELLS,
+    name: 'От заклинаний',
+    fullName: 'Урон от заклинаний',
+    description: `Урон от заклинаний`,
+  },
 ]
 
 module.exports = dndDamageTypeList
@@ -177,4 +184,5 @@ module.exports.DAMAGE_POISON = DAMAGE_POISON
 module.exports.DAMAGE_PSYCHIC = DAMAGE_PSYCHIC
 module.exports.DAMAGE_RADIANT = DAMAGE_RADIANT
 module.exports.DAMAGE_SLASHING = DAMAGE_SLASHING
+module.exports.DAMAGE_SPELLS = DAMAGE_SPELLS
 module.exports.DAMAGE_THUNDER = DAMAGE_THUNDER

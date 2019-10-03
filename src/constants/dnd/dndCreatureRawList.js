@@ -803,6 +803,7 @@ const {
     CREATURE_POLAR_BEAR,
     CREATURE_POLTERGEIST,
     CREATURE_PONY,
+    CREATURE_PRIEST,
     CREATURE_PSEUDODRAGON,
     CREATURE_PTERANODON,
     CREATURE_PURPLE_WORM,
@@ -865,6 +866,7 @@ const {
     CREATURE_SWARM_OF_RAVENS,
     CREATURE_TARRASQUE,
     CREATURE_THRI_KREEN,
+    CREATURE_THUG,
     CREATURE_TIGER,
     CREATURE_TREANT,
     CREATURE_TRICERATOPS,
@@ -879,6 +881,7 @@ const {
     CREATURE_VAMPIRE_SPAWN,
     CREATURE_VAMPIRE_SPELLCASTER,
     CREATURE_VAMPIRE_WARRIOR,
+    CREATURE_VETERAN,
     CREATURE_VINE_BLIGHT,
     CREATURE_VIOLET_FUNGUS,
     CREATURE_VROCK,
@@ -992,7 +995,7 @@ module.exports = [
     name: 'Разбойник',
     nameEn: 'Bandit',
     id: CREATURE_BANDIT,
-    description: `**Разбойники** рыщут бандами, возглавляемыми головорезами, ветеранами или заклинателями. Не все разбойники злы. Угнетения, засуха, болезни или голод могут подтолкнуть самых честных жителей на путь разбоя.\n
+    description: `**Разбойники** рыщут бандами, возглавляемыми [головорезами](CREATURE:${CREATURE_THUG}), [ветеранами](CREATURE:${CREATURE_VETERAN}) или заклинателями. Не все разбойники злы. Угнетения, засуха, болезни или голод могут подтолкнуть самых честных жителей на путь разбоя.\n
 **Пираты** это разбойники открытых морей. Они могут быть флибустьерами, заинтересованными лишь в сокровищах и убийствах, или могут быть каперами, которым правитель разрешил нападать на суда вражеской страны с целью грабежа.`,
     aligmentId: ALIGMENT_NOT_LAWFUL,
     source: {
@@ -1078,7 +1081,7 @@ module.exports = [
     name: 'Прислужник',
     nameEn: 'Acolyte',
     id: CREATURE_ACOLYTE,
-    description: `**Прислужник** это младший представитель духовенства, обычно, помогающий священникам. Он выполняет в храме множество дел и получает от божества незначительные магические способности.`,
+    description: `**Прислужник** это младший представитель духовенства, обычно, помогающий [священникам](CREATURE:${CREATURE_PRIEST}). Он выполняет в храме множество дел и получает от божества незначительные магические способности.`,
     aligmentId: ALIGMENT_ANY,
     source: {
       id: 'MM',

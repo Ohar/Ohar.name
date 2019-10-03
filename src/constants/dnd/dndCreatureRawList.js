@@ -869,6 +869,7 @@ const {
     CREATURE_THUG,
     CREATURE_TIGER,
     CREATURE_TREANT,
+    CREATURE_TRIBAL_WARRIOR,
     CREATURE_TRICERATOPS,
     CREATURE_TRIDRONE,
     CREATURE_TROLL,
@@ -48256,6 +48257,108 @@ module.exports = [
             type: DAMAGE_PIERCING,
             cubeCount: 1,
             cubeType: 10,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Воитель племени',
+    nameEn: 'Tribal Warrior',
+    id: CREATURE_TRIBAL_WARRIOR,
+    description: `Воители племени живут вне цивилизации, зачастую выживая за счёт рыбалки и охоты. Каждое племя беспрекословно подчиняется своему вождю, являющемуся самым старым воителем или представителем племени, благословенным богами.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY,
+    source: {
+      id: 'MM',
+      page: 344,
+    },
+    armor: {
+      ac: 12,
+      type: 'шкурный доспех',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 8,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 8,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Тактика стаи',
+        description: `Воитель совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник воителя.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 1,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 1,
+                comment: ', если используется двумя руками',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
             cubeBonus: 1,
           },
         },

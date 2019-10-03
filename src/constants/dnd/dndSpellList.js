@@ -30,9 +30,8 @@ const {
   CAST_MATERIAL,
 } = require('./dndCastComponentList')
 
-const SPELL_ANIMAL_FRIENDSHIP = 'animal_friendship'
-const SPELL_DETECT_POISON_AND_DISEASE = 'detect_poison_and_disease'
 const SPELL_ALTER_SELF = 'alter_self'
+const SPELL_ANIMAL_FRIENDSHIP = 'animal_friendship'
 const SPELL_ANIMATE_DEAD = 'animate_dead'
 const SPELL_AUGURY = 'augury'
 const SPELL_BANE = 'bane'
@@ -73,6 +72,7 @@ const SPELL_DARKNESS = 'darkness'
 const SPELL_DESTRUCTIVE_WAVE = 'destructive_wave'
 const SPELL_DETECT_EVIL_AND_GOOD = 'detect_evil_and_good'
 const SPELL_DETECT_MAGIC = 'detect_magic'
+const SPELL_DETECT_POISON_AND_DISEASE = 'detect_poison_and_disease'
 const SPELL_DETECT_THOUGHTS = 'detect_thoughts'
 const SPELL_DIMENSION_DOOR = 'dimension_door'
 const SPELL_DISGUISE_SELF = 'disguise_self'
@@ -95,6 +95,7 @@ const SPELL_FEAR = 'fear'
 const SPELL_FEATHER_FALL = 'feather_fall'
 const SPELL_FINGER_OF_DEATH = 'finger_of_death'
 const SPELL_FIRE_BOLT = 'fire_bolt'
+const SPELL_FIRE_SHIELD = 'fire_shield'
 const SPELL_FIRE_STORM = 'fire_storm'
 const SPELL_FIREBALL = 'fireball'
 const SPELL_FLAME_STRIKE = 'flame_strike'
@@ -183,12 +184,15 @@ const SPELL_SPIRIT_GUARDIANS = 'spirit_guardians'
 const SPELL_SPIRITUAL_WEAPON = 'spiritual_weapon'
 const SPELL_STAGGERING_SMITE = 'staggering_smite'
 const SPELL_STONE_SHAPE = 'stone_shape'
+const SPELL_STONESKIN = 'stoneskin'
 const SPELL_SUGGESTION = 'suggestion'
 const SPELL_TELEKINESIS = 'telekinesis'
+const SPELL_TELEPORT = 'teleport'
 const SPELL_TENSERS_FLOATING_DISK = 'tensers_floating_disk'
 const SPELL_THAUMATURGY = 'thaumaturgy'
 const SPELL_THORN_WHIP = 'thorn_whip'
 const SPELL_THUNDERWAVE = 'thunderwave'
+const SPELL_TIME_STOP = 'time_stop'
 const SPELL_TONGUES = 'tongues'
 const SPELL_TRUE_SEEING = 'true_seeing'
 const SPELL_VICIOUS_MOCKERY = 'vicious_mockery'
@@ -3286,6 +3290,74 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_FIRE_SHIELD,
+    name: 'Огненный щит',
+    nameEn: `Fire shield`,
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_TELEPORT,
+    name: 'Телепортация',
+    nameEn: `Teleport`,
+    description: ``, // TODO
+    lvl: 7,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_TIME_STOP,
+    name: 'Остановка времени',
+    nameEn: `Time stop`,
+    description: ``, // TODO
+    lvl: 9,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_STONESKIN,
+    name: 'Каменная кожа',
+    nameEn: `Stoneskin`,
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -3365,6 +3437,7 @@ module.exports.SPELL_FEAR = SPELL_FEAR
 module.exports.SPELL_FEATHER_FALL = SPELL_FEATHER_FALL
 module.exports.SPELL_FINGER_OF_DEATH = SPELL_FINGER_OF_DEATH
 module.exports.SPELL_FIRE_BOLT = SPELL_FIRE_BOLT
+module.exports.SPELL_FIRE_SHIELD = SPELL_FIRE_SHIELD
 module.exports.SPELL_FIRE_STORM = SPELL_FIRE_STORM
 module.exports.SPELL_FIREBALL = SPELL_FIREBALL
 module.exports.SPELL_FLAME_STRIKE = SPELL_FLAME_STRIKE
@@ -3453,12 +3526,15 @@ module.exports.SPELL_SPIRIT_GUARDIANS = SPELL_SPIRIT_GUARDIANS
 module.exports.SPELL_SPIRITUAL_WEAPON = SPELL_SPIRITUAL_WEAPON
 module.exports.SPELL_STAGGERING_SMITE = SPELL_STAGGERING_SMITE
 module.exports.SPELL_STONE_SHAPE = SPELL_STONE_SHAPE
+module.exports.SPELL_STONESKIN = SPELL_STONESKIN
 module.exports.SPELL_SUGGESTION = SPELL_SUGGESTION
 module.exports.SPELL_TELEKINESIS = SPELL_TELEKINESIS
+module.exports.SPELL_TELEPORT = SPELL_TELEPORT
 module.exports.SPELL_TENSERS_FLOATING_DISK = SPELL_TENSERS_FLOATING_DISK
 module.exports.SPELL_THAUMATURGY = SPELL_THAUMATURGY
 module.exports.SPELL_THORN_WHIP = SPELL_THORN_WHIP
 module.exports.SPELL_THUNDERWAVE = SPELL_THUNDERWAVE
+module.exports.SPELL_TIME_STOP = SPELL_TIME_STOP
 module.exports.SPELL_TONGUES = SPELL_TONGUES
 module.exports.SPELL_TRUE_SEEING = SPELL_TRUE_SEEING
 module.exports.SPELL_VICIOUS_MOCKERY = SPELL_VICIOUS_MOCKERY

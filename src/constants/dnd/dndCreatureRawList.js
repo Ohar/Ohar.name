@@ -539,6 +539,7 @@ const {
     CREATURE_BEHIR,
     CREATURE_BEHOLDER,
     CREATURE_BEHOLDER_ZOMBIE,
+    CREATURE_BLACK_BEAR,
     CREATURE_BLACK_DRAGON_WYRMLING,
     CREATURE_BLACK_PUDDING,
     CREATURE_BLINK_DOG,
@@ -47521,5 +47522,93 @@ module.exports = [
       },
     ],
     genderId: GENDER_FEMALE,
+  },
+  {
+    name: 'Чёрный медведь',
+    nameEn: 'Black bear',
+    id: CREATURE_BLACK_BEAR,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 342,
+    },
+    armor: {
+      ac: 11,
+      type: 'природный доспех',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+      [SPEED_CLIMB]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 12,
+      [PARAM_CHA]: 7,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Тонкий нюх',
+        description: `Медведь совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Медведь совершает две атаки: одну укусом, и одну когтями.`,
+      },
+      {
+        name: 'Укус',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Когти',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
   },
 ]

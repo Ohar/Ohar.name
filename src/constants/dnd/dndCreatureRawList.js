@@ -590,6 +590,7 @@ const {
     CREATURE_DISPLACER_BEAST,
     CREATURE_DJINNI,
     CREATURE_DOPPELGANGER,
+    CREATURE_DRAFT_HORSE,
     CREATURE_DRAGON_TURTLE,
     CREATURE_DRETCH,
     CREATURE_DRIDER,
@@ -47375,5 +47376,63 @@ module.exports = [
       },
     ],
     genderId: GENDER_MALE,
+  },
+  {
+    name: 'Упряжная лошадь',
+    nameEn: 'Draft Horse',
+    id: CREATURE_DRAFT_HORSE,
+    sizeType: SIZE_LARGE,
+    creatureTypeIdList: [
+      CREATURE_TYPE_BEAST,
+    ],
+    aligmentId: ALIGMENT_NO,
+    source: {
+      id: 'MM',
+      page: 341,
+    },
+    armor: {
+      ac: 10,
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 10,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 40,
+    },
+    params: {
+      [PARAM_STR]: 18,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 2,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 7,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    cr: CR_1_4,
+    actionList: [
+      {
+        name: 'Копыта',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 2,
+            cubeType: 4,
+            cubeBonus: 4,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_FEMALE,
   },
 ]

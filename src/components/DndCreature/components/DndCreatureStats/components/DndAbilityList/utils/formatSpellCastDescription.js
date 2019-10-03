@@ -6,6 +6,7 @@ import { dndCastComponentCollection, CAST_NONE } from '@/constants/dnd/dndCastCo
 import { dndParamCollection } from '@/constants/dnd/dndParamList'
 import { dndPcClassCollection } from '@/constants/dnd/dndPcClassList'
 
+import formatSpellText from './formatSpellText'
 import generateSpellText from './generateSpellText'
 
 const generateExcludeComponentText = ({componentExclude, componentInstead, spellCasterClass}) => {
@@ -36,9 +37,12 @@ export default (
   {
     spellCast: {
       baseStat,
-      componentOnly,
       componentExclude,
       componentInstead,
+      componentOnly,
+      infinitySpellIdList,
+      postText = '',
+      preText = '',
       saveThrowDc,
       slotCountList,
       spellAttackBonus,
@@ -46,8 +50,6 @@ export default (
       spellCasterLevel,
       spellIdByCountList,
       spellIdList,
-      preText = '',
-      postText = '',
     },
     genderId,
     name,
@@ -89,11 +91,15 @@ export default (
       ? dndPcClassCollection[spellCasterClass].name.singular.genitive
       : ''
 
+    const infinitySpellText = infinitySpellIdList
+      ? `. ${name} может неограниченно накладывать ${formatSpellText(infinitySpellIdList)}`
+      : ''
+
     const spellCastText = spellCasterClass
       ? `У ${genderId === GENDER_FEMALE ? 'неё' : 'него'}  приготовлены следующие заклинания ${spellCasterClassText}`
       : `. ${name} может накладывать следующие заклинания${spellComponentOnlyText}${spellComponentExcludeText}`
 
-    preTextResult = `${introText} ${baseStatText}${spellAdditionalInfoText}. ${spellCastText}:`
+    preTextResult = `${introText} ${baseStatText}${spellAdditionalInfoText}${infinitySpellText}. ${spellCastText}:`
   }
 
   return `${preTextResult}

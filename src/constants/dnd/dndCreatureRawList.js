@@ -592,6 +592,7 @@ const {
     CREATURE_CRAB,
     CREATURE_CRAWLING_CLAW,
     CREATURE_CROCODILE,
+    CREATURE_CULTIST,
     CREATURE_CYCLOPS,
     CREATURE_DAO,
     CREATURE_DARKMANTLE,
@@ -48942,6 +48943,88 @@ module.exports = [
       {
         name: 'Парирование',
         description: `Капитан добавляет 2 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого капитан должен видеть атакующего, и должен использовать рукопашное оружие.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Культист',
+    nameEn: 'Cultist',
+    id: CREATURE_CULTIST,
+    description: `Культисты клянутся в преданности тёмным силам, таким как стихийные князья, демонические повелители и архидьяволы. Многие скрывают эту преданность, боясь изгнания, заключения или даже казни. В отличие от злых [прислужников](CREATURE:${CREATURE_ACOLYTE}), у культистов часто есть элементы безумия в вере или ритуалах.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_NOT_GOOD,
+    source: {
+      id: 'MM',
+      page: 346,
+    },
+    armor: {
+      ac: 12,
+      type: 'кожаный доспех',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_DECEPTION]: 2,
+      [SKILL_RELIGION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
+    ],
+    cr: CR_1_8,
+    featureList: [
+      {
+        name: 'Тёмная преданность',
+        description: `Культист совершает с преимуществом спасброски от испуга и очарования.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Скимитар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
       },
     ],
     genderId: GENDER_MALE,

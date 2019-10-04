@@ -30,7 +30,7 @@ const dndSkillList = [
   },
   {
     id: SKILL_SLEIGHT_OF_HAND,
-    name: 'Наложение рук',
+    name: 'Ловкость рук',
   },
   {
     id: SKILL_STEALTH,

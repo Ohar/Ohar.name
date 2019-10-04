@@ -542,6 +542,7 @@ const {
     CREATURE_BADGER,
     CREATURE_BALOR,
     CREATURE_BANDIT,
+    CREATURE_BANDIT_CAPTAIN,
     CREATURE_BANSHEE,
     CREATURE_BARBED_DEVIL,
     CREATURE_BARLGURA,
@@ -48820,6 +48821,127 @@ module.exports = [
             cubeBonus: 0,
           },
         },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Капитан разбойников',
+    nameEn: 'Bandit Captain',
+    id: CREATURE_BANDIT_CAPTAIN,
+    description: `Требуется сильный характер, хитрость и язык без костей, чтобы держать банду разбойников в узде. Капитан разбойников обладает этими качествами сполна.\n
+Капитан пиратов руководит не просто толпой эгоистичных злодеев, но целым кораблём. Для того чтобы держать экипаж в узде, капитан должен применять и поощрения и наказания.\n
+Больше сокровищ капитаны разбойников и капитаны пиратов ценят только дурную славу. С пленником, который потешит эго или тщеславие капитана, скорее всего, обращаться будут лучше, чем с тем, который этого не делает, или ничего не знает о репутации капитана.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_NOT_LAWFUL,
+    source: {
+      id: 'MM',
+      page: 346,
+    },
+    armor: {
+      ac: 15,
+      type: 'проклёпанная кожа',
+    },
+    hp: {
+      cubeCount: 10,
+      cubeType: 8,
+      cubeBonus: 20,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 15,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 14,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 14,
+    },
+    saveThrowCollection: {
+      [PARAM_STR]: 4,
+      [PARAM_DEX]: 5,
+      [PARAM_WIT]: 2,
+    },
+    skillCollection: {
+      [SKILL_ATHLETICS]: 4,
+      [SKILL_DECEPTION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 2,
+      },
+    ],
+    cr: CR_2,
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Капитан совершает три рукопашные атаки: две скимитаром, и одну кинжалом. Вместо этого капитан может совершить две дальнобойные атаки кинжалами.`,
+      },
+      {
+        name: 'Скимитар',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Кинжал',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Кинжал',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 5,
+          range: {
+            normal: 100,
+            max: 400,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Парирование',
+        description: `Капитан добавляет 2 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого капитан должен видеть атакующего, и должен использовать рукопашное оружие.`,
       },
     ],
     genderId: GENDER_MALE,

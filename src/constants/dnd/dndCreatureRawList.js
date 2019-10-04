@@ -745,6 +745,7 @@ const {
     CREATURE_JACKALWERE,
     CREATURE_KENKU,
     CREATURE_KILLER_WHALE,
+    CREATURE_KNIGHT,
     CREATURE_KOBOLD,
     CREATURE_KRAKEN,
     CREATURE_KUO_TOA,
@@ -49380,6 +49381,116 @@ module.exports = [
             cubeBonus: 2,
           },
         },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Рыцарь',
+    nameEn: 'Knight',
+    id: CREATURE_KNIGHT,
+    description: `Рыцарь это воитель, поклявшийся служить правителю, религиозному ордену или благородному делу. Мировоззрение рыцаря определяет пределы его преданности. Во время выполнения задания или при обычном патрулировании королевства рыцаря часто сопровождает свита, включающая сквайров и наёмников, являющихся [обывателями](CREATURE:${CREATURE_COMMONER}). `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY,
+    source: {
+      id: 'MM',
+      page: 349,
+    },
+    armor: {
+      ac: 18,
+      comment: 'латный доспех',
+    },
+    hp: {
+      cubeCount: 8,
+      cubeType: 8,
+      cubeBonus: 16,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 16,
+      [PARAM_DEX]: 11,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 15,
+    },
+    saveThrowCollection: {
+      [PARAM_CON]: 4,
+      [PARAM_WIT]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 10,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
+    ],
+    cr: CR_3,
+    featureList: [
+      {
+        name: 'Храбрый',
+        description: `Рыцарь совершает с преимуществом спасброски от испуга.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Рыцарь совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Двуручный меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 5,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_SLASHING,
+            cubeCount: 2,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Тяжёлый арбалет',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 2,
+          range: {
+            normal: 100,
+            max: 400,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 10,
+            cubeBonus: 0,
+          },
+        },
+      },
+      {
+        name: 'Лидерство',
+        comment: 'перезаряжается после короткого или продолжительного отдыха',
+        description: `В течение 1 минуты рыцарь может произносить особую команду или предостережение каждый раз, когда невраждебное существо, видимое им в пределах 30 футов, совершает бросок атаки или спасбросок. Это существо может добавить к4 к броску, если может слышать рыцаря и понимает его. Существо может получать преимущество только от одного Лидерства одновременно. Этот эффект оканчивается, если рыцарь становится недееспособным.`,
+      },
+    ],
+    reactionList: [
+      {
+        name: 'Парирование',
+        description: `Рыцарь добавляет 2 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого рыцарь должен видеть атакующего и должен использовать рукопашное оружие.`,
       },
     ],
     genderId: GENDER_MALE,

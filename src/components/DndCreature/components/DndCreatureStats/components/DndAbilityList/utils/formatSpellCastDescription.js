@@ -2,36 +2,13 @@ import formatBonus from '@/utils/formatBonus'
 
 import { GENDER_FEMALE } from '@/constants/genderList'
 
-import { dndCastComponentCollection, CAST_NONE } from '@/constants/dnd/dndCastComponentList'
+import { dndCastComponentCollection } from '@/constants/dnd/dndCastComponentList'
 import { dndParamCollection } from '@/constants/dnd/dndParamList'
 import { dndPcClassCollection } from '@/constants/dnd/dndPcClassList'
 
 import formatSpellText from './formatSpellText'
+import generateExcludeComponentText from './generateExcludeComponentText'
 import generateSpellText from './generateSpellText'
-
-const generateExcludeComponentText = ({componentExclude, componentInstead, spellCasterClass}) => {
-  if (componentExclude) {
-    if (spellCasterClass) {
-      const componentText = componentExclude === CAST_NONE
-        ? 'не нужны никакие'
-        : `не нужны ${dndCastComponentCollection[componentExclude].name.plural.genitive}`
-
-      return `, которому для накладывания заклинаний ${componentText} компоненты`
-    } else {
-      const componentText = componentExclude === CAST_NONE
-        ? 'ни в каких'
-        : `в ${dndCastComponentCollection[componentExclude].name.plural.genitive}`
-
-      return `, не нуждаясь ${componentText} компонентах`
-    }
-  }
-
-  if (componentInstead) {
-    return `, используя вместо всех компонентов ${componentInstead}`
-  }
-
-  return ''
-}
 
 export default (
   {

@@ -156,6 +156,7 @@ const {
     LANG_TELEPATHY,
     LANG_TERRAN,
     LANG_THRI_KREEN,
+    LANG_THUG_JARGON,
     LANG_UMBER_HULK,
     LANG_UNDERCOMMON,
     LANG_WINTER_WOLF,
@@ -192,6 +193,7 @@ const {
     SENSE_VIBRATION_SENSE,
   } = require('./dndSenseList'),
   {
+    SKILL_ACROBATICS,
     SKILL_ARCANA,
     SKILL_ATHLETICS,
     SKILL_DECEPTION,
@@ -535,6 +537,7 @@ const {
     CREATURE_APE,
     CREATURE_ARCANALOTH,
     CREATURE_ARCHMAGE,
+    CREATURE_ASSASSIN,
     CREATURE_AWAKENED_SHRUB,
     CREATURE_AWAKENED_TREE,
     CREATURE_AXE_BEAK,
@@ -49150,6 +49153,129 @@ module.exports = [
             cubeCount: 1,
             cubeType: 4,
             cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Наёмный убийца',
+    nameEn: 'Assassin',
+    id: CREATURE_ASSASSIN,
+    description: `Умеющие использовать яды наёмные убийцы безжалостно работают на дворянство, глав гильдий, правителей, а впрочем, всех, кто может оплатить их услуги.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_NOT_GOOD,
+    source: {
+      id: 'MM',
+      page: 347,
+    },
+    armor: {
+      ac: 15,
+      comment: 'проклёпанная кожа',
+    },
+    hp: {
+      cubeCount: 12,
+      cubeType: 8,
+      cubeBonus: 24,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 16,
+      [PARAM_CON]: 14,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 10,
+      [PARAM_CHA]: 10,
+    },
+    saveThrowCollection: {
+      [PARAM_DEX]: 6,
+      [PARAM_INT]: 4,
+    },
+    skillCollection: {
+      [SKILL_ACROBATICS]: 6,
+      [SKILL_PERCEPTION]: 3,
+      [SKILL_DECEPTION]: 3,
+      [SKILL_STEALTH]: 9,
+    },
+    resistanceList: [
+      DAMAGE_POISON,
+    ],
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      LANG_THUG_JARGON,
+      {
+        id: LANG_ANY,
+        count: 2,
+      },
+    ],
+    cr: CR_8,
+    featureList: [
+      {
+        name: 'Убийство',
+        description: `В своём первом ходу наёмный убийца совершает с преимуществом броски атаки по существам, которые ещё не совершали ход. Все попадания наёмного убийцы по захваченным врасплох существам являются критическими попаданиями.`,
+      },
+      {
+        name: 'Увёртливость',
+        description: `Если наёмный убийца подвергается действию эффекта, позволяющего совершить спасбросок Ловкости, чтобы получить только половину урона, наёмный убийца вместо этого не получает урон, если преуспеет в спасброске, и получит лишь половину урона, если провалит спасбросок.`,
+      },
+      {
+        name: 'Скрытая атака',
+        limit: {
+          count: 1,
+          period: 'ход',
+        },
+        description: `Наёмный убийца причиняет дополнительный урон 14 (4к6), если попадает по цели атакой оружием, совершённой с преимуществом к броску атаки, или же если цель находится в пределах 5 футов от дееспособного союзника наёмного убийцы, и наёмный убийца совершал бросок атаки без помехи.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Наёмный убийца совершает две атаки коротким мечом.`,
+      },
+      {
+        name: 'Короткий меч',
+        description: `Цель должна совершить спасбросок Телосложения со Сл 15, получая урон ядом 24 (7к6) при провале, или половину этого урона при успехе.`,
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 6,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 3,
+          },
+        },
+      },
+      {
+        name: 'Лёгкий арбалет',
+        attack: {
+          description: `Цель должна совершить спасбросок Телосложения со Сл 15, получая урон ядом 24 (7к6) при провале, или половину этого урона при успехе.`,
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 6,
+          range: {
+            normal: 80,
+            max: 320,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 3,
           },
         },
       },

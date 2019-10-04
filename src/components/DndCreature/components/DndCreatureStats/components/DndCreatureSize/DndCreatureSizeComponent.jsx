@@ -1,10 +1,11 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
 import {dndSizeCollection} from "@/constants/dnd/dndSizeList"
 
 import getCreatureTypeGenderId from "./../../utils/getCreatureTypeGenderId"
 
-export default ({creatureTypeIdList, sizeType, swarmSizeType = null}) => {
+const DndCreatureSizeComponent = ({creatureTypeIdList, sizeType, swarmSizeType}) => {
   const genderId = getCreatureTypeGenderId(creatureTypeIdList)
 
   let text = ''
@@ -19,3 +20,15 @@ export default ({creatureTypeIdList, sizeType, swarmSizeType = null}) => {
 
   return <span>{text}</span>
 }
+
+DndCreatureSizeComponent.propTypes = {
+  creatureTypeIdList: PropTypes.array.isRequired,
+  sizeType: PropTypes.string.isRequired,
+  swarmSizeType: PropTypes.string,
+}
+
+DndCreatureSizeComponent.defaultProps = {
+  swarmSizeType: null,
+}
+
+export default DndCreatureSizeComponent

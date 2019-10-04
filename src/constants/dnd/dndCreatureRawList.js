@@ -49164,7 +49164,7 @@ module.exports = [
     name: 'Наёмный убийца',
     nameEn: 'Assassin',
     id: CREATURE_ASSASSIN,
-    description: `Умеющие использовать яды наёмные убийцы безжалостно работают на дворянство, глав гильдий, правителей, а впрочем, всех, кто может оплатить их услуги.`,
+    description: `Умеющие использовать яды наёмные убийцы безжалостно работают на [дворянство](CREATURE:${CREATURE_NOBLE}), глав гильдий, правителей, а впрочем, всех, кто может оплатить их услуги.`,
     sizeType: SIZE_MEDIUM,
     creatureTypeIdList: [
       CREATURE_TYPE_HUMANOID,

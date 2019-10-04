@@ -48068,7 +48068,7 @@ module.exports = [
           bonus: 6,
           range: {
             normal: 20,
-            max: 20,
+            max: 60,
           },
           target: 1,
           hit: {

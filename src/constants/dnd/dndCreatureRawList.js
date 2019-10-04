@@ -208,6 +208,7 @@ const {
     SKILL_PERSUASION,
     SKILL_RELIGION,
     SKILL_STEALTH,
+    SKILL_SLEIGHT_OF_HAND,
     SKILL_SURVIVAL,
   } = require('./dndSkillList'),
   {
@@ -870,6 +871,7 @@ const {
     CREATURE_SPINED_DEVIL,
     CREATURE_SPIRIT_NAGA,
     CREATURE_SPRITE,
+    CREATURE_SPY,
     CREATURE_STEAM_MEPHIT,
     CREATURE_STIRGE,
     CREATURE_STONE_GIANT,
@@ -49825,6 +49827,117 @@ module.exports = [
             type: DAMAGE_PIERCING,
             cubeCount: 1,
             cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Шпион',
+    nameEn: 'Spy',
+    id: CREATURE_SPY,
+    description: `Правители, [дворяне](CREATURE:${CREATURE_NOBLE}), торговцы, главы гильдий и прочие богатые индивидуумы используют шпионов, чтобы выжить в беспощадном мире политики. Шпион обучен тайно собирать информацию. Верный шпион скорее умрёт, чем выдаст информацию, компрометирующую его или его нанимателя.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY,
+    source: {
+      id: 'MM',
+      page: 351,
+    },
+    armor: {
+      ac: 12,
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 8,
+      cubeBonus: 0,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 15,
+      [PARAM_CON]: 10,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 14,
+      [PARAM_CHA]: 16,
+    },
+    skillCollection: {
+      [SKILL_INVESTIGATION]: 5,
+      [SKILL_PERCEPTION]: 6,
+      [SKILL_SLEIGHT_OF_HAND]: 4,
+      [SKILL_DECEPTION]: 5,
+      [SKILL_INSIGHT]: 4,
+      [SKILL_STEALTH]: 4,
+      [SKILL_PERSUASION]: 5,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 16,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 2,
+      },
+    ],
+    cr: CR_1,
+    featureList: [
+      {
+        name: 'Хитрое действие',
+        description: `Шпион может в каждом своём ходу бонусным действием совершать Засаду, Отход или Рывок.`,
+      },
+      {
+        name: 'Скрытая атака',
+        limit: {
+          count: 1,
+          period: 'ход',
+        },
+        description: `Шпион причиняет дополнительный урон 7 (2к6), если попадает по цели атакой оружием, совершённой с преимуществом к броску атаки, или же если цель находится в пределах 5 футов от дееспособного союзника шпиона, и шпион совершал бросок атаки без помехи.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Шпион совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Короткий меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Ручной арбалет',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 30,
+            max: 120,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
             cubeBonus: 2,
           },
         },

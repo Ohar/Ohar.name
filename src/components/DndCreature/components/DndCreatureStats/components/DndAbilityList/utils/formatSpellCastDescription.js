@@ -92,7 +92,7 @@ export default (
       : ''
 
     const infinitySpellText = infinitySpellIdList
-      ? `. ${name} может неограниченно накладывать ${infinitySpellIdList.map(formatSpellText)}`
+      ? `. ${name} может неограниченно накладывать заклинания ${infinitySpellIdList.map(formatSpellText).join(', ')}`
       : ''
 
     const spellCastText = spellCasterClass

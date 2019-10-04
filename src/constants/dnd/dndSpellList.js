@@ -120,6 +120,7 @@ const SPELL_HEAT_METAL = 'heat_metal'
 const SPELL_HEROES_FEAST = 'heroes_feast'
 const SPELL_HOLD_MONSTER = 'hold_monster'
 const SPELL_HOLD_PERSON = 'hold_person'
+const SPELL_ICE_STORM = 'ice_storm'
 const SPELL_IDENTIFY = 'identify'
 const SPELL_INSECT_PLAGUE = 'insect_plague'
 const SPELL_INVISIBILITY = 'invisibility'
@@ -3412,6 +3413,23 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_ICE_STORM,
+    name: 'Град',
+    nameEn: `Ice storm`,
+    description: ``, // TODO
+    lvl: 4,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -3516,6 +3534,7 @@ module.exports.SPELL_HEAT_METAL = SPELL_HEAT_METAL
 module.exports.SPELL_HEROES_FEAST = SPELL_HEROES_FEAST
 module.exports.SPELL_HOLD_MONSTER = SPELL_HOLD_MONSTER
 module.exports.SPELL_HOLD_PERSON = SPELL_HOLD_PERSON
+module.exports.SPELL_ICE_STORM = SPELL_ICE_STORM
 module.exports.SPELL_IDENTIFY = SPELL_IDENTIFY
 module.exports.SPELL_INSECT_PLAGUE = SPELL_INSECT_PLAGUE
 module.exports.SPELL_INVISIBILITY = SPELL_INVISIBILITY

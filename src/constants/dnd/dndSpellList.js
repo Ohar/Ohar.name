@@ -32,6 +32,7 @@ const {
 
 const SPELL_ALTER_SELF = 'alter_self'
 const SPELL_ANIMAL_FRIENDSHIP = 'animal_friendship'
+const SPELL_ANIMAL_MESSENGER = 'animal_messenger'
 const SPELL_ANIMATE_DEAD = 'animate_dead'
 const SPELL_AUGURY = 'augury'
 const SPELL_BANE = 'bane'
@@ -129,6 +130,7 @@ const SPELL_LEVITATE = 'levitate'
 const SPELL_LIGHT = 'light'
 const SPELL_LIGHTNING_BOLT = 'lightning_bolt'
 const SPELL_LOCATE_OBJECT = 'locate_object'
+const SPELL_LONGSTRIDER = 'longstrider'
 const SPELL_MAGE_ARMOR = 'mage_armor'
 const SPELL_MAGE_HAND = 'mage_hand'
 const SPELL_MAGIC_MISSILE = 'magic_missile'
@@ -179,6 +181,7 @@ const SPELL_SHOCKING_GRASP = 'shocking_grasp'
 const SPELL_SILENCE = 'silence'
 const SPELL_SLEEP = 'sleep'
 const SPELL_SPARE_THE_DYING = 'spare_the_dying'
+const SPELL_SPEAK_WITH_ANIMALS = 'speak_with_animals'
 const SPELL_SPIKE_GROWTH = 'spike_growth'
 const SPELL_SPIRIT_GUARDIANS = 'spirit_guardians'
 const SPELL_SPIRITUAL_WEAPON = 'spiritual_weapon'
@@ -3358,6 +3361,57 @@ const dndSpellList = [
     },
     classList: [], // TODO
   },
+  {
+    id: SPELL_ANIMAL_MESSENGER,
+    name: 'Пчтовое животное',
+    nameEn: `Animal messenger`,
+    description: ``, // TODO
+    lvl: 2,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_LONGSTRIDER,
+    name: 'Скороход',
+    nameEn: `Longstrider`,
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
+  {
+    id: SPELL_SPEAK_WITH_ANIMALS,
+    name: 'Разговор с животными',
+    nameEn: `Speak with animals`,
+    description: ``, // TODO
+    lvl: 1,
+    magicSchool: MAGIC_TRANSMUTATION, // TODO
+    range: 0, // TODO
+    ritual: false, // TODO
+    componentList: [CAST_VERBAL, CAST_SOMATIC, CAST_MATERIAL], // TODO
+    materialText: '', // TODO
+    source: {
+      id: 'PHB',
+      page: 0, // TODO
+    },
+    classList: [], // TODO
+  },
 ].map(
   spell => ({
     ...spell,
@@ -3374,6 +3428,7 @@ module.exports.dndSpellCollection = listToCollectionById(dndSpellList)
 
 module.exports.SPELL_ALTER_SELF = SPELL_ALTER_SELF
 module.exports.SPELL_ANIMAL_FRIENDSHIP = SPELL_ANIMAL_FRIENDSHIP
+module.exports.SPELL_ANIMAL_MESSENGER = SPELL_ANIMAL_MESSENGER
 module.exports.SPELL_ANIMATE_DEAD = SPELL_ANIMATE_DEAD
 module.exports.SPELL_AUGURY = SPELL_AUGURY
 module.exports.SPELL_BANE = SPELL_BANE
@@ -3471,6 +3526,7 @@ module.exports.SPELL_LEVITATE = SPELL_LEVITATE
 module.exports.SPELL_LIGHT = SPELL_LIGHT
 module.exports.SPELL_LIGHTNING_BOLT = SPELL_LIGHTNING_BOLT
 module.exports.SPELL_LOCATE_OBJECT = SPELL_LOCATE_OBJECT
+module.exports.SPELL_LONGSTRIDER = SPELL_LONGSTRIDER
 module.exports.SPELL_MAGE_ARMOR = SPELL_MAGE_ARMOR
 module.exports.SPELL_MAGE_HAND = SPELL_MAGE_HAND
 module.exports.SPELL_MAGIC_MISSILE = SPELL_MAGIC_MISSILE
@@ -3521,6 +3577,7 @@ module.exports.SPELL_SHOCKING_GRASP = SPELL_SHOCKING_GRASP
 module.exports.SPELL_SILENCE = SPELL_SILENCE
 module.exports.SPELL_SLEEP = SPELL_SLEEP
 module.exports.SPELL_SPARE_THE_DYING = SPELL_SPARE_THE_DYING
+module.exports.SPELL_SPEAK_WITH_ANIMALS = SPELL_SPEAK_WITH_ANIMALS
 module.exports.SPELL_SPIKE_GROWTH = SPELL_SPIKE_GROWTH
 module.exports.SPELL_SPIRIT_GUARDIANS = SPELL_SPIRIT_GUARDIANS
 module.exports.SPELL_SPIRITUAL_WEAPON = SPELL_SPIRITUAL_WEAPON

@@ -200,6 +200,7 @@ const {
     SKILL_INTIMIDATION,
     SKILL_INVESTIGATION,
     SKILL_MEDICINE,
+    SKILL_NATURE,
     SKILL_PERCEPTION,
     SKILL_PERFORMANCE,
     SKILL_PERSUASION,
@@ -224,6 +225,7 @@ const {
   {
     SPELL_ALTER_SELF,
     SPELL_ANIMAL_FRIENDSHIP,
+    SPELL_ANIMAL_MESSENGER,
     SPELL_ANIMATE_DEAD,
     SPELL_AUGURY,
     SPELL_BANE,
@@ -320,6 +322,7 @@ const {
     SPELL_LIGHT,
     SPELL_LIGHTNING_BOLT,
     SPELL_LOCATE_OBJECT,
+    SPELL_LONGSTRIDER,
     SPELL_MAGE_ARMOR,
     SPELL_MAGE_HAND,
     SPELL_MAGIC_MISSILE,
@@ -369,6 +372,7 @@ const {
     SPELL_SILENCE,
     SPELL_SLEEP,
     SPELL_SPARE_THE_DYING,
+    SPELL_SPEAK_WITH_ANIMALS,
     SPELL_SPIKE_GROWTH,
     SPELL_SPIRIT_GUARDIANS,
     SPELL_SPIRITUAL_WEAPON,
@@ -48693,6 +48697,129 @@ module.exports = [
       {
         name: 'Парирование',
         description: `Дворянин добавляет 2 к КД против одной рукопашной атаки, которая должна попасть по нему. Для этого дворянин должен видеть атакующего, и должен использовать рукопашное оружие.`,
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Друид',
+    nameEn: 'Druid',
+    id: CREATURE_DRUID,
+    description: `Друиды живут в лесах и других уединённых местах в дикой местности, где занимаются защитой природы от чудовищ и вторжения цивилизации. Некоторые из них являются шаманами племени, лечащими больных, молящимися духам животных и дающими духовное руководство.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY,
+    source: {
+      id: 'MM',
+      page: 345,
+    },
+    armor: {
+      ac:  11,
+      comment: '16 с _Дубовой корой_ (Barkskin)',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+      cubeBonus: 5,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 13,
+      [PARAM_INT]: 12,
+      [PARAM_WIT]: 15,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 4,
+      [SKILL_MEDICINE]: 4,
+      [SKILL_NATURE]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 14,
+      },
+    ],
+    languageList: [
+      LANG_DRUIDIC,
+      {
+        id: LANG_ANY,
+        count: 2,
+      },
+    ],
+    cr: CR_2,
+    spellCast: {
+      spellCasterLevel: 4,
+      spellCasterClass: PC_CLASS_DRUID,
+      baseStat: PARAM_WIT,
+      spellAttackBonus: 4,
+      saveThrowDc: 12,
+      spellIdList: [
+        SPELL_ANIMAL_MESSENGER,
+        SPELL_BARKSKIN,
+        SPELL_DRUIDCRAFT,
+        SPELL_ENTANGLE,
+        SPELL_LONGSTRIDER,
+        SPELL_PRODUCE_FLAME,
+        SPELL_SHILLELAGH,
+        SPELL_SPEAK_WITH_ANIMALS,
+        SPELL_THUNDERWAVE,
+      ],
+      slotCountList: [
+        Infinity,
+        4,
+        3,
+      ],
+    },
+    actionList: [
+      {
+        name: 'Боевой посох',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_BLUDGEONING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 0,
+              },
+              {
+                type: DAMAGE_BLUDGEONING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 0,
+                comment: ', при использовании двумя руками',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Боевой посох',
+        comment: 'с _Дубинкой_ (Shillelagh)',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 0,
+          },
+        },
       },
     ],
     genderId: GENDER_MALE,

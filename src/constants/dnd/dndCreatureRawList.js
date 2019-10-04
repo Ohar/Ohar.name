@@ -49495,4 +49495,108 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Священник',
+    nameEn: 'Priest',
+    id: CREATURE_PRIEST,
+    description: `Священники несут учение своих богов простым [обывателям](CREATURE:${CREATURE_COMMONER}). Это духовные лидеры храмов и часовен, и часто они обладают влиянием в своих общинах. Злые священники могут открыто работать на тирана, а могут быть лидерами религиозных сект, скрывающихся среди общества и исполняющих порочные ритуалы.\n
+Обычно при священнике находится один или несколько [прислужников](CREATURE:${CREATURE_ACOLYTE}), помогающих с религиозными церемониями или просто священными ритуалами. `,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY,
+    source: {
+      id: 'MM',
+      page: 350,
+    },
+    armor: {
+      ac: 13,
+      comment: 'кольчужная рубаха',
+    },
+    hp: {
+      cubeCount: 5,
+      cubeType: 8,
+      cubeBonus: 5,
+    },
+    speed: {
+      [SPEED_WALK]: 25,
+    },
+    params: {
+      [PARAM_STR]: 10,
+      [PARAM_DEX]: 10,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 13,
+      [PARAM_WIT]: 16,
+      [PARAM_CHA]: 13,
+    },
+    skillCollection: {
+      [SKILL_MEDICINE]: 7,
+      [SKILL_RELIGION]: 4,
+      [SKILL_PERSUASION]: 3,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 13,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 2,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Божественная слава',
+        description: `Священник может бонусным действием потратить одну ячейку заклинания, чтобы его рукопашные атаки оружием магическим образом причиняли цели при попадании дополнительный урон излучением 10 (3к6). Это преимущество длится до конца текущего хода. Если священник потратит ячейку 2 уровня или выше, дополнительный урон увеличивается на 1к6 за каждый уровень выше 1.`,
+      },
+    ],
+    spellCast: {
+      spellCasterLevel: 5,
+      spellCasterClass: PC_CLASS_PRIEST,
+      baseStat: PARAM_WIT,
+      spellAttackBonus: 5,
+      saveThrowDc: 13,
+      spellIdList: [
+        SPELL_CURE_WOUNDS,
+        SPELL_DISPEL_MAGIC,
+        SPELL_GUIDING_BOLT,
+        SPELL_LESSER_RESTORATION,
+        SPELL_LIGHT,
+        SPELL_SACRED_FLAME,
+        SPELL_SANCTUARY,
+        SPELL_SPIRIT_GUARDIANS,
+        SPELL_SPIRITUAL_WEAPON,
+        SPELL_THAUMATURGY,
+      ],
+      slotCountList: [
+        Infinity,
+        4,
+        3,
+        2,
+      ],
+    },
+    actionList: [
+      {
+        name: 'Булава',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 2,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_BLUDGEONING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 0,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

@@ -14,9 +14,19 @@ export default (
   .entries(
     _.groupBy(
       spellIdList.map(
-        item => typeof item === 'string'
-          ? dndSpellCollection[item]
-          : dndSpellCollection[item.id]
+        item => {
+          const {lvl} = dndSpellCollection[item.id || item]
+
+          return typeof item === 'string'
+            ? {
+              id: item,
+              lvl,
+            }
+            : {
+              ...item,
+              lvl,
+            }
+        }
       ),
       'lvl'
     )

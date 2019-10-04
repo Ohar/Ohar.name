@@ -14,6 +14,7 @@ export default item => {
     if (item.comment) {
       commentText = ` ${item.comment}`
     }
+    console.log('alreadyCasted', item.alreadyCasted, item);
 
     if (item.alreadyCasted) {
       alreadyCastedText = ` уже наложено перед сражением`

@@ -848,6 +848,7 @@ const {
     CREATURE_SATYR,
     CREATURE_SCARECROW,
     CREATURE_SCORPION,
+    CREATURE_SCOUT,
     CREATURE_SEA_HAG,
     CREATURE_SEA_HORSE,
     CREATURE_SHADOW,
@@ -49276,6 +49277,107 @@ module.exports = [
             cubeCount: 1,
             cubeType: 8,
             cubeBonus: 3,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Разведчик',
+    nameEn: 'Scout',
+    id: CREATURE_SCOUT,
+    description: `Разведчики это умелые охотники и следопыты, предлагающие свои услуги за оплату. Большая их часть охотится на диких животных, но некоторые также являются охотниками за головами, либо служат проводниками или военными разведчиками.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY,
+    source: {
+      id: 'MM',
+      page: 349,
+    },
+    armor: {
+      ac: 13,
+      comment: 'кожаный доспех',
+    },
+    hp: {
+      cubeCount: 3,
+      cubeType: 8,
+      cubeBonus: 3,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 11,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 11,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 5,
+      [SKILL_SURVIVAL]: 5,
+      [SKILL_NATURE]: 4,
+      [SKILL_STEALTH]: 6,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 15,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
+    ],
+    cr: CR_1_2,
+    featureList: [
+      {
+        name: 'Острые зрение и слух',
+        description: `Разведчик совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на зрение или слух.`,
+      },
+    ],
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Разведчик совершает две рукопашные атаки или две дальнобойные атаки.`,
+      },
+      {
+        name: 'Короткий меч',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Длинный лук',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 150,
+            max: 600,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 8,
+            cubeBonus: 2,
           },
         },
       },

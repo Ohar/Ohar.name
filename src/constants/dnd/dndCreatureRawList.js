@@ -49599,4 +49599,103 @@ module.exports = [
     ],
     genderId: GENDER_MALE,
   },
+  {
+    name: 'Страж',
+    nameEn: 'Guard',
+    id: CREATURE_GUARD,
+    description: `Стражем может быть представитель городской стражи, караульный в цитадели или укреплённом городе, а также телохранитель торговца или [дворянина](CREATURE:${CREATURE_NOBLE}).`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_ANY,
+    source: {
+      id: 'MM',
+      page: 350,
+    },
+    armor: {
+      ac: 16,
+      comment: 'кольчужная рубаха, щит',
+    },
+    hp: {
+      cubeCount: 2,
+      cubeType: 8,
+      cubeBonus: 2,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 13,
+      [PARAM_DEX]: 12,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 11,
+      [PARAM_CHA]: 10,
+    },
+    skillCollection: {
+      [SKILL_PERCEPTION]: 2,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 12,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
+    ],
+    cr: CR_1_8,
+    actionList: [
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 3,
+          range: 5,
+          target: 1,
+          hit: [
+            [
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 6,
+                cubeBonus: 1,
+              },
+              {
+                type: DAMAGE_PIERCING,
+                cubeCount: 1,
+                cubeType: 8,
+                cubeBonus: 1,
+                comment: ', если используется двумя руками',
+              },
+            ],
+          ],
+        },
+      },
+      {
+        name: 'Копьё',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 3,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: 1,
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 6,
+            cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
 ]

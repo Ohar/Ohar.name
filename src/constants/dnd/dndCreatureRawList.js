@@ -316,6 +316,7 @@ const {
     SPELL_HOLD_PERSON,
     SPELL_ICE_STORM,
     SPELL_IDENTIFY,
+    SPELL_INFLICT_WOUNDS,
     SPELL_INSECT_PLAGUE,
     SPELL_INVISIBILITY,
     SPELL_JUMP,
@@ -596,6 +597,7 @@ const {
     CREATURE_CRAB,
     CREATURE_CRAWLING_CLAW,
     CREATURE_CROCODILE,
+    CREATURE_CULT_FANATIC,
     CREATURE_CULTIST,
     CREATURE_CYCLOPS,
     CREATURE_DAO,
@@ -49692,6 +49694,138 @@ module.exports = [
             cubeCount: 1,
             cubeType: 6,
             cubeBonus: 1,
+          },
+        },
+      },
+    ],
+    genderId: GENDER_MALE,
+  },
+  {
+    name: 'Фанатик культа',
+    nameEn: 'Cult Fanatic',
+    id: CREATURE_CULT_FANATIC,
+    description: `Фанатики часто являются лидерами культов. Они используют харизму и догматы для влияния на других и ломку чужой воли. Многие из них стараются получить власть любой ценой.`,
+    sizeType: SIZE_MEDIUM,
+    creatureTypeIdList: [
+      CREATURE_TYPE_HUMANOID,
+      CREATURE_TYPE_ANY_RACE,
+    ],
+    aligmentId: ALIGMENT_NOT_GOOD,
+    source: {
+      id: 'MM',
+      page: 350,
+    },
+    armor: {
+      ac: 13,
+      type: 'кожаный доспех',
+    },
+    hp: {
+      cubeCount: 6,
+      cubeType: 8,
+      cubeBonus: 6,
+    },
+    speed: {
+      [SPEED_WALK]: 30,
+    },
+    params: {
+      [PARAM_STR]: 11,
+      [PARAM_DEX]: 14,
+      [PARAM_CON]: 12,
+      [PARAM_INT]: 10,
+      [PARAM_WIT]: 13,
+      [PARAM_CHA]: 14,
+    },
+    skillCollection: {
+      [SKILL_DECEPTION]: 4,
+      [SKILL_RELIGION]: 2,
+      [SKILL_PERSUASION]: 4,
+    },
+    senseList: [
+      {
+        id: SENSE_PASSIVE_PERCEPTION,
+        value: 11,
+      },
+    ],
+    languageList: [
+      {
+        id: LANG_ANY,
+        count: 1,
+      },
+    ],
+    cr: CR_2,
+    featureList: [
+      {
+        name: 'Тёмная преданность',
+        description: `Фанатик совершает с преимуществом спасброски от испуга и очарования.`,
+      },
+    ],
+    spellCast: {
+      spellCasterLevel: 4,
+      spellCasterClass: PC_CLASS_PRIEST,
+      baseStat: PARAM_WIT,
+      spellAttackBonus: 3,
+      saveThrowDc: 11,
+      spellIdList: [
+        SPELL_COMMAND,
+        SPELL_HOLD_PERSON,
+        SPELL_INFLICT_WOUNDS,
+        SPELL_LIGHT,
+        SPELL_SACRED_FLAME,
+        SPELL_SHIELD_OF_FAITH,
+        SPELL_SPIRITUAL_WEAPON,
+        SPELL_THAUMATURGY,
+      ],
+      slotCountList: [
+        Infinity,
+        4,
+        3,
+      ],
+    },
+    actionList: [
+      {
+        name: 'Мультиатака',
+        description: `Фанатик совершает две рукопашные атаки.`,
+      },
+      {
+        name: 'Кинжал',
+        attack: {
+          type: ACTION_MELEE_WEAPON_ATTACK,
+          bonus: 4,
+          range: 5,
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
+          },
+        },
+      },
+      {
+        name: 'Кинжал',
+        attack: {
+          type: ACTION_RANGE_WEAPON_ATTACK,
+          bonus: 4,
+          range: {
+            normal: 20,
+            max: 60,
+          },
+          target: {
+            count: 1,
+            limit: {
+              type: TARGET_CREATURE,
+            },
+          },
+          hit: {
+            type: DAMAGE_PIERCING,
+            cubeCount: 1,
+            cubeType: 4,
+            cubeBonus: 2,
           },
         },
       },

@@ -11,12 +11,11 @@ export default ({creatureTypeIdList, sizeType, swarmSizeType = null}) => {
 
   if (swarmSizeType) {
     const size = dndSizeCollection[sizeType].name.singular[genderId].nominative
-    const swarmSize = dndSizeCollection[swarmSizeType].name.plural[genderId].genitive
+    const swarmSize = dndSizeCollection[swarmSizeType].name.plural.genitive
     text = `${size} рой ${swarmSize}`
   } else {
     text = dndSizeCollection[sizeType].name.singular[genderId].nominative
   }
-
 
   return <span>{text}</span>
 }

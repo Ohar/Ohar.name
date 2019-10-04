@@ -1,4 +1,4 @@
-import proschet from 'proschet';
+import declint from 'declint-ru'
 
 import joinText from "@/utils/joinText"
 
@@ -9,8 +9,6 @@ import {dndConditionCollection} from '@/constants/dnd/dndConditionList'
 import {dndCreatureTypeCollection} from '@/constants/dnd/dndCreatureTypeList'
 import { GENDER_FEMALE, GENDER_MALE, GENDER_MIDDLE } from '@/constants/genderList'
 
-const getGoalWord = proschet(['цель', 'цели', 'целей'])
-
 export default target => {
   if (typeof target !== 'string') {
     const targetCount = typeof target === 'object'
@@ -18,13 +16,14 @@ export default target => {
       : target
     const numberWordObj = numberList[targetCount]
 
+    let targetWordList = ['цель', 'цели', 'целей']
+
     let conditionText = ''
     let genderId = ''
     let limitSizeSingleText = ''
     let limitSizeMultipleText = ''
     let commentText = ''
-    let numberText = numberWordObj[GENDER_FEMALE]
-    let targetText = getGoalWord(targetCount)
+    let numberGenderId = GENDER_FEMALE
 
     if (target.limit) {
       if (target.limit.type) {
@@ -40,12 +39,9 @@ export default target => {
             },
           },
         } = dataObj
-        genderId = dataObj.genderId
 
-        const getTargetTypeWord = proschet([singularTypeWord, dualTypeWord, multipleTypeWord])
-
-        numberText = numberWordObj[genderId]
-        targetText = getTargetTypeWord(target.count)
+        numberGenderId = dataObj.genderId
+        targetWordList = [singularTypeWord, dualTypeWord, multipleTypeWord]
       }
 
       if (target.limit.creatureType) {
@@ -61,12 +57,9 @@ export default target => {
             },
           },
         } = dndCreatureTypeCollection[target.limit.creatureType]
-        genderId = dataObj.genderId
 
-        const getTargetTypeWord = proschet([singularTypeWord, dualTypeWord, multipleTypeWord])
-
-        numberText = numberWordObj[genderId]
-        targetText = getTargetTypeWord(target.count)
+        numberGenderId = dataObj.genderId
+        targetWordList = [singularTypeWord, dualTypeWord, multipleTypeWord]
       }
 
       if (target.limit.size) {
@@ -102,14 +95,16 @@ export default target => {
           genitive: multipleConditionWord,
         } = plural
 
-        const getConditionWord = proschet([singularConditionWord, dualConditionWord, multipleConditionWord])
-        conditionText = getConditionWord(target.count)
+        conditionText = declint(targetCount, [singularConditionWord, dualConditionWord, multipleConditionWord])
       }
     }
 
     if (target.comment) {
       commentText = target.comment
     }
+
+    const numberText = numberWordObj[numberGenderId]
+    const targetText = declint(targetCount, targetWordList)
 
     return [
       numberText,

@@ -1,5 +1,5 @@
 import React from 'react'
-import proschet from 'proschet'
+import declint from 'declint-ru'
 
 import {
   dndMonetCollection,
@@ -41,8 +41,7 @@ const DndMonetContainer = ({ count, type: monetId }) => {
     },
   } = dndMonetCollection[monetId]
 
-  const getMonetWord = proschet([singular, dual, plural])
-  const monetWord = getMonetWord(count)
+  const monetWord = declint(count, [singular, dual, plural])
   const title = `${count} ${monetWord}`
 
   return (

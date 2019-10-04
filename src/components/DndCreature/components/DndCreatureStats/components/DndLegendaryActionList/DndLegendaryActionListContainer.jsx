@@ -1,14 +1,8 @@
 import React from 'react'
-import proschet from 'proschet'
+import declint from 'declint-ru'
 import PropTypes from 'prop-types'
 
 import DndLegendaryActionListComponent from './DndLegendaryActionListComponent'
-
-const getLegActionWord = proschet([
-  'легендарное действие',
-  'легендарных действия',
-  'легендарных действий'
-])
 
 const DndLegendaryActionListContainer = (
   {
@@ -21,7 +15,8 @@ const DndLegendaryActionListContainer = (
   const variantText = list.length === 1
     ? `используя описанный ниже ${list[0].name}`
     : 'выбирая из представленных ниже вариантов'
-  const entryText = `${name} может совершить ${points} ${getLegActionWord(points)}, ${variantText}. За один раз можно использовать только одно легендарное действие, и только в конце хода другого существа. ${name} восстанавливает использованные легендарные действия в начале своего хода.`
+  const legActionText = declint(points, ['легендарное действие', 'легендарных действия', 'легендарных действий'])
+  const entryText = `${name} может совершить ${points} ${legActionText}, ${variantText}. За один раз можно использовать только одно легендарное действие, и только в конце хода другого существа. ${name} восстанавливает использованные легендарные действия в начале своего хода.`
 
   return points
     ? (

@@ -1,11 +1,9 @@
 import _ from 'lodash'
-import proschet from 'proschet'
+import declint from 'declint-ru'
 
 import { dndSpellCollection } from '@/constants/dnd/dndSpellList'
 
 import formatSpellText from './formatSpellText'
-
-const getSlotWord = proschet(['ячейка', 'ячейки', 'ячеек'])
 
 export default (
   {
@@ -31,7 +29,7 @@ export default (
       const count = slotCountList[lvl] || 0
       const countText = count === Infinity
         ? 'неограниченно'
-        : `${count} ${getSlotWord(count)}`
+        : `${count} ${declint(count, ['ячейка', 'ячейки', 'ячеек'])}`
       const spellStr = list.map(formatSpellText).join(', ')
 
       return `* ${lvlText} (${countText}): ${spellStr}`

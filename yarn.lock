@@ -4815,6 +4815,11 @@ decamelize@^1.1.1, decamelize@^1.1.2, decamelize@^1.2.0:
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
+declint-ru@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/declint-ru/-/declint-ru-0.0.2.tgz#6ec1d8d314c6f39bce402b0cfe74a460ddc9d900"
+  integrity sha1-bsHY0xTG85vOQCsM/nSkYN3J2QA=
+
 decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
@@ -11603,11 +11608,6 @@ prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2,
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.8.1"
-
-proschet@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/proschet/-/proschet-1.0.1.tgz#8ad97f3ec6402483817b50908fef02a155713222"
-  integrity sha1-itl/PsZAJIOBe1CQj+8CoVVxMiI=
 
 proto-list@~1.2.1:
   version "1.2.4"

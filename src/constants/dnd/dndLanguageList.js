@@ -1,4 +1,4 @@
-const proschet = require('proschet')
+const declint = require('declint-ru')
 
 const listToCollectionById = require('./../../utils/listToCollectionById')
 const numberList = require('./../nameGeneration/wordDicts/numberList')
@@ -86,21 +86,30 @@ const dndLanguageList = [
       const {nominative, instrumental, prepositional} = numberList[count]
 
       return {
-        nominative: proschet([
-          `Любой ${nominative} язык`,
-          `Любые ${nominative} языка`,
-          `Любые ${nominative} языков`,
-        ])(count),
-        instrumental: proschet([
-          `Любым ${instrumental} языком`,
-          `Любыми ${instrumental} языками`,
-          `Любыми ${instrumental} языками`,
-        ])(count),
-        prepositional: proschet([
-          `Любом ${prepositional} языке`,
-          `Любых ${prepositional} языках`,
-          `Любых ${prepositional} языках`,
-        ])(count),
+        nominative: declint(
+          count,
+          [
+            `Любой ${nominative} язык`,
+            `Любые ${nominative} языка`,
+            `Любые ${nominative} языков`,
+          ]
+        ),
+        instrumental: declint(
+          count,
+          [
+            `Любым ${instrumental} языком`,
+            `Любыми ${instrumental} языками`,
+            `Любыми ${instrumental} языками`,
+          ]
+        ),
+        prepositional: declint(
+          count,
+          [
+            `Любом ${prepositional} языке`,
+            `Любых ${prepositional} языках`,
+            `Любых ${prepositional} языках`,
+          ]
+        ),
       }
     },
   },

@@ -1,6 +1,4 @@
-import proschet from 'proschet'
-
-const getActionWord = proschet(['действие', 'действия', 'действий'])
+import declint from 'declint-ru'
 
 export default ({name, limit, comment, cost, restore}) => {
   const textList = [
@@ -9,7 +7,7 @@ export default ({name, limit, comment, cost, restore}) => {
       : '',
     comment || '',
     cost
-      ? `стоит ${cost} ${getActionWord(cost)}`
+      ? `стоит ${cost} ${declint(cost, ['действие', 'действия', 'действий'])}`
       : '',
     restore
       ? `перезарядка ${

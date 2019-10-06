@@ -8,7 +8,7 @@ import DndItemCell from './components/DndItemCell'
 
 import checkIfNarrow from './utils/checkIfNarrow'
 
-import './DndItemTableStyles.css'
+import './DndItemTableStyles.less'
 
 const DndItemTableComponent = ({ itemList, columnList, className }) => (
   <table className={`DndItemTable ${className}`}>

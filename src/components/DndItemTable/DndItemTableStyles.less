@@ -8,6 +8,7 @@
     border-style: solid;
     padding: .5em;
     hyphens: auto;
+    text-align: left;
 
     &:last-child {
         border-right-width: 1px;
@@ -23,6 +24,16 @@
 
     & p:not(:last-child) {
         margin-bottom: .8em;
+    }
+
+    & th {
+        text-align: center;
+    }
+
+    & th,
+    & td {
+        padding: .4em;
+        border: 1px solid gold;
     }
 
     .DndItemTable_row:first-child > & {

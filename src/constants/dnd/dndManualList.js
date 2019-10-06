@@ -14,6 +14,12 @@ const dndManualList = [
     shortName: 'РМ',
   },
   {
+    id: 'XGtE',
+    name: 'Руководство Занатара обо всём',
+    nameEn: 'Xanathar’s Guide to Everything',
+    shortName: 'РЗоВ',
+  },
+  {
     id: 'MM',
     name: 'Бестиарий',
     nameEn: 'Monster Manual',

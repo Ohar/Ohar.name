@@ -11,6 +11,7 @@ import DndDamageType from "@/components/DndDamageType"
 import DndPoisonType from "@/components/DndPoisonType"
 import DndPrice from "@/components/DndPrice"
 import DndRequirementList from "@/components/DndRequirementList"
+import DndCreatureLink from "@/components/DndCreatureLink"
 import DndSourceInfo from "@/components/DndSourceInfo"
 
 import DndItemCategory from "./DndItemCategory"
@@ -66,6 +67,7 @@ const DndItemCell = ({columnName, item}) => {
     case 'description': {
       return (
         <>
+          <DndCreatureLink creatureId={item.creatureId}/>
           <DndWeaponPropList item={item} />
           <ReactMarkdown>
             {item[columnName]}

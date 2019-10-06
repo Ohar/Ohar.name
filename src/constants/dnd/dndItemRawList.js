@@ -1,6 +1,15 @@
 import generateTextLinks from '@/utils/generateTextLinks'
 import {
+  CREATURE_CAMEL,
+  CREATURE_DRAFT_HORSE,
+  CREATURE_ELEPHANT,
+  CREATURE_MASTIFF,
+  CREATURE_MULE,
+  CREATURE_PONY,
+  CREATURE_RIDING_HORSE,
   CREATURE_THRI_KREEN,
+  CREATURE_TRICERATOPS,
+  CREATURE_WARHORSE,
 } from '@/constants/dnd/dndCreatureIdList'
 import {
   DAMAGE_ACID,
@@ -3447,9 +3456,10 @@ const dndItemRawList = [
     category: CAT_TOOLS,
   },
   {
-    id: 'boevoi` kon',
+    id: 'warhorse',
     name: 'Боевой конь',
-    nameEn: '',
+    nameEn: 'Warhorse',
+    creatureId: CREATURE_WARHORSE,
     description: 'Скорость 60 фт. Грузоподъёмность 540 фунтов.',
     cost: 40000,
     source: {
@@ -3459,9 +3469,10 @@ const dndItemRawList = [
     category: CAT_ANIMALS,
   },
   {
-    id: 'verbliud',
+    id: 'camel',
     name: 'Верблюд',
-    nameEn: '',
+    nameEn: 'Camel',
+    creatureId: CREATURE_CAMEL,
     description: 'Скорость 50 фт. Грузоподъёмность 480 фунтов.',
     cost: 5000,
     source: {
@@ -3471,9 +3482,10 @@ const dndItemRawList = [
     category: CAT_ANIMALS,
   },
   {
-    id: 'loshad`, ezdovaia',
+    id: 'riding_horse',
     name: 'Лошадь, ездовая',
-    nameEn: '',
+    nameEn: 'Riding Horse',
+    creatureId: CREATURE_RIDING_HORSE,
     description: 'Скорость 60 фт. Грузоподъёмность 480 фунтов.',
     cost: 7500,
     source: {
@@ -3483,9 +3495,10 @@ const dndItemRawList = [
     category: CAT_ANIMALS,
   },
   {
-    id: 'loshad`, tiaglovaia',
+    id: 'draft_horse',
     name: 'Лошадь, тягловая',
-    nameEn: '',
+    nameEn: 'Draft Horse',
+    creatureId: CREATURE_DRAFT_HORSE,
     description: 'Скорость 40 фт. Грузоподъёмность 540 фунтов.',
     cost: 5000,
     source: {
@@ -3496,8 +3509,9 @@ const dndItemRawList = [
   },
   {
     id: 'mastiff',
-    name: 'Мастифф',
-    nameEn: '',
+    name: 'Мастиф',
+    nameEn: 'Mastiff',
+    creatureId: CREATURE_MASTIFF,
     description: 'Скорость 40 фт. Грузоподъёмность 195 фунтов.',
     cost: 2500,
     source: {
@@ -3507,9 +3521,10 @@ const dndItemRawList = [
     category: CAT_ANIMALS,
   },
   {
-    id: 'mul',
+    id: 'mule',
     name: 'Мул',
-    nameEn: '',
+    nameEn: 'Mule',
+    creatureId: CREATURE_MULE,
     description: 'Скорость 40 фт. Грузоподъёмность 420 фунтов.',
     cost: 800,
     source: {
@@ -3519,9 +3534,10 @@ const dndItemRawList = [
     category: CAT_ANIMALS,
   },
   {
-    id: 'osyol',
+    id: 'donkey',
     name: 'Осёл',
-    nameEn: '',
+    nameEn: 'Donkey',
+    creatureId: CREATURE_MULE,
     description: 'Скорость 40 фт. Грузоподъёмность 420 фунтов.',
     cost: 800,
     source: {
@@ -3531,9 +3547,10 @@ const dndItemRawList = [
     category: CAT_ANIMALS,
   },
   {
-    id: 'poni',
+    id: 'pony',
     name: 'Пони',
-    nameEn: '',
+    nameEn: 'Pony',
+    creatureId: CREATURE_PONY,
     description: 'Скорость 40 фт. Грузоподъёмность 225 фунтов.',
     cost: 3000,
     source: {
@@ -3543,9 +3560,10 @@ const dndItemRawList = [
     category: CAT_ANIMALS,
   },
   {
-    id: 'slon',
+    id: 'elephant',
     name: 'Слон',
-    nameEn: '',
+    nameEn: 'Elephant',
+    creatureId: CREATURE_ELEPHANT,
     description: 'Скорость: 40 фт. Грузоподъёмность 1320 фунтов.',
     cost: 20000,
     source: {
@@ -3555,9 +3573,10 @@ const dndItemRawList = [
     category: CAT_ANIMALS,
   },
   {
-    id: 'tritceratops',
+    id: 'triceratops',
     name: 'Трицератопс',
-    nameEn: '',
+    nameEn: 'Triceratops',
+    creatureId: CREATURE_TRICERATOPS,
     description: 'Скорость: 50 фт. Грузоподъёмность 1320 фунтов.',
     cost: 50000,
     source: {

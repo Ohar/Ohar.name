@@ -7,6 +7,7 @@ const techColumnList = [
     'acUseDexMod',
     'acDexModMax',
     'weaponPropList',
+    'creatureId',
 ]
 
 export default techColumnList

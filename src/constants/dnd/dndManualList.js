@@ -35,6 +35,13 @@ const dndManualList = [
     includeMonsters: true,
   },
   {
+    id: 'SRD',
+    name: 'Системный справочный документ',
+    nameEn: 'System reference Document',
+    shortName: 'ССД',
+    includeMonsters: true,
+  },
+  {
     id: 'Homebrew',
     name: 'Самоделка',
     nameEn: 'Homebrew',

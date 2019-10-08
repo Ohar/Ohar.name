@@ -23,6 +23,7 @@ const dndItemList = dndItemRawList
       [SEARCH_PROP_NAME]: prepareForSearch(
         [
           item.name,
+          item.nameAlt || '',
           item.nameEn,
           item.description,
           getCatName(item.category),

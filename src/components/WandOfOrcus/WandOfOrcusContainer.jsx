@@ -29,18 +29,20 @@ class WandOfOrcusContainer extends Component {
     let hpLeft = WAND_HP_LIMIT
 
     while (currentUndeadList.length && hpLeft > 0) {
-      const undead = _.sample(currentUndeadList)
-
-      tempUndeadIdList.push(undead)
-
-      hpLeft -= calcDiceAverage(undead.hp)
-
       currentUndeadList = currentUndeadList.filter(
         ({hp, cr}) => (
           hpLeft >= calcDiceAverage(hp)
           && dndCrCollection[cr].exp >= minExp
         )
       )
+
+      const undead = _.sample(currentUndeadList)
+
+      if (undead) {
+        tempUndeadIdList.push(undead)
+
+        hpLeft -= calcDiceAverage(undead.hp)
+      }
     }
 
     const generatedUndeadIdList = tempUndeadIdList.reduce(

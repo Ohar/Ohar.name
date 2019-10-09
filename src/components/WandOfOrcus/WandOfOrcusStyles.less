@@ -1,0 +1,93 @@
+.WandOfOrcus_body {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.WandOfOrcus_undeadCount {
+    &:after {
+        content: ' × ';
+    }
+}
+
+@size: 500px;
+
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0);
+    }
+    20% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.WandOfOrcus_btn {
+    width: @size;
+    height: @size;
+    display: block;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: url('./../../images/Wand-of-Orcus.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    &:after {
+        @height: 2rem;
+        @width: 400px;
+        content: 'Призвать нежить!';
+        position: absolute;
+        width: @width;
+        height: @height;
+        vertical-align: middle;
+        top: calc(~'50% - ' @height / 2);
+        left: calc(~'50% - ' @width / 2);
+        font-size: @height;
+        font-weight: bold;
+        text-align: center;
+        color: rgba(0, 0, 0, 0);
+        transition: color 1s ease 0s;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: transparent !important;
+
+        &:after {
+            color: rgba(0, 0, 0, 100);
+            text-shadow: 0 0 2px #fff;
+        }
+    }
+
+    &:focus,
+    &:active {
+        &:before {
+            animation-timing-function: linear;
+            animation-name: rotating;
+            animation-duration: 1.5s;
+            animation-iteration-count: 1;
+        }
+    }
+}
+
+.WandOfOrcus_result {
+    width: auto;
+    margin: 1rem;
+    font-size: 1.5em;
+}

@@ -56,6 +56,11 @@ const dndSubpageList = [
     title: 'Генератор лута',
     url: '/dnd/generator-loot',
   },
+  {
+    icon: faSkull,
+    title: 'Жезл Оркуса',
+    url: '/dnd/wand-of-orcus',
+  },
 ]
 
 const DndPage = () => (

@@ -14,46 +14,44 @@ class WandOfOrcusContainer extends Component {
   }
 
   onSummonUndead = () => {
-    const generatedUndeadIdList = []
+    const tempUndeadIdList = []
     let currentUndeadList = undeadList
     let hpLeft = WAND_HP_LIMIT
 
     while (currentUndeadList.length && hpLeft > 0) {
       const undead = _.sample(currentUndeadList)
 
-      generatedUndeadIdList.push(undead)
+      tempUndeadIdList.push(undead)
 
       hpLeft -= calcDiceAverage(undead.hp)
 
       currentUndeadList = currentUndeadList.filter(({hp}) => hpLeft >= calcDiceAverage(hp))
     }
 
-    this.setState({
-      generatedUndeadIdList: generatedUndeadIdList.reduce(
-        (resultArr, creature) => {
-          const savedCreature = resultArr.find(({id}) => id === creature.id)
+    const generatedUndeadIdList = tempUndeadIdList.reduce(
+      (resultArr, creature) => {
+        const savedCreature = resultArr.find(({id}) => id === creature.id)
 
-          if (savedCreature) {
-            return [
-              ...resultArr.filter(({id}) => id !== savedCreature.id),
-              {
-                ...savedCreature,
-                summonedCount: savedCreature.summonedCount + 1,
-              },
-            ]
-          }
-
-          return [
+        return savedCreature
+          ? [
+            ...resultArr.filter(({id}) => id !== savedCreature.id),
+            {
+              ...savedCreature,
+              summonedCount: savedCreature.summonedCount + 1,
+            },
+          ]
+          : [
             ...resultArr,
             {
               ...creature,
               summonedCount: 1,
             },
           ]
-        },
-        []
-      ),
-    })
+      },
+      []
+    )
+
+    this.setState({generatedUndeadIdList})
   }
 
   render() {

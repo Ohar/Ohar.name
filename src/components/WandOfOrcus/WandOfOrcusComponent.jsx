@@ -2,14 +2,37 @@ import React from "react"
 import { Link } from "gatsby"
 
 import generateCreaturePageUrlById from "@/utils/generateCreaturePageUrlById"
+import dndCrList from "@/constants/dnd/dndCrList"
 
 import PageTitle from "@/components/PageTitle"
 
 import "./WandOfOrcusStyles.less"
 
-const WandOfOrcusComponent = ({ undeadIdList, onSummonUndead }) => (
+const WandOfOrcusComponent = ({ undeadIdList, onSummonUndead, onChangeMinCr, minCrId }) => (
   <section className='WandOfOrcus'>
     <PageTitle>Жезл Оркуса</PageTitle>
+
+    <label className='WandOfOrcus_cr'>
+      <p className='WandOfOrcus_crText'>
+        Минимальный показатель опасности
+      </p>
+      <select
+        className='WandOfOrcus_crSelect'
+        value={minCrId}
+        onChange={onChangeMinCr}
+      >
+        {
+          dndCrList.map(
+            ({id, name}) => (
+              <option key={id} value={id}>{name}</option>
+            )
+          )
+        }
+
+      </select>
+    </label>
+
+
 
     <section className='WandOfOrcus_body'>
       <button

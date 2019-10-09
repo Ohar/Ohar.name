@@ -2,17 +2,18 @@ import React, { Component } from 'react'
 import _ from 'lodash'
 
 import undeadList from './constants/undeadList'
-import WAND_HP_LIMIT from './constants/WAND_HP_LIMIT.js'
+import WAND_HP_LIMIT from './constants/WAND_HP_LIMIT'
+import CR_MIN_DEFAULT from './constants/CR_MIN_DEFAULT'
 
 import calcDiceAverage from "@/utils/calcDiceAverage"
-import dndCrList, {dndCrCollection} from "@/constants/dnd/dndCrList"
+import {dndCrCollection} from "@/constants/dnd/dndCrList"
 
 import WandOfOrcusComponent from './WandOfOrcusComponent'
 
 class WandOfOrcusContainer extends Component {
   state = {
     generatedUndeadIdList: [],
-    minCrId: dndCrList[1].id,
+    minCrId: CR_MIN_DEFAULT,
   }
 
   onChangeMinCr = ({ target: { value: minCrId } }) => {
@@ -21,24 +22,25 @@ class WandOfOrcusContainer extends Component {
 
   onSummonUndead = () => {
     const {minCrId} = this.state
-    const {exp: minExp} = dndCrCollection[minCrId]
     const tempUndeadIdList = []
+    const {exp: minExp} = dndCrCollection[minCrId]
+
     let currentUndeadList = undeadList
     let hpLeft = WAND_HP_LIMIT
 
     while (currentUndeadList.length && hpLeft > 0) {
-      currentUndeadList = currentUndeadList.filter(
-        ({hp, cr}) => (
-          hpLeft >= calcDiceAverage(hp)
-          && cr.exp >= minExp
-        )
-      )
-
       const undead = _.sample(currentUndeadList)
 
       tempUndeadIdList.push(undead)
 
       hpLeft -= calcDiceAverage(undead.hp)
+
+      currentUndeadList = currentUndeadList.filter(
+        ({hp, cr}) => (
+          hpLeft >= calcDiceAverage(hp)
+          && dndCrCollection[cr].exp >= minExp
+        )
+      )
     }
 
     const generatedUndeadIdList = tempUndeadIdList.reduce(

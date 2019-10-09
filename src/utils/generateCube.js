@@ -1,18 +1,14 @@
+import calcDiceAverage from '@/utils/calcDiceAverage'
+
 export default cube => {
   if (cube) {
     const {
       cubeType = 0,
       cubeCount = 0,
       cubeBonus = 0,
-      useMax = false,
     } = cube
 
-    const average = useMax
-      ? cubeType * cubeCount + cubeBonus
-      : Math.max(
-        cubeCount + cubeBonus + Math.floor((cubeType * cubeCount - cubeCount) / 2),
-        0
-      )
+    const average = calcDiceAverage(cube)
 
     const count = cubeCount
       ? `${cubeCount}к${cubeType}`

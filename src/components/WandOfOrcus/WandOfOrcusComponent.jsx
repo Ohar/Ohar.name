@@ -12,28 +12,6 @@ const WandOfOrcusComponent = ({ undeadIdList, onSummonUndead, onChangeMinCr, min
   <section className='WandOfOrcus'>
     <PageTitle>Жезл Оркуса</PageTitle>
 
-    <label className='WandOfOrcus_cr'>
-      <p className='WandOfOrcus_crText'>
-        Минимальный показатель опасности
-      </p>
-      <select
-        className='WandOfOrcus_crSelect'
-        value={minCrId}
-        onChange={onChangeMinCr}
-      >
-        {
-          dndCrList.map(
-            ({id, name}) => (
-              <option key={id} value={id}>{name}</option>
-            )
-          )
-        }
-
-      </select>
-    </label>
-
-
-
     <section className='WandOfOrcus_body'>
       <button
         className='WandOfOrcus_btn'
@@ -70,6 +48,23 @@ const WandOfOrcusComponent = ({ undeadIdList, onSummonUndead, onChangeMinCr, min
           )
           : null
       }
+
+      <label className='WandOfOrcus_cr'>
+        <span className='WandOfOrcus_crText'>Минимальный показатель опасности нежити</span>
+        <select
+          className='WandOfOrcus_crSelect'
+          value={minCrId}
+          onChange={onChangeMinCr}
+        >
+          {
+            dndCrList.map(
+              ({id, name}) => (
+                <option key={id} value={id}>{name}</option>
+              )
+            )
+          }
+        </select>
+      </label>
     </section>
   </section>
 )

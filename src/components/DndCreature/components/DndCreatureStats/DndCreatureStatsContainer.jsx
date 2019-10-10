@@ -7,7 +7,7 @@ import DndCreatureStatsComponent from './DndCreatureStatsComponent';
 
 const DndCreatureStatsContainer = ({ creature, ...rest }) => {
   if (creature) {
-    const columnCount = calculateColumnCount(creature);;
+    const columnCount = calculateColumnCount(creature);
 
     return (
       <DndCreatureStatsComponent

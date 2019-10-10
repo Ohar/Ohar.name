@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 
 import DndCreatureStats from "@/components/DndCreature/components/DndCreatureStats"
 import DndCreatureDescriptionList from "@/components/DndCreature/components/DndCreatureDescriptionList"
+import DndCreatureImageList from "@/components/DndCreature/components/DndCreatureImageList"
 
 import "./DndCreatureStyles.less"
 
@@ -12,6 +13,7 @@ const DndCreatureComponent = ({creature, ...rest}) => (
       creature={creature}
       {...rest}
     />
+    <DndCreatureImageList {...creature} />
     <DndCreatureDescriptionList {...creature} />
   </section>
 )

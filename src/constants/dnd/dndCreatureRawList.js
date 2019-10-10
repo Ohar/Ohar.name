@@ -948,7 +948,6 @@ const {
     CREATURE_ZOMBIE,
   } = require('./dndCreatureIdList')
 
-
 module.exports = [
   {
     name: 'Обыватель',

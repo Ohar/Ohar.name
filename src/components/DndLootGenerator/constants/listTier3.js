@@ -1,5 +1,3 @@
-import React from 'react'
-
 import {
   MONET_ELECTRUM,
   MONET_GOLD,

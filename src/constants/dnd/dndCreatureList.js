@@ -48,6 +48,7 @@ const dndCreatureList = dndCreatureRawList
     ...creature,
     actionList: handleListWithDescriptions(creature.actionList),
     featureList: handleListWithDescriptions(creature.featureList),
+    imageNameList: creature.imageNameList || [],
     [SEARCH_PROP_NAME]: prepareForSearch(
       [
         creature.name,

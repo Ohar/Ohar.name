@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import arrify from 'arrify'
 
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
@@ -7,6 +8,8 @@ import DndCreature from '@/components/DndCreature'
 import DndCreatureCatalog from '@/components/DndCreatureCatalog'
 
 import {dndCreatureCollection} from "@/constants/dnd/dndCreatureList"
+
+import generateCreatureNameStr from "@/utils/generateCreatureNameStr"
 
 const DEFAULT_CREATURE_ID = null
 
@@ -24,12 +27,16 @@ const DndCreaturePageTemplate = ({creatureId: creatureIdInput, pageContext: {slu
   }
 
   if (creatureId) {
-    const {description, name} = dndCreatureCollection[creatureId]
-    const [descriptionText] = description || []
+    const creature = dndCreatureCollection[creatureId] || {}
+    const {description} = creature
+    const {title} = generateCreatureNameStr(creature)
+    const [descriptionText] = description
+      ? arrify(description)
+      : []
 
     seoData = {
-      title: name,
-      description: descriptionText
+      title,
+      description: descriptionText && descriptionText.text
         ? descriptionText.text
         : descriptionText,
       keywords: [],

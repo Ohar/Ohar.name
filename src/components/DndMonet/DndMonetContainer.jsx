@@ -10,11 +10,11 @@ import {
   MONET_COPPER,
 } from '@/constants/dnd/dndMonetTypeList'
 
-import goldImg from "@/images/monets/gold.png"
-import copperImg from "@/images/monets/copper.png"
-import silverImg from "@/images/monets/silver.png"
-import electrumImg from "@/images/monets/electrum.png"
-import platinumImg from "@/images/monets/platinum.png"
+import goldImg from "@/images/dnd/monets/gold.png"
+import copperImg from "@/images/dnd/monets/copper.png"
+import silverImg from "@/images/dnd/monets/silver.png"
+import electrumImg from "@/images/dnd/monets/electrum.png"
+import platinumImg from "@/images/dnd/monets/platinum.png"
 
 import DndMonetComponent from './DndMonetComponent'
 

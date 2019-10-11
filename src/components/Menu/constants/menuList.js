@@ -42,7 +42,7 @@ const menuList = [
     content: 'Статьи',
   },
   {
-    url: '/dnd',
+    url: 'http://dm-stuff.ru',
     title: 'Dungeons & Dragons',
     icon: faDAndD,
     content: 'D&D',

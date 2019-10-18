@@ -1,5 +1,5 @@
-import React from "react"
-import { faNpm, faGithub } from '@fortawesome/free-brands-svg-icons'
+import React from 'react'
+import { faNpm } from '@fortawesome/free-brands-svg-icons'
 
 import Icon from '@/components/Icon'
 
@@ -109,7 +109,15 @@ const contactList = [
   {
     url: 'https://stackoverflow.com/users/2059884/ohar',
     type: 'stackoverflow',
-    text: 'StackOverflow',
+    text: (
+      <img
+        src="https://stackexchange.com/users/flair/2351078.png"
+        width="208"
+        height="58"
+        alt="Profile for Pavel Lysenko on Stack Exchange"
+        title="Profile for Pavel Lysenko on Stack Exchange"
+      />
+    ),
   },
   {
     url: 'https://steamcommunity.com/id/ohar',

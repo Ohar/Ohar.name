@@ -107,7 +107,7 @@ const contactList = [
     text: 'Soshace',
   },
   {
-    url: 'https://stackoverflow.com/users/2059884/ohar',
+    url: 'https://stackoverflow.com/cv/ohar',
     type: 'stackoverflow',
     text: (
       <img

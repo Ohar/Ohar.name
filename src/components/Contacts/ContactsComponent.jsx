@@ -122,7 +122,7 @@ const contactList = [
   {
     url: 'https://www.worldanvil.com/author/Ohar',
     type: 'worldanvil',
-    text: 'WorldAnvil',
+    text: 'World Anvil',
   },
 ]
 

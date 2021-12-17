@@ -124,6 +124,11 @@ const contactList = [
     type: 'worldanvil',
     text: 'World Anvil',
   },
+  {
+    url: 'https://people.mozilla.org/p/ohar',
+    type: 'mozilla_people',
+    text: 'Mozilla People',
+  },
 ]
   .sort(
     ({type: A}, {type: B}) => A > B

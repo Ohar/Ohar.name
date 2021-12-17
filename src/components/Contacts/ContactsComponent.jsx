@@ -129,6 +129,11 @@ const contactList = [
     type: 'mozilla_people',
     text: 'Mozilla People',
   },
+  {
+    url: 'https://discordapp.com/users/177339467823185930',
+    type: 'discord',
+    text: 'Discord',
+  },
 ]
   .sort(
     ({type: A}, {type: B}) => A > B

@@ -125,6 +125,11 @@ const contactList = [
     text: 'World Anvil',
   },
 ]
+  .sort(
+    ({type: A}, {type: B}) => A > B
+      ? 1
+      : -1
+  )
 
 // TODO: use here LinkList
 const ContactsComponent = () => (

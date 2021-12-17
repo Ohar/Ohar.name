@@ -32,16 +32,6 @@ const contactList = [
     text: 'Angel.co',
   },
   {
-    url: 'https://exchange.awwcor.com/dashboard/profile/764',
-    type: 'awwcorexchange',
-    text: 'AwwcorExchange',
-  },
-  {
-    url: 'https://c9.io/ohar',
-    type: 'c9',
-    text: 'Cloud9',
-  },
-  {
     url: 'https://www.f6s.com/ohar/',
     type: 'f6s',
     text: 'F6S',
@@ -67,11 +57,6 @@ const contactList = [
     text: 'LinkedIn',
   },
   {
-    url: 'https://developer.mozilla.org/ru/profiles/Ohar',
-    type: 'mdn',
-    text: 'MDN',
-  },
-  {
     url: 'https://discourse.mozilla-community.org/users/ohar',
     type: 'mozilla',
     text: 'Mozilla',
@@ -79,7 +64,7 @@ const contactList = [
   {
     url: 'https://www.npmjs.com/~ohar',
     type: 'npm',
-    text:  (
+    text: (
       <React.Fragment>
         <Icon icon={faNpm}/>
         NPM
@@ -90,11 +75,6 @@ const contactList = [
     url: 'https://www.paypal.me/ohar',
     type: 'paypal',
     text: 'PayPal',
-  },
-  {
-    url: 'https://remote.com/commodusvoke',
-    type: 'remotecom',
-    text: 'Remote.com',
   },
   {
     url: 'https://skillsnet.ru/users/5ac7838fd010617793e9d428',
@@ -125,19 +105,9 @@ const contactList = [
     text: 'Steam',
   },
   {
-    url: 'https://www.talent.io/candidates/86299',
-    type: 'talentio',
-    text: 'Talent.io',
-  },
-  {
     url: 'https://t.me/Oharr',
     type: 'telegram',
     text: 'Telegram',
-  },
-  {
-    url: 'https://toxme.io/u/ohar',
-    type: 'tox',
-    text: 'Tox',
   },
   {
     url: 'https://twitter.com/CommodusVoke',

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { navigate } from 'gatsby'
+import { throttle, debounce } from 'lodash'
 
 import quotesList from '@/constants/quotesList'
 import DEFAULT_QUOTE_ID from '@/constants/DEFAULT_QUOTE_ID'
@@ -12,12 +13,16 @@ import generateQuotePath from './utils/generateQuotePath'
 
 import QuotesComponent from './QuotesComponent'
 
+const THROTTLE_DELAY = 1000
+
 class QuotesContainer extends Component {
   state = {
     quote: quotesList[DEFAULT_QUOTE_ID],
     quoteId: DEFAULT_QUOTE_ID,
     isNextBtnEnabled: false,
     isPrevBtnEnabled: false,
+    touchStartX: null,
+    touchEndX: null,
   }
 
   componentDidMount() {
@@ -25,11 +30,15 @@ class QuotesContainer extends Component {
 
     this.setQuote(quoteId || DEFAULT_QUOTE_ID)
 
-    window.addEventListener('keyup', this.handleArrowKeys)
+    window.addEventListener('keyup', this.handleArrowKeys, false)
+    window.addEventListener('touchstart', this.handleTouchStart, false)
+    window.addEventListener('touchend', this.handleTouchEnd, false)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keyup', this.handleArrowKeys)
+    window.removeEventListener('keyup', this.handleArrowKeys, false)
+    window.removeEventListener('touchstart', this.handleTouchStart, false)
+    window.removeEventListener('touchend', this.handleTouchEnd, false)
   }
 
   componentDidUpdate(prevProps) {
@@ -40,17 +49,32 @@ class QuotesContainer extends Component {
     }
   }
 
-  handleArrowKeys = ({ keyCode }) => {
-    const {quoteId} = this.props
+  handleTouchStart = throttle(({ screenX: touchStartX }) => {
+    this.setState({touchStartX})
+  }, THROTTLE_DELAY)
 
+  handleTouchEnd = debounce(({ screenX: touchEndX }) => {
+    const {touchStartX} = this.state
+
+    this.navigateNextQuote(touchEndX > touchStartX)
+
+    this.setState({touchEndX})
+  }, THROTTLE_DELAY)
+
+  handleArrowKeys = throttle(({ keyCode }) => {
     if (keyCode === KEYCODE_ARROW_LEFT || keyCode === KEYCODE_ARROW_RIGHT) {
-      const nextQuoteId = keyCode === KEYCODE_ARROW_LEFT
-        ? quoteId - 1
-        : quoteId + 1
+      this.navigateNextQuote(keyCode === KEYCODE_ARROW_RIGHT)
+    }
+  }, THROTTLE_DELAY)
 
-      if (nextQuoteId >= MIN_QUOTE_ID && nextQuoteId <= MAX_QUOTE_ID) {
-        navigate(generateQuotePath(nextQuoteId))
-      }
+  navigateNextQuote = condition => {
+    const {quoteId} = this.props
+    const nextQuoteId = condition
+      ? quoteId + 1
+      : quoteId - 1
+
+    if (nextQuoteId >= MIN_QUOTE_ID && nextQuoteId <= MAX_QUOTE_ID) {
+      navigate(generateQuotePath(nextQuoteId))
     }
   }
 

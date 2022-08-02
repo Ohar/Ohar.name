@@ -13,7 +13,7 @@ const QuotesComponent = ({ quote, isNextBtnEnabled, isPrevBtnEnabled, quoteId, g
           ? (
             <Link
               to={generateQuotePath(quoteId - 1)}
-              title='Предыдущая цитата'
+              title={'Предыдущая цитата \n (Нажмите стрелку влево)'}
               className='buttons_arrow'
             >
               ←
@@ -31,7 +31,7 @@ const QuotesComponent = ({ quote, isNextBtnEnabled, isPrevBtnEnabled, quoteId, g
           ? (
             <Link
               to={generateQuotePath(quoteId + 1)}
-              title='Следующая цитата'
+              title={'Следующая цитата\n(Нажмите стрелку вправо)'}
               className='buttons_arrow'
             >
               →

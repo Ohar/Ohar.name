@@ -1,3 +1,5 @@
+@import '~@/styles/vars.less';
+
 .quote{
     max-width: 60em;
     width: auto;
@@ -53,5 +55,22 @@
 
 .buttons{
     text-align: center;
+    font-size: 1.6em;
+}
+
+.buttons_arrow{
+    margin: 0 1em;
+    padding: 0 .25em;
+    border-width: 1px;
+    border-style: solid;
+    color: currentColor;
+    border-color: currentColor;
+    border-radius: .25em;
+    text-decoration: none;
+
+    &-inactive {
+        color: transparent;
+        border-color: transparent;
+    }
 }
 

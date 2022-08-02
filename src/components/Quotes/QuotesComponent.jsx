@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import './QuotesStyles.css'
+import generateQuotePath from './utils/generateQuotePath'
+
+import './QuotesStyles.less'
 
 const QuotesComponent = ({ quote, isNextBtnEnabled, isPrevBtnEnabled, quoteId, getRandomQuoteNum }) => (
   <section className='QuotesComponent'>
@@ -10,16 +12,17 @@ const QuotesComponent = ({ quote, isNextBtnEnabled, isPrevBtnEnabled, quoteId, g
         isPrevBtnEnabled
           ? (
             <Link
-              to={`/quotes/${quoteId - 1}`}
+              to={generateQuotePath(quoteId - 1)}
               title='Предыдущая цитата'
+              className='buttons_arrow'
             >
               ←
             </Link>
           )
-          : <span>←</span>
+          : <span className='buttons_arrow buttons_arrow-inactive'>←</span>
       }
 
-      <Link to={`/quotes/${getRandomQuoteNum()}`}>
+      <Link to={generateQuotePath(getRandomQuoteNum())}>
         Случайная цитата
       </Link>
 
@@ -27,13 +30,14 @@ const QuotesComponent = ({ quote, isNextBtnEnabled, isPrevBtnEnabled, quoteId, g
         isNextBtnEnabled
           ? (
             <Link
-              to={`/quotes/${quoteId + 1}`}
+              to={generateQuotePath(quoteId + 1)}
               title='Следующая цитата'
+              className='buttons_arrow'
             >
               →
             </Link>
           )
-          : <span>→</span>
+          : <span className='buttons_arrow buttons_arrow-inactive'>→</span>
       }
     </div>
 

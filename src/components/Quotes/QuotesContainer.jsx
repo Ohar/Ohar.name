@@ -1,19 +1,16 @@
 import React, { Component } from 'react'
+import { navigate } from 'gatsby'
 
 import quotesList from '@/constants/quotesList'
 import DEFAULT_QUOTE_ID from '@/constants/DEFAULT_QUOTE_ID'
 
-import QuotesComponent from './QuotesComponent'
+import MAX_QUOTE_ID from './constants/MAX_QUOTE_ID'
+import MIN_QUOTE_ID from './constants/MIN_QUOTE_ID'
+import KEYCODE_ARROW_LEFT from './constants/KEYCODE_ARROW_LEFT'
+import KEYCODE_ARROW_RIGHT from './constants/KEYCODE_ARROW_RIGHT'
+import generateQuotePath from './utils/generateQuotePath'
 
-// TODO
-// $(document).on('keyup', handleArrows);
-// function handleArrows (e) {
-//   if (e.keyCode === 37) { // ←
-//     get_prev_quote();
-//   } else if (e.keyCode === 39) { // →
-//     get_next_quote();
-//   }
-// }
+import QuotesComponent from './QuotesComponent'
 
 class QuotesContainer extends Component {
   state = {
@@ -27,6 +24,12 @@ class QuotesContainer extends Component {
     const {quoteId} = this.props
 
     this.setQuote(quoteId || DEFAULT_QUOTE_ID)
+
+    window.addEventListener('keyup', this.handleArrowKeys)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keyup', this.handleArrowKeys)
   }
 
   componentDidUpdate(prevProps) {
@@ -37,23 +40,31 @@ class QuotesContainer extends Component {
     }
   }
 
-  getRandomQuoteNum = () => {
-    const maxNum = quotesList.length - 1
+  handleArrowKeys = ({ keyCode }) => {
+    const {quoteId} = this.props
 
-    return Math.round(Math.random() * maxNum)
+    if (keyCode === KEYCODE_ARROW_LEFT || keyCode === KEYCODE_ARROW_RIGHT) {
+      const nextQuoteId = keyCode === KEYCODE_ARROW_LEFT
+        ? quoteId - 1
+        : quoteId + 1
+
+      if (nextQuoteId >= MIN_QUOTE_ID && nextQuoteId <= MAX_QUOTE_ID) {
+        navigate(generateQuotePath(nextQuoteId))
+      }
+    }
   }
 
+  getRandomQuoteNum = () => Math.round(Math.random() * MAX_QUOTE_ID)
+
   setQuote = num => {
-    const numMax = quotesList.length - 1
-    const numMin = 0
-    const quoteId = Math.min(numMax, Math.max(numMin, num))
+    const quoteId = Math.min(MAX_QUOTE_ID, Math.max(MIN_QUOTE_ID, num))
     const quote = quotesList[quoteId]
 
     this.setState({
       quote,
       quoteId,
-      isNextBtnEnabled: quoteId !== numMax,
-      isPrevBtnEnabled: quoteId !== numMin,
+      isNextBtnEnabled: quoteId !== MAX_QUOTE_ID,
+      isPrevBtnEnabled: quoteId !== MIN_QUOTE_ID,
     })
   }
 

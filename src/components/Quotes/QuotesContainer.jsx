@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { navigate } from 'gatsby'
-import { throttle, debounce } from 'lodash'
+import { throttle } from 'lodash'
 
 import quotesList from '@/constants/quotesList'
 import DEFAULT_QUOTE_ID from '@/constants/DEFAULT_QUOTE_ID'
@@ -21,8 +21,6 @@ class QuotesContainer extends Component {
     quoteId: DEFAULT_QUOTE_ID,
     isNextBtnEnabled: false,
     isPrevBtnEnabled: false,
-    touchStartX: null,
-    touchEndX: null,
   }
 
   componentDidMount() {
@@ -31,14 +29,10 @@ class QuotesContainer extends Component {
     this.setQuote(quoteId || DEFAULT_QUOTE_ID)
 
     window.addEventListener('keyup', this.handleArrowKeys, false)
-    window.addEventListener('touchstart', this.handleTouchStart, false)
-    window.addEventListener('touchend', this.handleTouchEnd, false)
   }
 
   componentWillUnmount() {
     window.removeEventListener('keyup', this.handleArrowKeys, false)
-    window.removeEventListener('touchstart', this.handleTouchStart, false)
-    window.removeEventListener('touchend', this.handleTouchEnd, false)
   }
 
   componentDidUpdate(prevProps) {
@@ -48,18 +42,6 @@ class QuotesContainer extends Component {
       this.setQuote(quoteId)
     }
   }
-
-  handleTouchStart = throttle(({ screenX: touchStartX }) => {
-    this.setState({touchStartX})
-  }, THROTTLE_DELAY)
-
-  handleTouchEnd = debounce(({ screenX: touchEndX }) => {
-    const {touchStartX} = this.state
-
-    this.navigateNextQuote(touchEndX > touchStartX)
-
-    this.setState({touchEndX})
-  }, THROTTLE_DELAY)
 
   handleArrowKeys = throttle(({ keyCode }) => {
     if (keyCode === KEYCODE_ARROW_LEFT || keyCode === KEYCODE_ARROW_RIGHT) {

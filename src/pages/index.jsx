@@ -24,9 +24,9 @@ const IndexPage = () => (
 
       <section className="mechanicus__motto">
         <h1 className="offset">Deus est machina</h1>
-        <img src={ImgDeus} alt='Deus' width={229} height={85}/>
-        <img src={ImgEst} alt='Est' width={173} height={85}/>
-        <img src={ImgMachina} alt='Machina' width={410} height={85}/>
+        <img className="mechanicus__word" src={ImgDeus} alt='Deus' width={229} height={85}/>
+        <img className="mechanicus__word" src={ImgEst} alt='Est' width={173} height={85}/>
+        <img className="mechanicus__word" src={ImgMachina} alt='Machina' width={410} height={85}/>
       </section>
     </article>
   </Layout>

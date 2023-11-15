@@ -77,9 +77,10 @@
 */
 
 .mechanicus__motto {
-    letter-spacing: 1em;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
-.mechanicus__motto__word {
-    display: inline-block;
+.mechanicus__word {
+    margin: 0 20px;
 }

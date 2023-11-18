@@ -1,0 +1,69 @@
+/*
+* Логотип
+*/
+
+.mechanicus__logo {
+  min-width: 500px; /* Cog */
+  min-height: 500px; /* Cog */
+  position: relative;
+  padding: 1em;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 500px;
+    width: 500px;
+    left: calc(50% - 250px);
+  }
+
+  &:before {
+    background-image: url('./../images/am_outside.png');
+    animation-timing-function: cubic-bezier(.64, -0.42, .28, 1.61);
+    animation-name: cog_rotating;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+  }
+
+  &:after {
+    background-image: url('./../images/am_inside.png');
+  }
+}
+
+
+
+@keyframes cog_rotating {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
+
+/*
+    Слоган
+*/
+
+.mechanicus__motto {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.mechanicus__word {
+  margin: 0 20px;
+}

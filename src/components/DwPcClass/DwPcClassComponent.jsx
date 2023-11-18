@@ -1,10 +1,12 @@
 import React from 'react'
 import declint from 'declint-ru'
+import { Link } from 'gatsby'
 
 import DwMoveList from '@/components/DwMoveList'
 import DwMoveLink from '@/components/DwMoveLink'
 
 import './DwPcClassStyles.less'
+import generateDwPcClassPathById from '@/utils/generateDwPcClassPathById'
 
 const DwPcClassComponent = (
   {
@@ -65,7 +67,10 @@ const DwPcClassComponent = (
     <section className='DwPcClass__personality'>
       <h2>Личность персонажа</h2>
 
-      <section className='DwPcClass__strives'>
+      <section
+        className='DwPcClass__strives'
+        id='strives'
+      >
         <h3>Стремление</h3>
         <p>Выбери до трёх Стремлений своего персонажа. Выбирай из вариантов ниже, или придумай собственное.</p>
         <p>Стремления олицетворяют то, как персонаж взаимодействует с миром. Следование стремлениям или иное их использование в игре награждается опытом в <DwMoveLink id='common.session_end'>Конце сессии</DwMoveLink>.</p>
@@ -102,11 +107,14 @@ const DwPcClassComponent = (
       </section>
     </section>
 
-    <section className='DwPcClass__moves'>
+    <section
+      className='DwPcClass__moves'
+      id='start_moves'
+    >
       <h2>Стартовые ходы</h2>
 
       <section className='DwPcClass__startMoves'>
-        <h3>Ты начинаешь игру со следующими стартовыми ходами:</h3>
+        <h3>Ты начинаешь игру со {startMoveIdList.length > 1 ? 'следующими стартовыми ходами' : 'следующим стартовым ходом'}:</h3>
         <DwMoveList idList={startMoveIdList}/>
       </section>
 
@@ -118,14 +126,17 @@ const DwPcClassComponent = (
       ) ? (
         <section className='DwPcClass__startAdvancedMoves'>
           <h2>Стартовые сложные ходы</h2>
-          <p>Сразу выбери дополнительно {advancedMoveToPickOnStart.limit} {declint(advancedMoveToPickOnStart.limit, ['сложный ход', 'сложных хода', 'сложных ходов'])} из списка ниже <em>(начиная со 2 уровня ты сможешь выбирать эти ходы как обычные Сложные ходы)</em>.</p>
+          <p>Сразу выбери дополнительно {advancedMoveToPickOnStart.limit} {declint(advancedMoveToPickOnStart.limit, ['сложный ход', 'сложных хода', 'сложных ходов'])} из списка ниже <em>(<DwMoveLink id='common.level_up'>начиная со 2 уровня</DwMoveLink> ты сможешь выбирать эти ходы как <a href='#advanced_moves'>обычные сложные ходы</a>)</em>.</p>
           <DwMoveList idList={advancedMoveToPickOnStart.list}/>
         </section>
       ) : null}
 
       <section className='DwPcClass__equipment'>
         <h2>Снаряжение</h2>
-        <section className='DwPcClass__capacity'>
+        <section
+          className='DwPcClass__capacity'
+          id='capacity'
+        >
           <p>Твоя нагрузка равна <strong>9. </strong>Каждый предмет, исключая <em>Мелкие</em>, добавляет свой вес к общей нагрузке.</p>
           <ul>
             <li><strong>1–3</strong> веса — это лёгкая нагрузка (ты <em>быстр</em> и <em>тих</em>);</li>
@@ -139,7 +150,10 @@ const DwPcClassComponent = (
         />
       </section>
 
-      <section className='DwPcClass__advancedMoves'>
+      <section
+        className='DwPcClass__advancedMoves'
+        id='advanced_moves'
+      >
         <h2>Сложные ходы</h2>
         <p>{advancedMoveToPickOnStart ? '' : 'Сразу выбери один сложный ход. '} <DwMoveLink id='common.level_up'>Начиная со 2 уровня</DwMoveLink>, ты каждый уровень можешь выбирать {advancedMoveToPickOnStart ? '' : ' ещё'} один сложный ход из списка ниже, либо увеличить один из параметров на +1 (максимум +2).</p>
         <DwMoveList idList={advancedMoveIdList}/>
@@ -156,11 +170,14 @@ const DwPcClassComponent = (
         && specialMoves.list
         && specialMoves.list.length
       ) ? (
-        <section className='DwPcClass__startAdvancedMoves'>
+        <section
+          className='DwPcClass__specialMoves'
+          id='special_moves'
+        >
           <h2>{specialMoves.title}</h2>
           {specialMoves.text ? (
             <section
-              className='DwPcClass__startItems'
+              className='DwPcClass__specialItems'
               dangerouslySetInnerHTML={{__html: specialMoves.text}}
             />
           ) : null}

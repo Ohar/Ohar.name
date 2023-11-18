@@ -12,6 +12,7 @@ const DwMoveListContainer = ({idList, ...props}) => {
 
   const moveList = idList
     .map(id => dwMoveCollection[id])
+    .filter(e => e)
     .sort(sortByName);
 
   if (!moveList.length) {

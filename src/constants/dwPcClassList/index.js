@@ -6,10 +6,10 @@ const dwPcClassList = [
   require('./list/noble.jsx'),
   require('./list/priest.jsx'),
   require('./list/ranger.jsx'),
-  require('./list/rogue.jsx'),
   require('./list/savage.jsx'),
   require('./list/shorty.jsx'),
   require('./list/sorcerer.jsx'),
+  require('./list/thief.jsx'),
   require('./list/warlock.jsx'),
   require('./list/warrior.jsx'),
 ]

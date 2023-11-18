@@ -1,10 +1,12 @@
 import commonMoveList from './list/common'
 import sorcererMoveList from './list/sorcerer'
+import thiefMoveList from './list/thief'
 import warriorMoveList from './list/warrior'
 
 const dwMoveList = [
     ...commonMoveList,
     ...sorcererMoveList,
+    ...thiefMoveList,
     ...warriorMoveList,
 ]
   .sort(

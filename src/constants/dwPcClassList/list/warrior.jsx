@@ -1,5 +1,3 @@
-const React = require('react')
-
 module.exports = {
   id: 'warrior',
   name: 'Воин',

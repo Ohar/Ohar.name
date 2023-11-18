@@ -36,14 +36,14 @@ const DwPcClassComponent = (
 
     <section className='DwPcClass__name'>
       <h2>Имена</h2>
-      <p>Выберите имя персонажа или придумайте своё.</p>
+      <p>Выбери имя персонажа или придумай своё.</p>
       <p>Примеры имён: <span className='DwPcClass__nameExamples'>{nameList.join(', ')}</span>.</p>
 
     </section>
 
     <section className='DwPcClass__appearance'>
       <h2>Внешность</h2>
-      <p>Выберите по одной черте внешности:</p>
+      <p>Выбери по одной черте внешности:</p>
       <ul>
         {featureList.map(
           ({ name, variantList }) => (
@@ -57,9 +57,9 @@ const DwPcClassComponent = (
 
     <section className='DwPcClass__params'>
       <h2>Характеристики</h2>
-      <p>Распределите эти значения по характеристикам <strong>+2, +1, +1, +0, +0, −1</strong></p>
-      <p>Ваши максимальные хиты: <strong>{hpBonus} + ТЕЛ</strong></p>
-      <p>Ваш базовый урон: <strong>к{damageDice}</strong>.</p>
+      <p>Распредели эти значения по характеристикам <strong>+2, +1, +1, +0, +0, −1</strong></p>
+      <p>Твои максимальные хиты: <strong>{hpBonus} + ТЕЛ</strong></p>
+      <p>Твой базовый урон: <strong>к{damageDice}</strong>.</p>
     </section>
 
     <section className='DwPcClass__personality'>
@@ -67,9 +67,8 @@ const DwPcClassComponent = (
 
       <section className='DwPcClass__strives'>
         <h3>Стремление</h3>
-        <p>Выберите до трёх Стремлений своего персонажа. Выбирайте из вариантов ниже, или придумайте собственное.</p>
-        <p>Стремления олицетворяют то, как персонаж взаимодействует с миром. Следование стремлениям или иное их
-          использование в игре награждается опытом в <DwMoveLink id='common.session_end'>Конце сессии</DwMoveLink>.</p>
+        <p>Выбери до трёх Стремлений своего персонажа. Выбирай из вариантов ниже, или придумай собственное.</p>
+        <p>Стремления олицетворяют то, как персонаж взаимодействует с миром. Следование стремлениям или иное их использование в игре награждается опытом в <DwMoveLink id='common.session_end'>Конце сессии</DwMoveLink>.</p>
         <ul>
           {striveList.map(
             ({ name, text }) => (
@@ -85,7 +84,7 @@ const DwPcClassComponent = (
       {optionalQuestionList && optionalQuestionList.length ? (
         <section className='DwPcClass__optionalQuestions'>
           <h3>Опциональные вопросы</h3>
-          <p>Эти вопросы помогут Вам лучше понимать своего персонажа:</p>
+          <p>Эти вопросы помогут тебе лучше понимать своего персонажа:</p>
           <ul>
             {optionalQuestionList.map(
               (text, index) => (
@@ -98,7 +97,7 @@ const DwPcClassComponent = (
 
       <section className='DwPcClass__backgrounds'>
         <h2>Предыстория</h2>
-        <p>Теперь выберите предысторию и получите соответствующий ход:</p>
+        <p>Теперь выбери предысторию и получи соответствующий ход:</p>
         <DwMoveList idList={backgroundIdList}/>
       </section>
     </section>
@@ -107,7 +106,7 @@ const DwPcClassComponent = (
       <h2>Стартовые ходы</h2>
 
       <section className='DwPcClass__startMoves'>
-        <h3>Вы начинаете игру со следующими стартовыми ходами:</h3>
+        <h3>Ты начинаешь игру со следующими стартовыми ходами:</h3>
         <DwMoveList idList={startMoveIdList}/>
       </section>
 
@@ -119,9 +118,7 @@ const DwPcClassComponent = (
       ) ? (
         <section className='DwPcClass__startAdvancedMoves'>
           <h2>Стартовые сложные ходы</h2>
-          <p>Сразу выберите
-            дополнительно {advancedMoveToPickOnStart.limit} {declint(advancedMoveToPickOnStart.limit, ['сложный ход', 'сложных хода', 'сложных ходов'])} из
-            списка ниже <em>(начиная со 2 уровня Вы сможете выбирать эти ходы как обычные Сложные ходы)</em>.</p>
+          <p>Сразу выбери дополнительно {advancedMoveToPickOnStart.limit} {declint(advancedMoveToPickOnStart.limit, ['сложный ход', 'сложных хода', 'сложных ходов'])} из списка ниже <em>(начиная со 2 уровня ты сможешь выбирать эти ходы как обычные Сложные ходы)</em>.</p>
           <DwMoveList idList={advancedMoveToPickOnStart.list}/>
         </section>
       ) : null}
@@ -129,14 +126,11 @@ const DwPcClassComponent = (
       <section className='DwPcClass__equipment'>
         <h2>Снаряжение</h2>
         <section className='DwPcClass__capacity'>
-          <p>Ваша нагрузка равна <strong>9. </strong>Каждый предмет, исключая <em>мелкие</em>, добавляет свой вес к общей
-            нагрузке.</p>
+          <p>Твоя нагрузка равна <strong>9. </strong>Каждый предмет, исключая <em>Мелкие</em>, добавляет свой вес к общей нагрузке.</p>
           <ul>
-            <li><strong>1–3</strong> веса — это лёгкая нагрузка (вы <em>быстры</em> и <em>тихи</em>)</li>
-            <li><strong>4–6</strong> нормальная нагрузка</li>
-            <li><strong>7–9</strong> тяжёлая (Вы <em>медленны</em>, <em>шумны</em>, Вам <em>жарко</em> и Вы <em>быстро
-              устаёте</em>)
-            </li>
+            <li><strong>1–3</strong> веса — это лёгкая нагрузка (ты <em>быстр</em> и <em>тих</em>);</li>
+            <li><strong>4–6</strong> нормальная нагрузка;</li>
+            <li><strong>7–9</strong> тяжёлая (ты <em>медленен</em>, <em>шумен</em>, тебе <em>жарко</em> и ты <em>быстро устаёшь</em>).</li>
           </ul>
         </section>
         <section
@@ -147,13 +141,13 @@ const DwPcClassComponent = (
 
       <section className='DwPcClass__advancedMoves'>
         <h2>Сложные ходы</h2>
-        <p>{advancedMoveToPickOnStart ? '' : 'Сразу выберите один сложный ход. '} <DwMoveLink id='common.level_up'>Начиная со 2 уровня</DwMoveLink>, Вы каждый уровень можете выбирать {advancedMoveToPickOnStart ? '' : ' ещё'} один сложный ход из списка ниже, либо увеличить один из параметров на +1 (максимум +2).</p>
+        <p>{advancedMoveToPickOnStart ? '' : 'Сразу выбери один сложный ход. '} <DwMoveLink id='common.level_up'>Начиная со 2 уровня</DwMoveLink>, ты каждый уровень можешь выбирать {advancedMoveToPickOnStart ? '' : ' ещё'} один сложный ход из списка ниже, либо увеличить один из параметров на +1 (максимум +2).</p>
         <DwMoveList idList={advancedMoveIdList}/>
       </section>
 
       <section className='DwPcClass__capstoneMoves'>
         <h2>Высшие ходы</h2>
-        <p><DwMoveLink id='common.level_up'>Получая уровни</DwMoveLink> 6–10, Вы можете выбирать и из этих ходов тоже, либо увеличивать один из параметров на +1 (максимум +3, только один раз на персонажа).</p>
+        <p><DwMoveLink id='common.level_up'>Получая уровни</DwMoveLink> 6–10, ты можешь выбирать и из этих ходов тоже, либо увеличивать один из параметров на +1 (максимум +3, только один раз на персонажа).</p>
         <DwMoveList idList={capstoneMoveIdList}/>
       </section>
 

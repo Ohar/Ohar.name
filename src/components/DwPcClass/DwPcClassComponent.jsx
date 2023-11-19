@@ -1,12 +1,11 @@
 import React from 'react'
 import declint from 'declint-ru'
-import { Link } from 'gatsby'
 
 import DwMoveList from '@/components/DwMoveList'
 import DwMoveLink from '@/components/DwMoveLink'
+import DwNote from '@/components/DwNote'
 
 import './DwPcClassStyles.less'
-import generateDwPcClassPathById from '@/utils/generateDwPcClassPathById'
 
 const DwPcClassComponent = (
   {
@@ -20,6 +19,7 @@ const DwPcClassComponent = (
     featureList,
     hpBonus,
     nameList,
+    noteId,
     optionalQuestionList,
     quoteEnd,
     specialMoves,
@@ -193,6 +193,8 @@ const DwPcClassComponent = (
           <cite className='DwPcClass__quoteAuthor'>— {quoteEnd.author}</cite>
         </blockquote>
       ) : null}
+
+      <DwNote noteId={noteId} />
     </section>
   </section>
 )

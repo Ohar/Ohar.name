@@ -1,5 +1,6 @@
 import commonMoveList from './list/common'
 import druidMoveList from './list/druid'
+import inventorMoveList from './list/inventor'
 import sorcererMoveList from './list/sorcerer'
 import thiefMoveList from './list/thief'
 import warriorMoveList from './list/warrior'
@@ -7,6 +8,7 @@ import warriorMoveList from './list/warrior'
 const dwMoveList = [
     ...commonMoveList,
     ...druidMoveList,
+    ...inventorMoveList,
     ...sorcererMoveList,
     ...thiefMoveList,
     ...warriorMoveList,

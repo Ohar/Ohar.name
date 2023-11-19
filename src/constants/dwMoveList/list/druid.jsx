@@ -7,11 +7,305 @@ import { Link } from 'gatsby'
 
 export default [
   {
-    id: 'druid..',
-    name: '',
+    id: 'druid.background.ancient',
+    name: 'Древний',
     text: (
       <>
-        TODO
+        <p><strong><DwMoveLink id='common.spout_lore'>Копаясь в памяти</DwMoveLink> о мире природы или давно забытом</strong>, бросай с преимуществом.</p>
+        <p><strong><DwMoveLink id='common.recover'>Восстанавливаясь</DwMoveLink> или <DwMoveLink id='common.set_camp'>Разбивая лагерь</DwMoveLink> в дикой местности</strong>, ты избавляешься от ментальной <en>Травмы</en> и очищаешься от любых обычных ядов и обычных болезней в начальных стадиях.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.background.totemist',
+    name: 'Тотемист',
+    text: (
+      <>
+        <p><strong>Выбери животное</strong>, с которым у тебя уже есть связь. Теперь это твой тотем.</p>
+        <p><strong><em>Превращаясь</em> в свой тотем</strong>, ты получаешь +1 <DwMoveLink id='druid.start.transformation'>Инстинкт</DwMoveLink>.</p>
+        <p><strong>Когда ты встречаешь в дикой местности своё тотемное животное или ему подобных</strong>, они всегда дружелюбны к тебе, пока ты не сделаете что-то, что изменит их мнение.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.background.shapeshifter',
+    name: 'Перевёртыш',
+    text: (
+      <>
+        <p><strong>Выбери вторую землю</strong> из списка <DwMoveLink id='druid.start.earth_child'>Родной земли</DwMoveLink>.</p>
+        <p><strong><DwMoveLink id='common.recover'>Восстанавливаясь</DwMoveLink> или <DwMoveLink id='common.set_camp'>Разбивая лагерь</DwMoveLink></strong>, ты можешь <em>Превратиться</em> без броска, но получишь только 1 <DwMoveLink id='druid.start.transformation'>Инстинкт</DwMoveLink>.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.start.earth_child',
+    name: 'Дитя земли',
+    text: (
+      <>
+        <p><strong>Ты черпаешь силу из земли и обитающих в ней духов</strong>. Выбери <em>Родную землю</em>, с которой ты связан.</p>
+        <ul>
+          <li>Великие леса.</li>
+          <li>Выжженная пустошь.</li>
+          <li>Глубины земли.</li>
+          <li>Городские улицы.</li>
+          <li>Громадные горы.</li>
+          <li>Дельта реки.</li>
+          <li>Зловонные топи.</li>
+          <li>Морозный север.</li>
+          <li>Открытое море.</li>
+          <li>Просторная пустыня.</li>
+          <li>Сапфировые острова.</li>
+          <li>Фермы и поля.</li>
+          <li>Шепчущие равнины.</li>
+          <li>________________ (свой вариант, обсуди с Ведущим).</li>
+        </ul>
+        <p><strong>Затем, выбери <em>Отметину</em></strong>: метку, которая выдаёт в тебе дитя земли и говорит о связи с духами. Это может быть черта, присущая животному, вроде пятен леопарда или рогов, или что-то иное: волосы, похожие на листья, блестящие как лёд глаза. Метка остаётся на тебе в любом твоём облике.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.start.transformation',
+    name: 'Превращение',
+    text: (
+      <>
+        <p><strong>Призывая духов земли изменить твою форму</strong>, ты превращаетесь в естественное животное своей <DwMoveLink id='druid.start.earth_child'>Родной земли</DwMoveLink>, и брось +МУД.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— получи 3 <em>Инстинкта</em>.</li>
+          <li>На <strong>7–9</strong>&nbsp;— получи 2 <em>Инстинкта</em>.</li>
+          <li>На <strong>6−</strong>&nbsp;— всё равно получи 1 <em>Инстинкт</em>, но Ведущий делает ход.</li>
+        </ul>
+        <p>Твои вещи сливаются с формой животного. У тебя есть все его врождённые способности и слабости: когти, крылья, жабры, дыхание водой вместо воздуха. Ты всё ещё используете свои обычные характеристики, но некоторые ходы будет сложнее выполнить&nbsp;— коту будет трудно сражаться с огром.</p>
+        <p>Если, <strong>будучи <em>Превращённым</em>,  ты делаешь ход и у тебя выпадает 9−</strong>, то ты должен потратить <em>Инстинкт</em> или вернуться к своей нормальной форме. Ты можешь добровольно вернуться к своей нормальной форме в любое время; когда ты это сделаешь, потеряй любой оставшийся <em>Инстинкт</em>.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.start.spirit_language',
+    name: 'Язык духов',
+    text: (
+      <>
+        <p><strong>Ты можешь разговаривать с животными, зверями и духами природы</strong>.</p>
+        <p>Ты всегда можете спросить Ведущего <em>«Какие духи здесь обитают?»</em> и получить честный ответ.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.start.old_faith_rite',
+    name: 'Обряды старой веры',
+    text: (
+      <>
+        <p><strong>Проводя обряд и призывая духов и силы природы себе на помощь</strong>, скажи Ведущему: чего ты хочешь добиться и каким образом. Ведущий поставит перед тобой от 1 до 4 требований из списка ниже. Когда ты их выполнишь, проведи <em>Обряд</em> и твоя просьба будет исполнена.</p>
+        <ul>
+          <li>Это займёт несколько минут / часов / дней / недель / месяцев.</li>
+          <li>Ты должен делать это в важном для своей <DwMoveLink id='druid.start.earth_child'>Родной земли</DwMoveLink> месте (например _____).</li>
+          <li>Ты должен сделать это в определённое время (например _____).</li>
+          <li>Сначала ты должен _____________.</li>
+          <li>Тебе нужна помощь от ___________.</li>
+          <li>Ты сможете добиться лишь _____________.</li>
+          <li>Ты и твои союзники рискуете из-за _____________.</li>
+          <li>Тебе нужно пожертвовать или потратить ____________, чтобы сделать это.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'druid.advanced.summon_spirit',
+    name: 'Призыв духа',
+    text: (
+      <p><strong>Проводя небольшой ритуал, чтобы призвать духов места или предмета</strong>, сделай подношение, потратив использование Припасов. Духи появятся перед тобой&nbsp;— они не всегда дружелюбные, но по меньшей мере любопытные и готовые тебя выслушать.</p>
+    ),
+  },
+  {
+    id: 'druid.advanced.shepherd_step',
+    name: 'Поступь пастыря',
+    text: (
+      <p><strong>Двигаясь через природное окружение с осторожностью и терпением</strong>, ты не шумишь, не оставляешь следов и можешь игнорировать любую опасную местность (шипастые растения, трясину, болото и т. п).</p>
+    ),
+  },
+  {
+    id: 'druid.advanced.balance',
+    name: 'Равновесие',
+    text: (
+      <>
+        <p><strong>Нанося урон</strong>, получи 1 <em>Равновесие</em> (максимум — ТЕЛ).</p>
+        <p><strong>Касаясь кого-то и взывая к духам жизни</strong>, ты можешь потратить <em>Равновесие</em>, чтобы исцелить его. За каждое 1 <em>Равновесия</em> цель восстанавливает 1к6 хитов.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.advanced.borrowed_power',
+    name: 'Заимствованная сила',
+    text: (
+      <>
+        <p><strong>Проводя несколько часов, общаясь с духом животного</strong>, ты можешь создать связь с этим животным. Создав связь, ты сможете <DwMoveLink id='druid.start.transformation'>Превращаться</DwMoveLink> в это животное.</p>
+        <p><strong>Дух может потребовать от тебя что-то взамен</strong>. Ведущий скажет — что он потребует (если потребует вообще).</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.advanced.rock_n_vine',
+    name: 'Камень и лоза',
+    text: (
+      <>
+        <p><em>Требуется</em>: <DwMoveLink id='druid.advanced.borrowed_power'>Заимствованная сила</DwMoveLink></p>
+        <p><strong>Теперь ты можешь создавать связь и с неживыми природными предметами</strong> (растениями, камнями и т. п.) или существами из них. Эти формы могут быть точными копиями или подвижными существами неопределенной гуманоидной формы.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.advanced.barkskin',
+    name: 'Дубовая кожа',
+    text: (
+      <p><strong>Покуда ты касаешься земли</strong>, ты получаешь +1 брони.</p>
+    ),
+  },
+  {
+    id: 'druid.advanced.shedding',
+    name: 'Линька',
+    text: (
+      <p><strong>Получая урон, будучи <DwMoveLink id='druid.start.transformation'>Превращённым</DwMoveLink></strong>, ты можешь потратить <DwMoveLink id='druid.start.transformation'>Инстинкт</DwMoveLink>, чтобы этот урон получил помеху.</p>
+    ),
+  },
+  {
+    id: 'druid.advanced.transformation_master',
+    name: 'Мастер превращений',
+    text: (
+      <>
+        <p><strong><DwMoveLink id='druid.start.transformation'>Превращаясь</DwMoveLink>, выбери характеристику</strong>. Пока ты превращён, ты бросаешь её с преимуществом.</p>
+        <p>Ведущий тоже выбирает характеристику: пока ты <DwMoveLink id='druid.start.transformation'>превращён</DwMoveLink>, ты бросаешь её с помехой.</p>
+        <p>Этот эффект длится, пока ты находишься в форме животного.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.advanced.elemental_lord',
+    name: 'Властелин стихий',
+    text: (
+      <>
+        <p><strong>Взывая к первородным духам стихий огня, воды, земли или воздуха, чтобы они исполнили твоё поручение</strong>, опиши — что ты хочешь, чтобы произошло и брось +ТЕЛ.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— выбери два варианта.</li>
+          <li>На <strong>7–9</strong>&nbsp;— выбери один вариант.</li>
+        </ul>
+        <p>Варианты</p>
+        <ul>
+          <li>Эффект происходит именно так, как ты его представлял.</li>
+          <li>Ты не платишь цену, которую требует природа.</li>
+          <li>Ты сохраняешь контроль над действиями духов.</li>
+        </ul>
+        <p>Чем больше твоё поручение, тем больше будет цена, и тем больше будут последствия от потери контроля.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.advanced.paw_n_fang',
+    name: 'Мощная лапа, острый клык',
+    text: (
+      <p><strong><DwMoveLink id='druid.start.transformation'>Превращаясь</DwMoveLink> в страшное и опасное животное</strong>, твой урон увеличивается до к8 и твои атаки получают свойство <em>Месиво</em>.</p>
+    ),
+  },
+  {
+    id: 'druid.advanced.natures_touch',
+    name: 'Касание природы',
+    text: (
+      <>
+        <p>Ты можешь создавать небольшие, но заметные чудеса&nbsp;— например, заставить расти лозу, двигать песок, гнуть или сращивать деревья. <strong>Концентрируя свою волю на окружающий мир, чтобы сотворить небольшое чудо</strong>, брось +МУД.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— происходит то, что ты хотел.</li>
+          <li>На <strong>7–9</strong>&nbsp;— эффект всё равно срабатывает, но тебе придётся либо оплатить цену природы либо потерять контроль.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'druid.advanced.restore_balance',
+    name: 'Восстановление баланса',
+    text: (
+      <>
+        <p><em>Требуется</em>: <DwMoveLink id='druid.advanced.balance'>Равновесие</DwMoveLink></p>
+        <p><strong>Ты можешь тратить <DwMoveLink id='druid.advanced.balance'>Равновесие</DwMoveLink></strong>, чтобы:</p>
+        <ul>
+          <li>Избавить цель от одной <em>Травмы</em>.</li>
+          <li>Исцелить цель от обычного яда. Действие мощных или сверхъестественных ядов как минимум замедляется.</li>
+          <li>Исцелить цель от обычной болезни в первых стадиях. Сильные болезни или болезни в поздних стадиях исцеляются лишь частично и потребуют традиционных методов лечения для полного избавления. Течение сверхъестественных болезней как минимум замедляется.</li>
+          <li>Стабилизировать состояние цели, если она страдает от <em>Проблемной Раны</em> (хотя бы на время).</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'druid.capstone.primal_wild',
+    name: 'Первобытная дикость',
+    text: (
+      <>
+        <p><em>Требуется</em>: <DwMoveLink id='druid.advanced.transformation_master'>Мастер превращений</DwMoveLink></p>
+        <p><strong>Превращаясь</strong>, ты можешь отметить <em>Травмы</em> «Подавлен» и/или «Ошеломлён». За каждую отмеченную <em>Травму</em> выбери два из списка:</p>
+        <ul>
+          <li>Твой урон получает преимущество.</li>
+          <li>Ты игнорируете страх и все физические <em>Травмы</em>.</li>
+          <li>Получи 1к4 <DwMoveLink id='druid.start.transformation'>Инстинкта</DwMoveLink>.</li>
+          <li>Получи +1 брони.</li>
+        </ul>
+        <p>Эти бонусы длятся до окончания твоего <DwMoveLink id='druid.start.transformation'>Превращения</DwMoveLink>.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.capstone.soulmate',
+    name: 'Близкие души',
+    text: (
+      <>
+        <p><strong>Нанося метку или иначе отмечая зверя</strong>, потрать использование Припасов и ты сможешь воспринимать мир его чувствами вне зависимости от расстояния между вами. Ты также можешь направлять его действия: считай его <em>Последователем</em> с Верностью, равной твоей МДР.</p>
+        <p>Таким образом ты можешь отметить только одного зверя одновременно.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.capstone.blood_n_thunder',
+    name: 'Кровь и Гром',
+    text: (
+      <>
+        <p><em>Требуется</em>: <DwMoveLink id='druid.advanced.paw_n_fang'>Мощная лапа, острый клык</DwMoveLink></p>
+        <p><strong>Превращаясь в страшное и опасное животное</strong>, твой урон увеличивается до к10 и твои атаки получают свойства <em>Мощные</em> и <em>Месиво</em>.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.capstone.elemental_form',
+    name: 'Стихийная форма',
+    text: (
+      <>
+        <p><em>Требуется</em>: <DwMoveLink id='druid.advanced.elemental_lord'>Властелин стихий</DwMoveLink></p>
+        <p><strong>Получая этот ход</strong>, выбери одну из стихий:</p>
+        <ul>
+          <li>Огонь</li>
+          <li>Вода</li>
+          <li>Воздух</li>
+          <li>Земля</li>
+        </ul>
+        <p><DwMoveLink id='druid.start.transformation'>Превращаясь</DwMoveLink>, теперь ты можешь принимать форму подвижного существа неопределенной гуманоидной формы выбранной тобой стихии.</p>
+        <p><strong>Ты можешь выбирать этот ход дважды</strong>, выбирая новую стихию при каждом выборе.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.capstone.chimera',
+    name: 'Химера',
+    text: (
+      <>
+        <p><DwMoveLink id='druid.start.transformation'>Превращаясь</DwMoveLink>, ты можешь создать полностью новую форму, состоящую из трёх или менее частей уже известных тебе форм.</p>
+        <p>Имея ходы <DwMoveLink id='druid.advanced.borrowed_power'>Заимствованная сила</DwMoveLink>, <DwMoveLink id='druid.advanced.rock_n_vine'>Камень и лоза</DwMoveLink> или <DwMoveLink id='druid.capstone.elemental_form'>Стихийная форма</DwMoveLink>, ты можешь использовать доступные формы и из них тоже.</p>
+      </>
+    ),
+  },
+  {
+    id: 'druid.capstone.doppelganger_dance',
+    name: 'Танец оборотня',
+    text: (
+      <>
+        <p><em>Требуется</em>: <DwMoveLink id='druid.advanced.borrowed_power'>Заимствованная сила</DwMoveLink></p>
+        <p><strong>Ты получаешь возможность создавать связь с конкретными личностями</strong> чтобы получить возможность <DwMoveLink id='druid.start.transformation'>Превращаться</DwMoveLink> в их точную форму, включая людей, эльфов и т. п.</p>
+        <p><strong>Ты можешь подавить проявление своей <em>Отметины</em> в этой форме</strong>, но, если ты это делаешь, то получаешь помеху на все ходы, пока не вернёшься в свою истинную форму.</p>
       </>
     ),
   },
@@ -23,16 +317,3 @@ export default [
     }),
   )
   .sort(sortByName)
-
-const foo = `
-
-
-
-    
-   
-    <div style="text-align:center"><img src="systems/dungeonworld/assets/icons/skills/green_22.webp"></div><p><em>Сидя у костра, оглядитесь вокруг. Что привело вас в компанию этих людей, провонявших городской пылью и потом? Может, доброта? Может, вы защитите их, как медведица бережёт своих чад? Ведь они вроде как ваша стая. Странные же братья и сестры вам достались. Что бы ни вдохновило вас на этот путь, им точно не выжить без ваших острых чувств и еще более острых когтей.</em></p><p><em>Вы — дитя священных рощ, вы родились из земли и носите на теле отметины её духов. Возможно, раньше у вас была иная жизнь, и вы, как они, обитали в городе. С этим покончено. Вы оставили то тело, тот застывший облик, в прошлом. Слушайте, как ваши товарищи молятся их высеченным из камня богам и полируют серебряные доспехи. Они твердят о славе, которую обретут, вернувшись в город — этот гнойник на лице земли. Их божества — дети, их сталь даёт иллюзию защиты.</em></p><p><em>Вы идёте путём древних. Вы носите шкуру, дарованную вам самой природой. Вы возьмёте свою долю из награбленного, но станете ли вы таким же, как ваши спутники? Время покажет...</em></p><p>&nbsp;</p><h2 data-anchor="imena">Имена</h2><p>Элана, Обелис, Герран, Сиула, Анданна, Сиобан, Азиз, Пелин, Сибель, Нильс, Вей;</p><p>Гикоракс, Синатель, Деманор, Менолиир, Митралан, Таэрос, Эгор;</p><p>Таннер, Данстан, Роуз, Робард, Мэб, Файстль, Пак, Энн, Сира;</p><h2 data-anchor="vneshnostь">Внешность</h2><p>Выберите одну черту по каждому пункту:</p><ul><li>Мудрые глаза, дикий взгляд или пронзительный взор;</li><li>Меховой капюшон, спутанные волосы или косички;</li><li>Ритуальное одеяние, удобная одежда из кожи или старая шкура.</li></ul><h2 data-anchor="harakteristiki">Характеристики</h2><p>Ваши максимальные хиты <strong>16+ТЕЛ</strong></p><p>Ваш базовый урон равен <a class="inline-roll roll" data-mode="roll" data-flavor="" data-formula="d6"><i class="fas fa-dice-d20"></i>d6</a>.</p><p>Распределите эти модификаторы по характеристикам <strong>+2, +1, +1, +0, +0, -1</strong></p><p></p><h1 data-anchor="lichnostь-personazha">Личность персонажа</h1><h3 data-anchor="aspekty"><strong>Аспекты</strong></h3><p>Аспекты описывают важные особенности вашего персонажа, его жизненный опыт, происхождение и родословную и социальные отношения. В игре это проявляется в качестве механических бонусов. Подробнее вы можете прочитать <a class="content-link" draggable="true" data-uuid="Compendium.world.gm-screen.JournalEntry.ZLYUyWP6kSJrNmat" data-id="ZLYUyWP6kSJrNmat" data-type="JournalEntry" data-pack="world.gm-screen" data-tooltip="Журнал"><i class="fas fa-book-open"></i>здесь</a>.</p><p>Придумайте персонажу три <a class="content-link" draggable="true" data-uuid="Compendium.world.gm-screen.JournalEntry.ZLYUyWP6kSJrNmat" data-id="ZLYUyWP6kSJrNmat" data-type="JournalEntry" data-pack="world.gm-screen" data-tooltip="Журнал"><i class="fas fa-book-open"></i>аспекта</a>: <strong>Концепцию</strong> и два обычных аспекта.</p><p>Для начала хватит только Концепции, остальные аспекты вы можете заполнить по мере игры.</p><p></p><h3 data-anchor="stremlenie"><span style="font-family:Arial, sans-serif"><strong style="box-sizing:border-box;user-select:text">Стремление</strong></span></h3><p><span style="font-family:Arial, sans-serif">Выберите до трёх Стремлений своего персонажа. Выбирайте из вариантов ниже, придумайте своё собственное или воспользуйтесь <a class="content-link" draggable="true" data-uuid="Compendium.world.gm-screen.JournalEntry.PLhAByHQsTL4cZQU" data-id="PLhAByHQsTL4cZQU" data-type="JournalEntry" data-pack="world.gm-screen" data-tooltip="Журнал"><i class="fas fa-book-open"></i>списком Стремлений</a>.</span></p><p>Стремления олицетворяют то как персонаж взаимодействует с миром и следование или иначе использование их в игре награждается опытом в <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.aGbaj6PeLdm3H4zc" data-id="aGbaj6PeLdm3H4zc" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>конце сессии</a>.</p><p></p><blockquote><h3 data-anchor="vosstanovlenie"><strong>Восстановление</strong></h3><p>Обезобразьте, уничтожите или заройте символ изобретений, прогресса или цивилизации.</p></blockquote><blockquote><h3 data-anchor="kulьtivaciya"><strong>Культивация</strong></h3><p>Помогите персонажу Ведущего научиться, вырасти или поработать над собой</p></blockquote><blockquote><h3 data-anchor="nasledie"><strong>Наследие</strong></h3><p>Заставьте кого-то нервничать из-за вашего странного поведения.</p></blockquote><blockquote><h3 data-anchor="sohranenie"><strong>Сохранение</strong></h3><p>Защитите или восстановите что-то природное.</p></blockquote><blockquote><h3 data-anchor="otchuzhdyonnostь"><strong>Отчуждённость</strong></h3><p>Действуйте или бездействуйте таким образом чтобы это навредило союзнику или кому-то неподалёку.</p></blockquote><p>&nbsp;</p><p><strong>Опциональные вопросы чтобы лучше понимать своего персонажа:</strong></p><blockquote><ul><li>Как вы обрели свои способности?</li><li>Какова ваша Отметина, и почему она для вас важна?</li><li>Как выглядит большинство духов? Чего они хотят и как их ублажить?</li><li>Какие признаки угрозы нашептали вам духи?</li></ul></blockquote><p>&nbsp;</p><h3 data-anchor="teperь-vyberite-predystoriyu-i-poluchite-sootvetstvuyushij-hod:"><strong>Теперь выберите предысторию и получите соответствующий ход:</strong></h3><blockquote><h3 data-anchor="drevnij"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.r0BC2HCQiKPcbxRc" data-id="r0BC2HCQiKPcbxRc" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Древний</a></strong></h3><p><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.feNkp70TAI9vpPkq" data-id="feNkp70TAI9vpPkq" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Копаясь в памяти</a> о мире природы или давно забытом</strong>, бросайте с преимуществом.</p><p><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.211SOIrKRp2TyhLz" data-id="211SOIrKRp2TyhLz" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Восстанавливаясь</a> или <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.IFAcgBsxriir9o5n" data-id="IFAcgBsxriir9o5n" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Разбивая лагерь</a> в дикой местности</strong>, избавьтесь от ментальной Травмы и вы очищаетесь от любых обычных ядов и обычных болезней в начальных стадиях.</p></blockquote><p></p><blockquote><h3 data-anchor="totemist:-_______________"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.yTByOTcaC3HEY8Sc" data-id="yTByOTcaC3HEY8Sc" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Тотемист: _______________</a></strong></h3><p><strong>Выберите</strong> животное с которым у вас уже есть связь — теперь это ваш тотем.</p><p><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.7NRkXKkc4ItON4s6" data-id="7NRkXKkc4ItON4s6" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Превращаясь</a> в ваш тотем</strong>, вы получаете +1 Инстинкта.</p><p><strong>Встречаясь со своим тотемным животным или ему подобным в дикой местности</strong>, они всегда дружелюбны к вам пока вы не сделаете что-то что изменит их мнение.</p></blockquote><p></p><blockquote><h3 data-anchor="perevyortysh"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.gGuFKiGIbPGOWnpu" data-id="gGuFKiGIbPGOWnpu" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Перевёртыш</a></strong></h3><p><strong>Выберите </strong>вторую землю из списка Родной земли.</p><p><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.211SOIrKRp2TyhLz" data-id="211SOIrKRp2TyhLz" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Восстанавливаясь</a> или <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.IFAcgBsxriir9o5n" data-id="IFAcgBsxriir9o5n" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Разбивая лагерь</a></strong>, вы можете <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.7NRkXKkc4ItON4s6" data-id="7NRkXKkc4ItON4s6" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Превратиться</a> без броска, но вы получаете только 1 Инстинкта.</p></blockquote><p>&nbsp;</p><p></p><h1 data-anchor="osnova-klassa-personazha">Основа класса персонажа</h1><h2 data-anchor="vy-nachinaete-igru-so-sleduyushimi-hodami:">Вы начинаете игру со следующими ходами:</h2><p></p><h3 data-anchor="ditya-zemli"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.FzYgtK4je2Ff0D11" data-id="FzYgtK4je2Ff0D11" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Дитя земли</a></strong></h3><p>Вы черпаете силу из земли и обитающих в ней духов.</p><p><strong>Выберите Родную землю</strong> — это земля с которой вы связаны:</p><ul><li><p>Великие леса</p></li><li><p>Шепчущие равнины</p></li><li><p>Просторная пустыня</p></li><li><p>Зловонные топи</p></li><li><p>Городские улицы</p></li><li><p>Дельта реки</p></li><li><p>Глубины земли</p></li><li><p>Сапфировые острова</p></li><li><p>Открытое море</p></li><li><p>Фермы и поля</p></li><li><p>Громадные горы</p></li><li><p>Морозный север</p></li><li><p>Выжженная пустошь</p></li><li><p>__________________</p></li></ul><p></p><p><strong>Затем, выберите Отметину</strong>: метку, которая выдаёт в вас дитя земли и говорит о вашей связи с духами. Это может быть черта, присущая животному, вроде пятен леопарда или рогов, или что-то иное: волосы, похожие на листья, блестящие как лед глаза. Метка остаётся в любом вашем облике.</p><p></p><h3 data-anchor="prevrashenie"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.7NRkXKkc4ItON4s6" data-id="7NRkXKkc4ItON4s6" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Превращение</a></strong></h3><p><strong>Призывая духов земли изменить вашу форму</strong>, вы превращаетесь в естественное животное вашей родной земли, и бросьте +МУД.</p><p><strong>На 10+</strong> получите 3 Инстинкта.</p><p><strong>На 7-9</strong> получите 2 Инстинкта.</p><p><strong>На 6- </strong>всё равно получите 1 Инстинкта, но Ведущий делает ход.</p><p>Ваши вещи сливаются с формой животного. У вас есть все врожденные способности и слабости формы: когти, крылья, жабры, дыхание водой вместо воздуха. Вы всё ещё используете свои обычные характеристики, но некоторые ходы будет сложнее выполнить — коту будет трудно сражаться с огром.</p><p>Если,<strong> делая ход будучи Превращённым, у вас выпадает 9 или меньше</strong>, вы должны потратить Инстинкт или вернуться к своей нормальной форме. Вы можете добровольно вернуться к своей нормальной форме в любое время; когда вы это сделаете, потеряйте любой оставшийся Инстинкт.</p><p></p><h3 data-anchor="yazyk-duhov"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.euwwSd6sJzco5PbO" data-id="euwwSd6sJzco5PbO" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Язык духов</a></strong></h3><p><strong>Вы можете</strong> разговаривать с животными, зверями и духами природы.</p><p>Вы всегда можете спросить Ведущего «Какие духи здесь обитают?» и получить честный ответ.</p><p></p><h3 data-anchor="obryady-staroj-very"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.bNLPqduW9SGHsYkh" data-id="bNLPqduW9SGHsYkh" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Обряды старой веры</a></strong></h3><p><strong>Проводя обряд и призывая духов и силы природы себе на помощь</strong>, скажите Ведущему чего вы хотите добиться и каким образом. Ведущий поставит перед вами от 1 до 4 условий из списка ниже. Когда вы выполните условия, проведите Обряд и ваша просьба будет исполнена.</p><ul><li>Это займёт несколько минут/часов/дней/недель/месяцев.</li><li>Вы должны делать это в важном для вашей Родной земли месте (например _____).</li><li>Вы должны сделать это в определённое время (например _____).</li><li>Сначала вы должны _____________.</li><li>Вам нужна помощь от ___________.</li><li>Вы сможете добиться лишь _____________.</li><li>Вы и ваши союзники рискуете из-за _____________.</li><li>Вам нужно пожертвовать или потратить&nbsp; ____________, чтобы сделать это.</li></ul><p>&nbsp;</p><h2 data-anchor="zatem,-vyberite-odin:">Затем, выберите один:</h2><p><em>Вы также можете выбирать эти ходы как обычные Сложные ходы.</em></p><p></p><h3 data-anchor="prizyv-duha"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.LgIDh491aG4r6C67" data-id="LgIDh491aG4r6C67" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Призыв духа</a></strong></h3><p><strong>Проводя небольшой ритуал и чтобы призвать духов места или предмета,</strong> потратьте Припасы чтобы сделать подношение. Дух(и) появятся перед вами — они не всегда дружелюбные, но по меньшей мере любопытные и готовы вас выслушать.</p><p>&nbsp;</p><h3 data-anchor="postupь-pastyrya"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.cENCgDUyu6vJKkvX" data-id="cENCgDUyu6vJKkvX" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Поступь пастыря</a></strong></h3><p><strong>Двигаясь через природное окружение с осторожностью и терпением</strong>, вы не создаёте шума, не оставляете следов и можете игнорировать любую опасную местность (шипастые растения, трясина, трясина и т. п.)</p><p></p><h3 data-anchor="ravnovesie"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.rYwb8lSQsd45DI5r" data-id="rYwb8lSQsd45DI5r" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Равновесие</a></strong></h3><p><strong>Нанося урон,</strong> получите 1 Равновесие.<strong> Касаясь кого-то и взывая к духам жизни</strong>, вы можете потратить Равновесие, чтобы исцелить цель, за каждую единицу Равновесия цель восстанавливает 1к6 хитов. Максимальное количество Равновесия которое вы можете иметь равно вашему модификатору ТЕЛ, но не меньше 1.</p><p></p><p>&nbsp;</p><h2 data-anchor="snaryazhenie">Снаряжение</h2><p><span style="font-family:Arial, sans-serif">Ваша <a class="content-link" draggable="true" data-uuid="Compendium.world.prochie-hody.Item.gi2k50hOxPuXcqau" data-id="gi2k50hOxPuXcqau" data-type="Item" data-pack="world.prochie-hody" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>нагрузка</a> равна <strong>9. </strong>Каждый предмет, включая <a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-gear.Item.a7VgXUQQ3pERhyPy" data-id="a7VgXUQQ3pERhyPy" data-type="Item" data-pack="world.equipment-gear" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Неопределённые</a>, исключая маленькие, добавляет свой вес к общей нагрузке.</span></p><ul><li><p><span style="font-family:Arial, sans-serif"><strong>1-3 </strong>веса это лёгкая нагрузка (вы <em>быстры</em> и <em>тихи</em>)</span></p></li><li><p><span style="font-family:Arial, sans-serif"><strong>4-6 </strong>нормальная нагрузка</span></p></li><li><p><span style="font-family:Arial, sans-serif"><strong>7-9 </strong>тяжёлая (вы <em>медленны</em>, <em>шумны, вам жарко</em> и <em>быстро устаёте</em>)</span></p></li></ul><p><strong>Вы начинаете игру с:</strong></p><ul><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-class.Item.GwTufT1u6BSJNezx" data-id="GwTufT1u6BSJNezx" data-type="Item" data-pack="world.equipment-class" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Памятным символом своей земли; опишите его</a> (мал. предмет)</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-gear.Item.CDnPMKvFLdWlRFxb" data-id="CDnPMKvFLdWlRFxb" data-type="Item" data-pack="world.equipment-gear" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Припасами</a> (3 исп., вес 1)</li></ul><p><strong>Выберите два:</strong></p><ul><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-armor.Item.oGiXIqNQbukIjf06" data-id="oGiXIqNQbukIjf06" data-type="Item" data-pack="world.equipment-armor" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Лёгкий доспех</a> (броня 1, вес 1);</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-armor.Item.FkfxRU6NiOzEzkIy" data-id="FkfxRU6NiOzEzkIy" data-type="Item" data-pack="world.equipment-armor" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Щит</a> (броня +1, вес 2).</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-weapons.Item.xu45M9oglN3VEWHC" data-id="xu45M9oglN3VEWHC" data-type="Item" data-pack="world.equipment-weapons" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Посох</a> (взмах меча, двуручное, вес 1);</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-weapons.Item.FplEca4BDAv9dI8j" data-id="FplEca4BDAv9dI8j" data-type="Item" data-pack="world.equipment-weapons" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Копьё</a> (удар копья, метательное, близко, вес 1)</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-gear.Item.CDnPMKvFLdWlRFxb" data-id="CDnPMKvFLdWlRFxb" data-type="Item" data-pack="world.equipment-gear" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Припасы</a> (3 исп., вес 1)</li></ul><p>&nbsp;</p><h1 data-anchor="slozhnye-hody"><strong>Сложные ходы</strong></h1><p></p><h3 data-anchor="zaimstvovannaya-sila"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.DanZEjqrT40vf9ur" data-id="DanZEjqrT40vf9ur" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Заимствованная сила</a></strong></h3><p><strong>Проводя несколько часов общаясь с духом животного</strong>, вы можете создать связь с этим животным. Создав связь, вы сможете Превращаться в этого животного.</p><p><strong>Дух может потребовать от вас что-то взамен</strong>, Ведущий скажет что он потребует (если потребует вообще).</p><p></p><h3 data-anchor="kamenь-i-loza"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.YA2CKl3CtGf6uDQz" data-id="YA2CKl3CtGf6uDQz" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Камень и лоза</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.DanZEjqrT40vf9ur" data-id="DanZEjqrT40vf9ur" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Заимствованная сила</a></em></p><p><strong>Теперь вы можете создавать связь и с неживыми природными предметами</strong> (растениями, камнями и т. п.) или существами из них. Эти формы могут быть точными копиями или подвижными существами неопределенной гуманоидной формы.</p><p></p><h3 data-anchor="dubovaya-kozha"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.bNbyqd6G3MjIST7E" data-id="bNbyqd6G3MjIST7E" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Дубовая кожа</a></strong></h3><p><strong>Покуда вы касаетесь земли</strong>, получите +1 брони.</p><p></p><h3 data-anchor="linьka"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.AZG5qKIdGCpwgRgc" data-id="AZG5qKIdGCpwgRgc" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Линька</a></strong></h3><p><strong>Получая урон пока вы <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.7NRkXKkc4ItON4s6" data-id="7NRkXKkc4ItON4s6" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Превращены</a></strong>, вы можете потратить Инстинкт чтобы этот урон получил помеху.</p><p></p><h3 data-anchor="master-prevrashenij"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.3AoBCgPrTZVcnYu6" data-id="3AoBCgPrTZVcnYu6" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Мастер превращений</a></strong></h3><p><strong>Превращаясь, выберите характеристику</strong>: пока вы превращены, вы бросаете её с преимуществом. Ведущий также выбирает характеристику: пока вы превращены, вы бросаете её с помехой. Этот эффект длится пока вы находитесь в форме животного.</p><p></p><h3 data-anchor="vlastelin-stihij"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.spvpo0GLpmxndBlL" data-id="spvpo0GLpmxndBlL" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Властелин стихий</a></strong></h3><p><strong>Взывая к первородным духам стихий огня, воды, земли или воздуха, чтобы они исполнили ваше поручение</strong>, опишите что вы хотите чтобы произошло и бросьте+ТЕЛ.</p><p><strong>На 10+</strong> выберите два варианта из списка ниже.</p><p><strong>На 7–9</strong> выберите один.</p><ul><li>Эффект происходит именно так, как вы его представляли.</li><li>Вы не платите цену, которую требует природа.</li><li>Вы сохраняете контроль.</li></ul><p>Чем больше ваше поручение, тем больше будет цена, и тем больше будут последствия от потери контроля.</p><p></p><h3 data-anchor="moshnaya-lapa,-ostryj-klyk"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.Y9eS8b7YKrHbAdg8" data-id="Y9eS8b7YKrHbAdg8" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Мощная лапа, острый клык</a></strong></h3><p><strong>Превращаясь в страшное и опасное животное</strong>, ваш урон увеличивается до к8 и ваши атаки получают свойство <a class="content-link" draggable="true" data-uuid="Compendium.world.tags.Item.CoEKiGcLhaLNLuw1" data-id="CoEKiGcLhaLNLuw1" data-type="Item" data-pack="world.tags" data-tooltip="Tag (Предмет)"><i class="fas fa-suitcase"></i>Месиво</a>.</p><p></p><h3 data-anchor="kasanie-prirody"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.rm3KRRPmuCqNsj76" data-id="rm3KRRPmuCqNsj76" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Касание природы</a></strong></h3><p>Вы можете создавать небольшие, но заметные чудеса — например заставить расти лозу, двигать песок, гнуть или сращивать дерево. <strong>Концентрируя свою волю на мир вокруг вас чтобы сотворить небольшое чудо</strong>, бросьте+МУД.&nbsp;</p><p><strong>На 10+</strong> происходит что вы хотели.</p><p><strong>На 7-9 </strong>эффект всё равно срабатывает, но вам придётся либо оплатить цену природы либо потерять контроль.</p><p></p><h3 data-anchor="vosstanovlenie-balansa"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.eE6ZEpQcLBzG8WjZ" data-id="eE6ZEpQcLBzG8WjZ" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Восстановление баланса</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.rYwb8lSQsd45DI5r" data-id="rYwb8lSQsd45DI5r" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Равновесие</a></em></p><p><strong>Вы также можете</strong> тратить Равновесие, чтобы:</p><ul><li><p>Избавить цель от одной Травмы.</p></li><li style="box-sizing:border-box;user-select:text"><p style="box-sizing:border-box;user-select:text;margin:0.5em 0px"><span style="font-family:'Noto Sans', Arial, sans-serif">Исцелить цель от обычного яда. Действие мощных или сверхъестественных ядов как минимум замедляется.</span></p></li><li style="box-sizing:border-box;user-select:text"><span style="font-family:'Noto Sans', Arial, sans-serif">Исцелить цель от обычной болезни в первых стадиях. Сильные болезни или болезни в поздних стадиях исцеляются лишь частично и потребуют традиционных методов лечения для полного избавления. Течение сверхъестественных болезней как минимум замедляется.</span></li><li style="box-sizing:border-box;user-select:text"><p>Стабилизировать состояние цели если она страдает от Проблемной раны (хотя бы на время).</p></li></ul><p></p><p></p><h2 data-anchor="poluchaya-urovni-6-10,-vy-mozhete-vybratь-i-etot-hod-tozhe:">Получая уровни 6-10, вы можете выбрать и этот ход тоже:</h2><p></p><h3 data-anchor="pervobytnaya-dikostь"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.rGRKX9sPEnZD1Xnb" data-id="rGRKX9sPEnZD1Xnb" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Первобытная дикость</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.3AoBCgPrTZVcnYu6" data-id="3AoBCgPrTZVcnYu6" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Мастер превращений</a></em></p><p><strong>Превращаясь</strong>, вы можете отметить Травмы Подавлен и/или Ошеломлён. За каждую отмеченную Травму выберите два из списка:</p><ul><li><p>Ваш урон получает преимущество</p></li><li><p>Вы игнорируете страх и все физические Травмы</p></li><li><p>Получите 1к4 Инстинкта</p></li><li><p>Получите +1 брони</p></li></ul><p>Эти бонусы длятся до окончания вашего Превращения.</p><p></p><h3 data-anchor="blizkie-dushi"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.nrJh8g5VE6Z7hDQW" data-id="nrJh8g5VE6Z7hDQW" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Близкие души</a></strong></h3><p><strong>Нанося метку или иначе отмечая зверя</strong>, потратьте Припасы и вы сможете воспринимать мир его чувствами вне зависимости от расстояния между вами. Вы также можете направлять его действия: считайте его <strong>Последователем</strong> с Верностью равной вашей МУД.</p><p>Таким образом вы можете отметить только одного зверя одновременно.</p><p></p><h3 data-anchor="krovь-i-grom"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.vGS6KpKpFjRmYFxU" data-id="vGS6KpKpFjRmYFxU" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Кровь и Гром</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.Y9eS8b7YKrHbAdg8" data-id="Y9eS8b7YKrHbAdg8" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Мощная лапа, острый клык</a></em></p><p><strong>Превращаясь в страшное и опасное животное</strong>, ваш урон увеличивается до к10 и ваши атаки получают свойства <a class="content-link" draggable="true" data-uuid="Compendium.world.tags.Item.wK5C2hU7gkChZuMD" data-id="wK5C2hU7gkChZuMD" data-type="Item" data-pack="world.tags" data-tooltip="Tag (Предмет)"><i class="fas fa-suitcase"></i>Мощные</a> и <a class="content-link" draggable="true" data-uuid="Compendium.world.tags.Item.CoEKiGcLhaLNLuw1" data-id="CoEKiGcLhaLNLuw1" data-type="Item" data-pack="world.tags" data-tooltip="Tag (Предмет)"><i class="fas fa-suitcase"></i>Месиво</a>.</p><p></p><h3 data-anchor="elementalьnaya-forma"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.ONnqAMG28IvcfJyH" data-id="ONnqAMG28IvcfJyH" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Элементальная форма</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.spvpo0GLpmxndBlL" data-id="spvpo0GLpmxndBlL" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Властелин стихий</a></em></p><p><strong>Получая этот ход</strong>, выберите один из элементов:</p><ul><li><p>Огонь</p></li><li><p>Вода</p></li><li><p>Воздух</p></li><li><p>Земля</p></li></ul><p><strong>Превращаясь</strong>, теперь вы можете принимать форму подвижного существа неопределенной гуманоидной формы выбранного вами элемента.</p><p><strong>Вы можете выбирать этот ход дважды</strong>, выбирая новый элемент при каждом выборе.</p><p></p><h3 data-anchor="himera"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.6QFAVmzCbh4lT2o8" data-id="6QFAVmzCbh4lT2o8" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Химера</a></strong></h3><p><strong>Превращаясь</strong>, вы можете создать полностью новую форму состоящую из трёх или менее частей уже известных вам форм.</p><p>Имея ходы <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.DanZEjqrT40vf9ur" data-id="DanZEjqrT40vf9ur" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Заимствованная сила</a>, <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.YA2CKl3CtGf6uDQz" data-id="YA2CKl3CtGf6uDQz" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Камень и лоза</a> или <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.ONnqAMG28IvcfJyH" data-id="ONnqAMG28IvcfJyH" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Элементальная форма</a>, вы можете использовать доступные формы и из них тоже.</p><p></p><h3 data-anchor="tanec-doppelьgangera"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.GtgZHJHzkTgS7QoZ" data-id="GtgZHJHzkTgS7QoZ" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Танец доппельгангера</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.DanZEjqrT40vf9ur" data-id="DanZEjqrT40vf9ur" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Заимствованная сила</a></em></p><p><strong>Вы получаете возможность создавать связь с конкретными личностями</strong> чтобы получить возможность <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-druida.Item.7NRkXKkc4ItON4s6" data-id="7NRkXKkc4ItON4s6" data-type="Item" data-pack="world.hody-druida" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Превращаться</a> в их точную форму, включая людей, эльфов и т. п.</p><p><strong>Вы можете подавить проявление своей Отметины в этой форме</strong>, но если вы это делаете, у вас помеха на все ходы пока вы не вернётесь в свою истинную форму.</p><p></p><p></p><p></p>
-
-
-
-
-`

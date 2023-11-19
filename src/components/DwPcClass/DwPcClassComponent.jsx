@@ -28,13 +28,15 @@ const DwPcClassComponent = (
   },
 ) => (
   <section className='DwPcClass'>
-    <blockquote className='DwPcClass__quote'>
-      {description.map(
-        (text, index) => (
-          <p key={index}>{text}</p>
-        ),
-      )}
-    </blockquote>
+    {description && description.length ? (
+      <blockquote className='DwPcClass__quote'>
+        {description.map(
+          (text, index) => (
+            <p key={index}>{text}</p>
+          ),
+        )}
+      </blockquote>
+    ) : null}
 
     <section className='DwPcClass__name'>
       <h2>Имена</h2>

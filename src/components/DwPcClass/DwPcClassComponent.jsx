@@ -5,6 +5,8 @@ import DwMoveList from '@/components/DwMoveList'
 import DwMoveLink from '@/components/DwMoveLink'
 import DwNote from '@/components/DwNote'
 
+import sortByName from '@/utils/sortByName'
+
 import './DwPcClassStyles.less'
 
 const DwPcClassComponent = (
@@ -77,7 +79,7 @@ const DwPcClassComponent = (
         <p>Выбери до трёх Стремлений своего персонажа. Выбирай из вариантов ниже, или придумай собственное.</p>
         <p>Стремления олицетворяют то, как персонаж взаимодействует с миром. Следование стремлениям или иное их использование в игре награждается опытом в <DwMoveLink id='common.session_end'>Конце сессии</DwMoveLink>.</p>
         <ul>
-          {striveList.map(
+          {striveList.sort(sortByName).map(
             ({ name, text }) => (
               <li key={name}>
                 <b>Стремление: {name}</b>

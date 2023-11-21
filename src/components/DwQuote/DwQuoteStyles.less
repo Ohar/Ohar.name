@@ -1,0 +1,41 @@
+.DwQuote {
+  position: relative;
+  font-size: 1rem;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px 0;
+  margin-left: 0;
+  padding: .5rem 3rem;
+  font-style: italic;
+
+  &::before,
+  &::after {
+    color: gray;
+    font-size: 4rem;
+    position: absolute;
+  }
+
+  &::before {
+    content: '«';
+    top: -1.3rem;
+    left: 0;
+  }
+
+  &::after {
+    content: '»';
+    right: 0;
+    bottom: -.8rem;
+  }
+
+  .DwMove & {
+    max-width: 50%;
+    min-width: 200px;
+    width: fit-content;
+  }
+}
+
+.DwQuote__author {
+  display: block;
+  text-align: right;
+  font-style: normal;
+}

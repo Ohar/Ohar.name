@@ -4,6 +4,7 @@ import declint from 'declint-ru'
 import DwMoveList from '@/components/DwMoveList'
 import DwMoveLink from '@/components/DwMoveLink'
 import DwNote from '@/components/DwNote'
+import DwQuote from '@/components/DwQuote'
 
 import sortByName from '@/utils/sortByName'
 
@@ -31,13 +32,7 @@ const DwPcClassComponent = (
 ) => (
   <section className='DwPcClass'>
     {description && description.length ? (
-      <blockquote className='DwPcClass__quote'>
-        {description.map(
-          (text, index) => (
-            <p key={index}>{text}</p>
-          ),
-        )}
-      </blockquote>
+      <DwQuote>{description}</DwQuote>
     ) : null}
 
     <section className='DwPcClass__name'>
@@ -190,10 +185,12 @@ const DwPcClassComponent = (
       ) : null}
 
       {quoteEnd ? (
-        <blockquote className='DwPcClass__quote'>
+        <DwQuote
+          className='DwPcClass__quote'
+          author={quoteEnd.author}
+        >
           {quoteEnd.text}
-          <cite className='DwPcClass__quoteAuthor'>— {quoteEnd.author}</cite>
-        </blockquote>
+        </DwQuote>
       ) : null}
 
       <DwNote noteId={noteId} />

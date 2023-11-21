@@ -22,7 +22,7 @@ ssh -tt $URL <<DEPLOY
     sudo mv ~/$FILE_NAME $FOLDER
 
     sudo unzip -u $FILE_NAME
-    sudo rm $FILE_NAME
+    sudo rm -rf $FILE_NAME
 
     sudo systemctl restart nginx
     echo "Done"

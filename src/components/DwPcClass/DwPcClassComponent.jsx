@@ -22,6 +22,7 @@ const DwPcClassComponent = (
     featureList,
     hpBonus,
     nameList,
+    nickNameList,
     noteId,
     optionalQuestionList,
     quoteEnd,
@@ -39,8 +40,15 @@ const DwPcClassComponent = (
       <h2>Имена</h2>
       <p>Выбери имя персонажа или придумай своё.</p>
       <p>Примеры имён: <span className='DwPcClass__nameExamples'>{nameList.join(', ')}</span>.</p>
-
     </section>
+
+    {nickNameList && nickNameList.length ? (
+      <section className='DwPcClass__name DwPcClass__name-nickName'>
+        <h2>Прозвища</h2>
+        <p>Выбери себе прозвище или придумай своё.</p>
+        <p>Примеры прозвищ: <span className='DwPcClass__nameExamples'>{nickNameList.join(', ')}</span>.</p>
+      </section>
+    ) : null}
 
     <section className='DwPcClass__appearance'>
       <h2>Внешность</h2>
@@ -73,7 +81,7 @@ const DwPcClassComponent = (
         <h3>Стремление</h3>
         <p>Выбери до трёх Стремлений своего персонажа. Выбирай из вариантов ниже, или придумай собственное.</p>
         <p>Стремления олицетворяют то, как персонаж взаимодействует с миром. Следование стремлениям или иное их использование в игре награждается опытом в <DwMoveLink id='common.session_end'>Конце сессии</DwMoveLink>.</p>
-        <ul>
+        <ul className='DwPcClass__striveList'>
           {striveList.sort(sortByName).map(
             ({ name, text }) => (
               <li key={name}>

@@ -391,6 +391,15 @@ export default [
       </>
     ),
   },
+  {
+    id: 'common.hire',
+    name: 'Найм',
+    text: (
+      <>
+        TODO
+      </>
+    ),
+  },
 ]
   .map(
     move => ({

@@ -71,15 +71,16 @@ export default [
       <>
         <p><strong>Используя один из <DwMoveLink id='inventor.start.gadget_belt'>Гаджетов</DwMoveLink>, чтобы выйти из трудного положения</strong>, опиши, как он помогает, и брось +ИНТ.</p>
         <ul>
-          <li>На <strong>10+</strong>&nbsp;— <DwMoveLink id='inventor.start.gadget_belt'>Гаджет</DwMoveLink> работает, как и ожидалось, но выбери одну проблему.</li>
-          <li>На <strong>7–9</strong>&nbsp;— что-то идёт немного не так&nbsp;— выбери две проблемы.</li>
-        </ul>
-        <p>Проблемы</p>
-        <ul>
-          <li>Эффект <DwMoveLink id='inventor.start.gadget_belt'>Гаджета</DwMoveLink> не продлится долго&nbsp;— тебе нужно поторопиться, чтобы извлечь из него пользу.</li>
-          <li><DwMoveLink id='inventor.start.gadget_belt'>Гаджет</DwMoveLink> привлекает нежелательное внимание или ставит кого-то в сложное положение.</li>
-          <li><DwMoveLink id='inventor.start.gadget_belt'>Гаджет</DwMoveLink> повреждён. Его можно починить, но это займёт несколько минут и потребует концентрации.</li>
-          <li><DwMoveLink id='inventor.start.gadget_belt'>Гаджет</DwMoveLink> истощает твои резервы&nbsp;— потрать 1 <DwMoveLink id='inventor.start.gadget_charge'>Заряд</DwMoveLink>.</li>
+          <li>На <strong>10+</strong>&nbsp;— <DwMoveLink id='inventor.start.gadget_belt'>Гаджет</DwMoveLink> работает, как и ожидалось, но выбери одно.</li>
+          <li>
+            <p>На <strong>7–9</strong>&nbsp;— что-то идёт немного не так, выбери два.</p>
+            <ul>
+              <li>Эффект <DwMoveLink id='inventor.start.gadget_belt'>Гаджета</DwMoveLink> не продлится долго&nbsp;— тебе нужно поторопиться, чтобы извлечь из него пользу.</li>
+              <li><DwMoveLink id='inventor.start.gadget_belt'>Гаджет</DwMoveLink> привлекает нежелательное внимание или ставит кого-то в сложное положение.</li>
+              <li><DwMoveLink id='inventor.start.gadget_belt'>Гаджет</DwMoveLink> повреждён. Его можно починить, но это займёт несколько минут и потребует концентрации.</li>
+              <li><DwMoveLink id='inventor.start.gadget_belt'>Гаджет</DwMoveLink> истощает твои резервы&nbsp;— потрать 1 <DwMoveLink id='inventor.start.gadget_charge'>Заряд</DwMoveLink>.</li>
+            </ul>
+          </li>
         </ul>
       </>
     ),

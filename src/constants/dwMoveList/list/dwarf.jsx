@@ -102,7 +102,7 @@ export default [
     id: 'dwarf.advanced.strong_back',
     name: 'Крепкая спина',
     text: (
-      <p><strong>Ты можешь носить</strong> до 4 веса как <Link to={generateDwPcClassPathById('dwarf', 'capacity')}>лёгкую нагрузку</Link>, 5–7 веса как <Link to={generateDwPcClassPathById('dwarf', 'capacity')}>среднюю</Link> и 8–10 веса как <Link to={generateDwPcClassPathById('dwarf', 'capacity')}>тяжёлую</Link>.</p>
+      <p><strong>Твоя <Link to={generateDwPcClassPathById('dwarf', 'capacity')}>нагрузка</Link> равна 10. Ты можешь носить</strong> до 4 веса как лёгкую нагрузку, 5–7 веса как среднюю и 8–10 веса как тяжёлую.</p>
     ),
   },
   {

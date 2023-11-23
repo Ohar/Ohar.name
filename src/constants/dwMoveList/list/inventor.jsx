@@ -139,7 +139,7 @@ export default [
     text: (
       <>
         <p>Ты очень плотно упаковываешь инструменты, гаджеты и снаряжение.</p>
-        <p><strong>Ты можешь носить</strong> до 4 веса как <Link to={generateDwPcClassPathById('inventor', 'capacity')}>лёгкую нагрузку</Link>, 5–7 веса как <Link to={generateDwPcClassPathById('inventor', 'capacity')}>среднюю</Link> и 8–10 веса как <Link to={generateDwPcClassPathById('inventor', 'capacity')}>тяжёлую</Link>.</p>
+        <p><strong>Твоя <Link to={generateDwPcClassPathById('inventor', 'capacity')}>нагрузка</Link> равна 10. Ты можешь носить</strong> до 4 веса как лёгкую нагрузку, 5–7 веса как среднюю и 8–10 веса как тяжёлую.</p>
         <p>Кроме того, <strong>ты можешь прикрепить к себе всё снаряжение и <DwMoveLink id='inventor.start.gadget_belt'>Гаджеты</DwMoveLink></strong> с помощью специальных цепочек и карабинов. Если ты это делаешь, то не можете что-то потерять или быть обезоруженым дольше чем на несколько мгновений, ты всегда можете быстро отцепить цепочку, однако чрезмерная сила может порвать твой крепёж.</p>
       </>
     ),

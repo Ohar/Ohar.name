@@ -7,13 +7,346 @@ import { Link } from 'gatsby'
 
 export default [
   {
-    id: 'warlock..',
-    name: '',
+    id: 'warlock.background.cultist',
+    name: 'Культист',
     text: (
       <>
-        TODO
+        <p>Твой Покровитель поддерживается мистическим культом. Опиши их и где они обычно находятся, затем опиши по одному даваемому ими преимуществу и осложнению.</p>
+        <ul>
+          <li>
+            <p><strong>Преимущество культа</strong>: ______________________.</p>
+          </li>
+          <li>
+            <p><strong>Осложнение культа</strong>: ______________________.</p>
+          </li>
+        </ul>
+        <p><strong>Ища последователей своего Покровителя в месте, где их логично было бы найти</strong>, ты обычно находишь кого-то, кто готов предложить тебе помощь от имени твоего Покровителя.</p>
       </>
     ),
+  },
+  {
+    id: 'warlock.background.seeker',
+    name: 'Искатель',
+    text: (
+      <>
+        <p>В своих поисках тайного знания ты открыл То, Что Человеку Не Положено Знать.</p>
+        <p><strong>Обращаясь к своим знаниям о магии, чтобы создать магический эффект</strong>, брось +ХАР.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— ты создаёшь эффект из списка ниже.</li>
+          <li>
+            <p>На <strong>7–9</strong>&nbsp;— то же, что и на 10+, но ты получаешь <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink>.</p>
+            <ul>
+              <li>Вещь, которой ты касаешься, начинает светиться магическим светом с яркостью факела и продолжает светиться, пока ты не развеешь эффект или она не окажется далеко.</li>
+              <li>Ведущий скажет, что вокруг есть магического.</li>
+              <li>Ты вносишь косметические изменения в предмет, к которому прикасаешься: очищаешь его, пачкаешь, охлаждаешь, нагреваешь, меняешь его запах или цвет.</li>
+              <li>Ты восстанавливаешь одну трещину или разрыв в предмете, который держишь.</li>
+              <li>Ты медленно телекинетически поднимаешь или перемещаешь видимый тобой лёгкий предмет, который никто не несёт и не носит.</li>
+              <li>Ты ненадолго создаёшь безвредный эффект, вроде снопа искр из пальцев, лёгкого порыва ветра, тихой мелодии и т. п.</li>
+            </ul>
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.background.chosen_one',
+    name: 'Избранный',
+    text: (
+      <>
+        <p>Твой Покровитель избрал тебя своим глашатаем в этом мире, возможно потому, что ты искал его или тебя предлагали ему в качестве жертвоприношения или ещё по каким-то непостижимым причинам.</p>
+        <p><strong>Один раз в сессию, когда ты должен получить <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink></strong>, ты можешь решить не получать его.</p>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.start.contract',
+    name: 'Договор',
+    text: (
+      <>
+        <p>Ты заключил договор с могущественным существом из-за пределов твоей реальности, которое желает бо́льшего влияния в твоём мире. <strong>Выбери Покровителя из списка и дай ему имя</strong>, или придумай своего вместе с Ведущим:</p>
+        <ul>
+          <li><strong>Дракон</strong>. Желает: сокровищ, редкостей, почитания.</li>
+          <li><strong>Древний Бог</strong>. Желает: мести, монументов, почитателей.</li>
+          <li><strong>Исчадие</strong>. Желает: душ, богатства, разрушения.</li>
+          <li><strong>Машина</strong>. Желает: порядка, прогресса, совершенства.</li>
+          <li><strong>Природа</strong>. Желает: биомассы, культивации жизни, новых земель.</li>
+          <li><strong>Пришелец</strong>. Желает: секретов, странных вещей, умов.</li>
+          <li><strong>Пустота</strong>. Желает: энтропии, безудержного хаоса, всего.</li>
+          <li><strong>Свет </strong>. Желает: воздаяния, правды, очищения порчи.</li>
+          <li><strong>Фея</strong>. Желает: красивых вещей, обещаний, веселья.</li>
+          <li><strong>______________</strong>. Желает: ________________________________________________________</li>
+        </ul>
+        <p>Затем заполни следующие пробелы:</p>
+        <blockquote>
+          <p><em>«Мой Покровитель ______________, властвующий над ______________, известен среди смертных как ______________. Он появляется в моих видениях как ______________, и отметил меня ______________. Он желает ______________, и я ему в этом помогаю.»</em></p>
+        </blockquote>
+        <p><strong>Когда ты <DwMoveLink id='common.discern_realities'>Изучаешь обстановку</DwMoveLink></strong>, добавь следующий вопрос в список:</p>
+        <ul>
+          <li>Чем здесь я могу услужить Покровителю?</li>
+        </ul>
+        <p><strong>Когда ты исполняешь желание Покровителя</strong>, потеряй весь <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink>.</p>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.start.hex',
+    name: 'Сглаз',
+    text: (
+      <>
+        <p><strong>Черпая силу Покровителя, чтобы ослабить врагов</strong>, назови жертву (которую ты либо видишь, либо имеешь при себе её часть), и брось +ИНТ.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— выбери одно и опиши, как сила Покровителя проявляет себя в мире.</li>
+          <li>
+            <p>На <strong>7–9</strong>&nbsp;— то же самое, но получи 1 <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink>.</p>
+            <ul>
+              <li><strong>Агония</strong>: нанеси жертве урон с одним из этих свойств: <em>Мощный</em>, <em>Незаметный</em>, <em>Пробивание брони +ХАР</em>.</li>
+              <li><strong>Неудача:</strong> жертва страдает от внезапного момента неудачи, спотыкаясь или роняя что-то, что несёт.</li>
+              <li><strong>Сон</strong>: жертва наполняется апатией, впадая в лёгкий сон, если вокруг нечему её потревожить или пробудить.</li>
+              <li><strong>Ужас</strong>: жертва наполняется сверхъестественным ужасом и цепенеет на несколько мгновений.</li>
+              <li><strong>Цепи</strong>: жертва ненадолго не может сдвинуться с места.</li>
+            </ul>
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.start.servant',
+    name: 'Должник',
+    text: (
+      <>
+        <p><strong>Твой максимум <em>Долга</em></strong> равен твоей ХАР.</p>
+        <p>Когда на <strong>любой ход Колдуна у тебя выпадает 6− и у тебя есть <em>Долг</em></strong>, Ведущий может потратить 1 твой <em>Долг</em>. Выбери одно из списка и опиши эффект.</p>
+        <p><strong>Если у тебя уже максимум <em>Долга</em> и ты должен получить ещё <em>Долг</em></strong>, не получай <em>Долг</em>, сразу выбери один вариант из списка, и опиши эффект:</p>
+        <ul>
+          <li>Порча просачивается из и вокруг тебя. Кто-то или что-то поблизости испорчено, искажено или развращено.</li>
+          <li>Покровитель ненадолго захватывает контроль над твоим телом. Этого достаточно, чтобы совершить через тебя какое-нибудь действие.</li>
+          <li>Мощь Покровителя переполняет и оглушает тебя на несколько мгновений. Покровитель также может послать тебе сообщение и выразить тебе своё недовольство или желания.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.start.dark_rite',
+    name: 'Тёмный обряд',
+    text: (
+      <>
+        <p><strong>Подготавливая обряд, чтобы о чём-то попросить Покровителя</strong>, опиши Ведущему — чего ты хочешь добиться и каким образом. Ведущий поставит перед тобой от 1 до 4 требований из списка ниже. Когда ты выполнишь эти требования, проведи обряд и Покровитель выполнит твою просьбу.</p>
+        <ul>
+          <li>Это займёт несколько минут / часов / дней / недель / месяцев.</li>
+          <li>Ты должен сделать это в месте, важном для Покровителя (например _____________).</li>
+          <li>Ты должен сделать это в определённое время (например _____________).</li>
+          <li>Сначала ты должен _____________</li>
+          <li>Тебе нужна помощь от ___________</li>
+          <li>Ты сможешь добиться лишь _____________</li>
+          <li>Вы с союзниками рискуете из-за _____________</li>
+          <li>Тебе нужно пожертвовать или потратить ____________, чтобы сделать это.</li>
+        </ul>
+      </>
+    ),
+    quote: {
+      text: 'Мои планы начинают осуществляться',
+      author: 'Гул’Дан',
+    },
+  },
+  {
+    id: 'warlock.advanced.snake_cunning',
+    name: 'Змеиное коварство',
+    text: (
+      <>
+        <p><strong><DwMoveLink id='common.parley'>Договариваясь</DwMoveLink> с кем-то или <DwMoveLink id='common.discern_realities'>Изучая обстановку</DwMoveLink> о ком-то</strong>, <strong>на 10</strong>+ ты также узнаёшь что-то об его настоящей природе или чего он больше всего хочет — Ведущий скажет что.</p>
+        <p><strong>Действуя на основе этой информации</strong>, ты получаешь преимущество на следующий ход.</p>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.advanced.sheep_clothing_wolf',
+    name: 'Волк в овечьей шкуре',
+    text: (
+      <>
+        <p><strong>Покуда ты не используешь свои силы</strong>, твоя истинная природа скрыта. Любой, кто попытается изучить тебя, физически или магически, посчитает что ты обычный безвредный обыватель, и даже отметина Покровителя не предстанет чем-то, привлекающим внимание. Если кто-то пытается понять твою истинную сущность, даже незаметно для тебя, ты об этом узнаешь (опиши, как именно&nbsp;— тебе сообщает об этом бестелесный шёпот и т. п.).</p>
+        <p>Когда кто-то пытается понять твою истинную сущность, ты можешь сделать так чтобы он решил, что ты — иная сущность (маг, жрец, оборотень и т. п.). <strong>Пытаясь предстать сущностью другой природы</strong>, опиши — кем или чем ты хочешь предстать и брось +ХАР.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— ты успешно обманываешь проверяющего.</li>
+          <li>
+            <p>На <strong>7–9</strong>&nbsp;— выбери одно.</p>
+            <ul>
+              <li>Получи <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink> и всё равно успешно выдай себя за что-то другое.</li>
+              <li>Твой обман удаётся, но лишь ненадолго. Скоро проверяющий начнёт подозревать, что в тебя что-то было не так.</li>
+            </ul>
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.advanced.stars_in_line',
+    name: 'Звёзды встали в ряд',
+    text: (
+      <>
+        <p><strong>Проводя сложный ритуал, чтобы вызвать из-за Завесы одного из слуг твоего Покровителя</strong>, назови — кого ты хочешь призвать, для чего, затем получи <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink> и бросьте +ХАР.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— выбери одно.</li>
+          <li>
+            <p>На <strong>7–9</strong>&nbsp;— выбери два.</p>
+            <ul>
+              <li>Ты не можешь контролировать вызванного слугу.</li>
+              <li>У слуги есть своя мотивация или он попытается исказить твой замысел.</li>
+              <li>Он нанесёт побочный ущерб, выполняя твой замысел.</li>
+            </ul>
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.advanced.ancient_sign',
+    name: 'Древние знаки',
+    text: (
+      <>
+        <p><strong>Изгоняя существо с другого плана или мира с помощью  волшебных слов и знаков</strong>, брось +ИНТ.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— оно должно вернуться туда, откуда пришло, и Ведущий скажет тебе одну вещь, которую ты можешь сделать, чтобы оно больше никогда не вернулось на этот план.</li>
+          <li>На <strong>7–9</strong>&nbsp;— оно не может к тебе приблизиться, пока ты ему не позволишь (или пока ты не потеряешь бдительность или отвлечёшься).</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.advanced.forbidden_knowledge',
+    name: 'Запретное знание',
+    text: (
+      <>
+        <p><strong>Ритуально моля Покровителя о знании</strong>, ты получишь от него знак: задайте интересующий тебя вопрос брось +ХАР.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— выбери одно.</li>
+          <li>На <strong>7–9</strong>&nbsp;— выбери два.</li>
+          <li>
+            <p>На <strong>6−</strong>&nbsp;— выбери все три.</p>
+            <ul>
+              <li>Видение нечёткое и полно символизма.</li>
+              <li>Ответ искажён так, чтобы служить воле Покровителя.</li>
+              <li>Ты получаешь <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink>.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>Ведущий опишет видение, отвечая на вопрос так чётко, как позволяет полученный знак.</p>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.advanced.bewitch',
+    name: 'Околдовать',
+    text: (
+      <>
+        <p><strong>Смотря кому-то глубоко в глаза</strong>, брось +ХАР.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— выбери три.</li>
+          <li>
+            <p>На <strong>7–9</strong>&nbsp;— получи <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink> и выбери два.</p>
+            <ul>
+              <li>Он относится к тебе как к другу, пока ты не докажешь обратное.</li>
+              <li>Он бежит в ужасе.</li>
+              <li>Он даёт тебе то, что держит.</li>
+              <li>Он правдиво отвечает на один вопрос.</li>
+              <li>Он забывает, что ты вообще здесь был.</li>
+              <li>Его разум не повреждён контактом.</li>
+            </ul>
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.advanced.spill_blood',
+    name: 'Проливай кровь в мою честь',
+    text: (
+      <>
+        <p><strong>Покровитель предоставляет тебе оружие ближнего боя на твой выбор</strong>&nbsp;— это любое обычное оружие, но его внешний вид отмечен твоим Покровителем. Опиши: как именно? Это оружие исчезает, если окажется далеко от тебя дольше чем на несколько минут.</p>
+        <p><strong><DwMoveLink id='common.hack_n_slash'>Рубя и кромсая</DwMoveLink> этим оружием</strong>, бросай +ХАР вместо +СИЛ.</p>
+        <p><strong>Несколько минут ритуально поклоняясь Покровителю</strong>, получи <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink> и выбери одно:</p>
+        <ul>
+          <li>Новое оружие материализуется у тебя в руках (а старое исчезает).</li>
+          <li>Ты изменяешь форму существующего оружия (к примеру, меч становится булавой).</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.advanced.blue_black',
+    name: 'Иссиня чёрное',
+    text: (
+      <>
+        <p><strong>Когда ты произносишь тёмные слова, чтобы получить часть силы Покровителя</strong>, твои руки и оружие пронизывает его мощь (опиши, как это выглядит). Они получают свойство <em>Месиво</em> и твоя кость урона становится к8.</p>
+        <p>Эффект длится, пока ты не прекратишь его сам или пока не <DwMoveLink id='common.set_camp'>Разобьёшь лагерь</DwMoveLink>. <strong>Когда эффект прекращается и ты никого не убил </strong>, получи <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink>.</p>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.advanced.omen',
+    name: 'Предзнаменование',
+    text: (
+      <>
+        <p><strong>Проснувшись после ночного сна</strong>, ты получаешь смутное видение от Покровителя о том, что тебя ждёт в наступающем дне. Получи 1 <em>Пророчество</em> (максимум 1).</p>
+        <p>Ты можешь потратить <em>Пророчество</em>, чтобы автоматически получить 10+ на <DwMoveLink id='common.defy_danger'>Спасение от угрозы</DwMoveLink>. Опиши, как видение помогло тебе.</p>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.capstone.unlimited_devotion',
+    name: 'Безграничная преданность',
+    text: (
+      <>
+        <p><strong>Накладывая на кого-то <DwMoveLink id='warlock.start.hex'>Сглаз</DwMoveLink></strong>, на 12+ твоя порча срабатывает лучше, чем ожидалось или имеет какую-то полезную особенность. Ведущий опишет — какую.</p>
+        <p><strong>Проводя <DwMoveLink id='warlock.start.dark_rite'>Тёмный обряд</DwMoveLink></strong>, ты можешь игнорировать одно требование Ведущего.</p>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.capstone.blade_of_worthy',
+    name: 'Клинок достойного',
+    text: (
+      <>
+        <p><em>Требуется</em>: <DwMoveLink id='warlock.advanced.spill_blood'>Проливай кровь в мою честь</DwMoveLink></p>
+        <p><strong>Получая предоставленное тебе оружие</strong> (или когда ты получаешь этот ход), выбери его особенность:</p>
+        <ul>
+          <li>Оно может вредить нематериальным существам, как если бы они были материальными.</li>
+          <li>По твоему желанию оно как исчезает, так и материализуется в твоей руке.</li>
+          <li>Оно получает <em>Пробивание брони ХАР</em>.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.capstone.curse',
+    name: 'Проклятье',
+    text: (
+      <>
+        <p><strong>Добавь эти варианты в список <DwMoveLink id='warlock.start.hex'>Сглаза</DwMoveLink></strong>:</p>
+        <ul>
+          <li><strong>Предательство</strong>: жертва ненадолго начинает считать своих союзников врагами.</li>
+          <li><strong>Тьма</strong>: жертва не может тебя видеть.</li>
+          <li><strong>Истина</strong>: жертва не может скрывать от тебя правду или свои намерения.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'warlock.capstone.door_to_nowhere',
+    name: 'Дверь в никуда',
+    text: (
+      <>
+        <p><strong>Открывая в пространстве разлом, ведущий к твоему Покровителю</strong>, получи <DwMoveLink id='warlock.start.servant'>Долг</DwMoveLink> и брось +ХАР.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— мощь и влияние Покровителя ненадолго просачивается в реальность вокруг разлома (опиши — как это выглядит?), нанося 2к6 игнорирующего броню урона всем твоим врагам в радиусе <em>Близко</em>, и отмечая вещи и область вокруг своим влиянием.</li>
+          <li>На <strong>7–9</strong>&nbsp;— то же самое, но мощь Покровителя воздействует на всех без разбора.</li>
+        </ul>
+      </>
+    ),
+    quote: {
+      text: `Прости, старина. Похоже, это я привёл орков в этот мир. Скверна изменила меня. Даже не знаю, что ещё я мог натворить. Я просто… ничего не помню. Всё, что поклялся защищать, сам же и уничтожил. Я не могу сдержать скверну. Никто не может.`,
+      author: 'Медив',
+    },
   },
 ]
   .map(
@@ -23,16 +356,3 @@ export default [
     }),
   )
   .sort(sortByName)
-
-const foo = `
-
-
-
-    
-    
-    <div style="text-align:center"><img src="systems/dungeonworld/assets/icons/skills/violet_12.webp"></div><p><em style="box-sizing:border-box;user-select:text">Все они — кто тратит бесценные года свои жизни на тренировки и корпление над книгами — просто заблудшие овцы. Дети, играющие в грязи. Вы же знаете как заполучить настоящую силу. Там, за Вауалью этого мира, существуют Они — создания необозримой мощи, те, кого не силах понять жалкий разум человека. Но вы смогли достучаться до крохи сознания Того, Кто Брёдёт В Пустоте, смогли коснуться его безграничного сознания, и уже никогда не станете прежним.</em></p><p><em style="box-sizing:border-box;user-select:text">Если бы они знали хотя бы кроху того что знаете вы, они сошли бы с ума. Вы видели такое, от чего крестьянин умер бы на месте, а учёный муж ушёл в монастырь. Города из плоти, вывернутые наизнанку. Реальность из бесконечных пещер, уходящих во все стороны. Бездна, настолько глубокая, что она разумна. Безумные кристаллы, поедающие мысли. И всё это — лишь часть Правды.</em></p><p><em style="box-sizing:border-box;user-select:text">Ритуальный кинжал, подготовленная жертва, пустая чаша.&nbsp;Звёзды встали в ряд.&nbsp;Ритуал готов. Осталось лишь сделать надрез.&nbsp;</em></p><p>&nbsp;</p><h2 data-anchor="imena">Имена</h2><p>Минерва, Алатар, Элифас, Фабиан, Лилит, Беннафолк, Фобиус, Магнус,&nbsp;</p><h2 data-anchor="vneshnostь">Внешность</h2><p>Выберите одну черту по каждому пункту:</p><ul><li style="box-sizing:border-box;user-select:text">Налитые кровью глаза, Разномастные глаза или Завязанные глаза</li><li style="box-sizing:border-box;user-select:text">Нечёсаные волосы, Татуированный скальп или Глубокий капюшон</li><li style="box-sizing:border-box;user-select:text">Тщательно ухоженный, Чужеродные одежды или Богато украшенные одежды,</li><li style="box-sizing:border-box;user-select:text">Отсутствующая тень, Холодная кожа или Заметная отметина</li></ul><h2 data-anchor="harakteristiki">Характеристики</h2><p>Ваши максимальные хиты: <strong>16+ТЕЛ</strong></p><p>Ваш базовый урон равен&nbsp;<a class="inline-roll roll" style="box-sizing:border-box;user-select:text" title="d6" data-mode="roll" data-flavor="" data-formula="d6">d6</a>.</p><p>Распределите эти модификаторы по характеристикам <strong>+2, +1, +1, +0, +0, -1</strong></p><p>&nbsp;</p><h1 data-anchor="lichnostь-personazha">Личность персонажа</h1><h3 data-anchor="aspekty"><strong>Аспекты</strong></h3><p>Аспекты описывают важные особенности вашего персонажа, его жизненный опыт, происхождение и родословную и социальные отношения. В игре это проявляется в качестве механических бонусов. Подробнее вы можете прочитать <a class="content-link" draggable="true" data-uuid="Compendium.world.gm-screen.JournalEntry.ZLYUyWP6kSJrNmat" data-id="ZLYUyWP6kSJrNmat" data-type="JournalEntry" data-pack="world.gm-screen" data-tooltip="Журнал"><i class="fas fa-book-open"></i>здесь</a>.</p><p>Придумайте персонажу три <a class="content-link" draggable="true" data-uuid="Compendium.world.gm-screen.JournalEntry.ZLYUyWP6kSJrNmat" data-id="ZLYUyWP6kSJrNmat" data-type="JournalEntry" data-pack="world.gm-screen" data-tooltip="Журнал"><i class="fas fa-book-open"></i>аспекта</a>: <strong>Концепцию</strong> и два обычных аспекта.</p><p>Для начала хватит только Концепции, остальные аспекты вы можете заполнить по мере игры.</p><p></p><h3 data-anchor="stremlenie"><span style="font-family:Arial, sans-serif"><strong style="box-sizing:border-box;user-select:text">Стремление</strong></span></h3><p><span style="font-family:Arial, sans-serif">Выберите до трёх Стремлений своего персонажа. Выбирайте из вариантов ниже, придумайте своё собственное или воспользуйтесь <a class="content-link" draggable="true" data-uuid="Compendium.world.gm-screen.JournalEntry.PLhAByHQsTL4cZQU" data-id="PLhAByHQsTL4cZQU" data-type="JournalEntry" data-pack="world.gm-screen" data-tooltip="Журнал"><i class="fas fa-book-open"></i>списком Стремлений</a>.</span></p><p>Стремления олицетворяют то как персонаж взаимодействует с миром и следование или иначе использование их в игре награждается опытом в <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.aGbaj6PeLdm3H4zc" data-id="aGbaj6PeLdm3H4zc" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>конце сессии</a>.</p><p></p><blockquote><h3 style="box-sizing:border-box;user-select:text" data-anchor="predvestnik"><strong style="box-sizing:border-box;user-select:text">Предвестник</strong></h3><p style="box-sizing:border-box;user-select:text">Расширьте влияние своего покровителя среди смертных.</p></blockquote><blockquote><h3 style="box-sizing:border-box;user-select:text" data-anchor="mify"><strong style="box-sizing:border-box;user-select:text">Мифы</strong></h3><p style="box-sizing:border-box;user-select:text">Раскройте часть утраченного знания.</p></blockquote><blockquote><h3 style="box-sizing:border-box;user-select:text" data-anchor="podchinenie"><strong style="box-sizing:border-box;user-select:text">Подчинение</strong></h3><p style="box-sizing:border-box;user-select:text">Станьте более влиятельным или известным за чей-то счёт.</p></blockquote><p>&nbsp;</p><p><span style="font-family:Roboto, Arial, 'Helvetica Neue', sans-serif"><strong style="box-sizing:border-box;user-select:text">Опциональные вопросы чтобы лучше понимать своего персонажа:</strong></span></p><blockquote><ul style="box-sizing:border-box;user-select:text"><li style="box-sizing:border-box;user-select:text"><span style="font-family:Arial, sans-serif">Ты держишься в тени из-за своего покровителя и власти? Почему&nbsp;или почему нет?</span></li><li style="box-sizing:border-box;user-select:text"><span style="font-family:Arial, sans-serif">Что обещал тебе твой покровитель?</span></li><li style="box-sizing:border-box;user-select:text"><span style="font-family:Arial, sans-serif">Как к тебе относится твой покровитель?</span></li><li style="box-sizing:border-box;user-select:text"><span style="font-family:Arial, sans-serif">О каких мелочах просит вас ваш покровитель, чтобы вы соблюдали&nbsp;договор?</span></li></ul></blockquote><p></p><p></p><h3 data-anchor="teperь-vyberite-predystoriyu-i-poluchite-sootvetstvuyushij-hod:"><strong>Теперь выберите предысторию и получите соответствующий ход:</strong></h3><blockquote><h3 style="box-sizing:border-box;user-select:text" data-anchor="kulьtist"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.Z1Po3LAjC0XyBHK0" data-id="Z1Po3LAjC0XyBHK0" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Культист</a></strong></h3><p>Ваш покровитель поддерживается мистическим культом; опишите их и где они обычно находятся, затем опишите одно преимущество и одно осложнение, которое они имеют.</p><p><strong>Ища последователей своего покровителя в месте, где их логично было бы найти</strong>, вы обычно находите кого-то, кто готов предложить вам помощь от имени вашего покровителя.</p></blockquote><p>&nbsp;</p><blockquote><h3 style="box-sizing:border-box;user-select:text" data-anchor="iskatelь"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.uJof0fTiSdqgTS7I" data-id="uJof0fTiSdqgTS7I" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Искатель</a></strong></h3><p>В своих поисках тайного знания вы открыли Вещи, Которые Человеку Не Положено Знать.&nbsp;</p><p><strong>Обращаясь к своим знаниям о магии чтобы создать волшебный эффект</strong>, бросьте+ХАР.</p><ul><li><strong>На 10+</strong>&nbsp;вы создаёте эффект из <a class="content-link" draggable="true" data-uuid="Compendium.world.the-wizard-moves.Item.bJMObnB8ASN6VaTG" data-id="bJMObnB8ASN6VaTG" data-type="Item" data-pack="world.the-wizard-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>списка заговоров волшебника</a></li><li><strong>На 7-9</strong>&nbsp;тоже что и на 10+, но вы также получаете Долг.</li></ul></blockquote><p>&nbsp;</p><blockquote><h3 style="box-sizing:border-box;user-select:text" data-anchor="izbrannyj"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.HIV4mhYmUQNmROgp" data-id="HIV4mhYmUQNmROgp" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Избранный</a></strong></h3><p>Ваш покровитель избрал вас своим глашатаем в этом мире, возможно потому что вы искали его или вас предлагали ему в качестве жертвоприношения или ещё по каким-то непостижимым причинам.&nbsp;</p><p><strong>Один раз в сессию, когда вы должны получить Долг</strong>, вы можете решить не получать его.&nbsp;</p></blockquote><p></p><p></p><h1 data-anchor="osnova-klassa-personazha"><span style="font-family:Roboto, Arial, 'Helvetica Neue', sans-serif">Основа класса персонажа&nbsp;</span></h1><h2 data-anchor="vy-nachinaete-igru-so-sleduyushimi-hodami:">Вы начинаете игру со следующими ходами:</h2><h3 data-anchor="dogovor"><strong style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.wczKv5a0YVAKOoR2" data-id="wczKv5a0YVAKOoR2" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Договор</a></strong></h3><p>Вы заключили договор с могущественным существом из-за пределов вашей реальности, которое желает большего влияния в вашем мире.&nbsp;<strong style="box-sizing:border-box;user-select:text">Выберите покровителя из списка и дайте ему имя</strong>, или придумайте своего вместе с Ведущим:</p><ul><li style="box-sizing:border-box;user-select:text"><strong style="box-sizing:border-box;user-select:text">Исчадие&nbsp;</strong>(желает: души, богатство, разрушение)</li><li style="box-sizing:border-box;user-select:text"><strong style="box-sizing:border-box;user-select:text">Фея&nbsp;</strong>(желает: красивые вещи, обещания, веселье)</li><li style="box-sizing:border-box;user-select:text"><strong style="box-sizing:border-box;user-select:text">Пришелец&nbsp;</strong>(желает: секретов, странных вещей, умов)</li><li style="box-sizing:border-box;user-select:text"><strong style="box-sizing:border-box;user-select:text">Древний Бог</strong>&nbsp;(желает: мести, монументов, почитателей)</li><li style="box-sizing:border-box;user-select:text"><strong style="box-sizing:border-box;user-select:text">Свет&nbsp;&nbsp;</strong>(желает: воздаяния, правду, очищения порчи)</li><li style="box-sizing:border-box;user-select:text"><strong style="box-sizing:border-box;user-select:text">Дракон&nbsp;</strong>(желает: сокровища, редкости, почитание)</li><li style="box-sizing:border-box;user-select:text"><strong style="box-sizing:border-box;user-select:text">Машина&nbsp;</strong>(желает: порядка, прогресса, совершенства)</li><li style="box-sizing:border-box;user-select:text"><strong style="box-sizing:border-box;user-select:text">Природа&nbsp;</strong>(желает: биомассу, культивацию жизни, новые земли)</li><li style="box-sizing:border-box;user-select:text"><strong style="box-sizing:border-box;user-select:text">Пустота&nbsp;</strong>(желает: энтропии, безудержного хаоса, всего)</li></ul><p>Затем заполните следующие пробелы:</p><blockquote style="box-sizing: border-box; user-select: text; color: rgb(25, 24, 19); font-family: Alegreya, serif; background-color: rgba(0, 0, 0, 0.05); --darkreader-inline-color: #fff9d8; --darkreader-inline-bgcolor: rgba(0, 0, 0, 0.05);" data-darkreader-inline-color="" data-darkreader-inline-bgcolor=""><p style="box-sizing:border-box;user-select:text"><span style="font-family:Alegreya, serif">«Мой покровитель ______, властвующий над ______, известен среди смертных как _______. Он появляется в моих видениях как _______, и отметил меня _______. Он желает _______, и я ему в этом помогаю.»</span></p></blockquote><p>&nbsp;<strong>Когда вы <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.2s7lpN1Xlhgy6UlC" data-id="2s7lpN1Xlhgy6UlC" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Изучаете обстановку</a></strong>, добавьте следующий вопрос в список:</p><ul><li>Чем я здесь могу услужить своему покровителю?</li></ul><p><strong>Когда вы&nbsp;исполняете желание своего покровителя</strong>, потеряйте весь свой Долг.</p><p>&nbsp;</p><h3 data-anchor="sglaz"><strong style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.wK64VFkvEvt9rtPf" data-id="wK64VFkvEvt9rtPf" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Сглаз</a></strong></h3><p><strong style="box-sizing:border-box;user-select:text">Черпая силу своего покровителя чтобы ослабить своих врагов</strong>, назовите свою цель, которую вы либо видите, либо имеете при себе её часть, и бросьте+ИНТ.&nbsp;</p><p><strong style="box-sizing:border-box;user-select:text">На 10+</strong>&nbsp;выберите одно, описывая как сила вашего покровителя проявляет себя в мире.</p><p><strong style="box-sizing:border-box;user-select:text">На 7-9</strong>&nbsp;тоже самое, но получите 1 Долг:</p><ul><li style="box-sizing:border-box;user-select:text"><strong>Ужас</strong>: Жертва наполняется сверхъестественным ужасом и цепенеет на несколько мгновений.</li><li style="box-sizing:border-box;user-select:text"><strong>Неудача:</strong> Жертва страдает от внезапного момента неудачи, спотыкаясь или роняя что-то, что она держит</li><li style="box-sizing:border-box;user-select:text"><strong>Цепи:</strong> Жертва ненадолго не может сдвинуться с места.</li><li style="box-sizing:border-box;user-select:text"><strong>Сон</strong>: Она наполняется апатией, впадая в лёгкий сон, если вокруг нечему её&nbsp;потревожить или пробудить.</li><li style="box-sizing:border-box;user-select:text"><strong>Агония</strong>: Нанесите жертве свой урон и он получает одно из этих свойств: <a class="content-link" draggable="true" data-uuid="Compendium.world.tags.Item.wK5C2hU7gkChZuMD" data-id="wK5C2hU7gkChZuMD" data-type="Item" data-pack="world.tags" data-tooltip="Tag (Предмет)"><i class="fas fa-suitcase"></i>мощный</a>, <em style="box-sizing:border-box;user-select:text">незаметный</em>, <a class="content-link" draggable="true" data-uuid="Compendium.world.tags.Item.WhYOKbe4UVulwLK8" data-id="WhYOKbe4UVulwLK8" data-type="Item" data-pack="world.tags" data-tooltip="Tag (Предмет)"><i class="fas fa-suitcase"></i>пробивание брони</a><em style="box-sizing:border-box;user-select:text">&nbsp;+ХАР&nbsp;</em></li></ul><p></p><h3 data-anchor="sluga"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.OFaHc13xXUxBndYZ" data-id="OFaHc13xXUxBndYZ" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Слуга</a></strong></h3><p><strong>Ваш максимум Долга</strong> равен вашей ХАР.</p><p>Когда на <strong style="box-sizing:border-box;user-select:text">любой ход Колдуна у вас выпадает 6 и меньше и у вас есть Долг</strong>, Ведущий может потратить 1 ваш Долг и выберите одно из списка, описывая как проявляется эффект.</p><p><strong>Если у вас уже максимум долга и вы должны получить ещё Долг</strong>, не получайте Долг и сразу выберите один вариант из списка, описывая как проявляется этот эффект:</p><ul><li style="box-sizing:border-box;user-select:text">Порча просачивается из и вокруг вас, кто-то или что-то поблизости испорчено, искажено или развращено.</li><li style="box-sizing:border-box;user-select:text">Ваш покровитель ненадолго захватывает контроль над вашим телом, достаточно долго , чтобы совершить какое-нибудь действие через вас.</li><li style="box-sizing:border-box;user-select:text">Вас оглушает на несколько мгновений — мощь вашего покровителя переполняет вас; ваш покровитель также может послать вам сообщение и выразить вам своё недовольство или желания в процессе.</li></ul><p>&nbsp;</p><h3 data-anchor="tyomnyj-ritual"><strong style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.Xqqien2MLRDaTEV3" data-id="Xqqien2MLRDaTEV3" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Тёмный ритуал</a></strong></h3><p><strong>Подготавливая ритуал чтобы попросить о чём-то вашего Покровителя</strong>, скажите Ведущему чего вы хотите добиться и каким образом. Ведущий поставит перед вами от 1 до 4 условий из списка ниже. Когда вы выполните условия, проведите ритуал и ваш Покровитель выполнит вашу просьбу.</p><ul><li>Это займёт несколько минут/часов/дней/недель/месяцев.</li><li>Вы должны делать это в месте, важном для вашего Покровителю (например _____).</li><li>Вы должны сделать это в определённое время (например _____).</li><li>Сначала вы должны _____________.</li><li>Вам нужна помощь от ___________.</li><li>Вы сможете добиться лишь _____________.</li><li>Вы и ваши союзники рискуете из-за _____________.</li><li>Вам нужно пожертвовать или потратить&nbsp; ____________, чтобы сделать это.</li></ul><p></p><p style="text-align:center"><em>Да начнётся ритуал!</em></p><p style="text-align:center"><em>— Гул'Дан</em></p><p></p><h2 data-anchor="snaryazhenie">Снаряжение</h2><p><span style="font-family:Arial, sans-serif">Ваша <a class="content-link" draggable="true" data-uuid="Compendium.world.prochie-hody.Item.gi2k50hOxPuXcqau" data-id="gi2k50hOxPuXcqau" data-type="Item" data-pack="world.prochie-hody" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>нагрузка</a> равна <strong>9. </strong>Каждый предмет, включая <a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-gear.Item.a7VgXUQQ3pERhyPy" data-id="a7VgXUQQ3pERhyPy" data-type="Item" data-pack="world.equipment-gear" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Неопределённые</a>, исключая маленькие, добавляет свой вес к общей нагрузке.</span></p><ul><li><p><span style="font-family:Arial, sans-serif"><strong>1-3 </strong>веса это лёгкая нагрузка (вы <em>быстры</em> и <em>тихи</em>)</span></p></li><li><p><span style="font-family:Arial, sans-serif"><strong>4-6 </strong>нормальная нагрузка</span></p></li><li><p><span style="font-family:Arial, sans-serif"><strong>7-9 </strong>тяжёлая (вы <em>медленны</em>, <em>шумны, вам жарко</em> и <em>быстро устаёте</em>)</span></p></li></ul><p><strong style="box-sizing:border-box;user-select:text">Вы начинаете игру с:</strong></p><ul><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-gear.Item.CDnPMKvFLdWlRFxb" data-id="CDnPMKvFLdWlRFxb" data-type="Item" data-pack="world.equipment-gear" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Припасами</a> (3 исп, вес 1)</li><li style="box-sizing:border-box;user-select:text">Отметиной, оставленной на вас вашим покровителем, опишите её!</li></ul><p><strong style="box-sizing:border-box;user-select:text">Выберите два:</strong></p><ul><li style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-class.Item.i9eBJArR5mg6UjQ1" data-id="i9eBJArR5mg6UjQ1" data-type="Item" data-pack="world.equipment-class" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Жертвенный кинжал</a> (рука, мал. предмет)</li><li style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-class.Item.2v0tXEmJDTx4qmqT" data-id="2v0tXEmJDTx4qmqT" data-type="Item" data-pack="world.equipment-class" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Гравированный ритуальный посох</a> (взмах меча, двуручный, вес 1)&nbsp;</li><li style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.snaryazhenie--zelya.Item.VYEkUIR0riLt8xU8" data-id="VYEkUIR0riLt8xU8" data-type="Item" data-pack="world.snaryazhenie--zelya" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Зелье исцеления</a> (мал. предмет)</li><li style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-class.Item.2x5Szk3d5MVGyCei" data-id="2x5Szk3d5MVGyCei" data-type="Item" data-pack="world.equipment-class" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Ритуальные робы</a> (броня 1, вес 1)</li><li style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-class.Item.xrC7ypTFHtVFeR1r" data-id="xrC7ypTFHtVFeR1r" data-type="Item" data-pack="world.equipment-class" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Ритуальные инструменты, подношения и атрибутика</a> (вес 1, 3 исп)</li></ul><p></p><p></p><h1 data-anchor="slozhnye-hody"><span style="font-family:Roboto, Arial, 'Helvetica Neue', sans-serif">Сложные ходы</span></h1><h3 data-anchor="srazu-vyberite-odin-iz-hodov-nizhe:"><span style="font-family:Arial, sans-serif">Сразу выберите один из ходов ниже:</span></h3><p></p><h3 data-anchor="zmeinoe-kovarstvo"><strong style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.chVceRIUVqUjm6Dt" data-id="chVceRIUVqUjm6Dt" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Змеиное коварство</a></strong></h3><p><strong style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.zqcVmuzrfua8v6Hy" data-id="zqcVmuzrfua8v6Hy" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Договориваясь</a> с кем-то или <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.2s7lpN1Xlhgy6UlC" data-id="2s7lpN1Xlhgy6UlC" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Изучая обстановку</a> о ком-то</strong>,<strong style="box-sizing:border-box;user-select:text">&nbsp;на 10</strong>+ вы также узнаёте что-то о их настоящей природе или что они больше всего хотят, Ведущий скажет что.&nbsp;<strong style="box-sizing:border-box;user-select:text">Действуя на основе этой информации</strong>, вы получаете преимущество на следующий ход.</p><p>&nbsp;</p><h3 data-anchor="volk-v-ovechьej-shkure"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.gk2vocgmf3TVrIM3" data-id="gk2vocgmf3TVrIM3" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Волк в овечьей шкуре</a></strong></h3><p><strong>Покуда вы не используете свои силы</strong>, ваша истинная природа скрыта. Любой, кто попытается изучить вас, физически или волшебным образом, посчитает что вы обычный безвредный обыватель, и даже Отметина вашего Покровителя не предстанет чем-то привлекающим внимание. Если кто-то пытается понять вашу истинную сущность, даже незаметно для вас, вы об этом узнаете (опишите как именно — вам сообщает об этом бестелесный шёпот и т. п.).</p><p>Когда кто-то пытается понять вашу истинную сущность, вы можете сделать так чтобы они ощутили в вас что-то другое (мага, жреца, доппельгангера и т. п.). <strong>Пытаясь предстать сущностью другой природы</strong>, скажите кем или чем вы хотите предстать и бросьте+ХАР.</p><p><strong>На 10+</strong> вы успешно обманываете проверяющего.</p><p><strong>На 7-9</strong> выберите одно:</p><ul><li><p>Получите Долг и всё равно успешно выдайте себя за что-то другое</p></li><li><p>Ваш обман удаётся, но лишь ненадолго, скоро проверяющий начнёт подозревать что что-то в вас было не так.</p></li></ul><p></p><h3 data-anchor="zvyozdy-stali-v-ryad"><strong style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.YiDpVUOabWkQdioJ" data-id="YiDpVUOabWkQdioJ" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Звёзды стали в ряд</a></strong></h3><p><strong style="box-sizing:border-box;user-select:text">Проводя сложный ритуал чтобы вызвать одного из слуг вашего покровителя из-за завесы</strong>, назовите кого вы хотите призвать, для чего, затем получите Долг и бросьте+ХАР.</p><p><strong style="box-sizing:border-box;user-select:text">На 10+</strong>&nbsp;выберите одно.</p><p><strong style="box-sizing:border-box;user-select:text">На 7-9</strong>&nbsp;выберите два:</p><ul><li style="box-sizing:border-box;user-select:text">Вы не можете контролировать вызванного слугу</li><li style="box-sizing:border-box;user-select:text">У слуги есть своя мотивация или он попытается исказить ваш замысел</li><li style="box-sizing:border-box;user-select:text">Он нанесёт побочный ущерб, выполняя ваш замысел</li></ul><p>&nbsp;</p><h3 data-anchor="drevnij-znak"><strong style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.w1rtjfoItWVuztAp" data-id="w1rtjfoItWVuztAp" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Древний знак</a></strong></h3><p><strong style="box-sizing:border-box;user-select:text">Используя волшебные слова и знаки чтобы изгнать существо с другого плана или мира</strong>, бросьте +ИНТ.</p><p><strong style="box-sizing:border-box;user-select:text">На 10+&nbsp;</strong>оно должно вернуться откуда пришло, и Ведущий скажет вам одну вещь которую вы можете сделать, чтобы оно больше никогда не вернулось на этот план.</p><p><strong style="box-sizing:border-box;user-select:text">На 7-9</strong>&nbsp;оно не может к вам подойти пока вы ему не позволите (или пока вы не потеряете бдительность или отвлечётесь)</p><p>&nbsp;</p><h3 data-anchor="zapretnoe-znanie"><strong style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.tLfcnW5DA9Jc1StC" data-id="tLfcnW5DA9Jc1StC" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Запретное знание</a></strong></h3><p><strong style="box-sizing:border-box;user-select:text">Ритуально моля своего покровителя о знании</strong>, он пошлёт вам знак: задайте вопрос о чём вы хотите и бросьте+ХАР.</p><p><strong style="box-sizing:border-box;user-select:text">На 10+</strong>&nbsp;выберите одно.</p><p><strong style="box-sizing:border-box;user-select:text">На 7-9&nbsp;</strong>выберите два.</p><p><strong style="box-sizing:border-box;user-select:text">На 6-</strong>&nbsp;все три:</p><ul><li style="box-sizing:border-box;user-select:text">Видение нечёткое и полно символизма</li><li style="box-sizing:border-box;user-select:text">Ответ искажён так, чтобы служить воле вашего покровителя</li><li style="box-sizing:border-box;user-select:text">Вы получаете Долг</li></ul><p>Ведущий опишет видение для вас, отвечая на вопрос так чётко, как позволяет видение.</p><p>&nbsp;</p><h3 data-anchor="okoldovatь"><strong style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.7dpIRtfbdOlbvC3U" data-id="7dpIRtfbdOlbvC3U" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Околдовать</a></strong></h3><p><strong style="box-sizing:border-box;user-select:text">Смотря кому-то глубоко в глаза</strong>, бросьте+ХАР.</p><p><strong style="box-sizing:border-box;user-select:text">На 10+</strong>&nbsp;выберите три.</p><p><strong style="box-sizing:border-box;user-select:text">На 7-9</strong>&nbsp;получите Долг и выберите два:</p><ul><li style="box-sizing:border-box;user-select:text">Он относится к вам как к другу, пока вы не докажете обратное.</li><li style="box-sizing:border-box;user-select:text">Он бежит в ужасе</li><li style="box-sizing:border-box;user-select:text">Он даёт вам то, что он держит</li><li style="box-sizing:border-box;user-select:text">Он правдиво отвечает на один вопрос</li><li style="box-sizing:border-box;user-select:text">Он забывает, что вы вообще здесь были</li><li style="box-sizing:border-box;user-select:text">Его разум не повреждён контактом (иначе он повреждается)</li></ul><p>&nbsp;</p><h3 data-anchor="taumaturgiya"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.NgRlwFOMJWOszOk3" data-id="NgRlwFOMJWOszOk3" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Тауматургия</a></strong></h3><p><strong>Выберите</strong> один из <a class="content-link" draggable="true" data-uuid="Compendium.world.klassy.JournalEntry.tiwNkxJb2Z5HLjQA.JournalEntryPage.AGUepMj5fFSQNHix" data-id="AGUepMj5fFSQNHix" data-type="JournalEntryPage" data-pack="world.klassy" data-tooltip="Текст (Страница)"><i class="fas fa-file-lines"></i>Доменов Заклинателя</a>.</p><p><strong>Призывая силу Покровителя чтобы воссоздать эффект выбранного Домена</strong>, бросьте+ИНТ.</p><p><strong>На 10+</strong> вы получаете 2 Мощи которые можете потратить за заклинание.</p><p><strong>На 7-9</strong> вы получаете 1 Мощи, но выберите одно:</p><ul><li><p>Получите Долг</p></li><li><p>Потеряйте количество ОЗ равное меньшему из выброшенных кубиков</p></li><li><p>Ваше заклинание имеет нежелательный эффект(ы) или ограничение(я).</p></li></ul><p><strong>Если эффекты Домена накладывает помеху на Сотворение Заклинаний</strong>, вместо этого вы получаете помеху на Тауматургию.</p><p></p><h3 data-anchor="prolivaj-krovь-v-moyu-chestь"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.lYhhlwVNh0WNyiZ1" data-id="lYhhlwVNh0WNyiZ1" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Проливай кровь в мою честь</a></strong></h3><p><strong>Ваш Покровитель предоставляет вам оружие ближнего боя по вашему выбору</strong> — это любое обыденное оружие, но внешний вид отмечен вашим Покровителем, опишите как именно. Оно исчезает если покинет ваше присутствие дольше чем на несколько минут.</p><p><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.IpwyWNBmD0IeAHSa" data-id="IpwyWNBmD0IeAHSa" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Рубя и кромсая</a> этим оружием</strong>, бросайте +ХАР вместо +СИЛ.</p><p><strong>Если вы лишитесь этого оружия</strong> (оно сломается, будет потеряно или иначе утрачено), то вы вы можете его вернуть. <strong>Несколько минут ритуально поклоняясь своему Покровителю</strong>, получите Долг и выберите одно:</p><ul><li><p>Новое оружие материализуется у вас в руках.</p></li><li><p>Вы изменяете форму существующего оружия (к примеру, меч становится булавой).</p></li></ul><p></p><h3 data-anchor="issinya-chyornoe"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.htccAidfhfo3gr6g" data-id="htccAidfhfo3gr6g" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Иссиня чёрное</a></strong></h3><p><strong>Когда вы произносите тёмные слова чтобы получить часть силы своего покровителя</strong>, ваши руки и оружие пронизывает мощь вашего Покровителя (опишите как это выглядит). Они получают свойство <em>месиво</em> и ваш кубик урона становится к8.</p><p>Эффект длится пока вы не прекратите его сами или не <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.IFAcgBsxriir9o5n" data-id="IFAcgBsxriir9o5n" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Разобьёте лагерь</a>. <strong>Когда эффект прекращается и вы никого не убили</strong>, получите Долг.</p><p></p><h3 data-anchor="predznamenovanie"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.XuaNz3NvL8rIBGnK" data-id="XuaNz3NvL8rIBGnK" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Предзнаменование</a></strong></h3><p><strong>Проснувшись после ночного сна</strong>, вы получаете смутное видение от своего Покровителя о том что вас ждёт в наступающем дне. Получите 1 Пророчества (макс. 1). Вы можете потратить Пророчество чтобы автоматически получить 10+ на бросок <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.VSXqSaGwsAPTBROO" data-id="VSXqSaGwsAPTBROO" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Спасения от угрозы</a>.</p><p></p><p></p><h2 data-anchor="poluchaya-urovni-6-10,-vy-mozhete-vybratь-i-etot-hod-tozhe:"><span style="font-family:Arial, sans-serif">Получая уровни 6-10, вы можете выбрать и этот ход тоже:</span></h2><p></p><h3 data-anchor="bezgranichnaya-predannostь"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.PwaHxAO5SBxfZWUC" data-id="PwaHxAO5SBxfZWUC" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Безграничная преданность</a></strong></h3><p><strong>Накладывая на кого-то <a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.wK64VFkvEvt9rtPf" data-id="wK64VFkvEvt9rtPf" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Сглаз</a></strong>, на 12+ ваша порча срабатывает лучше чем ожидалось или имеет какую-то полезную особенность, Ведущий опишет какую.</p><p><strong>Проводя <a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.Xqqien2MLRDaTEV3" data-id="Xqqien2MLRDaTEV3" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Тёмный ритуал</a></strong>, вы можете игнорировать одно требование Ведущего.</p><p></p><h3 data-anchor="klinok-dostojnogo"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.X5NVhEGzScRimj25" data-id="X5NVhEGzScRimj25" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Клинок достойного</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.lYhhlwVNh0WNyiZ1" data-id="lYhhlwVNh0WNyiZ1" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Проливай кровь в мою честь</a></em></p><p><strong>Получая предоставленное вам оружие </strong>или когда вы получаете этот ход, выберите его особенность:</p><ul><li><p>Оно может вредить нематериальным существам, как если бы они были материальными</p></li><li><p>По вашему желанию оно исчезает и через несколько мгновений материализуется в вашей руке</p></li><li><p>Оно получает пробивание брони равное вашей ХАР.</p></li></ul><p></p><h3 data-anchor="rastushee-vliyanie"><strong style="box-sizing:border-box;user-select:text"><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.2L4a5vqqSdhvI0y8" data-id="2L4a5vqqSdhvI0y8" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Растущее влияние</a></strong></h3><p><strong>Добавьте</strong> ещё одно Желание и над чем он Властвует к <a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.wczKv5a0YVAKOoR2" data-id="wczKv5a0YVAKOoR2" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Договору</a> с вашим покровителем.</p><p>&nbsp;</p><h3 data-anchor="proklyatьe"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.mDg1TryYyyzMuV30" data-id="mDg1TryYyyzMuV30" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Проклятье</a></strong></h3><p><strong>Добавьте</strong> эти варианты в список <a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.wK64VFkvEvt9rtPf" data-id="wK64VFkvEvt9rtPf" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Сглаза</a>:</p><ul><li><p><strong>Предательство</strong>: Жертва ненадолго начинает считать своих союзников врагами</p></li><li><p><strong>Тьма</strong>: Жертва не может видеть вас</p></li><li><p><strong>Истина</strong>: Жертва не может скрывать от вас правду или свои намерения</p></li></ul><p></p><h3 data-anchor="slovno-raskrytaya-kniga"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.VXkyGY6jRdEmPPpT" data-id="VXkyGY6jRdEmPPpT" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Словно раскрытая книга</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.NgRlwFOMJWOszOk3" data-id="NgRlwFOMJWOszOk3" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Тауматургия</a></em></p><p><strong>Выберите</strong> ещё один Домен из списка <a class="content-link" draggable="true" data-uuid="Compendium.world.klassy.JournalEntry.tiwNkxJb2Z5HLjQA.JournalEntryPage.AGUepMj5fFSQNHix" data-id="AGUepMj5fFSQNHix" data-type="JournalEntryPage" data-pack="world.klassy" data-tooltip="Текст (Страница)"><i class="fas fa-file-lines"></i>Доменов Заклинателя</a>.</p><p></p><h3 data-anchor="dverь-vnikuda"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.the-warlock-moves.Item.PN2v0Vre0S5PnRMu" data-id="PN2v0Vre0S5PnRMu" data-type="Item" data-pack="world.the-warlock-moves" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Дверь вникуда</a></strong></h3><p><strong>Открывая разлом в пространстве, ведущий к вашему Покровителю</strong>, получите Долг и бросьте+ХАР.</p><p><strong>На 10+</strong> мощь и влияние вашего Покровителя ненадолго просачивается в реальность вокруг разлома (опишите как это выглядит), нанося 2к6 игнорирующего броню урона всем вашим врагам в радиусе <em>близко</em>, отмечая вещи и область вокруг своим влиянием.</p><p><strong>На 7-9</strong> тоже самое, но мощь вашего Покровителя воздействует на всех без разбора.</p><p></p><p></p><p style="text-align:center"><em>Прости, старина. Похоже, это я привёл орков в этот мир. Скверна изменила меня. Даже не знаю, что ещё я мог натворить. Я просто... ничего не помню. Всё что поклялся защищать сам же и уничтожил. Я не могу сдержать скверну. Никто не может.</em></p><p style="text-align:center"><em>— Медив</em></p>
-
-
-
-
-`

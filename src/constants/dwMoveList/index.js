@@ -6,6 +6,7 @@ import inventorMoveList from './list/inventor'
 import savageMoveList from './list/savage'
 import sorcererMoveList from './list/sorcerer'
 import thiefMoveList from './list/thief'
+import warlockMoveList from './list/warlock'
 import warriorMoveList from './list/warrior'
 
 const dwMoveList = [
@@ -17,6 +18,7 @@ const dwMoveList = [
     ...savageMoveList,
     ...sorcererMoveList,
     ...thiefMoveList,
+    ...warlockMoveList,
     ...warriorMoveList,
 ]
   .sort(

@@ -78,7 +78,7 @@ const DwPcClassComponent = (
         className='DwPcClass__strives'
         id='strives'
       >
-        <h3>Стремление</h3>
+        <h3>Стремления</h3>
         <p>Выбери до трёх <em>Стремлений</em> своего персонажа. Выбирай из вариантов ниже, или придумай собственное.</p>
         <p><em>Стремления</em> олицетворяют то, как персонаж взаимодействует с миром. Следование <em>Стремлениям</em> или иное их использование в игре награждается опытом в <DwMoveLink id='common.session_end'>Конце сессии</DwMoveLink>.</p>
         <ul className='DwPcClass__striveList'>

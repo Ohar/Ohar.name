@@ -292,7 +292,7 @@ export default [
     id: 'dwarf.advanced.training',
     name: 'Выучка',
     text: (
-      <p>Получи сложный ход <Link to={generateDwPcClassPathById('warrior')}>Воина</Link> или Дикаря.</p>
+      <p>Получи сложный ход <Link to={generateDwPcClassPathById('warrior')}>Воина</Link> или <Link to={generateDwPcClassPathById('savage')}>Дикаря</Link>.</p>
     ),
   },
   {

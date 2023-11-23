@@ -37,7 +37,7 @@ export default [
     id: 'warrior.capstone.war_master',
     name: 'Мастер войны',
     text: (
-      <p><strong>Если ты подготовившься к битве</strong> (через разработку стратегии, спокойную медитацию или иначе), то вступая в следующий бой, ты получаешь 2 <DwMoveLink id='warrior.start.focus'>Фокуса</DwMoveLink> вместо 1.</p>
+      <p><strong>Если ты подготовился к битве</strong> (через разработку стратегии, спокойную медитацию или иначе), то вступая в следующий бой, ты получаешь 2 <DwMoveLink id='warrior.start.focus'>Фокуса</DwMoveLink> вместо 1.</p>
     ),
   },
   {
@@ -68,7 +68,7 @@ export default [
     id: 'warrior.advanced.versatility',
     name: 'Многогранность',
     text: (
-      <p>Получи сложный ход <Link to={generateDwPcClassPathById('thief')}>Вора</Link>, Дикаря, Паладина, или Следопыта.</p>
+      <p>Получи сложный ход <Link to={generateDwPcClassPathById('thief')}>Вора</Link>, <Link to={generateDwPcClassPathById('savage')}>Дикаря</Link>, Паладина, или Следопыта.</p>
     ),
   },
   {

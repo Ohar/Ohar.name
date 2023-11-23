@@ -13,7 +13,7 @@ const DwPage = () => (
       keywords={['Dungeon World', 'Unlimited Dungeons']}
     />
     <PageTitle>Dungeon World</PageTitle>
-    <p>Список классов и ходов Dungeon World на основе хака «Безграничные подземелья» (Unlimited Dungeons) + хак Августа.</p>
+    <p>Список классов и ходов Dungeon World на основе хаков «Безграничные подземелья» (Unlimited Dungeons) и «Кладовка Брифа».</p>
     <DwMenu/>
   </DwLayout>
 )

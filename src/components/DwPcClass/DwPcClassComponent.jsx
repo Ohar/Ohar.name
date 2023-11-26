@@ -36,21 +36,21 @@ const DwPcClassComponent = (
       <DwQuote>{description}</DwQuote>
     ) : null}
 
-    <section className='DwPcClass__name'>
+    <section className='DwPcClass__name DwPcClass__section'>
       <h2>Имена</h2>
       <p>Выбери имя персонажа или придумай своё.</p>
       <p>Примеры имён: <span className='DwPcClass__nameExamples'>{nameList.join(', ')}</span>.</p>
     </section>
 
     {nickNameList && nickNameList.length ? (
-      <section className='DwPcClass__name DwPcClass__name-nickName'>
+      <section className='DwPcClass__name DwPcClass__section DwPcClass__name-nickName'>
         <h2>Прозвища</h2>
         <p>Выбери себе прозвище или придумай своё.</p>
         <p>Примеры прозвищ: <span className='DwPcClass__nameExamples'>{nickNameList.join(', ')}</span>.</p>
       </section>
     ) : null}
 
-    <section className='DwPcClass__appearance'>
+    <section className='DwPcClass__appearance DwPcClass__section'>
       <h2>Внешность</h2>
       <p>Выбери по одной черте внешности:</p>
       <ul>
@@ -64,7 +64,7 @@ const DwPcClassComponent = (
       </ul>
     </section>
 
-    <section className='DwPcClass__params'>
+    <section className='DwPcClass__params DwPcClass__section'>
       <h2>Характеристики</h2>
       <p>Распредели эти значения по характеристикам <strong>+2, +1, +1, +0, +0, −1</strong></p>
       <p>Твои максимальные хиты: <strong>{hpBonus} + ТЕЛ</strong></p>
@@ -75,7 +75,7 @@ const DwPcClassComponent = (
       <h2>Личность персонажа</h2>
 
       <section
-        className='DwPcClass__strives'
+        className='DwPcClass__strives DwPcClass__section'
         id='strives'
       >
         <h3>Стремления</h3>
@@ -94,7 +94,7 @@ const DwPcClassComponent = (
       </section>
 
       {optionalQuestionList && optionalQuestionList.length ? (
-        <section className='DwPcClass__optionalQuestions'>
+        <section className='DwPcClass__optionalQuestions DwPcClass__section'>
           <h3>Опциональные вопросы</h3>
           <p>Эти вопросы помогут тебе лучше понимать своего персонажа:</p>
           <ul>
@@ -107,7 +107,7 @@ const DwPcClassComponent = (
         </section>
       ) : null}
 
-      <section className='DwPcClass__backgrounds'>
+      <section className='DwPcClass__backgrounds DwPcClass__section'>
         <h2>Предыстория</h2>
         <p>Теперь выбери предысторию и получи соответствующий ход:</p>
         <DwMoveList idList={backgroundIdList}/>
@@ -133,28 +133,29 @@ const DwPcClassComponent = (
       ) ? (
         <section className='DwPcClass__startAdvancedMoves'>
           <h2>Стартовые сложные ходы</h2>
-          <p>Сразу выбери дополнительно {advancedMoveToPickOnStart.limit} {declint(advancedMoveToPickOnStart.limit, ['сложный ход', 'сложных хода', 'сложных ходов'])} из списка ниже <em>(<DwMoveLink id='common.level_up'>начиная со 2 уровня</DwMoveLink> ты сможешь выбирать эти ходы как <a href='#advanced_moves'>обычные сложные ходы</a>)</em>.</p>
+          <p>Сразу выбери дополнительно {advancedMoveToPickOnStart.limit} {declint(advancedMoveToPickOnStart.limit, ['сложный ход', 'сложных хода', 'сложных ходов'])} из списка ниже <em>(<DwMoveLink id='common.level_up'>Повышая уровень</DwMoveLink>, ты сможешь выбирать эти ходы как <a href='#advanced_moves'>обычные сложные ходы</a>)</em>.</p>
           <DwMoveList idList={advancedMoveToPickOnStart.list}/>
         </section>
       ) : null}
 
-      <section className='DwPcClass__equipment'>
+      <section className='DwPcClass__equipment DwPcClass__section'>
         <h2>Снаряжение</h2>
+        <section
+          className='DwPcClass__startItems'
+          dangerouslySetInnerHTML={{__html: equipmentHtml}}
+        />
+        <h3>Нагрузка</h3>
         <section
           className='DwPcClass__capacity'
           id='capacity'
         >
-          <p>Твоя нагрузка равна <strong>9. </strong>Каждый предмет, исключая <em>Мелкие</em>, добавляет свой вес к общей нагрузке.</p>
+          <p>Твоя нагрузка равна <strong>9</strong>. Каждый предмет, исключая <em>Мелкие</em>, добавляет свой вес к общей нагрузке.</p>
           <ul>
             <li><strong>1–3</strong> веса — это лёгкая нагрузка (ты <em>быстр</em> и <em>тих</em>);</li>
             <li><strong>4–6</strong> нормальная нагрузка;</li>
             <li><strong>7–9</strong> тяжёлая (ты <em>медленен</em>, <em>шумен</em>, тебе <em>жарко</em> и ты <em>быстро устаёшь</em>).</li>
           </ul>
         </section>
-        <section
-          className='DwPcClass__startItems'
-          dangerouslySetInnerHTML={{__html: equipmentHtml}}
-        />
       </section>
 
       <section
@@ -162,7 +163,7 @@ const DwPcClassComponent = (
         id='advanced_moves'
       >
         <h2>Сложные ходы</h2>
-        <p>{advancedMoveToPickOnStart ? '' : 'Сразу выбери один сложный ход. '} <DwMoveLink id='common.level_up'>Начиная со 2 уровня</DwMoveLink>, ты каждый уровень можешь выбирать {advancedMoveToPickOnStart ? '' : ' ещё'} один сложный ход из списка ниже, либо увеличить один из параметров на +1 (максимум +2).</p>
+        <p>{advancedMoveToPickOnStart ? '' : 'Сразу выбери один сложный ход. '} <DwMoveLink id='common.level_up'>Повышая уровень</DwMoveLink>, ты можешь выбирать {advancedMoveToPickOnStart ? '' : ' ещё'} один сложный ход из списка ниже, либо увеличивать один из параметров на +1 (максимум +2).</p>
         <DwMoveList idList={advancedMoveIdList}/>
       </section>
 
@@ -194,7 +195,7 @@ const DwPcClassComponent = (
 
       {quoteEnd ? (
         <DwQuote
-          className='DwPcClass__quote'
+          className='DwPcClass__quote DwPcClass__section'
           author={quoteEnd.author}
         >
           {quoteEnd.text}

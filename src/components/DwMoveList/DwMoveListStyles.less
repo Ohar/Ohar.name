@@ -1,3 +1,24 @@
 .DwMoveList {
   margin-bottom: 2rem;
+
+  @media print {
+    & {
+      padding-left: 0;
+      display: grid;
+      list-style: none;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+}
+
+.DwMoveList_item {
+  @media print {
+    & {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 0;
+      font-size: 2rem;
+    }
+  }
 }

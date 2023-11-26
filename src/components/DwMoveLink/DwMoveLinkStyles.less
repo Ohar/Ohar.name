@@ -6,6 +6,15 @@
   padding: 0 1px;
   border-bottom: 2px dashed blue;
 
+  @media print {
+    & {
+      border: 3px double grey;
+      color: #000 !important;
+      padding: 0 .3em;
+      border-radius: .2em;
+    }
+  }
+
   &:active,
   &:focus,
   &:hover {

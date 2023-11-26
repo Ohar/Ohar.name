@@ -4,7 +4,7 @@ import DwQuote from '@/components/DwQuote'
 
 import './DwMoveStyles.less'
 
-const DwMoveComponent = ({id, name, text, quote = null}) => (
+const DwMoveComponent = ({id, name, text, quote = null, note = null}) => (
   <section
     className={`DwMove DwMove-${id}`}
     id={id}
@@ -16,6 +16,13 @@ const DwMoveComponent = ({id, name, text, quote = null}) => (
       <DwQuote author={quote.author}>
         {quote.text}
       </DwQuote>
+    ) : null}
+
+    {note ? (
+      <div className='DwMove__note'>
+        <header className='DwMove__noteTitle'>Примечание</header>
+        {note}
+      </div>
     ) : null}
   </section>
 )

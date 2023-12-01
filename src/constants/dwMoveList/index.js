@@ -3,6 +3,7 @@ import druidMoveList from './list/druid'
 import dwarfMoveList from './list/dwarf'
 import incineratorMoveList from './list/incinerator'
 import inventorMoveList from './list/inventor'
+import rangerMoveList from './list/ranger'
 import savageMoveList from './list/savage'
 import shortyMoveList from './list/shorty'
 import sorcererMoveList from './list/sorcerer'
@@ -16,6 +17,7 @@ const dwMoveList = [
     ...dwarfMoveList,
     ...incineratorMoveList,
     ...inventorMoveList,
+    ...rangerMoveList,
     ...savageMoveList,
     ...shortyMoveList,
     ...sorcererMoveList,

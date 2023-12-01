@@ -68,7 +68,7 @@ export default [
     id: 'warrior.advanced.versatility',
     name: 'Многогранность',
     text: (
-      <p>Получи сложный ход <Link to={generateDwPcClassPathById('thief')}>Вора</Link>, <Link to={generateDwPcClassPathById('savage')}>Дикаря</Link>, Паладина, или Следопыта.</p>
+      <p>Получи сложный ход <Link to={generateDwPcClassPathById('thief')}>Вора</Link>, <Link to={generateDwPcClassPathById('savage')}>Дикаря</Link>, Монаха, или <Link to={generateDwPcClassPathById('ranger')}>Следопыта</Link>.</p>
     ),
   },
   {
@@ -98,7 +98,7 @@ export default [
     text: (
       <>
         <p><strong>Делая мрачное предсказание или угрюмое наблюдение</strong>, запиши его ниже.</p>
-        <p className='prophecy'/>
+        <p className='fill_place'/>
         <p><strong>Если то предсказание сбылось</strong>, получи 1 <em>Уверенность</em> (максимум 3).</p>
         <p><strong>Если то предсказание не сбылось или уже не может сбыться</strong>, сотри его.</p>
         <p>Ты можешь потратить 1 <em>Уверенность</em>, чтобы получить преимущество на любой бросок.</p>

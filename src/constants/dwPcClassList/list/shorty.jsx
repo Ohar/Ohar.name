@@ -27,7 +27,7 @@ module.exports = {
     },
   ],
   hpBonus: 16,
-  damageDice: 6,
+  damageDice: 4,
   striveList: [
     {
       name: 'Надежда',

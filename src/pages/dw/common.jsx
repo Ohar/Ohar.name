@@ -18,7 +18,7 @@ const DwPage = () => (
       Основные ходы
     </PageTitle>
 
-    <p>Список основных ходов Dungeon World на основе хаков «Безграничные подземелья» (Unlimited Dungeons) и «Кладовка Брифа».</p>
+    <p>Список основных ходов Dungeon World на основе хака «Безграничные подземелья» (Unlimited Dungeons). Это тестовый материал для хака «Кладовка Брифа».</p>
 
     <DwCommonMoves/>
   </DwLayout>

@@ -2,6 +2,7 @@
   position: relative;
   font-style: italic;
   font-family: monospace;
+  cursor: help;
 }
 
 .DwTag_popup {
@@ -13,13 +14,18 @@
   background-color: #fff;
   color: #000;
   z-index: 10;
-  min-width: 30rem;
+  min-width: 400px;
   width: auto;
   max-width: 100vw;
   padding: 1rem;
+  box-sizing: border-box;
   border-radius: .5rem;
   border: 1px solid #000;
   display: none;
+
+  &-turnedLeft {
+    left: -100%;
+  }
 
   .DwTag-showPopup > & {
     display: block;

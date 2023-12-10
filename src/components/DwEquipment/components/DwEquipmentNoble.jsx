@@ -6,7 +6,7 @@ export default () => (
   <>
     <p><strong>Ты начинаешь игру с:</strong></p>
     <ul>
-      <li><DwTag id='supplies'>Припасами</DwTag> (3 использования, вес 1)</li>
+      <li><DwTag id='supplies'>Припасами</DwTag> (3 использования, <DwTag id='weight'>вес 1</DwTag>)</li>
       <li>Кольцом-печаткой, свидетельством принадлежности к дворянскому роду (<DwTag id='subtle'>Мелкое</DwTag>, ~10 серебряных монет). Опиши эмблему на нём!</li>
     </ul>
     <p><strong>Выбери свою семейную реликвию:</strong></p>

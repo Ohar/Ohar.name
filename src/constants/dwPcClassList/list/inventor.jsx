@@ -60,7 +60,6 @@ module.exports = {
     'inventor.advanced.preparation',
     'inventor.advanced.recycle',
     'inventor.advanced.scientific_nonsense',
-    'inventor.advanced.strong_belt',
   ],
   capstoneMoveIdList: [
     'inventor.capstone.eureka',

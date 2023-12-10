@@ -1,3 +1,5 @@
+import sortByName from '@/utils/sortByName'
+
 import commonMoveList from './list/common'
 import druidMoveList from './list/druid'
 import dwarfMoveList from './list/dwarf'
@@ -27,9 +29,7 @@ const dwMoveList = [
     ...warlockMoveList,
     ...warriorMoveList,
 ]
-  .sort(
-    ({ name: A }, { name: B }) => A === B ? 0 : A > B ? 1 : -1
-  )
+  .sort(sortByName)
 
 export default dwMoveList
 

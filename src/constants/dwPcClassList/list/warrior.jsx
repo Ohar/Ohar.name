@@ -82,25 +82,6 @@ module.exports = {
       'warrior.advanced.combat_training',
     ],
   },
-  equipmentHtml: `
-    <p><strong>Ты начинаешь игру с:</strong></p>
-    <ul>
-      <li>любым обычным оружием на твой выбор (например: меч, булава, топор, двуручный меч, арбалет);</li>
-      <li>Припасами (3 использования, вес 1).</li>
-    </ul>
-    <p><strong>Выбери одно:</strong></p>
-    <ul>
-      <li>кольчуга (броня 1, вес 1) и Припасы (3 использования, вес 1);</li>
-      <li>средняя броня (броня 2, <em>Неуклюжая</em>, вес 2).</li>
-    </ul>
-    <p><strong>Выбери два:</strong></p>
-    <ul>
-      <li>щит (+1 брони, вес 2);</li>
-      <li>лук (<em>Близко</em>, вес 1);</li>
-      <li>кинжал (<em>Рука</em>, <em>Мелкий</em>) и Припасы (3 использования, вес 1);</li>
-      <li>10 золотых.</li>
-    </ul>
-  `,
   advancedMoveIdList: [
     'warrior.advanced.defender',
     'warrior.advanced.gotta_realistic',

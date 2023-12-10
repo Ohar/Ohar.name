@@ -51,23 +51,6 @@ module.exports = {
     'inventor.start.let_me_check',
     'inventor.start.quick_craft',
   ],
-  equipmentHtml: `
-    <p>Ты начинаешь игру с:</p>
-    <ul>
-        <li>Припасами (3 использования, вес 1).</li>
-        <li>Сумкой с инструментами (вес 1).</li>
-        <li>Своими <em>Гаджетами</em> (оружие весит 1, не-оружие считается <em>Мелким</em>).</li>
-    </ul>
-    <p>Выбери два:</p>
-    <ul>
-        <li>Механический костюм (<em>Неуклюжий</em>, броня 2, вес 2).</li>
-        <li>Защитный комбинезон (броня 1, вес 1).</li>
-        <li>Припасы (3 использования, вес 1).</li>
-        <li>Три склянки <em>Алхимического тумана</em> (<em>Мелкие</em>).</li>
-        <li>Зелье исцеления (<em>Мелкое</em>).</li>
-        <li>Зелье невидимости (<em>Мелкое</em>).</li>
-    </ul>
-  `,
   advancedMoveIdList: [
     'inventor.advanced.assembly',
     'inventor.advanced.construct_companion',

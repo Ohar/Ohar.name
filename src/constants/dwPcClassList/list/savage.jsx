@@ -102,25 +102,6 @@ module.exports = {
       'savage.advanced.unyielding_n_invulnerable',
     ],
   },
-  equipmentHtml: `
-  <p><strong>Ты начинаешь игру с:</strong></p>
-  <ul>
-      <li>Припасами (3 использования, вес 1)</li>
-      <li>Кинжалом (рука, <em>Мелкий</em>)</li>
-      <li>Знаком из мест, через которые ты путешествовал или откуда ты родом</em>. Опиши его! (<em>Мелкий</em>)</li>
-  </ul>
-  <p><strong>Выбери одно:</strong></p>
-  <ul>
-      <li>Любое простое одноручное оружие (<em>Взмах меча</em>, вес 1) и щит (вес 2).</li>
-      <li>Любое простое двуручное оружие (+1 урона, <em>Взмах меча</em>, <em>Двуручное</em>, вес 2)</li>
-  </ul>
-  <p><strong>Выбери одно:</strong></p>
-  <ul>
-      <li>Припасы (3 использования, вес 1).</li>
-      <li>Зелье исцеления (<em>Мелкий</em>).</li>
-      <li>Лук (<em>Близко</em>, вес 1).</li>
-  </ul>
-`,
   advancedMoveIdList: [
     'savage.advanced.bloodlust',
     'savage.advanced.khan_of_khans',

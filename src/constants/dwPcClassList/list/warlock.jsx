@@ -60,21 +60,6 @@ module.exports = {
     'warlock.start.servant',
     'warlock.start.dark_rite',
   ],
-  equipmentHtml: `
-    <p><strong>Ты начинаешь игру с:</strong></p>
-    <ul>
-        <li>Припасами (3 использования, вес 1).</li>
-        <li>Отметиной, оставленной Покровителем на тебя. Опиши её!</li>
-    </ul>
-    <p><strong>Выбери два:</strong></p>
-    <ul>
-        <li>Жертвенный кинжал (<em>Рука</em>, <em>Мелкий</em>).</li>
-        <li>Гравированный ритуальный посох (<em>Взмах меча</em>, <em>Двуручный</em>, вес 1).</li>
-        <li>Зелье исцеления (<em>Мелкое</em>).</li>
-        <li>Ритуальные робы (броня 1, вес 1).</li>
-        <li>Ритуальные инструменты, подношения и атрибутика (вес 1).</li>
-    </ul>
-  `,
   advancedMoveIdList: [
     'warlock.advanced.ancient_sign',
     'warlock.advanced.bewitch',

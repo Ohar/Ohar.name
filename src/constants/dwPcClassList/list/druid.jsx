@@ -72,21 +72,6 @@ module.exports = {
       'druid.advanced.summon_spirit',
     ],
   },
-  equipmentHtml: `
-  <p><strong>Ты начинаешь игру с:</strong></p>
-  <ul>
-      <li>Памятным символом своей земли; опиши его (<em>Мелкий</em>).</li>
-      <li>Припасами (3 использования, вес 1).</li>
-  </ul>
-  <p><strong>Выбери два:</strong></p>
-  <ul>
-      <li>Лёгкий доспех (броня 1, вес 1).</li>
-      <li>Щит (броня +1, вес 2).</li>
-      <li>Посох (<em>Взмах меча</em>, <em>Двуручный</em>, вес 1).</li>
-      <li>Копьё (<em>Близко</em>, <em>Удар копья</em>, <em>Метательное</em>, вес 1).</li>
-      <li>Припасы (3 использования, вес 1).</li>
-  </ul>
-`,
   advancedMoveIdList: [
     'druid.advanced.barkskin',
     'druid.advanced.borrowed_power',

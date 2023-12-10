@@ -69,25 +69,6 @@ module.exports = {
       'shorty.advanced.troublemaker',
     ],
   },
-  equipmentHtml: `
-    <p><strong>Ты начинаешь игру с:</strong></p>
-    <ul>
-        <li>Припасы (3 использования, вес 1).</li>
-        <li>Кинжалом (<em>Рука</em>, <em>Мелкий</em>).</li>
-    </ul>
-    <p><strong>Выбери одно:</strong></p>
-    <ul>
-        <li>Праща (<em>Близко</em>, <em>Перезарядка</em>, <em>Неудобная</em>, <em>Мелкая</em>).</li>
-        <li>Короткий (не для тебя) меч (<em>Взмах меча</em>, вес 1).</li>
-    </ul>
-    <p><strong>Выбери два:</strong></p>
-    <ul>
-        <li>Безделушка, которую ты недавно достал. Опиши — где достал, как достал и что это вообще? (<em>Мелкая</em>, ~10 серебряных монет).</li>
-        <li>Припасы (3 использования, вес 1).</li>
-        <li>Лёгкий доспех, как раз твоего размера (1 брони, вес 1).</li>
-        <li>Зелье исцеления (<em>Мелкий</em>).</li>
-    </ul>
-  `,
   advancedMoveIdList: [
     'shorty.advanced.cultural_exchange',
     'shorty.advanced.drop_the_act',

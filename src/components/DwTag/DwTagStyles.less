@@ -1,0 +1,40 @@
+.DwTag {
+  position: relative;
+  font-style: italic;
+  font-family: monospace;
+}
+
+.DwTag_popup {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  font-style: normal;
+  font-weight: 400;
+  background-color: #fff;
+  color: #000;
+  z-index: 10;
+  min-width: 30rem;
+  width: auto;
+  max-width: 100vw;
+  padding: 1rem;
+  border-radius: .5rem;
+  border: 1px solid #000;
+  display: none;
+
+  .DwTag-showPopup > & {
+    display: block;
+  }
+}
+
+.DwTag_body {
+  .DwTag-showPopup > & {
+    background-color: grey;
+    color: #fff;
+  }
+}
+
+.DwTag_popupHeader {
+  font-weight: 700;
+  margin-bottom: .5em;
+  font-size: 1.2rem;
+}

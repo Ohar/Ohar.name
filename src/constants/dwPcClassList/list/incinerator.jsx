@@ -73,19 +73,6 @@ module.exports = {
     'incinerator.start.flame_marked',
     'incinerator.start.fire_up',
   ],
-  equipmentHtml: `
-  <p>Ты не носишь оружия и у тебя нет необходимости в защите, кроме той, что даёт твоё внутреннее пламя.</p>
-  <p><strong>Ты начинаешь игру с:</strong></p>
-  <ul>
-      <li>Символ принесённых в прошлом жертв, опиши его (<em>Мелкий</em>).</li>
-      <li>Припасами (3 использования, вес 1)</li>
-  </ul>
-  <p><strong>Выбери одно:</strong></p>
-  <ul>
-      <li>Припасы (3 использования, вес 1)</li>
-      <li>Зелье исцеления (<em>Мелкое</em>)</li>
-  </ul>
-`,
   advancedMoveIdList: [
     'incinerator.advanced.alike_moths',
     'incinerator.advanced.burns_twice',

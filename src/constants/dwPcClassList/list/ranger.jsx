@@ -68,21 +68,6 @@ module.exports = {
       'ranger.advanced.true_shot',
     ],
   },
-  equipmentHtml: `
-    <p><strong>Ты начинаешь игру с:</strong></p>
-    <ul>
-        <li>Припасами (3 использования, вес 1).</li>
-        <li>Лёгким доспехом (броня 1, вес 1).</li>
-        <li>Составным луком (<em>Близко</em>, <em>Далеко</em>, вес 1).</li>
-    </ul>
-    <p><strong>Выбери два:</strong></p>
-    <ul>
-        <li>Короткий меч (<em>Взмах меча</em>, вес 1).</li>
-        <li>Копьё (<em>Удар копья</em>, <em>Метательное</em>, <em>Близко</em>, вес 1).</li>
-        <li>Припасы (3 использования, вес 1).</li>
-        <li>Зелье исцеления (<em>Мелкое</em>).</li>
-    </ul>
-  `,
   advancedMoveIdList: [
     'ranger.advanced.big_hunt',
     'ranger.advanced.eclipse',

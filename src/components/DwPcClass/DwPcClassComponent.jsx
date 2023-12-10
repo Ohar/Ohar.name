@@ -5,6 +5,7 @@ import DwMoveList from '@/components/DwMoveList'
 import DwMoveLink from '@/components/DwMoveLink'
 import DwNote from '@/components/DwNote'
 import DwQuote from '@/components/DwQuote'
+import DwEquipment from '@/components/DwEquipment'
 
 import sortByName from '@/utils/sortByName'
 
@@ -18,9 +19,9 @@ const DwPcClassComponent = (
     capstoneMoveIdList,
     damageDice,
     description,
-    equipmentHtml,
     featureList,
     hpBonus,
+    id,
     nameList,
     nickNameList,
     noteId,
@@ -138,25 +139,7 @@ const DwPcClassComponent = (
         </section>
       ) : null}
 
-      <section className='DwPcClass__equipment DwPcClass__section'>
-        <h2>Снаряжение</h2>
-        <section
-          className='DwPcClass__startItems'
-          dangerouslySetInnerHTML={{__html: equipmentHtml}}
-        />
-        <h3>Нагрузка</h3>
-        <section
-          className='DwPcClass__capacity'
-          id='capacity'
-        >
-          <p>Твоя максимальная нагрузка равна <strong>9</strong>. Каждый предмет (кроме <em>Мелких</em>) добавляет свой вес к твоей нагрузке.</p>
-          <ul>
-            <li><strong>1–3</strong> веса — это лёгкая нагрузка (ты <em>быстр</em> и <em>тих</em>);</li>
-            <li><strong>4–6</strong> нормальная нагрузка;</li>
-            <li><strong>7–9</strong> тяжёлая (ты <em>медленен</em>, <em>шумен</em>, тебе <em>жарко</em> и ты <em>быстро устаёшь</em>).</li>
-          </ul>
-        </section>
-      </section>
+      <DwEquipment id={id}/>
 
       <section
         className='DwPcClass__advancedMoves'

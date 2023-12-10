@@ -1,9 +1,8 @@
 import React from 'react'
 
 import DwMoveLink from '@/components/DwMoveLink'
+import DwTag from '@/components/DwTag'
 import sortByName from '@/utils/sortByName'
-import generateDwPcClassPathById from '@/utils/generateDwPcClassPathById'
-import { Link } from 'gatsby'
 
 export default [
   {
@@ -170,8 +169,8 @@ export default [
     name: 'Собраться с силами',
     text: (
       <>
-        <p><strong><DwMoveLink id='common.recover'>Восстанавливаясь</DwMoveLink>, ты можешь потратить 1 <DwMoveLink id='shorty.start.savvy'>Смекалки</DwMoveLink></strong> вместо траты Припасов.</p>
-        <p><strong><DwMoveLink id='common.recover'>Восстанавливаясь</DwMoveLink>, ты можешь получить 1 <DwMoveLink id='shorty.start.savvy'>Смекалки</DwMoveLink></strong> вместо восстановления ОЗ.</p>
+        <p><strong><DwMoveLink id='common.recover'>Восстанавливаясь</DwMoveLink>, ты можешь потратить 1 <DwMoveLink id='shorty.start.savvy'>Смекалки</DwMoveLink></strong> вместо траты <DwTag id='supplies'>Припасов</DwTag>.</p>
+        <p><strong><DwMoveLink id='common.recover'>Восстанавливаясь</DwMoveLink>, ты можешь получить 1 <DwMoveLink id='shorty.start.savvy'>Смекалки</DwMoveLink></strong> вместо восстановления ОЗ.</p>
       </>
     ),
   },
@@ -179,14 +178,14 @@ export default [
     id: 'shorty.advanced.cultural_exchange',
     name: 'Культурный обмен',
     text: (
-      <p><strong><DwMoveLink id='common.set_camp'>Разбивая лагерь</DwMoveLink> и занимаясь готовкой</strong>, ты можешь потратить дополнительные Припасы или 1 <DwMoveLink id='shorty.start.savvy'>Смекалки</DwMoveLink> и приготовить своё народное блюдо на всю группу&nbsp;— опиши его. <strong>Любой, кто его отведает</strong>, восстановит дополнительные 1к6 ОЗ.</p>
+      <p><strong><DwMoveLink id='common.set_camp'>Разбивая лагерь</DwMoveLink> и занимаясь готовкой</strong>, ты можешь потратить дополнительные <DwTag id='supplies'>Припасы</DwTag> или 1 <DwMoveLink id='shorty.start.savvy'>Смекалки</DwMoveLink> и приготовить своё народное блюдо на всю группу&nbsp;— опиши его. <strong>Любой, кто его отведает</strong>, восстановит дополнительные 1к6 ОЗ.</p>
     ),
   },
   {
     id: 'shorty.advanced.help',
     name: 'Помогите!',
     text: (
-      <p><strong>Когда союзник спасает тебя от опасности</strong>, отметь опыт.</p>
+      <p><strong>Когда союзник спасает тебя от опасности</strong>, отметь опыт.</p>
     ),
   },
   {
@@ -194,8 +193,8 @@ export default [
     name: 'Второй завтрак',
     text: (
       <>
-        <p><strong>Покидая поселение после того, как ты провёл в нём некоторое время</strong>, ты можешь <em>«неожиданно»</em> обнаружить у себя 1к3 Припасов. Расскажи, откуда ты их достал и каким образом.</p>
-        <p><strong><DwMoveLink id='common.recover'>Восстанавливаясь</DwMoveLink></strong>, ты можешь потратить дополнительные Припасы, чтобы восстановить +1к6 ОЗ. </p>
+        <p><strong>Покидая поселение после того, как ты провёл в нём некоторое время</strong>, ты можешь <em>«неожиданно»</em> обнаружить у себя 1к3 <DwTag id='supplies'>Припасов</DwTag>. Расскажи, откуда ты их достал и каким образом.</p>
+        <p><strong><DwMoveLink id='common.recover'>Восстанавливаясь</DwMoveLink></strong>, ты можешь потратить дополнительные <DwTag id='supplies'>Припасы</DwTag>, чтобы восстановить +1к6 ОЗ. </p>
       </>
     ),
   },
@@ -203,7 +202,7 @@ export default [
     id: 'shorty.capstone.little_hero',
     name: 'Маленький герой',
     text: (
-      <p><strong>Бросаясь в опасность, чтобы <DwMoveLink id='common.defend'>Защитить</DwMoveLink> кого-то</strong>, считай 6− как 7–9, а 7–9 как 10+. <strong>Кроме того</strong> ты можешь использовать <DwMoveLink id='shorty.start.savvy'>Смекалку</DwMoveLink> вместо <DwMoveLink id='common.defend'>Готовности</DwMoveLink>.</p>
+      <p><strong>Бросаясь в опасность, чтобы <DwMoveLink id='common.defend'>Защитить</DwMoveLink> кого-то</strong>, считай 6− как 7–9, а 7–9 как 10+. <strong>Кроме того</strong> ты можешь использовать <DwMoveLink id='shorty.start.savvy'>Смекалку</DwMoveLink> вместо <DwMoveLink id='common.defend'>Готовности</DwMoveLink>.</p>
     ),
   },
   {

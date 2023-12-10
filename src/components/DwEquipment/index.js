@@ -1,1 +1,1 @@
-export default from './DwEquipmentComponent'
+export default from './DwEquipmentContainer'

@@ -172,7 +172,7 @@ export default [
     name: 'Затмить солнце',
     text: (
       <>
-        <p><strong><DwMoveLink id='common.volley'>Давая залп</DwMoveLink> с оружием без свойства <em>Перезарядка</em></strong>, ты можешь сделать сразу несколько выстрелов. Для этого потрать <DwTag id='supplies'>Припасы</DwTag> и выбери одно: </p>
+        <p><strong><DwMoveLink id='common.volley'>Давая залп</DwMoveLink> с оружием без свойства <em>Перезарядка</em></strong>, ты можешь сделать сразу несколько выстрелов. Для этого потрать <DwTag id='supplies'>Припасы</DwTag> и выбери одно: </p>
         <ul>
           <li>Бросай урон с преимуществом.</li>
           <li>Твоя атака получает свойство <em>По Области</em>.</li>

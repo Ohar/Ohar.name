@@ -83,7 +83,7 @@ export default [
         <p>Ты можешь выбрать этот ход дважды. <strong>Выбирая этот ход</strong>, выбери одно:</p>
         <ul>
           <li>Увеличь свою базовую кость урона до к6.</li>
-          <li>Получи ход <Link to={generateDwPcClassPathById('warrior')}>Воина</Link>, Монаха (TODO) или <Link to={generateDwPcClassPathById('ranger')}>Следопыта</Link>.</li>
+          <li>Получи ход <Link to={generateDwPcClassPathById('warrior')}>Воина</Link>, Паладина (TODO) или <Link to={generateDwPcClassPathById('ranger')}>Следопыта</Link>.</li>
         </ul>
       </>
     ),

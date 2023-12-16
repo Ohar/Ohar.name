@@ -70,7 +70,7 @@ export default [
     id: 'warrior.advanced.versatility',
     name: 'Многогранность',
     text: (
-      <p>Получи сложный ход <Link to={generateDwPcClassPathById('thief')}>Вора</Link>, <Link to={generateDwPcClassPathById('savage')}>Дикаря</Link>, Монаха (TODO), или <Link to={generateDwPcClassPathById('ranger')}>Следопыта</Link>.</p>
+      <p>Получи сложный ход <Link to={generateDwPcClassPathById('thief')}>Вора</Link>, <Link to={generateDwPcClassPathById('savage')}>Дикаря</Link>, Паладина (TODO), или <Link to={generateDwPcClassPathById('ranger')}>Следопыта</Link>.</p>
     ),
   },
   {

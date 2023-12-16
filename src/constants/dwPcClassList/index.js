@@ -2,6 +2,7 @@ const dwPcClassList = [
   require('./list/alchemist.jsx'),
   require('./list/druid.jsx'),
   require('./list/dwarf.jsx'),
+  require('./list/elf.jsx'),
   require('./list/ghost.jsx'),
   require('./list/incinerator.jsx'),
   require('./list/inventor.jsx'),

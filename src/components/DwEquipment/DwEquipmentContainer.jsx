@@ -3,6 +3,7 @@ import React from 'react'
 import DwEquipmentDwarf from './components/DwEquipmentDwarf'
 import DwEquipmentDruid from './components/DwEquipmentDruid'
 import DwEquipmentInventor from './components/DwEquipmentInventor'
+import DwEquipmentMonk from './components/DwEquipmentMonk'
 import DwEquipmentNoble from './components/DwEquipmentNoble'
 import DwEquipmentIncinerator from './components/DwEquipmentIncinerator'
 import DwEquipmentSavage from './components/DwEquipmentSavage'
@@ -30,6 +31,9 @@ const DwEquipmentContainer = ({id}) => {
       break
     case 'inventor':
       Equipment = DwEquipmentInventor
+      break
+    case 'monk':
+      Equipment = DwEquipmentMonk
       break
     case 'noble':
       Equipment = DwEquipmentNoble

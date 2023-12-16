@@ -40,7 +40,7 @@ const DwPcClassComponent = (
     <section className='DwPcClass__name DwPcClass__section'>
       <h2>Имена</h2>
       <p>Выбери имя персонажа или придумай своё.</p>
-      <p>Примеры имён: <span className='DwPcClass__nameExamples'>{nameList.join(', ')}</span>.</p>
+      <p>Примеры имён: <span className='DwPcClass__nameExamples'>{nameList.sort().join(', ')}</span>.</p>
     </section>
 
     {nickNameList && nickNameList.length ? (

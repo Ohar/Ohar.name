@@ -150,7 +150,7 @@ export default [
     id: 'sorcerer.advanced.bookworm',
     name: 'Книжный червь',
     text: (
-      <p><strong><DwMoveLink id='common.spout_lore'>Копаясь в памяти</DwMoveLink></strong>, ты можешь потратить <DwTag id='supplies'>Припасов</DwTag>, чтобы достать книгу, свиток или другой источник знания. <strong>Некоторое время изучая то, что ты достал</strong>, ты можешь считать 6− как 7–9, а 7–9 как 10+.</p>
+      <p><strong><DwMoveLink id='common.spout_lore'>Копаясь в памяти</DwMoveLink></strong>, ты можешь потратить <DwTag id='supplies'>Припасы</DwTag>, чтобы достать книгу, свиток или другой источник знания. <strong>Некоторое время изучая то, что ты достал</strong>, ты можешь считать 6− как 7–9, а 7–9 как 10+.</p>
     ),
   },
   {

@@ -6,9 +6,11 @@ import Seo from '@/components/Seo'
 import DwLayout from '@/components/DwLayout'
 
 import {
+  OPERATIVE_ARTILLERY_WITCHES,
   OPERATIVE_HERETIC_CHORISTER,
   OPERATIVE_HERETIC_DEATH_COMMANDO,
   OPERATIVE_HERETIC_PRIEST,
+  OPERATIVE_HERETIC_TROOPER,
 } from '@/constants/TC/operative_ids'
 
 const TcPage = () => (
@@ -23,6 +25,8 @@ const TcPage = () => (
       OPERATIVE_HERETIC_PRIEST,
       OPERATIVE_HERETIC_DEATH_COMMANDO,
       OPERATIVE_HERETIC_CHORISTER,
+      OPERATIVE_ARTILLERY_WITCHES,
+      OPERATIVE_HERETIC_TROOPER,
     ]}/>
   </DwLayout>
 )

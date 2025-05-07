@@ -13,7 +13,7 @@ export default [
     text: (
       <>
         <p><em><strong>Сражаясь со свирепостью древних драконов</strong>, увеличь свою кость урона до к10.</em></p>
-        <p><em>Кроме того, <strong><DwMoveLink id='common.defy_danger'>Спасаясь от угрозы</DwMoveLink> с помощью своего внутреннего огня, чтобы выдержать или запугать</strong>, бросай с <DwTag id='advantage'>преимуществом</DwTag>.</em></p>
+        <p><em>Кроме того, <strong><DwMoveLink id='common.defy_danger'>Спасаясь от угрозы</DwMoveLink> с помощью своего внутреннего огня, чтобы выдержать или запугать</strong>, бросай с <DwTag id='advantage'>Преимуществом</DwTag>.</em></p>
       </>
     ),
   },

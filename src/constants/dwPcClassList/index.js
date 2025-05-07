@@ -3,6 +3,7 @@ const dwPcClassList = [
   require('./list/druid.jsx'),
   require('./list/dwarf.jsx'),
   require('./list/elf.jsx'),
+  require('./list/extra.jsx'),
   require('./list/ghost.jsx'),
   require('./list/incinerator.jsx'),
   require('./list/inventor.jsx'),

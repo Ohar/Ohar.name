@@ -1,14 +1,159 @@
 import React from 'react'
 
 import DwMoveLink from '@/components/DwMoveLink'
+import DwTag from '@/components/DwTag'
 import sortByName from '@/utils/sortByName'
 import generateDwPcClassPathById from '@/utils/generateDwPcClassPathById'
 import { Link } from 'gatsby'
 
 export default [
   {
-    id: 'priest..',
-    name: '',
+    id: 'priest.background.foretold_birth',
+    name: 'Предзнаменованное рождение',
+    text: (
+      <>
+        <p>Ты был рождён во время затмения, катаклизма или другого великого события. Опиши, какую ты несёшь отметину в форме символа твоего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink>?</p>
+        <p><strong>Когда ты должен потерять <DwMoveLink id='priest.start.mercy'>Милость</DwMoveLink></strong>, ты можешь решить не терять её. Ты не можешь сделать этого снова пока не <DwMoveLink id='common.set_camp'>Разобьёшь лагерь</DwMoveLink>.</p>
+      </>
+    ),
+  },
+  {
+    id: 'priest.background.military_order',
+    name: 'Боевой орден',
+    text: (
+      <>
+        <p>Муштра с самого принятия в орден, тренировки и наставники закалили тебя и научили нести слово своего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink> в оружием в руках. Опиши шрамы и небольшие увечья, которыми упорные тренировки или битвы отметили тебя.</p>
+        <p><strong>Побеждая значительного врага своего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink></strong>, получи <DwMoveLink id='priest.start.mercy'>Милость</DwMoveLink>.</p>
+        <p><strong>Сражаясь во имя своего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink></strong>, увеличь свой урон до к8.</p>
+        <p><strong><DwMoveLink id='common.hack_n_slash'>Рубя и кромсая</DwMoveLink></strong>, ты можешь потратить <DwMoveLink id='priest.start.mercy'>Милость</DwMoveLink> чтобы получить <DwTag id='advantage'>Преимущество</DwTag> на бросок.</p>
+      </>
+    ),
+  },
+  {
+    id: 'priest.background.healer',
+    name: 'Целитель',
+    text: (
+      <>
+        <p>Помочь тем, кто нуждается и окончить страдания тех, кого уже не спасти — это про тебя.</p>
+        <p><strong>Избавляя или ослабляя мучения персонажа Ведущего</strong>, получи <DwMoveLink id='priest.start.mercy'>Милость</DwMoveLink>.</p>
+        <p><strong>Сразу получи ход <DwMoveLink id='priest.advanced.divine_protection'>Божественная защита</DwMoveLink>.</strong></p>
+        <p><strong>Когда ты <DwMoveLink id='common.recover'>Восстанавливаешься</DwMoveLink> или <DwMoveLink id='common.set_camp'>Разбиваешь лагерь</DwMoveLink></strong>, ты можешь тратить <DwMoveLink id='priest.start.mercy'>Милость</DwMoveLink> вместо <DwTag id='supplies'>Припасов</DwTag>.</p>
+      </>
+    ),
+  },
+  {
+    id: 'priest.background.fanatic',
+    name: 'Фанатик',
+    text: (
+      <>
+        <p>Нет ничего важнее твоей миссии и твоей веры. От тебя зависит всё. Ты не имеешь права провалиться.</p>
+        <p><strong><DwMoveLink id='priest.start.communion'>Приобщаясь</DwMoveLink> со своим <DwMoveLink id='priest.start.god'>Божества</DwMoveLink></strong>, всегда считай 6− как 7–9.</p>
+        <p><strong>Если у тебя нет <DwMoveLink id='priest.start.mercy'>Милости</DwMoveLink> <DwMoveLink id='priest.start.god'>Божества</DwMoveLink></strong>, ты можешь отметить <DwTag id='trauma'>Травму</DwTag> или потерять 2к4 <DwTag id='hp'>ОЗ</DwTag> чтобы получить 1 <DwMoveLink id='priest.start.mercy'>Милости</DwMoveLink>.</p>
+      </>
+    ),
+  },
+  {
+    id: 'priest.start.mercy',
+    name: 'Милость',
+    text: (
+      <>
+        <p>Ты&nbsp;— сосуд божественной воли. <em>Милость</em> олицетворяет твоё текущее положение перед <DwMoveLink id='priest.start.god'>Божеством</DwMoveLink> (максимум – МДР).</p>
+        <p><strong>Когда у тебя есть <em>Милость</em></strong>, Домены твоего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink> реагируют на твоё присутствие (показывается солнце, цветы распускаются, знать кланяется, демон шипит и т. п.) или как-то внешне проявляются на тебе (пробегающая дымка вокруг рук, светящиеся глаза, мерцающие символы на коже и т. п.).</p>
+      </>
+    ),
+  },
+  {
+    id: 'priest.start.invoke',
+    name: 'Воззвать',
+    text: (
+      <>
+        <p><strong>Прося своё <DwMoveLink id='priest.start.god'>Божество</DwMoveLink> о помощи в час нужды</strong>, выбери эффект:</p>
+        <ul>
+          <li>Выпустить Домен твоего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink> чтобы навредить или помешать врагу неподалёку.</li>
+          <li>Контролировать Домен твоего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink> себе в помощь.</li>
+          <li>Командовать почитателями твоего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink>.</li>
+        </ul>
+        <p>…и брось +<DwMoveLink id='priest.start.mercy'>Милость</DwMoveLink>.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— эффект происходит.</li>
+          <li>
+            <p>На <strong>7–9</strong>&nbsp;— эффект происходит, но выбери одно.</p>
+            <ul>
+              <li>Эффект ослаблен или мимолётен.</li>
+              <li>Ты привлекаешь к себе нежелательное внимание или оказываешься в сложном положении.</li>
+              <li>Твоё тело страдает от проводимой мощи — получи <DwTag id='trauma'>Травму</DwTag>.</li>
+              <li>Ты отдаляешься от сферы влияния своего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink>, потеряй 1 <DwMoveLink id='priest.start.mercy'>Милости</DwMoveLink>.</li>
+            </ul>
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'priest.start.communion',
+    name: 'Приобщение',
+    text: (
+      <>
+        <p><strong>Проводя хотя бы несколько минут за почитанием <DwMoveLink id='priest.start.god'>Божества</DwMoveLink> (молитвой, медитацией, жертвоприношением и т. п.)</strong>, брось +МДР. В священном для твоей веры месте бросай с <DwTag id='advantage'>Преимуществом</DwTag>.</p>
+        <ul>
+          <li>На <strong>10+</strong>&nbsp;— выбери два.</li>
+          <li>
+            <p>На <strong>7–9</strong>&nbsp;— выбери одно.</p>
+            <ul>
+              <li>Получи 1 <DwMoveLink id='priest.start.mercy'>Милости</DwMoveLink> (можно выбирать дважды).</li>
+              <li>Получи какое-то знание в рамках сферы влияния своего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink>.</li>
+              <li>Получи временный дар в рамках сферы влияния своего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink>.</li>
+            </ul>
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'priest.start.god',
+    name: 'Божество',
+    text: (
+      <>
+        <p>Ты служишь и поклоняешься <em>Божеству</em>, которое дарует тебе силы.</p>
+        <p><strong>Выбери</strong> себе уже существующее божество <strong>или создай</strong> своё (обсуди с Ведущим): <strong>дай ему / ей имя</strong> и <strong>выбери сферы</strong> влияния <em>Божества</em>, заполняя пустые места:</p>
+        <p><strong>Смертные знают его как</strong>… (Бледная Королева, Сакеллус Отец Моря, Зорика, Великая Тень и т. п).</p>
+        <p className='fill_place'/>
+        <p><strong>Его первый Домен</strong> это… (солнце, моря, небеса, красота, чума, голод и т. п.)</p>
+        <p className='fill_place'/>
+        <p><strong>Его второй Домен</strong> это… (любовь, смерть, радость, правосудие, война, ветер и т. п.)</p>
+        <p className='fill_place'/>
+        <p><strong>Его почитают</strong>… (дворяне, дварфы, маги и т. п.)</p>
+        <p className='fill_place'/>
+        <p><strong>Его врагами являются</strong>… (демоны, нежить, орки, предатели и т. п.)</p>
+        <p className='fill_place'/>
+      </>
+    ),
+    quote: {
+      text: 'Святой Сигмар, благослови это изуродованное тело',
+      author: 'Виктор Зальцпайр, Охотник на ведьм',
+    },
+  },
+  {
+    id: 'priest.start.god',
+    name: 'Божественная церемония',
+    text: (
+      <>
+        <p><strong>Подготавливая церемонию для прошения своего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink> о чём-то</strong>, скажи Ведущему — чего ты хочешь добиться? Этот результат достижим всегда, но Ведущий может поставить перед тобой до четырех условий из списка:</p>
+        <ul>
+          <li>Церемония займёт несколько дней / недель / месяцев.</li>
+          <li>Чтобы начать церемонию, тебе понадобится ______________.</li>
+          <li>Ты должен проводить церемонию в Священном месте, например ______________</li>
+          <li>Чтобы закончить церемонию, тебе понадобится нужна помощь ______________</li>
+          <li>Враги твоего <DwMoveLink id='priest.start.god'>Божества</DwMoveLink> попытаются вмешаться и результат будет либо ограничен, либо каким-то образом искажён / проклят.</li>
+          <li>Церемония подвергнет риску тебя и твоих союзников из-за ______________</li>
+          <li>Тебе нужно пожертвовать или потратить ______________</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'priest.advanced.divine_protection',
+    name: 'Божественная защита',
     text: (
       <>
         TODO
@@ -28,16 +173,218 @@ const foo = `
 
 
 
-    
-    
-    <div style="text-align:center"><img src="systems/dungeonworld/assets/icons/commodities/treasure/token-gold-cross.webp"></div><p><em>Этот мир погряз в хаосе. Меж оплотов веры и цивилизации — обширные пустоши, полные диких зверей, живых мертвецов и других чудищ. В этих землях нет богов. Вот почему там так нужны вы.</em></p><p><em>Нести свет своего божества во тьму дикости и варварства — это не просто ваша природа, это ваше призвание. Именно на вас пал долг мечом, булавой и магией обращать людей в свою веру, спускаться в самые страшные глубины диких земель, чтобы посадить там семена веры. Некоторые говорят, что богов нужно хранить в своем сердце. Вы знаете, что это чушь. Всё божественное живёт на острие клинка.</em></p><p><em>Покажите этому миру, кто его истинный владыка.&nbsp;</em></p><h2 data-anchor="imena">Имена</h2><p>Уэсли, Бринтон, Джон, Сара, Хоторн, Элис, Кларк, Ленора, Пётр, Далия, Кармин;</p><p>&nbsp;Дарга, Эльфар, Герда, Рургош, Бьёрн, Драммонд, Хельга, Сиггруг, Фрея</p><h2 data-anchor="vneshnostь">Внешность</h2><p>Выберите один вариант в каждой строчке:</p><ul><li>Добрые глаза, проницательные глаза или грустные глаза;</li><li>Тонзура, странная причёска или выбритая голова;</li><li>Длинная сутана, церемониальные одежды или обычная одежда;</li><li>Худой, угловатая фигура или дряблое тело.</li></ul><h2 data-anchor="harakteristiki">Характеристики</h2><p>Ваши максимальные хиты: <strong>16+ТЕЛ</strong></p><p>Ваш базовый урон равен <a class="inline-roll roll" data-mode="roll" data-flavor="" data-formula="d6"><i class="fas fa-dice-d20"></i>d6</a>.</p><p>Распределите эти модификаторы по характеристикам <strong>+2, +1, +1, +0, +0, -1</strong></p><p>&nbsp;</p><h2 data-anchor="lichnostь-personazha">Личность персонажа</h2><h3 data-anchor="aspekty"><strong>Аспекты</strong></h3><p>Аспекты описывают важные особенности вашего персонажа, его жизненный опыт, происхождение и родословную и социальные отношения. В игре это проявляется в качестве механических бонусов. Подробнее вы можете прочитать <a class="content-link" draggable="true" data-uuid="Compendium.world.gm-screen.JournalEntry.ZLYUyWP6kSJrNmat" data-id="ZLYUyWP6kSJrNmat" data-type="JournalEntry" data-pack="world.gm-screen" data-tooltip="Журнал"><i class="fas fa-book-open"></i>здесь</a>.</p><p>Придумайте персонажу три <a class="content-link" draggable="true" data-uuid="Compendium.world.gm-screen.JournalEntry.ZLYUyWP6kSJrNmat" data-id="ZLYUyWP6kSJrNmat" data-type="JournalEntry" data-pack="world.gm-screen" data-tooltip="Журнал"><i class="fas fa-book-open"></i>аспекта</a>: <strong>Концепцию</strong> и два обычных аспекта.</p><p>Для начала хватит только Концепции, остальные аспекты вы можете заполнить по мере игры.</p><p></p><h3 data-anchor="stremlenie"><span style="font-family:Arial, sans-serif"><strong style="box-sizing:border-box;user-select:text">Стремление</strong></span></h3><p><span style="font-family:Arial, sans-serif">Выберите до трёх Стремлений своего персонажа. Выбирайте из вариантов ниже, придумайте своё собственное или воспользуйтесь <a class="content-link" draggable="true" data-uuid="Compendium.world.gm-screen.JournalEntry.PLhAByHQsTL4cZQU" data-id="PLhAByHQsTL4cZQU" data-type="JournalEntry" data-pack="world.gm-screen" data-tooltip="Журнал"><i class="fas fa-book-open"></i>списком Стремлений</a>.</span></p><p>Стремления олицетворяют то как персонаж взаимодействует с миром и следование или иначе использование их в игре награждается опытом в <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.aGbaj6PeLdm3H4zc" data-id="aGbaj6PeLdm3H4zc" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>конце сессии</a>.</p><p></p><blockquote><h3 data-anchor="priverzhennostь"><strong>Приверженность</strong></h3><p>Переносите трудности, чтобы следовать предписаниям своей веры.</p><h3 data-anchor="zhertva"><strong>Жертва</strong></h3><p>Подвергните себя опасности чтобы кому-то помочь.</p><h3 data-anchor="podtverzhdenie"><strong>Подтверждение</strong></h3><p>Докажите превосходство своего божества.</p><h3 data-anchor="sostradanie"><strong>Сострадание</strong></h3><p>Принесите облегчение страдающему персонажу Ведущего.</p><h3 data-anchor="ortodoks"><strong>Ортодокс</strong></h3><p>Строго следуйте догмам и правилам, даже если это вызовет проблемы.</p></blockquote><p>&nbsp;</p><p></p><h3 data-anchor="teperь-vyberite-predystoriyu-i-poluchite-sootvetstvuyushij-hod:"><strong>Теперь выберите предысторию и получите соответствующий ход:</strong></h3><p></p><blockquote><h3 data-anchor="predznamenovannoe-rozhdenie"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.gsy2N1EkmJkLVyEu" data-id="gsy2N1EkmJkLVyEu" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Предзнаменованное рождение</a></strong></h3><p>Вы были рождены во время затмения, во время катаклизма или другого великого события. Может вы несёте какую-то отметину в форме символа вашего бога?</p><p><strong>Когда вы должны потерять Милость</strong>, вы можете решить не терять её. Вы не можете сделать этого снова пока не <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.IFAcgBsxriir9o5n" data-id="IFAcgBsxriir9o5n" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Разобьёте лагерь</a>.</p></blockquote><p></p><blockquote><h3 data-anchor="boevoj-orden"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.AVTu4YBfzKW2QOVI" data-id="AVTu4YBfzKW2QOVI" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Боевой орден</a></strong></h3><p>Муштра с самого принятия в орден, тренировки и наставники закалили вас и научили нести слово своего бога в оружием в руках. Как тренировки или битвы отметили вас? Может шрамами и небольшими увечьями, вроде потерянного пальца?</p><p><strong>Побеждая значительного врага своего Божества</strong>, получите Милость.</p><p><strong>Сражаясь во имя своего божества</strong>, увеличьте свой урон до к8.</p><p><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.IpwyWNBmD0IeAHSa" data-id="IpwyWNBmD0IeAHSa" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Рубя и Кромсая</a></strong>, вы можете потратить Милость чтобы получить преимущество на бросок.</p></blockquote><p>&nbsp;</p><blockquote><h3 data-anchor="celitelь"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.lNNa7atCsbXVjuHc" data-id="lNNa7atCsbXVjuHc" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Целитель</a></strong></h3><p>Помочь тем, кто нуждается и окончить страдания тех, кого уже не спасти — это про вас.</p><p><strong>Избавляя или ослабляя мучения персонажа Ведущего</strong>, получите Милость.</p><p><strong>Сразу получите ход <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.IDAfXHF5zE0gaw4O" data-id="IDAfXHF5zE0gaw4O" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественная защита</a>.</strong></p><p><strong>Когда вы <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.211SOIrKRp2TyhLz" data-id="211SOIrKRp2TyhLz" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Восстанавливаетесь</a> или <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.IFAcgBsxriir9o5n" data-id="IFAcgBsxriir9o5n" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Разбиваете Лагерь</a></strong>, вы можете тратить Милость вместо <a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-gear.Item.CDnPMKvFLdWlRFxb" data-id="CDnPMKvFLdWlRFxb" data-type="Item" data-pack="world.equipment-gear" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Припасов</a>.</p></blockquote><p>&nbsp;</p><blockquote><h3 data-anchor="fanatik"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.SGkTLFTqLBNbGK2N" data-id="SGkTLFTqLBNbGK2N" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Фанатик</a></strong></h3><p>Нет ничего важнее вашей миссии и вашей веры. От вас зависит всё. Вы не имеет права провалиться.</p><p><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.4Y0Z7BKrNNfSHNYm" data-id="4Y0Z7BKrNNfSHNYm" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Приобщаясь</a> со своим божеством</strong>, всегда считайте 6- как 7-9.</p><p><strong>Если у вас нет Милости своего божества</strong>, вы можете отметить Травму или потерять 2к4 ОЗ чтобы получить 1 Милость.</p></blockquote><p>&nbsp;</p><h1 data-anchor="osnova-klassa-personazha">Основа класса персонажа</h1><h2 data-anchor="vy-nachinaete-igru-so-sleduyushimi-hodami:">Вы начинаете игру со следующими ходами:</h2><p></p><h3 data-anchor="poslushnik"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.bcXAC52rs9KTk8FG" data-id="bcXAC52rs9KTk8FG" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Послушник</a></strong></h3><p>Вы — сосуд для божественной воли. <strong>Милость</strong> олицетворяет собой ваше текущее положение перед вашим божеством. Максимальная Милость равна вашей Мудрости или Харизме, смотря что выше.</p><p><strong>Когда у вас есть Милость</strong>, Домены вашего божества реагируют на ваше присутствие (показывается солнце, цветы распускаются, знать кланяется, демон шипит и т. п.) или как-то внешне проявляются на вас (пробегающая дымка вокруг рук, светящиеся глаза, мерцающие символы на коже и т. п.).</p><p></p><h3 data-anchor="vozzvatь"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.GlbCCLYmcddHLOqk" data-id="GlbCCLYmcddHLOqk" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Воззвать</a></strong></h3><p><strong>Когда вы просите у своего божества помощь в час нужды</strong>, выберите эффект:</p><ul><li><p>Выпустить Домен вашего божества чтобы навредить или помешать врагу неподалёку.</p></li><li><p>Контролировать Домен вашего божества себе в помощь.</p></li><li><p>Командовать Почитателями вашего божества.</p></li></ul><p>…и бросьте +Милость.</p><p><strong>На 10+</strong> эффект происходит.</p><p><strong>На 7-9</strong> эффект происходит, но выберите одно:</p><ul><li><p>Эффект ослаблен или мимолётен</p></li><li><p>Вы привлекаете к себе нежелательное внимание или оказываетесь в сложном положении</p></li><li><p>Ваше тело страдает от проводимой мощи — отметьте Травму</p></li><li><p>Вы отдаляетесь от сферы влияния своего божества, потеряйте 1 Милости</p></li></ul><p></p><h3 data-anchor="priobshenie"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.4Y0Z7BKrNNfSHNYm" data-id="4Y0Z7BKrNNfSHNYm" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Приобщение</a></strong></h3><p><strong>Проводя хотя бы несколько минут почитая ваше божество подходящим для вашей веры способом (молитвой, медитацией и т. п.),</strong> бросьте +МДР или +ХАР. Делая это в месте священном для вашей веры, бросайте с преимуществом.</p><p><strong>На 10+</strong> выберите 2.</p><p><strong>На 7-9</strong> выберите 1:</p><ul><li><p>Получите 1 Милости (можно выбирать дважды)</p></li><li><p>Вы получаете какое-то знание в рамках сферы влияния вашего божества.</p></li><li><p>Вы получаете временный дар в рамках сферы влияния вашего божества.</p></li></ul><p></p><h3 data-anchor="bozhestvo:-____________"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.IbmpwyXRPBoPapXC" data-id="IbmpwyXRPBoPapXC" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божество: ____________</a></strong></h3><p>Вы служите и поклоняетесь божеству, которое дарует вам силы. <strong>Выберите</strong> себе уже существующее божество <strong>или создайте</strong> своё (обсудите это с Ведущим): <strong>дайте ему/ей имя</strong> и <strong>выберите сферы</strong> влияния божества заполняя пустые места:</p><p><strong>Смертные знают его как…</strong> ___________________ (Бледная Королева, Сакеллус Отец Моря, Зорика, Великая Тень и т. п.)</p><p><strong>Его первый Домен … </strong>(солнце, моря, небеса) ________________</p><p><strong>Его второй Домен это…</strong> (любовь, смерть, война, ветер) ________________</p><p><strong>Его Почитают…</strong> (дворяне, дварфы, маги) ________________</p><p><strong>Его Врагами являются…</strong> (демоны, нежить, орки, предатели) ________________</p><p>Для вдохновения вы можете посмотреть эту <a class="content-link" draggable="true" data-uuid="Compendium.world.klassy.JournalEntry.svTSCAdjrQPP1xCn.JournalEntryPage.SBZaDcFDdbXi2Q7e" data-id="SBZaDcFDdbXi2Q7e" data-type="JournalEntryPage" data-pack="world.klassy" data-tooltip="Текст (Страница)"><i class="fas fa-file-lines"></i>страницу</a>.</p><p></p><p style="text-align:center"><em>СВЯТОЙ СИГМАР, БЛАГОСЛОВИ ЭТО ИЗУРОДОВАННОЕ ТЕЛО</em></p><p style="text-align:center"><em>—&nbsp;Виктор Зальцпайр, Охотник на ведьм</em></p><p>&nbsp;</p><h3 data-anchor="bozhestvennaya-ceremoniya"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.wQJGVhkHTRWOqyYD" data-id="wQJGVhkHTRWOqyYD" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественная церемония</a></strong></h3><p><strong>Подготавливая церемонию чтобы попросить о чём-то своё божество</strong>,&nbsp;скажите Ведущему, какого результата вы хотите получить. Этот результат достижим всегда, но Ведущий может поставить перед вами от одного до четырех условий из списка:</p><ul><li style="box-sizing:border-box;user-select:text">Церемония займёт несколько дней/недель/месяцев</li><li style="box-sizing:border-box;user-select:text">Чтобы начать церемонию, вам понадобится ______________</li><li>Вы должны проводить церемонию в Священном месте (Например ______)</li><li style="box-sizing:border-box;user-select:text">Чтобы закончить церемонию вам понадобится нужна помощь ___________</li><li style="box-sizing:border-box;user-select:text">Враги богов попытаются вмешаться и результат будет либо ограничен, либо каким-то образом искажён/проклят.</li><li style="box-sizing:border-box;user-select:text">Церемония подвергнет риску вас и ваших союзников из-за _____________</li><li style="box-sizing:border-box;user-select:text">Вам нужно пожертвовать или потратить&nbsp; ____________, чтобы сделать это.</li></ul><p>&nbsp;</p><h2 data-anchor="snaryazhenie">Снаряжение</h2><p><span style="font-family:Arial, sans-serif">Ваша <a class="content-link" draggable="true" data-uuid="Compendium.world.prochie-hody.Item.gi2k50hOxPuXcqau" data-id="gi2k50hOxPuXcqau" data-type="Item" data-pack="world.prochie-hody" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>нагрузка</a> равна <strong>9. </strong>Каждый предмет, включая <a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-gear.Item.a7VgXUQQ3pERhyPy" data-id="a7VgXUQQ3pERhyPy" data-type="Item" data-pack="world.equipment-gear" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Неопределённые</a>, исключая маленькие, добавляет свой вес к общей нагрузке.</span></p><ul><li><p><span style="font-family:Arial, sans-serif"><strong>1-3 </strong>веса это лёгкая нагрузка (вы <em>быстры</em> и <em>тихи</em>)</span></p></li><li><p><span style="font-family:Arial, sans-serif"><strong>4-6 </strong>нормальная нагрузка</span></p></li><li><p><span style="font-family:Arial, sans-serif"><strong>7-9 </strong>тяжёлая (вы <em>медленны</em>, <em>шумны, вам жарко</em> и <em>быстро устаёте</em>)</span></p></li></ul><p><strong>Вы начинаете игру с:</strong></p><ul><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-gear.Item.CDnPMKvFLdWlRFxb" data-id="CDnPMKvFLdWlRFxb" data-type="Item" data-pack="world.equipment-gear" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Припасами</a> (3 исп., вес 1)</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-class.Item.Iy4Iw8nsJXNIz8bG" data-id="Iy4Iw8nsJXNIz8bG" data-type="Item" data-pack="world.equipment-class" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Символом божества</a> — опишите его! (мал. предмет).</li></ul><p><strong>Выберите два:</strong></p><ul><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-weapons.Item.xu45M9oglN3VEWHC" data-id="xu45M9oglN3VEWHC" data-type="Item" data-pack="world.equipment-weapons" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Посох</a> (взмах меча, двуручное, вес 1)</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-weapons.Item.LmjG7mONJ7GIBHIc" data-id="LmjG7mONJ7GIBHIc" data-type="Item" data-pack="world.equipment-weapons" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Булава</a> (взмах меча, вес 1)</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-weapons.Item.nXkNa8uRNB2wKFPG" data-id="nXkNa8uRNB2wKFPG" data-type="Item" data-pack="world.equipment-weapons" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Клевец</a> (взмах меча, вес 1)</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-class.Item.JriPIy1vb3tpFANa" data-id="JriPIy1vb3tpFANa" data-type="Item" data-pack="world.equipment-class" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Освящённая лёгкая броня</a> (броня 1, вес 1)</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.equipment-gear.Item.CDnPMKvFLdWlRFxb" data-id="CDnPMKvFLdWlRFxb" data-type="Item" data-pack="world.equipment-gear" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Припасы</a> (3 исп., вес 1)</li><li><a class="content-link" draggable="true" data-uuid="Compendium.world.snaryazhenie--zelya.Item.VYEkUIR0riLt8xU8" data-id="VYEkUIR0riLt8xU8" data-type="Item" data-pack="world.snaryazhenie--zelya" data-tooltip="Equipment (Предмет)"><i class="fas fa-suitcase"></i>Зелье исцеления</a><span style="font-family:Roboto, Arial, 'Helvetica Neue', sans-serif"> (мал. предмет)</span>.</li></ul><p>&nbsp;</p><p></p><h1 data-anchor="slozhnye-hody"><strong>Сложные ходы</strong></h1><h3 data-anchor="srazu-vyberite-odin-iz-hodov-nizhe:">Сразу выберите один из ходов ниже:</h3><p></p><h3 data-anchor="bozhestvennaya-zashita"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.IDAfXHF5zE0gaw4O" data-id="IDAfXHF5zE0gaw4O" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественная защита</a></strong></h3><p><strong>Касаясь кого-то и моля своё божество о защите</strong>, бросьте +Милость.</p><p><strong>На 10+</strong> выберите два варианта и примените их на себя или союзника.</p><p><strong>На 7-9</strong> выберите одно и ещё одно из списка 7-9 хода <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.GlbCCLYmcddHLOqk" data-id="GlbCCLYmcddHLOqk" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Воззвать</a>.</p><ul><li><p>Цель восстанавливает к8 ОЗ</p></li><li><p>Следующий бросок урона против цели получает помеху.</p></li><li><p>Цель получает 1 Благословения (макс. 1) которое может потратить чтобы получить преимущество на бросок.</p></li><li><p>Цель исцеляется от слабого негативного состояния (пьяный и т. п.) или обычной болезни в лёгкой стадии (простуда, чесотка и т. п.)</p></li></ul><p></p><h3 data-anchor="zaklejmitь-eresь"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.Rc2yGEf1GUjkJEbt" data-id="Rc2yGEf1GUjkJEbt" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Заклеймить ересь</a></strong></h3><p><strong>Когда кто-то совершает значительное святотатство против вашей веры и вы объявляете о их преступлениях им и другим</strong>, заклеймённые вами и те, кто исполнят подобное деяние, теперь считаются Врагами вашего Божества. Это будет длиться до тех пор, пока они не искупят грехи таки образом, который подходит для природы и тяжести их святотатства.</p><p></p><h3 data-anchor="piligrim"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.CpVUAwMwxlEK9Vpd" data-id="CpVUAwMwxlEK9Vpd" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Пилигрим</a></strong></h3><p>Ваша вера ведёт вас. Вы это она, а она это вы. <strong><a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.VSXqSaGwsAPTBROO" data-id="VSXqSaGwsAPTBROO" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Спасаясь от угрозы</a> из-за чего-то, связанного с одним из Доменов вашего Божества</strong>, бросайте с преимуществом.</p><p></p><h3 data-anchor="otpovedь"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.cwdTQ0NNSYZ1mlv6" data-id="cwdTQ0NNSYZ1mlv6" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Отповедь</a></strong></h3><p><strong>Демонстрируя свой священный символ чтобы отогнать сверхъестественных Врагов своего божества</strong>, бросьте +Милость.</p><p><strong>На 7+</strong> покуда вы демонстрируете свой символ, они будут держаться на расстоянии.</p><p><strong>На 10+</strong> слабые и жалкие существа бегут прочь в ужасе, а сильные ошеломляются на несколько мгновений.</p><p></p><h3 data-anchor="pepel-k-peplu"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.UNF7sVRSTea1OnYy" data-id="UNF7sVRSTea1OnYy" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Пепел к пеплу</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.cwdTQ0NNSYZ1mlv6" data-id="cwdTQ0NNSYZ1mlv6" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Отповедь</a></em></p><p><strong>Когда вы <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.cwdTQ0NNSYZ1mlv6" data-id="cwdTQ0NNSYZ1mlv6" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Отповедуете</a></strong>, на 7+ все задетые существа также получают 2к4 игнорирующего броню урона. Бросайте урон отдельно для каждого задетого существа.</p><p>Существа убитые таким образом либо изгоняются из этого мира, либо возвращаются к тому, что их удерживает их здесь.</p><p></p><h3 data-anchor="bezmyatezhnostь"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.m1EcC4lhqBEtgxYF" data-id="m1EcC4lhqBEtgxYF" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Безмятежность</a></strong></h3><p><strong>Пока у вас нет Милости вашего божества</strong>, любой наносимый вам урон получает помеху.</p><p></p><h3 data-anchor="shit-very"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.E75Z6poONp23OGVz" data-id="E75Z6poONp23OGVz" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Щит веры</a></strong></h3><p><strong>Покуда у вас есть Милость и вы не носите броню</strong>, получите +1 брони.</p><p>К тому же, если <strong>вы также не носите никакого оружия кроме своей веры, </strong>получите ещё +1 брони.</p><p></p><h3 data-anchor="relikviya"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.slHx4IThJ9M6P4PE" data-id="slHx4IThJ9M6P4PE" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Реликвия</a></strong></h3><p><strong>Когда вы должны потратить Милость</strong>, вместо этого вы можете решить принести в жертву свой священный символ, уничтожая его в процессе. Вам придётся потратить время и ресурсы чтобы получить новый, Ведущий скажет каким образом.</p><p></p><h3 data-anchor="bozhestvennoe-vmeshatelьstvo"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.aH937o5DXG7yAlBN" data-id="aH937o5DXG7yAlBN" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественное вмешательство</a></strong></h3><p><strong>Когда вы или ваш союзник неподалёку получаете урон</strong>, вы можете потратить 1 Милости чтобы ополовинить урон (округляя вниз) с помощью вмешательства вашего божества.</p><p></p><h3 data-anchor="zashita-ot-smerti"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.kLqCG4r2YSiP9UcZ" data-id="kLqCG4r2YSiP9UcZ" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Защита от смерти</a></strong></h3><p><strong>Делая <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.Axs3Kh7n6VbmO4Ev" data-id="Axs3Kh7n6VbmO4Ev" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Последний вздох</a>,</strong> бросайте +Милость вместо +ничего.</p><p><strong>Когда ваш союзник</strong> <strong>неподалёку делает <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.Axs3Kh7n6VbmO4Ev" data-id="Axs3Kh7n6VbmO4Ev" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Последний вздох</a> и</strong> <strong>вы</strong> <strong>просите божество вмешаться</strong>, он получает преимущество на бросок.</p><p>Союзник также получает преимущество на Последний вздох и ему необязательно находиться неподалёку от вас если вы как-то отметили его или дали ему оберег, связанный с вашим божеством (амулет с символом божества, раскраску на лице, молитвенник и т. п.). Единовременно вы можете иметь столько таких отметин или оберегов, сколько у вас МДР.</p><p></p><h3 data-anchor="duhovnaya-pisha"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.nFc6SXNjG02wLf1W" data-id="nFc6SXNjG02wLf1W" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Духовная пища</a></strong></h3><p><strong>Разговаривая с кем-то по душам</strong>, вы можете <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.zqcVmuzrfua8v6Hy" data-id="zqcVmuzrfua8v6Hy" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Договариваться</a> с ним с преимуществом. Если это Последователь, вы можете решить вместо этого <a class="content-link" draggable="true" data-uuid="Compendium.world.prochie-hody.Item.T5X3zbY7jfy9VsE7" data-id="T5X3zbY7jfy9VsE7" data-type="Item" data-pack="world.prochie-hody" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Укрепить узы</a> (как если бы вы оплатили его Цену).</p><p></p><h3 data-anchor="vesti-pastvu"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.QlDKHqfX8MgJEcVI" data-id="QlDKHqfX8MgJEcVI" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Вести паству</a></strong></h3><p><strong>Проповедуя толпе или группе, </strong>покуда вы продолжаете проповедовать, всё внимание будет приковано к вам, и, если вам придётся <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.zqcVmuzrfua8v6Hy" data-id="zqcVmuzrfua8v6Hy" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Договариваться</a> с толпой, вы можете бросать +МДР вместо +ХАР.</p><p><strong>Кроме того, когда вы <a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.zqcVmuzrfua8v6Hy" data-id="zqcVmuzrfua8v6Hy" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Договариваетесь</a> с толпой на тему вашей веры</strong>, на 7+, кроме обычного результата, выберите одно:</p><ul><li><p>Ваше имя и ваше послание распространяется</p></li><li><p>Кто-то подходит к вам, желая узнать больше.</p><p>&nbsp;</p></li></ul><h3 data-anchor="obrashenie"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.KhRAJ2JDhpPGqMO5" data-id="KhRAJ2JDhpPGqMO5" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Обращение</a></strong></h3><p><strong>Когда кто-то желает присоединиться к вашей вере и вы приветствуете его обрядом инициации и проповедью, </strong>бросьте+МДР<strong>.</strong></p><p><strong>На 10+ </strong>ваше Божество приветствует его и он становится Почитателем.</p><p><strong>На 7+</strong> он достоин, но он совершил небольшой грех который нужно искупить прежде чем ваше Божество примет его.</p><p><strong>Принимая неверующего в свою веру</strong>, если вы не делали этого недавно, получите 1 опыта или выберите 1 вариант из списка хода <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.4Y0Z7BKrNNfSHNYm" data-id="4Y0Z7BKrNNfSHNYm" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Приобщиться</a>.</p><p></p><p></p><h2 data-anchor="poluchaya-urovni-6-10,-vy-mozhete-vybiratь-i-eti-hody-tozhe:">Получая уровни 6-10, вы можете выбирать и эти ходы тоже:</h2><p></p><h3 data-anchor="apofeoz"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.I4mTSr6bJTErTCPs" data-id="I4mTSr6bJTErTCPs" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Апофеоз</a></strong></h3><p><strong>Проводя время в церемониальной молитве</strong> после того как вы взяли этот ход, выберите особенность ассоциируемую с вашим божеством (острые когти, крылья из сапфировых перьев, всевидящий третий глаз и т. п. из того что имеет смысл. Пообщайтесь с Ведущим на эту тему).</p><p><strong>Окончив эту молитву</strong>, вы навсегда обретаете эту особенность.</p><p></p><h3 data-anchor="ochishenie"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.2U2ImN7paz5wTZfV" data-id="2U2ImN7paz5wTZfV" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Очищение</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.IDAfXHF5zE0gaw4O" data-id="IDAfXHF5zE0gaw4O" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественная защита</a></em></p><p><strong>Добавьте</strong> эти варианты в список <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.IDAfXHF5zE0gaw4O" data-id="IDAfXHF5zE0gaw4O" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественной защиты</a>:</p><ul><li><p>Цель исцеляется от обычного яда. Действие мощных или сверхъестественных ядов как минимум замедляется.</p></li><li>Вы можете частично исцелять сильные болезни или болезни в поздних стадиях, но они потребуют традиционных методов лечения для полного избавления. Течение сверхъестественных болезней как минимум замедляется.</li><li><p>Одна из Проблемных ран стабилизируется, хотя бы на время</p></li><li><p>Вы изгоняете зловредное влияние на разум или душу цели. Особо мощное влияние лишь временно подавляется и может потребовать проведения <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.wQJGVhkHTRWOqyYD" data-id="wQJGVhkHTRWOqyYD" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественной церемонии</a> для полного избавления.</p></li></ul><p></p><h3 data-anchor="prah-k-prahu"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.MQ21ofKUwjUq3iT7" data-id="MQ21ofKUwjUq3iT7" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Прах к праху</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.UNF7sVRSTea1OnYy" data-id="UNF7sVRSTea1OnYy" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Пепел к пеплу</a></em></p><p>Урон увеличивается до 2к8 и существа убитые этим уроном либо полностью уничтожаются, либо изгоняются из этого мира и любая связь удерживающая их в этом мире также уничтожается (на выбор Ведущего).</p><p></p><h3 data-anchor="anafema"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.1pBVK8gxIEZD0bC7" data-id="1pBVK8gxIEZD0bC7" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Анафема</a></strong></h3><p><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.basic-moves-v2.Item.IpwyWNBmD0IeAHSa" data-id="IpwyWNBmD0IeAHSa" data-type="Item" data-pack="world.basic-moves-v2" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Рубя и кромсая</a> Врагов вашего божества</strong>, вы можете бросать +Милость вместо +Силы и ваш урон против них становится к10, <em>игнорируя броню</em>.</p><p>&nbsp;</p><h3 data-anchor="chudotvorec"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.vPlgUUSvsxHXb9mA" data-id="vPlgUUSvsxHXb9mA" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Чудотворец</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.IDAfXHF5zE0gaw4O" data-id="IDAfXHF5zE0gaw4O" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественная защита</a></em></p><p><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.GlbCCLYmcddHLOqk" data-id="GlbCCLYmcddHLOqk" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Взывая</a> или моля о <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.IDAfXHF5zE0gaw4O" data-id="IDAfXHF5zE0gaw4O" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественной защите</a></strong>, на 12+ мощь вашего божества проходит через вас, усиливая эффект чудесным образом, Ведущий скажет каким.</p><p></p><h3 data-anchor="molitvennyj-krug"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.hNvlbqCFEDYZOQZj" data-id="hNvlbqCFEDYZOQZj" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Молитвенный круг</a></strong></h3><p><em>Требуется: <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.IDAfXHF5zE0gaw4O" data-id="IDAfXHF5zE0gaw4O" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественная защита</a></em></p><p><strong>Моля о <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.IDAfXHF5zE0gaw4O" data-id="IDAfXHF5zE0gaw4O" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Божественной защите</a></strong>, вы можете решить применить её эффекты на любых союзников в радиусе <em>близко</em>, вместе с вашей основной целью.</p><p></p><h3 data-anchor="zhnec"><strong><a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.1XwdGddVPtL96L9U" data-id="1XwdGddVPtL96L9U" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Жнец</a></strong></h3><p><strong>Проводя время после конфликта посвящая победу вашему божеству и разбираясь с павшими</strong>, получите либо преимущество на следующий ход либо один вариант из списка <a class="content-link" draggable="true" data-uuid="Compendium.world.hody-zhreca.Item.4Y0Z7BKrNNfSHNYm" data-id="4Y0Z7BKrNNfSHNYm" data-type="Item" data-pack="world.hody-zhreca" data-tooltip="Move (Предмет)"><i class="fas fa-suitcase"></i>Приобщения</a>.</p><p></p><p></p>
+<h1><strong>Сложные ходы</strong></h1>
+<h3>Сразу выбери один из ходов ниже:</h3>
 
-<header class="journal-page-header">
+<h3><strong><em>Божественная защита</em></strong></h3>
+<p><strong>Касаясь кого-то и моля своё божество о защите</strong>, бросьте +Милость.</p>
+<p><strong>На 10+</strong> выбери два варианта и примените их на себя или союзника.</p>
+<p><strong>На 7–9</strong> выбери одно и ещё одно из списка 7–9 хода <em>Воззвать</em>.</p>
+<ul>
+    <li>
+        <p>Цель восстанавливает к8 ОЗ</p>
+    </li>
+    <li>
+        <p>Следующий бросок урона против цели получает помеху.</p>
+    </li>
+    <li>
+        <p>Цель получает 1 Благословения (макс. 1) которое может потратить чтобы получить преимущество на бросок.</p>
+    </li>
+    <li>
+        <p>Цель исцеляется от слабого негативного состояния (пьяный и т. п.) или обычной болезни в лёгкой стадии
+            (простуда, чесотка и т. п).</p>
+    </li>
+</ul>
+
+<h3><strong><em>Заклеймить ересь</em></strong></h3>
+<p><strong>Когда кто-то совершает значительное святотатство против твоей веры и ты объявляете о их преступлениях им и
+    другим</strong>, заклеймённые тобой и те, кто исполнят подобное деяние, теперь считаются Врагами твоего Божества. Это
+    будет длиться до тех пор, пока они не искупят грехи таки образом, который подходит для природы и тяжести их
+    святотатства.</p>
+
+<h3><strong><em>Пилигрим</em></strong></h3>
+<p>Твойа вера ведёт тебя. ты это она, а она это ты. <strong>
+    <DwMoveLink id='common.defy_danger'>Спасаясь от угрозы</DwMoveLink>
+    из-за чего-то, связанного с одним
+    из Доменов твоего Божества</strong>, бросайте с преимуществом.
+</p>
+
+<h3><strong><em>Отповедь</em></strong></h3>
+<p><strong>Демонстрируя свой священный символ чтобы отогнать сверхъестественных Врагов своего божества</strong>, бросьте
+    +Милость.</p>
+<p><strong>На 7+</strong> покуда ты демонстрируете свой символ, они будут держаться на расстоянии.</p>
+<p><strong>На 10+</strong> слабые и жалкие существа бегут прочь в ужасе, а сильные ошеломляются на несколько мгновений.
+</p>
+
+<h3><strong><em>Пепел к пеплу</em></strong></h3>
+<p><em>Требуется: <em>Отповедь</em></em></p>
+<p><strong>Когда ты <em>Отповедуете</em></strong>, на 7+ все задетые существа также получают 2к4 игнорирующего броню
+    урона. Бросайте урон отдельно для каждого задетого существа.</p>
+<p>Существа убитые таким образом либо изгоняются из этого мира, либо возвращаются к тому, что их удерживает их
+    здесь.</p>
+
+<h3><strong><em>Безмятежность</em></strong></h3>
+<p><strong>Пока у тебя нет Милости твоего божества</strong>, любой наносимый тебе урон получает помеху.</p>
+
+<h3><strong><em>Щит веры</em></strong></h3>
+<p><strong>Покуда у тебя есть Милость и ты не носишь броню</strong>, получите +1 брони.</p>
+<p>К тому же, если <strong>ты также не носите никакого оружия кроме своей веры</strong>, получите ещё +1 брони.</p>
+
+<h3><strong><em>Реликвия</em></strong></h3>
+<p><strong>Когда ты должны потратить Милость</strong>, вместо этого ты можешь решить принести в жертву свой священный
+    символ, уничтожая его в процессе. Вам придётся потратить время и ресурсы чтобы получить новый, Ведущий скажет каким
+    образом.</p>
+
+<h3><strong><em>Божественное вмешательство</em></strong></h3>
+<p><strong>Когда ты или твой союзник неподалёку получаешь урон</strong>, ты можешь потратить 1 Милости чтобы ополовинить
+    урон (округляя вниз) с помощью вмешательства твоего божества.</p>
+
+<h3><strong><em>Защита от смерти</em></strong></h3>
+<p><strong>Делая <em>Последний вздох</em>,</strong> бросайте +Милость вместо +ничего.</p>
+<p><strong>Когда твой союзник</strong> <strong>неподалёку делает <em>Последний вздох</em> и</strong> <strong>ты</strong>
+    <strong>просите божество вмешаться</strong>, он получает преимущество на бросок.</p>
+<p>Союзник также получает преимущество на Последний вздох и ему необязательно находиться неподалёку от тебя если ты
+    как-то отметили его или дали ему оберег, связанный с твоим божеством (амулет с символом божества, раскраску на лице,
+    молитвенник и т. п.). Единовременно ты можешь иметь столько таких отметин или оберегов, сколько у тебя МДР.</p>
+
+<h3><strong><em>Духовная пища</em></strong></h3>
+<p><strong>Разговаривая с кем-то по душам</strong>, ты можешь <em>Договариваться</em> с ним с преимуществом. Если это
+    Последователь, ты можешь решить вместо этого <em>Укрепить узы</em> (как если бы ты оплатили его Цену).</p>
+
+<h3><strong><em>Вести паству</em></strong></h3>
+<p><strong>Проповедуя толпе или группе</strong>, покуда ты продолжаете проповедовать, всё внимание будет приковано к
+    тебе, и, если тебе придётся <em>Договариваться</em> с толпой, ты можешь бросать +МДР вместо +ХАР.</p>
+<p><strong>Кроме того, когда ты <em>Договариваетесь</em> с толпой на тему твоей веры</strong>, на 7+, кроме обычного
+    результата, выбери одно:</p>
+<ul>
+    <li>
+        <p>Твойе имя и твоё послание распространяется</p>
+    </li>
+    <li>
+        <p>Кто-то подходит к тебе, желая узнать больше.</p>
+
+    </li>
+</ul>
+<h3><strong><em>Обращение</em></strong></h3>
+<p><strong>Когда кто-то желает присоединиться к твоей вере и ты приветствуете его обрядом инициации и
+    проповедью</strong>, бросьте +МДР<strong>.</strong></p>
+<p><strong>На 10+ </strong>твоё Божество приветствует его и он становится Почитателем.</p>
+<p><strong>На 7+</strong> он достоин, но он совершил небольшой грех который нужно искупить прежде чем твоё Божество
+    примет его.</p>
+<p><strong>Принимая неверующего в свою веру</strong>, если ты не делали этого недавно, получите 1 опыта или выбери 1
+    вариант из списка хода <em>Приобщиться</em>.</p>
+
+
+<h2>Получая уровни 6−10, ты можешь выбирать и эти ходы тоже:</h2>
+
+<h3><strong><em>Апофеоз</em></strong></h3>
+<p><strong>Проводя время в церемониальной молитве</strong> после того как ты взяли этот ход, выбери особенность
+    ассоциируемую с твоим божеством (острые когти, крылья из сапфировых перьев, всевидящий третий глаз и т. п. из того
+    что имеет смысл. Пообщайтесь с Ведущим на эту тему).</p>
+<p><strong>Окончив эту молитву</strong>, ты навсегда обретаете эту особенность.</p>
+
+<h3><strong><em>Очищение</em></strong></h3>
+<p><em>Требуется: <em>Божественная защита</em></em></p>
+<p><strong>Добавьте</strong> эти варианты в список <em>Божественной защиты</em>:</p>
+<ul>
+    <li>
+        <p>Цель исцеляется от обычного яда. Действие мощных или сверхъестественных ядов как минимум замедляется.</p>
+    </li>
+    <li>Ты можешь частично исцелять сильные болезни или болезни в поздних стадиях, но они потребуют традиционных методов
+        лечения для полного избавления. Течение сверхъестественных болезней как минимум замедляется.
+    </li>
+    <li>
+        <p>Одна из Проблемных ран стабилизируется, хотя бы на время</p>
+    </li>
+    <li>
+        <p>Ты изгоняете зловредное влияние на разум или душу цели. Особо мощное влияние лишь временно подавляется и
+            может потребовать проведения <em>Божественной церемонии</em> для полного избавления.</p>
+    </li>
+</ul>
+
+<h3><strong><em>Прах к праху</em></strong></h3>
+<p><em>Требуется: <em>Пепел к пеплу</em></em></p>
+<p>Урон увеличивается до 2к8 и существа убитые этим уроном либо полностью уничтожаются, либо изгоняются из этого мира и
+    любая связь удерживающая их в этом мире также уничтожается (на выбор Ведущего).</p>
+
+<h3><strong><em>Анафема</em></strong></h3>
+<p><strong><em>Рубя и кромсая</em> Врагов твоего божества</strong>, ты можешь бросать +Милость вместо +Силы и твой урон
+    против них становится к10, <em>игнорируя броню</em>.</p>
+
+<h3><strong><em>Чудотворец</em></strong></h3>
+<p><em>Требуется: <em>Божественная защита</em></em></p>
+<p><strong><em>Взывая</em> или моля о <em>Божественной защите</em></strong>, на 12+ мощь твоего божества проходит через
+    тебя, усиливая эффект чудесным образом, Ведущий скажет каким.</p>
+
+<h3><strong><em>Молитвенный круг</em></strong></h3>
+<p><em>Требуется: <em>Божественная защита</em></em></p>
+<p><strong>Моля о <em>Божественной защите</em></strong>, ты можешь решить применить её эффекты на любых союзников в
+    радиусе <em>Близко</em>, вместе с твоей основной целью.</p>
+
+<h3><strong><em>Жнец</em></strong></h3>
+<p><strong>Проводя время после конфликта посвящая победу твоему божеству и разбираясь с павшими</strong>, получите либо
+    преимущество на следующий ход либо один вариант из списка <em>Приобщения</em>.</p>
+
+
+<header>
     <h1>Божество</h1>
 </header>
-<section class="journal-page-content">
-    <p><strong>Домены</strong> это сферы влияния божества — то, что ему важно и над чем оно имеет власть. Это абстрактные концепты, вроде «Войны» или какая-то часть мира, например «Земля». К примеру, «Жизнь» и «Разложение» уже даёт представление о том что это за божество. Жрец можете повелевать Доменами и призывать себе их на помощь когда потребуется.</p><p><strong>Почитатели </strong>это те, кто, в целом уважает это божество и его жрецов. Это может быть социальная группа, к пример «нищие и обделённые», раса «гоблиноиды» или даже вид занятий «ремесленники». Жрецы могут повелевать ими пользуясь статусом проводника силы своего бога, к примеру требуя помощь или приказывая что-то сделать.</p><p><strong>Враги</strong> это те, кто ваше Божество хотело бы видеть в идеале в гробу или вообще не на этом свете. Это такая же группа как и Почитатели, но жрец будет их убивать и отгонять, а не повелевать ими.</p><hr><p></p><p>Варианты ниже служат помощью для воображения при создании своего Божества и не являются строгой инструкцией.</p><p></p><p><strong>Поклонение вашему Божеству</strong>…</p><p>…древнее, распространено и широко известно</p><p>…распространено в других местах</p><p>…появилось недавно и многие о нём не слышали</p><p>…старая вера, забытая многими</p><p>…широко преследуемо</p><p></p><p><strong>Вашему Божеству поклоняются с помощью</strong>… (выберите одно или два)</p><p>…торжественных гимнов</p><p>…безмятежной медитации</p><p>…аскетичного отречения</p><p>…пылких танцев</p><p>…официальных церемоний</p><p>…наркотиков и дурманов</p><p>…боли и жертвоприношений</p><p></p><p><strong>В вашем родном городе, святилище вашего Божества…</strong></p><p>…это самое уважаемое место, даже более известных или местных Божеств</p><p>…недавно было восстановлено/создано, возможно вами</p><p>…видало лучшие деньки, это уж точно</p><p>…скрыто от чужих глаз</p><p></p><p><strong>Известная личность из вашей веры, возможно ваш кумир или тот, на кого вы равняетесь…</strong> (выберите два или три)</p><p>…жил давным давно, став легендой</p><p>…был мучеником из-за своей веры</p><p>…умер в стычке с врагами Божества или других сил</p><p>…написал множество религиозных текстов</p><p>…столкнулся с одним из Тех Кто Живёт Внизу</p><p>…мирно умер в своей кровати</p><p>…вознёсся к Божеству за свою верную службу</p><p>…был перерождён — в виде вас</p><p></p><p><strong>Вы получили свои силы…</strong></p><p>…после многих лет учения и приверженности</p><p>…когда ваш предшественник передал их вам</p><p>…неожиданно, в момент большой нужды</p><p>…после видения от вашего Божества или визита его посланника</p><p>…когда вы первый раз увидели ______________</p><p></p><p></p><p></p><p></p>
-</section>
+<section>
+    <p><strong>Домены</strong> это сферы влияния божества&nbsp;— то, что ему важно и над чем оно имеет власть. Это
+        абстрактные концепты, вроде «Войны» или какая-то часть мира, например «Земля». К примеру, «Жизнь» и «Разложение»
+        уже даёт представление о том что это за божество. Жрец можете повелевать Доменами и призывать себе их на помощь
+        когда потребуется.</p>
+    <p><strong>Почитатели </strong>это те, кто, в целом уважает это божество и его жрецов. Это может быть социальная
+        группа, к пример «нищие и обделённые», раса «гоблиноиды» или даже вид занятий «ремесленники». Жрецы могут
+        повелевать ими пользуясь статусом проводника силы своего бога, к примеру требуя помощь или приказывая что-то
+        сделать.</p>
+    <p><strong>Враги</strong> это те, кто твоё Божество хотело бы видеть в идеале в гробу или вообще не на этом свете.
+        Это такая же группа как и Почитатели, но жрец будет их убивать и отгонять, а не повелевать ими.</p>
+    <hr>
 
+    <p>Варианты ниже служат помощью для воображения при создании своего Божества и не являются строгой инструкцией.</p>
+
+    <p><strong>Поклонение твоему Божеству</strong>…</p>
+    <p>…древнее, распространено и широко известно</p>
+    <p>…распространено в других местах</p>
+    <p>…появилось недавно и многие о нём не слышали</p>
+    <p>…старая вера, забытая многими</p>
+    <p>…широко преследуемо</p>
+
+    <p><strong>твойему Божеству поклоняются с помощью</strong>… (выбери одно или два)</p>
+    <p>…торжественных гимнов</p>
+    <p>…безмятежной медитации</p>
+    <p>…аскетичного отречения</p>
+    <p>…пылких танцев</p>
+    <p>…официальных церемоний</p>
+    <p>…наркотиков и дурманов</p>
+    <p>…боли и жертвоприношений</p>
+
+    <p><strong>В твоём родном городе, святилище твоего Божества…</strong></p>
+    <p>…это самое уважаемое место, даже более известных или местных Божеств</p>
+    <p>…недавно было восстановлено/создано, возможнотобой</p>
+    <p>…видало лучшие деньки, это уж точно</p>
+    <p>…скрыто от чужих глаз</p>
+
+    <p><strong>Известная личность из твоей веры, возможно твой кумир или тот, на кого ты равняетесь…</strong> (выбери
+        два или три)</p>
+    <p>…жил давным давно, став легендой</p>
+    <p>…был мучеником из-за своей веры</p>
+    <p>…умер в стычке с врагами Божества или других сил</p>
+    <p>…написал множество религиозных текстов</p>
+    <p>…столкнулся с одним из Тех Кто Живёт Внизу</p>
+    <p>…мирно умер в своей кровати</p>
+    <p>…вознёсся к Божеству за свою верную службу</p>
+    <p>…был перерождён&nbsp;— в виде тебя</p>
+
+    <p><strong>Ты получили свои силы…</strong></p>
+    <p>…после многих лет учения и приверженности</p>
+    <p>…когда твой предшественник передал их тебе</p>
+    <p>…неожиданно, в момент большой нужды</p>
+    <p>…после видения от твоего Божества или визита его посланника</p>
+    <p>…когда ты первый раз увидели ______________</p>
+
+
+</section>
 
 `

@@ -135,7 +135,7 @@ export default [
   },
   {
     id: 'hard_wound',
-    title: 'Проблемная Ранами',
+    title: 'Проблемная Рана',
     text: (
       <>
         <p>Проблемная рана — это то, что стоит между <em>Травмой</em> и <DwMoveLink id='common.last_breathe'>Смертью</DwMoveLink>.</p>

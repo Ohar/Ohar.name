@@ -7,6 +7,7 @@ import incineratorMoveList from './list/incinerator'
 import inventorMoveList from './list/inventor'
 import monkMoveList from './list/monk'
 import nobleMoveList from './list/noble'
+import priestMoveList from './list/priest'
 import rangerMoveList from './list/ranger'
 import savageMoveList from './list/savage'
 import shortyMoveList from './list/shorty'
@@ -23,6 +24,7 @@ const dwMoveList = [
     ...inventorMoveList,
     ...monkMoveList,
     ...nobleMoveList,
+    ...priestMoveList,
     ...rangerMoveList,
     ...savageMoveList,
     ...shortyMoveList,

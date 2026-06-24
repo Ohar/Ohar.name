@@ -31,6 +31,14 @@ jobs:
           test -n "$DEPLOY_USER"
           test -n "$DEPLOY_PASSWORD"
 
+      - name: Normalize deployment secrets
+        run: |
+          {
+            printf 'DEPLOY_HOST=%s\n' "$(printf '%s' "$DEPLOY_HOST" | tr -d '\r\n')"
+            printf 'DEPLOY_USER=%s\n' "$(printf '%s' "$DEPLOY_USER" | tr -d '\r\n')"
+            printf 'DEPLOY_PASSWORD=%s\n' "$(printf '%s' "$DEPLOY_PASSWORD" | tr -d '\r\n')"
+          } >> "$GITHUB_ENV"
+
       - name: Use Node.js
         uses: actions/setup-node@v5
         with:

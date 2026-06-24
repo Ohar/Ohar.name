@@ -8,17 +8,19 @@ const generateDwPcClassPathById = require('./src/utils/generateDwPcClassPathById
 const DwPcClassTemplate = path.resolve(`./src/templates/DwPcClassTemplate.jsx`);
 const QuotePageTemplate = path.resolve(`./src/templates/QuotePageTemplate.jsx`);
 
-const pagePromiseGenerator = createPageAction => ({list, template, generatePathById}) => new Promise(
+const pagePromiseGenerator = createPageAction => ({list, template, generatePathById, getSlug = ({id}) => id}) => new Promise(
   resolve => {
     resolve(
       list.forEach(
-        ({id}) => {
+        (item, index) => {
+          const slug = getSlug(item, index)
+
           createPageAction(
             {
-              path: generatePathById(id),
+              path: generatePathById(slug),
               component: template,
               context: {
-                slug: id
+                slug
               }
             }
           );
@@ -31,7 +33,8 @@ const pagePromiseGenerator = createPageAction => ({list, template, generatePathB
 const pageToGenerateList = [
   {
     list: quotesList,
-    generatePathById: id => `/quotes/${id}`,
+    generatePathById: quoteId => `/quotes/${quoteId}`,
+    getSlug: (_, index) => index,
     template: QuotePageTemplate,
   },
   {

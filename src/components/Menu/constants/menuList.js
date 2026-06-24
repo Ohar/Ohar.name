@@ -1,6 +1,7 @@
 import React from "react"
 
 import { faDAndD } from '@fortawesome/free-brands-svg-icons'
+import { faDungeon } from '@fortawesome/free-solid-svg-icons'
 
 import ImgLogo from '@/images/logo.png'
 
@@ -46,6 +47,12 @@ const menuList = [
     title: 'Dungeons & Dragons',
     icon: faDAndD,
     content: 'D&D',
+  },
+  {
+    url: '/dw',
+    title: 'Dungeon World',
+    icon: faDungeon,
+    content: 'DW',
   },
 ]
 

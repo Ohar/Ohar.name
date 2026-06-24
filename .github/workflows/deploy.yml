@@ -1,0 +1,75 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+
+    env:
+      DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+      DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
+      DEPLOY_PATH: /var/www/ohar.name/current
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate deployment secrets
+        run: |
+          test -n "$DEPLOY_HOST"
+          test -n "$DEPLOY_USER"
+          test -n "$DEPLOY_PASSWORD"
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+
+      - name: Install Yarn
+        run: yarn --version || npm install -g yarn@1.22.22 --force
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --non-interactive
+
+      - name: Build site
+        run: yarn gatsby:build
+
+      - name: Install SSH deploy tools
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Trust deployment host
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+
+      - name: Upload build archive
+        run: |
+          tar -C public -czf site.tar.gz .
+          sshpass -p "$DEPLOY_PASSWORD" ssh "$DEPLOY_USER@$DEPLOY_HOST" "mkdir -p /tmp/ohar.name-deploy"
+          sshpass -p "$DEPLOY_PASSWORD" scp site.tar.gz "$DEPLOY_USER@$DEPLOY_HOST:/tmp/ohar.name-deploy/site.tar.gz"
+
+      - name: Activate release
+        run: |
+          sshpass -p "$DEPLOY_PASSWORD" ssh "$DEPLOY_USER@$DEPLOY_HOST" "DEPLOY_PATH='$DEPLOY_PATH' GITHUB_SHA='$GITHUB_SHA' bash -s" <<'REMOTE'
+          set -euo pipefail
+          DEPLOY_PATH="${DEPLOY_PATH:-/var/www/ohar.name/current}"
+          RELEASE_PATH="$(dirname "$DEPLOY_PATH")/releases/${GITHUB_SHA:-manual}"
+          mkdir -p "$RELEASE_PATH"
+          tar -xzf /tmp/ohar.name-deploy/site.tar.gz -C "$RELEASE_PATH"
+          ln -sfn "$RELEASE_PATH" "$DEPLOY_PATH.tmp"
+          mv -Tf "$DEPLOY_PATH.tmp" "$DEPLOY_PATH"
+          nginx -t
+          systemctl reload nginx
+          rm -rf /tmp/ohar.name-deploy
+          REMOTE

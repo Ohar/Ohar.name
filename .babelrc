@@ -3,8 +3,6 @@
     "gatsby"
   ],
   "plugins": [
-    "@babel/plugin-proposal-export-default-from",
-    "@babel/plugin-proposal-object-rest-spread",
-    "@babel/plugin-syntax-object-rest-spread"
+    "@babel/plugin-proposal-export-default-from"
   ]
 }

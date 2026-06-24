@@ -4,6 +4,7 @@ const dwPcClassList = require('./src/constants/dwPcClassList');
 const quotesList = require('./src/constants/quotesList');
 
 const generateDwPcClassPathById = require('./src/utils/generateDwPcClassPathById.js');
+const webpackConfig = require('./webpack.config');
 
 const DwPcClassTemplate = path.resolve(`./src/templates/DwPcClassTemplate.jsx`);
 const QuotePageTemplate = path.resolve(`./src/templates/QuotePageTemplate.jsx`);
@@ -54,4 +55,8 @@ exports.createPages = ({ actions }) => {
     .catch(
       e => console.error('Fail createPages', e)
     )
+}
+
+exports.onCreateWebpackConfig = ({actions}) => {
+  actions.setWebpackConfig(webpackConfig);
 }

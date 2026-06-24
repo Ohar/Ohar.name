@@ -1,7 +1,4 @@
-const path = require('path')
-
 const {author, description, version} = require('./package')
-const {resolve: aliasOptions} = require('./webpack.config')
 
 module.exports = {
   siteMetadata: {
@@ -30,13 +27,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        logo: `src/images/logo.png`,
         icon: `src/images/adeptus-mechanicus.png`,
       },
-    },
-    {
-      resolve: `gatsby-plugin-alias-imports`,
-      options: aliasOptions
     },
     `gatsby-plugin-less`,
   ],

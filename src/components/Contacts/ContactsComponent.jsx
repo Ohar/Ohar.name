@@ -47,19 +47,9 @@ const contactList = [
     text:  'GitHub',
   },
   {
-    url: 'https://www.hackerrank.com/oharr',
-    type: 'hackerrank',
-    text: 'Hackerrank',
-  },
-  {
     url: 'https://linkedin.com/in/oharr',
     type: 'linkedin',
     text: 'LinkedIn',
-  },
-  {
-    url: 'https://discourse.mozilla-community.org/users/ohar',
-    type: 'mozilla',
-    text: 'Mozilla',
   },
   {
     url: 'https://www.npmjs.com/~ohar',
@@ -80,24 +70,6 @@ const contactList = [
     url: 'https://skillsnet.ru/users/5ac7838fd010617793e9d428',
     type: 'skillsnet',
     text: 'SkillsNet',
-  },
-  {
-    url: 'https://soshace.com/developers/Pavel_L',
-    type: 'soshace',
-    text: 'Soshace',
-  },
-  {
-    url: 'https://stackoverflow.com/cv/ohar',
-    type: 'stackoverflow',
-    text: (
-      <img
-        src="https://stackexchange.com/users/flair/2351078.png"
-        width="208"
-        height="58"
-        alt="Profile for Pavel Lysenko on Stack Exchange"
-        title="Profile for Pavel Lysenko on Stack Exchange"
-      />
-    ),
   },
   {
     url: 'https://steamcommunity.com/id/ohar',

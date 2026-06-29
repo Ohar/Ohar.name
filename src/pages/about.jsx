@@ -10,11 +10,11 @@ import CV from '@/cv/Frontend-Developer-Lysenko-Pavel.pdf'
 const AboutPage = () => (
   <Layout>
     <Seo
-      title='Обо мне'
+      title='Контакты'
       description='Как со мной связаться'
       keywords={['Pavel Lysenko\'s contacts', 'Контакты Павла Лысенко']}
     />
-    <PageTitle>Обо мне</PageTitle>
+    <PageTitle>Контакты</PageTitle>
     <p>Привет! Меня зовут Павел Лысенко. Я — веб-разработчик.</p>
     <p>
       Моё <a

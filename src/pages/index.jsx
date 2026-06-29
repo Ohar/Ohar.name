@@ -8,7 +8,7 @@ import ImgEst from '@/images/est.png'
 import ImgMachina from '@/images/machina.png'
 
 import '@/styles/offset.css'
-import '@/styles/mechanicus.css'
+import '@/styles/mechanicus.less'
 
 const IndexPage = () => (
   <Layout>

@@ -15,7 +15,7 @@ import './LayoutStyles.css'
 import './main.css'
 import './time.css'
 
-const LayoutComponent = ({ children, className = '', Header = HeaderDefault }) => (
+const LayoutComponent = ({ children, className = '', Header = HeaderDefault, hideHomeLink = false }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -28,7 +28,7 @@ const LayoutComponent = ({ children, className = '', Header = HeaderDefault }) =
     `}
     render={data => (
       <section className={`Layout ${className}`}>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} hideHomeLink={hideHomeLink} />
         <main>{children}</main>
         <Footer/>
       </section>
@@ -38,6 +38,7 @@ const LayoutComponent = ({ children, className = '', Header = HeaderDefault }) =
 
 LayoutComponent.propTypes = {
   children: PropTypes.node.isRequired,
+  hideHomeLink: PropTypes.bool,
 }
 
 export default LayoutComponent

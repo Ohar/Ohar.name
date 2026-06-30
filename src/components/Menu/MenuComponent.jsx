@@ -7,15 +7,17 @@ import menuList from './constants/menuList'
 
 import './MenuStyles.css'
 
-const MenuComponent = () => (
+const MenuComponent = ({ hideHomeLink }) => (
   <nav className="menu">
     <ul className="menu_list">
       {
-        menuList.map(
+        menuList
+          .filter(({url}) => !(hideHomeLink && url === '/'))
+          .map(
           ({url, title, content, icon, faIcon}) => (
             <li
               key={url}
-              className="menu_list_item"
+              className={icon ? 'menu_list_item menu_list_item--explicit-icon' : 'menu_list_item'}
             >
               <MenuLink
                 url={url}

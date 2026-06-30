@@ -11,7 +11,7 @@ import '@/styles/offset.css'
 import '@/styles/mechanicus.less'
 
 const IndexPage = () => (
-  <Layout>
+  <Layout hideHomeLink>
     <Seo keywords={['Pavel Lysenko site', 'Сайт Павла Лысенко', 'Ohar']} />
     <h1 className="offset">Сайт Павла Лысенко</h1>
 

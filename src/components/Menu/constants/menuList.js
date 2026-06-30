@@ -4,7 +4,6 @@ import { faDAndD } from '@fortawesome/free-brands-svg-icons'
 import { faDungeon } from '@fortawesome/free-solid-svg-icons'
 
 import ImgLogo from '@/images/logo.png'
-import CV from '@/cv/Frontend-Developer-Lysenko-Pavel.pdf'
 
 const menuList = [
   {
@@ -26,8 +25,8 @@ const menuList = [
     content: 'GitHub',
   },
   {
-    url: CV,
-    title: 'Скачать резюме',
+    url: '/cv',
+    title: 'Резюме',
     content: 'Резюме',
   },
   {

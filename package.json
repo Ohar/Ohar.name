@@ -37,7 +37,7 @@
     "@babel/cli": "^7.27.2",
     "@babel/core": "^7.27.7",
     "@babel/plugin-proposal-export-default-from": "^7.27.1",
-    "bestzip": "^1.1.4",
+    "bestzip": "3.0.1",
     "gatsby-cli": "^5.16.0",
     "gatsby-plugin-less": "^7.16.0",
     "less": "^4.6.7",
@@ -64,5 +64,16 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0"
+  },
+  "resolutions": {
+    "cookie": "^0.7.2",
+    "file-type": "^21.3.1",
+    "immutable": "^3.8.3",
+    "lodash": "^4.18.1",
+    "path-to-regexp": "^0.1.13",
+    "serialize-javascript": "^7.0.7",
+    "tmp": "^0.2.6",
+    "uuid": "^11.1.1",
+    "webpack": "^5.108.3"
   }
 }

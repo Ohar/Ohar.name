@@ -47,6 +47,11 @@ const contactList = [
     text:  'GitHub',
   },
   {
+    url: 'https://cursor.com/@ohar',
+    type: 'cursor',
+    text: 'Cursor',
+  },
+  {
     url: 'https://linkedin.com/in/oharr',
     type: 'linkedin',
     text: 'LinkedIn',

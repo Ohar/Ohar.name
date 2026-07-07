@@ -70,6 +70,7 @@ jobs:
           tar -C public -czf site.tar.gz .
           sshpass -p "$DEPLOY_PASSWORD" ssh "$DEPLOY_USER@$DEPLOY_HOST" "mkdir -p /tmp/ohar.name-deploy"
           sshpass -p "$DEPLOY_PASSWORD" scp site.tar.gz "$DEPLOY_USER@$DEPLOY_HOST:/tmp/ohar.name-deploy/site.tar.gz"
+          sshpass -p "$DEPLOY_PASSWORD" scp infra/nginx/ohar.name.conf "$DEPLOY_USER@$DEPLOY_HOST:/tmp/ohar.name-deploy/ohar.name.conf"
 
       - name: Activate release
         run: |
@@ -79,6 +80,8 @@ jobs:
           RELEASE_PATH="$(dirname "$DEPLOY_PATH")/releases/${GITHUB_SHA:-manual}"
           mkdir -p "$RELEASE_PATH"
           tar -xzf /tmp/ohar.name-deploy/site.tar.gz -C "$RELEASE_PATH"
+          install -m 0644 /tmp/ohar.name-deploy/ohar.name.conf /etc/nginx/sites-available/ohar.name
+          ln -sfn /etc/nginx/sites-available/ohar.name /etc/nginx/sites-enabled/ohar.name
           ln -sfn "$RELEASE_PATH" "$DEPLOY_PATH.tmp"
           mv -Tf "$DEPLOY_PATH.tmp" "$DEPLOY_PATH"
           nginx -t

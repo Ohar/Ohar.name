@@ -30,6 +30,12 @@ const menuList = [
     content: 'Резюме',
   },
   {
+    url: '/portfolio',
+    title: 'Портфолио',
+    icon: 'icon-link-ext',
+    content: 'Портфолио',
+  },
+  {
     url: '/quotes',
     title: 'Всякие цитаты',
     icon: 'icon-quote-left',

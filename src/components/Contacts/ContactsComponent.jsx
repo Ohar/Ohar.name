@@ -72,6 +72,11 @@ const contactList = [
     text: 'PayPal',
   },
   {
+    url: 'https://www.producthunt.com/@ohar',
+    type: 'producthunt',
+    text: 'Product Hunt',
+  },
+  {
     url: 'https://skillsnet.ru/users/5ac7838fd010617793e9d428',
     type: 'skillsnet',
     text: 'SkillsNet',

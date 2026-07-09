@@ -32,7 +32,6 @@ const menuList = [
   {
     url: '/portfolio',
     title: 'Портфолио',
-    icon: 'icon-link-ext',
     content: 'Портфолио',
   },
   {

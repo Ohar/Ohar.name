@@ -4,26 +4,12 @@ import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import CvPhoto from '@/images/Pavel_Lysenko.jpg'
 
+import { cvData, pageCopy } from '@/constants/cvData'
 import './cv.css'
 
-const cvContent = {
-  ru: "<header class=\"hero\">\n        <img class=\"photo\" src=\"__CV_PHOTO__\" alt=\"Лысенко Павел\" />\n        <div>\n          <div class=\"head-info\">\n            <h1>Лысенко Павел</h1>\n            <div class=\"headline\">\n              <p class=\"role\">Senior Frontend Developer</p>\n              <div class=\"compensation\" aria-label=\"Ожидания по зарплате\">\n                <p class=\"salary\">от 320&thinsp;к&thinsp;₽ (ТК)</p>\n                <p class=\"salary\">от 400&thinsp;к&thinsp;₽ (ИП)</p>\n              </div>\n            </div>\n          </div>\n          <section class=\"summary\" aria-label=\"О себе\">\n            <p>Senior Frontend Engineer с 14+ годами опыта. Делаю любой фронтенд.</p>\n            <p>Разрабатывал высоконагруженные клиентские приложения для Яндекса, Wildberries и финтех-проектов.</p>\n            <p>Специализируюсь на SPA-приложениях, сложной бизнес-логике, удобстве пользователей, производительности и визуализации данных.</p>\n            <p>Проектировал антифрод-системы, разработывал браузерные расширения, разрабатывал API и интеграцию с  с OAuth, руководил разработкой небольших команд.</p>\n          </section>\n        </div>\n      </header>\n\n      <section class=\"contacts\">\n        <h2 class=\"section-title\">Контакты</h2>\n        <div class=\"target-list\">\n          <p class=\"target-item\"><strong>Email</strong> <a href=\"mailto:job@ohar.name\">job@ohar.name</a></p>\n          <p class=\"target-item\"><strong>Телефон</strong> <a href=\"tel:+79852685323\">+7 (985) 268-53-23</a></p>\n          <p class=\"target-item\"><strong>GitHub</strong> <a href=\"https://github.com/Ohar\" target=\"_blank\" rel=\"nofollow\">github.com/Ohar</a></p>\n        </div>\n      </section>\n\n      <section class=\"section\">\n        <h2 class=\"section-title\">Желаемая должность</h2>\n        <div class=\"target\">\n          <div>\n            <h3>Senior Frontend Developer</h3>\n            <div class=\"target-list\">\n              <p class=\"target-item\"><strong>Занятость</strong>Полная, частичная, проектная работа</p>\n              <p class=\"target-item\"><strong>Формат</strong>Офис / удаленка</p>\n              <p class=\"target-item\"><strong>Локация</strong>Москва, Фили; ≤1,5 ч до офиса</p>\n            </div>\n          </div>\n        </div>\n      </section>\n\n      <section class=\"section\">\n        <h2 class=\"section-title\">Опыт работы — 14 лет 9 месяцев</h2>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Июнь 2024 — Июнь 2026</span><span class=\"date-print\">2024-06 – 2026-06</span></strong>2 года 1 месяц</div>\n          <div>\n            <h3>Senior Frontend Developer</h3>\n            <p class=\"company\">Вайлдберриз, Москва — <a href=\"https://wb.ru/\" target=\"_blank\" rel=\"nofollow\">wb.ru</a></p>\n            <p>\n              Разработал ключевые интерфейсы внутренней платформы A/B-тестирования для 500+ аналитиков:\n              настройку экспериментов и аналитические дашборды с визуализацией результатов тестов и\n              статистических метрик. Разработал Chrome Extension для проверки экспериментальных сценариев\n              на wildberries.ru с интеграцией через OAuth и API платформы.\n            </p>\n            <p class=\"stack\">TypeScript, React, Redux, Zustand, Ant Design, Vite, Recharts, Figma.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Июнь 2023 — Июнь 2024</span><span class=\"date-print\">2023-06 – 2024-06</span></strong>1 год 1 месяц</div>\n          <div>\n            <h3>Senior UI Developer</h3>\n            <p class=\"company\">Яндекс, Москва — <a href=\"https://ya.ru\" target=\"_blank\" rel=\"nofollow\">ya.ru</a></p>\n            <p>\n              Разработка главной страницы ya.ru и yandex.kz: поиск, виджеты, реклама и интеграции с сервисами\n              Яндекса. Миграция интерфейсов с BEM на React, оптимизация производительности для слабых устройств\n              и старых браузеров.\n            </p>\n            <p class=\"stack\">JavaScript, React, Vue.js, Svelte, BEM.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Июнь 2022 — Апрель 2023</span><span class=\"date-print\">2022-06 – 2023-04</span></strong>11 месяцев</div>\n          <div>\n            <h3>Senior Frontend Developer</h3>\n            <p class=\"company\">ООО «ЭфЭнСи», Москва (контракт с ООО «Комус»)</p>\n            <p>\n              Глобальный рефакторинг — перевёл устаревший внутренний и внешний порталы Комуса с jQuery на Vue, обновил архитектуру, уменьшил легаси-код и упростил интерфейсы.\n            </p>\n            <p class=\"stack\">TypeScript, JavaScript, Vue.js, jQuery, LESS, Webpack, Hybris, Figma.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Февраль 2020 — Январь 2022</span><span class=\"date-print\">2020-02 – 2022-01</span></strong>2 года</div>\n          <div>\n            <h3>Lead Frontend Developer</h3>\n            <p class=\"company\">Кибертоника, Москва — <a href=\"https://cybertonica.com/\" target=\"_blank\" rel=\"nofollow\">cybertonica.com</a></p>\n            <p>\n              Разработка антифрод-платформы для банков и платежных систем. Руководил фронтенд-направлением,\n              развивал интерфейсы анализа транзакций и мониторинга риска в реальном времени. Переработал и\n              расширил fingerprinting SDK для идентификации пользователей без авторизации, перевел внутренний\n              скрипт в полноценный NPM-пакет.\n            </p>\n            <p class=\"stack\">React, Redux, JavaScript, WebSocket.</p>\n          </div>\n        </article>\n\n        <div class=\"compact-history\">\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Январь 2019 — Август 2019</span><span class=\"date-print\">2019-01 – 2019-08</span></strong>8 месяцев</div>\n          <div>\n            <h3>Frontend Engineer</h3>\n            <p class=\"company\">Сфера (банк БКС), Москва (закрыт)</p>\n            <p>Разработал модуль финансовой информации и основу системы торгов с интеграцией API.</p>\n            <p class=\"stack\">JavaScript, React.js, LESS, Webpack.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Июнь 2018 — Октябрь 2018</span><span class=\"date-print\">2018-06 – 2018-10</span></strong>5 месяцев</div>\n          <div>\n            <h3>Frontend Developer</h3>\n            <p class=\"company\">SkillMill.io, Австрия (не запущен)</p>\n            <p>\n              Удаленная работа. Разработал внутренний чат с пересылкой файлов на WebSockets и страницу профиля.\n              Автоматизировал сборку Webpack и выкатку проекта shell-скриптами.\n            </p>\n            <p class=\"stack\">JavaScript, Vue.js, LESS, HTML, Webpack, Bash, WebSocket.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Ноябрь 2017 — Май 2018</span><span class=\"date-print\">2017-11 – 2018-05</span></strong>7 месяцев</div>\n          <div>\n            <h3>Senior Frontend Developer</h3>\n            <p class=\"company\">Carrus Mobile, Inc, США (закрыт)</p>\n            <p>\n              Разработал менеджерскую панель на React, отвечал за весь фронтенд, планировал архитектуру и\n              создавал новый функционал. Автоматизировал сборку и выкатку, настроил Nginx для фронта, разделил\n              сайт на независимые бандлы и сборки для разных окружений.\n            </p>\n            <p class=\"stack\">JavaScript, SCSS, HTML, React.js, Redux, Webpack, Bash.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Январь 2017 — Сентябрь 2017</span><span class=\"date-print\">2017-01 – 2017-09</span></strong>9 месяцев</div>\n          <div>\n            <h3>Программист</h3>\n            <p class=\"company\">YouDo, Россия — <a href=\"https://youdo.com/\" target=\"_blank\" rel=\"nofollow\">youdo.com</a></p>\n            <p>Разработка и поддержка фронта YouDo.com, перевод проекта на ES2015, внедрение React и Redux.</p>\n            <p class=\"stack\">JavaScript, LESS, HTML, Angular.js, React.js, Lodash, Jest, Backbone.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Июль 2015 — Январь 2017</span><span class=\"date-print\">2015-07 – 2017-01</span></strong>1 год 7 месяцев</div>\n          <div>\n            <h3>Старший клиентский разработчик</h3>\n            <p class=\"company\">Kamagames Studio, Москва — <a target=\"_blank\" rel=\"nofollow\" href=\"https://kamagames.com/\">kamagames.com</a></p>\n            <p>\n              Полностью отвечал за внутренний проект визуализации данных и построения отчетов: получал требования,\n              разрабатывал фронт, бэк и API, интегрировал сторонние сервисы. Проводил технические собеседования.\n              Разрабатывал API на NodeJS, подключал OAuth-авторизацию через LDAP, поддерживал проект на ReactJS.\n            </p>\n            <p class=\"stack\">\n              JavaScript, SCSS, HTML, Angular.js, React.js, Lodash, NodeJS, Mocha, Chai, WebSockets,\n              MySQL, Redis.\n            </p>\n          </div>\n        </article>\n\n        <p class=\"old-experience-summary\">\n          <strong>Ранний опыт до 2016</strong>\n          Frontend-разработка в Localway, Workle, NullPointer, Оверсан и Artus.\n        </p>\n\n        <article class=\"entry print-legacy\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Декабрь 2014 — Июль 2015</span><span class=\"date-print\">2014-12 – 2015-07</span></strong>8 месяцев</div>\n          <div>\n            <h3>Фронт-разработчик</h3>\n            <p class=\"company\">Localway.ru, Москва (закрыт)</p>\n            <p>\n              Поддержка сервиса на AngularJS: исправление багов, верстка, разработка новых страниц, блоков,\n              директив, в том числе для мобильной версии и админки.\n            </p>\n            <p class=\"stack\">JavaScript, jQuery, LESS, CSS, HTML, AngularJS, Underscore.js, Python.</p>\n          </div>\n        </article>\n\n        <article class=\"entry print-legacy\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Июнь 2014 — Ноябрь 2014</span><span class=\"date-print\">2014-06 – 2014-11</span></strong>6 месяцев</div>\n          <div>\n            <h3>Фронт-разработчик</h3>\n            <p class=\"company\">Workle.ru, Москва — <a href=\"https://www.workle.ru/\" target=\"_blank\" rel=\"nofollow\">workle.ru</a></p>\n            <p>Переделал страницы спецпредложений и поиска туров, сделал несколько страниц в админке.</p>\n            <p class=\"stack\">JavaScript, jQuery, CSS, БЭМ, Backbone.js, Require.js.</p>\n          </div>\n        </article>\n\n        <article class=\"entry print-legacy\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Ноябрь 2013 — Май 2014</span><span class=\"date-print\">2013-11 – 2014-05</span></strong>7 месяцев</div>\n          <div>\n            <h3>JavaScript-разработчик</h3>\n            <p class=\"company\">NullPointer, Москва — <a href=\"https://null-pointer.ru/\" target=\"_blank\" rel=\"nofollow\">null-pointer.ru</a></p>\n            <p>Модули на AngularJS, поиск по базе с сортировкой и псевдопостраничной выдачей.</p>\n            <p class=\"stack\">JavaScript, CSS, AngularJS, Require.js, Underscore.js.</p>\n          </div>\n        </article>\n\n        <article class=\"entry print-legacy\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Апрель 2012 — Ноябрь 2013</span><span class=\"date-print\">2012-04 – 2013-11</span></strong>1 год 8 месяцев</div>\n          <div>\n            <h3>Оверсан</h3>\n            <p class=\"company\">Москва (закрыт)</p>\n            <div class=\"role-list\">\n              <div class=\"role-item\">\n                <h4>Разработчик интерфейсов</h4>\n                <p class=\"role-period\"><span class=\"date-screen\">Июль 2012 — Ноябрь 2013</span><span class=\"date-print\">2012-07 – 2013-11</span></p>\n                <p>\n                  Разработал интерфейс панели управления услугами, UX и UI сайтов и проектов компании. Сделал\n                  несколько сайтов дочерних проектов.\n                </p>\n                <p class=\"stack\">CSS, JavaScript, jQuery, Razor.</p>\n              </div>\n              <div class=\"role-item\">\n                <h4>Верстальщик</h4>\n                <p class=\"role-period\"><span class=\"date-screen\">Апрель 2012 — Июль 2012</span><span class=\"date-print\">2012-04 – 2012-07</span></p>\n                <p>Сделал главный сайт компании: верстка, шаблоны, скрипты, доработка сторонних JS-библиотек.</p>\n                <p class=\"stack\">CSS, JavaScript, jQuery.</p>\n              </div>\n            </div>\n          </div>\n        </article>\n\n        <article class=\"entry print-legacy\">\n          <div class=\"period\"><strong><span class=\"date-screen\">Июнь 2010 — Декабрь 2011</span><span class=\"date-print\">2010-06 – 2011-12</span></strong>1 год 7 месяцев</div>\n          <div>\n            <h3>Контент-менеджер</h3>\n            <p class=\"company\">Интернет-агентство «Артус», Москва — <a href=\"https://www.artus.ru/\" target=\"_blank\" rel=\"nofollow\">www.artus.ru</a></p>\n            <p>\n              Наполнил контентом, вычитал и оттипографировал десятки сайтов. Получил сертификат Битрикс. Делал\n              анкеты, баннеры, настраивал страницы, дополнил должностную инструкцию и стандарты работы.\n            </p>\n            <p class=\"stack\">CSS, HTML.</p>\n          </div>\n        </article>\n        </div>\n      </section>\n\n      <section class=\"section education-section\">\n        <h2 class=\"section-title\">Образование и курсы</h2>\n        <div class=\"grid-two\">\n          <p class=\"fact\">\n            <strong>2012 — Неоконченное высшее</strong>\n            Национальный исследовательский университет «Высшая школа экономики», Москва. Вычислительные комплексы,\n            машины и сети, два курса.\n          </p>\n          <p class=\"fact\">\n            <strong>2011 — JavaScript</strong>\n            «JavaScript. Основы веб-программирования», Учебный центр «Специалист» при МГТУ им. Н. Э. Баумана.\n          </p>\n          <p class=\"fact\">\n            <strong>2011 — HTML и CSS</strong>\n            «HTML, CSS, кроссбраузерная верстка, основы юзабилити», Учебный центр «Специалист».\n          </p>\n          <p class=\"fact\">\n            <strong>2010 — 1С-Битрикс</strong>\n            Сертификация «Администрирование системы “Битрикс”».\n          </p>\n        </div>\n      </section>\n\n      <div class=\"skills-extra\">\n        <section class=\"section\">\n          <h2 class=\"section-title\">Навыки</h2>\n          <div class=\"chips\">\n            <span class=\"chip\">JavaScript</span>\n            <span class=\"chip\">TypeScript</span>\n            <span class=\"chip\">React</span>\n            <span class=\"chip\">Vue.js</span>\n            <span class=\"chip\">Svelte</span>\n            <span class=\"chip\">Node.js</span>\n            <span class=\"chip\">Webpack</span>\n            <span class=\"chip\">Vite</span>\n            <span class=\"chip\">Jest</span>\n            <span class=\"chip\">UX</span>\n            <span class=\"chip\">Usability</span>\n            <span class=\"chip\">БЭМ</span>\n            <span class=\"chip\">SPA</span>\n            <span class=\"chip\">SSR</span>\n            <span class=\"chip\">WebSocket</span>\n            <span class=\"chip\">Browser Extensions</span>\n            <span class=\"chip\">Technical Leadership</span>\n            <span class=\"chip\">Electron</span>\n            <span class=\"chip\">Redis</span>\n            <span class=\"chip\">Agile</span>\n            <span class=\"chip\">OAuth</span>\n            <span class=\"chip\">Performance Optimization</span>\n          </div>\n        </section>\n\n        <section class=\"section\">\n          <h2 class=\"section-title\">Дополнительно</h2>\n          <div class=\"grid-two\">\n            <p class=\"fact\"><strong>Языки</strong>Русский — родной.<br/>Английский — B2.<br/>Французский — A1.</p>\n          </div>\n        </section>\n      </div>\n\n      <section class=\"section\">\n        <h2 class=\"section-title\">Ключевые проекты</h2>\n        <div class=\"project-grid\">\n          <p class=\"project-card\">Антифрод-платформа Кибертоники</p>\n          <p class=\"project-card\">Browser Fingerprinting SDK для  Кибертоники</p>\n          <p class=\"project-card\">Платформа A/B-тестирования Wildberries</p>\n          <p class=\"project-card\">Главная страница Яндекса</p>\n        </div>\n      </section>",
-  en: "<header class=\"hero\">\n        <img class=\"photo\" src=\"__CV_PHOTO__\" alt=\"Pavel Lysenko\" />\n        <div>\n          <div class=\"head-info\">\n            <h1>Pavel Lysenko</h1>\n            <div class=\"headline\">\n              <p class=\"role\">Senior Frontend Developer / React / TypeScript</p>\n              <div class=\"compensation\" aria-label=\"Salary expectations\">\n                <p class=\"salary\">$4,500 net</p>\n              </div>\n            </div>\n          </div>\n          <section class=\"summary\" aria-label=\"About me\">\n            <p>Senior Frontend Engineer with 14+ years of experience in JavaScript, TypeScript, React, and Vue.js.</p>\n            <p>I build complex web interfaces, internal platforms, dashboards, browser extensions, and data visualization tools.</p>\n            <p>I have worked on products for Yandex, Wildberries, fintech companies, and international startups.</p>\n            <p>My focus areas are SPA architecture, performance optimization, complex business logic, API/OAuth integrations, and maintainable frontend systems.</p>\n          </section>\n        </div>\n      </header>\n\n      <section class=\"contacts\">\n        <h2 class=\"section-title\">Contacts</h2>\n        <div class=\"target-list\">\n          <p class=\"target-item\"><strong>Email</strong> <a href=\"mailto:job@ohar.name\">job@ohar.name</a></p>\n          <p class=\"target-item\"><strong>Phone</strong> <a href=\"tel:+79852685323\">+7 (985) 268-53-23</a></p>\n          <p class=\"target-item\"><strong>GitHub</strong> <a href=\"https://github.com/Ohar\" target=\"_blank\" rel=\"nofollow\">github.com/Ohar</a></p>\n        </div>\n      </section>\n\n      <section class=\"section\">\n        <h2 class=\"section-title\">Desired position</h2>\n        <div class=\"target\">\n          <div>\n            <h3>Senior Frontend Developer / React / TypeScript</h3>\n            <div class=\"target-list\">\n              <p class=\"target-item\"><strong>Employment</strong>Full time, part time, project work</p>\n              <p class=\"target-item\"><strong>Format</strong>Office, remote, hybrid, rotation, traveling</p>\n              <p class=\"target-item\"><strong>Location</strong>Moscow, Filyovskiy Park; ready to relocate</p>\n            </div>\n          </div>\n        </div>\n      </section>\n\n      <section class=\"section\">\n        <h2 class=\"section-title\">Work experience - 15 years 2 months</h2>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">June 2024 - till now</span><span class=\"date-print\">2024-06 - now</span></strong>2 years 1 month</div>\n          <div>\n            <h3>Senior Frontend Developer</h3>\n            <p class=\"company\">Wildberries, Moscow - <a href=\"https://career.wb.ru/\" target=\"_blank\" rel=\"nofollow\">career.wb.ru</a></p>\n            <p>\n              Developed key interfaces for an internal A/B testing platform used by 500+ analysts: experiment setup flows,\n              analytical dashboards, test result visualization, and statistical metrics. Built a Chrome Extension for validating\n              experimental scenarios on wildberries.ru, integrated with the platform through OAuth and internal APIs.\n            </p>\n            <p class=\"stack\">TypeScript, React, Redux, Zustand, Ant Design, Vite, Recharts, Figma.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">June 2023 - June 2024</span><span class=\"date-print\">2023-06 - 2024-06</span></strong>1 year 1 month</div>\n          <div>\n            <h3>UI Developer</h3>\n            <p class=\"company\">Yandex, Moscow - <a href=\"https://yandex.ru/jobs/\" target=\"_blank\" rel=\"nofollow\">yandex.ru/jobs</a></p>\n            <p>\n              Worked on the main pages of ya.ru and yandex.kz: search, widgets, advertising modules, and integrations with\n              Yandex services. Participated in migrating interfaces from BEM to React and improving performance for low-end\n              devices and legacy browsers.\n            </p>\n            <p class=\"stack\">JavaScript, React, Vue.js, Svelte, BEM.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">January 2022 - April 2023</span><span class=\"date-print\">2022-01 - 2023-04</span></strong>1 year 4 months</div>\n          <div>\n            <h3>Senior Frontend Developer</h3>\n            <p class=\"company\">FNC, contract with Komus</p>\n            <p>\n              Migrated legacy internal and external Komus portals from jQuery to Vue.js within a Hybris-based enterprise system.\n              Refactored outdated frontend code and improved maintainability of existing interfaces.\n            </p>\n            <p class=\"stack\">TypeScript, JavaScript, Vue.js, jQuery, LESS, Webpack, Hybris, Figma.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">January 2020 - January 2022</span><span class=\"date-print\">2020-01 - 2022-01</span></strong>2 years 1 month</div>\n          <div>\n            <h3>Lead Frontend Developer</h3>\n            <p class=\"company\">Cybertonica Ltd, Moscow - <a href=\"https://cybertonica.com/\" target=\"_blank\" rel=\"nofollow\">cybertonica.com</a></p>\n            <p>\n              Led the frontend direction for an antifraud platform used by banks and payment systems. Developed a React-based\n              management panel and frontend architecture for a web platform. Configured Webpack builds for different environments\n              and automated frontend deployment.\n            </p>\n            <p class=\"stack\">JavaScript, React, Redux, SCSS, HTML, Webpack, Bash.</p>\n          </div>\n        </article>\n\n        <div class=\"compact-history\">\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">January 2019 - August 2019</span><span class=\"date-print\">2019-01 - 2019-08</span></strong>8 months</div>\n          <div>\n            <h3>Frontend Engineer</h3>\n            <p class=\"company\">Sfera.ru, Moscow - <a href=\"https://sfera.ru/\" target=\"_blank\" rel=\"nofollow\">sfera.ru</a></p>\n            <p>Developed financial information modules for income, expenses, debts, and related user data. Built core frontend parts of a trading system with third-party API integration.</p>\n            <p class=\"stack\">JavaScript, React, LESS, Webpack, Git, GitLab.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">June 2018 - October 2018</span><span class=\"date-print\">2018-06 - 2018-10</span></strong>5 months</div>\n          <div>\n            <h3>Frontend Developer</h3>\n            <p class=\"company\">Skillmill</p>\n            <p>Developed an internal chat system with WebSocket-based messaging, file uploads, and user profile pages. Automated release and deployment scripts.</p>\n            <p class=\"stack\">JavaScript, Vue.js, WebSocket, HTML, LESS, Webpack, Bash.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">November 2017 - May 2018</span><span class=\"date-print\">2017-11 - 2018-05</span></strong>7 months</div>\n          <div>\n            <h3>Lead Frontend Developer</h3>\n            <p class=\"company\">Carrus Mobile, Inc - <a href=\"https://breakerlog.com/\" target=\"_blank\" rel=\"nofollow\">breakerlog.com</a></p>\n            <p>Developed a React-based management panel and frontend architecture for a web platform. Configured Webpack builds for different environments and automated frontend deployment.</p>\n            <p class=\"stack\">JavaScript, React, Redux, SCSS, HTML, Webpack, Bash.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">January 2017 - September 2017</span><span class=\"date-print\">2017-01 - 2017-09</span></strong>9 months</div>\n          <div>\n            <h3>Programmer</h3>\n            <p class=\"company\">YouDo, Russia - <a href=\"https://youdo.com/\" target=\"_blank\" rel=\"nofollow\">youdo.com</a></p>\n            <p>Maintained YouDo.com frontend, migrated parts of the codebase to ES2015/Babel, and integrated React/Redux into legacy frontend architecture.</p>\n            <p class=\"stack\">JavaScript, AngularJS, React, Redux, Backbone, Jest, LESS.</p>\n          </div>\n        </article>\n\n        <article class=\"entry\">\n          <div class=\"period\"><strong><span class=\"date-screen\">July 2015 - January 2017</span><span class=\"date-print\">2015-07 - 2017-01</span></strong>1 year 7 months</div>\n          <div>\n            <h3>Lead Frontend Developer</h3>\n            <p class=\"company\">KamaGames Studio, Moscow - <a target=\"_blank\" rel=\"nofollow\" href=\"https://kamagames.com/\">kamagames.com</a></p>\n            <p>\n              Owned an internal reporting and data visualization service used by internal teams. Gathered requirements,\n              developed the frontend with AngularJS, built Node.js API endpoints, integrated third-party services, and coordinated\n              data collection across departments. Participated in frontend and fullstack developer interviews.\n            </p>\n            <p class=\"stack\">JavaScript, AngularJS, React, Node.js, SCSS, HTML, Lodash, Mocha, Chai, WebSocket, MySQL, Redis, OAuth.</p>\n          </div>\n        </article>\n\n        <p class=\"old-experience-summary\">\n          <strong>Earlier experience before 2016</strong>\n          Frontend development at Localway, Workle, NullPointer, Oversun, and Artus.\n        </p>\n\n        <article class=\"entry print-legacy\">\n          <div class=\"period\"><strong><span class=\"date-screen\">December 2014 - July 2015</span><span class=\"date-print\">2014-12 - 2015-07</span></strong>8 months</div>\n          <div>\n            <h3>Frontend Developer</h3>\n            <p class=\"company\">Localway.ru, Moscow - <a href=\"https://localway.ru/\" target=\"_blank\" rel=\"nofollow\">localway.ru</a></p>\n            <p>Maintained and developed Localway.ru frontend with AngularJS. Implemented new pages, modules, directives, layouts, and admin panel features for the main and mobile versions of the site.</p>\n            <p class=\"stack\">JavaScript, AngularJS, jQuery, HTML, CSS, Underscore.js, Python.</p>\n          </div>\n        </article>\n\n        <article class=\"entry print-legacy\">\n          <div class=\"period\"><strong><span class=\"date-screen\">June 2014 - November 2014</span><span class=\"date-print\">2014-06 - 2014-11</span></strong>6 months</div>\n          <div>\n            <h3>Frontend Developer</h3>\n            <p class=\"company\">Workle, Moscow - <a href=\"https://www.workle.ru/t/hh\" target=\"_blank\" rel=\"nofollow\">workle.ru</a></p>\n            <p>Developed and maintained frontend features, layouts, special offer pages, tour search flows, and admin panel pages.</p>\n            <p class=\"stack\">JavaScript, jQuery, HTML, CSS, BEM, Backbone.js, RequireJS.</p>\n          </div>\n        </article>\n\n        <article class=\"entry print-legacy\">\n          <div class=\"period\"><strong><span class=\"date-screen\">November 2013 - May 2014</span><span class=\"date-print\">2013-11 - 2014-05</span></strong>7 months</div>\n          <div>\n            <h3>JavaScript Developer</h3>\n            <p class=\"company\">NullPointer, Moscow - <a href=\"https://null-pointer.ru/\" target=\"_blank\" rel=\"nofollow\">null-pointer.ru</a></p>\n            <p>Developed AngularJS modules for database search, sorting, and pseudo-page pagination.</p>\n            <p class=\"stack\">JavaScript, AngularJS, HTML, CSS, RequireJS, Underscore.js.</p>\n          </div>\n        </article>\n\n        <article class=\"entry print-legacy\">\n          <div class=\"period\"><strong><span class=\"date-screen\">April 2012 - November 2013</span><span class=\"date-print\">2012-04 - 2013-11</span></strong>1 year 8 months</div>\n          <div>\n            <h3>Oversun</h3>\n            <p class=\"company\">Moscow - <a href=\"https://www.oversun.ru/\" target=\"_blank\" rel=\"nofollow\">oversun.ru</a></p>\n            <div class=\"role-list\">\n              <div class=\"role-item\">\n                <h4>UI Developer</h4>\n                <p class=\"role-period\"><span class=\"date-screen\">July 2012 - November 2013</span><span class=\"date-print\">2012-07 - 2013-11</span></p>\n                <p>Developed UI for the company's internal service panel and improved UX/UI for company websites and related projects. Built and maintained landing pages and child project websites.</p>\n                <p class=\"stack\">HTML, CSS, JavaScript, jQuery, Razor.</p>\n              </div>\n              <div class=\"role-item\">\n                <h4>Web Coder</h4>\n                <p class=\"role-period\"><span class=\"date-screen\">April 2012 - July 2012</span><span class=\"date-print\">2012-04 - 2012-07</span></p>\n                <p>Maintained the company website: layouts, templates, scripts, and frontend adjustments for third-party libraries.</p>\n                <p class=\"stack\">HTML, CSS, JavaScript, jQuery.</p>\n              </div>\n            </div>\n          </div>\n        </article>\n\n        <article class=\"entry print-legacy\">\n          <div class=\"period\"><strong><span class=\"date-screen\">June 2010 - December 2011</span><span class=\"date-print\">2010-06 - 2011-12</span></strong>1 year 7 months</div>\n          <div>\n            <h3>Content Manager</h3>\n            <p class=\"company\">ARTUS Internet Agency, Moscow - <a href=\"https://www.artus.ru/\" target=\"_blank\" rel=\"nofollow\">www.artus.ru</a></p>\n            <p>Managed and updated content for multiple client websites. Created and configured forms, banners, and landing pages, proofread website content, and improved internal content management guidelines.</p>\n            <p class=\"stack\">HTML, CSS.</p>\n          </div>\n        </article>\n        </div>\n      </section>\n\n      <section class=\"section education-section\">\n        <h2 class=\"section-title\">Education and courses</h2>\n        <div class=\"grid-two\">\n          <p class=\"fact\">\n            <strong>2012 - Incomplete higher education</strong>\n            National Research University Higher School of Economics, Moscow. Computing systems, machines and networks, quit after 2nd year.\n          </p>\n          <p class=\"fact\">\n            <strong>2011 - JavaScript</strong>\n            JavaScript. Fundamentals of Web programming, Training Center Specialist at the MSTU Bauman.\n          </p>\n          <p class=\"fact\">\n            <strong>2011 - HTML and CSS</strong>\n            HTML, CSS, cross-browser layout, UI basics, Training Center Specialist at the MSTU Bauman.\n          </p>\n          <p class=\"fact\">\n            <strong>2010 - 1C-Bitrix</strong>\n            System administration certification for Bitrix.\n          </p>\n        </div>\n      </section>\n\n      <div class=\"skills-extra\">\n        <section class=\"section\">\n          <h2 class=\"section-title\">Skills</h2>\n          <div class=\"chips\">\n            <span class=\"chip\">JavaScript</span>\n            <span class=\"chip\">TypeScript</span>\n            <span class=\"chip\">React</span>\n            <span class=\"chip\">Redux</span>\n            <span class=\"chip\">Vue3</span>\n            <span class=\"chip\">Svelte</span>\n            <span class=\"chip\">Node.js</span>\n            <span class=\"chip\">Webpack</span>\n            <span class=\"chip\">Vite</span>\n            <span class=\"chip\">Jest</span>\n            <span class=\"chip\">UX</span>\n            <span class=\"chip\">Usability</span>\n            <span class=\"chip\">BEM</span>\n            <span class=\"chip\">SPA</span>\n            <span class=\"chip\">SSR</span>\n            <span class=\"chip\">WebSocket</span>\n            <span class=\"chip\">Browser Extensions</span>\n            <span class=\"chip\">OAuth</span>\n            <span class=\"chip\">Zustand</span>\n            <span class=\"chip\">Recharts</span>\n            <span class=\"chip\">Ant Design</span>\n            <span class=\"chip\">Performance Optimization</span>\n          </div>\n        </section>\n\n        <section class=\"section\">\n          <h2 class=\"section-title\">Additional information</h2>\n          <div class=\"grid-two\">\n            <p class=\"fact\"><strong>Languages</strong>Russian - Native.<br/>English - B2, Upper Intermediate.</p>\n          </div>\n        </section>\n      </div>\n\n      <section class=\"section\">\n        <h2 class=\"section-title\">Key projects</h2>\n        <div class=\"project-grid\">\n          <p class=\"project-card\">Cybertonica antifraud platform</p>\n          <p class=\"project-card\">Browser Fingerprinting SDK</p>\n          <p class=\"project-card\">Wildberries A/B testing platform</p>\n          <p class=\"project-card\">Yandex main page</p>\n        </div>\n      </section>",
-}
-
-const pageCopy = {
-  ru: {
-    title: '\u0420\u0435\u0437\u044e\u043c\u0435',
-    description: '\u0420\u0435\u0437\u044e\u043c\u0435 \u041f\u0430\u0432\u043b\u0430 \u041b\u044b\u0441\u0435\u043d\u043a\u043e, Senior Frontend Developer',
-    print: '\u041f\u0435\u0447\u0430\u0442\u044c \u0432 PDF',
-    language: '\u042f\u0437\u044b\u043a \u0440\u0435\u0437\u044e\u043c\u0435',
-  },
-  en: {
-    title: 'CV',
-    description: 'CV of Pavel Lysenko, Senior Frontend Developer',
-    print: 'Print to PDF',
-    language: 'CV language',
-  },
+const linkProps = {
+  target: '_blank',
+  rel: 'nofollow',
 }
 
 const languages = ['ru', 'en']
@@ -48,10 +34,246 @@ const getPreferredLanguage = () => {
     : 'en'
 }
 
+const ExternalLink = ({ href, children }) => (
+  <a href={href} {...linkProps}>
+    {children}
+  </a>
+)
+
+const SmartLink = ({ href, external, children }) => {
+  if (!href) {
+    return children
+  }
+
+  return external ? (
+    <ExternalLink href={href}>{children}</ExternalLink>
+  ) : (
+    <a href={href}>{children}</a>
+  )
+}
+
+const Section = ({ title, className = 'section', children }) => (
+  <section className={className}>
+    <h2 className="section-title">{title}</h2>
+    {children}
+  </section>
+)
+
+const Hero = ({ data }) => (
+  <header className="hero">
+    <img className="photo" src={CvPhoto} alt={data.name} />
+    <div>
+      <div className="head-info">
+        <h1>{data.name}</h1>
+        <div className="headline">
+          <p className="role">{data.role}</p>
+          <div className="compensation" aria-label={data.salaryLabel}>
+            {data.salaries.map(salary => (
+              <p className="salary" key={salary}>{salary}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+      <section className="summary" aria-label={data.summaryLabel}>
+        {data.summary.map(item => (
+          <p key={item}>{item}</p>
+        ))}
+      </section>
+    </div>
+  </header>
+)
+
+const TargetList = ({ items }) => (
+  <div className="target-list">
+    {items.map(item => (
+      <p className="target-item" key={item.label}>
+        <strong>{item.label}</strong>
+        {item.value}
+      </p>
+    ))}
+  </div>
+)
+
+const Contacts = ({ title, contacts }) => (
+  <Section title={title} className="contacts">
+    <div className="target-list">
+      {contacts.map(contact => (
+        <p className="target-item" key={contact.label}>
+          <strong>{contact.label}</strong>{' '}
+          <SmartLink href={contact.href} external={contact.external}>
+            {contact.value}
+          </SmartLink>
+        </p>
+      ))}
+    </div>
+  </Section>
+)
+
+const Target = ({ data }) => (
+  <Section title={data.targetTitle}>
+    <div className="target">
+      <div>
+        <h3>{data.targetRole}</h3>
+        <TargetList items={data.targetItems} />
+      </div>
+    </div>
+  </Section>
+)
+
+const Period = ({ screenDate, printDate, duration }) => (
+  <div className="period">
+    <strong>
+      <span className="date-screen">{screenDate}</span>
+      <span className="date-print">{printDate}</span>
+    </strong>
+    {duration}
+  </div>
+)
+
+const Company = ({ entry }) => (
+  <p className="company">
+    {entry.company}
+    {entry.companyUrl && (
+      <>
+        {' - '}
+        <ExternalLink href={entry.companyUrl}>
+          {entry.companyUrlText}
+        </ExternalLink>
+      </>
+    )}
+  </p>
+)
+
+const RoleList = ({ roles }) => (
+  <div className="role-list">
+    {roles.map(role => (
+      <div className="role-item" key={`${role.title}-${role.printDate}`}>
+        <h4>{role.title}</h4>
+        <p className="role-period">
+          <span className="date-screen">{role.screenDate}</span>
+          <span className="date-print">{role.printDate}</span>
+        </p>
+        {role.description.map(item => (
+          <p key={item}>{item}</p>
+        ))}
+        <p className="stack">{role.stack}</p>
+      </div>
+    ))}
+  </div>
+)
+
+const ExperienceEntry = ({ entry, className = 'entry' }) => (
+  <article className={className}>
+    <Period
+      screenDate={entry.screenDate}
+      printDate={entry.printDate}
+      duration={entry.duration}
+    />
+    <div>
+      <h3>{entry.title}</h3>
+      <Company entry={entry} />
+      {entry.roles ? (
+        <RoleList roles={entry.roles} />
+      ) : (
+        <>
+          {entry.description.map(item => (
+            <p key={item}>{item}</p>
+          ))}
+          <p className="stack">{entry.stack}</p>
+        </>
+      )}
+    </div>
+  </article>
+)
+
+const OldExperienceSummary = ({ summary }) => (
+  <p className="old-experience-summary">
+    <strong>{summary.title}</strong>
+    {summary.text}
+  </p>
+)
+
+const Experience = ({ data }) => (
+  <Section title={data.experienceTitle}>
+    {data.experience.map(entry => (
+      <ExperienceEntry entry={entry} key={`${entry.title}-${entry.printDate}`} />
+    ))}
+    <div className="compact-history">
+      {data.compactExperience.map(entry => (
+        <ExperienceEntry entry={entry} key={`${entry.title}-${entry.printDate}`} />
+      ))}
+      <OldExperienceSummary summary={data.oldExperienceSummary} />
+      {data.legacyExperience.map(entry => (
+        <ExperienceEntry
+          entry={entry}
+          className="entry print-legacy"
+          key={`${entry.title}-${entry.printDate}`}
+        />
+      ))}
+    </div>
+  </Section>
+)
+
+const FactGrid = ({ items }) => (
+  <div className="grid-two">
+    {items.map(item => (
+      <p className="fact" key={item.title}>
+        <strong>{item.title}</strong>
+        {item.lines ? item.lines.map((line, index) => (
+          <React.Fragment key={line}>
+            {index > 0 && <br />}
+            {line}
+          </React.Fragment>
+        )) : item.text}
+      </p>
+    ))}
+  </div>
+)
+
+const Skills = ({ data }) => (
+  <div className="skills-extra">
+    <Section title={data.skillsTitle}>
+      <div className="chips">
+        {data.skills.map(skill => (
+          <span className="chip" key={skill}>{skill}</span>
+        ))}
+      </div>
+    </Section>
+
+    <Section title={data.additionalTitle}>
+      <FactGrid items={data.additional} />
+    </Section>
+  </div>
+)
+
+const Projects = ({ title, projects }) => (
+  <Section title={title}>
+    <div className="project-grid">
+      {projects.map(project => (
+        <p className="project-card" key={project}>{project}</p>
+      ))}
+    </div>
+  </Section>
+)
+
+const CvDocument = ({ data }) => (
+  <article className="page">
+    <Hero data={data} />
+    <Contacts title={data.contactsTitle} contacts={data.contacts} />
+    <Target data={data} />
+    <Experience data={data} />
+    <Section title={data.educationTitle} className="section education-section">
+      <FactGrid items={data.education} />
+    </Section>
+    <Skills data={data} />
+    <Projects title={data.projectsTitle} projects={data.projects} />
+  </article>
+)
+
 const CvPage = () => {
   const [language, setLanguage] = useState('en')
   const copy = pageCopy[language]
-  const cvContentWithPhoto = cvContent[language].replace('__CV_PHOTO__', CvPhoto)
+  const data = cvData[language]
 
   useEffect(() => {
     setLanguage(getPreferredLanguage())
@@ -76,7 +298,7 @@ const CvPage = () => {
             {copy.print}
           </button>
           <div className="language-switcher" role="group" aria-label={copy.language}>
-            {languages.map((item) => (
+            {languages.map(item => (
               <button
                 key={item}
                 className={item === language ? 'language-button language-button-active' : 'language-button'}
@@ -89,10 +311,7 @@ const CvPage = () => {
             ))}
           </div>
         </div>
-        <article
-          className="page"
-          dangerouslySetInnerHTML={{ __html: cvContentWithPhoto }}
-        />
+        <CvDocument data={data} />
       </section>
     </Layout>
   )

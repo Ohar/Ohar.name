@@ -1,6 +1,6 @@
 {
   "name": "ohar.name",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Site ohar.name",
   "engines": {
     "node": ">=18 <26"

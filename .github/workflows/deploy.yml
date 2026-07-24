@@ -57,6 +57,9 @@ jobs:
       - name: Build site
         run: yarn gatsby:build
 
+      - name: Verify CV PDF page count
+        run: yarn test:cv-pdf
+
       - name: Install SSH deploy tools
         run: sudo apt-get update && sudo apt-get install -y sshpass
 

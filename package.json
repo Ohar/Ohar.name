@@ -7,7 +7,8 @@
   },
   "scripts": {
     "postinstall": "node -e \"['public','dist'].forEach(dir => require('fs').mkdirSync(dir, {recursive: true}))\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "yarn gatsby:build && yarn test:cv-pdf",
+    "test:cv-pdf": "node --test tests/cv-pdf.test.js",
     "start": "npm run gatsby:develop",
     "dev": "npm run gatsby:develop",
     "zip": "cd ./public && bestzip ./../dist/ohar.name.zip ./* && cd ./.. && echo 'SPA Zipped'",

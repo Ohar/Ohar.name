@@ -299,6 +299,7 @@
         display: grid;
         grid-template-columns: 190px minmax(0, 1fr);
         gap: 24px;
+        margin: 0;
         padding: 20px 0;
         border-top: 1px solid var(--line);
       }
@@ -517,6 +518,11 @@
       }
 
       @media print {
+        html,
+        body {
+          background: #ffffff !important;
+        }
+
         .CvPage {
           --bg: #ffffff;
         }
@@ -949,6 +955,10 @@
   }
 
   .CvPageLayout > main {
+    background: #fff;
+  }
+
+  .Layout.CvPageLayout {
     background: #fff;
   }
 }

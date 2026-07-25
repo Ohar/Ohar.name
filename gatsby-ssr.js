@@ -1,7 +1,9 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React from "react"
 
-// You can delete this file if you're not using it
+import LanguageProvider from "./src/components/LanguageProvider"
+
+export const wrapPageElement = ({ element, props }) => (
+  <LanguageProvider pathname={props.location.pathname}>
+    {element}
+  </LanguageProvider>
+)

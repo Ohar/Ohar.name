@@ -1,24 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
-import Layout from '@/components/Layout'
+import Layout from "@/components/Layout"
 
-import './active_elements_default.less'
-import './article.less'
-import './DwLayoutStyles.less'
+import "./active_elements_default.less"
+import "./article.less"
+import "./DwLayoutStyles.less"
 
-const DwLayoutComponent = ({children, ...props}) => (
-  <Layout
-    {...props}
-    className='DwLayout'
-    Header={() => null}
-  >
-    {children}
-  </Layout>
-)
+const EmptyHeader = () => null
+
+const DwLayoutComponent = ({ children, hideHeader = true, ...props }) => {
+  const headerProps = hideHeader ? { Header: EmptyHeader } : {}
+
+  return (
+    <Layout {...props} {...headerProps} className="DwLayout">
+      {children}
+    </Layout>
+  )
+}
 
 DwLayoutComponent.propTypes = {
   children: PropTypes.node.isRequired,
+  hideHeader: PropTypes.bool,
 }
 
 export default DwLayoutComponent

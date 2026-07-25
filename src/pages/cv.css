@@ -81,6 +81,11 @@
         box-shadow: 0 8px 18px rgba(31, 41, 51, 0.1);
       }
 
+      .CvPage .language-switcher-pending {
+        visibility: hidden;
+        pointer-events: none;
+      }
+
       .CvPage .language-button {
         min-width: 44px;
         min-height: 40px;

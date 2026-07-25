@@ -1,69 +1,83 @@
 import React from "react"
 
-import { faDAndD } from '@fortawesome/free-brands-svg-icons'
-import { faDungeon } from '@fortawesome/free-solid-svg-icons'
+import { faDAndD } from "@fortawesome/free-brands-svg-icons"
+import { faDungeon } from "@fortawesome/free-solid-svg-icons"
 
-import ImgLogo from '@/images/logo.png'
+import siteCopy from "@/constants/siteCopy"
+import ImgLogo from "@/images/logo.png"
 
-const menuList = [
-  {
-    url: '/',
-    title: 'На главную',
-    content: (
-      <img
-        className="MenuLink_img"
-        src={ImgLogo}
-        alt="Adeptus Mechanicus"
-        width="48"
-        height="48"
-      />
-    ),
-  },
-  {
-    url: 'https://github.com/Ohar/',
-    title: 'Профиль на GitHub',
-    content: 'GitHub',
-  },
-  {
-    url: '/cv',
-    title: 'Резюме',
-    content: 'Резюме',
-  },
-  {
-    url: '/portfolio',
-    title: 'Портфолио',
-    content: 'Портфолио',
-  },
-  {
-    url: '/quotes',
-    title: 'Всякие цитаты',
-    icon: 'icon-quote-left',
-    content: 'Цитаты',
-  },
-  {
-    url: '/about',
-    title: 'Связаться со мной',
-    icon: 'icon-torso',
-    content: 'Контакты',
-  },
-  {
-    url: '/articles',
-    title: 'Статьи обо всяком',
-    icon: 'icon-doc-text',
-    content: 'Статьи',
-  },
-  {
-    url: 'http://dm-stuff.ru',
-    title: 'Dungeons & Dragons',
-    icon: faDAndD,
-    content: 'D&D',
-  },
-  {
-    url: '/dw',
-    title: 'Dungeon World',
-    icon: faDungeon,
-    content: 'DW',
-  },
-]
+const getMenuList = (language) => {
+  const copy = siteCopy[language].menu
+  const russianOnlyBadge = language === "en" ? "RU" : null
+  const russianOnlyTitle = (title) =>
+    language === "en" ? `${title} (${copy.russianOnly})` : title
 
-export default menuList
+  return [
+    {
+      url: "/",
+      title: copy.homeTitle,
+      content: (
+        <img
+          className="MenuLink_img"
+          src={ImgLogo}
+          alt="Adeptus Mechanicus"
+          width="48"
+          height="48"
+        />
+      ),
+    },
+    {
+      url: "https://github.com/Ohar/",
+      title: copy.githubTitle,
+      content: "GitHub",
+    },
+    {
+      url: "/cv",
+      title: copy.cvTitle,
+      content: copy.cv,
+    },
+    {
+      url: "/portfolio",
+      title: copy.portfolioTitle,
+      content: copy.portfolio,
+    },
+    {
+      url: "/quotes",
+      title: russianOnlyTitle(copy.quotesTitle),
+      icon: "icon-quote-left",
+      content: copy.quotes,
+      hrefLang: "ru",
+      languageBadge: russianOnlyBadge,
+    },
+    {
+      url: "/about",
+      title: copy.contactsTitle,
+      icon: "icon-torso",
+      content: copy.contacts,
+    },
+    {
+      url: "/articles",
+      title: russianOnlyTitle(copy.articlesTitle),
+      icon: "icon-doc-text",
+      content: copy.articles,
+      hrefLang: "ru",
+      languageBadge: russianOnlyBadge,
+    },
+    {
+      url: "http://dm-stuff.ru",
+      title: "Dungeons & Dragons",
+      icon: faDAndD,
+      content: "D&D",
+    },
+    {
+      url: "/dw",
+      title: russianOnlyTitle("Dungeon World"),
+      icon: faDungeon,
+      content: "DW",
+      hrefLang: "ru",
+      languageBadge: russianOnlyBadge,
+    },
+  ]
+}
+
+export default getMenuList

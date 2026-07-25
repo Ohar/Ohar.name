@@ -10,16 +10,20 @@ export default () => (
       <h1>Смотря на код с закрытыми глазами</h1>
       <spoiler title="От переводчика">
         <p>Эта статья&nbsp;&mdash; перевод <a
-          href="http://blog.freecodecamp.com/2015/01/a-vision-of-coding-without-opening-your-eyes.html">блогозаписи
+          href="http://blog.freecodecamp.com/2015/01/a-vision-of-coding-without-opening-your-eyes.html"
+          target="_blank"
+          rel="nofollow">блогозаписи
           Флориана Бейджерса</a>, слепого программиста из&nbsp;Нидерландов.</p>
         <p>Перевод любительский, поэтому прошу указывать на&nbsp;ошибки и&nbsp;критиковать.</p>
         <p><s>Я&nbsp;не&nbsp;нашёл корректного перевода слова accessibility, поэтому перевёл его как «доступность».
           Если есть вариант получше&nbsp;&mdash; предложите, пожалуйста.</s></p>
         <p><s>Антон Туманов предложил «адаптированность», за что ему большое спасибо.</s></p>
-        <p>Как <a href="http://habrahabr.ru/post/260463/#comment_8464767">заметил в комментарии</a> @pepelsbey,
+        <p>Как <a href="http://habrahabr.ru/post/260463/#comment_8464767" target="_blank" rel="nofollow">заметил в комментарии</a> @pepelsbey,
           «доступность» является корректным переводом, вернул её обратно.</p>
         <p>Почему я сделал перевод? Я наткнулся на опрос на Quora.com «<a
-          href="http://www.quora.com/How-does-a-visually-impaired-computer-programmer-do-programming">Как
+          href="http://www.quora.com/How-does-a-visually-impaired-computer-programmer-do-programming"
+          target="_blank"
+          rel="nofollow">Как
           программируют слабовидящие программисты?</a>». Ответы людей меня впечатлили, а&nbsp;блогозапись Флориана
           показалась наилучшим вариантом для введения в&nbsp;этот важный вопрос.</p>
       </spoiler>
@@ -37,7 +41,7 @@ export default () => (
         Я&nbsp;попытаюсь нарисовать картинку для тех из&nbsp;вас, кто интересуется доступностью и&nbsp;тем, как
         слепые люди пользуются компьютером, кодят и&nbsp;выполняют другие работы в&nbsp;21 веке.</p>
       <figure>
-        <p><a href="https://habrastorage.org/files/8ce/4b8/b21/8ce4b8b2150144c783843c4ebe42ecd3.jpg"><img
+        <p><a href="https://habrastorage.org/files/8ce/4b8/b21/8ce4b8b2150144c783843c4ebe42ecd3.jpg" target="_blank" rel="nofollow"><img
           src="https://habrastorage.org/files/7c9/851/0ee/7c98510eef314a7ab983bed913d98cc9.jpg"
           alt="Фото Флориана Бэйджэрса" title="Фото Флориана Бэйджэрса. Оригинал — по клику."/></a></p>
         <figcaption>Это я: Флориан Бэйджэрс, или Zersiax, как меня знают в&nbsp;кодерских кругах. Мне сказали что я&nbsp;здесь
@@ -58,7 +62,7 @@ export default () => (
         новые ноутбуки. На&nbsp;нём запущена Windows 8 (я её не&nbsp;выбирал, но&nbsp;заменять её слишком
         проблематично
         <nobr>из-за</nobr>
-        UEFI). Для подготовки его к&nbsp;использованию я&nbsp;всего лишь установил туда <a href="www.nvaccess.org">NVDA</a>&nbsp;&mdash;
+        UEFI). Для подготовки его к&nbsp;использованию я&nbsp;всего лишь установил туда <a href="https://www.nvaccess.org/" target="_blank" rel="nofollow">NVDA</a>&nbsp;&mdash;
         экранный диктор с&nbsp;открытым исходным кодом.
       </p>
 
@@ -109,7 +113,9 @@ export default () => (
         закончу этот семестр.</p>
 
       <p>К&nbsp;сожалению, я&nbsp;столкнулся с&nbsp;проблемой доступности, когда работал по&nbsp;известным <a
-        href="http://dash.generalassemb.ly">обучающим материалам по&nbsp;Dash</a> от&nbsp;General Assembly. Эти
+        href="http://dash.generalassemb.ly"
+        target="_blank"
+        rel="nofollow">обучающим материалам по&nbsp;Dash</a> от&nbsp;General Assembly. Эти
         материалы, несомненно, хороши, но&nbsp;для&nbsp;меня они были совершенно нечитаемы, так как авторы решили
         вставить все тексты картинками. Текстовое описание картинок, с&nbsp;которым могли&nbsp;бы работать экранные
         дикторы, было минимально. К&nbsp;сожалению, экранные дикторы могут читать только текстовые описания. Они не&nbsp;столь
@@ -135,7 +141,7 @@ export default () => (
         озвучки текста очень высока для&nbsp;непривычных к&nbsp;этому людей.
       </p>
 
-      <p><a href="https://soundcloud.com/freecodecamp/zersiaxs-screen-reader">Ссылка на&nbsp;звукозапись «Zersiax's
+      <p><a href="https://soundcloud.com/freecodecamp/zersiaxs-screen-reader" target="_blank" rel="nofollow">Ссылка на&nbsp;звукозапись «Zersiax's
         Screen Reader»</a></p>
 
       <p>Для тех из&nbsp;вас, кто ничего не&nbsp;понял: это то, как мой экранный диктор читает первую часть этой

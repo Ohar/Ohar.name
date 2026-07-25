@@ -1,9 +1,15 @@
-export const MOVE_TYPE_INFANTRY = 'infantry'
-export const MOVE_TYPE_FLY = 'fly'
+export const MOVE_TYPE_INFANTRY = "infantry"
+export const MOVE_TYPE_FLY = "fly"
 
 export const moveTypeCollection = {
-  [MOVE_TYPE_FLY]: 'Полёт',
-  [MOVE_TYPE_INFANTRY]: 'Пешком',
+  en: {
+    [MOVE_TYPE_FLY]: "Flying",
+    [MOVE_TYPE_INFANTRY]: "Infantry",
+  },
+  ru: {
+    [MOVE_TYPE_FLY]: "Полёт",
+    [MOVE_TYPE_INFANTRY]: "Пешком",
+  },
 }
 
 export default {

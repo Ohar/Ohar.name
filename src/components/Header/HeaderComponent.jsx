@@ -4,9 +4,12 @@ import Menu from "@/components/Menu"
 
 import "./HeaderStyles.css"
 
-const HeaderComponent = ({ hideHomeLink }) => (
+const HeaderComponent = ({ hideHomeLink, hideLanguageSwitcher }) => (
   <header className="header">
-    <Menu hideHomeLink={hideHomeLink}/>
+    <Menu
+      hideHomeLink={hideHomeLink}
+      hideLanguageSwitcher={hideLanguageSwitcher}
+    />
   </header>
 )
 

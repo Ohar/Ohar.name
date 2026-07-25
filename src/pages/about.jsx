@@ -1,33 +1,40 @@
-import React from 'react'
+import React from "react"
 
-import PageTitle from '@/components/PageTitle'
-import Layout from '@/components/Layout'
-import Seo from '@/components/Seo'
-import Contacts from '@/components/Contacts'
+import { useLanguage } from "@/components/LanguageProvider"
+import PageTitle from "@/components/PageTitle"
+import Layout from "@/components/Layout"
+import Seo from "@/components/Seo"
+import Contacts from "@/components/Contacts"
+import siteCopy from "@/constants/siteCopy"
 
-import CV from '@/cv/Frontend-Developer-Lysenko-Pavel.pdf'
+import CvEn from "@/cv/Frontend-Developer-Lysenko-Pavel-en.pdf"
+import CvRu from "@/cv/Frontend-Developer-Lysenko-Pavel.pdf"
 
-const AboutPage = () => (
-  <Layout>
-    <Seo
-      title='Контакты'
-      description='Как со мной связаться'
-      keywords={['Pavel Lysenko\'s contacts', 'Контакты Павла Лысенко']}
-    />
-    <PageTitle>Контакты</PageTitle>
-    <p>Привет! Меня зовут Павел Лысенко. Я — веб-разработчик.</p>
-    <p>
-      Моё <a
-        href={CV}
-        download
-      >
-        резюме
-      </a>.
-    </p>
+const AboutPage = () => {
+  const { language } = useLanguage()
+  const copy = siteCopy[language].contacts
+  const cv = language === "ru" ? CvRu : CvEn
 
-    <h2>Другие сайты со мной</h2>
-    <Contacts/>
-  </Layout>
-)
+  return (
+    <Layout>
+      <Seo
+        title={copy.title}
+        description={copy.description}
+        keywords={copy.keywords}
+      />
+      <PageTitle>{copy.title}</PageTitle>
+      <p>{copy.intro}</p>
+      <p>
+        <a href={cv} download>
+          {copy.cvLink}
+        </a>
+        .
+      </p>
+
+      <h2>{copy.profilesTitle}</h2>
+      <Contacts />
+    </Layout>
+  )
+}
 
 export default AboutPage

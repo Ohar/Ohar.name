@@ -1,29 +1,37 @@
-import React from 'react'
+import React from "react"
 
-import PageTitle from '@/components/PageTitle'
-import Layout from '@/components/Layout'
-import Seo from '@/components/Seo'
+import { useLanguage } from "@/components/LanguageProvider"
+import PageTitle from "@/components/PageTitle"
+import Layout from "@/components/Layout"
+import Seo from "@/components/Seo"
+import siteCopy from "@/constants/siteCopy"
 
-const PortfolioPage = () => (
-  <Layout>
-    <Seo
-      title='Портфолио'
-      description='Проекты и рабочие материалы Павла Лысенко'
-      keywords={['Pavel Lysenko portfolio', 'Портфолио Павла Лысенко', 'Ohar Studio']}
-    />
-    <PageTitle>Портфолио приложений</PageTitle>
+const PortfolioPage = () => {
+  const { language } = useLanguage()
+  const copy = siteCopy[language].portfolio
 
-    <p>
-      Отдельная витрина пет-проектов живёт на
-      <a
-        href="https://ohar-studio.ru/"
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-      >
-        Ohar Studio
-      </a>.
-    </p>
-  </Layout>
-)
+  return (
+    <Layout>
+      <Seo
+        title={copy.title}
+        description={copy.description}
+        keywords={copy.keywords}
+      />
+      <PageTitle>{copy.heading}</PageTitle>
+
+      <p>
+        {copy.lead}{" "}
+        <a
+          href="https://ohar-studio.ru/"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          Ohar Studio
+        </a>
+        .
+      </p>
+    </Layout>
+  )
+}
 
 export default PortfolioPage

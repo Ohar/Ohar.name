@@ -1,35 +1,60 @@
-import React from 'react'
+import React from "react"
 
-import Layout from '@/components/Layout'
-import Seo from '@/components/Seo'
+import { useLanguage } from "@/components/LanguageProvider"
+import Layout from "@/components/Layout"
+import Seo from "@/components/Seo"
+import siteCopy from "@/constants/siteCopy"
 
-import ImgDeus from '@/images/deus.png'
-import ImgEst from '@/images/est.png'
-import ImgMachina from '@/images/machina.png'
+import ImgDeus from "@/images/deus.png"
+import ImgEst from "@/images/est.png"
+import ImgMachina from "@/images/machina.png"
 
-import '@/styles/offset.css'
-import '@/styles/mechanicus.less'
+import "@/styles/offset.css"
+import "@/styles/mechanicus.less"
 
-const IndexPage = () => (
-  <Layout hideHomeLink>
-    <Seo keywords={['Pavel Lysenko site', 'Сайт Павла Лысенко', 'Ohar']} />
-    <h1 className="offset">Сайт Павла Лысенко</h1>
+const IndexPage = () => {
+  const { language } = useLanguage()
+  const copy = siteCopy[language].home
 
-    <article className="mechanicus">
-      <h1 className="offset">Deus Mechanicus</h1>
+  return (
+    <Layout hideHomeLink>
+      <Seo description={copy.description} keywords={copy.keywords} />
+      <h1 className="offset">{copy.heading}</h1>
 
-      <section className="mechanicus__logo">
-        <h1 className="offset">Omnissian</h1>
-      </section>
+      <article className="mechanicus">
+        <h1 className="offset">Deus Mechanicus</h1>
 
-      <section className="mechanicus__motto">
-        <h1 className="offset">Deus est machina</h1>
-        <img className="mechanicus__word" src={ImgDeus} alt='Deus' width={229} height={85}/>
-        <img className="mechanicus__word" src={ImgEst} alt='Est' width={173} height={85}/>
-        <img className="mechanicus__word" src={ImgMachina} alt='Machina' width={410} height={85}/>
-      </section>
-    </article>
-  </Layout>
-)
+        <section className="mechanicus__logo">
+          <h1 className="offset">Omnissian</h1>
+        </section>
+
+        <section className="mechanicus__motto">
+          <h1 className="offset">Deus est machina</h1>
+          <img
+            className="mechanicus__word"
+            src={ImgDeus}
+            alt="Deus"
+            width={229}
+            height={85}
+          />
+          <img
+            className="mechanicus__word"
+            src={ImgEst}
+            alt="Est"
+            width={173}
+            height={85}
+          />
+          <img
+            className="mechanicus__word"
+            src={ImgMachina}
+            alt="Machina"
+            width={410}
+            height={85}
+          />
+        </section>
+      </article>
+    </Layout>
+  )
+}
 
 export default IndexPage

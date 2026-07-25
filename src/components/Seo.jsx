@@ -1,25 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from "react"
+import PropTypes from "prop-types"
+import Helmet from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
+
+import { useLanguage } from "@/components/LanguageProvider"
 
 function Seo({ description, lang, meta, keywords, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            version
-          }
+  const { language } = useLanguage()
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+          version
         }
       }
-    `
-  )
+    }
+  `)
 
   const metaDescription = description || site.siteMetadata.description
+  const resolvedTitle = title || site.siteMetadata.title
   const titleTemplate = title
     ? `%s | ${site.siteMetadata.title}`
     : site.siteMetadata.title
@@ -27,7 +29,7 @@ function Seo({ description, lang, meta, keywords, title }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: lang || language,
       }}
       title={title || site.siteMetadata.title}
       titleTemplate={titleTemplate}
@@ -38,7 +40,7 @@ function Seo({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: resolvedTitle,
         },
         {
           property: `og:description`,
@@ -62,7 +64,7 @@ function Seo({ description, lang, meta, keywords, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: resolvedTitle,
         },
         {
           name: `twitter:description`,
@@ -70,7 +72,7 @@ function Seo({ description, lang, meta, keywords, title }) {
         },
         {
           name: `yandex-verification`,
-          content: 'ba53de7ab5a80fcc',
+          content: "ba53de7ab5a80fcc",
         },
       ]
         .concat(
@@ -89,9 +91,9 @@ function Seo({ description, lang, meta, keywords, title }) {
 Seo.defaultProps = {
   description: ``,
   keywords: [],
-  lang: `ru`,
+  lang: ``,
   meta: [],
-  title: '',
+  title: "",
 }
 
 Seo.propTypes = {

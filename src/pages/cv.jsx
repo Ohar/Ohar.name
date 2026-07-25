@@ -1,38 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React from "react"
 
-import Layout from '@/components/Layout'
-import Seo from '@/components/Seo'
-import CvPhoto from '@/images/Pavel_Lysenko.jpg'
+import { useLanguage } from "@/components/LanguageProvider"
+import Layout from "@/components/Layout"
+import Seo from "@/components/Seo"
+import CvPhoto from "@/images/Pavel_Lysenko.jpg"
 
-import { cvData, pageCopy } from '@/constants/cvData'
-import './cv.css'
+import { cvData, pageCopy } from "@/constants/cvData"
+import "./cv.css"
 
 const linkProps = {
-  target: '_blank',
-  rel: 'nofollow',
+  target: "_blank",
+  rel: "nofollow",
 }
 
-const languages = ['ru', 'en']
-
-const getPreferredLanguage = () => {
-  if (typeof navigator === 'undefined') {
-    return 'en'
-  }
-
-  const browserLanguages = navigator.languages?.length
-    ? navigator.languages
-    : [navigator.language]
-
-  const normalizedLanguages = browserLanguages
-    .filter(Boolean)
-    .map(item => item.toLowerCase())
-  const ruIndex = normalizedLanguages.findIndex(item => item.startsWith('ru'))
-  const enIndex = normalizedLanguages.findIndex(item => item.startsWith('en'))
-
-  return ruIndex !== -1 && (enIndex === -1 || ruIndex < enIndex)
-    ? 'ru'
-    : 'en'
-}
+const languages = ["ru", "en"]
 
 const ExternalLink = ({ href, children }) => (
   <a href={href} {...linkProps}>
@@ -52,7 +33,7 @@ const SmartLink = ({ href, external, children }) => {
   )
 }
 
-const Section = ({ title, className = 'section', children }) => (
+const Section = ({ title, className = "section", children }) => (
   <section className={className}>
     <h2 className="section-title">{title}</h2>
     {children}
@@ -68,14 +49,16 @@ const Hero = ({ data }) => (
         <div className="headline">
           <p className="role">{data.role}</p>
           <div className="compensation" aria-label={data.salaryLabel}>
-            {data.salaries.map(salary => (
-              <p className="salary" key={salary}>{salary}</p>
+            {data.salaries.map((salary) => (
+              <p className="salary" key={salary}>
+                {salary}
+              </p>
             ))}
           </div>
         </div>
       </div>
       <section className="summary" aria-label={data.summaryLabel}>
-        {data.summary.map(item => (
+        {data.summary.map((item) => (
           <p key={item}>{item}</p>
         ))}
       </section>
@@ -85,7 +68,7 @@ const Hero = ({ data }) => (
 
 const TargetList = ({ items }) => (
   <div className="target-list">
-    {items.map(item => (
+    {items.map((item) => (
       <p className="target-item" key={item.label}>
         <strong>{item.label}</strong>
         {item.value}
@@ -97,9 +80,9 @@ const TargetList = ({ items }) => (
 const Contacts = ({ title, contacts }) => (
   <Section title={title} className="contacts">
     <div className="target-list">
-      {contacts.map(contact => (
+      {contacts.map((contact) => (
         <p className="target-item" key={contact.label}>
-          <strong>{contact.label}</strong>{' '}
+          <strong>{contact.label}</strong>{" "}
           <SmartLink href={contact.href} external={contact.external}>
             {contact.value}
           </SmartLink>
@@ -135,7 +118,7 @@ const Company = ({ entry }) => (
     {entry.company}
     {entry.companyUrl && (
       <>
-        {' - '}
+        {" - "}
         <ExternalLink href={entry.companyUrl}>
           {entry.companyUrlText}
         </ExternalLink>
@@ -146,14 +129,14 @@ const Company = ({ entry }) => (
 
 const RoleList = ({ roles }) => (
   <div className="role-list">
-    {roles.map(role => (
+    {roles.map((role) => (
       <div className="role-item" key={`${role.title}-${role.printDate}`}>
         <h4>{role.title}</h4>
         <p className="role-period">
           <span className="date-screen">{role.screenDate}</span>
           <span className="date-print">{role.printDate}</span>
         </p>
-        {role.description.map(item => (
+        {role.description.map((item) => (
           <p key={item}>{item}</p>
         ))}
         <p className="stack">{role.stack}</p>
@@ -162,7 +145,7 @@ const RoleList = ({ roles }) => (
   </div>
 )
 
-const ExperienceEntry = ({ entry, className = 'entry' }) => (
+const ExperienceEntry = ({ entry, className = "entry" }) => (
   <article className={className}>
     <Period
       screenDate={entry.screenDate}
@@ -176,7 +159,7 @@ const ExperienceEntry = ({ entry, className = 'entry' }) => (
         <RoleList roles={entry.roles} />
       ) : (
         <>
-          {entry.description.map(item => (
+          {entry.description.map((item) => (
             <p key={item}>{item}</p>
           ))}
           <p className="stack">{entry.stack}</p>
@@ -195,15 +178,21 @@ const OldExperienceSummary = ({ summary }) => (
 
 const Experience = ({ data }) => (
   <Section title={data.experienceTitle}>
-    {data.experience.map(entry => (
-      <ExperienceEntry entry={entry} key={`${entry.title}-${entry.printDate}`} />
+    {data.experience.map((entry) => (
+      <ExperienceEntry
+        entry={entry}
+        key={`${entry.title}-${entry.printDate}`}
+      />
     ))}
     <div className="compact-history">
-      {data.compactExperience.map(entry => (
-        <ExperienceEntry entry={entry} key={`${entry.title}-${entry.printDate}`} />
+      {data.compactExperience.map((entry) => (
+        <ExperienceEntry
+          entry={entry}
+          key={`${entry.title}-${entry.printDate}`}
+        />
       ))}
       <OldExperienceSummary summary={data.oldExperienceSummary} />
-      {data.legacyExperience.map(entry => (
+      {data.legacyExperience.map((entry) => (
         <ExperienceEntry
           entry={entry}
           className="entry print-legacy"
@@ -216,15 +205,17 @@ const Experience = ({ data }) => (
 
 const FactGrid = ({ items }) => (
   <div className="grid-two">
-    {items.map(item => (
+    {items.map((item) => (
       <p className="fact" key={item.title}>
         <strong>{item.title}</strong>
-        {item.lines ? item.lines.map((line, index) => (
-          <React.Fragment key={line}>
-            {index > 0 && <br />}
-            {line}
-          </React.Fragment>
-        )) : item.text}
+        {item.lines
+          ? item.lines.map((line, index) => (
+              <React.Fragment key={line}>
+                {index > 0 && <br />}
+                {line}
+              </React.Fragment>
+            ))
+          : item.text}
       </p>
     ))}
   </div>
@@ -234,8 +225,10 @@ const Skills = ({ data }) => (
   <div className="skills-extra">
     <Section title={data.skillsTitle}>
       <div className="chips">
-        {data.skills.map(skill => (
-          <span className="chip" key={skill}>{skill}</span>
+        {data.skills.map((skill) => (
+          <span className="chip" key={skill}>
+            {skill}
+          </span>
         ))}
       </div>
     </Section>
@@ -249,8 +242,10 @@ const Skills = ({ data }) => (
 const Projects = ({ title, projects }) => (
   <Section title={title}>
     <div className="project-grid">
-      {projects.map(project => (
-        <p className="project-card" key={project}>{project}</p>
+      {projects.map((project) => (
+        <p className="project-card" key={project}>
+          {project}
+        </p>
       ))}
     </div>
   </Section>
@@ -271,20 +266,13 @@ const CvDocument = ({ data }) => (
 )
 
 const CvPage = () => {
-  const [language, setLanguage] = useState('en')
+  const { isHydrated, language, setLanguage } = useLanguage()
   const copy = pageCopy[language]
   const data = cvData[language]
 
-  useEffect(() => {
-    setLanguage(getPreferredLanguage())
-  }, [])
-
   return (
-    <Layout className="CvPageLayout">
-      <Seo
-        title={copy.title}
-        description={copy.description}
-      />
+    <Layout className="CvPageLayout" hideLanguageSwitcher>
+      <Seo title={copy.title} description={copy.description} />
 
       <section className="CvPage" data-language={language}>
         <div className="toolbar">
@@ -297,13 +285,27 @@ const CvPage = () => {
           >
             {copy.print}
           </button>
-          <div className="language-switcher" role="group" aria-label={copy.language}>
-            {languages.map(item => (
+          <div
+            className={
+              isHydrated
+                ? "language-switcher"
+                : "language-switcher language-switcher-pending"
+            }
+            role="group"
+            aria-label={copy.language}
+            aria-hidden={!isHydrated}
+          >
+            {languages.map((item) => (
               <button
                 key={item}
-                className={item === language ? 'language-button language-button-active' : 'language-button'}
+                className={
+                  item === language
+                    ? "language-button language-button-active"
+                    : "language-button"
+                }
                 type="button"
                 aria-pressed={item === language}
+                disabled={!isHydrated}
                 onClick={() => setLanguage(item)}
               >
                 {item.toUpperCase()}

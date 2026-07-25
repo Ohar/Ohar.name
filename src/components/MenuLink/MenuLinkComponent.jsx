@@ -1,26 +1,27 @@
 import { Link } from "gatsby"
 import React from "react"
 
-import isOuterLink from './utils/isOuterLink'
+import isOuterLink from "./utils/isOuterLink"
 
-import './MenuLinkStyles.css'
+import "./MenuLinkStyles.css"
 
-const MenuLinkComponent = ({url, title, content, children}) => isOuterLink(url)
-  ? (
+const MenuLinkComponent = ({ url, title, content, children, hrefLang }) =>
+  isOuterLink(url) ? (
     <a
       className="MenuLink"
       href={url}
+      hrefLang={hrefLang}
       title={title || content}
       target="_blank"
       rel="noopener noreferrer nofollow"
     >
       {children}
     </a>
-  )
-  : (
+  ) : (
     <Link
       className="MenuLink"
       to={url}
+      hrefLang={hrefLang}
       title={title || content}
     >
       {children}

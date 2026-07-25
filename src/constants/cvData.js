@@ -307,8 +307,8 @@ const cvData = {
     targetRole: 'Lead Frontend Developer / React / TypeScript',
     targetItems: [
       { label: 'Employment', value: 'Full time, part time, project work' },
-      { label: 'Format', value: 'Office, remote, hybrid, rotation, traveling' },
-      { label: 'Location', value: 'Moscow, Filyovskiy Park; ready to relocate' },
+      { label: 'Format', value: 'Office / remote' },
+      { label: 'Location', value: 'Moscow; open to relocation' },
     ],
     experienceTitle: 'Work experience - 14 years 9 months',
     experience: [
@@ -561,7 +561,7 @@ const cvData = {
     additional: [
       {
         title: 'Languages',
-        lines: ['Russian - Native.', 'English - B2, Upper Intermediate.'],
+        lines: ['Russian - Native.', 'English - B2, Upper Intermediate.', 'French - A1, Beginner.'],
       },
     ],
     projectsTitle: 'Key projects',

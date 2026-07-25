@@ -11,7 +11,9 @@ export default () => (
         <h4>Что это за&nbsp;пост? Он не&nbsp;похож на&nbsp;статью</h4>
         <p>Это действительно не&nbsp;статья. Это компиляция самых интересных, на&nbsp;мой взгляд, ответов
           на&nbsp;заглавный вопрос: «<a
-            href="http://www.quora.com/How-does-a-visually-impaired-computer-programmer-do-programming">Как
+            href="http://www.quora.com/How-does-a-visually-impaired-computer-programmer-do-programming"
+            target="_blank"
+            rel="nofollow">Как
             программируют слабовидящие программисты?</a>» из&nbsp;обсуждения на&nbsp;Quora.com.</p>
         <h4>Почему я сделал перевод?</h4>
         <p>
@@ -57,7 +59,7 @@ export default () => (
         <p>
           Лично я, в&nbsp;отличие от&nbsp;многих других незрячих, использую среду разработки. Мы&nbsp;пользуемся
           экранными дикторами, а&nbsp;интерфейсы сред разработки в&nbsp;большинстве своём для&nbsp;них плохо доступны.
-          Например, экранным дикторам недоступны <a href="https://youtrack.jetbrains.com/issue/IDEA-111425">все среды
+          Например, экранным дикторам недоступны <a href="https://youtrack.jetbrains.com/issue/IDEA-111425" target="_blank" rel="nofollow">все среды
           разработки компании JetBrains</a>. Это&nbsp;— один из&nbsp;минусов конкуренции в&nbsp;нашем обществе:
           люди слишком заняты заботой о&nbsp;большинстве, чтобы прислушиваться к&nbsp;меньшинству. </p>
 
@@ -105,10 +107,14 @@ export default () => (
 
         <p>
           В&nbsp;колледже он использовал комбинацию экранной лупы и экранного диктора. Экранная лупа называлась <a
-          href="http://www.freedomscientific.com/Products/LowVision/MAGic">MAGic</a> и позволяла ему
+          href="http://www.freedomscientific.com/Products/LowVision/MAGic"
+          target="_blank"
+          rel="nofollow">MAGic</a> и позволяла ему
           увеличивать текст так, что на&nbsp;монитор умещалось всего лишь несколько символов. Сам монитор был огромным
           экраном свыше 30&nbsp;дюймов, оптимизированным для&nbsp;слабовидящих. Экранным диктором был <a
-          href="http://www.freedomscientific.com/Products/Blindness/JAWS"><abbr title="Job Access With Speech"
+          href="http://www.freedomscientific.com/Products/Blindness/JAWS"
+          target="_blank"
+          rel="nofollow"><abbr title="Job Access With Speech"
                                                                                 lang="en">JAWS</abbr></a>,
           хотя мой друг перепробовал множество других программ. Он говорил, что существующие программы с&nbsp;открытым
           кодом выглядят жалко в&nbsp;сравнении с&nbsp;очень дорогими программами, которыми он пользовался благодаря
@@ -148,7 +154,9 @@ export default () => (
           Стоит также отметить, что он увлечён спецификацией доступности <abbr title="HyperText Markup Language"
                                                                                lang="en"><abbr
           title="HyperText Markup Language" lang="en">HTML</abbr></abbr>, в&nbsp;особенности <a
-          href="http://www.w3.org/TR/wai-aria/"><abbr title="Accessible Rich Internet Applications"
+          href="http://www.w3.org/TR/wai-aria/"
+          target="_blank"
+          rel="nofollow"><abbr title="Accessible Rich Internet Applications"
                                                       lang="en">ARIA</abbr></a>.
           Большинство сайтов в&nbsp;интернете её полностью игнорируют, несмотря на&nbsp;то, что она очень просто
           внедряется. То, как он пользуется сайтами с&nbsp;<abbr title="Accessible Rich Internet Applications"
@@ -162,7 +170,7 @@ export default () => (
       <blockquote>
         <p>
           Рон Морфорд&nbsp;— один из&nbsp;самых талантливых программистов, с&nbsp;которыми мне приходилось работать.
-          У&nbsp;него было что-то под названием «<a href="http://en.wikipedia.org/wiki/Marfan_syndrome">синдром
+          У&nbsp;него было что-то под названием «<a href="http://en.wikipedia.org/wiki/Marfan_syndrome" target="_blank" rel="nofollow">синдром
           Марфана</a>», из-за которого он полностью потерял зрение, когда ему было чуть больше двадцати. Я работал
           на&nbsp;него в&nbsp;начале 90-х, разрабатывая экранный диктор для&nbsp;Windows&nbsp;3.1. Рон владел компанией
           Automated Functions, Inc, которая разрабатывала программы и железо для&nbsp;слепых. Одним из&nbsp;его первых
@@ -253,7 +261,9 @@ export default () => (
           упомянута дважды. Спасибо. Я это ценю и очень рад, что она оказалась полезной для&nbsp;стольких из&nbsp;людей.
           К&nbsp;сожалению, из-за каких-то проблем с&nbsp;доступностью, я не&nbsp;могу прочитать комментарии с&nbsp;её
           упоминанием. Тем не&nbsp;менее, я прошу всех, у&nbsp;кого есть вопросы, стукнуть мне в&nbsp;твиттер <a
-            href="https://twitter.com/zersiax">Zersiax</a>.
+            href="https://twitter.com/zersiax"
+            target="_blank"
+            rel="nofollow">Zersiax</a>.
           Обычно я отвечаю сразу&nbsp;же, если не&nbsp;сплю :-) Это обсуждение показывает, что слепые тоже пишут
           программы и некоторым это даже нравится.
         </p>
@@ -285,7 +295,7 @@ export default () => (
           Ладно, хватит на&nbsp;этот раз:) Спасибо за&nbsp;чтение.</p>
       </blockquote>
 
-      <a href="http://habrahabr.ru/post/260463/">Более развёрнутый ответ Флориана</a>
+      <a href="http://habrahabr.ru/post/260463/" target="_blank" rel="nofollow">Более развёрнутый ответ Флориана</a>
     </article>
   </Layout>
 )

@@ -48,6 +48,7 @@ const getMenuList = (language) => {
       content: copy.quotes,
       hrefLang: "ru",
       languageBadge: russianOnlyBadge,
+      isEnglishOnlyHidden: true,
     },
     {
       url: "/about",
@@ -62,12 +63,14 @@ const getMenuList = (language) => {
       content: copy.articles,
       hrefLang: "ru",
       languageBadge: russianOnlyBadge,
+      isEnglishOnlyHidden: true,
     },
     {
       url: "http://dm-stuff.ru",
       title: "Dungeons & Dragons",
       icon: faDAndD,
       content: "D&D",
+      isEnglishOnlyHidden: true,
     },
     {
       url: "/dw",
@@ -76,8 +79,11 @@ const getMenuList = (language) => {
       content: "DW",
       hrefLang: "ru",
       languageBadge: russianOnlyBadge,
+      isEnglishOnlyHidden: true,
     },
-  ]
+  ].filter(
+    ({ isEnglishOnlyHidden }) => language !== "en" || !isEnglishOnlyHidden
+  )
 }
 
 export default getMenuList

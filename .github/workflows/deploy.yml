@@ -85,6 +85,9 @@ jobs:
           tar -xzf /tmp/ohar.name-deploy/site.tar.gz -C "$RELEASE_PATH"
           install -m 0644 /tmp/ohar.name-deploy/ohar.name.conf /etc/nginx/sites-available/ohar.name
           ln -sfn /etc/nginx/sites-available/ohar.name /etc/nginx/sites-enabled/ohar.name
+          if [ -d "$DEPLOY_PATH" ] && [ ! -L "$DEPLOY_PATH" ]; then
+            mv "$DEPLOY_PATH" "$(dirname "$DEPLOY_PATH")/current.backup.$(date +%Y%m%d%H%M%S)"
+          fi
           ln -sfn "$RELEASE_PATH" "$DEPLOY_PATH.tmp"
           mv -Tf "$DEPLOY_PATH.tmp" "$DEPLOY_PATH"
           nginx -t

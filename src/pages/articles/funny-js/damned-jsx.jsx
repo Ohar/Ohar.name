@@ -27,7 +27,7 @@ export default () => (
 
       <p>Вы хотите сделать это самым очевидным способом — обработав строку</p>
 
-      <img src={ImgEasyWay}
+      <img src={ImgEasyWay.src}
            alt="formatter = input => input.replace('A', <i>A</i>).replace('B', <b>B</b>)"
            width="399"
            height="40"/>
@@ -48,7 +48,7 @@ export default () => (
         <p>Ну, как обычно, страдать. Есть неплохой вариант — разбивать строку на массив элементов и каждому из них
           давать свой шаблон и складывать в массив-результат.</p>
 
-        <img src={ImgHardWay}
+        <img src={ImgHardWay.src}
              alt="formatter = input => {let result = [];input.split(',').forEach(e => {switch (e) {case 'A':result.push(<i>{e}</i>);break;case 'B':result.push(<b>{e}</b>);break;}});return result}"
              width="299"
              height="298"/>

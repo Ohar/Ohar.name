@@ -1,1 +1,1 @@
-export default from './QuotesContainer'
+export { default } from './QuotesContainer'

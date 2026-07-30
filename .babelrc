@@ -1,8 +1,0 @@
-{
-  "presets": [
-    "gatsby"
-  ],
-  "plugins": [
-    "@babel/plugin-proposal-export-default-from"
-  ]
-}

@@ -3,8 +3,6 @@ import React from "react"
 import Layout from "@/components/Layout"
 import Seo from "@/components/Seo"
 
-import "./styles.css"
-
 export default () => (
   <Layout>
     <Seo title='Невидимый title у детей button'/>

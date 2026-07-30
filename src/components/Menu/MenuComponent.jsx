@@ -7,8 +7,6 @@ import MenuLink from "@/components/MenuLink"
 
 import getMenuList from "./constants/menuList"
 
-import "./MenuStyles.css"
-
 const MenuComponent = ({ hideHomeLink, hideLanguageSwitcher = false }) => {
   const { language } = useLanguage()
   const menuList = getMenuList(language)

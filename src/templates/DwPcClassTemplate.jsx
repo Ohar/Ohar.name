@@ -8,7 +8,7 @@ import DwPcClass from '@/components/DwPcClass'
 import PageTitle from '@/components/PageTitle'
 
 import { dwPcClassCollection } from '@/constants/dwPcClassList'
-import { Link } from 'gatsby'
+import { Link } from '@/components/NextLink'
 
 const DwPcClassPageTemplate = ({dwPcClassId: dwPcClassIdInput, pageContext: {slug}}) => {
   const dwPcClassId = dwPcClassIdInput || slug

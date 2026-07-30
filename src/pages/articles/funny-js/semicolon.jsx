@@ -37,7 +37,7 @@ const content = `
 
       <p><code>5</code> — примитив, его нельзя выполнить и из-за этого скрипт умирает.</p>
 
-      <img src='${ImgWasted}'
+      <img src='${ImgWasted.src}'
            alt="ПОТРАЧЕНО"
            width="400"
            height="240"/>

@@ -1,1 +1,1 @@
-export default from './DwClassLinksContainer'
+export { default } from './DwClassLinksContainer'

@@ -1,1 +1,1 @@
-export default from './DwTagComponent'
+export { default } from './DwTagComponent'

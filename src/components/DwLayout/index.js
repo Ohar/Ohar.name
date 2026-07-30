@@ -1,1 +1,1 @@
-export default from './DwLayoutComponent'
+export { default } from './DwLayoutComponent'

@@ -5,8 +5,6 @@ import sortByName from '@/utils/sortByName'
 
 import DwClassLinks from './components/DwClassLinks'
 
-import './DwMenuStyles.less'
-
 const DwMenuComponent = () => (
   <section className='DwMenu'>
     <DwClassLinks/>

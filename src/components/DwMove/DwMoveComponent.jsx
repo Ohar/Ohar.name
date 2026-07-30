@@ -2,8 +2,6 @@ import React from 'react'
 
 import DwQuote from '@/components/DwQuote'
 
-import './DwMoveStyles.less'
-
 const DwMoveComponent = ({id, name, text, quote = null, note = null}) => (
   <section
     className={`DwMove DwMove-${id}`}

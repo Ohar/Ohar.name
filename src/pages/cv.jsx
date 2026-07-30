@@ -6,7 +6,6 @@ import Seo from "@/components/Seo"
 import CvPhoto from "@/images/Pavel_Lysenko.jpg"
 
 import { cvData, pageCopy } from "@/constants/cvData"
-import "./cv.css"
 
 const linkProps = {
   target: "_blank",
@@ -42,7 +41,7 @@ const Section = ({ title, className = "section", children }) => (
 
 const Hero = ({ data }) => (
   <header className="hero">
-    <img className="photo" src={CvPhoto} alt={data.name} />
+    <img className="photo" src={CvPhoto.src} alt={data.name} />
     <div>
       <div className="head-info">
         <h1>{data.name}</h1>
@@ -272,7 +271,11 @@ const CvPage = () => {
 
   return (
     <Layout className="CvPageLayout" hideLanguageSwitcher>
-      <Seo title={copy.title} description={copy.description} />
+      <Seo
+        title={copy.title}
+        description={copy.description}
+        stylesheets={["/styles/cv.css"]}
+      />
 
       <section className="CvPage" data-language={language}>
         <div className="toolbar">

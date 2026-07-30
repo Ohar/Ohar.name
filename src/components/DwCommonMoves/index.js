@@ -1,1 +1,1 @@
-export default from './DwCommonMovesComponent'
+export { default } from './DwCommonMovesComponent'

@@ -1,1 +1,1 @@
-export default from './DwQuoteComponent'
+export { default } from './DwQuoteComponent'

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { Helmet } from "react-helmet"
+import Head from "next/head"
 
 const PORTFOLIO_URL = "https://ohar-studio.ru/"
 
@@ -9,12 +9,12 @@ const PortfolioPage = () => {
   }, [])
 
   return (
-    <Helmet>
+    <Head>
       <title>Portfolio | Ohar</title>
       <link rel="canonical" href={PORTFOLIO_URL} />
       <meta httpEquiv="refresh" content={`0; url=${PORTFOLIO_URL}`} />
       <meta name="robots" content="noindex, follow" />
-    </Helmet>
+    </Head>
   )
 }
 

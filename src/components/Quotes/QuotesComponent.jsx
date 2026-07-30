@@ -1,9 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from '@/components/NextLink'
 
 import generateQuotePath from './utils/generateQuotePath'
-
-import './QuotesStyles.less'
 
 const QuotesComponent = ({ quote, isNextBtnEnabled, isPrevBtnEnabled, quoteId, getRandomQuoteNum }) => (
   <section className='QuotesComponent'>

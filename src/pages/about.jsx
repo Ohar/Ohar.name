@@ -7,13 +7,13 @@ import Seo from "@/components/Seo"
 import Contacts from "@/components/Contacts"
 import siteCopy from "@/constants/siteCopy"
 
-import CvEn from "@/cv/Frontend-Developer-Lysenko-Pavel-en.pdf"
-import CvRu from "@/cv/Frontend-Developer-Lysenko-Pavel.pdf"
-
 const AboutPage = () => {
   const { language } = useLanguage()
   const copy = siteCopy[language].contacts
-  const cv = language === "ru" ? CvRu : CvEn
+  const cv =
+    language === "ru"
+      ? "/cv/Frontend-Developer-Lysenko-Pavel.pdf"
+      : "/cv/Frontend-Developer-Lysenko-Pavel-en.pdf"
 
   return (
     <Layout>

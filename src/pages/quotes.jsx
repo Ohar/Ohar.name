@@ -1,1 +1,1 @@
-export default from '@/templates/QuotePageTemplate'
+export { default } from '@/templates/QuotePageTemplate'

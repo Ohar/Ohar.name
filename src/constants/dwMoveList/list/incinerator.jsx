@@ -3,7 +3,7 @@ import React from 'react'
 import DwMoveLink from '@/components/DwMoveLink'
 import sortByName from '@/utils/sortByName'
 import generateDwPcClassPathById from '@/utils/generateDwPcClassPathById'
-import { Link } from 'gatsby'
+import { Link } from '@/components/NextLink'
 import DwTag from '@/components/DwTag'
 
 export default [

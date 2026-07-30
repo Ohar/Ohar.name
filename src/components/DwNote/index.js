@@ -1,1 +1,1 @@
-export default from './DwNoteComponent'
+export { default } from './DwNoteComponent'

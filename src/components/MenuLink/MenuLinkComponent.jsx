@@ -1,9 +1,7 @@
-import { Link } from "gatsby"
+import { Link } from "@/components/NextLink"
 import React from "react"
 
 import isOuterLink from "./utils/isOuterLink"
-
-import "./MenuLinkStyles.css"
 
 const MenuLinkComponent = ({ url, title, content, children, hrefLang }) =>
   isOuterLink(url) ? (

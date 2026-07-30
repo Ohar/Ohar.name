@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from '@/components/NextLink'
 
 import PageTitle from '@/components/PageTitle'
 import Seo from '@/components/Seo'

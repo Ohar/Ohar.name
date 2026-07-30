@@ -1,26 +1,25 @@
 {
   "name": "ohar.name",
   "version": "1.4.2",
+  "private": true,
   "description": "Site ohar.name",
+  "packageManager": "yarn@1.22.22",
+  "resolutions": {
+    "postcss": "8.5.18",
+    "sharp": "0.35.3"
+  },
   "engines": {
-    "node": ">=18 <26"
+    "node": ">=20.9 <26"
   },
   "scripts": {
-    "postinstall": "node -e \"['public','dist'].forEach(dir => require('fs').mkdirSync(dir, {recursive: true}))\"",
-    "test": "yarn gatsby:build && yarn test:i18n && yarn test:cv-pdf",
+    "test": "yarn build && yarn test:i18n && yarn test:cv-pdf",
     "test:i18n": "node --test tests/i18n.test.js",
     "test:cv-pdf": "node --test tests/cv-pdf.test.js",
-    "start": "npm run gatsby:develop",
-    "dev": "npm run gatsby:develop",
-    "zip": "cd ./public && bestzip ./../dist/ohar.name.zip ./* && cd ./.. && echo 'SPA Zipped'",
-    "deploy": "bash ./shell_scripts/deploy.sh && echo 'Deployed'",
-    "build": "npm run gatsby:build && npm run zip && echo 'Builded'",
-    "update_site": "npm run build && npm run deploy && echo 'Site is updated'",
-    "release": "npm version patch && npm run update_site && git push origin --tags && git push && echo 'Released'",
-    "gatsby:build": "gatsby build",
-    "gatsby:develop": "gatsby develop",
-    "gatsby:format": "prettier --write src/**/*.{js,jsx}",
-    "gatsby:serve": "gatsby serve"
+    "start": "next dev",
+    "dev": "next dev",
+    "build": "next build",
+    "release": "npm version patch && git push --follow-tags origin master",
+    "format": "prettier --write src/**/*.{js,jsx} tests/*.js next.config.js"
   },
   "repository": {
     "type": "git",
@@ -36,13 +35,6 @@
   },
   "homepage": "https://github.com/Ohar/Ohar.name#readme",
   "devDependencies": {
-    "@babel/cli": "^7.27.2",
-    "@babel/core": "^7.27.7",
-    "@babel/plugin-proposal-export-default-from": "^7.27.1",
-    "bestzip": "3.0.1",
-    "gatsby-cli": "^5.16.0",
-    "gatsby-plugin-less": "^7.16.0",
-    "less": "^4.6.7",
     "prettier": "^3.6.0"
   },
   "dependencies": {
@@ -53,29 +45,10 @@
     "arrify": "^2.0.1",
     "classnames": "^2.5.1",
     "declint-ru": "^0.0.2",
-    "gatsby": "^5.16.1",
-    "gatsby-plugin-manifest": "^5.16.0",
-    "gatsby-plugin-offline": "^6.16.0",
-    "gatsby-plugin-react-helmet": "^6.16.0",
-    "gatsby-plugin-sharp": "^5.16.0",
-    "gatsby-source-filesystem": "^5.16.0",
-    "gatsby-transformer-sharp": "^5.16.0",
-    "lodash": "^4.17.21",
-    "moment": "^2.30.1",
+    "lodash": "^4.18.1",
+    "next": "16.2.12",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-helmet": "^6.1.0"
-  },
-  "resolutions": {
-    "cookie": "^0.7.2",
-    "file-type": "^21.3.1",
-    "immutable": "^3.8.3",
-    "lodash": "^4.18.1",
-    "path-to-regexp": "^0.1.13",
-    "serialize-javascript": "^7.0.7",
-    "tmp": "^0.2.6",
-    "uuid": "^11.1.1",
-    "webpack": "^5.108.3"
+    "react-dom": "^18.3.1"
   }
 }

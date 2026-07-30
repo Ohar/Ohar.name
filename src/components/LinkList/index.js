@@ -1,1 +1,1 @@
-export default from './LinkListComponent'
+export { default } from './LinkListComponent'

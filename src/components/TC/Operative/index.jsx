@@ -10,8 +10,6 @@ import { moveTypeCollection } from "@/constants/TC/move"
 import operativeCollection from "@/constants/TC/operativeCollection"
 import siteCopy from "@/constants/siteCopy"
 
-import "./styles.less"
-
 const Operative = ({ id }) => {
   const { language } = useLanguage()
   const copy = siteCopy[language].tc

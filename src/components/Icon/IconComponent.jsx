@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from 'prop-types'
 
-import './IconStyles.css'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const IconComponent = ({icon, className = ''}) => icon

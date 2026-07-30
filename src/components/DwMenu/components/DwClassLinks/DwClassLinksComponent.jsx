@@ -1,10 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from '@/components/NextLink'
 
 import generateDwPcClassPathById from '@/utils/generateDwPcClassPathById'
 import generateDwMovePath from '@/utils/generateDwMovePath'
-
-import './DwClassLinksStyles.less'
 
 const DwClassLinksComponent = (
   {

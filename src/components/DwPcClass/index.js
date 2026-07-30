@@ -1,1 +1,1 @@
-export default from './DwPcClassContainer'
+export { default } from './DwPcClassContainer'

@@ -17,8 +17,6 @@ import {
   OPERATIVE_HERETIC_TROOPER,
 } from "@/constants/TC/operative_ids"
 
-import "./styles.less"
-
 const TcPage = () => {
   const { language } = useLanguage()
   const copy = siteCopy[language].tc

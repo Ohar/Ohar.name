@@ -1,1 +1,1 @@
-export default from './DwMoveLinkContainer'
+export { default } from './DwMoveLinkContainer'

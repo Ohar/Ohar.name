@@ -1,1 +1,1 @@
-export default from './LayoutComponent'
+export { default } from './LayoutComponent'

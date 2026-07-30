@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { Link } from "@/components/NextLink"
 import React from "react"
 import PropTypes from "prop-types"
 

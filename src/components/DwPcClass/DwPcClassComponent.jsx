@@ -9,8 +9,6 @@ import DwEquipment from '@/components/DwEquipment'
 
 import sortByName from '@/utils/sortByName'
 
-import './DwPcClassStyles.less'
-
 const DwPcClassComponent = (
   {
     advancedMoveIdList,

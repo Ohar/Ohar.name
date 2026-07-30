@@ -1,8 +1,6 @@
 import React from 'react'
 import arrify from 'arrify'
 
-import './DwQuoteStyles.less'
-
 const DwQuoteComponent = (
   {
     className = '',

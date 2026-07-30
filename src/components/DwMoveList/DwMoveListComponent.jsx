@@ -2,8 +2,6 @@ import React from 'react'
 
 import DwMove from '@/components/DwMove'
 
-import './DwMoveListStyles.less'
-
 const DwMoveListComponent = ({className = '', list}) => (
   <ol className={`DwMoveList ${className}`}>
     {

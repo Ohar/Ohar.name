@@ -1,1 +1,1 @@
-export default from './DwEquipmentContainer'
+export { default } from './DwEquipmentContainer'

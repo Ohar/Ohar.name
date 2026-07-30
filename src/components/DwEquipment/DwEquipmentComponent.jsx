@@ -2,8 +2,6 @@ import React from 'react'
 
 import DwTag from '@/components/DwTag'
 
-import './DwEquipmentStyles.less'
-
 const DwEquipmentComponent = ({children}) => (
   <section className='DwPcClass__equipment DwPcClass__section'>
     <h2>Снаряжение</h2>

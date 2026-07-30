@@ -1,6 +1,4 @@
 import React from "react"
-// import { Link } from "gatsby"
-
 import Layout from "@/components/Layout"
 import Seo from "@/components/Seo"
 
@@ -8,9 +6,7 @@ import Seo from "@/components/Seo"
 // import RulesRtf from "./files/Rules.rtf"
 // import RulesDoc from "./files/Rules.doc"
 
-import RulesRawText from './RulesRawText'
-
-import './styles/rules.css'
+import RulesRawText from '@/components/RulesRawText'
 
 export default () => (
   <Layout>

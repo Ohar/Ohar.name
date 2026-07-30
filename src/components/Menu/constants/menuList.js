@@ -19,7 +19,7 @@ const getMenuList = (language) => {
       content: (
         <img
           className="MenuLink_img"
-          src={ImgLogo}
+          src={ImgLogo.src}
           alt="Adeptus Mechanicus"
           width="48"
           height="48"

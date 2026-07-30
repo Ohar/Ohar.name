@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from '@/components/NextLink'
 
 import DwMoveLink from '@/components/DwMoveLink'
 import DwTag from '@/components/DwTag'

@@ -9,9 +9,6 @@ import ImgDeus from "@/images/deus.png"
 import ImgEst from "@/images/est.png"
 import ImgMachina from "@/images/machina.png"
 
-import "@/styles/offset.css"
-import "@/styles/mechanicus.less"
-
 const IndexPage = () => {
   const { language } = useLanguage()
   const copy = siteCopy[language].home
@@ -32,21 +29,21 @@ const IndexPage = () => {
           <h1 className="offset">Deus est machina</h1>
           <img
             className="mechanicus__word"
-            src={ImgDeus}
+            src={ImgDeus.src}
             alt="Deus"
             width={229}
             height={85}
           />
           <img
             className="mechanicus__word"
-            src={ImgEst}
+            src={ImgEst.src}
             alt="Est"
             width={173}
             height={85}
           />
           <img
             className="mechanicus__word"
-            src={ImgMachina}
+            src={ImgMachina.src}
             alt="Machina"
             width={410}
             height={85}

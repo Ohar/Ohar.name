@@ -4,8 +4,6 @@ import { faNpm } from "@fortawesome/free-brands-svg-icons"
 import Icon from "@/components/Icon"
 import { useLanguage } from "@/components/LanguageProvider"
 
-import "./ContactsStyles.css"
-
 const contactList = [
   {
     url: "https://vk.com/place_your_ad_here",

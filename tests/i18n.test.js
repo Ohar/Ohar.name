@@ -8,7 +8,7 @@ const {
   isLocalizedPath,
 } = require("../src/utils/language")
 
-const publicDir = path.resolve(__dirname, "..", "public")
+const outputDir = path.resolve(__dirname, "..", "out")
 
 test("browser language priority selects Russian only above English", () => {
   assert.equal(getPreferredLanguage(["ru-RU", "en-US"]), "ru")
@@ -47,17 +47,19 @@ test("static HTML defaults to English only on localized pages", async () => {
   const pages = [
     ["index.html", "en", "Pavel Lysenko"],
     ["about/index.html", "en", "Elsewhere online"],
-    ["portfolio/index.html", "en", "Projects and applications"],
+
     ["cv/index.html", "en", "Lead Frontend Developer"],
     ["tc/index.html", "en", "Trench Crusade: Heretic Legion"],
-    ["404/index.html", "en", "This page does not exist"],
+    ["404.html", "en", "This page does not exist"],
     ["articles/index.html", "ru", "Статьи"],
     ["dw/index.html", "ru", "Dungeon World"],
+    ["dw/elf/index.html", "ru", "Эльф"],
     ["quotes/index.html", "ru", "Случайная цитата"],
+    ["quotes/42/index.html", "ru", "Цитата №42"],
   ]
 
   for (const [relativePath, language, expectedText] of pages) {
-    const html = await readFile(path.join(publicDir, relativePath), "utf8")
+    const html = await readFile(path.join(outputDir, relativePath), "utf8")
 
     assert.match(html, new RegExp(`<html[^>]+lang="${language}"`), relativePath)
     assert.ok(
@@ -68,14 +70,22 @@ test("static HTML defaults to English only on localized pages", async () => {
 })
 
 test("localized metadata and Russian-only links are explicit", async () => {
-  const home = await readFile(path.join(publicDir, "index.html"), "utf8")
-  const about = await readFile(path.join(publicDir, "about/index.html"), "utf8")
+  const home = await readFile(path.join(outputDir, "index.html"), "utf8")
+  const about = await readFile(path.join(outputDir, "about/index.html"), "utf8")
   const notFound = await readFile(
-    path.join(publicDir, "404/index.html"),
+    path.join(outputDir, "404.html"),
+    "utf8"
+  )
+  const portfolio = await readFile(
+    path.join(outputDir, "portfolio/index.html"),
     "utf8"
   )
 
   assert.match(home, /property="og:title" content="Ohar"/)
-  assert.match(about, /hrefLang="ru"/)
+  assert.doesNotMatch(about, /href="\/(?:articles|dw|quotes)\//)
   assert.match(notFound, /name="robots" content="noindex, follow"/)
+  assert.match(
+    portfolio,
+    /http-equiv="refresh" content="0; url=https:\/\/ohar-studio\.ru\/"/
+  )
 })

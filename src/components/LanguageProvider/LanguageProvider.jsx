@@ -8,7 +8,6 @@ import React, {
   useState,
 } from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
 
 import {
   DEFAULT_LANGUAGE,
@@ -60,6 +59,10 @@ const LanguageProvider = ({ children, pathname = "/" }) => {
     setIsHydrated(true)
   }, [])
 
+  useEffect(() => {
+    document.documentElement.lang = language
+  }, [language])
+
   const setLanguage = useCallback(
     (nextLanguage) => {
       if (!canChangeLanguage || !isSupportedLanguage(nextLanguage)) {
@@ -89,7 +92,6 @@ const LanguageProvider = ({ children, pathname = "/" }) => {
 
   return (
     <LanguageContext.Provider value={value}>
-      <Helmet htmlAttributes={{ lang: language }} />
       {children}
     </LanguageContext.Provider>
   )

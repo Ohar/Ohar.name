@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { navigate } from 'gatsby'
+import { navigate } from '@/components/NextLink'
 import { throttle } from 'lodash'
 
 import quotesList from '@/constants/quotesList'

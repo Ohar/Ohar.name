@@ -2,8 +2,6 @@ import React from 'react'
 
 import { dwNoteCollection } from '@/constants/dwNoteList'
 
-import './DwNoteStyles.less'
-
 const DwNoteComponent = ({noteId}) => {
   if (!noteId) {
     return null

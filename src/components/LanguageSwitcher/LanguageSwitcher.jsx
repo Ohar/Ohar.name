@@ -4,8 +4,6 @@ import { useLanguage } from "@/components/LanguageProvider"
 import siteCopy from "@/constants/siteCopy"
 import { SUPPORTED_LANGUAGES } from "@/utils/language"
 
-import "./LanguageSwitcherStyles.css"
-
 const LanguageSwitcher = ({ className = "" }) => {
   const { canChangeLanguage, isHydrated, language, setLanguage } = useLanguage()
 

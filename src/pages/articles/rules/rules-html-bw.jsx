@@ -3,10 +3,7 @@ import React from 'react'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 
-import RulesRawText from './RulesRawText'
-
-import './styles/print.css'
-import './styles/print_BW.css'
+import RulesRawText from '@/components/RulesRawText'
 
 export default () => (
   <Layout>

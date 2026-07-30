@@ -3,8 +3,6 @@ import React, { useState, useEffect, useRef } from 'react'
 
 import { dwTagCollection } from '@/constants/dwTagList'
 
-import './DwTagStyles.less'
-
 function useOutsideAlerter(ref, callback) {
   useEffect(() => {
     function handleClickOutside(event) {

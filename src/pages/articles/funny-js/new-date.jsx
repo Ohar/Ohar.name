@@ -48,7 +48,7 @@ String(new Date('2015-01')) // "Thu Jan 01 2015 03:00:00 GMT+0300"
 
       <h3>Иными словами</h3>
 
-      <img src='${ImgProst}'
+      <img src='${ImgProst.src}'
            alt="ПРОСТ))00))"
            width="345"
            height="346"/>

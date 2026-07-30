@@ -1,1 +1,1 @@
-export default from './MenuLinkComponent'
+export { default } from './MenuLinkComponent'

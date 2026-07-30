@@ -4,7 +4,7 @@ import DwMoveLink from '@/components/DwMoveLink'
 import DwTag from '@/components/DwTag'
 import sortByName from '@/utils/sortByName'
 import generateDwPcClassPathById from '@/utils/generateDwPcClassPathById'
-import { Link } from 'gatsby'
+import { Link } from '@/components/NextLink'
 
 export default [
   {

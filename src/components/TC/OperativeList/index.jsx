@@ -2,8 +2,6 @@ import React from 'react'
 
 import Operative from '@/components/TC/Operative'
 
-import './styles.less'
-
 const OperativeList = ({ idList }) => (
   <ul className='OperativeList'>
     {idList.map(

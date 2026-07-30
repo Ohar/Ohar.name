@@ -1,1 +1,1 @@
-export default from './DwMenuComponent'
+export { default } from './DwMenuComponent'

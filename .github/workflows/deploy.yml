@@ -63,13 +63,21 @@ jobs:
       - name: Verify CV PDF page count
         run: yarn test:cv-pdf
 
+      - name: Verify nginx redirects
+        run: |
+          grep -Fq 'location = /portfolio {' infra/nginx/ohar.name.conf
+          grep -Fq 'location = /portfolio/ {' infra/nginx/ohar.name.conf
+          ! grep -Fq '$server_protocol' infra/nginx/ohar.name.conf
+
       - name: Install SSH deploy tools
         run: sudo apt-get update && sudo apt-get install -y sshpass
 
       - name: Trust deployment host
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+          chmod 700 ~/.ssh
+          printf '%s %s\n' "$DEPLOY_HOST" 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFivnoLQZrVLP/LacoNl6TS3ggU7REoUZCE3qFy4byQH' >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
 
       - name: Upload build archive
         run: |

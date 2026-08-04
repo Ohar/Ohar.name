@@ -18,9 +18,7 @@ jobs:
     env:
       DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
       DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
-      DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
-      DEPLOY_PATH: /var/www/ohar.name/current
-
+      DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -29,14 +27,13 @@ jobs:
         run: |
           test -n "$DEPLOY_HOST"
           test -n "$DEPLOY_USER"
-          test -n "$DEPLOY_PASSWORD"
+          test -n "$DEPLOY_SSH_KEY"
 
       - name: Normalize deployment secrets
         run: |
           {
             printf 'DEPLOY_HOST=%s\n' "$(printf '%s' "$DEPLOY_HOST" | tr -d '\r\n')"
             printf 'DEPLOY_USER=%s\n' "$(printf '%s' "$DEPLOY_USER" | tr -d '\r\n')"
-            printf 'DEPLOY_PASSWORD=%s\n' "$(printf '%s' "$DEPLOY_PASSWORD" | tr -d '\r\n')"
           } >> "$GITHUB_ENV"
 
       - name: Use Node.js
@@ -69,39 +66,22 @@ jobs:
           grep -Fq 'location = /portfolio/ {' infra/nginx/ohar.name.conf
           ! grep -Fq '$server_protocol' infra/nginx/ohar.name.conf
 
-      - name: Install SSH deploy tools
-        run: sudo apt-get update && sudo apt-get install -y sshpass
-
-      - name: Trust deployment host
+      - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" | tr -d '\r' > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
           printf '%s %s\n' "$DEPLOY_HOST" 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFivnoLQZrVLP/LacoNl6TS3ggU7REoUZCE3qFy4byQH' >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
       - name: Upload build archive
         run: |
           tar -C out -czf site.tar.gz .
-          sshpass -p "$DEPLOY_PASSWORD" ssh "$DEPLOY_USER@$DEPLOY_HOST" "mkdir -p /tmp/ohar.name-deploy"
-          sshpass -p "$DEPLOY_PASSWORD" scp site.tar.gz "$DEPLOY_USER@$DEPLOY_HOST:/tmp/ohar.name-deploy/site.tar.gz"
-          sshpass -p "$DEPLOY_PASSWORD" scp infra/nginx/ohar.name.conf "$DEPLOY_USER@$DEPLOY_HOST:/tmp/ohar.name-deploy/ohar.name.conf"
+          ssh "$DEPLOY_USER@$DEPLOY_HOST" "mkdir -p /tmp/ohar.name-deploy"
+          scp site.tar.gz "$DEPLOY_USER@$DEPLOY_HOST:/tmp/ohar.name-deploy/site.tar.gz"
+          scp infra/nginx/ohar.name.conf "$DEPLOY_USER@$DEPLOY_HOST:/tmp/ohar.name-deploy/ohar.name.conf"
 
       - name: Activate release
         run: |
-          sshpass -p "$DEPLOY_PASSWORD" ssh "$DEPLOY_USER@$DEPLOY_HOST" "DEPLOY_PATH='$DEPLOY_PATH' GITHUB_SHA='$GITHUB_SHA' bash -s" <<'REMOTE'
-          set -euo pipefail
-          DEPLOY_PATH="${DEPLOY_PATH:-/var/www/ohar.name/current}"
-          RELEASE_PATH="$(dirname "$DEPLOY_PATH")/releases/${GITHUB_SHA:-manual}"
-          mkdir -p "$RELEASE_PATH"
-          tar -xzf /tmp/ohar.name-deploy/site.tar.gz -C "$RELEASE_PATH"
-          install -m 0644 /tmp/ohar.name-deploy/ohar.name.conf /etc/nginx/sites-available/ohar.name
-          ln -sfn /etc/nginx/sites-available/ohar.name /etc/nginx/sites-enabled/ohar.name
-          if [ -d "$DEPLOY_PATH" ] && [ ! -L "$DEPLOY_PATH" ]; then
-            mv "$DEPLOY_PATH" "$(dirname "$DEPLOY_PATH")/current.backup.$(date +%Y%m%d%H%M%S)"
-          fi
-          ln -sfn "$RELEASE_PATH" "$DEPLOY_PATH.tmp"
-          mv -Tf "$DEPLOY_PATH.tmp" "$DEPLOY_PATH"
-          nginx -t
-          systemctl reload nginx
-          rm -rf /tmp/ohar.name-deploy
-          REMOTE
+          ssh "$DEPLOY_USER@$DEPLOY_HOST" "sudo /usr/local/sbin/deploy-ohar-name '$GITHUB_SHA'"

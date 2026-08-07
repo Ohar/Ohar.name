@@ -75,7 +75,7 @@ const cvData = {
         title: 'Frontend Tech Lead',
         company: 'ООО «ЭфЭнСи», Москва (контракт с ООО «Комус»)',
         description: [
-          'Глобальный рефакторинг: перевёл устаревший внутренний и внешний порталы Комуса с jQuery на Vue, обновил архитектуру, уменьшил легаси-код и упростил интерфейсы.',
+          'Глобальный рефакторинг — руководил переводом устаревших внутреннего и внешнего порталов Комуса с jQuery на Vue. Управлял командой из ещё 2 человек. Под моим руководством мы полностью обновили архитектуру порталов, значительно уменьшили легаси-код и упростили интерфейсы.',
         ],
         stack: 'TypeScript, JavaScript, Vue.js, jQuery, LESS, Webpack, Hybris, Figma.',
       },
@@ -345,7 +345,7 @@ const cvData = {
         title: 'Frontend Tech Lead',
         company: 'FNC, contract with Komus',
         description: [
-          'Migrated legacy internal and external Komus portals from jQuery to Vue.js within a Hybris-based enterprise system. Refactored outdated frontend code and improved maintainability of existing interfaces.',
+          'Led a global refactoring effort to migrate Komus legacy internal and external portals from jQuery to Vue.js within a Hybris-based enterprise system. Managed a team of two other developers. Under my leadership, we fully updated the portals architecture, significantly reduced legacy code, and simplified the interfaces.',
         ],
         stack: 'TypeScript, JavaScript, Vue.js, jQuery, LESS, Webpack, Hybris, Figma.',
       },

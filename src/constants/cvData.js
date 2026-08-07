@@ -273,7 +273,7 @@ const cvData = {
     additional: [
       {
         title: 'Языки',
-        lines: ['Русский — родной.', 'Английский — B2.', 'Французский — A1.'],
+        lines: ['Русский — родной.', 'Английский — C1.', 'Французский — A1.'],
       },
     ],
     projectsTitle: 'Ключевые проекты',
@@ -561,7 +561,7 @@ const cvData = {
     additional: [
       {
         title: 'Languages',
-        lines: ['Russian - Native.', 'English - B2, Upper Intermediate.', 'French - A1, Beginner.'],
+        lines: ['Russian - Native.', 'English - C1, Advanced.', 'French - A1, Beginner.'],
       },
     ],
     projectsTitle: 'Key projects',

@@ -1,6 +1,6 @@
 {
   "name": "ohar.name",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "private": true,
   "description": "Site ohar.name",
   "packageManager": "yarn@1.22.22",

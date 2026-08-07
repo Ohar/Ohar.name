@@ -40,6 +40,11 @@ const contactList = [
     text: "F6S",
   },
   {
+    url: "https://foundryvtt.com/community/ohar",
+    type: "foundryvtt",
+    text: "Foundry VTT",
+  },
+  {
     url: "https://www.facebook.com/oharpage",
     type: "facebook",
     text: "Facebook",

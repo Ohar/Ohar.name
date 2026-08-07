@@ -75,9 +75,10 @@ const cvData = {
         title: 'Frontend Tech Lead',
         company: 'ООО «ЭфЭнСи», Москва (контракт с ООО «Комус»)',
         description: [
-          'Глобальный рефакторинг — руководил переводом устаревших внутреннего и внешнего порталов Комуса с jQuery на Vue. Управлял командой из ещё 2 человек. Под моим руководством мы полностью обновили архитектуру порталов, значительно уменьшили легаси-код и упростили интерфейсы.',
+          'Глобальный рефакторинг — руководил переводом устаревших внутреннего и внешнего порталов Комуса с jQuery на Vue. Управлял командой из ещё 2 человек.',
+          'Под моим руководством мы полностью обновили архитектуру порталов, значительно уменьшили легаси-код и упростили интерфейсы.',
         ],
-        stack: 'TypeScript, JavaScript, Vue.js, jQuery, LESS, Webpack, Hybris, Figma.',
+        stack: 'TypeScript, JavaScript, Vue.js, jQuery, LESS, Webpack, Hybris.',
       },
       {
         screenDate: 'Февраль 2020 — Январь 2022',
@@ -345,9 +346,10 @@ const cvData = {
         title: 'Frontend Tech Lead',
         company: 'FNC, contract with Komus',
         description: [
-          'Led a global refactoring effort to migrate Komus legacy internal and external portals from jQuery to Vue.js within a Hybris-based enterprise system. Managed a team of two other developers. Under my leadership, we fully updated the portals architecture, significantly reduced legacy code, and simplified the interfaces.',
+          'Led a global refactoring effort to migrate Komus legacy internal and external portals from jQuery to Vue.js within a Hybris-based enterprise system. Managed a team of two other developers.',
+          'Under my leadership, we fully updated the portals architecture, significantly reduced legacy code, and simplified the interfaces.',
         ],
-        stack: 'TypeScript, JavaScript, Vue.js, jQuery, LESS, Webpack, Hybris, Figma.',
+        stack: 'TypeScript, JavaScript, Vue.js, jQuery, LESS, Webpack, Hybris.',
       },
       {
         screenDate: 'February 2020 - January 2022',

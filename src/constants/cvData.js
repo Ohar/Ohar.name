@@ -1,13 +1,13 @@
 const pageCopy = {
   ru: {
     title: 'Резюме',
-    description: 'Резюме Павла Лысенко, Senior Frontend Developer',
+    description: 'Резюме Павла Лысенко, Lead Frontend Developer',
     print: 'Печать в PDF',
     language: 'Язык резюме',
   },
   en: {
     title: 'CV',
-    description: 'CV of Pavel Lysenko, Senior Frontend Developer',
+    description: 'CV of Pavel Lysenko, Lead Frontend Developer',
     print: 'Print to PDF',
     language: 'CV language',
   },
@@ -16,15 +16,15 @@ const pageCopy = {
 const cvData = {
   ru: {
     name: 'Лысенко Павел',
-    role: 'Senior Frontend Developer',
+    role: 'Lead Frontend Developer',
     salaryLabel: 'Ожидания по зарплате',
-    salaries: ['от 320 к ₽ (ТК)', 'от 400 к ₽ (ИП)'],
+    salaries: ['от 520 к ₽ (ТК)', 'от 600 к ₽ (ИП)'],
     summaryLabel: 'О себе',
     summary: [
-      'Senior Frontend Engineer с 14+ годами опыта. Делаю любой фронтенд.',
+      'Lead Frontend Engineer с 14+ годами опыта.',
       'Разрабатывал высоконагруженные клиентские приложения для Яндекса, Wildberries и финтех-проектов.',
       'Специализируюсь на SPA-приложениях, сложной бизнес-логике, удобстве пользователей, производительности и визуализации данных.',
-      'Использую AI-инструменты в разработке при согласовании с работодателем: для генерации кода, рефакторинга и написания тестов.',
+      'ИИ-инструменты использую по согласованию с работодателем: кодогенерация, рефакторинг и написание тестов.',
       'Проектировал антифрод-системы, разрабатывал браузерные расширения, разрабатывал API и интеграцию с OAuth, руководил разработкой небольших команд.',
     ],
     contactsTitle: 'Контакты',
@@ -287,12 +287,12 @@ const cvData = {
   },
   en: {
     name: 'Pavel Lysenko',
-    role: 'Senior Frontend Developer / React / TypeScript',
+    role: 'Lead Frontend Developer',
     salaryLabel: 'Salary expectations',
     salaries: ['$4,500 net'],
     summaryLabel: 'About me',
     summary: [
-      'Senior Frontend Engineer with 14+ years of experience in JavaScript, TypeScript, React, and Vue.js.',
+      'Lead Frontend Engineer with 14+ years of experience in JavaScript, TypeScript, React, and Vue.js.',
       'I build complex web interfaces, internal platforms, dashboards, browser extensions, and data visualization tools.',
       'I have worked on products for Yandex, Wildberries, fintech companies, and international startups.',
       'My focus areas are SPA architecture, performance optimization, complex business logic, API/OAuth integrations, and maintainable frontend systems.',
@@ -305,7 +305,7 @@ const cvData = {
       { label: 'GitHub', href: 'https://github.com/Ohar', value: 'github.com/Ohar', external: true },
     ],
     targetTitle: 'Desired position',
-    targetRole: 'Lead Frontend Developer / React / TypeScript',
+    targetRole: 'Lead Frontend Developer',
     targetItems: [
       { label: 'Employment', value: 'Full time, part time, project work' },
       { label: 'Format', value: 'Office / remote' },

@@ -53,7 +53,7 @@ const cvData = {
         description: [
           'Разработал ключевые интерфейсы внутренней платформы A/B-тестирования для 500+ аналитиков: настройку экспериментов и аналитические дашборды с визуализацией результатов тестов и статистических метрик. Разработал Chrome Extension для проверки экспериментальных сценариев на wildberries.ru с интеграцией через OAuth и API платформы.',
         ],
-        stack: 'TypeScript, React, Redux, Zustand, Ant Design, Vite, Recharts, Figma.',
+        stack: 'TypeScript, React, Redux, Zustand, Ant Design, Vite, Recharts, Figma, Nuxt.',
       },
       {
         screenDate: 'Июнь 2023 — Июнь 2024',
@@ -66,7 +66,7 @@ const cvData = {
         description: [
           'Разработка главной страницы ya.ru и yandex.kz: поиск, виджеты, реклама и интеграции с сервисами Яндекса. Миграция интерфейсов с BEM на React, оптимизация производительности для слабых устройств и старых браузеров.',
         ],
-        stack: 'JavaScript, React, Vue.js, Svelte, BEM.',
+        stack: 'JavaScript, React, Vue.js, Svelte, BEM, Next.',
       },
       {
         screenDate: 'Июнь 2022 — Апрель 2023',
@@ -324,7 +324,7 @@ const cvData = {
         description: [
           'Developed key interfaces for an internal A/B testing platform used by 500+ analysts: experiment setup flows, analytical dashboards, test result visualization, and statistical metrics. Built a Chrome Extension for validating experimental scenarios on wildberries.ru, integrated with the platform through OAuth and internal APIs.',
         ],
-        stack: 'TypeScript, React, Redux, Zustand, Ant Design, Vite, Recharts, Figma.',
+        stack: 'TypeScript, React, Redux, Zustand, Ant Design, Vite, Recharts, Figma, Next.',
       },
       {
         screenDate: 'June 2023 - June 2024',
@@ -337,7 +337,7 @@ const cvData = {
         description: [
           'Worked on the main pages of ya.ru and yandex.kz: search, widgets, advertising modules, and integrations with Yandex services. Participated in migrating interfaces from BEM to React and improving performance for low-end devices and legacy browsers.',
         ],
-        stack: 'JavaScript, React, Vue.js, Svelte, BEM.',
+        stack: 'JavaScript, React, Vue.js, Svelte, BEM, Nuxt.',
       },
       {
         screenDate: 'June 2022 - April 2023',

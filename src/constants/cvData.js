@@ -25,7 +25,7 @@ const cvData = {
       'Разрабатывал высоконагруженные клиентские приложения для Яндекса, Wildberries и финтех-проектов.',
       'Специализируюсь на SPA-приложениях, сложной бизнес-логике, удобстве пользователей, производительности и визуализации данных.',
       'ИИ-инструменты использую по согласованию с работодателем: кодогенерация, рефакторинг и написание тестов.',
-      'Проектировал антифрод-системы, разрабатывал браузерные расширения, разрабатывал API и интеграцию с OAuth, руководил разработкой небольших команд.',
+      'Проектировал антифрод-системы, разрабатывал браузерные расширения, разрабатывал API и интеграцию с OAuth, занимался фронтенд-безопасностью (XSS, CORS, JWT), руководил разработкой небольших команд.',
     ],
     contactsTitle: 'Контакты',
     contacts: [
@@ -295,7 +295,7 @@ const cvData = {
       'Lead Frontend Engineer with 14+ years of experience in JavaScript, TypeScript, React, and Vue.js.',
       'I build complex web interfaces, internal platforms, dashboards, browser extensions, and data visualization tools.',
       'I have worked on products for Yandex, Wildberries, fintech companies, and international startups.',
-      'My focus areas are SPA architecture, performance optimization, complex business logic, API/OAuth integrations, and maintainable frontend systems.',
+      'My focus areas are SPA architecture, performance optimization, complex business logic, API/OAuth integrations, frontend security (JWT, CORS, XSS), and maintainable frontend systems.',
       'I use AI-assisted development tools, subject to employer approval, for code generation, refactoring, and test development.',
     ],
     contactsTitle: 'Contacts',
@@ -558,6 +558,9 @@ const cvData = {
       'Recharts',
       'Ant Design',
       'Performance Optimization',
+      'CORS',
+      'XSS',
+      'JWT',
     ],
     additionalTitle: 'Additional information',
     additional: [

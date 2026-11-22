@@ -1,44 +1,26 @@
 # ohar.name
 
-Sources of [ohar.name](https://ohar.name), built with Next.js and exported as a
-static site.
+Единственная страница [ohar.name](https://ohar.name/) — сообщение о переезде на
+[Ohar-Studio.ru](https://ohar-studio.ru). Текст и стили находятся в `index.html`.
+Зависимости и сборка не нужны: для просмотра достаточно открыть этот файл в браузере.
+Автоматического перенаправления на новый домен нет. Старые страницы возвращают 404.
 
-## Development
+## Деплой
 
-Requires Node.js 20.9 or newer and Yarn 1.22.
+Push в `master` запускает `.github/workflows/deploy.yml`. Деплой также можно
+запустить вручную через `workflow_dispatch` в GitHub Actions.
 
-```sh
-yarn install
-yarn dev
-```
+Workflow проверяет файлы деплоя, архивирует только `index.html`, загружает архив
+и конфигурацию nginx по SSH, затем вызывает серверный скрипт
+`/usr/local/sbin/deploy-ohar-name <commit-sha>`.
+Исходник установленного скрипта хранится в `infra/deploy/deploy.sh`.
 
-The development server runs at `http://localhost:3000`.
+Скрипт распаковывает страницу в `/var/www/ohar.name/releases/<commit-sha>`,
+проверяет конфигурацию через `nginx -t`, атомарно переключает симлинк
+`/var/www/ohar.name/current` и перезагружает nginx. После деплоя workflow
+сверяет опубликованную страницу с `index.html` и проверяет 404 на старых адресах.
 
-## Portfolio content
-
-`/portfolio/` includes the Neon Shift and Rosterama showcase from
-[Ohar/Ohar-Studio.ru](https://github.com/Ohar/Ohar-Studio.ru/tree/56c25961fea18f191deb0573275558a64ae58b68).
-The project sections from `index.html` are adapted to React in
-`src/pages/portfolio.jsx`, with scoped styles in `src/styles/portfolio.module.css`,
-English/Russian copy in `src/constants/siteCopy.js`, and the two original images
-in `src/images/portfolio/`. The page uses this site's layout, language switcher
-and metadata; the standalone site's header, footer and deployment are not imported.
-
-## Production build
-
-```sh
-yarn build
-yarn test:i18n
-yarn test:cv-pdf
-```
-
-Next.js writes the deployable site to `out`. The PDF test requires Chrome or
-Chromium and verifies that both CV languages fit on one A4 page.
-
-## Deployment
-
-Pushes to `master` run `.github/workflows/deploy.yml`. GitHub Actions builds and
-tests the site, uploads `out`, atomically switches the active release, validates
-the nginx configuration, and reloads nginx.
-
-The workflow expects `DEPLOY_HOST`, `DEPLOY_USER`, and `DEPLOY_PASSWORD` secrets.
+Необходимые GitHub Actions secrets: `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY`.
+SSH-ключ сервера закреплён в workflow. На сервере уже должны быть установлены
+скрипт деплоя, nginx и сертификат Let's Encrypt для `ohar.name`.
+Маршрут проверки ACME сохранён для продления сертификата.

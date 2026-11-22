@@ -8,11 +8,14 @@ on:
 
 concurrency:
   group: deploy-production
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+permissions:
+  contents: read
 
 jobs:
   deploy:
-    name: Build and deploy
+    name: Deploy static page
     runs-on: ubuntu-latest
 
     env:
@@ -36,35 +39,12 @@ jobs:
             printf 'DEPLOY_USER=%s\n' "$(printf '%s' "$DEPLOY_USER" | tr -d '\r\n')"
           } >> "$GITHUB_ENV"
 
-      - name: Use Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: 24
-          cache: yarn
-
-      - name: Install Yarn
+      - name: Verify deployment files
         run: |
-          corepack enable
-          corepack prepare yarn@1.22.22 --activate
-          yarn --version
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile --non-interactive
-
-      - name: Build site
-        run: yarn build
-
-      - name: Verify generated pages
-        run: yarn test:i18n
-
-      - name: Verify CV PDF page count
-        run: yarn test:cv-pdf
-
-      - name: Verify nginx static routing
-        run: |
+          test -s index.html
+          bash -n infra/deploy/deploy.sh
           grep -Fq 'try_files $uri $uri/ =404;' infra/nginx/ohar.name.conf
-          ! grep -Fq 'https://ohar-studio.ru/' infra/nginx/ohar.name.conf
-          ! grep -Fq '$server_protocol' infra/nginx/ohar.name.conf
+          ! grep -Fq 'ohar-studio.ru' infra/nginx/ohar.name.conf
 
       - name: Configure SSH
         run: |
@@ -75,9 +55,9 @@ jobs:
           printf '%s %s\n' "$DEPLOY_HOST" 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFivnoLQZrVLP/LacoNl6TS3ggU7REoUZCE3qFy4byQH' >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-      - name: Upload build archive
+      - name: Upload page archive
         run: |
-          tar -C out -czf site.tar.gz .
+          tar -czf site.tar.gz index.html
           ssh "$DEPLOY_USER@$DEPLOY_HOST" "mkdir -p /tmp/ohar.name-deploy"
           scp site.tar.gz "$DEPLOY_USER@$DEPLOY_HOST:/tmp/ohar.name-deploy/site.tar.gz"
           scp infra/nginx/ohar.name.conf "$DEPLOY_USER@$DEPLOY_HOST:/tmp/ohar.name-deploy/ohar.name.conf"
@@ -85,3 +65,12 @@ jobs:
       - name: Activate release
         run: |
           ssh "$DEPLOY_USER@$DEPLOY_HOST" "sudo /usr/local/sbin/deploy-ohar-name '$GITHUB_SHA'"
+
+      - name: Verify deployed page
+        run: |
+          curl --fail --silent --show-error --retry 3 https://ohar.name/ -o deployed-index.html
+          cmp index.html deployed-index.html
+          for path in /about/ /portfolio/ /cv/ /dw/ /quotes/ /xss.js; do
+            status=$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' "https://ohar.name$path")
+            test "$status" = 404
+          done

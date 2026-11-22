@@ -1,3 +1,0 @@
-const KEYCODE_ARROW_RIGHT = 39
-
-export default KEYCODE_ARROW_RIGHT

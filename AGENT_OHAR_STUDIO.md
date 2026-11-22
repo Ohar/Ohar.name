@@ -7,7 +7,8 @@ The public domain is:
 
 - `https://ohar-studio.ru/`
 
-The related personal site `ohar.name` redirects `/portfolio` and `/portfolio/` to `https://ohar-studio.ru/`.
+The related personal site `ohar.name` hosts an adapted copy of the showcase at
+`/portfolio/`, with its own layout and English/Russian language switcher.
 
 ## Agent Role
 

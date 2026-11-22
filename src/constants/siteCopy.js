@@ -36,10 +36,31 @@ const siteCopy = {
     },
     portfolio: {
       title: "Portfolio",
-      description: "Projects and work by Pavel Lysenko",
+      description:
+        "Ohar Studio projects by Pavel Lysenko: Neon Shift arcade game and Rosterama, a Warhammer 40,000 army visualizer.",
       keywords: ["Pavel Lysenko portfolio", "Ohar Studio"],
-      heading: "Projects and applications",
-      lead: "A separate showcase of my side projects is available at",
+      lead: "Games and interactive projects by Ohar Studio",
+      neonShift: {
+        eyebrow: "A fast-paced arcade game",
+        description:
+          "Switch lanes, dodge obstacles and collect crystals. The longer you survive, the faster the game gets.",
+        platformLabel: "Choose a platform",
+        playVk: "Play on VK",
+        playTelegram: "Play on Telegram",
+        playYandex: "Play on Yandex Games",
+        vk: "VK Games",
+        yandex: "Yandex Games",
+        imageAlt: "Neon Shift — a spaceship among neon obstacles",
+      },
+      rosterama: {
+        eyebrow: "Another project",
+        heading: "See your army before it hits the tabletop",
+        description:
+          "A Warhammer 40,000 roster visualizer: turns a WTC export from WarOrgan into an army image with models on correctly sized bases. Download the result or share it with a public link.",
+        open: "Open Rosterama",
+        imageAlt:
+          "An army visualization in Rosterama: models arranged on correctly sized bases",
+      },
     },
     notFound: {
       title: "404: Not found",
@@ -101,10 +122,31 @@ const siteCopy = {
     },
     portfolio: {
       title: "Портфолио",
-      description: "Проекты и рабочие материалы Павла Лысенко",
+      description:
+        "Проекты Ohar Studio Павла Лысенко: скоростная аркада Neon Shift и Rosterama — визуализатор армий Warhammer 40,000.",
       keywords: ["Портфолио Павла Лысенко", "Ohar Studio"],
-      heading: "Портфолио приложений",
-      lead: "Отдельная витрина пет-проектов находится на",
+      lead: "Игры и интерактивные проекты Ohar Studio",
+      neonShift: {
+        eyebrow: "Аркада на скорость реакции",
+        description:
+          "Меняйте полосу, уклоняйтесь от препятствий и собирайте кристаллы. Чем дольше держитесь, тем быстрее становится игра.",
+        platformLabel: "Выберите платформу",
+        playVk: "Играть во ВКонтакте",
+        playTelegram: "Играть в Telegram",
+        playYandex: "Играть в Яндекс.Играх",
+        vk: "VK Игры",
+        yandex: "Яндекс Игры",
+        imageAlt: "Neon Shift — космический корабль среди неоновых препятствий",
+      },
+      rosterama: {
+        eyebrow: "Ещё один проект",
+        heading: "Увидеть армию до выхода на игровой стол",
+        description:
+          "Визуализатор ростеров Warhammer 40,000: превращает WTC-экспорт из WarOrgan в готовое изображение армии с моделями на базах реального размера. Результат можно скачать или отправить публичной ссылкой.",
+        open: "Открыть Rosterama",
+        imageAlt:
+          "Пример визуализации армии в Rosterama: модели расставлены на базах реального размера",
+      },
     },
     notFound: {
       title: "404: Не найдено",

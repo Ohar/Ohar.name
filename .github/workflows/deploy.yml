@@ -60,10 +60,10 @@ jobs:
       - name: Verify CV PDF page count
         run: yarn test:cv-pdf
 
-      - name: Verify nginx redirects
+      - name: Verify nginx static routing
         run: |
-          grep -Fq 'location = /portfolio {' infra/nginx/ohar.name.conf
-          grep -Fq 'location = /portfolio/ {' infra/nginx/ohar.name.conf
+          grep -Fq 'try_files $uri $uri/ =404;' infra/nginx/ohar.name.conf
+          ! grep -Fq 'https://ohar-studio.ru/' infra/nginx/ohar.name.conf
           ! grep -Fq '$server_protocol' infra/nginx/ohar.name.conf
 
       - name: Configure SSH

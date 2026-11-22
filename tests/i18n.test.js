@@ -47,7 +47,7 @@ test("static HTML defaults to English only on localized pages", async () => {
   const pages = [
     ["index.html", "en", "Pavel Lysenko"],
     ["about/index.html", "en", "Elsewhere online"],
-
+    ["portfolio/index.html", "en", "See your army before it hits the tabletop"],
     ["cv/index.html", "en", "Lead Frontend Developer"],
     ["tc/index.html", "en", "Trench Crusade: Heretic Legion"],
     ["404.html", "en", "This page does not exist"],
@@ -72,10 +72,7 @@ test("static HTML defaults to English only on localized pages", async () => {
 test("localized metadata and Russian-only links are explicit", async () => {
   const home = await readFile(path.join(outputDir, "index.html"), "utf8")
   const about = await readFile(path.join(outputDir, "about/index.html"), "utf8")
-  const notFound = await readFile(
-    path.join(outputDir, "404.html"),
-    "utf8"
-  )
+  const notFound = await readFile(path.join(outputDir, "404.html"), "utf8")
   const portfolio = await readFile(
     path.join(outputDir, "portfolio/index.html"),
     "utf8"
@@ -84,8 +81,10 @@ test("localized metadata and Russian-only links are explicit", async () => {
   assert.match(home, /property="og:title" content="Ohar"/)
   assert.doesNotMatch(about, /href="\/(?:articles|dw|quotes)\//)
   assert.match(notFound, /name="robots" content="noindex, follow"/)
+  assert.match(portfolio, /property="og:title" content="Portfolio"/)
   assert.match(
     portfolio,
-    /http-equiv="refresh" content="0; url=https:\/\/ohar-studio\.ru\/"/
+    /property="og:url" content="https:\/\/ohar\.name\/portfolio\/"/
   )
+  assert.doesNotMatch(portfolio, /http-equiv="refresh"|name="robots"/)
 })
